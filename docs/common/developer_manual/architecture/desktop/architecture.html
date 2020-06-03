@@ -88,12 +88,13 @@
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">2. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">3. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">5. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/license.html">7. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/license.html">8. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -177,7 +178,7 @@
             
   <div class="section" id="software-architecture">
 <span id="lblarchitecture"></span><h1><span class="section-number">2. </span>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h1>
-<p>The SimCenter is developing a software framework for building applications that run <strong>scientific workflow applications</strong> to perform computational simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The <a href="#id7"><span class="problematic" id="id8">|app|</span></a> is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited <strong>scientific workflow systems</strong>. This chapter presents the software architecture for the framework and the <a href="#id9"><span class="problematic" id="id10">|app|</span></a> built using it using the <a href="#id1"><span class="problematic" id="id2">`</span></a>C4 model &lt;<a class="reference external" href="https://c4model.com">https://c4model.com</a>&gt;_. The following sections present the architecture to level 3:</p>
+<p>The SimCenter is developing a software framework for building applications that run <strong>scientific workflow applications</strong> to perform computational simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The quoFEM app is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited <strong>scientific workflow systems</strong>. This chapter presents the software architecture for the framework and the quoFEM app built using it using the <a href="#id1"><span class="problematic" id="id2">`</span></a>C4 model &lt;<a class="reference external" href="https://c4model.com">https://c4model.com</a>&gt;_. The following sections present the architecture to level 3:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
@@ -191,7 +192,7 @@
 <p>A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world,  is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figContext</span></code>. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>.</p>
 <div class="align-center figure" id="id3">
 <span id="figcontext"></span><img alt="../../../../_images/context.png" src="../../../../_images/context.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.7 </span><span class="caption-text">System Context Diagram for SimCenter Applications</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.1 </span><span class="caption-text">System Context Diagram for SimCenter Applications</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="level-2-the-components-of-a-simcenter-application">

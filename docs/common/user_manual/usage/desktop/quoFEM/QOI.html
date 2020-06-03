@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.4. QoI: Quantaties of Interest &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>4.4. QoI: Quantaties of Interest &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4. Troubleshooting" href="../../../troubleshooting/desktop/troubleshooting.html" />
-    <link rel="prev" title="3.3. RV: Random Variables" href="../RV.html" /> 
+    <link rel="next" title="5. Troubleshooting" href="../../../troubleshooting/desktop/troubleshooting.html" />
+    <link rel="prev" title="4.3. RV: Random Variables" href="../RV.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,18 +88,19 @@
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">2. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">3. User Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../UQ.html">3.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FEM.html">3.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">3.3. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.4. QoI: Quantaties of Interest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/aboutQUOFEM.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">3. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">4. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FEM.html">4.2. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">4.3. RV: Random Variables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.4. QoI: Quantaties of Interest</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">5. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../license.html">7. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">8. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -157,9 +158,9 @@
     
       <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
+          <li><a href="../usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">3.4. </span>QoI: Quantaties of Interest</li>
+      <li><span class="section-number">4.4. </span>QoI: Quantaties of Interest</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -179,7 +180,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="qoi-quantaties-of-interest">
-<h1><span class="section-number">3.4. </span>QoI: Quantaties of Interest<a class="headerlink" href="#qoi-quantaties-of-interest" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.4. </span>QoI: Quantaties of Interest<a class="headerlink" href="#qoi-quantaties-of-interest" title="Permalink to this headline">¶</a></h1>
 <p>The QoI panel is where the user specifies the variable names associated with the FEM results. For each result quantatity that the users application generates and places in the results.out file, the user must provide a variable name. A new response quantatity is added by the user slecting the ‘’Add’’ button. Quantaties can be removed by selecting it, this is done by clicking in the circle befor the variable name, and theb selecting the ‘’remove’’ button.</p>
 <p>In figure shown the user has added two response quantiaites, <strong>Node_2_Disp</strong> and <strong>Node_3_Disp</strong>.</p>
 <div class="admonition note">
