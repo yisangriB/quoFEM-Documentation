@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.2. Steel Frame: Parameter Calibration &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>6.2. Steel Frame: Parameter Estimation &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -94,7 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">6. Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="OpenSeesTruss.html">6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2. Steel Frame: Parameter Calibration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2. Steel Frame: Parameter Estimation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
@@ -158,7 +158,7 @@
         
           <li><a href="../examples.html"><span class="section-number">6. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">6.2. </span>Steel Frame: Parameter Calibration</li>
+      <li><span class="section-number">6.2. </span>Steel Frame: Parameter Estimation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -177,8 +177,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="steel-frame-parameter-calibration">
-<h1><span class="section-number">6.2. </span>Steel Frame: Parameter Calibration<a class="headerlink" href="#steel-frame-parameter-calibration" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="steel-frame-parameter-estimation">
+<h1><span class="section-number">6.2. </span>Steel Frame: Parameter Estimation<a class="headerlink" href="#steel-frame-parameter-estimation" title="Permalink to this headline">¶</a></h1>
 <p>Consider the problem of estimating parameters for a model given some experimental data. In this example, which has been provided by Professor Joel Conte and his doctoral students Maitreya Kurumbhati and Mukesh Ramancha from UC San Diego, a finite element model of a steel building is being developed. Consider the two-story building structure shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">lblJoelFrame</span></code>. Each floor slab of the building is made of composite metal deck and is supported on four steel columns. Story heights of 10’ are measured as are the lengths of building along the X and Y direction, which are measured at 33’4” and 30’. For the steel columns, Young’s modulus is measured to be <span class="math notranslate nohighlight">\(29,000 ksi\)</span>, <span class="math notranslate nohighlight">\(Area = 110 in^2\)</span>, and <span class="math notranslate nohighlight">\(I_{xx} = 1190 in^4\)</span>. For modelling purposes, the four columns are assumed fixed at the base and the beams connecting them are assumed to be rigid.</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../../../../../_images/joelFrame.png"><img alt="../../../../../_images/joelFrame.png" src="../../../../../_images/joelFrame.png" style="width: 600px;" /></a>
@@ -338,7 +338,10 @@ close $outFile
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The computed values compare favorably to the values used to generate the ‘observed results’ when developing this problem, these being the values shown in the script, i.e. <span class="math notranslate nohighlight">\(m1=0.53\)</span> and <span class="math notranslate nohighlight">\(m2=0.25\)</span>.</p>
+<ol class="arabic simple">
+<li><p>The computed values compare favorably to the values used to generate the ‘observed results’ when developing this problem, these being the values shown in the script, i.e. <span class="math notranslate nohighlight">\(m1=0.53\)</span> and <span class="math notranslate nohighlight">\(m2=0.25\)</span>.</p></li>
+<li><p>It would proove useful for you to adjust the parameters, observed values and inputs for the continuous design variables. The numbers were chosen to demonstrate the methods can give good results. They do not always return such good numbers.</p></li>
+</ol>
 </div>
 </div>
 
