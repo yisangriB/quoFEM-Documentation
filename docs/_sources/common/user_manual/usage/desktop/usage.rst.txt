@@ -79,7 +79,7 @@ This is the large central area of the UI where the  user provides input for the 
    :quoFEM:quoFEM/FEM
    :response:response/EDP
    RV
-   :quoFEM:quoFEM/QoI
+   :quoFEM:quoFEM/QuantatiesOfInterest
    :PBE:PBE/DL
    :response:response/resEE
    :quoFEM:quoFEM/resQUO

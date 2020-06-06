@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.2. Earthquake Response of Portal Frame &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>Earthquake Response of Portal Frame &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -36,9 +36,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="5. Coding Style" href="../../../coding_style/desktop/coding_style.html" />
-    <link rel="prev" title="4.1. Interpoint Distances" href="InterpointDistances.html" /> 
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -101,19 +99,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">4. Verification</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="InterpointDistances.html">4.1. Interpoint Distances</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Earthquake Response of Portal Frame</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#verification-script">4.2.1. Verification Script</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#verification-of-results">4.2.2. Verification of Results</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
@@ -160,9 +150,7 @@
     
       <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../verification.html"><span class="section-number">4. </span>Verification</a> &raquo;</li>
-        
-      <li><span class="section-number">4.2. </span>Earthquake Response of Portal Frame</li>
+      <li>Earthquake Response of Portal Frame</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -182,11 +170,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="earthquake-response-of-portal-frame">
-<span id="lblportalframeearthquake"></span><h1><span class="section-number">4.2. </span>Earthquake Response of Portal Frame<a class="headerlink" href="#earthquake-response-of-portal-frame" title="Permalink to this headline">¶</a></h1>
+<span id="lblportalframeearthquake"></span><h1>Earthquake Response of Portal Frame<a class="headerlink" href="#earthquake-response-of-portal-frame" title="Permalink to this headline">¶</a></h1>
 <p>In this example, a simple 2D portal frame model is used to verify the
 results of quoFEM app. The model is a linear elastic single-bay,
 single-story model of a reinforced concrete portal frame, as shown in
-<a class="reference internal" href="#figportalverification"><span class="std std-numref">Fig. 4.2.2</span></a>. The analysis of this model considers both
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">figPortalVerification</span></code>. The analysis of this model considers both
 gravity loading and lateral earthquake loading due to the El Centro
 earthquake (Borrego Mountain 04/09/68 0230, El Centro ARRAY 9, 270).
 The original model and ground motion used in this example were
@@ -198,7 +186,7 @@ Examples folder in a subfolder called <strong>PortalFrame2D</strong>.</p>
 <blockquote>
 <div><div class="align-center figure" id="id1">
 <span id="figportalverification"></span><img alt="common/developer_manual/verification/desktop/quoFEM/figures/portalFrame.png" src="common/developer_manual/verification/desktop/quoFEM/figures/portalFrame.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.2 </span><span class="caption-text">Two-dimensional portal frame model subjected to gravity and earthquake loading</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Two-dimensional portal frame model subjected to gravity and earthquake loading</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>To introduce uncertainty in the model, both mass and young’s modulus
@@ -241,21 +229,21 @@ following steps:
 #. Start quoFEM app, click on the simulation tab (SIM) in the left bar to open a building simulation model. Click on choose button in the input script row:</p>
 <div class="align-center figure" id="id2">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/portalFrameTcl.png" src="common/developer_manual/verification/desktop/quoFEM/figures/portalFrameTcl.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.3 </span><span class="caption-text">Choose building model</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Choose building model</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>Choose the model file texttt{Portal2D-UQ.tcl} from PortalFrame2D example folder.</p></li>
 </ol>
 <div class="align-center figure" id="id3">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/tclLocation.png" src="common/developer_manual/verification/desktop/quoFEM/figures/tclLocation.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.4 </span><span class="caption-text">Choose tcl file</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Choose tcl file</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>In the list of Clines Nodes edit box, enter “1, 3”. This indicates to quoFEM app that nodes 1 and 3 are the nodes used to obtain EDP at different floor levels (i.e. base and first floor).</p></li>
 </ol>
 <div class="align-center figure" id="id4">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/cLineNodes.png" src="common/developer_manual/verification/desktop/quoFEM/figures/cLineNodes.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.5 </span><span class="caption-text">Select Nodes</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Select Nodes</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>#. Click on the event tab (EVT) in the left bar to open the earthquake event specification tab, select Multiple Existing for loading Type. Click on the add button to add an earthquake event.
 Then click on the choose button to select the event file.</p>
@@ -267,7 +255,7 @@ Then click on the choose button to select the event file.</p>
 </ol>
 <div class="align-center figure" id="id5">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/evtFileLocation.png" src="common/developer_manual/verification/desktop/quoFEM/figures/evtFileLocation.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.6 </span><span class="caption-text">Choose event file</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Choose event file</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>#. Now select the random variables tab (RVs) from the left bar, change the random variables types to normal and set the mean and standard deviation values of the floor mass and
 Young’s modulus.  Notice that quoFEM app has automatically
@@ -275,7 +263,7 @@ detected parameters defined in the texttt{OpenSees} tcl file using the pset
 command and defined them as random variables.</p>
 <div class="align-center figure" id="id6">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/workUqTab.png" src="common/developer_manual/verification/desktop/quoFEM/figures/workUqTab.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.7 </span><span class="caption-text">Work on <strong>UQ</strong> tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Work on <strong>UQ</strong> tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>#.  Now click on run, set the analysis parameters, working directory and applications directory and click submit to run the analysis.
 If the run is successfull the program will automatically open the
@@ -284,7 +272,7 @@ results tab showing the summary of results (Cref{fig:figure27}).</p>
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/runAnalysis.png" src="common/developer_manual/verification/desktop/quoFEM/figures/runAnalysis.png" />
 </div>
 <div class="section" id="verification-script">
-<h2><span class="section-number">4.2.1. </span>Verification Script<a class="headerlink" href="#verification-script" title="Permalink to this headline">¶</a></h2>
+<h2>Verification Script<a class="headerlink" href="#verification-script" title="Permalink to this headline">¶</a></h2>
 <p>A verification script (Listing 1) for propagating the uncertainty was
 developed in Python and is included in the example folder.  The script
 creates 1000 samples for both the Young’s modulus and mass values
@@ -355,7 +343,7 @@ deviation values of the peak floor acceleration and peak drift.</p>
 </div>
 </div>
 <div class="section" id="verification-of-results">
-<h2><span class="section-number">4.2.2. </span>Verification of Results<a class="headerlink" href="#verification-of-results" title="Permalink to this headline">¶</a></h2>
+<h2>Verification of Results<a class="headerlink" href="#verification-of-results" title="Permalink to this headline">¶</a></h2>
 <p>This section verifies the results produced for the portal frame
 by quoFEM app against the results of running the same
 problem using the Python script.  Running the uncertainty
@@ -365,11 +353,11 @@ values of EDPs) for both are compared in the table below and, as seen, are in go
 agreement.</p>
 <div class="align-center figure" id="id7">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/resultsSummaryTab.png" src="common/developer_manual/verification/desktop/quoFEM/figures/resultsSummaryTab.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.8 </span><span class="caption-text">Outputs from EE-UQ</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Outputs from EE-UQ</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id8">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/pyOutputs.png" src="common/developer_manual/verification/desktop/quoFEM/figures/pyOutputs.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.9 </span><span class="caption-text">Outputs from PortalFrameSamplying.py script</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Outputs from PortalFrameSamplying.py script</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <table class="docutils align-default">
 <colgroup>
