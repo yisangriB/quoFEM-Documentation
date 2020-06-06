@@ -166,7 +166,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../../../_sources/common/user_manual/usage/desktop/quoFEM/QOI.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/quoFEM/QoI.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -181,12 +181,19 @@
             
   <div class="section" id="qoi-quantaties-of-interest">
 <h1><span class="section-number">4.4. </span>QoI: Quantaties of Interest<a class="headerlink" href="#qoi-quantaties-of-interest" title="Permalink to this headline">¶</a></h1>
-<p>The QoI panel is where the user specifies the variable names associated with the FEM results. For each result quantatity that the users application generates and places in the results.out file, the user must provide a variable name. A new response quantatity is added by the user slecting the ‘’Add’’ button. Quantaties can be removed by selecting it, this is done by clicking in the circle befor the variable name, and theb selecting the ‘’remove’’ button.</p>
-<p>In figure shown the user has added two response quantiaites, <strong>Node_2_Disp</strong> and <strong>Node_3_Disp</strong>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There can be no spaces in variable names, underescores are permitted</p>
-<p>Names cannot be duplicated</p>
+<p>The QoI panel is where the user specifies the variable names associated with the FEM results. For each result quantatity that the users application generates and places in the results.out file, the user must provide a variable name. A new response quantatity is added by the user slecting the ‘’Add’’ button. Quantaties can be removed by selecting it, this is done by clicking in the circle befor the variable name, and then selecting the ‘’remove’’ button.</p>
+<div class="align-center figure" id="id1">
+<span id="figqoi"></span><img alt="../../../../../_images/QoI.png" src="../../../../../_images/QoI.png" />
+<p class="caption"><span class="caption-number">Fig. 4.4.1 </span><span class="caption-text">Input for QoI panel</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>In figure shown the user has added two response quantiaites, <strong>Node_2_Disp_2</strong> and <strong>Node_4_Disp_1</strong>. The postprocessing script, if one has been provided, will be passed these 2 values as arguments.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ol class="arabic simple">
+<li><p>There can be no spaces in variable names, underescores are permitted.</p></li>
+<li><p>Names cannot begin with a numeral, i.e. 0,1,2,3,4,5,6,7,8,9.</p></li>
+<li><p>Names cannot be duplicated.</p></li>
+</ol>
 </div>
 </div>
 

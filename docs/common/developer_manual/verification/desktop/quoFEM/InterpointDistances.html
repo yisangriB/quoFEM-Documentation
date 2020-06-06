@@ -179,13 +179,11 @@
             
   <div class="section" id="interpoint-distances">
 <span id="lblportalframeearthquake"></span><h1><span class="section-number">4.1. </span>Interpoint Distances<a class="headerlink" href="#interpoint-distances" title="Permalink to this headline">¶</a></h1>
-<p>This is not a structural example, but one used example in the literature to verify sampling methods as a mathematical formula
+<p>This is not a structural example, it is one used in the literature to verify sampling methods as a mathematical formula
 exists for the solution. The example presented is computing the average distance between randomly chosen points
-in a square region. Such average distances come up in many settings. For cell phone companies, the probability that a distributed network is
-fully connected depends on average distances between communicating nodes. For city planners preparing for disasters,
+in a rectangular region. Such average distances come up in many settings. For cell phone companies, the probability that a distributed network is fully connected depends on average distances between communicating nodes. For city planners preparing for disasters,
 it could represent the average distances from dwellings to fire stations or from the dwellings to the epicenter of an earthquake.</p>
-<p>The problem is defined as follows: Suppose two points <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are independent and considered uniformly distributed random points in a finite rectangle of dimension <span class="math notranslate nohighlight">\(L_w\)</span> and <span class="math notranslate nohighlight">\(L_h\)</span>. It has been <a class="reference external" href="http://www.math.utep.edu/Faculty/moschopoulos/Publications/1999-Random_Points_Associated_With_Rectangles.pdf">shown</a> that the expected average distance between these two points <span class="math notranslate nohighlight">\(E(P,Q)\)</span>
-is given by the formula:</p>
+<p>The problem is defined as follows: Suppose two points <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are independent and considered uniformly distributed random points in a finite rectangle of dimension <span class="math notranslate nohighlight">\(L_w\)</span> and <span class="math notranslate nohighlight">\(L_h\)</span>. It has been <a class="reference external" href="http://www.math.utep.edu/Faculty/moschopoulos/Publications/1999-Random_Points_Associated_With_Rectangles.pdf">shown</a> that the expected average distance between these two points <span class="math notranslate nohighlight">\(E(P,Q)\)</span> is given by the formula:</p>
 <div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0">
 <span class="eqno">(4.1.2)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0" title="Permalink to this equation">¶</a></span>\[E(P,Q) = \frac{1}{15} \left( \frac{L_w^3}{L_h^2}+\frac{L_h^3}{L_w^2}+d\left(3-\frac{L_w^2}{L_h^2}-\frac{L_h^2}{L_w^2}\right)
 +\frac{5}{2} \left(\frac{L_h^2}{L_w}\log\right(\frac{L_w+d}{L_h}\left)+\frac{L_w^2}{L_h}\log\left(\frac{L_h+d}{L_w}\right)\right)\right)\]</div>
@@ -222,6 +220,8 @@ is given by the formula:</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The above table was computed using the following Matlab script, run repeatedly for different values of Lw and Lh.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Lw</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">Lh</span> <span class="o">=</span> <span class="mf">0.6</span>
@@ -230,9 +230,10 @@ is given by the formula:</p>
 
 </pre></div>
 </div>
-<p>In the following steps we will demonstrate how this is done using the quoFEM app with figures showing the inputs for case with Lw=1.0 and Lh= 0.6 utilizing LHS and 1000 samples. Tables will provide additional results for other sampling methods.</p>
+</div>
+<p>In the following steps we will demonstrate how this is done using the quoFEM app with figures showing the inputs for case with Lw=1.0, Lh= 0.6 and utilizing LHS with 1000 samples. A table will provide additional results for other sampling methods and numbers of samples.</p>
 <ol class="arabic simple">
-<li><p>Repeating this exercise in quoFEM requires using either the OpenSees or OpenSeesPy Interpreter. Depending on the choice create a new folder and in it place one of the following files, the first is a python script to be named ghosh.py. It is to be used with the OpenSeesPy FEM application.</p></li>
+<li><p>Repeating this exercise in quoFEM requires using either the OpenSees or the OpenSeesPy Interpreter. Depending on your choice, create a <strong>NEW</strong> folder and in it place one of the following files, the first is a python script to be named ghosh.py. It is to be used with the OpenSeesPy FEM application.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
