@@ -183,12 +183,10 @@ and were modified to scale the ground motion record from gravity
 units, <strong>g</strong> to the model units, <span class="math notranslate nohighlight">\(\frac{in}{s^2}\)</span>. Files for this example are
 included with the release of the software and are available in the
 Examples folder in a subfolder called <strong>PortalFrame2D</strong>.</p>
-<blockquote>
-<div><div class="align-center figure" id="id1">
+<div class="align-center figure" id="id1">
 <span id="figportalverification"></span><img alt="common/developer_manual/verification/desktop/quoFEM/figures/portalFrame.png" src="common/developer_manual/verification/desktop/quoFEM/figures/portalFrame.png" />
 <p class="caption"><span class="caption-text">Two-dimensional portal frame model subjected to gravity and earthquake loading</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-</div></blockquote>
 <p>To introduce uncertainty in the model, both mass and young’s modulus
 are assumed to be normally distributed random variables with means and
 standard deviation values shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">lblRV</span></code>; In this
@@ -196,7 +194,7 @@ example, the model will be sampled with the Latin Hypercube sampling
 method using both quoFEM app and a Python script
 (<strong>PortalFrameSampling.py</strong>) and response statistics from both
 analyses are compared.</p>
-<table class="colwidths-given docutils align-default">
+<table class="colwidths-given docutils align-default" id="lblrv">
 <colgroup>
 <col style="width: 40%" />
 <col style="width: 20%" />
@@ -207,7 +205,7 @@ analyses are compared.</p>
 <tr class="row-odd"><th class="head"><p>Uncertain Parameter</p></th>
 <th class="head"><p>Distribution</p></th>
 <th class="head"><p>Mean</p></th>
-<th class="head"><p>Standrad Deviation</p></th>
+<th class="head"><p>Standard Deviation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -247,29 +245,31 @@ following steps:
 </div>
 <p>#. Click on the event tab (EVT) in the left bar to open the earthquake event specification tab, select Multiple Existing for loading Type. Click on the add button to add an earthquake event.
 Then click on the choose button to select the event file.</p>
-<div class="align-center figure">
+<div class="align-center figure" id="id5">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/workEvtTab.png" src="common/developer_manual/verification/desktop/quoFEM/figures/workEvtTab.png" />
+<p class="caption"><span class="caption-text">Work on EVT</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>Choose the event file (texttt{BM68elc.json}) for El Centro earthquake provided in the portal frame 2D example folder.</p></li>
 </ol>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id6">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/evtFileLocation.png" src="common/developer_manual/verification/desktop/quoFEM/figures/evtFileLocation.png" />
-<p class="caption"><span class="caption-text">Choose event file</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Choose event file</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>#. Now select the random variables tab (RVs) from the left bar, change the random variables types to normal and set the mean and standard deviation values of the floor mass and
 Young’s modulus.  Notice that quoFEM app has automatically
 detected parameters defined in the texttt{OpenSees} tcl file using the pset
 command and defined them as random variables.</p>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id7">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/workUqTab.png" src="common/developer_manual/verification/desktop/quoFEM/figures/workUqTab.png" />
-<p class="caption"><span class="caption-text">Work on <strong>UQ</strong> tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Work on <strong>UQ</strong> tab</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>#.  Now click on run, set the analysis parameters, working directory and applications directory and click submit to run the analysis.
 If the run is successfull the program will automatically open the
 results tab showing the summary of results (Cref{fig:figure27}).</p>
-<div class="align-center figure">
+<div class="align-center figure" id="id8">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/runAnalysis.png" src="common/developer_manual/verification/desktop/quoFEM/figures/runAnalysis.png" />
+<p class="caption"><span class="caption-text">Pop-up shown when clicking <strong>Run</strong></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="verification-script">
 <h2>Verification Script<a class="headerlink" href="#verification-script" title="Permalink to this headline">¶</a></h2>
@@ -351,13 +351,13 @@ quantification problem locally using EE-UQ and using the Python script
 produces the results shown in figures below. The results (mean and standard deviation
 values of EDPs) for both are compared in the table below and, as seen, are in good
 agreement.</p>
-<div class="align-center figure" id="id7">
+<div class="align-center figure" id="id9">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/resultsSummaryTab.png" src="common/developer_manual/verification/desktop/quoFEM/figures/resultsSummaryTab.png" />
-<p class="caption"><span class="caption-text">Outputs from EE-UQ</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Outputs from EE-UQ</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id8">
+<div class="align-center figure" id="id10">
 <img alt="common/developer_manual/verification/desktop/quoFEM/figures/pyOutputs.png" src="common/developer_manual/verification/desktop/quoFEM/figures/pyOutputs.png" />
-<p class="caption"><span class="caption-text">Outputs from PortalFrameSamplying.py script</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Outputs from PortalFrameSamplying.py script</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <table class="docutils align-default">
 <colgroup>
