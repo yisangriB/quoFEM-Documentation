@@ -193,7 +193,7 @@
 <p>Given how SimCenter applications fit in with the environment, a level 2 diagrams now demonstrates how the SimCenter applications are broken into high level components. The SimCenter applications are, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figContainer</span></code>, broken into two components: A front end UI and a back end application that runs the workflow. The front end applications are desktop applications written using the cross-platform Qt framework. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on a HPC utilizing resources made available to NHE community through DeisignSafe.</p>
 <div class="align-center figure" id="id2">
 <span id="figcontainer"></span><img alt="../../../../_images/container.png" src="../../../../_images/container.png" />
-<p class="caption"><span class="caption-text">System Container Diagram for SimCenter Applications</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">System container diagram for SimCenter applications.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="level-3-container-diagrams-for-the-front-and-back-end-components">
@@ -201,13 +201,13 @@
 <p>Two level 3 diagrams are now presented which break up the two containers into the major building blocks or components in C4 terminology. In <code class="xref std std-numref docutils literal notranslate"><span class="pre">figComponentFront</span></code> the component diagram for the front end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequentially interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.</p>
 <div class="align-center figure" id="id3">
 <span id="figcomponentfront"></span><img alt="../../../../_images/componentFront.png" src="../../../../_images/componentFront.png" />
-<p class="caption"><span class="caption-text">Component Diagram for Front End UI</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Component diagram for front end UI.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>The component diagram for the backend application shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figComponentBack</span></code>, shows that the backend is made up of a number of component, all applications. The application “femUQ.py” is the application that parses the input from the front end, sets up the workflow and launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a WorkflowApplication.json file. A file is used to allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Control is then passed to a UQ Engine, which repeatedly runs the workflow to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided.
 The figure shows the backend application running locally or remotely on a <a class="reference external" href="mailto:HPC&#37;&#52;&#48;DesignSafe">HPC<span>&#64;</span>DesignSafe</a>.</p>
 <div class="align-center figure" id="id4">
 <span id="figcomponentback"></span><img alt="../../../../_images/componentBack.png" src="../../../../_images/componentBack.png" />
-<p class="caption"><span class="caption-text">Component Diagram for Backend Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Component diagram for the backend application.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="level-4-uml-diagrams">
@@ -278,7 +278,7 @@ The figure shows the backend application running locally or remotely on a <a cla
 </div></blockquote>
 <div class="align-center figure" id="id6">
 <span id="figumlwe"></span><img alt="../../../../_images/umlWE.png" src="../../../../_images/umlWE.png" />
-<p class="caption"><span class="caption-text">UML Diagram for WE-UQ</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">UML diagram for WE-UQ.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="uml-pbe">
@@ -286,7 +286,7 @@ The figure shows the backend application running locally or remotely on a <a cla
 <p>PBE is a tool for performance based engineering. Given a building and an event it will calculate downtime and loss estimates. As can be sen in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figumlPBE</span></code>,  it adds a LossModelSelection to the component Selections available in EE-UQ. In future it, or another application, will add similar for WE-UQ. The Loss Model applications currently available for selection include a a P58 Loss Model and a HAZUS Loss Model. Depending on selection, deifferent widgets are presented for the user to input the different input arguments needed for the different loss model calculations. Presently the calculations for both loss models are perforrmed by the same python script, CalculateDL.py, in the collection of backend applications.</p>
 <div class="align-center figure" id="id7">
 <span id="figumlpbe"></span><img alt="../../../../_images/umlPBE.png" src="../../../../_images/umlPBE.png" />
-<p class="caption"><span class="caption-text">UML Diagram for PBE</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">UML diagram for PBE.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="uml-earthquakeevents">
@@ -294,7 +294,7 @@ The figure shows the backend application running locally or remotely on a <a cla
 <p>The Earthquake Events package, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figumlEarthquakeEvents</span></code>, contains an Earthquake Event selector with a number of Earthquake Event selections available. The selections include options that interface with the NGA west server directly and options that will collect inputs for stochastic input models of Vlachos et Al or Dabahi and DerKiuerghian, peer NGA records, site response and our own SimCenterEvent format. Each of these widgets corresponds to one application in the backend, e.g. RockOutcrop corresponds to SiteReponse, and it is this application that will run when the workflow runs.</p>
 <div class="align-center figure" id="id8">
 <span id="figumlearthquakeevents"></span><img alt="../../../../_images/umlEarthquakeEvents.png" src="../../../../_images/umlEarthquakeEvents.png" />
-<p class="caption"><span class="caption-text">UML Diagram for Earthquake Events</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">UML diagram for earthquake events.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="uml-windevents">
@@ -302,7 +302,7 @@ The figure shows the backend application running locally or remotely on a <a cla
 <p>Similar to the Earthquake Events package, the wind events package shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figumlWindEvents</span></code>, contains a WInd Event Selector with a number of Wnd Event selections available. The selections include options for stochastically generated wind events, events that obtain wind loading from the vortex-winds server, options to obtain forces from eind tunnel events, either from the Tokyo Ploytechnic University database, or a user supplied file.</p>
 <div class="align-center figure" id="id9">
 <span id="figumlwindevents"></span><img alt="../../../../_images/umlWindEvents.png" src="../../../../_images/umlWindEvents.png" />
-<p class="caption"><span class="caption-text">UML Diagram for Wind Events</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">UML diagram for wind events.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="simcentercommon">
@@ -310,7 +310,7 @@ The figure shows the backend application running locally or remotely on a <a cla
 <p>SimCenter common shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlCommon</span></code> contains a number of component selctions, BIM selection, EDP Selection, SAM Selection, FEM Selection and UQ Engine Selection. Each contains a number of options. The components and their options are all subclasses of the SImCenterAppWidget class, The SImCenterAppWidget has methods to output and input from a JSON object. SimCenterCommon also contains the RandomVariablesContainer class, each object being a container for a number of RandomVariables. Each RansomVariable having a name and a RandomVariable Distribution associated with it. Types of RandomVariableDistributions include for exmaple Normal, Lognormal, Uniform, Beta, and Gumbel.</p>
 <div class="align-center figure" id="id10">
 <span id="figumlcommon"></span><img alt="../../../../_images/umlCommon.png" src="../../../../_images/umlCommon.png" />
-<p class="caption"><span class="caption-text">UML Diagram for SimCenter Common</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">UML diagram for SimCenter common.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="simcenter-backend-applications">
@@ -318,7 +318,7 @@ The figure shows the backend application running locally or remotely on a <a cla
 <p>The BackendApplications are currently all in a single package. These are the applications that perform the numerical computations when the workflow runs. Some of these applications rely on external applications, websites, and external packages.  The external applications, web services, and libraries are as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figAppDiagramBackend</span></code>.</p>
 <div class="align-center figure" id="id11">
 <span id="figappdiagrambackend"></span><img alt="../../../../_images/appDiagramBackend.png" src="../../../../_images/appDiagramBackend.png" />
-<p class="caption"><span class="caption-text">Applications for Backend Applications</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Applications for backend applications.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

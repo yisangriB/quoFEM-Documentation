@@ -193,39 +193,39 @@
             
   <div class="section" id="reliability-analysis">
 <span id="lbldakotareliability"></span><h1><span class="section-number">4.1.1.3. </span>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline">¶</a></h1>
-<p>Reliability Methods, like forward methods (sampling methods), are probabilistic algorithms for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike the foward methods, provide PDF and CDF about user specified response and probability levels, i.e. given the set of uncertain input variables, what is the probability that the response output is below or above a certain level?  As a consequence of concentrating at certain response outputs, these functions are often more efficient at calculating responses in the tails of the response distributions (events with low probability) since the number of samples required to resolve a low probability can be prohibitive.</p>
-<p>The methods are split into two:</p>
+<p>Reliability methods are another class of probabilistic algorithms used for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike foward methods, provide PDFs and CDFs about user specified response and probability levels, i.e. given a set of uncertain input variables, they model the probability that the response output is below or above a certain level.  As a consequence of concentrating on only certain response outputs, these models are often more efficient when calculating responses in the tails of the response distributions (events with low probability) since the number of samples required by a forward method to resolve a low probability can be prohibitive.</p>
+<p>Reliability methods can be split into local and global methods, as elaborated in the following sections.</p>
 <div class="section" id="local-reliability-methods">
 <h2>Local Reliability Methods<a class="headerlink" href="#local-reliability-methods" title="Permalink to this headline">¶</a></h2>
 <p>Local reliability methods include the Mean Value method and a family of most probable point (MPP) search methods. Each of these methods is gradient-based, employing local approximations and/or local optimization methods. The user selects the local method using the pull down menu.</p>
 <p>The default local reliability method is the most probable point (MPP) method. For the MPP method the user provides the follwing inputs:</p>
 <div class="align-center figure" id="id1">
 <span id="figlocalmpp"></span><img alt="../../../../_images/localReliabilityMPP.png" src="../../../../_images/localReliabilityMPP.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.8 </span><span class="caption-text">Local Reliability MPP Option</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.8 </span><span class="caption-text">Local reliability analysis using the MPP option.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
-<li><p>The first option involves selection of the MPP search method:</p></li>
+<li><p>The first input involves selection of the MPP search method from the following options:</p></li>
 </ol>
 <ul class="simple">
-<li><p>no_approx: the MPP search on the original response functions without the use of any approximations. Combining this option with first-order and second-order integration approaches (see next section) results in the traditional first-order and second-order reliability methods (FORM and SORM).</p></li>
-<li><p>x_taylor_mean: a single Taylor series per response/probability level in x-space centered at the uncertain variable means. (Combined with a first-order approach, this is commonly known as the Advanced Mean Value (AMV) method and combined with the second-order approach the method has been named AMV2:)</p></li>
-<li><p>u_taylor_mean: same as AMV/AMV2, except that the Taylor series is expanded in u-space, termed u-space AMV methods.</p></li>
-<li><p>x_traylor_mpp: an initial Taylor series approximation in x-space at the uncertain variable means, with iterative expansion updates at each MPP estimate until the MPP converges. The first-order option is commonly known as AMV+</p></li>
-<li><p>u_taylor_mpp: same as AMV+/AMV2+, except that the expansions are performed in u-space.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_approx</span></code>: the MPP search on the original response functions without the use of any approximations. Combining this option with first-order and second-order integration approaches (see next section) results in the traditional first-order and second-order reliability methods (FORM and SORM).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x_taylor_mean</span></code>: a single Taylor series per response/probability level in x-space centered at the uncertain variable means. (Combined with a first-order approach, this is commonly known as the Advanced Mean Value (AMV) method and combined with the second-order approach the method has been named AMV2:)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u_taylor_mean</span></code>: same as AMV/AMV2, except that the Taylor series is expanded in u-space, termed u-space AMV methods.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x_traylor_mpp</span></code>: an initial Taylor series approximation in x-space at the uncertain variable means, with iterative expansion updates at each MPP estimate until the MPP converges. The first-order option is commonly known as AMV+</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u_taylor_mpp</span></code>: same as AMV+/AMV2+, except that the expansions are performed in u-space.</p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>The second option involves the user selecting the integration approach for computing probabilities at the MPP. These can be selected to be first-order or second-order integration.</p></li>
-<li><p>Finally the user selects from a drop down menu either response levels or probability levels. The user then provides these levels in the line edit to the right of the pull down menu.</p></li>
+<li><p>The second input involves the user selecting the integration approach for computing probabilities at the MPP. These can be selected to be first-order or second-order integration.</p></li>
+<li><p>Finally the user selects either response levels or probability level from a drop down menu. The user then provides these levels in the line edit to the right of the pull down menu.</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Only a single quantity of interest may be specified when using MPP</p>
 </div>
-<p>The second local reliability method available is the Mean Value method (also known as MVFOSM). It is the simplest and least-expensive reliability method because it estimates the response means, response standard deviations, and all response-probability levels from a single evaluation of response functions and their gradients at the uncertain variable means. This approximation can have acceptable accuracy when the response functions are nearly linear and their distributions are approximately Gaussian, but <strong>can have poor accuracy in other situations</strong>.</p>
+<p>The second local reliability method available is the Mean Value method (also known as MVFOSM). It is the simplest and least-expensive reliability method because it estimates the response means, response standard deviations, and all response-probability levels from a single evaluation of the response functions and their gradients at the uncertain variable means. This approximation can have acceptable accuracy when the response functions are nearly linear and their distributions are approximately Gaussian, but <strong>can have poor accuracy in other situations</strong>.</p>
 <p>As shown in the figure below the user selects either to use response levels or probability levels. The user then inputs the levels.</p>
 <div class="align-center figure" id="id2">
 <span id="figlocalmv"></span><img alt="../../../../_images/localReliabilityMVFOSM.png" src="../../../../_images/localReliabilityMVFOSM.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.9 </span><span class="caption-text">Local Reliability MVFOSM Option</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.9 </span><span class="caption-text">Local reliability analysis using the MVFOSM option.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="global-reliability-methods">
@@ -234,7 +234,7 @@
 <p>The user specifies if the gaussian process is to be created in x-space (original) or u-space (transformed). The user also specifies the response quantity levels (there is no option available for probability levels) and a seed.</p>
 <div class="align-center figure" id="id3">
 <span id="figglobalreliability"></span><img alt="../../../../_images/globalReliability.png" src="../../../../_images/globalReliability.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.10 </span><span class="caption-text">Global Reliability</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.10 </span><span class="caption-text">Global reliability analysis.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
