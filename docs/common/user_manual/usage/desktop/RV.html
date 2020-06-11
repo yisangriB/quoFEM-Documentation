@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.4. QoI: Quantaties of Interest" href="quoFEM/QuantatiesOfInterest.html" />
+    <link rel="next" title="4.4. QoI: Quantities of Interest" href="quoFEM/QuantitiesOfInterest.html" />
     <link rel="prev" title="4.2. FEM: Finite Element Method" href="quoFEM/FEM.html" /> 
 </head>
 
@@ -57,7 +57,7 @@
 
           
             
-            <img src="../../../../_static/EE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -94,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">4.2. FEM: Finite Element Method</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantatiesOfInterest.html">4.4. QoI: Quantaties of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">4.4. QoI: Quantities of Interest</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -184,12 +184,12 @@
 <p>The RV panel allows the user to specify the probabilistic distribution for the random problem at hand. The following probabilistic distributions for the random variables are currently supported:</p>
 <ol class="arabic">
 <li><p><a class="reference external" href="https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-normal_uncertain.html">Normal (Gaussian)</a></p>
-<p>User provides the mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) of the normal distibution. The density function of the normal distribution, as a function of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is:</p>
+<p>User provides the mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) of the normal distribution. The density function of the normal distribution, as a function of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-0">
 <span class="eqno">(4.3.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-0" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{1}{\sqrt{2 \pi} \sigma} \exp \left( -{\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2} \right)\]</div>
 </li>
 <li><p><a class="reference external" href="https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-lognormal_uncertain.html">Lognormal</a></p>
-<p>User provides the mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) of the lognormal distibution. The density function of the lognormal distribution, as a function of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is:</p>
+<p>User provides the mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) of the lognormal distribution. The density function of the lognormal distribution, as a function of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-1">
 <span class="eqno">(4.3.2)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-1" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} \exp \left( -{\frac{1}{2} \left( \frac{\ln x - \lambda}{\zeta} \right)^2} \right)\]</div>
 </li>
@@ -199,25 +199,25 @@
 </div></blockquote>
 <ol class="arabic" start="3">
 <li><p><a class="reference external" href="https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-beta_uncertain.html">Beta</a></p>
-<p>User provides <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, lower bound (<span class="math notranslate nohighlight">\(L_B\)</span>), and an upper bound (<span class="math notranslate nohighlight">\(U_B\)</span>) for the beta distibution. The density function of the normal distribution, as a function of these quantaties is:</p>
+<p>User provides <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, lower bound (<span class="math notranslate nohighlight">\(L_B\)</span>), and an upper bound (<span class="math notranslate nohighlight">\(U_B\)</span>) for the beta distribution. The density function of the normal distribution, as a function of these quantities is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-2">
 <span class="eqno">(4.3.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-2" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \frac{(x - L_B)^{\alpha-1}(U_B-x)^{\beta-1}}{(U_B - L_B)^{\alpha + \beta - 1}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma(\alpha)\)</span> is the <a class="reference external" href="http://mathworld.wolfram.com/GammaFunction.html">Gamma function</a>.</p>
 </li>
 <li><p><a class="reference external" href="https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-uniform_uncertain.html">Uniform</a></p>
-<p>User provides the lower bound (<span class="math notranslate nohighlight">\(L_B\)</span>), and an upper bound (<span class="math notranslate nohighlight">\(U_B\)</span>) for the uniform distibution. The density function of the normal distribution, as a function of these quantaties is:</p>
+<p>User provides the lower bound (<span class="math notranslate nohighlight">\(L_B\)</span>), and an upper bound (<span class="math notranslate nohighlight">\(U_B\)</span>) for the uniform distribution. The density function of the normal distribution, as a function of these quantities is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-3">
 <span class="eqno">(4.3.4)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-3" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{1.0}{(U_B - L_B)}\]</div>
 <p>The mean of the distribution is <span class="math notranslate nohighlight">\(\frac{(U_B + L_B)}{2.0}\)</span></p>
 </li>
 <li><p><a class="reference external" href="https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-weibull_uncertain.html">Weibull</a></p>
-<p>User provides shape parameter (<span class="math notranslate nohighlight">\(k\)</span>) and scale parameter (<span class="math notranslate nohighlight">\(\lambda\)</span>)  for the Weibull distibution. The density function of the Weibull distribution, as a function of these quantaties is:</p>
+<p>User provides shape parameter (<span class="math notranslate nohighlight">\(k\)</span>) and scale parameter (<span class="math notranslate nohighlight">\(\lambda\)</span>)  for the Weibull distribution. The density function of the Weibull distribution, as a function of these quantities is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-4">
 <span class="eqno">(4.3.5)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-4" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1} \exp \left( -(x/\lambda)^{k} \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(k,\lambda &gt; 0\)</span> and <span class="math notranslate nohighlight">\(x &gt;= 0\)</span>. For <span class="math notranslate nohighlight">\(x&lt;0\)</span>, <span class="math notranslate nohighlight">\(f(x) = 0\)</span>.</p>
 </li>
 <li><p><a class="reference external" href="https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-gumbel_uncertain.html">Gumbel</a></p>
-<p>User provides <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> for the Gumbel distibution, where <span class="math notranslate nohighlight">\(\beta\)</span> is known as the <strong>location parameter</strong> and <span class="math notranslate nohighlight">\(\frac{1}{\alpha}\)</span> the <strong>scale parameter</strong>. The density function of the Gumbel distribution, as a function of these quantaties is:</p>
+<p>User provides <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> for the Gumbel distribution, where <span class="math notranslate nohighlight">\(\beta\)</span> is known as the <strong>location parameter</strong> and <span class="math notranslate nohighlight">\(\frac{1}{\alpha}\)</span> the <strong>scale parameter</strong>. The density function of the Gumbel distribution, as a function of these quantities is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-5">
 <span class="eqno">(4.3.6)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-5" title="Permalink to this equation">¶</a></span>\[f(x) = \alpha e^{-\alpha(x-\beta)} \exp(-e^{-\alpha(x-\beta)})\]</div>
 </li>
@@ -225,7 +225,7 @@
 <p>For each random variable, the user must enter a name and select from the pull down menu the distribution associated with the random variable. For the distribution selected, the user must then provide the input arguments, which are as described above. <a class="reference internal" href="#figrv"><span class="std std-numref">Fig. 4.3.1</span></a> shows the panel for a problem with four Random Variables with all random input following Gaussian distributions.</p>
 <div class="align-center figure" id="id1">
 <span id="figrv"></span><img alt="../../../../_images/rv.png" src="../../../../_images/rv.png" />
-<p class="caption"><span class="caption-number">Fig. 4.3.1 </span><span class="caption-text">Random Variable specification</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.3.1 </span><span class="caption-text">Random variable specification.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

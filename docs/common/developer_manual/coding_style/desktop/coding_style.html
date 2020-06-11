@@ -56,7 +56,7 @@
 
           
             
-            <img src="../../../../_static/EE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -182,7 +182,7 @@
             
   <div class="section" id="coding-style">
 <span id="lblcodingstyle"></span><h1><span class="section-number">5. </span>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h1>
-<p>The SimCenter frontend applications are written in <strong>C++</strong>. The applications that run in the backend are written in a mixture of langauages: <strong>Python</strong>, <strong>C</strong>, and <strong>C++</strong>. The SimCenter strives to use a common style across the applications. This section outlines that style. Consistency is the most important aspect of style. The second most important aspect is following a style that the average programmer is used to reading. Not all code will follow th guide,</p>
+<p>The SimCenter frontend applications are written in <strong>C++</strong>. The applications that run in the backend are written in a mixture of languages: <strong>Python</strong>, <strong>C</strong>, and <strong>C++</strong>. The SimCenter strives to use a common style across the applications. This section outlines that style. Consistency is the most important aspect of style. The second most important aspect is following a style that the average programmer is used to reading. Not all code will follow th guide,</p>
 <div class="section" id="python-style">
 <h2><span class="section-number">5.1. </span>Python Style<a class="headerlink" href="#python-style" title="Permalink to this headline">¶</a></h2>
 <p>For code written in Python SimCenter programmers follow the widely used
@@ -190,7 +190,7 @@
 </div>
 <div class="section" id="c-c-style">
 <h2><span class="section-number">5.2. </span>C/C++ Style<a class="headerlink" href="#c-c-style" title="Permalink to this headline">¶</a></h2>
-<p>Unlike Python, C/C++ do not have a widely accepted style guideline. Some guidlines of note include the <a class="reference external" href="https://google.github.io/styleguide/cppguide.html">Google Style</a>, the <a class="reference external" href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html">C++ Core Guidelines</a> (edited by Stroustrup and Sutter), and an older
+<p>Unlike Python, C/C++ do not have a widely accepted style guideline. Some guidelines of note include the <a class="reference external" href="https://google.github.io/styleguide/cppguide.html">Google Style</a>, the <a class="reference external" href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html">C++ Core Guidelines</a> (edited by Stroustrup and Sutter), and an older
 C++</p>
 <div class="section" id="comments">
 <h3><span class="section-number">5.2.1. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
@@ -198,7 +198,7 @@ C++</p>
 </div>
 <div class="section" id="naming-conventions">
 <h3><span class="section-number">5.2.2. </span>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h3>
-<p>All names should be meaningful and Follow a camel case approach. For classes the names start with an uppercase letter, all class methods, functions, and variables shall start with a lowercase letter. The exception is consstant variables, which should be all uppercase, e.g. <code class="code docutils literal notranslate"><span class="pre">const</span> <span class="pre">double</span> <span class="pre">PI=3.14159265358979323;</span></code></p>
+<p>All names should be meaningful and Follow a camel case approach. For classes the names start with an uppercase letter, all class methods, functions, and variables shall start with a lowercase letter. The exception is constant variables, which should be all uppercase, e.g. <code class="code docutils literal notranslate"><span class="pre">const</span> <span class="pre">double</span> <span class="pre">PI=3.14159265358979323;</span></code></p>
 </div>
 <div class="section" id="files">
 <h3><span class="section-number">5.2.3. </span>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
@@ -206,7 +206,7 @@ C++</p>
 <li><p>Use a <strong>.cpp</strong> extension for code files and a <strong>.h</strong> extension for interface files.</p></li>
 <li><p>All files should include at the start the <a class="reference internal" href="../../../user_manual/license.html#lbllicense"><span class="std std-ref">Copyright and License</span></a></p></li>
 <li><p>All file should contain some comments about what the file contains, and the name of the developers who worked substantially on the code.</p></li>
-<li><p>Use indendation to make the code easier to read, the <strong>Qt</strong> editor has a nice feature that will auto indent code for you.</p></li>
+<li><p>Use indentation to make the code easier to read, the <strong>Qt</strong> editor has a nice feature that will auto indent code for you.</p></li>
 <li><p>In addition, when writing h header files:
 #. Never ever ever use <strong>using namespace</strong> in a header.
 #. All header files should additionally include documentation as the the purpose of the class and the methods. The returns and args to the functions should be documented.
@@ -329,7 +329,7 @@ C++</p>
 <h3><span class="section-number">5.2.4. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Initialize all variables</p></li>
-<li><p>When initilializing float and double variables with values that could be read as integer always include a <strong>.0</strong>, i.e. <code class="code docutils literal notranslate"><span class="pre">double</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">1.0;</span></code></p></li>
+<li><p>When initializing float and double variables with values that could be read as integer always include a <strong>.0</strong>, i.e. <code class="code docutils literal notranslate"><span class="pre">double</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">1.0;</span></code></p></li>
 </ol>
 </div>
 </div>

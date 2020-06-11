@@ -55,7 +55,7 @@
 
           
             
-            <img src="../../../../_static/EE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -179,7 +179,7 @@ deterministic simulation of structural response. The default application is the 
 files and use OpenSees to simulate the response, and return it in an EDP file.</p>
 <div class="align-center figure" id="id1">
 <span id="figfem"></span><img alt="../../../../_images/OpenSeesFEM.png" src="../../../../_images/OpenSeesFEM.png" />
-<p class="caption"><span class="caption-text">Options for OpenSees</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Options for OpenSees.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>For the <strong>OpenSees</strong> application the user is required to specify the
 options to be used in the transient analysis. As shown in <a class="reference internal" href="quoFEM/FEM.html#figfem"><span class="std std-numref">Fig. 4.2.1</span></a>,
@@ -189,11 +189,11 @@ this includes the choice of:</p>
 <li><p><a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Algorithm_Command">Solution Algorithm</a>: The solution algorithm is the numerical algorithm used to solve the nonlinear equations at each time step/. The default is Newton Raphson, other options include ModifiedNewton, Newton -initial, BFGS, Linear.</p></li>
 <li><p><a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/System_Command">System</a>: The system defines how the matrix equation <span class="math notranslate nohighlight">\(Ax = b\)</span> is stored in memory and solved. The default is the unsymmetric sparse solver Umfpack. Other options available include: profileSPD, BandSPD, BandGEM, Diagonal, SuperLU.</p></li>
 <li><p><a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Integrator_Command">Integration Scheme</a>: The integration scheme specifies the time stepping algorithm being employed to solve the transient problem (<span class="math notranslate nohighlight">\(M \ddot{U}(t) + C \dot{U}(t)  + Fs(U(t)) = P(t)\)</span>). The integration scheme determined the coefficients in the <span class="math notranslate nohighlight">\(A\)</span> matrix,  the meaning of the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(b\)</span> vectors and how the nodal displacements, velocities, and accelerations should be updated given <span class="math notranslate nohighlight">\(x\)</span>. The default is Newmark’s linear acceleration method (Newmark 0.5 0.25). Other Newmark methods can be employed by changing the <span class="math notranslate nohighlight">\(\alpha\)</span> and  <span class="math notranslate nohighlight">\(\beta\)</span> terms, and other methods, HHT, CentralDifference, can be selected.</p></li>
-<li><p><a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Test_Command">Convergence Test</a>, the default is a norm on the unbalance force with a convegence tolerance of 1.0e-2 and a limit of 10 trial steps to achieve convergence. Other convergence criteria can be chise incude: NormDispIncr, EnergyIncrement, and the relative norms.</p></li>
+<li><p><a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Test_Command">Convergence Test</a>, the default is a norm on the unbalance force with a convergence tolerance of 1.0e-2 and a limit of 10 trial steps to achieve convergence. Other convergence criteria that can be chosen incude: NormDispIncr, EnergyIncrement, and the relative norms.</p></li>
 <li><p>Damping Model: The pull down menu defaults to <strong>Rayleigh Damping</strong>. The other option is <strong>Modal Damping</strong>. The theory behind the two are presented in <span class="xref std std-ref">lblDamping</span>.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Rayleigh Damping. With Rayleigh damping the user mist provide the damping ratio, <span class="math notranslate nohighlight">\(\zeta\)</span> and spcify twomodes from which the damping coeeficients <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> will be determined. Mass proportional damping can be obtained by setting the <strong>Mode 2</strong> option to 0, <strong>stiffness proportional damping</strong> by setting <strong>Mode 1</strong> option to 0.</p></li>
+<li><p>Rayleigh Damping. With Rayleigh damping the user mist provide the damping ratio, <span class="math notranslate nohighlight">\(\zeta\)</span> and specify two modes from which the damping coefficients <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> will be determined. Mass proportional damping can be obtained by setting the <strong>Mode 2</strong> option to 0, <strong>stiffness proportional damping</strong> by setting <strong>Mode 1</strong> option to 0.</p></li>
 <li><p>Modal Damping: With modal damping the user specifies the number of modes and the damping ratio <span class="math notranslate nohighlight">\(\zeta\)</span>. In addition the user has the option of specifying a <strong>stiffness proportional damping ratio</strong>, which as mentioned in the <span class="xref std std-ref">lblDamping</span> is used to provide additional damping for the higher modes.</p></li>
 </ol>
 <div class="align-center figure" id="id2">
@@ -202,7 +202,7 @@ this includes the choice of:</p>
 </div>
 </div></blockquote>
 </li>
-<li><p>Analysis Script. This shall be left blank by default. Advanced users of OpenSees who have their preferred analysis script and wish to provide their own damping model can provide it here. If this option is provided, the user in their scipt should use the variables <strong>numStep</strong> and <strong>dt</strong>.</p></li>
+<li><p>Analysis Script. This shall be left blank by default. Advanced users of OpenSees who have their preferred analysis script and wish to provide their own damping model can provide it here. If this option is provided, the user in their script should use the variables <strong>numStep</strong> and <strong>dt</strong>.</p></li>
 </ol>
 </div></blockquote>
 <p>A default transient analysis script is run with these inputs. It is
