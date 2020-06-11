@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.3. Shear Building: Sampling, Reliability and Sensitivity &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>Shear Building: Sampling, Reliability and Sensitivity &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -36,9 +36,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="7. Bugs &amp; Feature Requests" href="../../../bugs.html" />
-    <link rel="prev" title="6.2. Steel Frame: Parameter Estimation" href="../quoFEM/FramePeriod.html" /> 
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,24 +84,13 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../ack.html">1. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/aboutQUOFEM.html">2. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">3. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">4. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">6. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../quoFEM/TrussOpenSees.html">6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quoFEM/FramePeriod.html">6.2. Steel Frame: Parameter Estimation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3. Shear Building: Sampling, Reliability and Sensitivity</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sampling-analysis-with-elcentro">6.3.1. Sampling Analysis with ElCentro</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sampling-analysis-with-elcentro-and-reduced-output">6.3.2. Sampling Analysis with ElCentro and Reduced Output</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#global-sensitivity">6.3.3. Global Sensitivity</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#reliability-analysis">6.3.4. Reliability Analysis</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">6. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../license.html">8. Copyright and License</a></li>
 </ul>
@@ -163,9 +150,7 @@
     
       <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../examples.html"><span class="section-number">6. </span>Examples</a> &raquo;</li>
-        
-      <li><span class="section-number">6.3. </span>Shear Building: Sampling, Reliability and Sensitivity</li>
+      <li>Shear Building: Sampling, Reliability and Sensitivity</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -185,11 +170,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="shear-building-sampling-reliability-and-sensitivity">
-<h1><span class="section-number">6.3. </span>Shear Building: Sampling, Reliability and Sensitivity<a class="headerlink" href="#shear-building-sampling-reliability-and-sensitivity" title="Permalink to this headline">¶</a></h1>
+<h1>Shear Building: Sampling, Reliability and Sensitivity<a class="headerlink" href="#shear-building-sampling-reliability-and-sensitivity" title="Permalink to this headline">¶</a></h1>
 <p>Consider the problem of uncertainty quantification in a three story shear building</p>
 <div class="align-center figure" id="id3">
 <a class="reference internal image-reference" href="../../../../../_images/shear.png"><img alt="../../../../../_images/shear.png" src="../../../../../_images/shear.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6.3.1 </span><span class="caption-text">Three Story Shear Building Model (P10.2.9, “Dynamics of Structures”, A.K.Chopra)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Three Story Shear Building Model (P10.2.9, “Dynamics of Structures”, A.K.Chopra)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>The structure has uncertain properties that all follow normal distribution:</p>
 <ol class="arabic simple">
@@ -256,7 +241,7 @@ fix <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span
 <p>Do not place the file in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containig this file multiple times (a copy will be made for each sample specified). If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
 </div>
 <div class="section" id="sampling-analysis-with-elcentro">
-<h2><span class="section-number">6.3.1. </span>Sampling Analysis with ElCentro<a class="headerlink" href="#sampling-analysis-with-elcentro" title="Permalink to this headline">¶</a></h2>
+<h2>Sampling Analysis with ElCentro<a class="headerlink" href="#sampling-analysis-with-elcentro" title="Permalink to this headline">¶</a></h2>
 <p>We shall first demonstrate the stpes to perform a sampling analysis to study the effects of the roof response of models of the building subjected to the ElCentro ground motion. We shall scale the input motion using a scale factor (factorEC) following a uniform distribution between <strong>1.2</strong> and <strong>1.8</strong>, i.e. mean <span class="math notranslate nohighlight">\(\mu_{factorEC} = 1.5\)</span> and a standard deviation of <span class="math notranslate nohighlight">\(\sigma_{factorEC} = 0.1732\)</span>, (COV = 12%).</p>
 <p>To perform a Sampling or Forward propogation uncertainty analysis the user would perform the following steps:</p>
 <p>The steps involved:</p>
@@ -325,7 +310,7 @@ fix <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span
 </div>
 </div>
 <div class="section" id="sampling-analysis-with-elcentro-and-reduced-output">
-<h2><span class="section-number">6.3.2. </span>Sampling Analysis with ElCentro and Reduced Output<a class="headerlink" href="#sampling-analysis-with-elcentro-and-reduced-output" title="Permalink to this headline">¶</a></h2>
+<h2>Sampling Analysis with ElCentro and Reduced Output<a class="headerlink" href="#sampling-analysis-with-elcentro-and-reduced-output" title="Permalink to this headline">¶</a></h2>
 <p>In the previous example we got the standard output, which can be both a lot and also limited (in sense you don’t get the information you want). In this example we will present how to obtain results just for the roof displacement, the displacement of node <strong>4</strong> in both the <strong>MDOF</strong> and <strong>OpenSees</strong> model generator examples. The examples could be extended to output for example the story shear forces, element forces, element end rotations, …</p>
 <p>For this example you will need two additional file <a class="reference external" href="https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/recorderCommands.tcl">recorderCommands.tcl</a> and <a class="reference external" href="https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/postprocess.tcl">postprocess.tcl</a>.</p>
 <p>The recorderCommands script as shown will record the envelope displacements in the first two degrees-of-freedom for nodes <strong>1</strong> through <strong>4</strong>. The file is as shown below:</p>
@@ -456,7 +441,7 @@ fix <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span
 </div>
 </div>
 <div class="section" id="global-sensitivity">
-<h2><span class="section-number">6.3.3. </span>Global Sensitivity<a class="headerlink" href="#global-sensitivity" title="Permalink to this headline">¶</a></h2>
+<h2>Global Sensitivity<a class="headerlink" href="#global-sensitivity" title="Permalink to this headline">¶</a></h2>
 <p>In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.</p>
 <p>To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propogation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the UQ tab in which the user would select a Reliability as the Dakota Method Catagory and then choose Local reliability. In the figure the user is specifying that they are interetsed in the probability that the displacement will exceed certain response levels.</p>
 <div class="align-center figure">
@@ -469,7 +454,7 @@ fix <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span
 <p>The results showing that the earthquake factor has the largest influence on the response followed  by the stiffness value k, as the results graphically would indicate.</p>
 </div>
 <div class="section" id="reliability-analysis">
-<h2><span class="section-number">6.3.4. </span>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline">¶</a></h2>
+<h2>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline">¶</a></h2>
 <p>If the user is interested in the probability that certain response measure will be exceeded an alternative strategy is to perform a reliability analysis. To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propogation method. To obtain reliability results using the Global Reliability method presnet in dakota choose the Global Reliability methods from the methods drop down menu. In the response levels enter a value of <strong>2.5</strong>, specyfying that we are interested in the value of the CDF for a displacement of the roof of 2.5in, i.e. what is probability that displacement will be less than 2.5in.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/shearReliabilityUQ.png" src="../../../../../_images/shearReliabilityUQ.png" />
