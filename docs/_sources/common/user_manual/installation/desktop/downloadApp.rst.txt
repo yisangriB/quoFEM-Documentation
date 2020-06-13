@@ -109,5 +109,5 @@ Now test that the application starts. To do this navigate to the location where 
 
    On a Mac you will need to right click on the .dmg file to open it. The UI will not start correctly while in the DMG file, you need to open the .dmg file and then copy the |short tool name| application to your Documents or Desktop folder. You can then move the .dmg file to the trash or eject it after this has been done.
 
-The |short tool name| application requires additional software outlined in next subsections to work properly. Even if the application starts correctly, it will not run the simulations until these other software packages, outlined in the next section, are installed.
+The |short tool name| application requires additional software outlined in :numref:`lblDownloadOther` to work properly. Even if the application starts correctly, it will not run the simulations until these other software packages, outlined in the next section, are installed.
 

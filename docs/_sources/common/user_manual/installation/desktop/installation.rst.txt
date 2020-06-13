@@ -10,8 +10,8 @@ chapter walks you through the install process from downloading the application t
 .. toctree::
    :maxdepth: 1
 
-   downloadApp
    downloadOther
+   downloadApp
    testInstall
 
 The following videos demonstrate these installation instructions on brand new Windows 10 and MacOS Catilina systems.
