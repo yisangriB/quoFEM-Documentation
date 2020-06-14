@@ -97,7 +97,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#python">3.1.2.2. Python</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">3.1.2.3. Dakota</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id2">3.1.2.4. OpenSees</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#edit-your-bashrc-file">3.1.2.5. Edit Your .bashrc file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-your-shell-file">3.1.2.5. Edit Your Shell file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#test-the-install-of-python-opensees-dakota">3.1.2.6. Test the Install of Python, OpenSees &amp; Dakota</a></li>
 </ul>
 </li>
@@ -206,7 +206,18 @@
 <h2><span class="section-number">3.1.2.2. </span>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <p>The Mac comes with Python pre-installed, which is currently the somewhat
 dated version 2.7. We recommend installing Python 3.7 from <a class="reference external" href="https://www.python.org/downloads/mac-osx">Python.org</a> . We recommend installing using the
-<strong>macOS 64-bit installer</strong>. The installer will place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH.</p>
+<strong>macOS 64-bit installer</strong>. The installer used to place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH, Version 3.8 does not appear to do so anymore, see the note below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>We use the python.org installation over others, due to it’s simplicity of install.</p></li>
+<li><p>In the current installation of <strong>Python</strong> it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: <strong>Update Shell Profile.command.sh</strong> and <strong>Install CertificateCommand.sh</strong>.</p></li>
+</ol>
+<div class="figure align-default" id="id3">
+<img alt="common/user_manual/installation/desktop/figures/pythonInstallShell.png:align:center:figclass:align-center" src="common/user_manual/installation/desktop/figures/pythonInstallShell.png:align:center:figclass:align-center" />
+<p class="caption"><span class="caption-number">Fig. 3.1.1 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 <p>Once Python is installed, you need to extend it by installing the following packages: <strong>numpy</strong>, <strong>scipy</strong>, and <strong>pandas</strong>. To install these packages, start a terminal window and type the following instructions:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">numpy</span>
 <span class="n">pip3</span> <span class="n">install</span> <span class="n">scipy</span>
@@ -219,6 +230,7 @@ dated version 2.7. We recommend installing Python 3.7 from <a class="reference e
 <div><ol class="arabic simple">
 <li><p>To start a terminal window you can use the spotlight app (magnifying glass at the top right corner of the desktop). Start the spotlight app and type in terminal. The terminal application should appear as the top hit. Click on it to start it.</p></li>
 <li><p>When the quoFEM app is running, open the File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>. If you used older versions of SimCenter tools this was not the default.</p></li>
+<li><p>If you forget to invoke the <strong>UpdateShellProfile.command.sh” script at the end of the install, you can always edit the correct shell file later to add the **PATH</strong> variable.</p></li>
 </ol>
 </div></blockquote>
 <ol class="arabic simple">
@@ -247,10 +259,19 @@ area you should now only have a single option, click on the link to download <st
 </dd>
 </dl>
 </div>
-<div class="section" id="edit-your-bashrc-file">
-<h2><span class="section-number">3.1.2.5. </span>Edit Your .bashrc file<a class="headerlink" href="#edit-your-bashrc-file" title="Permalink to this headline">¶</a></h2>
-<p>Finally you want to edit your .bashrc file so that the applications will find <strong>OpenSees</strong> and <strong>Dakota</strong>. You need to add the
-following lines to that file:</p>
+<div class="section" id="edit-your-shell-file">
+<h2><span class="section-number">3.1.2.5. </span>Edit Your Shell file<a class="headerlink" href="#edit-your-shell-file" title="Permalink to this headline">¶</a></h2>
+<p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e. there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <strong>PATH</strong>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
+<p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
+<p>To find which shell prgram you are using when you issue commands inside the terminal window, type the following in a terminal window:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>env | grep SHELL
+</pre></div>
+</div>
+<p>If the results is <strong>/bin/bash</strong> you will need to edit the <strong>.bashrc</strong> file or the <strong>bash_profile</strong> file. If the results is <strong>/bin/zsh</strong> you will need to edit the <strong>.zshrc</strong> or <strong>.zprofile</strong>. Typically the <strong>.bash_profile</strong> or the <strong>.zprofile</strong> file is the one to edit as these typically by design will invoke the <strong>.bashrc</strong> or <strong>.zshrc</strong> file. If in doubt, look for the files and see where <strong>Python</strong> placed its modifications. In your home directory type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>env | grep SHELL
+</pre></div>
+</div>
+<p>Finally you want to edit that file so that the applications will find <strong>OpenSees</strong> and <strong>Dakota</strong>. The format depends on the shell, just copy the fomat that Python used, e.g. my <strong>.bash_profile</strong> file has the lines:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export PATH=$HOME/bin:$PATH
 export PATH=$HOME/bin/dakota-6.10.0/bin:$PATH
 export PYTHONPATH=$HOME/bin/dakota-6.10.0/share/dakota/Python
@@ -287,9 +308,9 @@ export PYTHONPATH=$HOME/bin/dakota-6.10.0/share/dakota/Python
 <p class="admonition-title">Note</p>
 <p>Apple, in the latest release of their operating system, MacOS 10.16 Catalina, has changed the default working of Gatekeeper. Gatekeeper, first introduced in OS X Mountain Lion, is a Mac security feature that helps protect your Mac from Malware and other malicious software. Gatekeeper checks to make sure the application is safe to run by checking it against the list of apps that Apple has vetted and approved for the Apple Mac Store and/or approved by Apple even if not offered through the app store. In previous versions of MacOS, Gatekeeper had three security level options: App Store, App Store and Identified Developers, and Anywhere. Anywhere has been removed and this will cause problems with Dakota.</p>
 <p>Apple has greatly increased security with <strong>Catilina</strong> and now by default terminal applications can no longer run if they are downloaded from the internet and not signed by a recognized Apple developer. To over come this issue, before you start issuing the above commands in a terminal, open <strong>System Preferences/Security and Privacy</strong>. As you issue the commands, click the <strong>Cancel</strong> button in the window that pops warning you the <strong>application cannot be opened because the Developer cannot be verified</strong> up and then click the button <strong>Allow Anayway</strong> that now appears beside the application name in the <strong>Security an Privacy</strong> window, as shown in figure below. Rerun the application and it should now work without the warning window popping up.</p>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id4">
 <img alt="../../../../_images/macSecurity.png" src="../../../../_images/macSecurity.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.1 </span><span class="caption-text">Catilina: Security and Privacy Panel for Unsigned Terminal Applications.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.2 </span><span class="caption-text">Catilina: Security and Privacy Panel for Unsigned Terminal Applications.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="admonition warning">

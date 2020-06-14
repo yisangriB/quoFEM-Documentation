@@ -17,7 +17,17 @@ Python
 
 The Mac comes with Python pre-installed, which is currently the somewhat 
 dated version 2.7. We recommend installing Python 3.7 from `Python.org <https://www.python.org/downloads/mac-osx>`_ . We recommend installing using the 
-**macOS 64-bit installer**. The installer will place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH.
+**macOS 64-bit installer**. The installer used to place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH, Version 3.8 does not appear to do so anymore, see the note below. 
+
+.. note:: 
+   #. We use the python.org installation over others, due to it's simplicity of install.
+   #. In the current installation of **Python** it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: **Update Shell Profile.command.sh** and **Install CertificateCommand.sh**.
+
+   .. figure:: figures/pythonInstallShell.png
+        :align: center
+      	:figclass: align-center
+
+      Python: Folder Displayed at Conclusion of Install
 
 Once Python is installed, you need to extend it by installing the following packages: **numpy**, **scipy**, and **pandas**. To install these packages, start a terminal window and type the following instructions:
 
@@ -31,6 +41,8 @@ Once Python is installed, you need to extend it by installing the following pack
    #. To start a terminal window you can use the spotlight app (magnifying glass at the top right corner of the desktop). Start the spotlight app and type in terminal. The terminal application should appear as the top hit. Click on it to start it.
 
    #. When the |app| is running, open the File/Preferences and make sure that python3 appears under **External Applications:Python**. If you used older versions of SimCenter tools this was not the default.
+
+   #. If you forget to invoke the **UpdateShellProfile.command.sh" script at the end of the install, you can always edit the correct shell file later to add the **PATH** variable. 
 
   #. As an alternative, you can install the SimCenter's pelicun module, which will include all three of the above
 
@@ -54,11 +66,27 @@ Steps to Install OpenSees on a Mac:
       1. Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an **OpenSees-3.1.0** folder. Move that folder to the **bin/OpenSees** folder. 
       2. Download and run the Tcl installer.
 
-Edit Your .bashrc file
-^^^^^^^^^^^^^^^^^^^^^^
+Edit Your Shell file
+^^^^^^^^^^^^^^^^^^^^
 
-Finally you want to edit your .bashrc file so that the applications will find |OpenSees| and |Dakota|. You need to add the
-following lines to that file:
+On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e. there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the **bash** shell, the up and coming one is the **Z** shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users **PATH**. Users can modify this path by editing files that the shell program will read from everytime the program is started.
+
+When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as **OpenSees** and **dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.
+
+To find which shell prgram you are using when you issue commands inside the terminal window, type the following in a terminal window:
+
+.. code:: none
+   
+   env | grep SHELL
+
+If the results is **/bin/bash** you will need to edit the **.bashrc** file or the **bash_profile** file. If the results is **/bin/zsh** you will need to edit the **.zshrc** or **.zprofile**. Typically the **.bash_profile** or the **.zprofile** file is the one to edit as these typically by design will invoke the **.bashrc** or **.zshrc** file. If in doubt, look for the files and see where **Python** placed its modifications. In your home directory type:
+
+.. code:: none
+   
+   env | grep SHELL
+
+
+Finally you want to edit that file so that the applications will find |OpenSees| and |Dakota|. The format depends on the shell, just copy the fomat that Python used, e.g. my **.bash_profile** file has the lines:
 
 .. code:: none
    
@@ -67,7 +95,7 @@ following lines to that file:
    export PYTHONPATH=$HOME/bin/dakota-6.10.0/share/dakota/Python
 
 .. note:
-   #. Apple in MacOS Catilina has moved from users defaulting to the **bash** shell to the **Z** shell. As a consequence the name of the files to edit has changed from **.bashrc** to **.zshrc** or **.zprofile**. To find out which type **ls -sal** in your home directory and see which file is located there.
+   #. Apple in MacOS Catilina has moved from users defaulting to the **bash** shell to the **Z** shell. As a consequence the name of the files to edit has changed from **.bash_profile** to the **.zprofile**. 
    #. If you upgrade your system from an older version of the operating system, it keeps your old shell preferences. You can confirm your current shell by typing in a terminal **env | grep shell**.
 
 Test the Install of Python, OpenSees & Dakota
