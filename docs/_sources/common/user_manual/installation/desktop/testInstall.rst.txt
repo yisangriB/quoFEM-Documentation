@@ -22,7 +22,7 @@ Test the Installation
 
      	.. note::
    
-		For those interested, we are using quoFEM to answer the question of what is the distance between two random points (assumed independent and uniformily distributed) located on the line segment (0,1). Exact solution is the mean of the distance should be **1/3** and the standard deviation **1/6**. 
+		For those interested, we are using quoFEM to answer the question of what is the distance between two random points (assumed independent and uniformily distributed) located on the line segment (0,1).The mean distance given by the exact solution is **1/3** with a standard deviation of **1/6**. 
 
 .. only:: EEUQ_app
 
