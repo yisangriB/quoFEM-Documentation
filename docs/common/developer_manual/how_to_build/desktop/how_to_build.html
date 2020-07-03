@@ -106,12 +106,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#setup-the-development-environment">1.1. Setup the Development Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#obtain-the-source-code">1.2. Obtain the Source Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#build-the-backend">1.3. Build the Backend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-the-user-interface">1.4. Build the User Interface</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#build-using-the-qt-creator-recommended">1.4.1. Build using the Qt Creator (Recommended)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-using-the-terminal">1.4.2. Build using the terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-the-user-interface">1.6. Build the User Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-using-the-qt-creator-recommended">1.6.1. Build using the Qt Creator (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-using-the-terminal">1.6.2. Build using the terminal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#set-the-user-interface-preferences">1.5. Set the User Interface Preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-the-user-interface-preferences">1.7. Set the User Interface Preferences</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
@@ -251,19 +251,19 @@
 </div></blockquote>
 </div>
 <div class="section" id="build-the-user-interface">
-<h2><span class="section-number">1.4. </span>Build the User Interface<a class="headerlink" href="#build-the-user-interface" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.6. </span>Build the User Interface<a class="headerlink" href="#build-the-user-interface" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="build-using-the-qt-creator-recommended">
-<h3><span class="section-number">1.4.1. </span>Build using the Qt Creator (Recommended)<a class="headerlink" href="#build-using-the-qt-creator-recommended" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.6.1. </span>Build using the Qt Creator (Recommended)<a class="headerlink" href="#build-using-the-qt-creator-recommended" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Start Qt Creator, then open the quoFEM.pro file located in the quoFEM directory that was downloaded in the previous steps.</p></li>
 <li><p>Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler and configuration and following the onscreen dialog.</p></li>
-<li><p>Build the application and run it in Qt Creator IDE by using the <code class="docutils literal notranslate"><span class="pre">Run</span></code> button. This can be done using the keyboard shortcut <code class="docutils literal notranslate"><span class="pre">F5</span></code> to build and start the tool.</p></li>
+<li><p>Build the application and run it in Qt Creator IDE by using the <strong>Run</strong> button. This can be done using the keyboard shortcut <code class="docutils literal notranslate"><span class="pre">F5</span></code> to build and start the tool.</p></li>
 </ol>
 </div></blockquote>
 </div>
 <div class="section" id="build-using-the-terminal">
-<h3><span class="section-number">1.4.2. </span>Build using the terminal<a class="headerlink" href="#build-using-the-terminal" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.6.2. </span>Build using the terminal<a class="headerlink" href="#build-using-the-terminal" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ol class="arabic">
 <li><p>First, create a build output directory. This can be done in the terminal using the command <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build</span></code>.</p></li>
@@ -278,11 +278,11 @@
 </div>
 </div>
 <div class="section" id="set-the-user-interface-preferences">
-<h2><span class="section-number">1.5. </span>Set the User Interface Preferences<a class="headerlink" href="#set-the-user-interface-preferences" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.7. </span>Set the User Interface Preferences<a class="headerlink" href="#set-the-user-interface-preferences" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Once built, Open the quoFEM tool, then click on file -&gt; preferences and set the applications directory entry to point to the applications folder that the build process created for BackendApplications.</p>
 </div></blockquote>
-<span class="target" id="id3"></span></div>
+</div>
 </div>
 
 
@@ -329,7 +329,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-1', 'auto');
+    ga('create', 'UA-158130480-4', 'auto');
     ga('send', 'pageview');
     </script>
 
