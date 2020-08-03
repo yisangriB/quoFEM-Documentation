@@ -38,7 +38,12 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="5. Coding Style" href="../../../coding_style/desktop/coding_style.html" />
-    <link rel="prev" title="4. Verification" href="../verification.html" /> 
+    <link rel="prev" title="4. Verification" href="../verification.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+
 </head>
 
 <body class="wy-body-for-nav">
@@ -249,7 +254,7 @@ it could represent the average distances from dwellings to fire stations or from
 
 </pre></div>
 </div>
-<p>The second a tcl script to be named ghosh.tcl. It is to be used with the OpenSees FEM application.</p>
+<p>The second a tcl script to be named <code class="docutils literal notranslate"><span class="pre">ghosh.tcl</span></code>. It is to be used with the OpenSees FEM application.</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># note: the variables x1, y1, x2, y2 will be provided when runs in workflow</span>
 <span class="c"># as long as they are defined as random variables</span>
 
@@ -273,7 +278,7 @@ it could represent the average distances from dwellings to fire stations or from
 <img alt="../../../../../_images/ghoshFEM.png" src="../../../../../_images/ghoshFEM.png" />
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Select the <strong>RV</strong> tab. Create 4 random variables named <code class="docutils literal notranslate"><span class="pre">X1</span></code>, <code class="docutils literal notranslate"><span class="pre">Y1</span></code>, <code class="docutils literal notranslate"><span class="pre">X2</span></code>, <code class="docutils literal notranslate"><span class="pre">Y2</span></code>. For each specify a uniform distribution with the range for the X variables being 0 and <code class="docutils literal notranslate"><span class="pre">Lw</span></code> and range of Y variables being 0 and <code class="docutils literal notranslate"><span class="pre">Lh</span></code>. This is as shown for <code class="docutils literal notranslate"><span class="pre">Lw</span> <span class="pre">=</span> <span class="pre">1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">Lh</span> <span class="pre">=</span> <span class="pre">0.6</span></code>.</p></li>
+<li><p>Select the <strong>RV</strong> tab. Create four random variables named <code class="docutils literal notranslate"><span class="pre">X1</span></code>, <code class="docutils literal notranslate"><span class="pre">Y1</span></code>, <code class="docutils literal notranslate"><span class="pre">X2</span></code>, <code class="docutils literal notranslate"><span class="pre">Y2</span></code>. For each specify a uniform distribution with the range for the <code class="docutils literal notranslate"><span class="pre">X</span></code> variables being <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">Lw</span></code> and range of <code class="docutils literal notranslate"><span class="pre">Y</span></code> variables being <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">Lh</span></code>. This is as shown for <code class="docutils literal notranslate"><span class="pre">Lw</span> <span class="pre">=</span> <span class="pre">1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">Lh</span> <span class="pre">=</span> <span class="pre">0.6</span></code>.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/ghoshRV.png" src="../../../../../_images/ghoshRV.png" />
@@ -293,40 +298,48 @@ it could represent the average distances from dwellings to fire stations or from
 <p>These simulations can be performed for a number of the different sampling methods for a number of different number of samples.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
 <th class="head"><p>#Samples</p></th>
 <th class="head"><p>E(P,Q)</p></th>
+<th class="head"><p>Error</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>MC</p></td>
 <td><p>100</p></td>
 <td><p>0.447626</p></td>
+<td><p>0.0560</p></td>
 </tr>
 <tr class="row-odd"><td><p>MC</p></td>
 <td><p>1000</p></td>
 <td><p>0.430936</p></td>
+<td><p>0.0166</p></td>
 </tr>
 <tr class="row-even"><td><p>MC</p></td>
 <td><p>10000</p></td>
 <td><p>0.421910</p></td>
+<td><p>0.0047</p></td>
 </tr>
 <tr class="row-odd"><td><p>LHS</p></td>
 <td><p>100</p></td>
 <td><p>0.435349</p></td>
+<td><p>0.0270</p></td>
 </tr>
 <tr class="row-even"><td><p>LHS</p></td>
 <td><p>1000</p></td>
 <td><p>0.425709</p></td>
+<td><p>0.0043</p></td>
 </tr>
 <tr class="row-odd"><td><p>LHS</p></td>
 <td><p>10000</p></td>
 <td><p>0.422350</p></td>
+<td><p>0.0037</p></td>
 </tr>
 </tbody>
 </table>
