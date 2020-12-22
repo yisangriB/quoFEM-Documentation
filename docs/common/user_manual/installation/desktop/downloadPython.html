@@ -26,6 +26,9 @@
         <script type="text/javascript" src="../../../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../../../_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -35,6 +38,7 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.2. Download the Application" href="downloadApp.html" />
@@ -121,6 +125,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -226,7 +231,7 @@
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
 <li><p>We use the python.org installation over others, due to it’s simplicity of install.</p></li>
-<li><p>In the current installation of <strong>Python</strong> it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: <strong>Update Shell Profile.command.sh</strong> and <strong>Install CertificateCommand.sh</strong>.</p></li>
+<li><p>In the current installation of Python it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code>.</p></li>
 </ol>
 <div class="align-center figure" id="id2">
 <img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" />
@@ -255,8 +260,8 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <blockquote>
-<div><p>If you forget to invoke the <strong>UpdateShellProfile.command.sh” script at the end of the install, you can always edit the correct shell file later to update the **PATH</strong> variable to point to the python application.</p>
-<p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e. there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <strong>PATH</strong>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
+<div><p>If you forget to invoke the <code class="docutils literal notranslate"><span class="pre">UpdateShellProfile.command.sh</span></code> script at the end of the install, you can always edit the correct shell file later to update the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable to point to the Python application.</p>
+<p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e. there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
 </div></blockquote>
 <p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
 <p>To find which shell prgram you are using when you issue commands inside the terminal window, type the following in a terminal window:</p>

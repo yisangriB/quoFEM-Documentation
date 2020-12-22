@@ -26,6 +26,9 @@
         <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -35,6 +38,7 @@
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="5. Coding Style" href="../../../coding_style/desktop/coding_style.html" />
@@ -115,6 +119,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -189,7 +194,7 @@ in a rectangular region. Such average distances come up in many settings. For ce
 it could represent the average distances from dwellings to fire stations or from the dwellings to the epicenter of an earthquake.</p>
 <p>The problem is defined as follows: Suppose two points <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are independent and considered uniformly distributed random points in a finite rectangle of dimension <span class="math notranslate nohighlight">\(L_w\)</span> and <span class="math notranslate nohighlight">\(L_h\)</span>. It has been <a class="reference external" href="http://www.math.utep.edu/Faculty/moschopoulos/Publications/1999-Random_Points_Associated_With_Rectangles.pdf">shown</a> that the expected average distance between these two points <span class="math notranslate nohighlight">\(E(P,Q)\)</span> is given by the formula:</p>
 <div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0">
-<span class="eqno">(4.1.2)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0" title="Permalink to this equation">¶</a></span>\[E(P,Q) = \frac{1}{15} \left( \frac{L_w^3}{L_h^2}+\frac{L_h^3}{L_w^2}+d\left(3-\frac{L_w^2}{L_h^2}-\frac{L_h^2}{L_w^2}\right)
+<span class="eqno">(4.1.9)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0" title="Permalink to this equation">¶</a></span>\[E(P,Q) = \frac{1}{15} \left( \frac{L_w^3}{L_h^2}+\frac{L_h^3}{L_w^2}+d\left(3-\frac{L_w^2}{L_h^2}-\frac{L_h^2}{L_w^2}\right)
 +\frac{5}{2} \left(\frac{L_h^2}{L_w}\log\right(\frac{L_w+d}{L_h}\left)+\frac{L_w^2}{L_h}\log\left(\frac{L_h+d}{L_w}\right)\right)\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(d=\sqrt{L_w^2+L_h^2}\)</span></p>
 <p>Using the above formula one can compute a number of expected distances for rectangles of different sizes, for example:</p>

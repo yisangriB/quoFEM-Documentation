@@ -26,6 +26,9 @@
         <script type="text/javascript" src="../../../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../../../_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -35,6 +38,7 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="4.1.1.1. Forward Propagation Methods" href="DakotaSampling.html" />
@@ -105,6 +109,14 @@
 <li class="toctree-l4"><a class="reference internal" href="DakotaInverseProblems.html">4.1.1.5. Inverse Problem</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#simcenter-uq-engine">4.1.2. SimCenter UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">4.1.2.1. Global Sensitivity Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ucsd-uq-engine">4.1.3. UCSD UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="UCSD_UQ_TMCMC.html">4.1.3.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">4.2. FEM: Finite Element Method</a></li>
@@ -128,6 +140,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -196,14 +209,14 @@
             
   <div class="section" id="uq-uncertainty-quantification">
 <h1><span class="section-number">4.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
-<p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel where the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. Presently the <strong>UQ Engine</strong> option is limited to the Dakota engine.</p>
+<p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel where the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. The default engine selected is Dakota.</p>
+<div class="align-center figure" id="id1">
+<span id="figdakota"></span><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.1 </span><span class="caption-text">UQ Engine Selection and Method Selection.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <div class="section" id="dakota-uq-engine">
 <h2><span class="section-number">4.1.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of different methods. For this reason we have divided the methods into categories though a pull-down menu, as shown in <a class="reference internal" href="#figdakota"><span class="std std-numref">Fig. 4.1.1</span></a>. Once the category has been selected, a number of different methods are made available to the user.</p>
-<div class="align-center figure" id="id1">
-<span id="figdakota"></span><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
 <p>The following categories are available:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -212,6 +225,24 @@
 <li class="toctree-l1"><a class="reference internal" href="DakotaReliability.html">4.1.1.3. Reliability Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DakotaParameterEstimation.html">4.1.1.4. Parameter Estimation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DakotaInverseProblems.html">4.1.1.5. Inverse Problem</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="simcenter-uq-engine">
+<h2><span class="section-number">4.1.2. </span>SimCenter UQ Engine<a class="headerlink" href="#simcenter-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>This is an in-house developed UQ engine of SimCenter that accommodates different UQ methods. Currently the option is limited to global sensitivity analysis:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSensitivity.html">4.1.2.1. Global Sensitivity Analysis</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="ucsd-uq-engine">
+<h2><span class="section-number">4.1.3. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>This is a module developed at UCSD. This module currently offers support for Bayesian calibration using the Transitional Markov chain Monte Carlo (TMCMC) algorithm, which is also known as the Sequential Monte Carlo algorithm:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="UCSD_UQ_TMCMC.html">4.1.3.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm</a></li>
 </ul>
 </div>
 </div>

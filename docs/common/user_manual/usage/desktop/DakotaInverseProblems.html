@@ -26,6 +26,9 @@
         <script type="text/javascript" src="../../../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../../../_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -35,9 +38,10 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.2. FEM: Finite Element Method" href="quoFEM/FEM.html" />
+    <link rel="next" title="4.1.2.1. Global Sensitivity Analysis" href="SimCenterUQSensitivity.html" />
     <link rel="prev" title="4.1.1.4. Parameter Estimation" href="DakotaParameterEstimation.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -105,6 +109,8 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">4.1.1.5. Inverse Problem</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">4.1.2. SimCenter UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">4.1.3. UCSD UQ Engine</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">4.2. FEM: Finite Element Method</a></li>
@@ -128,6 +134,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -198,16 +205,16 @@
             
   <div class="section" id="inverse-problem">
 <span id="lblinverseproblem"></span><h1><span class="section-number">4.1.1.5. </span>Inverse Problem<a class="headerlink" href="#inverse-problem" title="Permalink to this headline">¶</a></h1>
-<p>The inverse problem methods, like the parameter estimation methods presented in <span class="xref std std-ref">_lblParameterEstimation</span>, are concerned with estimation of input parameters given observational measurements. Unlike parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using an inverse method the user has some idea of the distributions associated with these parameters. This information is known as the prior distributions. The Inverse  methods take this prior information and combines it with observational data (e.g. from experiments) to infer posterior distributions on the parameter values. For the Inverse problem, a Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. For the likelihood function, that function that specifies the likelihood of observing a particular observation given the model and its associated parameterization, Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to produce the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) algorithm. For quoFEM app two families of algorithms are provided for the MCMC: DREAM, and the algorithms provided by the QUESO library.</p>
+<p>The inverse problem methods, like the parameter estimation methods, are concerned with estimation of input parameters given observational measurements. Unlike parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using an inverse method the user has some idea of the distributions associated with these parameters. This information is known as the prior distributions. The Inverse  methods take this prior information and combines it with observational data (e.g. from experiments) to infer posterior distributions on the parameter values. For the Inverse problem, a Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. For the likelihood function, that function that specifies the likelihood of observing a particular observation given the model and its associated parameterization, Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to produce the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) algorithm. For quoFEM app two families of algorithms are provided for the MCMC: DREAM, and the algorithms provided by the QUESO library.</p>
 <div class="section" id="dream">
 <h2>DREAM<a class="headerlink" href="#dream" title="Permalink to this headline">¶</a></h2>
-<p>The DiffeRential Evolution Adaptive Metropolis (DREAM) method runs multiple markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. The inputs for the method are the number of chains, seed, number of markov chain samples and burn in samples. The number of Markov chain samples per chain is number of samples divided by number of chains.</p>
-<div class="align-center figure" id="id2">
+<p>The Differential Evolution Adaptive Metropolis (<a class="reference internal" href="#id2" id="id1"><span>[DREAM]</span></a>) method runs multiple markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. The inputs for the method are the number of chains, seed, number of markov chain samples and burn in samples. The number of Markov chain samples per chain is number of samples divided by number of chains.</p>
+<div class="align-center figure" id="id3">
 <span id="figdream"></span><img alt="../../../../_images/DREAM.png" src="../../../../_images/DREAM.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.12 </span><span class="caption-text">DREAM input panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.12 </span><span class="caption-text">DREAM input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
-<dt class="label" id="id1"><span class="brackets">DREAM</span></dt>
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">DREAM</a></span></dt>
 <dd><ol class="upperalpha simple" start="10">
 <li><ol class="upperalpha simple">
 <li><p>Vrugt, C. J. F. ter Braak, C. G. H. Diks, B. A. Robinson, J. M. Hyman, and D. Higdon. Accelerating Markov chain Monte Carlo simulation by self-adaptive differential evolution with randomized subspace sampling. International Journal of Nonlinear Scientific Numerical Simulation, 10(3), 2009. 1804, 2550</p></li>

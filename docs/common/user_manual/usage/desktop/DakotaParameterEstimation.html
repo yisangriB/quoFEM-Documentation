@@ -26,6 +26,9 @@
         <script type="text/javascript" src="../../../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../../../_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -35,6 +38,7 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="4.1.1.5. Inverse Problem" href="DakotaInverseProblems.html" />
@@ -105,6 +109,8 @@
 <li class="toctree-l4"><a class="reference internal" href="DakotaInverseProblems.html">4.1.1.5. Inverse Problem</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">4.1.2. SimCenter UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">4.1.3. UCSD UQ Engine</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">4.2. FEM: Finite Element Method</a></li>
@@ -128,6 +134,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -200,12 +207,12 @@
 <span id="lbldakotaparameterestimation"></span><h1><span class="section-number">4.1.1.4. </span>Parameter Estimation<a class="headerlink" href="#parameter-estimation" title="Permalink to this headline">¶</a></h1>
 <p>Parameter Estimation methods (also known as non-linear least squares methods) are  used to fit a set of m observations (in this tool defined in the <strong>QoI</strong> tab) with a model that is non-linear with n unknown parameters (in thus tool the unknown parameters are defined in the <strong>RV</strong> tab) <span class="math notranslate nohighlight">\((m \ge n)\)</span>.  The method are obtaining the parameters that best fits the experimental results, that is that <strong>minimizes</strong> the QoI, given no prior estimation as to the distribution associated with the random variables. As such the processing scripts should leave in the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file differences between observed response and simulated response. The algorithms employed will find a set of parameters that minimizes these differences. The algorithms themselves are general functional minimization algorithms seeking to minimize:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-dakotaparameterestimation-0">
-<span class="eqno">(4.1.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-dakotaparameterestimation-0" title="Permalink to this equation">¶</a></span>\[f(x) = \sum_{i=1}^{m} w_i R_i^2 = \sum_{i=1}{m} w_i \left ( y(x)_i^{model} - y_i^{experiment} \right)^2\]</div>
+<span class="eqno">(4.1.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-dakotaparameterestimation-0" title="Permalink to this equation">¶</a></span>\[f(x) = \sum_{i=1}^{m} w_i R_i^2 = \sum_{i=1}{m} w_i \left ( y(x)_i^{model} - y_i^{experiment} \right)^2\]</div>
 <p>where <span class="math notranslate nohighlight">\(R_i\)</span> might be the difference between experimental data <span class="math notranslate nohighlight">\(y_i^{experiment}\)</span> and model predictions <span class="math notranslate nohighlight">\(y(x)_i^{model}\)</span> for a response quantity at a particular location and/or time step, <span class="math notranslate nohighlight">\(w_i\)</span> optional weights, and <span class="math notranslate nohighlight">\(x \in R^n\)</span> the <span class="math notranslate nohighlight">\(n\)</span> model parameters which are not precisely known and are being calibrated to match available data.</p>
 <p>The panel that is presented to the user when this Dakota Category is chosen, is as shown below.</p>
-<div class="align-center figure" id="id1">
+<div class="align-center figure" id="id4">
 <span id="figparameterestimation"></span><img alt="../../../../_images/ParameterEstimation.png" src="../../../../_images/ParameterEstimation.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.11 </span><span class="caption-text">Dakota parameter estimation input panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.11 </span><span class="caption-text">Dakota parameter estimation input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -217,23 +224,13 @@
 3. the weights, <span class="math notranslate nohighlight">\(w_i\)</span>, for each of the QoI. If no weights are specified, then <span class="math notranslate nohighlight">\(w_i = 1.0\)</span>.</p>
 <div class="section" id="opt-gaussnewton">
 <h2>OPT++GaussNewton<a class="headerlink" href="#opt-gaussnewton" title="Permalink to this headline">¶</a></h2>
-<p>OPT++ Provides a Gauss-Newton least squares capability which, on zero-residual test problems, can exhibit quadratic convergence rates near the solution. As a consequence, a good starting point values for the parameters should be provided. The Hessian is constructed with a Gauss-Newton approximation and the OPT++ Optimization routines are used.</p>
-<dl class="citation">
-<dt class="label" id="opt"><span class="brackets">OPT</span></dt>
-<dd><ol class="upperalpha simple" start="10">
-<li><ol class="upperalpha simple" start="3">
-<li><p>Meza, R. A. Oliva, P. D. Hough, and P. J. Williams, “OPT++: An Object Oriented Toolkit for Nonlinear Optimization”, ACM Transactions on Mathematical Software, Volume 33, Number 2, June 2007.</p></li>
-</ol>
-</li>
-</ol>
-</dd>
-</dl>
+<p>OPT++ Provides a Gauss-Newton least squares capability which, on zero-residual test problems, can exhibit quadratic convergence rates near the solution. As a consequence, a good starting point values for the parameters should be provided. The Hessian is constructed with a Gauss-Newton approximation and the OPT++ Optimization routines are used. (<a class="reference internal" href="#opt" id="id1"><span>[OPT]</span></a>).</p>
 </div>
 <div class="section" id="nl2sol">
 <h2>NL2SOL<a class="headerlink" href="#nl2sol" title="Permalink to this headline">¶</a></h2>
-<p>The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues[Dennis81]. NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This later approximation being useful when the starting guess is far from solution. For problems with large number of residuals, this algorithm is known to be more reliable than Gauss-Newton.</p>
+<p>The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues (<a class="reference internal" href="#dennis81a" id="id2"><span>[Dennis81a]</span></a>, <a class="reference internal" href="#dennis81b" id="id3"><span>[Dennis81b]</span></a>). NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This later approximation being useful when the starting guess is far from solution. For problems with large number of residuals, this algorithm is known to be more reliable than Gauss-Newton.</p>
 <dl class="citation">
-<dt class="label" id="dennis81a"><span class="brackets">Dennis81a</span></dt>
+<dt class="label" id="dennis81a"><span class="brackets"><a class="fn-backref" href="#id2">Dennis81a</a></span></dt>
 <dd><ol class="upperalpha simple" start="10">
 <li><ol class="upperalpha simple" start="5">
 <li><p>Dennis, D. M. Gay, and R. E. Welsch. An adaptive nonlinear least-squares algorithm. ACM Trans. Math. Softw.. 7(3). 348 - 368. 1981.</p></li>
@@ -241,10 +238,18 @@
 </li>
 </ol>
 </dd>
-<dt class="label" id="dennis81b"><span class="brackets">Dennis81b</span></dt>
+<dt class="label" id="dennis81b"><span class="brackets"><a class="fn-backref" href="#id3">Dennis81b</a></span></dt>
 <dd><ol class="upperalpha simple" start="10">
 <li><ol class="upperalpha simple" start="5">
 <li><p>Dennis, D. M. Gay, and R. E. Welsch. Algorithm 573: NL2SOL—An Adaptive Nonlinear Least-Squares Algorithm [E4] ACM Trans. Math. Softw.. 7(3). 369 - 383. 1981.</p></li>
+</ol>
+</li>
+</ol>
+</dd>
+<dt class="label" id="opt"><span class="brackets"><a class="fn-backref" href="#id1">OPT</a></span></dt>
+<dd><ol class="upperalpha simple" start="10">
+<li><ol class="upperalpha simple" start="3">
+<li><p>Meza, R. A. Oliva, P. D. Hough, and P. J. Williams, “OPT++: An Object Oriented Toolkit for Nonlinear Optimization”, ACM Transactions on Mathematical Software, Volume 33, Number 2, June 2007.</p></li>
 </ol>
 </li>
 </ol>

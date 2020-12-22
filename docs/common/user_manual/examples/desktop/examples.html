@@ -26,6 +26,9 @@
         <script type="text/javascript" src="../../../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../../../_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -35,9 +38,10 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity" href="quoFEM/TrussOpenSees.html" />
+    <link rel="next" title="6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity" href="quoFEM/exampleTrussOpenSees/README.html" />
     <link rel="prev" title="5.2. Issues While Running" href="../../troubleshooting/desktop/troubleshootingRunning.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -98,9 +102,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">4. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/TrussOpenSees.html">6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/FrameConv.html">6.2. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/FrameBaye.html">6.3. Steel Frame: Bayesian Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/exampleTrussOpenSees/README.html">6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/quo-09/README.html">6.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/exampleFrameConv/README.html">6.3. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/exampleFrameBaye/README.html">6.4. Steel Frame: Bayesian Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/quo-14/README.html">6.5. Steel Frame: Bayesian Calibration using TMCMC</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
@@ -117,6 +123,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -186,9 +193,11 @@
 <p>The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided for selected problems. The files for the examples are available on Github.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/TrussOpenSees.html">6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/FrameConv.html">6.2. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/FrameBaye.html">6.3. Steel Frame: Bayesian Calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/exampleTrussOpenSees/README.html">6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/quo-09/README.html">6.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/exampleFrameConv/README.html">6.3. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/exampleFrameBaye/README.html">6.4. Steel Frame: Bayesian Calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/quo-14/README.html">6.5. Steel Frame: Bayesian Calibration using TMCMC</a></li>
 </ul>
 </div>
 </div>

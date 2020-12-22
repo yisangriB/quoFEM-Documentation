@@ -26,6 +26,9 @@
         <script type="text/javascript" src="../../../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../../../_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -35,6 +38,7 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
@@ -110,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -192,12 +197,12 @@ dated version 2.7. We recommend installing Python 3.7 from <a class="reference e
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>We use the python.org installation over others, due to it’s simplicity of install.</p></li>
-<li><p>In the current installation of <strong>Python</strong> it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: <strong>Update Shell Profile.command.sh</strong> and <strong>Install CertificateCommand.sh</strong>.</p></li>
+<li><p>We use the <a class="reference external" href="https://www.python.org/downloads/windows">Python.org</a> installation over others, due to it’s simplicity of install.</p></li>
+<li><p>In the current installation of Python it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: <strong>Update Shell Profile.command.sh</strong> and <strong>Install CertificateCommand.sh</strong>.</p></li>
 </ol>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id5">
 <img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" />
-<p class="caption"><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <p>Once Python is installed, you need to extend it by installing the following packages: <strong>numpy</strong>, <strong>scipy</strong>, and <strong>pandas</strong>. To install these packages, start a terminal window and type the following instructions:</p>
@@ -227,13 +232,13 @@ dated version 2.7. We recommend installing Python 3.7 from <a class="reference e
 </div></blockquote>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Dakota<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>Dakota<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://dakota.sandia.gov/">Dakota</a> is the default UQ engine used by the quoFEM app that is publicly available from the <a class="reference external" href="https://dakota.sandia.gov/download.html">Dakota Download</a> page. The download page offers an extensive list of downloadable files. You can narrow this down to the file to be selected by selecting <strong>MacOS</strong> in the <cite>Platform</cite>, <strong>6.10</strong> in the <cite>Release</cite>, and <strong>Command Line Only</strong> for the <cite>interface type</cite>. In the <cite>Public</cite>
 area you should now only have a single option, click on the link to download <strong>Dakota</strong>. When you extract the files that you download, they will all be contained in a single folder. Rename this folder <strong>dakota-6.10.0</strong> and move that folder to your <strong>bin/dakota</strong> folder.</p>
 </div>
-<div class="section" id="id2">
-<h2>OpenSees<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>OpenSees<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://opensees.berkeley.edu">OpenSees</a> is one of the FEM engines used by the quoFEM app that is publicly available from the <a class="reference external" href="https://opensees.berkeley.edu/OpenSees/user/download.php">OpenSees Download</a> page. To download the <strong>OpenSees</strong> you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page undet the section <strong>Mac Version</strong> is a table with two links: one for the <strong>OpenSees</strong> and also a link to <strong>Tcl</strong>, whose libraries OpenSees needs on your computer to run. You will need to follow both links to download both applications.</p>
 <dl class="simple">
 <dt>Steps to Install OpenSees on a Mac:</dt><dd><ol class="arabic simple">
@@ -247,8 +252,8 @@ area you should now only have a single option, click on the link to download <st
 <p>The additional requirement of installing <strong>Tcl</strong> is about to be removed from the <strong>OpenSees</strong> installation process. If the table for the <strong>Mac Download</strong> does not contain a second link, it has been removed and no <strong>Tcl</strong> install is required.</p>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>FEAPpv<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>FEAPpv<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p><strong>FEAPpv</strong> is the another FEM engine used by the quoFEM app that is publicly available from the <a class="reference external" href="http://projects.ce.berkeley.edu/feap/feappv/">FEAPpv</a> page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install <strong>FEAPpv</strong> you must download the source code and follow the build instructions on the <strong>Source Code Download and Compile Instructions</strong> section of the <a class="reference external" href="http://projects.ce.berkeley.edu/feap/feappv/">FEAPpv</a> page.</p>
 </div>
 <div class="section" id="openseespy">
@@ -318,9 +323,9 @@ export PYTHONPATH=$HOME/bin/dakota-6.10.0/share/dakota/Python
 <p class="admonition-title">Note</p>
 <p>Apple, in the latest release of their operating system, MacOS 10.16 Catalina, has changed the default working of Gatekeeper. Gatekeeper, first introduced in OS X Mountain Lion, is a Mac security feature that helps protect your Mac from Malware and other malicious software. Gatekeeper checks to make sure the application is safe to run by checking it against the list of apps that Apple has vetted and approved for the Apple Mac Store and/or approved by Apple even if not offered through the app store. In previous versions of MacOS, Gatekeeper had three security level options: App Store, App Store and Identified Developers, and Anywhere. Anywhere has been removed and this will cause problems with Dakota.</p>
 <p>Apple has greatly increased security with <strong>Catalina</strong> and now by default terminal applications can no longer run if they are downloaded from the internet and not signed by a recognized Apple developer. To over come this issue, before you start issuing the above commands in a terminal, open <strong>System Preferences/Security and Privacy</strong>. As you issue the commands, click the <strong>Cancel</strong> button in the window that pops warning you the <strong>application cannot be opened because the Developer cannot be verified</strong> up and then click the button <strong>Allow Anayway</strong> that now appears beside the application name in the <strong>Security an Privacy</strong> window, as shown in figure below. Rerun the application and it should now work without the warning window popping up.</p>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id6">
 <img alt="../../../../_images/macSecurity.png" src="../../../../_images/macSecurity.png" />
-<p class="caption"><span class="caption-text">Catalina: Security and Privacy Panel for Unsigned Terminal Applications.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Catalina: Security and Privacy Panel for Unsigned Terminal Applications.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="admonition warning">

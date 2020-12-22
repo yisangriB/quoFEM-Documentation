@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Requirements &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>quoFEM Requirements &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -26,6 +26,9 @@
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -35,6 +38,7 @@
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
@@ -110,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -155,7 +160,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Requirements</li>
+      <li>quoFEM Requirements</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,258 +179,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="requirements">
-<span id="lblrequirements"></span><h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
-<p>The following contains the functional requirements for the quoFEM app. These requirements are broken down into a number of groups, and <strong>UQ</strong>.</p>
-<p>The purpose of presenting these requirements is to inform the community on the present capabilities of the quoFEM app and features that could be added. The original set of requirements have come from a set of grand challenge reports, <strong>GC</strong>. These original requirements have been broken into a smaller set of deliverable features by the senior faculty associated with the project, <strong>SP</strong>. Additional requirements have come from users, <strong>U</strong> See section <span class="xref std std-ref">features</span> if you have additional features you would like to see.</p>
-<div class="section" id="general-requirements">
-<h2>General Requirements<a class="headerlink" href="#general-requirements" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id1">
-<caption><span class="caption-text">Requirements - General</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 1%" />
-<col style="width: 96%" />
-<col style="width: 1%" />
-<col style="width: 1%" />
-<col style="width: 1%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>#</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Source</p></th>
-<th class="head"><p>Priority</p></th>
-<th class="head"><p>Version</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>EE1</p></td>
-<td><p>Ability to determine response of Building Subject to Earthquake hazard including formal treatment of randomness and uncertainty uncertainty</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>EE2</p></td>
-<td><p>Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-even"><td><p>EE3</p></td>
-<td><p>Ability to utilize resources beyond the desktop including HPC</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>EE4</p></td>
-<td><p>Tool should incorporate data from www</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-even"><td><p>EE5</p></td>
-<td><p>Tool available for download from web</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>EE6</p></td>
-<td><p>Ability to benefit from programs that move research results into practice and obtain training</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>EE7</p></td>
-<td><p>Ability to use educational provisions to gain interdisclipinary education so as to gain expertise in earth sciences and physics, engineering mechanics, geotechnical engineering, and structural engineering in order to be qualified to perform these simulations</p></td>
-<td><p>GC</p></td>
-<td><p>D</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>EE8</p></td>
-<td><p>Documentation exists on tool usage</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.1</p></td>
-</tr>
-<tr class="row-even"><td><p>EE9</p></td>
-<td><p>Video Exists demonstrating usage</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.1</p></td>
-</tr>
-<tr class="row-odd"><td><p>EE10</p></td>
-<td><p>Verification Examples Exist</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.1</p></td>
-</tr>
-<tr class="row-even"><td><p>EE11</p></td>
-<td><p>Validation Examples Exist, validated against tests or other software</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>EE12</p></td>
-<td><p>Tool to allow user to load and save user inputs</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-even"><td><p>EE13</p></td>
-<td><p>Add to Standard Earthquake a variable indicating analysis failure</p></td>
-<td><p>UF</p></td>
-<td><p>D</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>EE14</p></td>
-<td><p>Installer which installs application and all needed software</p></td>
-<td><p>UF</p></td>
-<td><p>D</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="loading-requirements">
-<h2>Loading Requirements<a class="headerlink" href="#loading-requirements" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id2">
-<caption><span class="caption-text">Requirements - Earthquake Loading</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 1%" />
-<col style="width: 96%" />
-<col style="width: 1%" />
-<col style="width: 1%" />
-<col style="width: 1%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>#</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Source</p></th>
-<th class="head"><p>Priority</p></th>
-<th class="head"><p>Version</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>EL</p></td>
-<td><p>Ability to select from different Earthquake Input Motion Options</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>EL1</p></td>
-<td><p>Ability to select from Multiple input motions and view UQ due to all the discrete events</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-even"><td><p>EL2</p></td>
-<td><p>Ability to select from list of SimCenter motions</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>EL3</p></td>
-<td><p>Ability to select from list of PEER motions</p></td>
-<td><p>SP</p></td>
-<td><p>D</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-even"><td><p>EL4</p></td>
-<td><p>Ability to use OpenSHA and selection methods to generate motions</p></td>
-<td><p>UF</p></td>
-<td><p>D</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>EL5</p></td>
-<td><p>Ability to Utilize Own Application in Workflow</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-even"><td><p>EL6</p></td>
-<td><p>Ability to use Broadband</p></td>
-<td><p>SP</p></td>
-<td><p>D</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>EL7</p></td>
-<td><p>Ability to include Soil Structure Interaction Effects</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>1.1</p></td>
-</tr>
-<tr class="row-even"><td><p>EL7.1</p></td>
-<td><p>1D nonlinear site response with effective stress analysis</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.1</p></td>
-</tr>
-<tr class="row-odd"><td><p>EL7.2</p></td>
-<td><p>Nonlinear site response with bidirectional loading</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.2</p></td>
-</tr>
-<tr class="row-even"><td><p>EL7.3</p></td>
-<td><p>Nonlinear site response with full stochastic characterization of soil layers</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>EL7.4</p></td>
-<td><p>Nonlinear site response, bidirectional different input motions</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>EL7.5</p></td>
-<td><p>Ability to couple models from point of rupture through rock and soil into structure, which represents future of professional design practice</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>EL7.5.1</p></td>
-<td><p>Interface using DRM method</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>EL8</p></td>
-<td><p>Utilize PEER NGA www ground motion selection tool</p></td>
-<td><p>UF</p></td>
-<td><p>D</p></td>
-<td><p>2.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>EL9</p></td>
-<td><p>Ability to select from synthetic ground motions</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-even"><td><p>EL9.1</p></td>
-<td><p>per Vlachos, Papakonstantinou, Deodatis (2017)</p></td>
-<td><p>SP</p></td>
-<td><p>D</p></td>
-<td><p>1.1</p></td>
-</tr>
-<tr class="row-odd"><td><p>EL9.2</p></td>
-<td><p>per Dabaghi, Der Kiureghian (2017)</p></td>
-<td><p>UF</p></td>
-<td><p>D</p></td>
-<td><p>2.0</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+  <div class="section" id="quofem-requirements">
+<h1>quoFEM Requirements<a class="headerlink" href="#quofem-requirements" title="Permalink to this headline">¶</a></h1>
+<p>application proving UQ and Optimization methods to existing FEM applications. quoFEM
+has a lower level interface to UQ and Optimization methods than the other applications
+(WE-UQ, EE-UQ, and PBE). It is thus a more powerful tool providing more capabilities for
+researchers. All requirements in this section are related to work in sections 1.3.7, 1.3.8, and 1.3.9of the WBS.</p>
 <div class="section" id="uq-requirements">
 <h2>UQ Requirements<a class="headerlink" href="#uq-requirements" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id3">
-<caption><span class="caption-text">Requirements - Uncertainty Quantification Methods and Variables</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Requirements - Uncertainty Quantification Methods and Variables</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 1%" />
-<col style="width: 96%" />
-<col style="width: 1%" />
-<col style="width: 1%" />
-<col style="width: 1%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>#</p></th>
@@ -437,9 +206,9 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>UM</p></td>
-<td><p>Ability to use various UQ Methods</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
+<td><p><strong>Ability to use various UQ Methods</strong></p></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>UM1</p></td>
@@ -476,19 +245,19 @@
 <td><p>Ability to use various Reliability Methods</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
-<td><p>1.0</p></td>
+<td><p>2.1</p></td>
 </tr>
 <tr class="row-odd"><td><p>UM2.1</p></td>
 <td><p>Ability to use First Order Reliability method</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
-<td></td>
+<td><p>2.1</p></td>
 </tr>
 <tr class="row-even"><td><p>UM2.2</p></td>
 <td><p>Ability to use Second Order Reliability method</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
-<td></td>
+<td><p>2.1</p></td>
 </tr>
 <tr class="row-odd"><td><p>UM2.2</p></td>
 <td><p>Ability to use Surrogate Based Reliability</p></td>
@@ -500,7 +269,7 @@
 <td><p>Ability to use Own External Application to generate Results</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
-<td></td>
+<td><p>2.2</p></td>
 </tr>
 <tr class="row-odd"><td><p>UM3</p></td>
 <td><p>Ability to user various Sensitivity Methods</p></td>
@@ -514,270 +283,86 @@
 <td><p>M</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>UV1</p></td>
+<tr class="row-odd"><td><p>UV</p></td>
+<td><p><strong>Random Variables</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>UV1</p></td>
 <td><p>Various Random Variable Probability Distributions</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>1.0</p></td>
 </tr>
-<tr class="row-even"><td><p>UV1.1</p></td>
+<tr class="row-odd"><td><p>UV1.1</p></td>
 <td><p>Normal</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>1.0</p></td>
 </tr>
-<tr class="row-odd"><td><p>UV1.2</p></td>
+<tr class="row-even"><td><p>UV1.2</p></td>
 <td><p>Lognormal</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>1.0</p></td>
 </tr>
-<tr class="row-even"><td><p>UV1.3</p></td>
+<tr class="row-odd"><td><p>UV1.3</p></td>
 <td><p>Uniform</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>1.0</p></td>
 </tr>
-<tr class="row-odd"><td><p>UV1.4</p></td>
+<tr class="row-even"><td><p>UV1.4</p></td>
 <td><p>Beta</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>1.0</p></td>
 </tr>
-<tr class="row-even"><td><p>UV1.5</p></td>
+<tr class="row-odd"><td><p>UV1.5</p></td>
 <td><p>Weibull</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>1.0</p></td>
 </tr>
-<tr class="row-odd"><td><p>UV1.6</p></td>
+<tr class="row-even"><td><p>UV1.6</p></td>
 <td><p>Gumbel</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>1.0</p></td>
 </tr>
-<tr class="row-even"><td><p>UV2</p></td>
+<tr class="row-odd"><td><p>UV2</p></td>
 <td><p>User defined Distribution</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>UV3</p></td>
+<tr class="row-even"><td><p>UV3</p></td>
 <td><p>Define Correlation Matrix</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>UV4</p></td>
+<tr class="row-odd"><td><p>UV4</p></td>
 <td><p>Random Fields</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>UV5</p></td>
+<tr class="row-even"><td><p>UV5</p></td>
 <td><p>Ability to View Graphically the density function when defining the RV</p></td>
 <td><p>UF</p></td>
 <td><p>D</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>2.1</p></td>
 </tr>
 </tbody>
 </table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Version: Version number the basic requirement was first met</div>
 </div>
-<div class="section" id="modeling-requirements">
-<h2>Modeling Requirements<a class="headerlink" href="#modeling-requirements" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id4">
-<caption><span class="caption-text">Requirements - Modeling</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 1%" />
-<col style="width: 96%" />
-<col style="width: 1%" />
-<col style="width: 1%" />
-<col style="width: 1%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>#</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Source</p></th>
-<th class="head"><p>Priority</p></th>
-<th class="head"><p>Version</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>BM</p></td>
-<td><p>Ability to select different Building Model Generators</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>BM1</p></td>
-<td><p>Ability to quickly create a simple nonlinear building model for simple methods of seismic evaluation</p></td>
-<td><p>GC 2.T13</p></td>
-<td><p>D</p></td>
-<td><p>1.1</p></td>
-</tr>
-<tr class="row-even"><td><p>BM2</p></td>
-<td><p>Ability to use existing OpenSees model scripts</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>BM3</p></td>
-<td><p>Ability to define building and use Expert System to generate FE mesh</p></td>
-<td><p>SP</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>BM3.1</p></td>
-<td><p>Expert system for Concrete Shear Walls</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>BM3.2</p></td>
-<td><p>Expert system for Moment Frames</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>BM3.3</p></td>
-<td><p>Expert system for  Braced Frames</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>BM4</p></td>
-<td><p>Ability to define building and use Machine Learning applications to generate FE</p></td>
-<td><p>GC</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>BM4.1</p></td>
-<td><p>Machine Learning for Concrete Shear Walls</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>BM4.2</p></td>
-<td><p>Machine Learning for Moment Frames</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>BM4.3</p></td>
-<td><p>Machine Learning for Braced Frames</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>BM5</p></td>
-<td><p>Ability to specify connection details for member ends</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td><p>2.2</p></td>
-</tr>
-<tr class="row-even"><td><p>BM6</p></td>
-<td><p>Ability to define a user-defined moment-rotation response representing the connection details</p></td>
-<td><p>UF</p></td>
-<td><p>D</p></td>
-<td><p>2.2</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="analysis-requirements">
-<h2>Analysis Requirements<a class="headerlink" href="#analysis-requirements" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id5">
-<caption><span class="caption-text">Requirements - Analysis</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 1%" />
-<col style="width: 96%" />
-<col style="width: 1%" />
-<col style="width: 1%" />
-<col style="width: 1%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>#</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Source</p></th>
-<th class="head"><p>Priority</p></th>
-<th class="head"><p>Version</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>BA1</p></td>
-<td><p>Ability to select from different Nonlinear Analysis options</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>BA2</p></td>
-<td><p>Ability to specify OpenSees as FEM engine and to specify different analysis options</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-even"><td><p>BA3</p></td>
-<td><p>Ability to provide own OpenSees Analysis script to OpenSees engine.</p></td>
-<td><p>SP</p></td>
-<td><p>D</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>BA4</p></td>
-<td><p>Ability to provide own Python script and use OpenSeesPy engine.</p></td>
-<td><p>SP</p></td>
-<td><p>O</p></td>
-<td><p>1.2</p></td>
-</tr>
-<tr class="row-even"><td><p>BA5</p></td>
-<td><p>Ability to use alternative FEM engines.</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>BA6</p></td>
-<td><p>Ability to know if an analysis run fails.</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>BA7</p></td>
-<td><p>Ability to specify Modal Damping.</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>BA8</p></td>
-<td><p>Ability to specify damping ratio as a random variable</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>BA9</p></td>
-<td><p>When using Rayleigh Damping, ability to specify the two modes used to calculate damping parameters</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>BA10</p></td>
-<td><p>Ability to run for more than 60hours at DesignSafe</p></td>
-<td><p>UF</p></td>
-<td><p>D</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>BA11</p></td>
-<td><p>Ability to specify number of iterations in convergence test</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 

@@ -26,6 +26,9 @@
         <script type="text/javascript" src="../../../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../../../_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -35,8 +38,10 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="6. Examples" href="../../examples/desktop/examples.html" />
     <link rel="prev" title="4.1. Interpoint Distances" href="../../verification/desktop/quoFEM/InterpointDistances.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -121,6 +126,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -208,17 +214,20 @@ C++</p>
 <div class="section" id="files">
 <h3><span class="section-number">5.2.3. </span>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><p>Use a <strong>.cpp</strong> extension for code files and a <strong>.h</strong> extension for interface files.</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> extension for code files and a <code class="docutils literal notranslate"><span class="pre">.h</span></code> extension for interface files.</p></li>
 <li><p>All files should include at the start the <a class="reference internal" href="../../../user_manual/license.html#lbllicense"><span class="std std-ref">Copyright and License</span></a></p></li>
 <li><p>All file should contain some comments about what the file contains, and the name of the developers who worked substantially on the code.</p></li>
 <li><p>Use indentation to make the code easier to read, the <strong>Qt</strong> editor has a nice feature that will auto indent code for you.</p></li>
-<li><p>In addition, when writing h header files:
-#. Never ever ever use <strong>using namespace</strong> in a header.
-#. All header files should additionally include documentation as the the purpose of the class and the methods. The returns and args to the functions should be documented.
-#. Header files <strong>MUST</strong> contain a distinctly-named include guard to avoid problems with including the same header multiple times and to prevent conflicts with headers from other projects.
-#. The comments should be in a <a class="reference external" href="http://www.doxygen.nl/manual/docblocks.html">Doxygen format</a>.
-#. Assign default values with = or {}, a C++11 feature.
-#. All variables defined in the header must be private.</p></li>
+<li><p>In addition, when writing header files:</p>
+<ol class="arabic simple">
+<li><p>Never ever ever use <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span></code> in a header.</p></li>
+<li><p>All header files should additionally include documentation as the the purpose of the class and the methods. The returns and args to the functions should be documented.</p></li>
+<li><p>Header files <strong>MUST</strong> contain a distinctly-named include guard to avoid problems with including the same header multiple times and to prevent conflicts with headers from other projects.</p></li>
+<li><p>The comments should be in a <a class="reference external" href="http://www.doxygen.nl/manual/docblocks.html">Doxygen format</a>.</p></li>
+<li><p>Assign default values with <code class="docutils literal notranslate"><span class="pre">=</span></code> or <code class="docutils literal notranslate"><span class="pre">{}</span></code>, a C++11 feature.</p></li>
+<li><p>All variables defined in the header must be private.</p></li>
+</ol>
+</li>
 </ol>
 <p>An example header file.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef SIMCENTER_WIDGET_H</span>
@@ -334,7 +343,7 @@ C++</p>
 <h3><span class="section-number">5.2.4. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Initialize all variables</p></li>
-<li><p>When initializing float and double variables with values that could be read as integer always include a <strong>.0</strong>, i.e. <code class="code docutils literal notranslate"><span class="pre">double</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">1.0;</span></code></p></li>
+<li><p>When initializing float and double variables with values that could be read as integer always include a <code class="docutils literal notranslate"><span class="pre">.0</span></code>, e.g. <code class="code docutils literal notranslate"><span class="pre">double</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">1.0;</span></code></p></li>
 </ol>
 </div>
 </div>

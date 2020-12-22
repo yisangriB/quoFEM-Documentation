@@ -1,0 +1,917 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Troubleshooting Errors &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/license.html">8. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Quantified Uncertainty with Optimization for the FEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Troubleshooting Errors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/common/developer_manual/architecture/desktop/troubleshooting.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="troubleshooting-errors">
+<span id="lbltroubleshooting"></span><h1>Troubleshooting Errors<a class="headerlink" href="#troubleshooting-errors" title="Permalink to this headline">¶</a></h1>
+<p>If the workflow does not run successfully, the first and best method for troubleshooting is by reading error messages in the <strong>log file</strong>. For local runs, this log is displayed in the command terminal and is reproduced as “log.txt” in the <strong>results</strong> folder. For remote runs through Tapis, this log file is called “launcher.out” in the job archive folder on DesignSafe. This guide will explain how to understand the statements printed in the log file.</p>
+<p>The following is an example log file for a successful workflow run.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>lines 12-13</strong>: Identifies the path to the <a class="reference internal" href="Inputs.html#lbluserdefinputs"><span class="std std-ref">configuration file</span></a>, which specifies the job details, and the <em>application registry file</em>, which specifies all available applications.</p></li>
+<li><p><strong>line 16</strong>: Reads the application registry file and displays all available applications.</p></li>
+<li><p><strong>line 64</strong>: Reads the configuration file and displays the units, local application directory, remote application directory, reference directory, and the applications chosen for each workflow step. Any workflow steps which are skipped (excluded from the configuration file) are also listed here.</p></li>
+<li><p><strong>line 93</strong>: Python command for executing the <a class="reference internal" href="buildingApps.html#lblbuildingapp"><span class="std std-ref">Building</span></a> application, creating the BIM files for each built asset.</p></li>
+<li><p><strong>line 103</strong>: Python command for executing the <a class="reference internal" href="regionalMapApps.html#lblregionalmapapp"><span class="std std-ref">RegionalMapping</span></a> application, assigning events to each of the built assets.</p></li>
+<li><p><strong>line 111</strong>: Starts with the first built asset (“1-BIM.json”). In this first pass, the supporting workflow output files are created, but the workflow is not executed yet.</p></li>
+<li><p><strong>line 118</strong>: Python command for executing the <a class="reference internal" href="eventApps.html#lbleventapp"><span class="std std-ref">Event</span></a> application, creating the EVENT file for the built asset.</p></li>
+<li><p><strong>line 126</strong>: Python command for executing the <a class="reference internal" href="modelingApps.html#lblmodelingapp"><span class="std std-ref">Modeling</span></a> application, creating the SAM file for the built asset.</p></li>
+<li><p><strong>line 134</strong>: Python command for executing the <a class="reference internal" href="EDPApps.html#lbledpapp"><span class="std std-ref">EDP</span></a> application, creating the EDP file for the built asset.</p></li>
+<li><p><strong>line 142</strong>: Python command for executing the <a class="reference internal" href="simulationApps.html#lblsimulationapp"><span class="std std-ref">Simulation</span></a> application, creating the SIM file for the built asset.</p></li>
+<li><p><strong>lines 153-157</strong>: Commands which are written to the <em>workflow driver file</em>.</p></li>
+<li><p><strong>line 165</strong>: Python command for executing the <a class="reference internal" href="UQApps.html#lbluqapp"><span class="std std-ref">UQ</span></a> application, which executes the commands in the workflow driver file to sample random variables and perform the response simulation. This command outputs the EDP.csv for the built asset.</p></li>
+<li><p><strong>line 189</strong>: dakota command which calls on DAKOTA to execute the UQ application.</p></li>
+<li><p><strong>line 198</strong>: Python command for executing the <a class="reference internal" href="DLApps.html#lbldlapp"><span class="std std-ref">DL</span></a> application, which outputs the DM.csv and DV.csv for the built asset.</p></li>
+<li><p><strong>line 213</strong>: Continues to the second built asset (“2-BIM.json”) and repeats the same workflow steps.</p></li>
+<li><p><strong>line 315</strong>: “Collects damage and loss results” by aggregating the content of EDP.csv, DM.csv, and DV.csv for every built asset into single output files (see <a class="reference internal" href="Outputs.html#lbloutputs"><span class="std std-ref">Outputs</span></a>).</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">RDT</span> <span class="n">workflow</span>
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> <span class="n">System</span> <span class="n">information</span>
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">python</span><span class="p">:</span> <span class="mf">3.7</span><span class="o">.</span><span class="mi">9</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Aug</span> <span class="mi">31</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">17</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">11</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="o">.</span><span class="mi">1916</span> <span class="mi">64</span> <span class="n">bit</span> <span class="p">(</span><span class="n">AMD64</span><span class="p">)]</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">numpy</span><span class="p">:</span> <span class="mf">1.19</span><span class="o">.</span><span class="mi">2</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">pandas</span><span class="p">:</span> <span class="mf">1.1</span><span class="o">.</span><span class="mi">2</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> <span class="n">Started</span> <span class="n">running</span> <span class="n">the</span> <span class="n">workflow</span> <span class="n">script</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> <span class="n">Inputs</span> <span class="n">provided</span><span class="p">:</span>
+<span class="hll"><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">workflow</span> <span class="nb">input</span> <span class="n">file</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">rWHALE</span><span class="o">/</span><span class="n">earthquake_example</span><span class="o">/</span><span class="n">rWHALE_config</span><span class="o">.</span><span class="n">json</span>
+</span><span class="hll"><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">application</span> <span class="n">registry</span> <span class="n">file</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">rWHALE</span><span class="o">/</span><span class="n">applications</span><span class="o">/</span><span class="n">Workflow</span><span class="o">/</span><span class="n">WorkflowApplications</span><span class="o">.</span><span class="n">json</span>
+</span><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">run</span> <span class="nb">type</span><span class="p">:</span> <span class="n">run</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="hll"><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> <span class="n">Parsing</span> <span class="n">application</span> <span class="n">registry</span> <span class="n">file</span>
+</span><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">Loading</span> <span class="n">the</span> <span class="n">json</span> <span class="n">file</span><span class="o">...</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">OK</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">Collecting</span> <span class="n">application</span> <span class="n">data</span><span class="o">...</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">OK</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">Available</span> <span class="n">applications</span><span class="p">:</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Building</span> <span class="p">:</span> <span class="n">GenericBimDatabase</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Building</span> <span class="p">:</span> <span class="n">GeoJSON_to_BIM</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Building</span> <span class="p">:</span> <span class="n">CSV_to_BIM</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">RegionalMapping</span> <span class="p">:</span> <span class="n">NearestNeighborEvents</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">SimCenterEvent</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">ExistingSimCenterEvents</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">ExistingPEER_Events</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">Site</span> <span class="n">Response</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">HazardBasedEvent</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">DEDM_HRP</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">LowRiseTPU</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">WindTunnelExperiment</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">StochasticWindWittigSinha</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">StochasticGroundMotion</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">CFDEvent</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">NNGM</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">LLNL</span><span class="o">-</span><span class="n">SW4</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">ASCE7_WindSpeed</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">pointWindSpeed</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Modeling</span> <span class="p">:</span> <span class="n">MDOF</span><span class="o">-</span><span class="n">LU</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Modeling</span> <span class="p">:</span> <span class="n">OpenSeesInput</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Modeling</span> <span class="p">:</span> <span class="n">OpenSeesPyInput</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Modeling</span> <span class="p">:</span> <span class="n">MDOF_BuildingModel</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Modeling</span> <span class="p">:</span> <span class="n">SteelBuildingModel</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">EDP</span> <span class="p">:</span> <span class="n">StandardEarthquakeEDP</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">EDP</span> <span class="p">:</span> <span class="n">StandardEarthquakeEDP_R</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">EDP</span> <span class="p">:</span> <span class="n">StandardWindEDP</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">EDP</span> <span class="p">:</span> <span class="n">StandardGMT_EDP</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">EDP</span> <span class="p">:</span> <span class="n">UserDefinedEDP</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">EDP</span> <span class="p">:</span> <span class="n">UserDefinedEDP_R</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">EDP</span> <span class="p">:</span> <span class="n">SimpleEDP</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Simulation</span> <span class="p">:</span> <span class="n">OpenSees</span><span class="o">-</span><span class="n">Simulation</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Simulation</span> <span class="p">:</span> <span class="n">OpenSeesPy</span><span class="o">-</span><span class="n">Simulation</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Simulation</span> <span class="p">:</span> <span class="n">ExtractPGA</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Simulation</span> <span class="p">:</span> <span class="n">OpenSees</span><span class="o">-</span><span class="n">Simulation_R</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">Simulation</span> <span class="p">:</span> <span class="n">IMasEDP</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">UQ</span> <span class="p">:</span> <span class="n">Dakota</span><span class="o">-</span><span class="n">UQ</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">UQ</span> <span class="p">:</span> <span class="n">Dakota</span><span class="o">-</span><span class="n">FEM</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">UQ</span> <span class="p">:</span> <span class="n">Dakota</span><span class="o">-</span><span class="n">UQ1</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">DL</span> <span class="p">:</span> <span class="n">pelicun</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> <span class="n">Successfully</span> <span class="n">parsed</span> <span class="n">application</span> <span class="n">registry</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="hll"><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> <span class="n">Parsing</span> <span class="n">workflow</span> <span class="nb">input</span> <span class="n">file</span>
+</span><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">Loading</span> <span class="n">the</span> <span class="n">json</span> <span class="n">file</span><span class="o">...</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">OK</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">The</span> <span class="n">following</span> <span class="n">units</span> <span class="n">were</span> <span class="n">specified</span><span class="p">:</span> 
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">force</span><span class="p">:</span> <span class="n">kips</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">length</span><span class="p">:</span> <span class="ow">in</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 		<span class="n">time</span><span class="p">:</span> <span class="n">sec</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">Run</span> <span class="nb">dir</span> <span class="p">:</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">rWHALE</span><span class="o">/</span><span class="n">earthquake_example</span><span class="o">/</span><span class="n">results</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">07</span><span class="n">Z</span> 	<span class="n">Local</span> <span class="n">applications</span> <span class="nb">dir</span> <span class="p">:</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">rWHALE</span><span class="o">/</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 	<span class="n">Remote</span> <span class="n">applications</span> <span class="nb">dir</span> <span class="p">:</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">rWHALE</span><span class="o">/</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 	<span class="n">Reference</span> <span class="nb">dir</span> <span class="p">:</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">rWHALE</span><span class="o">/</span><span class="n">earthquake_example</span><span class="o">/</span><span class="n">input_data</span><span class="o">/</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 	<span class="n">No</span> <span class="n">RegionalEvent</span> <span class="n">among</span> <span class="n">requested</span> <span class="n">applications</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 	<span class="n">Requested</span> <span class="n">workflow</span><span class="p">:</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 		<span class="n">Event</span> <span class="p">:</span> <span class="n">SimCenterEvent</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 		<span class="n">Building</span> <span class="p">:</span> <span class="n">CSV_to_BIM</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 		<span class="n">RegionalMapping</span> <span class="p">:</span> <span class="n">NearestNeighborEvents</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 		<span class="n">Modeling</span> <span class="p">:</span> <span class="n">OpenSeesPyInput</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 		<span class="n">EDP</span> <span class="p">:</span> <span class="n">UserDefinedEDP_R</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 		<span class="n">Simulation</span> <span class="p">:</span> <span class="n">OpenSeesPy</span><span class="o">-</span><span class="n">Simulation</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 		<span class="n">UQ</span> <span class="p">:</span> <span class="n">Dakota</span><span class="o">-</span><span class="n">UQ</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> 		<span class="n">DL</span> <span class="p">:</span> <span class="n">pelicun</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> <span class="n">Successfully</span> <span class="n">parsed</span> <span class="n">workflow</span> <span class="n">inputs</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> <span class="n">Initializing</span> <span class="n">the</span> <span class="n">working</span> <span class="n">directory</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> <span class="n">Working</span> <span class="n">directory</span> <span class="n">successfully</span> <span class="n">initialized</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> <span class="n">Creating</span> <span class="n">files</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">buildings</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">08</span><span class="n">Z</span> <span class="n">Creating</span> <span class="n">initial</span> <span class="n">building</span> <span class="n">files</span><span class="o">...</span>
+
+<span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py&quot;</span> <span class="s2">&quot;--buildingFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/results/buildings1-2.json&quot;</span> <span class="s2">&quot;--Min&quot;</span> <span class="s2">&quot;1&quot;</span> <span class="s2">&quot;--Max&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--buildingSourceFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/input_params.csv&quot;</span> <span class="s2">&quot;--getRV&quot;</span> 
+</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">09</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">09</span><span class="n">Z</span> <span class="n">Building</span> <span class="n">files</span> <span class="n">successfully</span> <span class="n">created</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">09</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">09</span><span class="n">Z</span> <span class="n">Creating</span> <span class="n">regional</span> <span class="n">mapping</span><span class="o">...</span>
+
+<span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performRegionalMapping/NearestNeighborEvents/NNE.py&quot;</span> <span class="s2">&quot;--buildingFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/results/buildings1-2.json&quot;</span> <span class="s2">&quot;--filenameEVENTgrid&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/records/EventGrid.csv&quot;</span> <span class="s2">&quot;--samples&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--neighbors&quot;</span> <span class="s2">&quot;1&quot;</span> 
+</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> <span class="n">Regional</span> <span class="n">mapping</span> <span class="n">successfully</span> <span class="n">created</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="hll"><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="s1">&#39;1-BIM.json&#39;</span><span class="p">}</span>
+</span><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> <span class="n">Initializing</span> <span class="n">the</span> <span class="n">simulation</span> <span class="n">directory</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> <span class="n">Simulation</span> <span class="n">directory</span> <span class="n">successfully</span> <span class="n">initialized</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> <span class="n">Creating</span> <span class="n">files</span> <span class="k">with</span> <span class="n">random</span> <span class="n">variables</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> 	<span class="n">Running</span> <span class="n">Event</span> <span class="n">app</span> <span class="k">for</span> <span class="n">RV</span><span class="o">...</span>
+
+<span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--pathEventData&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/records/&quot;</span> <span class="s2">&quot;--getRV&quot;</span> 
+</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> 	<span class="n">Running</span> <span class="n">Modeling</span> <span class="n">app</span> <span class="k">for</span> <span class="n">RV</span><span class="o">...</span>
+
+<span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--mainScript&quot;</span> <span class="s2">&quot;cantilever.py&quot;</span> <span class="s2">&quot;--modelPath&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/model/&quot;</span> <span class="s2">&quot;--ndm&quot;</span> <span class="s2">&quot;3&quot;</span> <span class="s2">&quot;--dofMap&quot;</span> <span class="s2">&quot;1,2,3&quot;</span> <span class="s2">&quot;--getRV&quot;</span> 
+</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">12</span><span class="n">Z</span> 	<span class="n">Running</span> <span class="n">EDP</span> <span class="n">app</span> <span class="k">for</span> <span class="n">RV</span><span class="o">...</span>
+
+<span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--EDPspecs&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/EDP_specs.json&quot;</span> <span class="s2">&quot;--getRV&quot;</span> 
+</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> 	<span class="n">Running</span> <span class="n">Simulation</span> <span class="n">app</span> <span class="k">for</span> <span class="n">RV</span><span class="o">...</span>
+
+<span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--filenameSIM&quot;</span> <span class="s2">&quot;SIM.json&quot;</span> <span class="s2">&quot;--getRV&quot;</span> 
+</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> <span class="n">Files</span> <span class="k">with</span> <span class="n">random</span> <span class="n">variables</span> <span class="n">successfully</span> <span class="n">created</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> <span class="n">Creating</span> <span class="n">the</span> <span class="n">workflow</span> <span class="n">driver</span> <span class="n">file</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> <span class="n">Workflow</span> <span class="n">driver</span> <span class="n">script</span><span class="p">:</span>
+
+<span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py&quot;</span> <span class="s2">&quot;--buildingFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/results/buildings1-2.json&quot;</span> <span class="s2">&quot;--Min&quot;</span> <span class="s2">&quot;1&quot;</span> <span class="s2">&quot;--Max&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--buildingSourceFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/input_params.csv&quot;</span> 
+</span><span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--pathEventData&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/records/&quot;</span> 
+</span><span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--mainScript&quot;</span> <span class="s2">&quot;cantilever.py&quot;</span> <span class="s2">&quot;--modelPath&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/model/&quot;</span> <span class="s2">&quot;--ndm&quot;</span> <span class="s2">&quot;3&quot;</span> <span class="s2">&quot;--dofMap&quot;</span> <span class="s2">&quot;1,2,3&quot;</span> 
+</span><span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--EDPspecs&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/EDP_specs.json&quot;</span> 
+</span><span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--filenameSIM&quot;</span> <span class="s2">&quot;SIM.json&quot;</span> 
+</span>
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> <span class="n">Workflow</span> <span class="n">driver</span> <span class="n">file</span> <span class="n">successfully</span> <span class="n">created</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> <span class="n">Running</span> <span class="n">response</span> <span class="n">simulation</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">13</span><span class="n">Z</span> 	<span class="n">Simulation</span> <span class="n">command</span><span class="p">:</span>
+
+<span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performUQ/dakota/DakotaFEM.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--filenameSIM&quot;</span> <span class="s2">&quot;SIM.json&quot;</span> <span class="s2">&quot;--driverFile&quot;</span> <span class="s2">&quot;driver&quot;</span> <span class="s2">&quot;--method&quot;</span> <span class="s2">&quot;LHS&quot;</span> <span class="s2">&quot;--samples&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--type&quot;</span> <span class="s2">&quot;UQ&quot;</span> <span class="s2">&quot;--concurrency&quot;</span> <span class="s2">&quot;1&quot;</span> <span class="s2">&quot;--keepSamples&quot;</span> <span class="s2">&quot;True&quot;</span> <span class="s2">&quot;--runType&quot;</span> <span class="s2">&quot;run&quot;</span> 
+</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">18</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="n">Parsing</span> <span class="n">random</span> <span class="n">variables</span><span class="o">...</span>
+
+<span class="mi">1</span><span class="o">-</span><span class="n">BIM</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
+
+<span class="n">EVENT</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
+
+	<span class="n">eventID</span> <span class="o">|</span> <span class="n">discrete</span> <span class="nb">set</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;RSN1737x00000&#39;</span><span class="p">,</span> <span class="s1">&#39;RSN707x00001&#39;</span><span class="p">]</span>
+
+<span class="n">SAM</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
+
+<span class="n">ERROR</span><span class="p">:</span> <span class="n">SIM</span><span class="o">.</span><span class="n">json</span> <span class="n">file</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
+
+<span class="n">EDP</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
+
+<span class="p">[</span><span class="s1">&#39;RSN1737x00000&#39;</span><span class="p">,</span> <span class="s1">&#39;RSN707x00001&#39;</span><span class="p">]</span>
+
+<span class="mi">2</span>
+
+<span class="hll"><span class="n">running</span> <span class="n">Dakota</span><span class="p">:</span>  <span class="n">dakota</span> <span class="o">-</span><span class="nb">input</span> <span class="n">dakota</span><span class="o">.</span><span class="ow">in</span> <span class="o">-</span><span class="n">output</span> <span class="n">dakota</span><span class="o">.</span><span class="n">out</span> <span class="o">-</span><span class="n">error</span> <span class="n">dakota</span><span class="o">.</span><span class="n">err</span>
+</span>
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">18</span><span class="n">Z</span> <span class="n">Response</span> <span class="n">simulation</span> <span class="n">finished</span> <span class="n">successfully</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">18</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">18</span><span class="n">Z</span> <span class="n">Running</span> <span class="n">damage</span> <span class="ow">and</span> <span class="n">loss</span> <span class="n">assessment</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">18</span><span class="n">Z</span> 	<span class="n">Damage</span> <span class="ow">and</span> <span class="n">loss</span> <span class="n">assessment</span> <span class="n">command</span><span class="p">:</span>
+
+<span class="hll"><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performDL/pelicun/DL_calculation.py&quot;</span> <span class="s2">&quot;--filenameDL&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;response.csv&quot;</span> <span class="s2">&quot;--outputEDP&quot;</span> <span class="s2">&quot;EDP.csv&quot;</span> <span class="s2">&quot;--outputDM&quot;</span> <span class="s2">&quot;DM.csv&quot;</span> <span class="s2">&quot;--outputDV&quot;</span> <span class="s2">&quot;DV.csv&quot;</span> <span class="s2">&quot;--DL_Method&quot;</span> <span class="s2">&quot;HAZUS MH EQ&quot;</span> <span class="s2">&quot;--Realizations&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--detailed_results&quot;</span> <span class="s2">&quot;False&quot;</span> <span class="s2">&quot;--log_file&quot;</span> <span class="s2">&quot;True&quot;</span> <span class="s2">&quot;--coupled_EDP&quot;</span> <span class="s2">&quot;True&quot;</span> <span class="s2">&quot;--event_time&quot;</span> <span class="s2">&quot;off&quot;</span> <span class="s2">&quot;--ground_failure&quot;</span> <span class="s2">&quot;False&quot;</span> 
+</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">18</span><span class="n">Z</span> <span class="n">First</span> <span class="n">line</span> <span class="n">of</span> <span class="n">DL_calculation</span>
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">20</span><span class="n">Z</span> <span class="n">Initializing</span> <span class="n">pelicun</span> <span class="n">calculation</span><span class="o">...</span>
+
+<span class="n">WARNING</span> <span class="n">No</span> <span class="n">loss</span> <span class="n">model</span> <span class="n">defined</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">BIM</span> <span class="n">file</span><span class="o">.</span> <span class="n">Trying</span> <span class="n">to</span> <span class="n">auto</span><span class="o">-</span><span class="n">populate</span><span class="o">.</span>
+
+<span class="n">start</span> <span class="n">creating</span> <span class="n">the</span> <span class="n">edp</span> <span class="n">file</span>
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">21</span><span class="n">Z</span> <span class="n">pelicun</span> <span class="n">calculation</span> <span class="n">completed</span><span class="o">.</span>
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> <span class="n">Damage</span> <span class="ow">and</span> <span class="n">loss</span> <span class="n">assessment</span> <span class="n">finished</span> <span class="n">successfully</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="hll"><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="s1">&#39;2-BIM.json&#39;</span><span class="p">}</span>
+</span><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> <span class="n">Initializing</span> <span class="n">the</span> <span class="n">simulation</span> <span class="n">directory</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> <span class="n">Simulation</span> <span class="n">directory</span> <span class="n">successfully</span> <span class="n">initialized</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> <span class="n">Creating</span> <span class="n">files</span> <span class="k">with</span> <span class="n">random</span> <span class="n">variables</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> 	<span class="n">Running</span> <span class="n">Event</span> <span class="n">app</span> <span class="k">for</span> <span class="n">RV</span><span class="o">...</span>
+
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;2-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--pathEventData&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/records/&quot;</span> <span class="s2">&quot;--getRV&quot;</span> 
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> 	<span class="n">Running</span> <span class="n">Modeling</span> <span class="n">app</span> <span class="k">for</span> <span class="n">RV</span><span class="o">...</span>
+
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;2-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--mainScript&quot;</span> <span class="s2">&quot;cantilever.py&quot;</span> <span class="s2">&quot;--modelPath&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/model/&quot;</span> <span class="s2">&quot;--ndm&quot;</span> <span class="s2">&quot;3&quot;</span> <span class="s2">&quot;--dofMap&quot;</span> <span class="s2">&quot;1,2,3&quot;</span> <span class="s2">&quot;--getRV&quot;</span> 
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> 	<span class="n">Running</span> <span class="n">EDP</span> <span class="n">app</span> <span class="k">for</span> <span class="n">RV</span><span class="o">...</span>
+
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;2-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--EDPspecs&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/EDP_specs.json&quot;</span> <span class="s2">&quot;--getRV&quot;</span> 
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">22</span><span class="n">Z</span> 	<span class="n">Running</span> <span class="n">Simulation</span> <span class="n">app</span> <span class="k">for</span> <span class="n">RV</span><span class="o">...</span>
+
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;2-BIM.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--filenameSIM&quot;</span> <span class="s2">&quot;SIM.json&quot;</span> <span class="s2">&quot;--getRV&quot;</span> 
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">23</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">23</span><span class="n">Z</span> <span class="n">Files</span> <span class="k">with</span> <span class="n">random</span> <span class="n">variables</span> <span class="n">successfully</span> <span class="n">created</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">23</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">23</span><span class="n">Z</span> <span class="n">Creating</span> <span class="n">the</span> <span class="n">workflow</span> <span class="n">driver</span> <span class="n">file</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">23</span><span class="n">Z</span> <span class="n">Workflow</span> <span class="n">driver</span> <span class="n">script</span><span class="p">:</span>
+
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py&quot;</span> <span class="s2">&quot;--buildingFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/results/buildings1-2.json&quot;</span> <span class="s2">&quot;--Min&quot;</span> <span class="s2">&quot;1&quot;</span> <span class="s2">&quot;--Max&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--buildingSourceFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/input_params.csv&quot;</span> 
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;2-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--pathEventData&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/records/&quot;</span> 
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;2-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--mainScript&quot;</span> <span class="s2">&quot;cantilever.py&quot;</span> <span class="s2">&quot;--modelPath&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/model/&quot;</span> <span class="s2">&quot;--ndm&quot;</span> <span class="s2">&quot;3&quot;</span> <span class="s2">&quot;--dofMap&quot;</span> <span class="s2">&quot;1,2,3&quot;</span> 
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;2-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--EDPspecs&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/EDP_specs.json&quot;</span> 
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;2-BIM.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--filenameSIM&quot;</span> <span class="s2">&quot;SIM.json&quot;</span> 
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">23</span><span class="n">Z</span> <span class="n">Workflow</span> <span class="n">driver</span> <span class="n">file</span> <span class="n">successfully</span> <span class="n">created</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">23</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">23</span><span class="n">Z</span> <span class="n">Running</span> <span class="n">response</span> <span class="n">simulation</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">23</span><span class="n">Z</span> 	<span class="n">Simulation</span> <span class="n">command</span><span class="p">:</span>
+
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performUQ/dakota/DakotaFEM.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;2-BIM.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--filenameSIM&quot;</span> <span class="s2">&quot;SIM.json&quot;</span> <span class="s2">&quot;--driverFile&quot;</span> <span class="s2">&quot;driver&quot;</span> <span class="s2">&quot;--method&quot;</span> <span class="s2">&quot;LHS&quot;</span> <span class="s2">&quot;--samples&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--type&quot;</span> <span class="s2">&quot;UQ&quot;</span> <span class="s2">&quot;--concurrency&quot;</span> <span class="s2">&quot;1&quot;</span> <span class="s2">&quot;--keepSamples&quot;</span> <span class="s2">&quot;True&quot;</span> <span class="s2">&quot;--runType&quot;</span> <span class="s2">&quot;run&quot;</span> 
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">28</span><span class="n">Z</span> 	<span class="n">Output</span><span class="p">:</span> 
+
+
+
+<span class="n">Parsing</span> <span class="n">random</span> <span class="n">variables</span><span class="o">...</span>
+
+<span class="mi">2</span><span class="o">-</span><span class="n">BIM</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
+
+<span class="n">EVENT</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
+
+	<span class="n">eventID</span> <span class="o">|</span> <span class="n">discrete</span> <span class="nb">set</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;RSN1737x00000&#39;</span><span class="p">,</span> <span class="s1">&#39;RSN707x00001&#39;</span><span class="p">]</span>
+
+<span class="n">SAM</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
+
+<span class="n">ERROR</span><span class="p">:</span> <span class="n">SIM</span><span class="o">.</span><span class="n">json</span> <span class="n">file</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
+
+<span class="n">EDP</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
+
+<span class="p">[</span><span class="s1">&#39;RSN1737x00000&#39;</span><span class="p">,</span> <span class="s1">&#39;RSN707x00001&#39;</span><span class="p">]</span>
+
+<span class="mi">2</span>
+
+<span class="n">running</span> <span class="n">Dakota</span><span class="p">:</span>  <span class="n">dakota</span> <span class="o">-</span><span class="nb">input</span> <span class="n">dakota</span><span class="o">.</span><span class="ow">in</span> <span class="o">-</span><span class="n">output</span> <span class="n">dakota</span><span class="o">.</span><span class="n">out</span> <span class="o">-</span><span class="n">error</span> <span class="n">dakota</span><span class="o">.</span><span class="n">err</span>
+
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">28</span><span class="n">Z</span> <span class="n">Response</span> <span class="n">simulation</span> <span class="n">finished</span> <span class="n">successfully</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">28</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">28</span><span class="n">Z</span> <span class="n">Running</span> <span class="n">damage</span> <span class="ow">and</span> <span class="n">loss</span> <span class="n">assessment</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">28</span><span class="n">Z</span> 	<span class="n">Damage</span> <span class="ow">and</span> <span class="n">loss</span> <span class="n">assessment</span> <span class="n">command</span><span class="p">:</span>
+
+<span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performDL/pelicun/DL_calculation.py&quot;</span> <span class="s2">&quot;--filenameDL&quot;</span> <span class="s2">&quot;2-BIM.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;response.csv&quot;</span> <span class="s2">&quot;--outputEDP&quot;</span> <span class="s2">&quot;EDP.csv&quot;</span> <span class="s2">&quot;--outputDM&quot;</span> <span class="s2">&quot;DM.csv&quot;</span> <span class="s2">&quot;--outputDV&quot;</span> <span class="s2">&quot;DV.csv&quot;</span> <span class="s2">&quot;--DL_Method&quot;</span> <span class="s2">&quot;HAZUS MH EQ&quot;</span> <span class="s2">&quot;--Realizations&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--detailed_results&quot;</span> <span class="s2">&quot;False&quot;</span> <span class="s2">&quot;--log_file&quot;</span> <span class="s2">&quot;True&quot;</span> <span class="s2">&quot;--coupled_EDP&quot;</span> <span class="s2">&quot;True&quot;</span> <span class="s2">&quot;--event_time&quot;</span> <span class="s2">&quot;off&quot;</span> <span class="s2">&quot;--ground_failure&quot;</span> <span class="s2">&quot;False&quot;</span> 
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">28</span><span class="n">Z</span> <span class="n">First</span> <span class="n">line</span> <span class="n">of</span> <span class="n">DL_calculation</span>
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">31</span><span class="n">Z</span> <span class="n">Initializing</span> <span class="n">pelicun</span> <span class="n">calculation</span><span class="o">...</span>
+
+<span class="n">WARNING</span> <span class="n">No</span> <span class="n">loss</span> <span class="n">model</span> <span class="n">defined</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">BIM</span> <span class="n">file</span><span class="o">.</span> <span class="n">Trying</span> <span class="n">to</span> <span class="n">auto</span><span class="o">-</span><span class="n">populate</span><span class="o">.</span>
+
+<span class="n">start</span> <span class="n">creating</span> <span class="n">the</span> <span class="n">edp</span> <span class="n">file</span>
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">32</span><span class="n">Z</span> <span class="n">pelicun</span> <span class="n">calculation</span> <span class="n">completed</span><span class="o">.</span>
+
+
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">32</span><span class="n">Z</span> <span class="n">Damage</span> <span class="ow">and</span> <span class="n">loss</span> <span class="n">assessment</span> <span class="n">finished</span> <span class="n">successfully</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">32</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+<span class="hll"><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">32</span><span class="n">Z</span> <span class="n">Collecting</span> <span class="n">damage</span> <span class="ow">and</span> <span class="n">loss</span> <span class="n">results</span>
+</span><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">32</span><span class="n">Z</span> <span class="n">Damage</span> <span class="ow">and</span> <span class="n">loss</span> <span class="n">results</span> <span class="n">collected</span> <span class="n">successfully</span><span class="o">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span><span class="n">T18</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">32</span><span class="n">Z</span> <span class="o">-----------------------------------------------------------</span>
+</pre></div>
+</td></tr></table></div>
+<dl>
+<dt>For troubleshooting with the log file, the following steps are recommended:</dt><dd><ul>
+<li><p><strong>Identify which application failed in the workflow</strong>. Read through the log file until an ERROR message appears after one of the Python commands.</p></li>
+<li><p><strong>Verify that the paths to all workflow files are correct.</strong> These paths are specified in the <a class="reference internal" href="runLocal.html#lblrunlocal"><span class="std std-ref">initialization command</span></a> when run locally, or in the <a class="reference internal" href="runRemote.html#lblrunremote"><span class="std std-ref">job script</span></a> when run remotely.</p></li>
+<li><p><strong>Check that the “ApplicationData” for each application in the configuration file are correct.</strong> The workflow will fail if an application does not have all of its required application-specific inputs, or if inputs are provided with an incorrect data type. See the individual pages for the <a class="reference internal" href="architecture.html#lblarchitecture"><span class="std std-ref">Backend Applications</span></a> for more details on application-specific inputs.</p></li>
+<li><p><strong>Check that there are no JSON serialization errors in the configuration file.</strong> Mistakes in unclosed brackets or incorrect indentation in the JSON file will cause errors.</p></li>
+<li><p><strong>Check that the user-defined input files are in the correct format.</strong> Mistakes in the header labels or formatting of CSV and JSON input files will cause errors.</p></li>
+<li><p><strong>To view print messages in the model script during response simulation, rerun Dakota.</strong> By default, any print messages in input files are suppressed in the log file. In order to view the messages and debug issues with the model script, navigate to the results folder for one of the built assets in the command window (i. e. “results/1”). You should find three files: dakota.in, dakota.err, and dakota.out. Running the following command will re-execute the UQ application for that particular built asset:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">dakota</span> <span class="pre">-input</span> <span class="pre">dakota.in</span> <span class="pre">-output</span> <span class="pre">dakota.out</span> <span class="pre">-error</span> <span class="pre">dakota.err</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+<p>If problems still persist, you are encouraged to read previously posted questions or post your own at <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php">SimCenter Forum</a>. A member of the SimCenter developer team will respond to your question on the platform.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2020, The Regents of the University of California
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-4', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>
