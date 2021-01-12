@@ -1,44 +1,43 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4. User Guide &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="4.1. UQ: Uncertainty Quantification" href="UQ.html" />
@@ -87,6 +86,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -102,8 +102,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">4.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">4.3. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">4.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">4.3. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">4.4. RV: Random Variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -128,6 +128,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -162,18 +163,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">4. </span>User Guide</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../_sources/common/user_manual/usage/desktop/usage.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -192,7 +195,7 @@
 <p>The quoFEM app, as will be discussed in <a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html#lblarchitecture"><span class="std std-ref">Software Architecture</span></a>, is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different backend applications. Once the quoFEM app is started, the user is presented with the user interface shown in <a class="reference internal" href="#figgenericui-quofem"><span class="std std-numref">Fig. 4.1</span></a>. It is in this UI where the user selects the applications to run in a workflow, inputs the necessary parameters for each of these applications, starts the workflow either locally or
 remotely, and finally views the simulation results. The main window of the UI is divided into several separate areas:</p>
 <div class="align-center figure" id="id3">
-<span id="figgenericui-quofem"></span><img alt="../../../../_images/quoFEM.png" src="../../../../_images/quoFEM.png" />
+<span id="figgenericui-quofem"></span><img alt="../../../../_images/quoFEM1.png" src="../../../../_images/quoFEM1.png" />
 <p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">The quoFEM app user interface.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
@@ -204,19 +207,19 @@ remotely, and finally views the simulation results. The main window of the UI is
 </ol>
 <p>The message area is located in the top center of the UI and displays status and error messages for a running background application.</p>
 <ol class="arabic simple" start="3">
-<li><p>Input Panel Selection:</p></li>
-</ol>
-<p>The ribbon on the left side provides the user with a selection of buttons to choose from (e.g. <strong>UQ</strong>, <strong>RV</strong>, <strong>FEM</strong>, <strong>RES</strong>). Selecting any of these buttons will change what is displayed in the central input panel. Each panel, with exception of <strong>RV</strong> and <strong>QoI</strong> panels,  will present the user with an option for which application to choose for that part of the workflow, and will then present the users for inputs for that application.</p>
-<ol class="arabic simple" start="4">
 <li><p>Input Panel:</p></li>
 </ol>
-<p>The input panel is the large central area of the UI where the user provides input for the application chosen and where they can view the results. For example, if the user had selected <strong>RV</strong> in the input panel selection, it is in this panel that the user would provide details on the distributions associated with each random variable. In the following sections each of the panels that is presented to the user when the buttons in the input panel selection are reviewed:</p>
+<p>The input panel is the large central area of the user-interface where the user provides input for the various applications, and also where they can view the results.</p>
+<ol class="arabic simple" start="4">
+<li><p>Input Panel Selection Ribbon:</p></li>
+</ol>
+<p>The ribbon on the left side provides the user with a selection of buttons to choose from (e.g. <strong>RV: Random Variables</strong>, <strong>RES: Results</strong>). Selecting any of these buttons will change what is displayed in the central input panel. Each panel will present the user with an option for which application to choose for that part of the workflow, and will then allow a user to provide inputs for that application. In the following sections, each of the panels in the input panel selection ribbon are reviewed:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/FEM.html">4.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RV.html">4.3. RV: Random Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">4.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">4.3. QoI: Quantities of Interest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RV.html">4.4. RV: Random Variables</a></li>
 </ul>
 </div>
 <ol class="arabic simple" start="5">
@@ -243,20 +246,25 @@ remotely, and finally views the simulation results. The main window of the UI is
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2020, The Regents of the University of California
+        &#169; Copyright 2018-2020, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -264,7 +272,6 @@ remotely, and finally views the simulation results. The main window of the UI is
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -283,6 +290,7 @@ remotely, and finally views the simulation results. The main window of the UI is
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-158130480-4', 'auto');
+    
     ga('send', 'pageview');
     </script>
 

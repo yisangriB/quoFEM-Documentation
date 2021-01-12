@@ -1,44 +1,43 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.1. UQ: Uncertainty Quantification &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script type="text/javascript" src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="4.1.1.1. Forward Propagation Methods" href="DakotaSampling.html" />
@@ -87,6 +86,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -109,19 +109,22 @@
 <li class="toctree-l4"><a class="reference internal" href="DakotaInverseProblems.html">4.1.1.5. Inverse Problem</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#simcenter-uq-engine">4.1.2. SimCenter UQ Engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">4.1.2.1. Global Sensitivity Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simcenter-uq-engine">4.1.2. SimCenter UQ Engine</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#ucsd-uq-engine">4.1.3. UCSD UQ Engine</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="UCSD_UQ_TMCMC.html">4.1.3.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-uq-engine">4.1.4. Custom UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="CustomUQ.html">4.1.4.1. Custom Uncertainty Quantification Engine Input</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">4.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">4.3. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">4.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">4.3. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">4.4. RV: Random Variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -146,6 +149,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -180,11 +184,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
         
@@ -193,7 +199,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../_sources/common/user_manual/usage/desktop/UQ.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -209,14 +215,14 @@
             
   <div class="section" id="uq-uncertainty-quantification">
 <h1><span class="section-number">4.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
-<p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel where the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. The default engine selected is Dakota.</p>
-<div class="align-center figure" id="id1">
-<span id="figdakota"></span><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.1 </span><span class="caption-text">UQ Engine Selection and Method Selection.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel where the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. Presently the <strong>UQ Engine</strong> option supports Dakota and SimCenterUQ engine.</p>
 <div class="section" id="dakota-uq-engine">
 <h2><span class="section-number">4.1.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of different methods. For this reason we have divided the methods into categories though a pull-down menu, as shown in <a class="reference internal" href="#figdakota"><span class="std std-numref">Fig. 4.1.1</span></a>. Once the category has been selected, a number of different methods are made available to the user.</p>
+<div class="align-center figure" id="id1">
+<span id="figdakota"></span><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <p>The following categories are available:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -232,10 +238,8 @@
 <h2><span class="section-number">4.1.2. </span>SimCenter UQ Engine<a class="headerlink" href="#simcenter-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>This is an in-house developed UQ engine of SimCenter that accommodates different UQ methods. Currently the option is limited to global sensitivity analysis:</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSensitivity.html">4.1.2.1. Global Sensitivity Analysis</a></li>
-</ul>
 </div>
+<p>:quoFEM:SimCenterUQSensitivity</p>
 </div>
 <div class="section" id="ucsd-uq-engine">
 <h2><span class="section-number">4.1.3. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
@@ -246,6 +250,16 @@
 </ul>
 </div>
 </div>
+<div class="section" id="custom-uq-engine">
+<h2><span class="section-number">4.1.4. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>This option allows the user to plug different UQ engines into the quoFEM workflow such that different uncertainty quantification
+methods and tools can be easily applied within the SimCenter framework.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CustomUQ.html">4.1.4.1. Custom Uncertainty Quantification Engine Input</a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -253,20 +267,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2020, The Regents of the University of California
+        &#169; Copyright 2018-2020, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -274,7 +293,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -293,6 +311,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-158130480-4', 'auto');
+    
     ga('send', 'pageview');
     </script>
 

@@ -1,48 +1,47 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.2. FEM: Finite Element Method &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script type="text/javascript" src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.3. RV: Random Variables" href="../RV.html" />
-    <link rel="prev" title="4.1.3.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm" href="../UCSD_UQ_TMCMC.html" />
+    <link rel="next" title="4.3. QoI: Quantities of Interest" href="QuantitiesOfInterest.html" />
+    <link rel="prev" title="4.1.4.1. Custom Uncertainty Quantification Engine Input" href="../CustomUQ.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -87,6 +86,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -105,10 +105,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#id1">4.2.1. OpenSees</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">4.2.2. FEAPpv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#openseespy">4.2.3. OpenSeesPy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom">4.2.4. Custom</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">4.3. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QuantitiesOfInterest.html">4.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QuantitiesOfInterest.html">4.3. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">4.4. RV: Random Variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -133,6 +134,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -167,11 +169,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
         
@@ -180,7 +184,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../../_sources/common/user_manual/usage/desktop/quoFEM/FEM.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -196,9 +200,11 @@
             
   <div class="section" id="fem-finite-element-method">
 <span id="lblfem"></span><h1><span class="section-number">4.2. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
-<p>The <strong>FEM</strong> tab will present users with a selection of FEM applications. Currently, there are three applications available: OpenSees, FEAPpv and OpenSeesPy. More FE platforms will be added in future versions to allow users to provide their own simulation application.</p>
+<p>The <strong>FEM</strong> tab will present users with a selection of FEM
+applications. Currently, there are four options: OpenSees, FEAPpv, OpenSeesPy,
+and a custom user-specified application.</p>
 <div class="align-center figure" id="id3">
-<span id="figfem"></span><img alt="../../../../../_images/fem.png" src="../../../../../_images/fem.png" />
+<span id="figfem"></span><img alt="../../../../../_images/FEM.png" src="../../../../../_images/FEM.png" />
 <p class="caption"><span class="caption-number">Fig. 4.2.1 </span><span class="caption-text">Input for the <strong>FEM</strong> tab.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
@@ -385,6 +391,45 @@
 </div>
 <p>The <strong>RV</strong> tab would be populated with the <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">Ao</span></code>, and <code class="docutils literal notranslate"><span class="pre">Au</span></code> random variables.</p>
 </div>
+<div class="section" id="custom">
+<h2><span class="section-number">4.2.4. </span>Custom<a class="headerlink" href="#custom" title="Permalink to this headline">¶</a></h2>
+<p>This option allows users to specify custom simulation applications which do not
+necessarily need to be limited to only Finite Element Method software. With this
+option all users need to do is provide a driver script that takes the input file
+generated by the UQ engine, parses and passes the inputs to the custom analysis
+engine, and processes the results to meet the format requirements specified for
+<code class="docutils literal notranslate"><span class="pre">results.out</span></code>. The inputs generated by the UQ engine will be provided in a
+file named <code class="docutils literal notranslate"><span class="pre">params.in</span></code> and will always follow the format shown in the example
+<code class="docutils literal notranslate"><span class="pre">params.in</span></code> file <a class="reference internal" href="#paramsinexample"><span class="std std-ref">below</span></a>. The first line specifies the
+number of random variables while the subsequent lines first contain the name of
+the random variable and the value of the current realization separated by a
+space.</p>
+<div class="highlight-default notranslate" id="paramsinexample"><div class="highlight"><pre><span></span><span class="mi">2</span>
+<span class="n">randomVariable</span> <span class="mf">2.719191180014362e+02</span>
+<span class="n">anotherRandomVariable</span> <span class="mf">7.518852020241320e+01</span>
+</pre></div>
+</div>
+<p>For the custom simulation application, the user provides at least two inputs:</p>
+<ul class="simple">
+<li><p>The script that drives the simulations which must be named
+<code class="docutils literal notranslate"><span class="pre">workflow_driver.bat</span></code> on Windows and <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> on MacOS and Linux</p></li>
+<li><p>The script that post-processes the simulation results and writes them to
+<code class="docutils literal notranslate"><span class="pre">results.out</span></code> in the required format</p></li>
+</ul>
+<p>Additionally, users can specify as many additional files and binaries as
+required by the application by increasing the number of input slots, as shown in
+<a class="reference internal" href="#customfem"><span class="std std-numref">Fig. 4.2.2</span></a>. By specifying these files here, they will be copied to the
+correct location for quoFEM to access them during analyses. Users also have the
+option to simply place all the required files in the same location as the
+provided workflow driver scipt–quoFEM will automatically copy any files in this
+directory. This is particularly helpful if several different applications with
+numerous inputs are all being called by the workflow driver script and avoids
+the need to explicitly input each one of these files.</p>
+<div class="align-center figure" id="id4">
+<span id="customfem"></span><img alt="../../../../../_images/customFEM.png" src="../../../../../_images/customFEM.png" />
+<p class="caption"><span class="caption-number">Fig. 4.2.2 </span><span class="caption-text">Input for Custom Analysis Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 </div>
 
 
@@ -392,20 +437,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2020, The Regents of the University of California
+        &#169; Copyright 2018-2020, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -413,7 +463,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -432,6 +481,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-158130480-4', 'auto');
+    
     ga('send', 'pageview');
     </script>
 

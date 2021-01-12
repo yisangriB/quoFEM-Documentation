@@ -1,44 +1,43 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1.2. Methods in SimCenterUQ Engine &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script type="text/javascript" src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="1.3. Methods in UCSD UQ Engine" href="UCSDUQTechnical.html" />
@@ -87,6 +86,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -132,6 +132,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -166,11 +167,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="technical_manual.html"><span class="section-number">1. </span>Technical Manual</a> &raquo;</li>
         
@@ -179,7 +182,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../_sources/common/technical_manual/desktop/SimCenterUQTechnical.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -220,7 +223,7 @@
 <span class="eqno">(1.2.1)<a class="headerlink" href="#equation-si" title="Permalink to this equation">¶</a></span>\[S_i=\frac{\text{Var}_{x_i}[\text{E}_{\boldsymbol{x}_{\sim i}}[y|x_i]]}{\text{Var}[y]}, \qquad i=1, \cdots ,d\]</div>
 <div class="math notranslate nohighlight" id="equation-sit">
 <span class="eqno">(1.2.2)<a class="headerlink" href="#equation-sit" title="Permalink to this equation">¶</a></span>\[S_i^T=\frac{\text{E}_{\boldsymbol{x}_{\sim i}}[\text{Var}_{x_i}[y|\boldsymbol{x}_{\sim i}]]}{\text{Var}[y]},  \qquad  i=1, \cdots ,d\]</div>
-<p>respectively, where <span class="math notranslate nohighlight">\(\boldsymbol{x}_{\sim i}\)</span> indicates the set of all input variables except <span class="math notranslate nohighlight">\(x_i\)</span>. It is noteworthy that in both equations, the variance operator <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> captures only the part of uncertainty associated with <span class="math notranslate nohighlight">\(x_i\)</span>, while the mean operator <span class="math notranslate nohighlight">\(\text{E}_{\boldsymbol{x}_{\sim i}}[\cdot]\)</span> averages out all remaining uncertainties. From the definitions, two indices theoretically have values between zero and one. Eq. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-si">(4.1.4)</a> can also be understood intuitively. For example, if the QoI is insensitive to <span class="math notranslate nohighlight">\(x_i\)</span>, the term inside <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> is nearly constant and <span class="math notranslate nohighlight">\(S_i\)</span> approaches zero. On the other hand, when one single variable <span class="math notranslate nohighlight">\(x_i\)</span> dominates QoI, inside <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> is approximately the same as <span class="math notranslate nohighlight">\(y\)</span>, and thus <span class="math notranslate nohighlight">\(S_i\)</span> approaches one. Eq. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-sit">(4.1.5)</a> can be understood in similar ways. The second-order main effect index that provides the pair-wise interaction effect is defined as</p>
+<p>respectively, where <span class="math notranslate nohighlight">\(\boldsymbol{x}_{\sim i}\)</span> indicates the set of all input variables except <span class="math notranslate nohighlight">\(x_i\)</span>. It is noteworthy that in both equations, the variance operator <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> captures only the part of uncertainty associated with <span class="math notranslate nohighlight">\(x_i\)</span>, while the mean operator <span class="math notranslate nohighlight">\(\text{E}_{\boldsymbol{x}_{\sim i}}[\cdot]\)</span> averages out all remaining uncertainties. From the definitions, two indices theoretically have values between zero and one. Eq. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-si">()</a> can also be understood intuitively. For example, if the QoI is insensitive to <span class="math notranslate nohighlight">\(x_i\)</span>, the term inside <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> is nearly constant and <span class="math notranslate nohighlight">\(S_i\)</span> approaches zero. On the other hand, when one single variable <span class="math notranslate nohighlight">\(x_i\)</span> dominates QoI, inside <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> is approximately the same as <span class="math notranslate nohighlight">\(y\)</span>, and thus <span class="math notranslate nohighlight">\(S_i\)</span> approaches one. Eq. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-sit">()</a> can be understood in similar ways. The second-order main effect index that provides the pair-wise interaction effect is defined as</p>
 <div class="math notranslate nohighlight" id="equation-sij">
 <span class="eqno">(1.2.3)<a class="headerlink" href="#equation-sij" title="Permalink to this equation">¶</a></span>\[S_{ij}=\frac{\text{Var}_{x_i,x_j}[\text{E}_{\boldsymbol{x}\sim ij}[y|x_i,x_j]]}{\text{Var}[y]} - S_i - S_j,  \qquad  i,j=1, \cdots ,d\]</div>
 <p>where <span class="math notranslate nohighlight">\(\boldsymbol{x}_{\sim ij}\)</span> indicates the set of all input variables except <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span>. The higher-order indices are derived likewise. Theoretically, When all the input variables are uncorrelated to each other, the following equality holds.</p>
@@ -229,11 +232,11 @@
 </div>
 <div class="section" id="estimation-of-sobol-indices">
 <h2>Estimation of Sobol indices<a class="headerlink" href="#estimation-of-sobol-indices" title="Permalink to this headline">¶</a></h2>
-<p>Global sensitivity analysis is typically computationally expensive. High computation cost attributes to the multiple integrations (<span class="math notranslate nohighlight">\(d\)</span>-dimensional) associated with the variance and expectation operations shown in Eqs. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-si">(4.1.4)</a> and <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-sit">(4.1.5)</a>. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based global sensitivity analysis (PM-GSA) framework developed by <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#hu19" id="id3"><span>[Hu19]</span></a>.</p>
+<p>Global sensitivity analysis is typically computationally expensive. High computation cost attributes to the multiple integrations (<span class="math notranslate nohighlight">\(d\)</span>-dimensional) associated with the variance and expectation operations shown in Eqs. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-si">()</a> and <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-sit">()</a>. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based global sensitivity analysis (PM-GSA) framework developed by <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#hu19" id="id3"><span>[Hu19]</span></a>.</p>
 <p>The framework first conducts ordinary MCS to obtain input-output data pairs. Then by extracting only a subset dimension of the dataset, it approximates the probability distribution of a reduced dimension which is required for estimating the Sobol index. Among different probability models introduced in <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#hu19" id="id4"><span>[Hu19]</span></a> to approximate this lower dimension distribution, the Gaussian mixture model is implemented. For example, to identify 1st order main Sobol index for a variable <span class="math notranslate nohighlight">\(x_i\)</span>, a bivariate Gaussian mixture model is fitted for the joint probability distribution of <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, i.e.</p>
 <div class="math notranslate nohighlight" id="equation-gm">
 <span class="eqno">(1.2.5)<a class="headerlink" href="#equation-gm" title="Permalink to this equation">¶</a></span>\[f_{x_i,y}(x_i,y) \simeq f_{x_i,y}^{GM} (x_i,y)\]</div>
-<p>using expectation-maximization (EM) algorithm. The mean operation Eq. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-si">(4.1.4)</a> is then derived analytically derived using Gaussian mixture model, while variance is approximated by the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#hu19" id="id5"><span>[Hu19]</span></a>. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations.</p>
+<p>using expectation-maximization (EM) algorithm. The mean operation Eq. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-si">()</a> is then derived analytically derived using Gaussian mixture model, while variance is approximated by the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#hu19" id="id5"><span>[Hu19]</span></a>. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations.</p>
 <div class="align-center figure" id="id7">
 <span id="figsensitivity2"></span><img alt="../../../_images/SimCenterSensitivity2.png" src="../../../_images/SimCenterSensitivity2.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.2 </span><span class="caption-text">Data-driven global sensitivity analysis by Hu and Mahadevan (2019)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
@@ -251,20 +254,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2020, The Regents of the University of California
+        &#169; Copyright 2018-2020, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -272,7 +280,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -291,6 +298,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-158130480-4', 'auto');
+    
     ga('send', 'pageview');
     </script>
 

@@ -1,44 +1,43 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.1. Interpoint Distances &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script type="text/javascript" src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="5. Coding Style" href="../../../coding_style/desktop/coding_style.html" />
@@ -87,6 +86,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -125,6 +125,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -159,11 +160,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../verification.html"><span class="section-number">4. </span>Verification</a> &raquo;</li>
         
@@ -172,7 +175,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../../_sources/common/developer_manual/verification/desktop/quoFEM/InterpointDistances.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -194,7 +197,7 @@ in a rectangular region. Such average distances come up in many settings. For ce
 it could represent the average distances from dwellings to fire stations or from the dwellings to the epicenter of an earthquake.</p>
 <p>The problem is defined as follows: Suppose two points <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are independent and considered uniformly distributed random points in a finite rectangle of dimension <span class="math notranslate nohighlight">\(L_w\)</span> and <span class="math notranslate nohighlight">\(L_h\)</span>. It has been <a class="reference external" href="http://www.math.utep.edu/Faculty/moschopoulos/Publications/1999-Random_Points_Associated_With_Rectangles.pdf">shown</a> that the expected average distance between these two points <span class="math notranslate nohighlight">\(E(P,Q)\)</span> is given by the formula:</p>
 <div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0">
-<span class="eqno">(4.1.9)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0" title="Permalink to this equation">¶</a></span>\[E(P,Q) = \frac{1}{15} \left( \frac{L_w^3}{L_h^2}+\frac{L_h^3}{L_w^2}+d\left(3-\frac{L_w^2}{L_h^2}-\frac{L_h^2}{L_w^2}\right)
+<span class="eqno">(4.1.4)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0" title="Permalink to this equation">¶</a></span>\[E(P,Q) = \frac{1}{15} \left( \frac{L_w^3}{L_h^2}+\frac{L_h^3}{L_w^2}+d\left(3-\frac{L_w^2}{L_h^2}-\frac{L_h^2}{L_w^2}\right)
 +\frac{5}{2} \left(\frac{L_h^2}{L_w}\log\right(\frac{L_w+d}{L_h}\left)+\frac{L_w^2}{L_h}\log\left(\frac{L_h+d}{L_w}\right)\right)\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(d=\sqrt{L_w^2+L_h^2}\)</span></p>
 <p>Using the above formula one can compute a number of expected distances for rectangles of different sizes, for example:</p>
@@ -355,20 +358,25 @@ it could represent the average distances from dwellings to fire stations or from
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2020, The Regents of the University of California
+        &#169; Copyright 2018-2020, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -376,7 +384,6 @@ it could represent the average distances from dwellings to fire stations or from
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -395,6 +402,7 @@ it could represent the average distances from dwellings to fire stations or from
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-158130480-4', 'auto');
+    
     ga('send', 'pageview');
     </script>
 
