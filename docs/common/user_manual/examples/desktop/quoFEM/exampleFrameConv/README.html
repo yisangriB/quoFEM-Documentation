@@ -7,13 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>6.3. Steel Frame: Conventional Calibration &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>4.3. Steel Frame: Conventional Calibration &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
   
@@ -34,18 +35,22 @@
         <script src="../../../../../../_static/underscore.js"></script>
         <script src="../../../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
-    <link rel="next" title="6.4. Steel Frame: Bayesian Calibration" href="../exampleFrameBaye/README.html" />
-    <link rel="prev" title="6.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine" href="../quo-09/README.html" />
+    <link rel="next" title="4.4. Steel Frame: Bayesian Calibration" href="../exampleFrameBaye/README.html" />
+    <link rel="prev" title="4.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine" href="../quo-09/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -58,23 +63,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../../../index.html">
-          
+  <a href="../../../../../../index.html">
 
-          
-            
-            <img src="../../../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,7 +91,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -94,23 +102,28 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../about/quoFEM/aboutQUOFEM.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../usage/desktop/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">6. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../exampleTrussOpenSees/README.html">6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quo-09/README.html">6.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exampleFrameBaye/README.html">6.4. Steel Frame: Bayesian Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quo-14/README.html">6.5. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../exampleTrussOpenSees/README.html">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quo-09/README.html">4.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exampleFrameBaye/README.html">4.4. Steel Frame: Bayesian Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quo-14/README.html">4.5. Steel Frame: Bayesian Calibration using TMCMC</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -123,7 +136,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -172,9 +184,9 @@
     
       <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../examples.html"><span class="section-number">6. </span>Examples</a> &raquo;</li>
+          <li><a href="../../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">6.3. </span>Steel Frame: Conventional Calibration</li>
+      <li><span class="section-number">4.3. </span>Steel Frame: Conventional Calibration</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -194,7 +206,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="steel-frame-conventional-calibration">
-<h1><span class="section-number">6.3. </span>Steel Frame: Conventional Calibration<a class="headerlink" href="#steel-frame-conventional-calibration" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.3. </span>Steel Frame: Conventional Calibration<a class="headerlink" href="#steel-frame-conventional-calibration" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 42%" />
@@ -202,7 +214,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Problem files</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/quoFEM/quo-07//">quo-07/</a></p></td>
+<td><p><a href="#id1"><span class="problematic" id="id2">:quo-07:`/`</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -213,7 +225,7 @@ shapes and frequencies.</p>
 Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at
 the following simplified finite element model of a steel building.</p>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../../_images/frameFE1.png"><img alt="../../../../../../_images/frameFE1.png" src="../../../../../../_images/frameFE1.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../../../../_images/frameFE3.png"><img alt="../../../../../../_images/frameFE3.png" src="../../../../../../_images/frameFE3.png" style="width: 400px;" /></a>
 </div>
 <p>Each floor slab of the building is made of composite metal deck and is
 supported on four steel columns. The story heights are measured at
@@ -230,7 +242,7 @@ are generated by applying random perturbations to the analytic modal
 properties in order to simulate field data that might be obtained using
 a method for structural system identification.</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-examples-desktop-quofem-exampleframeconv-readme-0">
-<span class="eqno">(6.3.1)<a class="headerlink" href="#equation-common-user-manual-examples-desktop-quofem-exampleframeconv-readme-0" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{array}{l}
+<span class="eqno">(4.3.1)<a class="headerlink" href="#equation-common-user-manual-examples-desktop-quofem-exampleframeconv-readme-0" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{array}{l}
 \lambda_{1}^{(1)}=1025.21, \lambda_{1}^{(2)}=1138.11, \quad \lambda_{1}^{(3)}=1099.39, \quad \lambda_{1}^{(4)}=1002.41, \quad \lambda_{1}^{(5)}=1052.69 \\
 \phi_{12}^{(1)}=1.53, \quad \phi_{12}^{(2)}=1.24, \quad \phi_{12}^{(3)}=1.38, \quad \phi_{12}^{(4)}=1.50, \quad \phi_{12}^{(5)}=1.35
 \end{array}\end{split}\]</div>
@@ -251,7 +263,7 @@ of <span class="math notranslate nohighlight">\(2000.0\)</span>,</p></li>
 </ol>
 <p>The exercise requires a single OpenSees script file. The user is required to download this file and place it in a <strong>NEW</strong> folder. The file:</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/quoFEM/quo-07/src/Frame2FEM.tcl">Frame2FEM.tcl</a></p></li>
+<li><p><a href="#id3"><span class="problematic" id="id4">:quo-07:`Frame2FEM.tcl &lt;src/Frame2FEM.tcl&gt;`</span></a></p></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span>
 # units kips, in
@@ -376,7 +388,7 @@ close $outFile
 <li><p>Next select the <strong>QoI</strong> panel. Here enter <strong>10</strong> variable names. The following figure shows the first nine names used; the tenth entry used, which does not show up in the image was <code class="docutils literal notranslate"><span class="pre">eps_p5</span></code>.</p></li>
 </ol>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../../_images/joelCalQoI1.png"><img alt="../../../../../../_images/joelCalQoI1.png" src="../../../../../../_images/joelCalQoI1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../../_images/joelCalQoI3.png"><img alt="../../../../../../_images/joelCalQoI3.png" src="../../../../../../_images/joelCalQoI3.png" style="width: 600px;" /></a>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -389,7 +401,7 @@ close $outFile
 <a class="reference internal image-reference" href="../../../../../../_images/quo-07-res-sum.png"><img alt="../../../../../../_images/quo-07-res-sum.png" src="../../../../../../_images/quo-07-res-sum.png" style="width: 600px;" /></a>
 </div>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../../_images/quo-07-res-dat.png"><img alt="../../../../../../_images/quo-07-res-dat.png" src="../../../../../../_images/quo-07-res-dat.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../../_images/quo-07-res-dat1.png"><img alt="../../../../../../_images/quo-07-res-dat1.png" src="../../../../../../_images/quo-07-res-dat1.png" style="width: 600px;" /></a>
 </div>
 </div>
 
@@ -453,6 +465,44 @@ close $outFile
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

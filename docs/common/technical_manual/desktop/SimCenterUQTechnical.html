@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
   
@@ -34,6 +35,9 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -46,6 +50,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -58,23 +63,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../index.html">
-          
+  <a href="../../../index.html">
 
-          
-            
-            <img src="../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,7 +91,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -94,16 +102,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/about/quoFEM/aboutQUOFEM.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
@@ -126,7 +139,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -215,7 +227,7 @@
 <p>Global sensitivity analysis is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. Global sensitivity analysis helps users to understand the overall impact of different sources of uncertainties, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.</p>
 <div class="align-center figure" id="id6">
 <span id="figsensitivity1"></span><img alt="../../../_images/SimCenterSensitivity1.png" src="../../../_images/SimCenterSensitivity1.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.1 </span><span class="caption-text">Concept of global sensitivity analysis</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.12 </span><span class="caption-text">Concept of global sensitivity analysis</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>Sobol indices are widely used variance-based global sensitivity measures. It has two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account.</p>
 <p>Given the output of model <span class="math notranslate nohighlight">\(y=g(\boldsymbol{x})\)</span> and input random variables <span class="math notranslate nohighlight">\(\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}\)</span>, the first-order main and total effect indices of each input variable is defined as</p>
@@ -239,7 +251,7 @@
 <p>using expectation-maximization (EM) algorithm. The mean operation Eq. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-si">()</a> is then derived analytically derived using Gaussian mixture model, while variance is approximated by the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#hu19" id="id5"><span>[Hu19]</span></a>. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations.</p>
 <div class="align-center figure" id="id7">
 <span id="figsensitivity2"></span><img alt="../../../_images/SimCenterSensitivity2.png" src="../../../_images/SimCenterSensitivity2.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.2 </span><span class="caption-text">Data-driven global sensitivity analysis by Hu and Mahadevan (2019)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.13 </span><span class="caption-text">Data-driven global sensitivity analysis by Hu and Mahadevan (2019)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="hu19"><span class="brackets">Hu19</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>,<a href="#id5">3</a>)</span></dt>
@@ -309,6 +321,44 @@
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

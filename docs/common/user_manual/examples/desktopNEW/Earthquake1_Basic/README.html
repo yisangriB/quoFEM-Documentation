@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Basic Earthquake &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Quantified Uncertainty with Optimization for the FEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Basic Earthquake</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/examples/desktopNEW/Earthquake1_Basic/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-earthquake">
+<h1>Basic Earthquake<a class="headerlink" href="#basic-earthquake" title="Permalink to this headline">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Download files</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/Earthquake1_Basic/">Github</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="required-files">
+<h2>Required Files<a class="headerlink" href="#required-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/Earthquake1_Basic/input_data/model/cantilever_light.py">cantilever_light.py</a>
+This Python script defines the following functions which use OpenSeesPy to construct a structural model.</p>
+<span class="target" id="module-cantilever_light"></span><dl class="py function">
+<dt id="cantilever_light.build_model">
+<code class="sig-prename descclassname">cantilever_light.</code><code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cantilever_light.build_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates OpenSeesPy model of an elastic-perfectly plastic SDOF system and
+runs gravity analysis.</p>
+<p>Assumes that length is measured in inches and acceleration in in/s2</p>
+<dl class="simple">
+<dt>W: float</dt><dd><p>Weight of the structure</p>
+</dd>
+<dt>f_yield: float</dt><dd><p>Yield stress of the material</p>
+</dd>
+<dt>T1: float</dt><dd><p>Fundamental period of the structure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cantilever_light.run_analysis">
+<code class="sig-prename descclassname">cantilever_light.</code><code class="sig-name descname">run_analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">GM_dt</span></em>, <em class="sig-param"><span class="n">GM_npts</span></em>, <em class="sig-param"><span class="n">TS_List</span></em>, <em class="sig-param"><span class="n">EDP_specs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cantilever_light.run_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run dynamic analysis for a time history and return a dictionary of envelope EDPs.</p>
+<p>Assumes that length is measured in inches and acceleration in in/s2</p>
+<dl class="simple">
+<dt>GM_dt: float</dt><dd><p>Time step of time series</p>
+</dd>
+<dt>GM_npts: float</dt><dd><p>Number of points in time series</p>
+</dd>
+<dt>TS_List: float</dt><dd><p>1x2 list where first component is a list of accelerations in the X
+direction, the second component is a list of accelerations in the Y
+direction.</p>
+</dd>
+</dl>
+<p>EDP_specs: dict</p>
+</dd></dl>
+
+</li>
+</ol>
+</div>
+<div class="section" id="modeling-procedure">
+<h2>Modeling Procedure<a class="headerlink" href="#modeling-procedure" title="Permalink to this headline">¶</a></h2>
+<p>This example is a small-scale regional earthquake risk assessment which performs response simulation and damage/loss estimation for a group of 20 wood buildings under a pseudo earthquake scenario. The procedure for this example can be configured through the R2D interface by sequentially entering the following parameters into the respective panels:</p>
+<ol class="arabic">
+<li><p><strong>VIZ</strong> The 20 buildings are distributed in space in a <span class="math notranslate nohighlight">\(4 \times 5\)</span> grid in Northern California.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-VIZ.png"><img alt="../../../../../_images/r2dt-0001-VIZ.png" src="../../../../../_images/r2dt-0001-VIZ.png" style="width: 600px;" /></a>
+</div>
+</li>
+<li><p><strong>GI</strong> Next, the general information panel is used to broadly characterize the problem at hand. In this example, the imperial force and length units are used, and we’re interested in the building engineering demand parameters (e.g., peak story drift ratio, peak floor acceleration), damage measures, and the resulting decision variable (e.g., expected replacement cost).</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-GI.png"><img alt="../../../../../_images/r2dt-0001-GI.png" src="../../../../../_images/r2dt-0001-GI.png" style="width: 600px;" /></a>
+</div>
+</li>
+<li><p><strong>HAZ</strong> Now in the hazard panel, the <strong>User Specified Ground Motions</strong> option is selected which allows for the use of pre-generated earthquake scenarios. The following figure shows the relevant example files which are now entered in this pane. These ground motion records are selected for stations in a grid.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-HAZ.png"><img alt="../../../../../_images/r2dt-0001-HAZ.png" src="../../../../../_images/r2dt-0001-HAZ.png" style="width: 600px;" /></a>
+</div>
+</li>
+<li><p><strong>ASD</strong> In the asset definition panel, the path to the <code class="docutils literal notranslate"><span class="pre">input_params.csv</span></code> file is specified. Once this file is loaded, the user can select which particular assets will be included in the analysis by entering a valid range in the form and clicking <strong>Select</strong>. The <code class="docutils literal notranslate"><span class="pre">input_params.csv</span></code> includes parameters for the damage and loss assessment (i.e., number of stories, year of built, occupancy class, structure type, plan area, and replacement cost) are specified.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-ASD.png"><img alt="../../../../../_images/r2dt-0001-ASD.png" src="../../../../../_images/r2dt-0001-ASD.png" style="width: 600px;" /></a>
+</div>
+</li>
+<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbour</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as show in the following figure with <strong>5</strong> samples in <strong>4</strong> neighborhoods, i.e., randomly sampling 5 ground motions from the nearest four stations (each station has a set of records specified in the <strong>HAZ</strong>).</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-HTA.png"><img alt="../../../../../_images/r2dt-0001-HTA.png" src="../../../../../_images/r2dt-0001-HTA.png" style="width: 600px;" /></a>
+</div>
+</li>
+<li><p><strong>MOD</strong> In the modeling panel, the <code class="docutils literal notranslate"><span class="pre">cantilever_light.py</span></code> file is specified in the <strong>Input Script</strong> field and a DOF scheme is defined as shown in the following figure. This example uses the OpenSeesPyInput modeling application. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight, yield strength, and fundamental period.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-MOD.png"><img alt="../../../../../_images/r2dt-0001-MOD.png" src="../../../../../_images/r2dt-0001-MOD.png" style="width: 600px;" /></a>
+</div>
+</li>
+<li><p><strong>ANA</strong> In the analysis panel, <strong>OpenSeesPy</strong> is selected from the primary dropdown.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-ANA.png"><img alt="../../../../../_images/r2dt-0001-ANA.png" src="../../../../../_images/r2dt-0001-ANA.png" style="width: 600px;" /></a>
+</div>
+</li>
+<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ</strong> damage and loss method is selected and configured as shown in the following figure:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-DL.png"><img alt="../../../../../_images/r2dt-0001-DL.png" src="../../../../../_images/r2dt-0001-DL.png" style="width: 600px;" /></a>
+</div>
+</li>
+<li><p><strong>RES</strong> The analysis outputs for the selected two buildings are show in the figure below. In the given earthquake scenario, the two buildings are mostly likely in no damage or minor damage (Damage State 1 or 2 per HAZUS) with about 1% expected loss ratios.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-RES.png"><img alt="../../../../../_images/r2dt-0001-RES.png" src="../../../../../_images/r2dt-0001-RES.png" style="width: 600px;" /></a>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018-2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-4', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
+
+
+</body>
+</html>

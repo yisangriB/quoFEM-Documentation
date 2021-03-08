@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
   
@@ -34,18 +35,22 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.2.1. Inputs" href="Inputs.html" />
+    <link rel="next" title="2.1. File Types and Schemas" href="file-types.html" />
     <link rel="prev" title="1. How to Build" href="../../how_to_build/desktop/how_to_build.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -58,23 +63,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../index.html">
-          
+  <a href="../../../../index.html">
 
-          
-            
-            <img src="../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,7 +91,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -94,16 +102,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -113,13 +126,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Software Architecture</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">2.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-types.html">2.1. File Types and Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backendApplications.html">2.2. Backend Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html">2.3. C4 Model of Software Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview">2.4. Overview</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -189,14 +204,25 @@
             
   <div class="section" id="software-architecture">
 <span id="lblarchitecture"></span><h1><span class="section-number">2. </span>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h1>
-<p>The SimCenter is developing a number of computational applications: quoFEM, EE-UQ, WE-UQ, HydroUQ, PBE, and RDT. These applications are intended to advance the field of natural hazard engineering (NHE) at both the building level scale and regional level scale. These applications link together existing open-source software applications, databases and software libraries by employing scientific workflows. The SimCenter applications are in actuality <a class="reference external" href="https://en.wikipedia.org/wiki/Scientific_workflow_system">scientific workflow systems</a> . In contrast to more general purpose scientfic workflow systems, e.g. <a class="reference external" href="https://taverna.incubator.apache.org/">Taverna</a>, <a class="reference external" href="https://kepler-project.org/">Kepler</a>, and <a class="reference external" href="https://pegasus.isi.edu/">Pegasus</a>, the SimCenter workflows that the user builds and runs are constrained in complexity and parts of the workflows run multiple times, typically in parallel, by an application at the start of the worflow responsible for generating end results that include uncertainty quantification (UQ) measures. A consequence of performing UQ, is the need to utilize high performance computers for most any thing but trivial example problems, which can be done using high performance computing resources made available Cloud services.</p>
-<p>To facilitate the development of the development of the different SimCenter applications and to encourage their reuse and extension by other NHE researchers, the SimCenter is providing the NHE community with a software framework for building such applications. From this framework the SimCenter is building the applications, of which quoFEM app is but one, that it releases. These individual applications are built from the components of the framework. The components of the SimCenter are grouped, as shown in  figure below, into the following components:</p>
+<p>The quoFEM app is one of the SimCenter’s computational applications, which are <a class="reference external" href="https://en.wikipedia.org/wiki/Scientific_workflow_system">scientific workflow systems</a> that execute a sequence of computational tasks specialized for natural hazard engineering (NHE) problems. In contrast to more general-purpose scientific workflow systems (such as <a class="reference external" href="https://taverna.incubator.apache.org/">Taverna</a>, <a class="reference external" href="https://kepler-project.org/">Kepler</a>, and <a class="reference external" href="https://pegasus.isi.edu/">Pegasus</a>), SimCenter workflow systems include the following features:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>access to high performance computing resources, available on the cloud through <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>, to enable parallel workflows for non-trivial large-scale NHE problems;</p></li>
+<li><p>uncertainty quantification capabilities using <a class="reference external" href="https://dakota.sandia.gov/">Dakota</a>, which allows users to introduce input uncertainties which are propagated through the workflow with random variables;</p></li>
+<li><p>streamlined interfaces between existing software applications and datasets that are widely used by the NHE community, such as <a class="reference external" href="https://openfoam.org/">OpenFOAM</a>, <a class="reference external" href="https://opensees.berkeley.edu/">OpenSees</a>, <a class="reference external" href="http://adcirc.org/">ADCIRC</a>, and <a class="reference external" href="https://peer.berkeley.edu/peer-strong-ground-motion-databases">PEER Strong Ground Motion Databases</a>. To do this, the SimCenter develops pre- and post-processors to these existing applications and utilize web technologies for accessing online services;</p></li>
+<li><p>additional custom software applications produced by the SimCenter. Among these are applications which automate the acquisition of building inventory data (<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/">BRAILS</a>), applications which simulate hazard evens and generate corresponding input files for passing through the workflow system (RegionalEvent Applications), applications for damage and loss assessment (<a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">pelicun</a>), and more.</p></li>
+<li><p>a modular framework which allows developers to incorporate their own software applications as components to the workflow system, so long as it meets the input-output structure at component interfaces.</p></li>
+</ul>
+</div></blockquote>
+<p>Documentation of the software architecture is detailed in the following pages:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file-types.html">2.1. File Types and Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backendApplications.html">2.2. Backend Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c4model.html">2.3. C4 Model of Software Architecture</a></li>
+</ul>
+</div>
 <ol class="arabic simple">
-<li><p>Cloud: applications/libraries for communicating with remote web services to launch and monitor applications on HPC resources and to upload and download files from the filesystems of such resources.</p></li>
-<li><p>UQ: applications for performing sampling, sensitivity, reliability and optimization methods.</p></li>
-<li><p>SAM: applications for creating finite element models.</p></li>
-<li><p>EVENT: applications for creating loads on buildings and infrastructure given a natural hazard event.</p></li>
-<li><p>FEM: application for determining the response parameter of the building/lifeline given applied loads.</p></li>
 <li><p>DL: application to determine the damage &amp; loss to the builing/infrastructure given the event.</p></li>
 <li><p>EDP: application to determine the response parameter given the event, building/lifeline, and damage and loss application.</p></li>
 <li><p>BRAILS: a framework of applications for creating regional level building inventories using machine learning.</p></li>
@@ -205,9 +231,9 @@
 <blockquote>
 <div><p>Within the natural hazards engineering community, there exists a number of widely used open-source applications, e.g. OpenFOAM, and online datasets, e.g. PEER NGA, that researchers are currently using. As a consequence, and to avoid duplication, SimCenter applications incorprate many of the widely used appliecations, e.g. OpenFOAM. To do this SimCenter develops pre- and post-processors to these existing applications and utilize web-technologies for accessing online services.</p>
 </div></blockquote>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id4">
 <span id="figframework"></span><a class="reference internal image-reference" href="../../../../_images/SimCenterFramework.png"><img alt="../../../../_images/SimCenterFramework.png" src="../../../../_images/SimCenterFramework.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">SimCenter Software Framework</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">SimCenter Software Framework</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>The SimCenter scientific workflow systems are aimed at facilitating the use, reuse and extension of common workflows encoutred in NHE by a broad range of natural hazards engineering researchers with varying levels of software skills. In order to encourage this use and adoption, this chapter presents the software architecture for the SimCenter framework and quoFEM app using the <a class="reference external" href="https://c4model.com">C4 model</a>. The <strong>C4</strong> model is graphical approach for documenting software architecture through diagrams that describe and communicate the software architecture at different levels of abstraction. It is a top-down approach which starts at a high level (level 1) showing how a user would interact with the software and drills down through three more levels, with level 4 containing the typical UML diagrams. The choice of the <strong>C4</strong> model was made to provide NHE researchers with a diverse range of software architecture knowledge an understanding of the software architecture behind SimCenter applications that fits their skill level. The four levels:</p>
 <ul class="simple">
@@ -234,26 +260,26 @@
 <p>in a specific domain. The framework defines the interfaces between the components of the software,
 provides example applications that can be developed using the provided software, and defines a clear set of interfaces such that the software can be extended to build other applications.</p>
 <div class="section" id="overview">
-<h2><span class="section-number">2.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world, is shown in <a class="reference internal" href="#figcontext"><span class="std std-numref">Fig. 2.1.1</span></a>. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>.</p>
-<div class="align-center figure" id="id3">
-<span id="figcontext"></span><a class="reference internal image-reference" href="../../../../_images/context.png"><img alt="../../../../_images/context.png" src="../../../../_images/context.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.1 </span><span class="caption-text">System context diagram for SimCenter applications.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
-<p>Given how SimCenter applications fit in with the environment, a level 2 diagrams now demonstrates how the SimCenter applications are broken into high level components. The SimCenter applications are, as shown in <a class="reference internal" href="#figcontainer"><span class="std std-numref">Fig. 2.1.2</span></a>, broken into two components: A front end UI and a back end application that runs the workflow. The front end applications are desktop applications written using the cross-platform <a class="reference external" href="https://www.qt.io/product/framework">Qt framework</a>. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on a HPC utilizing resources made available to NHE community through DesignSafe.</p>
-<div class="align-center figure" id="id4">
-<span id="figcontainer"></span><a class="reference internal image-reference" href="../../../../_images/container.png"><img alt="../../../../_images/container.png" src="../../../../_images/container.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2 </span><span class="caption-text">System container diagram for SimCenter applications.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
-<p>Two level 3 diagrams are now presented which break up the two containers into the major building blocks or components in C4 terminology. In <a class="reference internal" href="#figcomponentfront"><span class="std std-numref">Fig. 2.1.3</span></a> the component diagram for the front end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequently interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.</p>
+<h2><span class="section-number">2.4. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world, is shown in <a class="reference internal" href="#figcontext"><span class="std std-numref">Fig. 2.4.6</span></a>. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>.</p>
 <div class="align-center figure" id="id5">
-<span id="figcomponentfront"></span><a class="reference internal image-reference" href="../../../../_images/componentFront.png"><img alt="../../../../_images/componentFront.png" src="../../../../_images/componentFront.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3 </span><span class="caption-text">Component diagram for front end UI.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<span id="figcontext"></span><a class="reference internal image-reference" href="../../../../_images/context.png"><img alt="../../../../_images/context.png" src="../../../../_images/context.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.6 </span><span class="caption-text">System context diagram for SimCenter applications.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
-<p>The component diagram for the backend application shown in <a class="reference internal" href="#figcomponentback"><span class="std std-numref">Fig. 2.1.4</span></a>, shows that the backend is made up of a number of component applications. The application <code class="docutils literal notranslate"><span class="pre">femUQ.py</span></code> is the application that parses the input from the front end, sets up the workflow by creating a <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> script and then launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a file, <code class="docutils literal notranslate"><span class="pre">WorkflowApplication.json</span></code>. The <code class="docutils literal notranslate"><span class="pre">WorkflowApplication.json</span></code> file is a file that maps the applications specified in the output from the UI with a specific application contained on the users local machine or at the remote HPC resource, as such it allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Once the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> file is created, control is passed to a UQ engine, which repeatedly runs the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided. The figure shows the backend application running locally or remotely on a HPC at DesignSafe.</p>
+<p>Given how SimCenter applications fit in with the environment, a level 2 diagrams now demonstrates how the SimCenter applications are broken into high level components. The SimCenter applications are, as shown in <a class="reference internal" href="#figcontainer"><span class="std std-numref">Fig. 2.4.7</span></a>, broken into two components: A front end UI and a back end application that runs the workflow. The front end applications are desktop applications written using the cross-platform <a class="reference external" href="https://www.qt.io/product/framework">Qt framework</a>. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on a HPC utilizing resources made available to NHE community through DesignSafe.</p>
 <div class="align-center figure" id="id6">
+<span id="figcontainer"></span><a class="reference internal image-reference" href="../../../../_images/container.png"><img alt="../../../../_images/container.png" src="../../../../_images/container.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.7 </span><span class="caption-text">System container diagram for SimCenter applications.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Two level 3 diagrams are now presented which break up the two containers into the major building blocks or components in C4 terminology. In <a class="reference internal" href="#figcomponentfront"><span class="std std-numref">Fig. 2.4.8</span></a> the component diagram for the front end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequently interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.</p>
+<div class="align-center figure" id="id7">
+<span id="figcomponentfront"></span><a class="reference internal image-reference" href="../../../../_images/componentFront.png"><img alt="../../../../_images/componentFront.png" src="../../../../_images/componentFront.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.8 </span><span class="caption-text">Component diagram for front end UI.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>The component diagram for the backend application shown in <a class="reference internal" href="#figcomponentback"><span class="std std-numref">Fig. 2.4.9</span></a>, shows that the backend is made up of a number of component applications. The application <code class="docutils literal notranslate"><span class="pre">femUQ.py</span></code> is the application that parses the input from the front end, sets up the workflow by creating a <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> script and then launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a file, <code class="docutils literal notranslate"><span class="pre">WorkflowApplication.json</span></code>. The <code class="docutils literal notranslate"><span class="pre">WorkflowApplication.json</span></code> file is a file that maps the applications specified in the output from the UI with a specific application contained on the users local machine or at the remote HPC resource, as such it allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Once the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> file is created, control is passed to a UQ engine, which repeatedly runs the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided. The figure shows the backend application running locally or remotely on a HPC at DesignSafe.</p>
+<div class="align-center figure" id="id8">
 <span id="figcomponentback"></span><a class="reference internal image-reference" href="../../../../_images/componentBack.png"><img alt="../../../../_images/componentBack.png" src="../../../../_images/componentBack.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4 </span><span class="caption-text">Component diagram for Backend Application.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.9 </span><span class="caption-text">Component diagram for Backend Application.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -279,14 +305,14 @@ provides example applications that can be developed using the provided software,
 <li><p>The femUQ application will notify the UI that it is done.</p></li>
 <li><p>The UI will read in the reuslts and present them to the user.</p></li>
 </ol>
-<div class="align-center figure" id="id7">
+<div class="align-center figure" id="id9">
 <span id="figsequencelocal"></span><a class="reference internal image-reference" href="../../../../_images/sequenceLocal.png"><img alt="../../../../_images/sequenceLocal.png" src="../../../../_images/sequenceLocal.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.5 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Locally</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.10 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Locally</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>That is for the case where the computations are performed on the local computer. When the somputations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the <a class="reference external" href="https://tapis-project.org/">TACC tapis</a> interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.</p>
-<div class="align-center figure" id="id8">
-<span id="id1"></span><a class="reference internal image-reference" href="../../../../_images/sequenceRemote.png"><img alt="../../../../_images/sequenceRemote.png" src="../../../../_images/sequenceRemote.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.6 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Remotely</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<div class="align-center figure" id="id10">
+<span id="id3"></span><a class="reference internal image-reference" href="../../../../_images/sequenceRemote.png"><img alt="../../../../_images/sequenceRemote.png" src="../../../../_images/sequenceRemote.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.11 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Remotely</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -351,6 +377,44 @@ provides example applications that can be developed using the provided software,
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

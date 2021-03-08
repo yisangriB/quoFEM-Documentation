@@ -7,13 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
   
@@ -34,18 +35,22 @@
         <script src="../../../../../../_static/underscore.js"></script>
         <script src="../../../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
-    <link rel="next" title="6.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine" href="../quo-09/README.html" />
-    <link rel="prev" title="6. Examples" href="../../examples.html" />
+    <link rel="next" title="4.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine" href="../quo-09/README.html" />
+    <link rel="prev" title="4. Examples" href="../../examples.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -58,23 +63,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../../../index.html">
-          
+  <a href="../../../../../../index.html">
 
-          
-            
-            <img src="../../../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,7 +91,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -94,28 +102,33 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../about/quoFEM/aboutQUOFEM.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../usage/desktop/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">6. Examples</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sampling-analysis">6.1.1. Sampling Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#reliability-analysis">6.1.2. Reliability Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#global-sensitivity">6.1.3. Global Sensitivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sampling-analysis">4.1.1. Sampling Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reliability-analysis">4.1.2. Reliability Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-sensitivity">4.1.3. Global Sensitivity</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../quo-09/README.html">6.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exampleFrameConv/README.html">6.3. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exampleFrameBaye/README.html">6.4. Steel Frame: Bayesian Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quo-14/README.html">6.5. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quo-09/README.html">4.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exampleFrameConv/README.html">4.3. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exampleFrameBaye/README.html">4.4. Steel Frame: Bayesian Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quo-14/README.html">4.5. Steel Frame: Bayesian Calibration using TMCMC</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -128,7 +141,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -177,9 +189,9 @@
     
       <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../examples.html"><span class="section-number">6. </span>Examples</a> &raquo;</li>
+          <li><a href="../../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">6.1. </span>Two-Dimensional Truss: Sampling, Reliability and Sensitivity</li>
+      <li><span class="section-number">4.1. </span>Two-Dimensional Truss: Sampling, Reliability and Sensitivity</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -199,7 +211,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="two-dimensional-truss-sampling-reliability-and-sensitivity">
-<h1><span class="section-number">6.1. </span>Two-Dimensional Truss: Sampling, Reliability and Sensitivity<a class="headerlink" href="#two-dimensional-truss-sampling-reliability-and-sensitivity" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.1. </span>Two-Dimensional Truss: Sampling, Reliability and Sensitivity<a class="headerlink" href="#two-dimensional-truss-sampling-reliability-and-sensitivity" title="Permalink to this headline">¶</a></h1>
 <p>Consider the problem of uncertainty quantification in a two-dimensional truss structure shown in the following figure.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../../_images/truss.png"><img alt="../../../../../../_images/truss.png" src="../../../../../../_images/truss.png" style="width: 600px;" /></a>
@@ -213,7 +225,7 @@
 </ol>
 <p>The goal of the exercise is to estimate the mean and standard deviation of the vertical displacement at node 3. The exercise requires two files. The user is required to download these files and place them in a <strong>NEW</strong> folder. The two files are:</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/quoFEM/quo-01/src/TrussModel.tcl">TrussTemplate.tcl</a></p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">:quo-01:`TrussTemplate.tcl &lt;src/TrussModel.tcl&gt;`</span></a></p></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># units kN &amp; mm</span>
 
@@ -289,7 +301,7 @@
 <p>The first lines containing <code class="docutils literal notranslate"><span class="pre">pset</span></code> will be read by the application when the file is selected and the application will autopopulate the Random Variables input panel with these same variable names. It is of course possible to explicitly use Random Variables without the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command as is demonstrated in the verification section.</p>
 </div>
 <ol class="arabic simple" start="2">
-<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/quoFEM/quo-01/src/TrussPost.tcl">TrussPost.tcl</a>.</p></li>
+<li><p><a href="#id3"><span class="problematic" id="id4">:quo-01:`TrussPost.tcl &lt;src/TrussPost.tcl&gt;`</span></a>.</p></li>
 </ol>
 <p>The <code class="docutils literal notranslate"><span class="pre">TrussPost.tcl</span></code> script shown below will accept as input any of the 6 nodes in the domain and for each of the two dof directions.</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># create file handler to write results to output &amp; list into which we will put results</span>
@@ -327,7 +339,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The use has the option to provide no post-process script (in which case the main script must create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file containing a single line with as many space separated numbers as QoI or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/quoFEM/quo-01/src/TrussPost.py">TrussPost.py</a>.</p>
+<p>The use has the option to provide no post-process script (in which case the main script must create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file containing a single line with as many space separated numbers as QoI or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is <a href="#id5"><span class="problematic" id="id6">:quo-01:`TrussPost.py &lt;src/TrussPost.py&gt;`</span></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 
 <span class="c1"># written: fmk, adamzs 01/18</span>
@@ -403,7 +415,7 @@
 <p>Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
 </div>
 <div class="section" id="sampling-analysis">
-<h2><span class="section-number">6.1.1. </span>Sampling Analysis<a class="headerlink" href="#sampling-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.1. </span>Sampling Analysis<a class="headerlink" href="#sampling-analysis" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 48%" />
@@ -411,7 +423,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Problem files</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/quoFEM/quo-01//">quo-01/</a></p></td>
+<td><p><a href="#id7"><span class="problematic" id="id8">:quo-01:`/`</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -460,7 +472,7 @@
 </div>
 </div>
 <div class="section" id="reliability-analysis">
-<h2><span class="section-number">6.1.2. </span>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.2. </span>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 48%" />
@@ -468,7 +480,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Problem files</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/quoFEM/quo-03//">quo-03/</a></p></td>
+<td><p><a href="#id9"><span class="problematic" id="id10">:quo-03:`/`</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -478,11 +490,11 @@
 </div>
 <p>After the user fills in the rest of the tabs as per the previous section, the user would then press the <strong>RUN</strong> button. The application (after spinning for a while with the wheel of death) will present the user with the results.</p>
 <div class="align-center figure">
-<img alt="../../../../../../_images/trussSORM-RES.png" src="../../../../../../_images/trussSORM-RES.png" />
+<img alt="../../../../../../_images/trussSORM-RES1.png" src="../../../../../../_images/trussSORM-RES1.png" />
 </div>
 </div>
 <div class="section" id="global-sensitivity">
-<h2><span class="section-number">6.1.3. </span>Global Sensitivity<a class="headerlink" href="#global-sensitivity" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.3. </span>Global Sensitivity<a class="headerlink" href="#global-sensitivity" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 48%" />
@@ -490,7 +502,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Problem files</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/quoFEM/quo-04//">quo-04/</a></p></td>
+<td><p><a href="#id11"><span class="problematic" id="id12">:quo-04:`/`</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -501,7 +513,7 @@
 </div>
 <p>After the user fills in the rest of the tabs as per the previous section, the user would then press the <strong>RUN</strong> button. The application (after spinning for a while with the wheel of death) will present the user with the results.</p>
 <div class="align-center figure">
-<img alt="../../../../../../_images/trussSensitivity-RES.png" src="../../../../../../_images/trussSensitivity-RES.png" />
+<img alt="../../../../../../_images/trussSensitivity-RES1.png" src="../../../../../../_images/trussSensitivity-RES1.png" />
 </div>
 </div>
 </div>
@@ -566,6 +578,44 @@
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
   
@@ -34,6 +35,9 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -46,6 +50,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -58,23 +63,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../index.html">
-          
+  <a href="../../../../index.html">
 
-          
-            
-            <img src="../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,7 +91,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -94,16 +102,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -113,25 +126,19 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. How to Build</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#install-dependencies">1.1. Install Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-the-workflow-application-files">1.2. Build the Workflow Application Files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#build-on-windows">1.2.1. Build on Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-on-macos">1.2.2. Build on MacOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-on-unix">1.2.3. Build on Unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-the-backend-applications">1.2. Build the Backend Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup-the-development-environment-with-conan">1.2.1. Setup the development environment with Conan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-the-applications">1.2.2. Build the applications</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#build-the-user-interface">1.3. Build the User Interface</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#build-using-the-qt-creator-recommended">1.3.1. Build using the Qt Creator (Recommended)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-using-the-terminal">1.3.2. Build using the terminal</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#set-the-user-interface-preferences">1.4. Set the User Interface Preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-the-user-interface">1.3. Build the User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modify-the-user-interface-preferences">1.4. Modify the User Interface Preferences</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -201,102 +208,167 @@
             
   <div class="section" id="how-to-build">
 <span id="lblhowtobuild"></span><h1><span class="section-number">1. </span>How to Build<a class="headerlink" href="#how-to-build" title="Permalink to this headline">¶</a></h1>
-<p>This page outlines steps to preparing the workflow applications, or “Backend Applications”, on your local desktop.</p>
+<p>SimCenter tools all comprise a frontend UI and some backend applications. They are kept in seperate github repositories and are also built seperately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.</p>
 <div class="section" id="install-dependencies">
 <h2><span class="section-number">1.1. </span>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>First, ensure the following dependencies are installed:</p>
 <ul class="simple">
-<li><p><strong>C++11 compliant compiler</strong>: many of the workflow applications included use C++11 features, consequently they may need a newer C++11 compliant compiler. In these instructions, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community edition)</a> is used.</p></li>
+<li><p><strong>C++11 compliant compiler</strong>: many of the workflow applications included use C++11 features, consequently they may need a newer C++11 compliant compiler. Fow Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with c++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.</p></li>
 <li><p><strong>OpenSees</strong>: The workflow applications require an installation of <a class="reference external" href="http://opensees.berkeley.edu/">OpenSees</a> to carry out structural analysis using the finite element method.</p></li>
 <li><p><strong>DAKOTA</strong>: The workflow applications require an installation of <a class="reference external" href="https://dakota.sandia.gov/">DAKOTA</a> to handle and propagate the uncertainties defined in the input files for the workflow applications.</p></li>
-<li><p><strong>Python</strong>: The workflow requires at least Python 3.6.</p></li>
+<li><p><strong>Python</strong>: The workflow requires at least Python 3.7.</p></li>
 <li><p><strong>Conan</strong>: This repository uses <a class="reference external" href="https://conan.io/">Conan</a> for dependency management. Conan is a python library and can be installed using the following <a class="reference external" href="https://docs.conan.io/en/latest/installation.html">instructions</a>. Version 1.25 or later is recommended.</p></li>
 <li><p><strong>CMake</strong>: This repository uses <a class="reference external" href="https://cmake.org/download/">CMake</a> for managing the build process. Version 3.15 or later is recommended.</p></li>
-<li><p><strong>Qt Creator</strong>: The Qt framework is only necessary if you choose to build the user interface for the quoFEM software. <a class="reference external" href="https://www.qt.io/download">Qt Creator</a> is free for open source developers. Version 5.10 or later is required, and version 5.12 or later is recommended.</p></li>
+<li><p><strong>Qt</strong>: <a class="reference external" href="https://www.qt.io/download">Qt</a> is free for open source developers. Version 5.15 or later is required. Make sure to include Qt Creator in the installer.</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Qt Version 6.0 is currently available. It is so new we do not use it.</p>
 </div>
-<div class="section" id="build-the-workflow-application-files">
-<h2><span class="section-number">1.2. </span>Build the Workflow Application Files<a class="headerlink" href="#build-the-workflow-application-files" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="build-the-backend-applications">
+<h2><span class="section-number">1.2. </span>Build the Backend Applications<a class="headerlink" href="#build-the-backend-applications" title="Permalink to this headline">¶</a></h2>
 <p>Instructions to build the workflow applications on your local desktop depend on your operating system.</p>
-<div class="section" id="build-on-windows">
-<h3><span class="section-number">1.2.1. </span>Build on Windows<a class="headerlink" href="#build-on-windows" title="Permalink to this headline">¶</a></h3>
-<p>For Windows systems, the steps to building the workflow application are as follows:</p>
+<div class="section" id="setup-the-development-environment-with-conan">
+<h3><span class="section-number">1.2.1. </span>Setup the development environment with Conan<a class="headerlink" href="#setup-the-development-environment-with-conan" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Add Conan <a class="reference external" href="https://bintray.com/nheri-simcenter/simcenter">SimCenter</a> and  <a class="reference external" href="https://bintray.com/bincrafters/public-conan">BinCrafters</a> repositories to the Conan remotes. You can add these remotes by typing the following commands in the terminal:</p>
 <blockquote>
-<div><ol class="arabic">
-<li><p><strong>Obtain the source code:</strong> Clone the SimCenterBackendApplications repository from <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterBackendApplications">Github</a>. You can do that by using your preferred Git client/GUI or by using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command in the terminal:</p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/NHERI-SimCenter/SimCenterBackendApplications</span></code></p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">simcenter</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">bintray</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conan</span><span class="o">/</span><span class="n">nheri</span><span class="o">-</span><span class="n">simcenter</span><span class="o">/</span><span class="n">simcenter</span>
+
+<span class="n">conan</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">bincrafters</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">bintray</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conan</span><span class="o">/</span><span class="n">bincrafters</span><span class="o">/</span><span class="n">public</span><span class="o">-</span><span class="n">conan</span>
+</pre></div>
+</div>
 </div></blockquote>
 </li>
-<li><p><strong>Set up the development environment:</strong> Add Conan <a class="reference external" href="https://bintray.com/nheri-simcenter/simcenter">SimCenter</a> and  <a class="reference external" href="https://bintray.com/bincrafters/public-conan">BinCrafters</a> repositories to the Conan remotes. You can add these remotes using the following commands in the terminal:</p>
+<li><p>Create a default Conan profile if this is the first time you use Conan for building packages.</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">simcenter</span> <span class="pre">https://api.bintray.com/conan/nheri-simcenter/simcenter</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">bincrafters</span> <span class="pre">https://api.bintray.com/conan/bincrafters/public-conan</span></code></p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">profile</span> <span class="n">new</span> <span class="n">default</span> <span class="o">--</span><span class="n">detect</span>
+</pre></div>
+</div>
 </div></blockquote>
 </li>
-<li><p><strong>Configure your compiler:</strong> Check the default profile of your build environment using <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">profile</span> <span class="pre">show</span> <span class="pre">default</span></code>. If the compiler name and compiler version are <em>not</em> listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:</p>
+<li><p>Check the default profile of your build environment using:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">profile</span> <span class="pre">update</span> <span class="pre">settings.compiler=&quot;Visual</span> <span class="pre">Studio&quot;</span> <span class="pre">default</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">profile</span> <span class="pre">update</span> <span class="pre">settings.compiler.version=&quot;16&quot;</span> <span class="pre">default</span></code></p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">profile</span> <span class="n">show</span> <span class="n">default</span>
+</pre></div>
+</div>
 </div></blockquote>
 </li>
-<li><p><strong>Create the build output directory:</strong> In the terminal, navigate into the “SimCenterBackendApplications” repository on your desktop. Create a new folder called “build” using the command <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build</span></code>, then navigate into that folder using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">build</span></code>.</p></li>
-<li><p><strong>Install backend dependencies:</strong> You can install backend dependencies using Conan by running the command in the build output directory:</p>
+<li><p>If the compiler name and compiler version are <em>not</em> listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span> <span class="pre">..</span> <span class="pre">--build</span> <span class="pre">missing</span></code></p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">profile</span> <span class="n">update</span> <span class="n">settings</span><span class="o">.</span><span class="n">compiler</span><span class="o">=</span><span class="s2">&quot;Visual Studio&quot;</span> <span class="n">default</span>
+
+<span class="n">conan</span> <span class="n">profile</span> <span class="n">update</span> <span class="n">settings</span><span class="o">.</span><span class="n">compiler</span><span class="o">.</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;16&quot;</span> <span class="n">default</span>
+</pre></div>
+</div>
 </div></blockquote>
 </li>
-<li><p><strong>Run CMake configuration:</strong> Run the command <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span></code>. If it is necessary to specify a compiler for CMake, you may alternatively run <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span> <span class="pre">-G</span> <span class="pre">&quot;Visual</span> <span class="pre">Studio</span> <span class="pre">16</span> <span class="pre">2019&quot;</span></code>.</p></li>
-<li><p><strong>Build the release version of the backend:</strong> When using an IDE like Visual Studio on Windows, the generated project can opened in the IDE and used to build the code. This function can also be done from the same terminal window using CMake by the command:</p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span> <span class="pre">--config</span> <span class="pre">release</span></code></p>
-</div></blockquote>
-</li>
-<li><p><strong>Install the workflow applications folder:</strong> Run the command <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--install</span> <span class="pre">.</span></code>. If the installation and build are successful, then you should find a folder called “applications” in the “SimCenterBackendApplications” repository which contains all the workflow application files.</p></li>
 </ol>
+</div>
+<div class="section" id="build-the-applications">
+<h3><span class="section-number">1.2.2. </span>Build the applications<a class="headerlink" href="#build-the-applications" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" start="2">
+<li><p>To build the applications you need to now navigate to the <strong>SimCenterBackendApplications</strong> folder that was created with the <strong>git clone</strong> command. Once there you will issue the following set of commands to create a <strong>build</strong> folder, change director to that folder, install needed software using conan, and finally use <strong>cmake</strong> to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):</p>
+<blockquote>
+<div><blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span>
+<span class="n">cd</span> <span class="n">build</span>
+<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
+<span class="n">cmake</span> <span class="o">..</span>
+<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span>
+<span class="n">cmake</span> <span class="o">--</span><span class="n">install</span> <span class="o">.</span>
+<span class="n">cd</span> <span class="o">..</span>
+</pre></div>
+</div>
 </div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic">
+<li><p>On Windows it is necessary to specify a compiler for CMake. To do this you need to add additional arguments to line 4, i.e. if you have Visual Studio 2019 you would instead type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">G</span> <span class="s2">&quot;Visual Studio 16 2019&quot;</span>
+</pre></div>
 </div>
-<div class="section" id="build-on-macos">
-<h3><span class="section-number">1.2.2. </span>Build on MacOS<a class="headerlink" href="#build-on-macos" title="Permalink to this headline">¶</a></h3>
-<p>For Mac systems, the steps to building the workflow application are as follows:</p>
+</li>
+<li><p>For Mac users running <strong>Big Sur</strong> and version <strong>12</strong> of XCode there are some reported issues. Replace line 3 above with the following two lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span> <span class="o">--</span><span class="n">build</span><span class="o">=</span><span class="n">libcurl</span>
+<span class="n">mv</span> <span class="o">./</span><span class="n">missing</span><span class="o">/*</span> <span class="o">./</span>
+</pre></div>
 </div>
-<div class="section" id="build-on-unix">
-<h3><span class="section-number">1.2.3. </span>Build on Unix<a class="headerlink" href="#build-on-unix" title="Permalink to this headline">¶</a></h3>
-<p>For Unix systems, the steps to building the workflow application are as follows:</p>
+</li>
+</ol>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>If building and installation were successful you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it. The name of this folder should not be changed.</p>
 </div>
 </div>
 <div class="section" id="build-the-user-interface">
 <h2><span class="section-number">1.3. </span>Build the User Interface<a class="headerlink" href="#build-the-user-interface" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="build-using-the-qt-creator-recommended">
-<h3><span class="section-number">1.3.1. </span>Build using the Qt Creator (Recommended)<a class="headerlink" href="#build-using-the-qt-creator-recommended" title="Permalink to this headline">¶</a></h3>
+<p>To build the interface you first need to download the repo and a companion repo(SimCenterCommon) from github using our <a class="reference external" href="https://github.com/NHERI-SimCenter">github repos</a>. In a folder in which you wish to build the application, issue the following two commands.</p>
 <blockquote>
-<div><ol class="arabic simple">
-<li><p>Start Qt Creator, then open the quoFEM.pro file located in the quoFEM directory that was downloaded in the previous steps.</p></li>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">SimCenterCommon</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">APP_NAME</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo’s, you should fork the latter repo and then clone your forked repo. Forking a repo at <strong>githib</strong> is done through your browser.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YOUR_GITHUB_NAME</span><span class="o">/</span><span class="n">APP_NAME</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<p>You now have two ways to build the application: (1) using the <strong>Qt Creator</strong> desktop application provided by <strong>Qt</strong> and (2) from terminal application.</p>
+<ol class="arabic simple">
+<li><p>Start Qt Creator, then open the quoFEM.pro file located in the quoFEM directory that was downloaded in the previous step.</p></li>
 <li><p>Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler and configuration and following the onscreen dialog.</p></li>
 <li><p>Build the application and run it in Qt Creator IDE by using the <strong>Run</strong> button. This can be done using the keyboard shortcut <code class="docutils literal notranslate"><span class="pre">F5</span></code> to build and start the tool.</p></li>
 </ol>
-</div></blockquote>
-</div>
-<div class="section" id="build-using-the-terminal">
-<h3><span class="section-number">1.3.2. </span>Build using the terminal<a class="headerlink" href="#build-using-the-terminal" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run <strong>qmake</strong>, and finally make (or on Windows nmake)</p>
 <blockquote>
-<div><ol class="arabic">
-<li><p>First, create a build output directory. This can be done in the terminal using the command <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build</span></code>.</p></li>
-<li><p>Go into the build output directory and run QMake to Configure the project and create make files. This can be done by using the command:</p>
-<blockquote>
-<div><pre class="literal-block">qmake ../quoFEM.pro</pre>
+<div><pre class="literal-block">mkdir build
+cd build
+qmake ../quoFEM.pro
+make</pre>
 </div></blockquote>
 </li>
-<li><p>Build the project by using the command <code class="docutils literal notranslate"><span class="pre">make</span></code> on Unix like systems. On Windows, you can either use <code class="docutils literal notranslate"><span class="pre">nmake</span></code> or <code class="docutils literal notranslate"><span class="pre">jom</span></code> to build in parallel. Once built, you can now run the tool executable.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic">
+<li><p>qmake is an application installed with Qt. To be able to run the command as whown, the path to the Qt bin folder needs to be added to your <strong>PATH</strong> environment variable. Alternativily you need to specify the full path to qmake, i.e. on my desktop (if I had not set my PATH variable) I would replace line 3 with the following:</p>
+<pre class="literal-block">/Users/fmckenna/Qt/5.15.2/clang_64/bin/qmake ../quoFEM.pro</pre>
+</li>
+<li><p>On a Windows 10 with Visual Studio, the above commands need to be performed using a <a class="reference external" href="https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160">Visual Studio x64 command prompt</a> . As a consequence you also need to replace line 4 with the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmake</span>
+</pre></div>
+</div>
+</li>
+<li><p>If installed, jom can also be used to build in parallel.</p></li>
+</ol>
+</div>
+<p>Once built, you can now run the tool executable.</p>
+</div>
+<div class="section" id="modify-the-user-interface-preferences">
+<h2><span class="section-number">1.4. </span>Modify the User Interface Preferences<a class="headerlink" href="#modify-the-user-interface-preferences" title="Permalink to this headline">¶</a></h2>
+<p>Once built the tool <strong>Preferences</strong> needs to be modified. To do this open the quoFEM tool, then click on File -&gt; Preferences in the main menu if on Windows or quoFEM -&gt; Preferences if on a Mac. This will bring up a dialog window shown below. You need to modify certain values:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Python: provide the full path to the python intertpreter.</p></li>
+<li><p>OpenSees: provide the full path to the OpenSees executable</p></li>
+<li><p>Dakota: provide full path to the dakota executable.</p></li>
+<li><p>Custom Local Application: Here select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder <strong>applications</strong>, which you created when building the backend applications, exists.</p></li>
 </ol>
 </div></blockquote>
+<div class="align-center figure" id="id3">
+<span id="figpreferences"></span><img alt="../../../../_images/Preferences.png" src="../../../../_images/Preferences.png" />
+<p class="caption"><span class="caption-number">Fig. 1.4.1 </span><span class="caption-text">Preferences Dialog</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-</div>
-<div class="section" id="set-the-user-interface-preferences">
-<h2><span class="section-number">1.4. </span>Set the User Interface Preferences<a class="headerlink" href="#set-the-user-interface-preferences" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Once built, Open the quoFEM tool, then click on file -&gt; preferences and set the applications directory entry to point to the applications folder that the build process created for BackendApplications.</p>
-</div></blockquote>
 </div>
 </div>
 
@@ -360,6 +432,44 @@
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

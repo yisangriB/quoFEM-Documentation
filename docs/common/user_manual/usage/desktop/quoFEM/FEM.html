@@ -7,13 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.2. FEM: Finite Element Method &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.2. FEM: Finite Element Method &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
   
@@ -34,18 +35,22 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.3. QoI: Quantities of Interest" href="QuantitiesOfInterest.html" />
-    <link rel="prev" title="4.1.4.1. Custom Uncertainty Quantification Engine Input" href="../CustomUQ.html" />
+    <link rel="next" title="2.3. QoI: Quantities of Interest" href="QuantitiesOfInterest.html" />
+    <link rel="prev" title="2.1.4.1. Custom Uncertainty Quantification Engine Input" href="../CustomUQ.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -58,23 +63,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../../index.html">
-          
+  <a href="../../../../../index.html">
 
-          
-            
-            <img src="../../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,7 +91,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -94,28 +102,33 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/aboutQUOFEM.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">4. User Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. FEM: Finite Element Method</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">4.2.1. OpenSees</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">4.2.2. FEAPpv</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#openseespy">4.2.3. OpenSeesPy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#custom">4.2.4. Custom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. FEM: Finite Element Method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.2.1. OpenSees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.2.2. FEAPpv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#openseespy">2.2.3. OpenSeesPy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom">2.2.4. Custom</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="QuantitiesOfInterest.html">4.3. QoI: Quantities of Interest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">4.4. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QuantitiesOfInterest.html">2.3. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.4. RV: Random Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -128,7 +141,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -177,9 +189,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">4.2. </span>FEM: Finite Element Method</li>
+      <li><span class="section-number">2.2. </span>FEM: Finite Element Method</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -199,13 +211,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fem-finite-element-method">
-<span id="lblfem"></span><h1><span class="section-number">4.2. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
+<span id="lblfem"></span><h1><span class="section-number">2.2. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
 <p>The <strong>FEM</strong> tab will present users with a selection of FEM
 applications. Currently, there are four options: OpenSees, FEAPpv, OpenSeesPy,
 and a custom user-specified application.</p>
 <div class="align-center figure" id="id3">
 <span id="figfem"></span><img alt="../../../../../_images/FEM.png" src="../../../../../_images/FEM.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.1 </span><span class="caption-text">Input for the <strong>FEM</strong> tab.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.1 </span><span class="caption-text">Input for the <strong>FEM</strong> tab.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -215,7 +227,7 @@ and a custom user-specified application.</p>
 </div>
 </div>
 <div class="section" id="id1">
-<h2><span class="section-number">4.2.1. </span>OpenSees<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.1. </span>OpenSees<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>When the choice of FEM application is OpenSees (the default application), the user is presented with the input panel shown in figure above and their are two entry fields for filenames:</p>
 <ol class="arabic simple">
 <li><p><strong>Input Script</strong>: The user must specify a main input script. When entered the application will parse this file looking for variables set with the <code class="docutils literal notranslate"><span class="pre">pset</span></code> option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with <code class="docutils literal notranslate"><span class="pre">pset</span></code>, the program will auto populate the variable in the <strong>RV</strong> tab.</p></li>
@@ -302,7 +314,7 @@ and a custom user-specified application.</p>
 </div>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">4.2.2. </span>FEAPpv<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.2. </span>FEAPpv<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Similar to the OpenSees application, when the user selects FEAPpv the user is requested to provide two files.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/feapFEM.png" src="../../../../../_images/feapFEM.png" />
@@ -372,7 +384,7 @@ and a custom user-specified application.</p>
 </ol>
 </div>
 <div class="section" id="openseespy">
-<h2><span class="section-number">4.2.3. </span>OpenSeesPy<a class="headerlink" href="#openseespy" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.3. </span>OpenSeesPy<a class="headerlink" href="#openseespy" title="Permalink to this headline">¶</a></h2>
 <p>For the OpenSeesPy application, the user provides a main script and has the option to provide 2 other scripts:</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/openseespyFEM.png" src="../../../../../_images/openseespyFEM.png" />
@@ -392,7 +404,7 @@ and a custom user-specified application.</p>
 <p>The <strong>RV</strong> tab would be populated with the <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">Ao</span></code>, and <code class="docutils literal notranslate"><span class="pre">Au</span></code> random variables.</p>
 </div>
 <div class="section" id="custom">
-<h2><span class="section-number">4.2.4. </span>Custom<a class="headerlink" href="#custom" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.4. </span>Custom<a class="headerlink" href="#custom" title="Permalink to this headline">¶</a></h2>
 <p>This option allows users to specify custom simulation applications which do not
 necessarily need to be limited to only Finite Element Method software. With this
 option all users need to do is provide a driver script that takes the input file
@@ -418,7 +430,7 @@ space.</p>
 </ul>
 <p>Additionally, users can specify as many additional files and binaries as
 required by the application by increasing the number of input slots, as shown in
-<a class="reference internal" href="#customfem"><span class="std std-numref">Fig. 4.2.2</span></a>. By specifying these files here, they will be copied to the
+<a class="reference internal" href="#customfem"><span class="std std-numref">Fig. 2.2.2</span></a>. By specifying these files here, they will be copied to the
 correct location for quoFEM to access them during analyses. Users also have the
 option to simply place all the required files in the same location as the
 provided workflow driver scipt–quoFEM will automatically copy any files in this
@@ -427,7 +439,7 @@ numerous inputs are all being called by the workflow driver script and avoids
 the need to explicitly input each one of these files.</p>
 <div class="align-center figure" id="id4">
 <span id="customfem"></span><img alt="../../../../../_images/customFEM.png" src="../../../../../_images/customFEM.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.2 </span><span class="caption-text">Input for Custom Analysis Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.2 </span><span class="caption-text">Input for Custom Analysis Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -492,6 +504,44 @@ the need to explicitly input each one of these files.</p>
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

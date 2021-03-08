@@ -7,13 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1. Install Python &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>Install Python &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
   
@@ -34,18 +35,20 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.2. Download the Application" href="downloadApp.html" />
-    <link rel="prev" title="3. Installation" href="installation.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -58,23 +61,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../index.html">
-          
+  <a href="../../../../index.html">
 
-          
-            
-            <img src="../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,7 +89,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -94,25 +100,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">2. About</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="installation.html">3. Installation</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Install Python</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#install-python-on-windows">3.1.1. Install Python on Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#install-python-on-a-mac">3.1.2. Install Python on a Mac</a></li>
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="downloadApp.html">3.2. Download the Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testInstall.html">3.3. Test the Installation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">8. Copyright and License</a></li>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -125,7 +127,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -174,9 +175,7 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="installation.html"><span class="section-number">3. </span>Installation</a> &raquo;</li>
-        
-      <li><span class="section-number">3.1. </span>Install Python</li>
+      <li>Install Python</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -196,9 +195,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="install-python">
-<span id="lbldownloadother"></span><h1><span class="section-number">3.1. </span>Install Python<a class="headerlink" href="#install-python" title="Permalink to this headline">¶</a></h1>
+<span id="lbldownloadother"></span><h1>Install Python<a class="headerlink" href="#install-python" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-python-on-windows">
-<h2><span class="section-number">3.1.1. </span>Install Python on Windows<a class="headerlink" href="#install-python-on-windows" title="Permalink to this headline">¶</a></h2>
+<h2>Install Python on Windows<a class="headerlink" href="#install-python-on-windows" title="Permalink to this headline">¶</a></h2>
 <p>If you have not yet installed Python 3.7, we recommend installing Python 3.7 from
 <a class="reference external" href="https://www.python.org/downloads/windows">Python.org</a>. We recommend installing using the
 <strong>Windowsx86 64-bit executable installer</strong>.</p>
@@ -227,7 +226,7 @@
 </div>
 </div>
 <div class="section" id="install-python-on-a-mac">
-<h2><span class="section-number">3.1.2. </span>Install Python on a Mac<a class="headerlink" href="#install-python-on-a-mac" title="Permalink to this headline">¶</a></h2>
+<h2>Install Python on a Mac<a class="headerlink" href="#install-python-on-a-mac" title="Permalink to this headline">¶</a></h2>
 <p>The Mac comes with Python pre-installed, which is currently the outdated version 2.7. As of January 1st, 2020 no new bug reports, fixes, or changes will be made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3. We recommend installing Python 3.7 from <a class="reference external" href="https://www.python.org/downloads/mac-osx">Python.org</a> using the
 <strong>macOS 64-bit installer</strong>. The installer will place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH. Version 3.8 does not appear to do so anymore, see the note below.</p>
 <div class="admonition note">
@@ -236,9 +235,9 @@
 <li><p>We use the python.org installation over others, due to it’s simplicity of install.</p></li>
 <li><p>In the current installation of Python it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code>.</p></li>
 </ol>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id3">
 <img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.1 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <p>Once Python is installed, you need to extend it by installing the following packages: <strong>numpy</strong>, <strong>scipy</strong>, and <strong>pandas</strong>. To install these packages, start a terminal window and type the following instructions:</p>
@@ -336,6 +335,44 @@
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

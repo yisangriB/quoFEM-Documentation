@@ -7,13 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.1.1.4. Parameter Estimation &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.1.1.4. Parameter Estimation &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
   
@@ -34,18 +35,22 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.1.1.5. Inverse Problem" href="DakotaInverseProblems.html" />
-    <link rel="prev" title="4.1.1.3. Reliability Analysis" href="DakotaReliability.html" />
+    <link rel="next" title="2.1.1.5. Inverse Problem" href="DakotaInverseProblems.html" />
+    <link rel="prev" title="2.1.1.3. Reliability Analysis" href="DakotaReliability.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -58,23 +63,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../index.html">
-          
+  <a href="../../../../index.html">
 
-          
-            
-            <img src="../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,7 +91,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -94,35 +102,40 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">4. User Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">4.1. UQ: Uncertainty Quantification</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#dakota-uq-engine">4.1.1. Dakota UQ Engine</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">4.1.1.1. Forward Propagation Methods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaSensitivity.html">4.1.1.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaReliability.html">4.1.1.3. Reliability Analysis</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.1.1.4. Parameter Estimation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaInverseProblems.html">4.1.1.5. Inverse Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#dakota-uq-engine">2.1.1. Dakota UQ Engine</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">2.1.1.1. Forward Propagation Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaSensitivity.html">2.1.1.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaReliability.html">2.1.1.3. Reliability Analysis</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.1.4. Parameter Estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaInverseProblems.html">2.1.1.5. Inverse Problem</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">4.1.2. SimCenter UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">4.1.3. UCSD UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">4.1.4. Custom UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">2.1.2. SimCenter UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.3. UCSD UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.4. Custom UQ Engine</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">4.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">4.3. QoI: Quantities of Interest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">4.4. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.3. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.4. RV: Random Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -135,7 +148,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -184,11 +196,11 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-          <li><a href="UQ.html"><span class="section-number">4.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
+          <li><a href="UQ.html"><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
         
-      <li><span class="section-number">4.1.1.4. </span>Parameter Estimation</li>
+      <li><span class="section-number">2.1.1.4. </span>Parameter Estimation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -208,15 +220,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="parameter-estimation">
-<span id="lbldakotaparameterestimation"></span><h1><span class="section-number">4.1.1.4. </span>Parameter Estimation<a class="headerlink" href="#parameter-estimation" title="Permalink to this headline">¶</a></h1>
+<span id="lbldakotaparameterestimation"></span><h1><span class="section-number">2.1.1.4. </span>Parameter Estimation<a class="headerlink" href="#parameter-estimation" title="Permalink to this headline">¶</a></h1>
 <p>Parameter Estimation methods (also known as non-linear least squares methods) are  used to fit a set of m observations (in this tool defined in the <strong>QoI</strong> tab) with a model that is non-linear with n unknown parameters (in thus tool the unknown parameters are defined in the <strong>RV</strong> tab) <span class="math notranslate nohighlight">\((m \ge n)\)</span>.  The method are obtaining the parameters that best fits the experimental results, that is that <strong>minimizes</strong> the QoI, given no prior estimation as to the distribution associated with the random variables. As such the processing scripts should leave in the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file differences between observed response and simulated response. The algorithms employed will find a set of parameters that minimizes these differences. The algorithms themselves are general functional minimization algorithms seeking to minimize:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-dakotaparameterestimation-0">
-<span class="eqno">(4.1.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-dakotaparameterestimation-0" title="Permalink to this equation">¶</a></span>\[f(x) = \sum_{i=1}^{m} w_i R_i^2 = \sum_{i=1}{m} w_i \left ( y(x)_i^{model} - y_i^{experiment} \right)^2\]</div>
+<span class="eqno">(2.1.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-dakotaparameterestimation-0" title="Permalink to this equation">¶</a></span>\[f(x) = \sum_{i=1}^{m} w_i R_i^2 = \sum_{i=1}{m} w_i \left ( y(x)_i^{model} - y_i^{experiment} \right)^2\]</div>
 <p>where <span class="math notranslate nohighlight">\(R_i\)</span> might be the difference between experimental data <span class="math notranslate nohighlight">\(y_i^{experiment}\)</span> and model predictions <span class="math notranslate nohighlight">\(y(x)_i^{model}\)</span> for a response quantity at a particular location and/or time step, <span class="math notranslate nohighlight">\(w_i\)</span> optional weights, and <span class="math notranslate nohighlight">\(x \in R^n\)</span> the <span class="math notranslate nohighlight">\(n\)</span> model parameters which are not precisely known and are being calibrated to match available data.</p>
 <p>The panel that is presented to the user when this Dakota Category is chosen, is as shown below.</p>
 <div class="align-center figure" id="id4">
 <span id="figparameterestimation"></span><img alt="../../../../_images/ParameterEstimation.png" src="../../../../_images/ParameterEstimation.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.11 </span><span class="caption-text">Dakota parameter estimation input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.11 </span><span class="caption-text">Dakota parameter estimation input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -322,6 +334,44 @@
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

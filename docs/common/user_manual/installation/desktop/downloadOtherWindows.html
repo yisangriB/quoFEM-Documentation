@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
   
@@ -34,6 +35,9 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -44,6 +48,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -56,23 +61,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../index.html">
-          
+  <a href="../../../../index.html">
 
-          
-            
-            <img src="../../../../_static/quoFEM-LogoImageGrey.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,7 +89,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -92,16 +100,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -114,7 +127,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -220,16 +232,16 @@
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Dakota<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>Dakota<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://dakota.sandia.gov/">Dakota</a> is the default UQ engine used by the quoFEM app that is publicly available from the <a class="reference external" href="https://dakota.sandia.gov/download.html">Dakota Download</a> page. The download page offers an extensive list of downloadable files. You can narrow this down to the file to be selected by selecting <strong>Windows</strong> in the <cite>Platform</cite>, <strong>6.10</strong> (<strong>6.10</strong> was latest at time of writing, select newer of course if available) in the <cite>Release</cite>, and <strong>Command Line Only</strong> for the <cite>interface type</cite>. In the <cite>Public</cite> area you should now only have a single option, click on the link to download <strong>Dakota</strong>. When you extract the files that you download, they will all be contained in a single folder, we suggest renaming it <strong>dakota-6.10.0</strong> (the last <strong>.0</strong> was the number in the download, sometimes developers issue minor updates and identify them through the last number). When you have renamed the folder move that folder to the <strong>C:\SimCenter\dakota\</strong> folder.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We place <strong>dakota-6.10.0</strong> inside <strong>dakota</strong> folder to be able to have multiple versions installed. This is a useful practice, as software developers make tweaks that can effect the results of past simulations. It is useful to be able to compare different versions of an application to ensure results stay the same.</p>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>OpenSees<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>OpenSees<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://opensees.berkeley.edu">OpenSees</a> is the default FEM engine used by the quoFEM app that is publicly available from the <a class="reference external" href="https://opensees.berkeley.edu/OpenSees/user/download.php">OpenSees Download</a> page. To download the <strong>OpenSees</strong> you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page, under section <strong>Windows Version</strong> is the download link for the current executable, currently <strong>3.2.2</strong> Follow the link to download the application. It is in the form of a <strong>.zip</strong> file. The zip file contains a folder and in the bin directory is the <strong>OpenSees.exe</strong> application. The other files and folders are needed by the application and must be kept. Rename the folder to <strong>OpenSees-3.2.2</strong> and move the folder to the <strong>C:\SimCenter\OpenSees</strong> folder.</p>
 </div>
 <div class="section" id="modify-the-environment-variables">
@@ -347,6 +359,44 @@
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>
