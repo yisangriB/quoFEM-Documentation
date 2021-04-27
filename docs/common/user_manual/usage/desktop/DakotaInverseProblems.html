@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -44,7 +43,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.3.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm" href="UCSD_UQ_TMCMC.html" />
+    <link rel="next" title="2.1.2.1. Global Sensitivity Analysis" href="SimCenterUQSensitivity.html" />
     <link rel="prev" title="2.1.1.4. Parameter Estimation" href="DakotaParameterEstimation.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -73,7 +72,7 @@
 
 
   
-  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -105,10 +104,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -135,7 +134,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -227,7 +227,7 @@
 <p>The Differential Evolution Adaptive Metropolis (<a class="reference internal" href="#id2" id="id1"><span>[DREAM]</span></a>) method runs multiple markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. The inputs for the method are the number of chains, seed, number of markov chain samples and burn in samples. The number of Markov chain samples per chain is number of samples divided by number of chains.</p>
 <div class="align-center figure" id="id3">
 <span id="figdream"></span><img alt="../../../../_images/DREAM.png" src="../../../../_images/DREAM.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.12 </span><span class="caption-text">DREAM input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.1.5.1 </span><span class="caption-text">DREAM input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">DREAM</a></span></dt>
@@ -252,7 +252,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -303,6 +303,7 @@
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -339,6 +340,7 @@
             };
         })
     };
+    */
 </script>
 
 

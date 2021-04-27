@@ -13,7 +13,7 @@ Install Dependencies
 
 First, ensure the following dependencies are installed:
 
-* **C++11 compliant compiler**: many of the workflow applications included use C++11 features, consequently they may need a newer C++11 compliant compiler. Fow Windows users, MSVC in `Visual Studio (Community edition) <https://visualstudio.microsoft.com/vs/>`_ can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with c++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.
+* **C++17 compliant compiler**: many of the workflow applications included use C++17 features, consequently they may need a newer C++17 compliant compiler. Fow Windows users, MSVC in `Visual Studio (Community edition) <https://visualstudio.microsoft.com/vs/>`_ can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.
 
 * **OpenSees**: The workflow applications require an installation of `OpenSees <http://opensees.berkeley.edu/>`_ to carry out structural analysis using the finite element method.
 
@@ -41,28 +41,26 @@ Setup the development environment with Conan
 ============================================
 1. Add Conan `SimCenter <https://bintray.com/nheri-simcenter/simcenter>`_ and  `BinCrafters <https://bintray.com/bincrafters/public-conan>`_ repositories to the Conan remotes. You can add these remotes by typing the following commands in the terminal:
 
-    .. code::
-       
-        conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter
+    .. code:: console
 
-        conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
+        conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter
 
 2. Create a default Conan profile if this is the first time you use Conan for building packages.
 
-    .. code::
-       
+    .. code:: console
+
         conan profile new default --detect
 
 
 3. Check the default profile of your build environment using:
 
-    .. code::
+    .. code:: console
 
        conan profile show default
 
 4. If the compiler name and compiler version are *not* listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:
 
-    .. code::       
+    .. code:: console
 
        conan profile update settings.compiler="Visual Studio" default
 
@@ -74,17 +72,17 @@ Build the applications
 
 .. only:: notQuoFEM
 
-   1. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
+   #. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
 
       .. code::
 
          git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications
 
 
-2. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):
+#. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):
 
-       .. code::
-	   
+       .. code:: console
+
           mkdir build
           cd build
           conan install .. --build missing
@@ -93,25 +91,32 @@ Build the applications
           cmake --install .
           cd ..
 
-	  
+     
     .. note::
 
        #. On Windows it is necessary to specify a compiler for CMake. To do this you need to add additional arguments to line 4, i.e. if you have Visual Studio 2019 you would instead type:
 
           .. code::
-	     
-               cmake .. -G "Visual Studio 16 2019"
+        
+            cmake .. -G "Visual Studio 16 2019"
 
        #. For Mac users running **Big Sur** and version **12** of XCode there are some reported issues. Replace line 3 above with the following two lines:
 
           .. code::       
 
-	      conan install .. --build missing --build=libcurl
-	      mv ./missing/* ./
-	       
-	   
-If building and installation were successful you should find a folder called ``applications`` in the repository with all the applications inside of it.	The name of this folder should not be changed.
-	
+            conan install .. --build missing --build=libcurl
+            mv ./missing/* ./
+
+       #. For Mac users, add the following command after **cmake --install .** to ensure the binary applications are copied to the applications folder.
+
+          .. code::       
+
+            make install .
+
+          
+      
+If building and installation were successful you should find a folder called ``applications`` in the repository with all the applications inside of it.   The name of this folder should not be changed.
+   
 
 ************************
 Build the User Interface
@@ -121,17 +126,17 @@ To build the interface you first need to download the repo and a companion repo(
 
     .. code::
        
-       git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       git clone https://github.com/NHERI-SimCenter/APP_NAME.git
+      git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+      git clone https://github.com/NHERI-SimCenter/APP_NAME.git
 
 
 .. note::
 
-   Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo's, you should fork the latter repo and then clone your forked repo. Forking a repo at **githib** is done through your browser.
+   Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo's, you should fork the latter repo and then clone your forked repo. Forking a repo at **github** is done through your browser.
 
     .. code::
        
-       git clone https://github.com/YOUR_GITHUB_NAME/APP_NAME.git
+      git clone https://github.com/YOUR_GITHUB_NAME/APP_NAME.git
    
 You now have two ways to build the application: (1) using the **Qt Creator** desktop application provided by **Qt** and (2) from terminal application.
 
@@ -152,10 +157,10 @@ Build from the Terminal
 
     .. parsed-literal::
 
-        mkdir build
-        cd build       
-        qmake ../|short tool id|.pro
-	make
+      mkdir build
+      cd build       
+      qmake ../|short tool id|.pro
+	   make
 
 .. note::
 
@@ -194,8 +199,8 @@ Once built the tool **Preferences** needs to be modified. To do this open the |s
 .. _figPreferences:
 
 .. figure:: figures/Preferences.png
-	:align: center
-	:figclass: align-center
+   :align: center
+   :figclass: align-center
 
-	Preferences Dialog
+   Preferences Dialog
      

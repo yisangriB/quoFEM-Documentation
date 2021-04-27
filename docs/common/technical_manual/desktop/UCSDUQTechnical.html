@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,17 +34,17 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="1. How to Build" href="../../developer_manual/how_to_build/desktop/how_to_build.html" />
+    <link rel="next" title="1.4. Ground Motion Intensity Spatial Correlation Model Options" href="spatial_correlation.html" />
     <link rel="prev" title="1.2. Methods in SimCenterUQ Engine" href="SimCenterUQTechnical.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -73,7 +73,7 @@
 
 
   
-  <img src="../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -105,10 +105,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -116,7 +116,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
@@ -127,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#transtitional-markov-chain-monte-carlo">Transtitional Markov chain Monte Carlo</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="spatial_correlation.html">1.4. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 </li>
 </ul>
@@ -220,14 +222,14 @@ but to sample from a series of simpler intermediate probability distributions th
 <span class="eqno">(1.3.2)<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-1" title="Permalink to this equation">¶</a></span>\[p(\theta|y)_j \propto p(y | \theta)^{\beta_j} \times p(\theta); \quad j = 0, 1, \ldots, m; \quad 0 = \beta_0 &lt; \beta_1 &lt; \ldots &lt; \beta_m = 1\]</div>
 <p>Index <span class="math notranslate nohighlight">\(j\)</span> denotes the stage number, <span class="math notranslate nohighlight">\(m\)</span> denotes the total number of stages, and <span class="math notranslate nohighlight">\(p (\mathbf{\theta \ | \ y})_j\)</span> is the tempered posterior PDF at stage <span class="math notranslate nohighlight">\(j\)</span> controlled by the parameter <span class="math notranslate nohighlight">\(\beta_j\)</span>. At the initial stage <span class="math notranslate nohighlight">\((j = 0)\)</span>, parameter <span class="math notranslate nohighlight">\(\beta_0 = 0\)</span>, the tempered distribution <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_{j=0}\)</span> is just the
 prior joint PDF <span class="math notranslate nohighlight">\(p(\theta)\)</span>. The TMCMC sampler progresses by monotonically increasing the value of <span class="math notranslate nohighlight">\(\beta_j\)</span> , at each stage <span class="math notranslate nohighlight">\(j\)</span>, until it reaches the value of 1. At the final stage <span class="math notranslate nohighlight">\((j = m)\)</span>, parameter <span class="math notranslate nohighlight">\(\beta_m = 1\)</span>, the tempered distribution <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_{j = m}\)</span> is the target posterior joint PDF <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})\)</span>.</p>
-<p>TMCMC represents the tempered posterior PDF at every stage by a set of weighted samples (known as particles). TMCMC approximates the <span class="math notranslate nohighlight">\(j^{th}\)</span> stage tempered posterior PDF <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_j\)</span>  by weighing, resampling, and perturbing the particles of the <span class="math notranslate nohighlight">\(j-1^{th}\)</span> stage intermediate joint PDF <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_{j-1}\)</span> . For details about the TMCMC algorithm, the interested reader is referred to Ching and Chen <a class="footnote-reference brackets" href="#id3" id="id1">2007</a>, Minson et. al. <a class="footnote-reference brackets" href="#id4" id="id2">2013</a>.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">2007</a></span></dt>
+<p>TMCMC represents the tempered posterior PDF at every stage by a set of weighted samples (known as particles). TMCMC approximates the <span class="math notranslate nohighlight">\(j^{th}\)</span> stage tempered posterior PDF <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_j\)</span>  by weighing, resampling, and perturbing the particles of the <span class="math notranslate nohighlight">\(j-1^{th}\)</span> stage intermediate joint PDF <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_{j-1}\)</span> . For details about the TMCMC algorithm, the interested reader is referred to Ching and Chen <a class="reference internal" href="#ching2007" id="id1"><span>[Ching2007]</span></a>, Minson et. al. <a class="reference internal" href="#minson2013" id="id2"><span>[Minson2013]</span></a>.</p>
+<dl class="citation">
+<dt class="label" id="ching2007"><span class="brackets"><a class="fn-backref" href="#id1">Ching2007</a></span></dt>
 <dd><ol class="upperalpha simple" start="10">
 <li><p>Ching and Y.-C. Chen, “Transitional Markov Chain Monte Carlo Method for Bayesian Model Updating, Model Class Selection, and Model Averaging”, <em>Journal of Engineering Mechanics</em>, 133(7), 816-832, 2007.</p></li>
 </ol>
 </dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2013</a></span></dt>
+<dt class="label" id="minson2013"><span class="brackets"><a class="fn-backref" href="#id2">Minson2013</a></span></dt>
 <dd><ol class="upperalpha simple" start="19">
 <li><ol class="upperalpha simple" start="5">
 <li><p>Minson, M. Simons, and J. L. Beck, “Bayesian Inversion for Finite Fault Earthquake Source Models I-Theory and Algorithm”, <em>Geophysical Journal International</em>, 194(3), 1701- 1726, 2013.</p></li>
@@ -249,7 +251,7 @@ prior joint PDF <span class="math notranslate nohighlight">\(p(\theta)\)</span>.
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -300,6 +302,7 @@ prior joint PDF <span class="math notranslate nohighlight">\(p(\theta)\)</span>.
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -336,6 +339,7 @@ prior joint PDF <span class="math notranslate nohighlight">\(p(\theta)\)</span>.
             };
         })
     };
+    */
 </script>
 
 

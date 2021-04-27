@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,10 +34,10 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -73,7 +73,7 @@
 
 
   
-  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -105,10 +105,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -135,7 +135,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -225,15 +226,15 @@
 <p><strong>Sobol indices</strong> are widely used variance-based global sensitivity measures which have two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account.</p>
 <p>Given an output of a model <span class="math notranslate nohighlight">\(y=g(\boldsymbol{x})\)</span> and input random variables <span class="math notranslate nohighlight">\(\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}\)</span>, the first-order main and total effect indices of each input variable are defined as</p>
 <div class="math notranslate nohighlight" id="equation-si">
-<span class="eqno">(2.1.1)<a class="headerlink" href="#equation-si" title="Permalink to this equation">¶</a></span>\[S_i=\frac{\text{Var}_{x_i}[\text{E}_{\boldsymbol{x}_{\sim i}}[y|x_i]]}{\text{Var}[y]}, \qquad i=1, \cdots ,d\]</div>
+<span class="eqno">(2.1.1.2.1)<a class="headerlink" href="#equation-si" title="Permalink to this equation">¶</a></span>\[S_i=\frac{\text{Var}_{x_i}[\text{E}_{\boldsymbol{x}_{\sim i}}[y|x_i]]}{\text{Var}[y]}, \qquad i=1, \cdots ,d\]</div>
 <div class="math notranslate nohighlight" id="equation-sit">
-<span class="eqno">(2.1.2)<a class="headerlink" href="#equation-sit" title="Permalink to this equation">¶</a></span>\[S_i^T=\frac{\text{E}_{\boldsymbol{x}_{\sim i}}[\text{Var}_{x_i}[y|\boldsymbol{x}_{\sim i}]]}{\text{Var}[y]},  \qquad  i=1, \cdots ,d\]</div>
+<span class="eqno">(2.1.1.2.2)<a class="headerlink" href="#equation-sit" title="Permalink to this equation">¶</a></span>\[S_i^T=\frac{\text{E}_{\boldsymbol{x}_{\sim i}}[\text{Var}_{x_i}[y|\boldsymbol{x}_{\sim i}]]}{\text{Var}[y]},  \qquad  i=1, \cdots ,d\]</div>
 <p>respectively, where <span class="math notranslate nohighlight">\(\boldsymbol{x}_{\sim i}\)</span> indicates the set of all input variables except <span class="math notranslate nohighlight">\(x_i\)</span>. Currently, the this engine supports first-order main and total effect indices.</p>
 <p><strong>Dakota Sensitivity Analysis</strong> is based on efficient Monte Carlo method (see the paper of <a class="reference internal" href="#weirs12" id="id1"><span>[Weirs12]</span></a> referred in Dakota Technical manual <a class="reference internal" href="#adams20" id="id2"><span>[Adams20]</span></a>), and the user has two options to generate the samples on which the statistics are created: Monte Carlo, and Latin Hypercube Sampling (LHS). For both they are required, as shown in figure below, to specify the number of samples and a seed.</p>
 <p>The results of the Sensitivity analysis will show both the main effect and total effect <a class="reference external" href="https://en.wikipedia.org/wiki/Variance-based_sensitivity_analysis">Sobol indices</a> for each RV for each of the QoI.</p>
 <div class="align-center figure" id="id3">
 <span id="figsensitivity"></span><img alt="../../../../_images/SensitivityAnalysis.png" src="../../../../_images/SensitivityAnalysis.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.7 </span><span class="caption-text">Sensitivity analysis input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.1.2.1 </span><span class="caption-text">Sensitivity analysis input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -275,7 +276,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -326,6 +327,7 @@
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -362,6 +364,7 @@
             };
         })
     };
+    */
 </script>
 
 

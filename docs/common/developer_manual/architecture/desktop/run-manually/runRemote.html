@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -71,7 +70,7 @@
 
 
   
-  <img src="../../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -114,7 +113,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -214,7 +214,7 @@
 <li><p>Upload the <code class="xref download docutils literal notranslate"><span class="pre">CreateLauncherTasks</span> <span class="pre">script</span></code> and a Jupyter notebook with commands for setting up the job on Tapis. You can use this example Jupyter notebook (<code class="xref download docutils literal notranslate"><span class="pre">run_rWHALE.ipynb</span></code>) as a template.</p></li>
 </ol>
 <p>On DesignSafe, the files should appear on Data Depot as:</p>
-<div class="align-center figure" id="figcontext">
+<div class="align-center figure">
 <img alt="../../../../../_images/DS_data_depot.png" src="../../../../../_images/DS_data_depot.png" />
 </div>
 </div>
@@ -222,9 +222,9 @@
 <h2>Run Job Through Jupyter<a class="headerlink" href="#run-job-through-jupyter" title="Permalink to this headline">¶</a></h2>
 <p>This method uses Jupyter notebook to run the job, accessing Tapis CLI in the backend.</p>
 <ol class="arabic simple" start="5">
-<li><p>Click on the run_rWHALE.ipynb notebook, then click “Open in Jupyter”. You will be taken to a new page for editing the Jupyter notebook.</p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">run_rWHALE.ipynb</span></code> notebook, then click <strong>Open in Jupyter</strong>. You will be taken to a new page for editing the Jupyter notebook.</p></li>
 </ol>
-<div class="align-center figure" id="id2">
+<div class="align-center figure">
 <img alt="../../../../../_images/DS_jupyter.png" src="../../../../../_images/DS_jupyter.png" />
 </div>
 <ol class="arabic simple" start="6">
@@ -233,7 +233,7 @@
 <ol class="arabic simple" start="7">
 <li><p>To view the status of the job, navigate to the <strong>Workspace</strong> on DesignSafe. The right bar will list all jobs that have been submitted in order of newest to oldest. Job outputs can be accessed by clicking on “More Info” on the job.</p></li>
 </ol>
-<div class="align-center figure" id="id3">
+<div class="align-center figure">
 <img alt="../../../../../_images/DS_workspace.png" src="../../../../../_images/DS_workspace.png" />
 </div>
 <ol class="arabic" start="8">
@@ -247,7 +247,7 @@
 </div></blockquote>
 </li>
 </ol>
-<div class="align-center figure" id="id4">
+<div class="align-center figure">
 <img alt="../../../../../_images/DS_results.png" src="../../../../../_images/DS_results.png" />
 </div>
 </div>
@@ -367,7 +367,7 @@ used to track progress and download results.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -418,6 +418,7 @@ used to track progress and download results.</p>
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -454,6 +455,7 @@ used to track progress and download results.</p>
             };
         })
     };
+    */
 </script>
 
 

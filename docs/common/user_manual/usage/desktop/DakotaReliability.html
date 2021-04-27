@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -73,7 +72,7 @@
 
 
   
-  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -105,10 +104,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -135,7 +134,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -229,7 +229,7 @@
 <p>The default local reliability method is the most probable point (MPP) method. For the MPP method the user provides the following inputs:</p>
 <div class="align-center figure" id="id1">
 <span id="figlocalmpp"></span><img alt="../../../../_images/localReliabilityMPP.png" src="../../../../_images/localReliabilityMPP.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.8 </span><span class="caption-text">Local reliability analysis using the MPP option.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.1.3.1 </span><span class="caption-text">Local reliability analysis using the MPP option.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>The first input involves selection of the MPP search method from the following options:</p></li>
@@ -253,7 +253,7 @@
 <p>As shown in the figure below the user selects either to use response levels or probability levels. The user then inputs the levels.</p>
 <div class="align-center figure" id="id2">
 <span id="figlocalmv"></span><img alt="../../../../_images/localReliabilityMVFOSM.png" src="../../../../_images/localReliabilityMVFOSM.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.9 </span><span class="caption-text">Local reliability analysis using the MVFOSM option.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.1.3.2 </span><span class="caption-text">Local reliability analysis using the MVFOSM option.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="global-reliability-methods">
@@ -262,7 +262,7 @@
 <p>The user specifies if the gaussian process is to be created in x-space (original) or u-space (transformed). The user also specifies the response quantity levels (there is no option available for probability levels) and a seed.</p>
 <div class="align-center figure" id="id3">
 <span id="figglobalreliability"></span><img alt="../../../../_images/globalReliability.png" src="../../../../_images/globalReliability.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.10 </span><span class="caption-text">Global reliability analysis.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.1.3.3 </span><span class="caption-text">Global reliability analysis.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -281,7 +281,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -332,6 +332,7 @@
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -368,6 +369,7 @@
             };
         })
     };
+    */
 </script>
 
 

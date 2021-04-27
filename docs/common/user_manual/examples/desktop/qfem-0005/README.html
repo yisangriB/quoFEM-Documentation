@@ -7,14 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Basic modeling with Python &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>4.3. Basic modeling with Python &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,16 +34,18 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.4. Steel Frame: Conventional Calibration" href="../qfem-0007/README.html" />
+    <link rel="prev" title="4.2. Forward Propagation - OpenSeesPy" href="../qfem-0002/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -71,7 +73,7 @@
 
 
   
-  <img src="../../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -109,12 +111,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0001/README.html">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0002/README.html">4.2. Forward Propagation - OpenSeesPy</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. Basic modeling with Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#uq-workflow">4.3.1. UQ Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model-files">4.3.2. Model Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results">4.3.3. Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">4.4. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">4.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">4.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">4.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">4.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">4.9. Custom UQ for UQpy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -175,7 +194,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Basic modeling with Python</li>
+          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">4.3. </span>Basic modeling with Python</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,15 +216,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="basic-modeling-with-python">
-<h1>Basic modeling with Python<a class="headerlink" href="#basic-modeling-with-python" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.3. </span>Basic modeling with Python<a class="headerlink" href="#basic-modeling-with-python" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 89%" />
+<col style="width: 28%" />
+<col style="width: 72%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Problem files</p></td>
-<td><p><a class="reference external" href="https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/src/quo-05">quo-05</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/qfem-0005/">Download</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -214,7 +235,10 @@ finite element analysis engine.</p>
 evaluate numerical optimization algorithms. It is given by the following
 expression:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-examples-desktop-qfem-0005-readme-0">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0005-readme-0" title="Permalink to this equation">¶</a></span>\[g(x, y)=(a-x)^{2}+b\left(y-x^{2}\right)^{2}\]</div>
+<span class="eqno">(4.3.1)<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0005-readme-0" title="Permalink to this equation">¶</a></span>\[g(x, y)=(a-x)^{2}+b\left(y-x^{2}\right)^{2}\]</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/qfem-0005.png"><img alt="../../../../../_images/qfem-0005.png" src="../../../../../_images/qfem-0005.png" style="width: 500px;" /></a>
+</div>
 <p>A forward propagation analysis will be conducted to numerically
 integrate the first and second moments of a random variable whose value
 is obtained by applying the Rosenbrock function to the two following
@@ -228,13 +252,13 @@ statistically independent random variables:</p>
 <span class="math notranslate nohighlight">\(1.6\)</span>,</p></li>
 </ol>
 <div class="section" id="uq-workflow">
-<h2>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3.1. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <p>The objective of this UQ problem is to numerically integrate the
 following integrals with a forward propagation routine:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-examples-desktop-qfem-0005-readme-1">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0005-readme-1" title="Permalink to this equation">¶</a></span>\[\mu_g = \mathbf{E}[g(X,Y)] = \int^{1.6}_{1.4} \int^{2.0}_{-2.0} g(x,y) f_{XY} (x,y) dx dy\]</div>
+<span class="eqno">(4.3.1.1)<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0005-readme-1" title="Permalink to this equation">¶</a></span>\[\mu_g = \mathbf{E}[g(X,Y)] = \int^{1.6}_{1.4} \int^{2.0}_{-2.0} g(x,y) f_{XY} (x,y) dx dy\]</div>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-examples-desktop-qfem-0005-readme-2">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0005-readme-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(4.3.1.2)<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0005-readme-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
 \sigma_g^2 &amp;= \mathbf{E}[(g(X,Y)-\mathbf{E}[g(X,Y)])^2] \\
 &amp;= \int^{1.6}_{1.4} \int^{2.0}_{-2.0} (g(x,y)-\mathbf{E}[g(X,Y)])^2f_{XY} (x,y) dx dy
 \end{align}\end{split}\]</div>
@@ -261,7 +285,7 @@ quoFEM by entering the following inputs in the <strong>UQ</strong> tab:</p>
 </table>
 </div>
 <div class="section" id="model-files">
-<h2>Model Files<a class="headerlink" href="#model-files" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3.2. </span>Model Files<a class="headerlink" href="#model-files" title="Permalink to this headline">¶</a></h2>
 <p>For this forward propagation problem, we need to define a Python script
 that will import a set of random variable values, apply them to the
 Rosenbrock function, then write the results to a file named
@@ -330,11 +354,11 @@ runtime by the UQ engine.</em></p></li>
 </ol>
 </div>
 <div class="section" id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3.3. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
 <p>The result for a forward propagation run with a maximum of <span class="math notranslate nohighlight">\(200\)</span>
 iterations is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-examples-desktop-qfem-0005-readme-3">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0005-readme-3" title="Permalink to this equation">¶</a></span>\[\begin{split}\mu_g = 146.519 \\
+<span class="eqno">(4.3.3.1)<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0005-readme-3" title="Permalink to this equation">¶</a></span>\[\begin{split}\mu_g = 146.519 \\
 \sigma_g = 134.01\end{split}\]</div>
 </div>
 </div>
@@ -349,7 +373,7 @@ iterations is:</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -400,6 +424,7 @@ iterations is:</p>
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -436,6 +461,7 @@ iterations is:</p>
             };
         })
     };
+    */
 </script>
 
 

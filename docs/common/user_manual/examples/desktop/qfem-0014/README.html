@@ -7,14 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Steel Frame: Bayesian Calibration using TMCMC &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>4.6. Steel Frame: Bayesian Calibration using TMCMC &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,16 +34,18 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.7. Surrogate Modeling for One Story Building Earthquake Response" href="../qfem-0015/README.html" />
+    <link rel="prev" title="4.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine" href="../qfem-0009/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -71,7 +73,7 @@
 
 
   
-  <img src="../../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -109,12 +111,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0001/README.html">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0002/README.html">4.2. Forward Propagation - OpenSeesPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0005/README.html">4.3. Basic modeling with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">4.4. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">4.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.6. Steel Frame: Bayesian Calibration using TMCMC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#outline">4.6.1. Outline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-description">4.6.2. Problem description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#files-required">4.6.3. Files required</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solving-the-problem-using-quofem">4.6.4. Solving the problem using quoFEM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">4.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">4.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">4.9. Custom UQ for UQpy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -175,7 +195,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Steel Frame: Bayesian Calibration using TMCMC</li>
+          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">4.6. </span>Steel Frame: Bayesian Calibration using TMCMC</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,7 +217,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="steel-frame-bayesian-calibration-using-tmcmc">
-<h1>Steel Frame: Bayesian Calibration using TMCMC<a class="headerlink" href="#steel-frame-bayesian-calibration-using-tmcmc" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.6. </span>Steel Frame: Bayesian Calibration using TMCMC<a class="headerlink" href="#steel-frame-bayesian-calibration-using-tmcmc" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 41%" />
@@ -208,7 +230,7 @@
 </tbody>
 </table>
 <div class="section" id="outline">
-<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.6.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
 <p>In this example, Bayesian estimation is used to estimate the lateral story
 stiffnesses of the two stories of a simple steel frame, given data about
 its mode shapes and frequencies. The transitional Markov chain Monte Carlo
@@ -216,7 +238,7 @@ algorithm is used to obtain samples from the posterior probability distribution
 of the lateral story stiffnesses.</p>
 </div>
 <div class="section" id="problem-description">
-<h2>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.6.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
 <p>Provided by Professor Joel Conte and his doctoral students Maitreya
 Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at
 the following simplified finite element model of a steel building.</p>
@@ -242,7 +264,7 @@ are generated by applying random perturbations to the analytic modal
 properties in order to simulate field data that might be obtained using
 a method for structural system identification:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-examples-desktop-qfem-0014-readme-0">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0014-readme-0" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{array}{l}
+<span class="eqno">(4.6.2.1)<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0014-readme-0" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{array}{l}
 \lambda_{1}^{(1)}=1025.21, \quad &amp;\lambda_{1}^{(2)}=1138.11, \quad &amp;\lambda_{1}^{(3)}=1099.39, \quad &amp;\lambda_{1}^{(4)}=1002.41, \quad &amp;\lambda_{1}^{(5)}=1052.69 \\
 \phi_{12}^{(1)}=1.53, \quad &amp;\phi_{12}^{(2)}=1.24, \quad &amp;\phi_{12}^{(3)}=1.38, \quad &amp;\phi_{12}^{(4)}=1.50, \quad &amp;\phi_{12}^{(5)}=1.35
 \end{array}\end{split}\]</div>
@@ -259,174 +281,17 @@ of <span class="math notranslate nohighlight">\(1150.33 \ \mathrm{kips/in}\)</sp
 <p>A Gaussian likelihood model is employed. This is done by assuming that the error between the finite element prediction of the modal properties and the simulated measurement data follows a bivariate Normal/Gaussian distribution with independent components. Here, the standard deviation of the error is assumed to be known, and equal to <span class="math notranslate nohighlight">\(5\%\)</span> of the true eigenvalue and eigenvector values. The components of the error vector are assumed to be statistically independent and identically distributed.</p>
 </div>
 <div class="section" id="files-required">
-<h2>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
-<p>The exercise requires two script files - an OpenSees script file which builds the finite element model and conducts the analysis, and a Python script file which post-processes the output from the finite element analysis. The user should download these file and place it in a <em>new</em> folder. The post-processing script calculates the log-likelihood that the input values of the story stiffness produced the set of measurement data.</p>
+<h2><span class="section-number">4.6.3. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
+<p>The exercise requires two script files. The user should download these file and place it in a <em>new</em> folder.</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0014/src/model.tcl">model.tcl</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0014/src/model.tcl">model.tcl</a> - This is an OpenSees script written in tcl which builds the finite element model and conducts the analysis. This script creates a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code> when it runs. This file contains the first eigenvalue and the second component of the first eigenvector obtained from finite element analysis of the structure.</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#Generalized eigenValue Problem
-
-# units: in, kips
-
-wipe
-
-#model builder
-model BasicBuilder -ndm 2 -ndf 3	
-
-#input
-
-#masses
-#total mass of story distributed to two nodes
-set m1 [expr 0.52/2.];
-set m2 [expr 0.26/2.];
-
-#number of modes  
-set numModes 2
-
-#material properties
-
-#column
-set Ac 110.0 
-#input from the algorithm
-
-#pset k1 958.61
-#pset k2 958.61
-
-set E 29000.0 
-#beam
-set Ib 10e+12 
-set Ab 10e+12 
-
-#geometry
-set L 400. 
-set h  120. 
-
-#nodes
-node 1   0.  0. ;
-node 2   $L  0. ;
-node 3   0.  $h ;
-node 4   $L  $h ;
-node 5   0.  [expr 2*$h];
-node 6   $L  [expr 2*$h];
-
-#fixity of base
-fix 1 1 1 1;
-fix 2 1 1 1;
-
-#vertical translation constraint
-fix 3 0 1 0;
-fix 5 0 1 0;
-fix 4 0 1 0;
-fix 6 0 1 0;
-
-#equalDoF constraints for horizontal DoF
-equalDOF 3 4 1
-equalDOF 5 6 1 
-
-# assign mass
-mass 3 $m1 0. 0. ;
-mass 4 $m1 0. 0. ;
-mass 5 $m2 0. 0. ;
-mass 6 $m2 0. 0. ;
-
-
-# define geometric transformation:
-set TransfTag 1;
-geomTransf Linear $TransfTag ;
-
-# define elements:
-# columns
-element elasticBeamColumn 1 1 3 $Ac $E  [expr 2.*$k1*(pow($h,3.))/48./$E] $TransfTag; #story stiffness k = 48*E*Icolumn/h^3
-element elasticBeamColumn 2 3 5 $Ac $E  [expr 2.*$k2*(pow($h,3.))/48./$E] $TransfTag;
-element elasticBeamColumn 3 2 4 $Ac $E  [expr 2.*$k1*(pow($h,3.))/48./$E] $TransfTag;
-element elasticBeamColumn 4 4 6 $Ac $E  [expr 2.*$k2*(pow($h,3.))/48./$E] $TransfTag;
-# beams
-element elasticBeamColumn 5 3 4 $Ab $E  $Ib $TransfTag; #beam flexurally rigid mimicing a rigid diaghraphm
-element elasticBeamColumn 6 5 6 $Ab $E  $Ib $TransfTag;
-
-# eigenValue
-set eigenValues [eigen -fullGenLapack $numModes]
-
-# eigenVector and normalize
-set eig11 [nodeEigenvector 3 1 1];
-set eig12 [nodeEigenvector 5 1 1];
-
-set eig21 [nodeEigenvector 3 2 1];
-set eig22 [nodeEigenvector 5 2 1];
-
-set Eig1 {};
-lappend Eig1 [expr $eig11/$eig11];
-lappend Eig1 [expr $eig12/$eig11];
-
-set Eig2 {};
-lappend Eig2 [expr $eig21/$eig21];
-lappend Eig2 [expr $eig22/$eig21];
-
-
-# print first eigenValue and first eigenVector
-set OutputFile [open &quot;results.out&quot; w]
-puts $OutputFile &quot;[lindex $eigenValues 0] [lindex $Eig1 1]&quot;
-close $OutputFile
-wipe
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This tcl script creates a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code> when it runs. This file contains the first eigenvalue and the second component of the first eigenvector obtained from finite element analysis of the structure.</p>
-</div>
 <ol class="arabic simple" start="2">
-<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0014/src/postProcessing.py">postProcessing.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0014/src/postProcessing.py">postProcessing.py</a> - This is a Python script which post-processes the output from the finite element analysis and calculates the log-likelihood that the input values of the story stiffness produced the set of measurement data.</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">authors: Mukesh Kumar Ramancha, Maitreya Manoj Kurumbhati, and Prof. J.P. Conte </span>
-<span class="sd">affiliation: University of California, San Diego</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-
-<span class="c1"># import standard python modules</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">generateData</span> <span class="kn">import</span> <span class="n">data</span>
-
-<span class="c1"># %%</span>
-
-<span class="c1"># normalize data (IMPORTANT for TMCMC)</span>
-<span class="n">normalizeData</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">/</span> <span class="n">normalizeData</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
-
-<span class="c1"># noise in each channel</span>
-<span class="n">sig_channels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">])</span>  <span class="c1"># My x 1,  Ny = number of measurement channels</span>
-<span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">sig_channels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1079.88</span><span class="p">,</span> <span class="n">sig_channels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1.414</span><span class="p">])</span>  <span class="c1"># array of size: ny</span>
-<span class="n">sig</span> <span class="o">=</span> <span class="n">sig</span> <span class="o">/</span> <span class="n">normalizeData</span>
-
-
-<span class="k">def</span> <span class="nf">log_likelihood</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; this function computes the log-likelihood for parameter value: par &quot;&quot;&quot;</span>
-
-    <span class="c1"># num of data point: N, num of measurement channels: Ny</span>
-    <span class="n">N</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">Ny</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-    <span class="n">FEpred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;results.out&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">normalizeData</span>
-
-    <span class="n">FEpred</span> <span class="o">=</span> <span class="n">FEpred</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
-
-    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">sig</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">logdetE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">E</span><span class="p">))</span>
-    <span class="n">Einv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
-    <span class="c1"># log-likelihood</span>
-    <span class="n">LL</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">Ny</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">logdetE</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">FEpred</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Einv</span> <span class="o">@</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">FEpred</span><span class="p">)))</span>
-
-    <span class="k">return</span> <span class="n">LL</span>
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like me, your root, Downloads or Documents folders contains and awful lot of files.</p>
-</div>
 </div>
 <div class="section" id="solving-the-problem-using-quofem">
-<h2>Solving the problem using quoFEM<a class="headerlink" href="#solving-the-problem-using-quofem" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.6.4. </span>Solving the problem using quoFEM<a class="headerlink" href="#solving-the-problem-using-quofem" title="Permalink to this headline">¶</a></h2>
 <p>The steps involved are as follows:</p>
 <ol class="arabic simple">
 <li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Engine</strong> drop down menu, select the <strong>UCSD_UQ</strong> engine. In the <strong>Method</strong> category drop down menu the <strong>Transitional Markov chain Monte Carlo</strong> option will be highlighted. In the <strong>Log Likelihood Script</strong> field, enter the path to the script which computes the log-likelihood (i.e., the file called <code class="docutils literal notranslate"><span class="pre">postProcessing.py</span></code> in this example), or select <strong>Choose</strong> and navigate to the file. Enter the number of samples desired to be drawn from the posterior distribution in the <strong># Samples</strong> field.</p></li>
@@ -482,7 +347,7 @@ wipe
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -533,6 +398,7 @@ wipe
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -569,6 +435,7 @@ wipe
             };
         })
     };
+    */
 </script>
 
 

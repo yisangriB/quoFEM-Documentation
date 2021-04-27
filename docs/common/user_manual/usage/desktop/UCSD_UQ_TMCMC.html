@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -44,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.4.1. Custom Uncertainty Quantification Engine Input" href="CustomUQ.html" />
-    <link rel="prev" title="2.1.1.5. Inverse Problem" href="DakotaInverseProblems.html" />
+    <link rel="next" title="2.2. FEM: Finite Element Method" href="quoFEM/FEM.html" />
+    <link rel="prev" title="2.1.2.1. Global Sensitivity Analysis" href="SimCenterUQSensitivity.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -73,7 +72,7 @@
 
 
   
-  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -105,10 +104,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -131,7 +130,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -220,7 +220,7 @@
 <p>This is an algorithm which is used to draw samples from the posterior probability distribution of random variables when performing Bayesian estimation. To use the TMCMC algorithm, select the <strong>UCSD_UQ</strong> engine in the <strong>UQ</strong> panel. Currently, only the TMCMC method is available with the <strong>UCSD_UQ</strong> engine. In the <strong>Log Likelihood Script</strong> field, the user needs to provide the path to a Python script which contains a function called <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> that returns the log-likelihood value. The user also needs to specify the number of samples that is desired to be drawn from the posterior probability distribution of the unknown parameters.</p>
 <div class="align-center figure" id="id1">
 <img alt="../../../../_images/TMCMC_UQ_Engine.png" src="../../../../_images/TMCMC_UQ_Engine.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.13 </span><span class="caption-text">TMCMC algorithm input panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.1 </span><span class="caption-text">TMCMC algorithm input panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="defining-the-log-likelihood-function">
 <h2>Defining the log-likelihood function<a class="headerlink" href="#defining-the-log-likelihood-function" title="Permalink to this headline">¶</a></h2>
@@ -288,7 +288,7 @@ The <code class="docutils literal notranslate"><span class="pre">log_likelihood<
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -339,6 +339,7 @@ The <code class="docutils literal notranslate"><span class="pre">log_likelihood<
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -375,6 +376,7 @@ The <code class="docutils literal notranslate"><span class="pre">log_likelihood<
             };
         })
     };
+    */
 </script>
 
 

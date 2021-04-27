@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -71,7 +70,7 @@
 
 
   
-  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -103,10 +102,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -114,7 +113,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -197,7 +197,7 @@
   <div class="section" id="earthquake-assessment">
 <span id="lbleqassessment"></span><h1>Earthquake Assessment<a class="headerlink" href="#earthquake-assessment" title="Permalink to this headline">¶</a></h1>
 <p>This example is a small-scale regional earthquake risk assessment which performs response simulation and damage/loss estimation for a group of 20 buildings. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>. The buildings are distributed in space in a 4x5 grid, within a 3x3 grid of event sites. At each event site, 5 ground motion records of similar intensity are assigned.</p>
-<div class="align-center figure" id="figcontext">
+<div class="align-center figure">
 <img alt="../../../../_images/regionalearthquakeexample.png" src="../../../../_images/regionalearthquakeexample.png" />
 </div>
 <div class="section" id="inputs">
@@ -381,8 +381,8 @@
 <li><p><strong>Building Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/buildingApps.html#lblbuildingapp"><span class="std std-ref">CSV_to_BIM</span></a> building application. In the configuration file, the Max and Min parameters are set to run the full set of 20 buildings, and the name of the building source file is provided as “input_params.csv”. In the <a class="reference internal" href="../../architecture/desktop/file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">building source file</span></a>, input parameters for (a) the response simulation (weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>) and for (b) the DL assessment (e.g., <code class="docutils literal notranslate"><span class="pre">NumberofStories</span></code>, <code class="docutils literal notranslate"><span class="pre">YearBuilt</span></code>, <code class="docutils literal notranslate"><span class="pre">OccupancyClass</span></code>, <code class="docutils literal notranslate"><span class="pre">StructureType</span></code>, <code class="docutils literal notranslate"><span class="pre">PlanArea</span></code>, <code class="docutils literal notranslate"><span class="pre">ReplacementCost</span></code>) are specified.</p></li>
 </ol>
 <p><strong>Building source file:</strong></p>
-<table class="docutils align-center" id="id2">
-<caption><span class="caption-text">input_params.csv</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-center" id="id1">
+<caption><span class="caption-text">input_params.csv</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 8%" />
@@ -678,15 +678,15 @@
 <ol class="arabic simple" start="3">
 <li><p><strong>Regional Mapping Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/regionalMapApps.html#lblregionalmapapp"><span class="std std-ref">NearestNeighborEvents</span></a> regional mapping application. From the parameters set in the configuration file, the algorithm is set to randomly select 5 samples of ground motion records from the 4 nearest neighbors for each building asset.</p></li>
 </ol>
-<div class="align-center figure" id="id1">
+<div class="align-center figure">
 <img alt="../../../../_images/regionalearthquakeexample_annot.png" src="../../../../_images/regionalearthquakeexample_annot.png" />
 </div>
 <ol class="arabic simple" start="4">
 <li><p><strong>Event Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/eventApps.html#lbleventapp"><span class="std std-ref">SimCenterEvents</span></a> event application. It takes as input the EventGrid.csv, event files with the ground motion intensity measures, and the site files which specify the five ground motions assigned to each event site.</p></li>
 </ol>
 <p><strong>Event grid file:</strong></p>
-<table class="docutils align-center" id="id3">
-<caption><span class="caption-text">EventGrid.csv</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-center" id="id2">
+<caption><span class="caption-text">EventGrid.csv</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -738,8 +738,8 @@
 </tbody>
 </table>
 <p><strong>Site file:</strong></p>
-<table class="docutils align-center" id="id4">
-<caption><span class="caption-text">site0.csv</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-center" id="id3">
+<caption><span class="caption-text">site0.csv</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1482,8 +1482,8 @@ cantilever_example
 <ol class="arabic simple">
 <li><p><strong>EDP_1-19.csv</strong>: reports statistics on the EDP results from simulating 5 ground motions for each building asset. The statistics reported are the median and lognormal standard deviation of peak interstory drift (PID) and peak floor acceleration (PFA) in two directions.</p></li>
 </ol>
-<table class="docutils align-center" id="id5">
-<caption><span class="caption-text">EDP_1-19.csv</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-center" id="id4">
+<caption><span class="caption-text">EDP_1-19.csv</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 8%" />
@@ -1829,8 +1829,8 @@ cantilever_example
 <ol class="arabic simple" start="2">
 <li><p><strong>DM_1-19.csv</strong>: reports collapse probability and damage state probability for each building asset.</p></li>
 </ol>
-<table class="docutils align-center" id="id6">
-<caption><span class="caption-text">DM_1-19.csv</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-center" id="id5">
+<caption><span class="caption-text">DM_1-19.csv</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 4%" />
 <col style="width: 4%" />
@@ -2392,8 +2392,8 @@ cantilever_example
 <ol class="arabic simple" start="2">
 <li><p><strong>DV_1-19.csv</strong>: reports decision variable estimates (repair cost, repair time, injuries) for each building asset.</p></li>
 </ol>
-<table class="docutils align-center" id="id7">
-<caption><span class="caption-text">DV_1-19.csv</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-center" id="id6">
+<caption><span class="caption-text">DV_1-19.csv</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 2%" />
 <col style="width: 2%" />
@@ -3709,7 +3709,7 @@ cantilever_example
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -3760,6 +3760,7 @@ cantilever_example
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -3796,6 +3797,7 @@ cantilever_example
             };
         })
     };
+    */
 </script>
 
 

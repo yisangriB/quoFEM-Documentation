@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -71,7 +70,7 @@
 
 
   
-  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -103,10 +102,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -114,7 +113,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -199,7 +199,7 @@
 <p>This example is a small-scale regional hurricane risk assessment which performs damage/loss estimation for a group of 20 wood buildings in Atlantic City under the Sandy Storm. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; rather, an <strong>IMasEDP</strong> application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage.
 The distribution of the buildings’ structural types and stories are illustrated below.</p>
 <div class="align-center figure" id="id1">
-<span id="figcontext"></span><img alt="../../../../_images/SandyWindFlood.png" src="../../../../_images/SandyWindFlood.png" />
+<img alt="../../../../_images/SandyWindFlood.png" src="../../../../_images/SandyWindFlood.png" />
 <p class="caption"><span class="caption-text">Peak wind speed and floor water depth maps of the Sandy Storm</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="inputs">
@@ -368,7 +368,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
-<th class="head"><p>BldgID</p></th>
 <th class="head"><p>Latitude</p></th>
 <th class="head"><p>Longitude</p></th>
 <th class="head"><p>NumberofStories</p></th>
@@ -377,6 +376,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <th class="head"><p>StructureType</p></th>
 <th class="head"><p>PlanArea</p></th>
 <th class="head"><p>ReplacementCost</p></th>
+<th class="head"><p>BldgID</p></th>
 <th class="head"><p>BuildingType</p></th>
 <th class="head"><p>DesignLevel</p></th>
 <th class="head"><p>NoUnits</p></th>
@@ -402,7 +402,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td><p>NJBF000076747</p></td>
 <td><p>39.3946476</p></td>
 <td><p>-74.38335171</p></td>
 <td><p>2</p></td>
@@ -411,6 +410,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>2374.401933</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076747</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -434,7 +434,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
-<td><p>NJBF000078331</p></td>
 <td><p>39.40478555</p></td>
 <td><p>-74.37292084</p></td>
 <td><p>2</p></td>
@@ -443,6 +442,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1818.980493</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000078331</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -466,7 +466,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
-<td><p>NJBF000077993</p></td>
 <td><p>39.40217618</p></td>
 <td><p>-74.37051873</p></td>
 <td><p>3</p></td>
@@ -475,6 +474,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1619.336001</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000077993</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -498,7 +498,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
-<td><p>NJBF000076799</p></td>
 <td><p>39.3948475</p></td>
 <td><p>-74.3972315</p></td>
 <td><p>3</p></td>
@@ -507,6 +506,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>3055.902695</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076799</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>2</p></td>
@@ -530,7 +530,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
-<td><p>NJBF000074714</p></td>
 <td><p>39.38753797</p></td>
 <td><p>-74.39629697</p></td>
 <td><p>2</p></td>
@@ -539,6 +538,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1582.19943</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000074714</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -562,7 +562,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>6</p></td>
-<td><p>NJBF000073094</p></td>
 <td><p>39.37750766</p></td>
 <td><p>-74.40624347</p></td>
 <td><p>3</p></td>
@@ -571,6 +570,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>2517.40494</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000073094</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -594,7 +594,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>7</p></td>
-<td><p>NJBF000075007</p></td>
 <td><p>39.38842155</p></td>
 <td><p>-74.39774174</p></td>
 <td><p>2</p></td>
@@ -603,6 +602,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1848.058233</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000075007</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -626,7 +626,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>8</p></td>
-<td><p>NJBF000076649</p></td>
 <td><p>39.39420925</p></td>
 <td><p>-74.39982597</p></td>
 <td><p>1</p></td>
@@ -635,6 +634,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1741.939084</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076649</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -658,7 +658,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>9</p></td>
-<td><p>NJBF000077041</p></td>
 <td><p>39.39605527</p></td>
 <td><p>-74.37686411</p></td>
 <td><p>2</p></td>
@@ -667,6 +666,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>2607.634807</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000077041</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -690,7 +690,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>10</p></td>
-<td><p>NJBF000076014</p></td>
 <td><p>39.39195514</p></td>
 <td><p>-74.39192268</p></td>
 <td><p>2</p></td>
@@ -699,6 +698,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1822.850966</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076014</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>2</p></td>
@@ -722,7 +722,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>11</p></td>
-<td><p>NJBF000076122</p></td>
 <td><p>39.39230634</p></td>
 <td><p>-74.39190046</p></td>
 <td><p>1</p></td>
@@ -731,6 +730,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1452.656628</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076122</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -754,7 +754,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>12</p></td>
-<td><p>NJBF000074951</p></td>
 <td><p>39.38827458</p></td>
 <td><p>-74.40175717</p></td>
 <td><p>2</p></td>
@@ -763,6 +762,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1484.453177</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000074951</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -786,7 +786,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>13</p></td>
-<td><p>NJBF000076280</p></td>
 <td><p>39.39283616</p></td>
 <td><p>-74.38484882</p></td>
 <td><p>1</p></td>
@@ -795,6 +794,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1193.381064</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076280</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -818,7 +818,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>14</p></td>
-<td><p>NJBF000077814</p></td>
 <td><p>39.4010149</p></td>
 <td><p>-74.37840223</p></td>
 <td><p>2</p></td>
@@ -827,6 +826,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>2221.005922</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000077814</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -850,7 +850,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>15</p></td>
-<td><p>NJBF000076854</p></td>
 <td><p>39.39508401</p></td>
 <td><p>-74.37938833</p></td>
 <td><p>3</p></td>
@@ -859,6 +858,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>4174.045602</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076854</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -882,7 +882,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>16</p></td>
-<td><p>NJBF000077477</p></td>
 <td><p>39.39891822</p></td>
 <td><p>-74.38374712</p></td>
 <td><p>1</p></td>
@@ -891,6 +890,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1854.784061</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000077477</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -914,7 +914,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>17</p></td>
-<td><p>NJBF000077411</p></td>
 <td><p>39.39846003</p></td>
 <td><p>-74.37610456</p></td>
 <td><p>1</p></td>
@@ -923,6 +922,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>2564.4215</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000077411</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -946,7 +946,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>18</p></td>
-<td><p>NJBF000074052</p></td>
 <td><p>39.3846399</p></td>
 <td><p>-74.40300921</p></td>
 <td><p>2</p></td>
@@ -955,6 +954,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>7108.155643</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000074052</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -978,7 +978,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>19</p></td>
-<td><p>NJBF000076250</p></td>
 <td><p>39.39273002</p></td>
 <td><p>-74.38416265</p></td>
 <td><p>2</p></td>
@@ -987,6 +986,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1044.401088</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076250</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -1010,7 +1010,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>20</p></td>
-<td><p>NJBF000076852</p></td>
 <td><p>39.39505885</p></td>
 <td><p>-74.39231003</p></td>
 <td><p>2</p></td>
@@ -1019,6 +1018,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>3546.990298</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076852</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -7177,7 +7177,7 @@ hurricane_example
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -7228,6 +7228,7 @@ hurricane_example
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -7264,6 +7265,7 @@ hurricane_example
             };
         })
     };
+    */
 </script>
 
 

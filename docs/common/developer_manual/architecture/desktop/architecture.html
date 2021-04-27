@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -73,7 +72,7 @@
 
 
   
-  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -105,10 +104,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -116,7 +115,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -128,8 +128,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Software Architecture</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="file-types.html">2.1. File Types and Schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="backendApplications.html">2.2. Backend Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c4model.html">2.3. C4 Model of Software Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#overview">2.4. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview">2.3. Overview</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
@@ -219,7 +218,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="file-types.html">2.1. File Types and Schemas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backendApplications.html">2.2. Backend Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="c4model.html">2.3. C4 Model of Software Architecture</a></li>
 </ul>
 </div>
 <ol class="arabic simple">
@@ -233,7 +231,7 @@
 </div></blockquote>
 <div class="align-center figure" id="id4">
 <span id="figframework"></span><a class="reference internal image-reference" href="../../../../_images/SimCenterFramework.png"><img alt="../../../../_images/SimCenterFramework.png" src="../../../../_images/SimCenterFramework.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">SimCenter Software Framework</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6 </span><span class="caption-text">SimCenter Software Framework</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>The SimCenter scientific workflow systems are aimed at facilitating the use, reuse and extension of common workflows encoutred in NHE by a broad range of natural hazards engineering researchers with varying levels of software skills. In order to encourage this use and adoption, this chapter presents the software architecture for the SimCenter framework and quoFEM app using the <a class="reference external" href="https://c4model.com">C4 model</a>. The <strong>C4</strong> model is graphical approach for documenting software architecture through diagrams that describe and communicate the software architecture at different levels of abstraction. It is a top-down approach which starts at a high level (level 1) showing how a user would interact with the software and drills down through three more levels, with level 4 containing the typical UML diagrams. The choice of the <strong>C4</strong> model was made to provide NHE researchers with a diverse range of software architecture knowledge an understanding of the software architecture behind SimCenter applications that fits their skill level. The four levels:</p>
 <ul class="simple">
@@ -250,51 +248,46 @@
 <li><p><strong>Workflow</strong>: “The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules.” [Workflow Management Coalition].</p></li>
 <li><p><strong>Application</strong>: A software application performs operations on data residing in a computer for a user or another program; it can be self contained, typically termed a program, or part of a group of programs.</p></li>
 <li><p><strong>Scientific Workflow</strong>: A sequence of steps which propogate input data through a series of applications to produce output. It is a loosely coupled application performing workflows in which each of the coordinated tasks is performed using an individual application. Each of the individual application taking some data inputs and producing data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever increasing ever increasing amounts of data using “scientific” applications.</p></li>
-<li><p><strong>Scientific Workflow System</strong>: An application or applications to aid a user to set-up, schedule, run, and monitor a user defined scientific workflow.</p>
-<ol class="arabic simple">
-<li><p><strong>Software Framework</strong>: A collection of software for building applications</p></li>
-</ol>
-</li>
+<li><p><strong>Scientific Workflow System</strong>: An application or applications to aid a user to set-up, schedule, run, and monitor a user defined scientific workflow.</p></li>
+<li><p><strong>Software Framework</strong>: A collection of software for building applications in a specific domain. The framework defines the interfaces between the components of the software, provides example applications that can be developed using the provided software, and defines a clear set of interfaces such that the software can be extended to build other applications.</p></li>
 </ol>
 </div>
-<p>in a specific domain. The framework defines the interfaces between the components of the software,
-provides example applications that can be developed using the provided software, and defines a clear set of interfaces such that the software can be extended to build other applications.</p>
 <div class="section" id="overview">
-<h2><span class="section-number">2.4. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world, is shown in <a class="reference internal" href="#figcontext"><span class="std std-numref">Fig. 2.4.6</span></a>. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>.</p>
+<h2><span class="section-number">2.3. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world, is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figContext</span></code>. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, R2D) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>.</p>
 <div class="align-center figure" id="id5">
 <span id="figcontext"></span><a class="reference internal image-reference" href="../../../../_images/context.png"><img alt="../../../../_images/context.png" src="../../../../_images/context.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.6 </span><span class="caption-text">System context diagram for SimCenter applications.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2 </span><span class="caption-text">System context diagram for SimCenter applications.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
-<p>Given how SimCenter applications fit in with the environment, a level 2 diagrams now demonstrates how the SimCenter applications are broken into high level components. The SimCenter applications are, as shown in <a class="reference internal" href="#figcontainer"><span class="std std-numref">Fig. 2.4.7</span></a>, broken into two components: A front end UI and a back end application that runs the workflow. The front end applications are desktop applications written using the cross-platform <a class="reference external" href="https://www.qt.io/product/framework">Qt framework</a>. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on a HPC utilizing resources made available to NHE community through DesignSafe.</p>
+<p>Given how SimCenter applications fit in with the environment, a level 2 diagrams now demonstrates how the SimCenter applications are broken into high level components. The SimCenter applications are, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figContainer</span></code>, broken into two components: A front end UI and a back end application that runs the workflow. The front end applications are desktop applications written using the cross-platform <a class="reference external" href="https://www.qt.io/product/framework">Qt framework</a>. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on a HPC utilizing resources made available to NHE community through DesignSafe.</p>
 <div class="align-center figure" id="id6">
 <span id="figcontainer"></span><a class="reference internal image-reference" href="../../../../_images/container.png"><img alt="../../../../_images/container.png" src="../../../../_images/container.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.7 </span><span class="caption-text">System container diagram for SimCenter applications.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.3 </span><span class="caption-text">System container diagram for SimCenter applications.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<p>Two level 3 diagrams are now presented which break up the two containers into the major building blocks or components in C4 terminology. In <a class="reference internal" href="#figcomponentfront"><span class="std std-numref">Fig. 2.4.8</span></a> the component diagram for the front end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequently interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.</p>
+<p>Two level 3 diagrams are now presented which break up the two containers into the major building blocks or components in C4 terminology. In <code class="xref std std-numref docutils literal notranslate"><span class="pre">figComponentFront</span></code> the component diagram for the front end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequently interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.</p>
 <div class="align-center figure" id="id7">
 <span id="figcomponentfront"></span><a class="reference internal image-reference" href="../../../../_images/componentFront.png"><img alt="../../../../_images/componentFront.png" src="../../../../_images/componentFront.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.8 </span><span class="caption-text">Component diagram for front end UI.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.4 </span><span class="caption-text">Component diagram for front end UI.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
-<p>The component diagram for the backend application shown in <a class="reference internal" href="#figcomponentback"><span class="std std-numref">Fig. 2.4.9</span></a>, shows that the backend is made up of a number of component applications. The application <code class="docutils literal notranslate"><span class="pre">femUQ.py</span></code> is the application that parses the input from the front end, sets up the workflow by creating a <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> script and then launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a file, <code class="docutils literal notranslate"><span class="pre">WorkflowApplication.json</span></code>. The <code class="docutils literal notranslate"><span class="pre">WorkflowApplication.json</span></code> file is a file that maps the applications specified in the output from the UI with a specific application contained on the users local machine or at the remote HPC resource, as such it allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Once the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> file is created, control is passed to a UQ engine, which repeatedly runs the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided. The figure shows the backend application running locally or remotely on a HPC at DesignSafe.</p>
+<p>The component diagram for the backend application shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figComponentBack</span></code>, shows that the backend is made up of a number of component applications. The application <code class="docutils literal notranslate"><span class="pre">femUQ.py</span></code> is the application that parses the input from the front end, sets up the workflow by creating a <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> script and then launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a file, <code class="docutils literal notranslate"><span class="pre">WorkflowApplication.json</span></code>. The <code class="docutils literal notranslate"><span class="pre">WorkflowApplication.json</span></code> file is a file that maps the applications specified in the output from the UI with a specific application contained on the users local machine or at the remote HPC resource, as such it allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Once the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> file is created, control is passed to a UQ engine, which repeatedly runs the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided. The figure shows the backend application running locally or remotely on a HPC at DesignSafe.</p>
 <div class="align-center figure" id="id8">
 <span id="figcomponentback"></span><a class="reference internal image-reference" href="../../../../_images/componentBack.png"><img alt="../../../../_images/componentBack.png" src="../../../../_images/componentBack.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9 </span><span class="caption-text">Component diagram for Backend Application.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.5 </span><span class="caption-text">Component diagram for Backend Application.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">femUQ.py</span></code> is the backend application for the EE-UQ, WE-UQ, Hydro-UQ, and the PBE applications. For RDT the backend application is <code class="docutils literal notranslate"><span class="pre">RDT_Workflow.py</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">femUQ.py</span></code> is the backend application for the EE-UQ, WE-UQ, Hydro-UQ, and the PBE applications. For R2D the backend application is <code class="docutils literal notranslate"><span class="pre">R2D_Workflow.py</span></code>.</p>
 </div>
 <p>The interaction between the frontend and the backend is best understood by looking at the sequence of events that occurs when the user presses the <code class="docutils literal notranslate"><span class="pre">Run</span></code> button. As shown in the figure below, the UI application will first perform a number of steps:</p>
 <ol class="arabic simple">
-<li><p>It will create a temporary directory in the Documents folder named <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, and inside <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> will create another dircetory <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>.</p></li>
+<li><p>It will create a temporary directory in the Documents folder named <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, and inside <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> will create another directory <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>.</p></li>
 <li><p>It will then run through all the currently selected widgets and on each invoke the <code class="docutils literal notranslate"><span class="pre">copyFiles()</span></code> method, telling these widgets to copy all files that will be needed during the workflow to the <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> directory.</p></li>
-<li><p>It will then create a JSON file and will run through the currenly selected widgets and on each invoke the methods <code class="docutils literal notranslate"><span class="pre">outputToJSON()</span></code> and <code class="docutils literal notranslate"><span class="pre">outputAppDataToJSON</span></code>, these telling the application to augment the JSOIN file with the inputs the user has provided in the widget and also the name of the widget.</p></li>
+<li><p>It will then create a JSON file and will run through the currently selected widgets and on each invoke the methods <code class="docutils literal notranslate"><span class="pre">outputToJSON()</span></code> and <code class="docutils literal notranslate"><span class="pre">outputAppDataToJSON</span></code>, these telling the application to augment the JSON file with the inputs the user has provided in the widget and also the name of the widget.</p></li>
 <li><p>The UI will now start the backend application and will spin until the backend application returns with a completion signal.</p></li>
 </ol>
 <p>Now that the UI has handed over to the backend application, the backend application will perform the following:</p>
 <ol class="arabic simple" start="5">
-<li><p>Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the <code class="docutils literal notranslate"><span class="pre">WorkflowApplications.json</span></code> file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will the create in <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> a file named <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code>. This file is a script file that when run by the UQ engine will generate a file named <code class="docutils literal notranslate"><span class="pre">results.out</span></code>. <code class="docutils literal notranslate"><span class="pre">results.out</span></code> when the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> script has completed will contain a single line of space seperated values, one value for each EDP.</p></li>
+<li><p>Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the <code class="docutils literal notranslate"><span class="pre">WorkflowApplications.json</span></code> file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will the create in <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> a file named <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code>. This file is a script file that when run by the UQ engine will generate a file named <code class="docutils literal notranslate"><span class="pre">results.out</span></code>. <code class="docutils literal notranslate"><span class="pre">results.out</span></code> when the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> script has completed will contain a single line of space separated values, one value for each EDP.</p></li>
 <li><p>It will invoke each of the applications with supplied arguments and an additional command line argument, <code class="docutils literal notranslate"><span class="pre">--getRV</span></code>, to inform the application to process the input file, and to create any additional random variables and input files needed before the workflow runs.</p></li>
 <li><p>It will then launch the UQengine. The UQ engine, is typically a pre- and post- processor to an existing UQ engine.</p></li>
 <li><p>The pre-processor takes the json input file and creates an input file needed by the actual UQ engine.</p></li>
@@ -307,12 +300,12 @@ provides example applications that can be developed using the provided software,
 </ol>
 <div class="align-center figure" id="id9">
 <span id="figsequencelocal"></span><a class="reference internal image-reference" href="../../../../_images/sequenceLocal.png"><img alt="../../../../_images/sequenceLocal.png" src="../../../../_images/sequenceLocal.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.10 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Locally</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.6 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Locally</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>That is for the case where the computations are performed on the local computer. When the somputations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the <a class="reference external" href="https://tapis-project.org/">TACC tapis</a> interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.</p>
 <div class="align-center figure" id="id10">
 <span id="id3"></span><a class="reference internal image-reference" href="../../../../_images/sequenceRemote.png"><img alt="../../../../_images/sequenceRemote.png" src="../../../../_images/sequenceRemote.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.11 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Remotely</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.7 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Remotely</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -327,7 +320,7 @@ provides example applications that can be developed using the provided software,
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -378,6 +371,7 @@ provides example applications that can be developed using the provided software,
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -414,6 +408,7 @@ provides example applications that can be developed using the provided software,
             };
         })
     };
+    */
 </script>
 
 

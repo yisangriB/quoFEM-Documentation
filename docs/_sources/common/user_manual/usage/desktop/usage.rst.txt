@@ -9,7 +9,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 
 .. only:: quoFEM_app
 
-   .. _figGenericUI-QUOFEM:
+   .. _figGenericUI-quoFEM:
 
    .. figure:: figures/quoFEM.png
 	   :align: center
@@ -27,6 +27,7 @@ remotely, and finally views the simulation results. The main window of the UI is
  
       The |app| user interface.
 
+
 .. only:: EEUQ_app
 
    .. _figGenericUI-EE:
@@ -37,17 +38,23 @@ remotely, and finally views the simulation results. The main window of the UI is
 
       The |app| user interface.
 
+
 .. only:: WEUQ_app
 
    .. _figGenericUI-WE:
 
    .. figure:: figures/wePanel.png
-	   :align: center
-	   :figclass: align-center
-	   
+      :align: center
+      :figclass: align-center
+
+      The |app| user interface.
+
+
+
 .. only:: R2D_app
 
    .. _figGenericUI-R2D:
+
    .. figure:: figures/R2DPanel.png
 	   :align: center
 	   :figclass: align-center
@@ -55,7 +62,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 	   The |app| user interface.
 
 
-1. Login Button: 
+1. Login Button:
 
 The **Login** button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe-CI <https://www.designsafe-ci.org/account/register>`_ website [#]_. 
 
@@ -83,7 +90,6 @@ The ribbon on the left side provides the user with a selection of buttons to cho
    :R2D:R2DTool/ANA
    :R2D:R2DTool/DL
    UQ
-   :wind:GI
    :EEUQ:GI
    :WEUQ:GI
    :EEUQ:SIM
@@ -91,10 +97,11 @@ The ribbon on the left side provides the user with a selection of buttons to cho
    :PBE:SIM
    :wind:Assets
    :EEUQ:earthquake/earthquakeEvents.rst
-   :PBE:earthquake/EarthquakeEvents.rst	 	 
+   :PBE:earthquake/earthquakeEvents.rst	 	 
    :wind:wind/WindEvents
    :wind:FEM
    :EEUQ:FEM
+   :PBE:FEM	 
    :quoFEM:quoFEM/FEM
    :EEUQ:response/EDP
    :WEUQ:response/EDP

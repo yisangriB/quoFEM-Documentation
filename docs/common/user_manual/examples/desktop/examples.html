@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -44,7 +43,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity" href="quoFEM/exampleTrussOpenSees/README.html" />
+    <link rel="next" title="4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity" href="qfem-0001/README.html" />
     <link rel="prev" title="3.2. Issues While Running" href="../../troubleshooting/desktop/troubleshootingRunning.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -73,7 +72,7 @@
 
 
   
-  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -116,14 +115,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/exampleTrussOpenSees/README.html">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/quo-09/README.html">4.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/exampleFrameConv/README.html">4.3. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/exampleFrameBaye/README.html">4.4. Steel Frame: Bayesian Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/quo-14/README.html">4.5. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0001/README.html">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0002/README.html">4.2. Forward Propagation - OpenSeesPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0005/README.html">4.3. Basic modeling with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0007/README.html">4.4. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0009/README.html">4.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0014/README.html">4.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0015/README.html">4.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0016/README.html">4.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0017/README.html">4.9. Custom UQ for UQpy</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -207,14 +211,301 @@
 <span id="lbl-examples"></span><h1><span class="section-number">4. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
 <p>The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided for selected problems. The files for the examples are available on Github.</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/exampleTrussOpenSees/README.html">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/quo-09/README.html">4.2. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/exampleFrameConv/README.html">4.3. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/exampleFrameBaye/README.html">4.4. Steel Frame: Bayesian Calibration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/quo-14/README.html">4.5. Steel Frame: Bayesian Calibration using TMCMC</a></li>
-</ul>
 </div>
+
+
+<div class="twbs">
+  
+  <hr>
+
+  <div class="gallery" id="gallery">
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./qfem-0001/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Two-Dimensional Truss: Sampling, Reliability and Sensitivity</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example illustrates how quoFEM interacts with the Tcl interpreter for OpenSees. A simple forward propagation procedure is run to estimate the first and second central moments of a FE model's response, given the marginal distributions of various random parameters.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/truss.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./qfem-0002/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Forward Propagation - OpenSeesPy</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example illustrates how quoFEM interacts with OpenSeesPy. A simple forward propagation procedure is run to estimate the first and second central moments of a FE model's response, given the marginal distributions of various random parameters.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/qfem-0002.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./qfem-0005/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Basic modeling with Python</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example illustrates how Python scripting can be used with quoFEM to express general mathematical models without the use of a dedicated finite element analysis engine.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/qfem-0005.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./qfem-0007/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Steel Frame: Conventional Calibration</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">In this example, a parameter estimation routine is used to estimate column stiffnesses of a simple steel frame, given data about it's mode shapes and mass distribution.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/frameFE.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./qfem-0009/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">A global sensitivity analysis is conducted with correlated random variables using the SimCenterUQ engine.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/qfem-0009.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./qfem-0014/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Steel Frame: Bayesian Calibration using TMCMC</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">In this example, Bayesian estimation is used to estimate the lateral story stiffnesses of the two stories of a simple steel frame, given data about its mode shapes and frequencies. The transitional Markov chain Monte Carlo algorithm is used to obtain samples from the posterior probability distribution of the lateral story stiffnesses</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/qfem-0014.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./qfem-0015/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Surrogate Modeling of a Single Story Building Response</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example uses quoFEM to train a Gaussian process-based surrogate model for peak responses of an OpenSeesPy FE model subjected to single earthquake excitation.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/SUR-Concept.PNG"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./qfem-0016/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Surrogate modeling for mean and variance of EQ response</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example uses quoFEM to train a Gaussian process-based surrogate model for mean and variance of peak responses and use it for sensitivity analysis.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/SUR2-sturcture.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./qfem-0017/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">This is customUQ module</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example illustrates how customUQ can be used with quoFEM.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/truss2.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  </div>
+</div>
+
+<script>
+function findGetParameter(parameterName) {
+	var result = null,
+		tmp = [];
+	location.search
+		.substr(1)
+		.split("&")
+		.forEach(function (item) {
+		  tmp = item.split("=");
+		  if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+		});
+	return result;
+} 
+
+/*if(window.location.search) {
+  selectedFilters.push(findGetParameter("rtm"));
+}*/
+
+/*let selectedFilters = [];*/
+let selectedFilters = window.location.search.split("=")[1].split(",");
+const images  = document.getElementsByClassName("gallery-item");
+const filters = [...document.querySelectorAll('.filter select')];
+const toggles = [...document.querySelectorAll('.filter input')];
+
+var show = function (elem) {
+    elem.style.display = 'block';
+};
+var hide = function (elem) {
+    elem.style.display = 'none';
+};
+var toggleFilter =  function(el,elid) {
+    const filter = document.getElementById(elid);
+    filter.disabled = !el.checked;
+   
+    if ("createEvent" in document) {
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent("change", false, true);
+        filter.dispatchEvent(evt);
+    }
+    else
+        filter.fireEvent("change");
+};
+
+for (filter of selectedFilters){
+    for (const image of images) {
+        if (selectedFilters.every(filter => image.classList.contains(filter.replace(".","-")))) {
+            show(image);
+        } else {
+            hide(image)
+        };
+    }
+}
+/*
+for (const filter of filters) {
+    filter.addEventListener('change', function(event) {
+        selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+        console.log(selectedFilters);
+        for (const image of images) {
+            if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                show(image);
+            } else {
+                hide(image)
+            };
+        };
+    })
+};
+*/
+</script>
 </div>
 
 
@@ -227,7 +518,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -278,6 +569,7 @@
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -314,6 +606,7 @@
             };
         })
     };
+    */
 </script>
 
 

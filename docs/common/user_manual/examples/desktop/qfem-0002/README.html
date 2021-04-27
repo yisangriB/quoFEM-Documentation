@@ -7,14 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Forward Propagation - OpenSeesPy &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>4.2. Forward Propagation - OpenSeesPy &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,16 +34,18 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.3. Basic modeling with Python" href="../qfem-0005/README.html" />
+    <link rel="prev" title="4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity" href="../qfem-0001/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -71,7 +73,7 @@
 
 
   
-  <img src="../../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -109,12 +111,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0001/README.html">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Forward Propagation - OpenSeesPy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#uq-workflow">4.2.1. UQ Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model-files">4.2.2. Model Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results">4.2.3. Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0005/README.html">4.3. Basic modeling with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">4.4. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">4.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">4.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">4.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">4.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">4.9. Custom UQ for UQpy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -175,7 +194,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Forward Propagation - OpenSeesPy</li>
+          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">4.2. </span>Forward Propagation - OpenSeesPy</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,15 +216,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="forward-propagation-openseespy">
-<h1>Forward Propagation - OpenSeesPy<a class="headerlink" href="#forward-propagation-openseespy" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.2. </span>Forward Propagation - OpenSeesPy<a class="headerlink" href="#forward-propagation-openseespy" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 89%" />
+<col style="width: 29%" />
+<col style="width: 71%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Problem files</p></td>
-<td><p><a class="reference external" href="https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/src/quo-02">quo-02</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/qfem-0002/">Github</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -215,7 +236,10 @@ distributions of various random parameters.</p>
 truss structure shown in the following figure. Two input scripts are
 used to define a forward propagation procedure to be coordinated by
 quoFEM which will estimate the mean and standard deviation of the
-vertical displacement at node 3 using Latin hypercube sampling. <img alt="Truss schematic diagram" src="../../../../../_images/qfem-0002.png" /></p>
+vertical displacement at node 3 using Latin hypercube sampling.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/qfem-0002.png"><img alt="../../../../../_images/qfem-0002.png" src="../../../../../_images/qfem-0002.png" style="width: 500px;" /></a>
+</div>
 <p>The following parameters are defined in the <strong>RV</strong> tab of quoFEM:</p>
 <ol class="arabic simple">
 <li><p>Elastic modulus, <code class="docutils literal notranslate"><span class="pre">E</span></code>: <strong>Weibull</strong> distribution with a scale
@@ -233,7 +257,7 @@ distribution with a mean <span class="math notranslate nohighlight">\((\mu)\)</s
 deviation <span class="math notranslate nohighlight">\((\sigma)\)</span> of <span class="math notranslate nohighlight">\(100.0\)</span>,</p></li>
 </ol>
 <div class="section" id="uq-workflow">
-<h2>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.1. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <p>To define the uncertainty workflow in quoFEM, select <strong>Forward
 Propagation</strong> for the <strong>Dakota Method Category</strong>, and enter the
 following inputs:</p>
@@ -256,7 +280,7 @@ following inputs:</p>
 </table>
 </div>
 <div class="section" id="model-files">
-<h2>Model Files<a class="headerlink" href="#model-files" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.2. </span>Model Files<a class="headerlink" href="#model-files" title="Permalink to this headline">¶</a></h2>
 <p>The following files make up the <strong>FEM</strong> model definition.</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://raw.githubusercontent.com/claudioperez/SimCenterExamples/master/static/truss/model.py">model.py</a>:
@@ -278,7 +302,7 @@ runtime by the UQ engine.</em></p></li>
 </ol>
 </div>
 <div class="section" id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.3. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
 <p>The results from this analysis with a maximum of <span class="math notranslate nohighlight">\(200\)</span> iterations
 are as follows:</p>
 <p><strong>Node 3</strong>:</p>
@@ -310,7 +334,7 @@ frequency and CDF will be displayed.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -361,6 +385,7 @@ frequency and CDF will be displayed.</p>
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -397,6 +422,7 @@ frequency and CDF will be displayed.</p>
             };
         })
     };
+    */
 </script>
 
 

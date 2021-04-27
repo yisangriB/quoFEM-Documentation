@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -45,7 +44,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="2. Software Architecture" href="../../architecture/desktop/architecture.html" />
-    <link rel="prev" title="1.3. Methods in UCSD UQ Engine" href="../../../technical_manual/desktop/UCSDUQTechnical.html" />
+    <link rel="prev" title="1.4. Ground Motion Intensity Spatial Correlation Model Options" href="../../../technical_manual/desktop/spatial_correlation.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -73,7 +72,7 @@
 
 
   
-  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -105,10 +104,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -116,7 +115,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -213,7 +213,7 @@
 <h2><span class="section-number">1.1. </span>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>First, ensure the following dependencies are installed:</p>
 <ul class="simple">
-<li><p><strong>C++11 compliant compiler</strong>: many of the workflow applications included use C++11 features, consequently they may need a newer C++11 compliant compiler. Fow Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with c++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.</p></li>
+<li><p><strong>C++17 compliant compiler</strong>: many of the workflow applications included use C++17 features, consequently they may need a newer C++17 compliant compiler. Fow Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.</p></li>
 <li><p><strong>OpenSees</strong>: The workflow applications require an installation of <a class="reference external" href="http://opensees.berkeley.edu/">OpenSees</a> to carry out structural analysis using the finite element method.</p></li>
 <li><p><strong>DAKOTA</strong>: The workflow applications require an installation of <a class="reference external" href="https://dakota.sandia.gov/">DAKOTA</a> to handle and propagate the uncertainties defined in the input files for the workflow applications.</p></li>
 <li><p><strong>Python</strong>: The workflow requires at least Python 3.7.</p></li>
@@ -234,32 +234,30 @@
 <ol class="arabic">
 <li><p>Add Conan <a class="reference external" href="https://bintray.com/nheri-simcenter/simcenter">SimCenter</a> and  <a class="reference external" href="https://bintray.com/bincrafters/public-conan">BinCrafters</a> repositories to the Conan remotes. You can add these remotes by typing the following commands in the terminal:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">simcenter</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">bintray</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conan</span><span class="o">/</span><span class="n">nheri</span><span class="o">-</span><span class="n">simcenter</span><span class="o">/</span><span class="n">simcenter</span>
-
-<span class="n">conan</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">bincrafters</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">bintray</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conan</span><span class="o">/</span><span class="n">bincrafters</span><span class="o">/</span><span class="n">public</span><span class="o">-</span><span class="n">conan</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>Create a default Conan profile if this is the first time you use Conan for building packages.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">profile</span> <span class="n">new</span> <span class="n">default</span> <span class="o">--</span><span class="n">detect</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile new default --detect</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>Check the default profile of your build environment using:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">profile</span> <span class="n">show</span> <span class="n">default</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile show default</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>If the compiler name and compiler version are <em>not</em> listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">profile</span> <span class="n">update</span> <span class="n">settings</span><span class="o">.</span><span class="n">compiler</span><span class="o">=</span><span class="s2">&quot;Visual Studio&quot;</span> <span class="n">default</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile update settings.compiler=&quot;Visual Studio&quot; default</span>
 
-<span class="n">conan</span> <span class="n">profile</span> <span class="n">update</span> <span class="n">settings</span><span class="o">.</span><span class="n">compiler</span><span class="o">.</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;16&quot;</span> <span class="n">default</span>
+<span class="go">conan profile update settings.compiler.version=&quot;16&quot; default</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -268,17 +266,17 @@
 </div>
 <div class="section" id="build-the-applications">
 <h3><span class="section-number">1.2.2. </span>Build the applications<a class="headerlink" href="#build-the-applications" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic" start="2">
+<ol class="arabic">
 <li><p>To build the applications you need to now navigate to the <strong>SimCenterBackendApplications</strong> folder that was created with the <strong>git clone</strong> command. Once there you will issue the following set of commands to create a <strong>build</strong> folder, change director to that folder, install needed software using conan, and finally use <strong>cmake</strong> to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):</p>
 <blockquote>
 <div><blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span>
-<span class="n">cd</span> <span class="n">build</span>
-<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
-<span class="n">cmake</span> <span class="o">..</span>
-<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span>
-<span class="n">cmake</span> <span class="o">--</span><span class="n">install</span> <span class="o">.</span>
-<span class="n">cd</span> <span class="o">..</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir build</span>
+<span class="go">cd build</span>
+<span class="go">conan install .. --build missing</span>
+<span class="go">cmake ..</span>
+<span class="go">cmake --build . --config Release</span>
+<span class="go">cmake --install .</span>
+<span class="go">cd ..</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -296,12 +294,17 @@
 </pre></div>
 </div>
 </li>
+<li><p>For Mac users, add the following command after <strong>cmake –install .</strong> to ensure the binary applications are copied to the applications folder.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">install</span> <span class="o">.</span>
+</pre></div>
+</div>
+</li>
 </ol>
 </div>
 </div></blockquote>
 </li>
 </ol>
-<p>If building and installation were successful you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it. The name of this folder should not be changed.</p>
+<p>If building and installation were successful you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it.   The name of this folder should not be changed.</p>
 </div>
 </div>
 <div class="section" id="build-the-user-interface">
@@ -315,7 +318,7 @@
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo’s, you should fork the latter repo and then clone your forked repo. Forking a repo at <strong>githib</strong> is done through your browser.</p>
+<p>Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo’s, you should fork the latter repo and then clone your forked repo. Forking a repo at <strong>github</strong> is done through your browser.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YOUR_GITHUB_NAME</span><span class="o">/</span><span class="n">APP_NAME</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
@@ -334,7 +337,7 @@
 <div><pre class="literal-block">mkdir build
 cd build
 qmake ../quoFEM.pro
-make</pre>
+     make</pre>
 </div></blockquote>
 </li>
 </ol>
@@ -367,7 +370,7 @@ make</pre>
 </div></blockquote>
 <div class="align-center figure" id="id3">
 <span id="figpreferences"></span><img alt="../../../../_images/Preferences.png" src="../../../../_images/Preferences.png" />
-<p class="caption"><span class="caption-number">Fig. 1.4.1 </span><span class="caption-text">Preferences Dialog</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.4.3 </span><span class="caption-text">Preferences Dialog</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -382,7 +385,7 @@ make</pre>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -433,6 +436,7 @@ make</pre>
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -469,6 +473,7 @@ make</pre>
             };
         })
     };
+    */
 </script>
 
 

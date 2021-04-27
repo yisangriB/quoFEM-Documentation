@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -45,7 +44,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="2.3. QoI: Quantities of Interest" href="QuantitiesOfInterest.html" />
-    <link rel="prev" title="2.1.4.1. Custom Uncertainty Quantification Engine Input" href="../CustomUQ.html" />
+    <link rel="prev" title="2.1.3.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm" href="../UCSD_UQ_TMCMC.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -73,7 +72,7 @@
 
 
   
-  <img src="../../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -128,7 +127,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -232,75 +232,6 @@ and a custom user-specified application.</p>
 <ol class="arabic simple">
 <li><p><strong>Input Script</strong>: The user must specify a main input script. When entered the application will parse this file looking for variables set with the <code class="docutils literal notranslate"><span class="pre">pset</span></code> option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with <code class="docutils literal notranslate"><span class="pre">pset</span></code>, the program will auto populate the variable in the <strong>RV</strong> tab.</p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># units kN &amp; mm</span>
-
-<span class="c">#</span>
-<span class="c"># set some parameters</span>
-<span class="c">#</span>
-
-<span class="nv">pset</span> E <span class="mi">205</span>
-<span class="nv">pset</span> P <span class="mi">25</span>
-<span class="nv">pset</span> Au <span class="mi">500</span>
-<span class="nv">pset</span> Ao <span class="mi">250</span>
-
-<span class="c">#</span>
-<span class="c"># build the model</span>
-<span class="c">#</span>
-
-<span class="nv">model</span> Basic <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">2</span>
-
-<span class="nv">node</span> <span class="mi">1</span>     <span class="mi">0</span>    <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">2</span>  <span class="mi">4000</span>    <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">3</span>  <span class="mi">8000</span>    <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">4</span> <span class="mi">12000</span>    <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">5</span>  <span class="mi">4000</span> <span class="mi">4000</span>
-<span class="nv">node</span> <span class="mi">6</span>  <span class="mi">8000</span> <span class="mi">4000</span>
-
-<span class="nv">fix</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
-<span class="nv">fix</span> <span class="mi">4</span> <span class="mi">0</span> <span class="mi">1</span>
-
-<span class="nv">uniaxialMaterial</span> Elastic <span class="mi">1</span> <span class="nv">$E</span>
-
-<span class="nv">element</span> truss <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">2</span> <span class="mi">2</span> <span class="mi">3</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">3</span> <span class="mi">3</span> <span class="mi">4</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">4</span> <span class="mi">1</span> <span class="mi">5</span> <span class="nv">$Au</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">5</span> <span class="mi">5</span> <span class="mi">6</span> <span class="nv">$Au</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">6</span> <span class="mi">6</span> <span class="mi">4</span> <span class="nv">$Au</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">7</span> <span class="mi">2</span> <span class="mi">5</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">8</span> <span class="mi">3</span> <span class="mi">6</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">9</span> <span class="mi">5</span> <span class="mi">3</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">timeSeries</span> Linear <span class="mi">1</span>
-<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
-    <span class="nb">load</span> <span class="mi">2</span> <span class="mi">0</span> <span class="k">[expr</span> <span class="o">-</span><span class="nv">$P</span><span class="k">]</span>
-    <span class="nb">load</span> <span class="mi">3</span> <span class="mi">0</span> <span class="k">[expr</span> <span class="o">-</span><span class="nv">$P</span><span class="k">]</span>
-<span class="k">}</span>
-
-<span class="c">#</span>
-<span class="c"># create a recorder</span>
-<span class="c">#</span>
-
-<span class="nv">recorder</span> Node <span class="o">-</span>file node.out <span class="o">-</span>scientific <span class="o">-</span>precision <span class="mi">10</span> <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> disp
-
-<span class="c">#</span>
-<span class="c"># build and perform the analysis</span>
-<span class="c">#</span>
-
-<span class="nv">algorithm</span> Linear
-<span class="nv">integrator</span> LoadControl <span class="mf">1.0</span>
-<span class="nv">system</span> ProfileSPD
-<span class="nv">numberer</span> RCM
-<span class="nv">constraints</span> Plain
-<span class="nv">analysis</span> Static
-<span class="nv">analyze</span> <span class="mi">1</span>
-
-<span class="c">#</span>
-<span class="c"># remove the recorders</span>
-<span class="c">#</span>
-
-<span class="nv">remove</span> recorders
-</pre></div>
-</div>
 <ol class="arabic simple" start="2">
 <li><p><strong>Postprocess Script</strong>: This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file after the main script runs.</p></li>
 </ol>
@@ -322,62 +253,6 @@ and a custom user-specified application.</p>
 <ol class="arabic simple">
 <li><p><strong>Input File</strong>: The user must specify a main input file.  A part of this file may contain variables set in the <code class="docutils literal notranslate"><span class="pre">PARA</span></code> section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the <strong>RV</strong> tab. For example if a file containing the following code was specified:</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FEAP</span> <span class="o">*</span> <span class="o">*</span> <span class="n">Elastic</span> <span class="n">Truss</span>
-<span class="mi">6</span> <span class="mi">9</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span>
-
-<span class="n">PARAmeter</span>
-<span class="n">E</span> 	<span class="o">=</span> <span class="mi">205</span>
-<span class="n">P</span> 	<span class="o">=</span> <span class="mi">25</span>
-<span class="n">Au</span>	<span class="o">=</span> <span class="mi">500</span>
-<span class="n">Ao</span> 	<span class="o">=</span> <span class="mi">250</span>
-
-<span class="n">MATErial</span> <span class="mi">1</span>
-<span class="n">TRUSs</span>
-<span class="n">ELAStic</span> <span class="n">isotropic</span> <span class="n">E</span>
-<span class="n">CROSs</span> <span class="n">section</span> <span class="n">Ao</span>
-
-<span class="n">MATErial</span> <span class="mi">2</span>
-<span class="n">TRUSs</span>
-<span class="n">ELAStic</span> <span class="n">isotropic</span> <span class="n">E</span>
-<span class="n">CROSs</span> <span class="n">section</span> <span class="n">Au</span>
-
-<span class="n">COORdinates</span>
-<span class="mi">1</span>	<span class="mi">0</span>	<span class="mf">0.0</span>		<span class="mf">0.0</span>
-<span class="mi">2</span>	<span class="mi">0</span>	<span class="mf">4000.0</span>		<span class="mf">0.0</span>
-<span class="mi">3</span>	<span class="mi">0</span>	<span class="mf">8000.0</span>		<span class="mf">0.0</span>
-<span class="mi">4</span>	<span class="mi">0</span>	<span class="mf">12000.0</span>		<span class="mf">0.0</span>
-<span class="mi">5</span>	<span class="mi">0</span>	<span class="mf">4000.0</span>		<span class="mf">4000.0</span>
-<span class="mi">6</span>	<span class="mi">0</span>	<span class="mf">8000.0</span>		<span class="mf">4000.0</span>
-
-<span class="n">ELEMents</span>
-<span class="mi">1</span>	<span class="mi">0</span>	<span class="mi">1</span>	<span class="mi">1</span>	<span class="mi">2</span>
-<span class="mi">2</span>	<span class="mi">0</span>	<span class="mi">1</span>	<span class="mi">2</span>	<span class="mi">3</span>
-<span class="mi">3</span>	<span class="mi">0</span>	<span class="mi">1</span>	<span class="mi">3</span>	<span class="mi">4</span>
-<span class="mi">4</span>	<span class="mi">0</span>	<span class="mi">2</span>	<span class="mi">1</span>	<span class="mi">5</span>
-<span class="mi">5</span>	<span class="mi">0</span>	<span class="mi">2</span>	<span class="mi">5</span>	<span class="mi">6</span>
-<span class="mi">6</span>	<span class="mi">0</span>	<span class="mi">2</span>	<span class="mi">6</span>	<span class="mi">4</span>
-<span class="mi">7</span>	<span class="mi">0</span>	<span class="mi">1</span>	<span class="mi">2</span>	<span class="mi">5</span>
-<span class="mi">8</span>	<span class="mi">0</span>	<span class="mi">1</span>	<span class="mi">3</span>	<span class="mi">6</span>
-<span class="mi">9</span>	<span class="mi">0</span>	<span class="mi">1</span>	<span class="mi">5</span>	<span class="mi">3</span>
-
-<span class="n">BOUNdary</span>
-<span class="mi">1</span>	<span class="mi">0</span>	<span class="mi">1</span>	<span class="mi">1</span>
-<span class="mi">4</span>	<span class="mi">0</span>	<span class="mi">0</span>	<span class="mi">1</span>
-
-<span class="n">FORCe</span>
-<span class="mi">2</span>	<span class="mi">0</span>	<span class="mf">0.0</span>	<span class="o">-</span><span class="n">P</span>
-<span class="mi">3</span>	<span class="mi">0</span>	<span class="mf">0.0</span>	<span class="o">-</span><span class="n">P</span>
-
-<span class="n">END</span>
-<span class="n">BATCh</span>
-<span class="n">TANG</span>
-<span class="n">FORM</span>
-<span class="n">SOLVe</span>
-<span class="n">DISPlacement</span> <span class="n">ALL</span>
-<span class="n">END</span>
-<span class="n">STOP</span>
-</pre></div>
-</div>
 <p>then the parameters <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">Ao</span></code>, <code class="docutils literal notranslate"><span class="pre">Au</span></code> would be read by the application and placed in the <strong>RV</strong> tab.</p>
 <ol class="arabic simple" start="2">
 <li><p><strong>Postprocess Script</strong>: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file. Currently the user has no control over the name of the output file created by FEAPpv, <code class="docutils literal notranslate"><span class="pre">SimCenterOut.txt</span></code>. It is this file the post-process script must open and use to create the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file.</p></li>
@@ -393,14 +268,6 @@ and a custom user-specified application.</p>
 <li><p><strong>Postprocess Script</strong>. This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file with a single line as described for the OpenSees application.</p></li>
 <li><p><strong>Parameters File</strong> (Optional). This file allows for the automatic population of the <strong>RV</strong> tab with any variables found in the file. For example if the file contained the following:</p></li>
 </ol>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># set some parameters</span>
-
-<span class="n">E</span> <span class="o">=</span> <span class="mi">205</span>
-<span class="n">P</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="n">Ao</span> <span class="o">=</span> <span class="mi">250</span>
-<span class="n">Au</span> <span class="o">=</span> <span class="mi">500</span>
-</pre></div>
-</div>
 <p>The <strong>RV</strong> tab would be populated with the <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">Ao</span></code>, and <code class="docutils literal notranslate"><span class="pre">Au</span></code> random variables.</p>
 </div>
 <div class="section" id="custom">
@@ -430,7 +297,7 @@ space.</p>
 </ul>
 <p>Additionally, users can specify as many additional files and binaries as
 required by the application by increasing the number of input slots, as shown in
-<a class="reference internal" href="#customfem"><span class="std std-numref">Fig. 2.2.2</span></a>. By specifying these files here, they will be copied to the
+<a class="reference internal" href="#customfem"><span class="std std-numref">Fig. 2.2.4.1</span></a>. By specifying these files here, they will be copied to the
 correct location for quoFEM to access them during analyses. Users also have the
 option to simply place all the required files in the same location as the
 provided workflow driver scipt–quoFEM will automatically copy any files in this
@@ -439,7 +306,7 @@ numerous inputs are all being called by the workflow driver script and avoids
 the need to explicitly input each one of these files.</p>
 <div class="align-center figure" id="id4">
 <span id="customfem"></span><img alt="../../../../../_images/customFEM.png" src="../../../../../_images/customFEM.png" />
-<p class="caption"><span class="caption-number">Fig. 2.2.2 </span><span class="caption-text">Input for Custom Analysis Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.4.1 </span><span class="caption-text">Input for Custom Analysis Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -454,7 +321,7 @@ the need to explicitly input each one of these files.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -505,6 +372,7 @@ the need to explicitly input each one of these files.</p>
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -541,6 +409,7 @@ the need to explicitly input each one of these files.</p>
             };
         })
     };
+    */
 </script>
 
 

@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,10 +34,10 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -71,7 +71,7 @@
 
 
   
-  <img src="../../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -114,7 +114,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -198,12 +199,12 @@
 <h1>Sensitivity Analysis<a class="headerlink" href="#sensitivity-analysis" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 89%" />
+<col style="width: 28%" />
+<col style="width: 72%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Problem files</p></td>
-<td><p><a class="reference external" href="https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/src/quo-04">quo-04</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/qfem-0004/">Download</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -214,7 +215,10 @@ that shown in the following figure. A <a class="reference external" href="/commo
 analysis</a>
 procedure is coordinated by quoFEM which will estimate the sensitivities
 of the response quantities of interest with respect to the problem’s
-random variables. <img alt="Truss schematic diagram" src="../../../../../_images/qfem-0004.png" /></p>
+random variables.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/qfem-0004.png"><img alt="../../../../../_images/qfem-0004.png" src="../../../../../_images/qfem-0004.png" style="width: 500px;" /></a>
+</div>
 <p>The following parameters are defined in the <strong>RV</strong> tab of quoFEM:</p>
 <ol class="arabic simple">
 <li><p>Elastic modulus, <code class="docutils literal notranslate"><span class="pre">E</span></code>: <strong>Weibull</strong> distribution with a scale
@@ -269,14 +273,14 @@ identifiers supplied in the <strong>QoI</strong> tab, and writes the relevant
 response quantities to <code class="docutils literal notranslate"><span class="pre">results.out</span></code> from an OpenSees process. It
 is supplied to the <strong>Postprocess File</strong> field of the <strong>FEM</strong> tab.</p></li>
 </ol>
-<!-- <div class="admonition warning">Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</div> --></div>
+</div>
 <div class="section" id="results">
 <h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
 <p>Once the analysis is complete the <strong>RES</strong> tab will be automatically
 selected and the results will be displayed as shown in the following
 figure:</p>
 <div class="figure align-default" id="id1">
-<img alt="Sensitivity analysis results for simple truss." src="../../../../../_images/trussSensitivity-RES.png" />
+<img alt="Sensitivity analysis results for simple truss." src="../../../../../_images/trussSensitivity-RES1.png" />
 <p class="caption"><span class="caption-text">Sensitivity analysis results for simple truss.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -292,7 +296,7 @@ figure:</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -343,6 +347,7 @@ figure:</p>
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -379,6 +384,7 @@ figure:</p>
             };
         })
     };
+    */
 </script>
 
 

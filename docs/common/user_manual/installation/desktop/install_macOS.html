@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -44,7 +43,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="1.3. Test the Application" href="testInstall.html" />
+    <link rel="next" title="2. User Guide" href="../../usage/desktop/usage.html" />
     <link rel="prev" title="1.1. Install on Windows 10" href="install_Windows.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -73,7 +72,7 @@
 
 
   
-  <img src="../../../../_static/quoFEM-LogoImageGrey-app.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -105,10 +104,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -120,13 +119,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#test-the-installation">1.2.4. Test the Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="testInstall.html">1.3. Test the Application</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -225,9 +224,9 @@ If you have not yet installed Python, we recommend installing Python 3.8 from <a
 <li><p>We use the python.org installation over others, due to it’s simplicity of installation.</p></li>
 <li><p>The current Python installer leaves two script files in the Python directory at the end of the installation. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code>.</p></li>
 </ol>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id1">
 <img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.1 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <p>Once Python is installed, you need to extend it by installing a few additional packages. To facilitate this phase of the installation, we created a <strong>nheri_simcenter</strong> python package that automatically installs all other dependencies. Start a Terminal window and type the following command:</p>
@@ -243,22 +242,22 @@ If you have not yet installed Python, we recommend installing Python 3.8 from <a
 <p class="admonition-title">Note</p>
 <p>If you forget to invoke the <code class="docutils literal notranslate"><span class="pre">UpdateShellProfile.command.sh</span></code> script at the end of the install, you can always edit the correct shell file later to update the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable to point to the Python application.</p>
 <p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
-<p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
+<p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>Dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
 <p>To find which shell program you are using when you issue commands inside the terminal window, type the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env <span class="p">|</span> grep SHELL
 </pre></div>
 </div>
-<p>If the result is <strong>/bin/bash</strong> you will need to edit the <strong>.bashrc</strong> file or the <strong>bash_profile</strong> file. If the result is <strong>/bin/zsh</strong> you will need to edit the <strong>.zshrc</strong> or <strong>.zprofile</strong>. Typically, the <strong>.bash_profile</strong> or the <strong>.zprofile</strong> file is the one to edit as by design these will invoke the <strong>.bashrc</strong> or <strong>.zshrc</strong> file. If in doubt, look for these files in your home directory and see which of these other installlers have modified.</p>
+<p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which of these other installers have modified.</p>
 </div>
 </div>
 <div class="section" id="download-the-application">
 <h2><span class="section-number">1.2.3. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this headline">¶</a></h2>
-<p>To download the quoFEM app, first navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM">quoFEM Download</a> page. As shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figDownloadQUO_FEM</span></code>, to get to the download page, you need to click on the link <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">app</span> <span class="pre">and</span> <span class="pre">User</span> <span class="pre">Manual</span></code> in the application page. The download page contains a list of downloadable files and directories.</p>
-<div class="align-center figure" id="id9">
-<span id="id3"></span><img alt="../../../../_images/quoFEMDownload.png" src="../../../../_images/quoFEMDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.6 </span><span class="caption-text">quoFEM download page.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p>To download the quoFEM app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM">quoFEM Download</a> page which should resemble <a class="reference internal" href="#figdownload-quofem"><span class="std std-numref">Fig. 1.2.3.5</span></a>. The download page contains a list of downloadable files and directories.</p>
+<div class="align-center figure" id="id6">
+<span id="figdownload-quofem"></span><img alt="../../../../_images/quoFEMDownload.png" src="../../../../_images/quoFEMDownload.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.3.5 </span><span class="caption-text">quoFEM download page.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the quoFEM app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download completed, open the dmg file and copy the quoFEM app application to a location in your filesystem.</p>
+<p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the quoFEM app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download has completed, open the dmg file and copy the quoFEM app application to a location in your filesystem.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We suggest copying the application to your Desktop. After copying the application, you can move the dmg file to the trash or eject it.</p>
@@ -266,14 +265,14 @@ If you have not yet installed Python, we recommend installing Python 3.8 from <a
 </div>
 <div class="section" id="test-the-installation">
 <h2><span class="section-number">1.2.4. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this headline">¶</a></h2>
-<p>Now test if the application starts properly. Navigate to the location where you placed the application and open it. You should see the user interface shown in <a class="reference internal" href="#figquo-fem"><span class="std std-numref">Fig. 1.2.11</span></a>.</p>
+<p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the quoFEM.exe executable. You should see the user interface shown in <a class="reference internal" href="#figui-quofem"><span class="std std-numref">Fig. 1.2.4.5</span></a>. The installation can be tested by running the example problem <span class="xref std std-ref">qfem-0001</span> which is provided with the installation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>SimCenter apps are codesigned and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as such. As a consequence, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open.</p>
+<p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as such. As a consequence, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open.</p>
 </div>
-<div class="align-center figure" id="id14">
-<span id="figquo-fem"></span><img alt="../../../../_images/quoFEM.png" src="../../../../_images/quoFEM.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.11 </span><span class="caption-text">quoFEM application on startup.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<div class="align-center figure" id="id11">
+<span id="figui-quofem"></span><img alt="../../../../_images/quoFEM.png" src="../../../../_images/quoFEM.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.4.5 </span><span class="caption-text">quoFEM application on startup.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -292,7 +291,7 @@ If you have not yet installed Python, we recommend installing Python 3.8 from <a
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2020, The Regents of the University of California.
+        &#169; Copyright 2018-2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -343,6 +342,7 @@ If you have not yet installed Python, we recommend installing Python 3.8 from <a
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -379,6 +379,7 @@ If you have not yet installed Python, we recommend installing Python 3.8 from <a
             };
         })
     };
+    */
 </script>
 
 
