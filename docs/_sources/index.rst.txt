@@ -127,7 +127,6 @@
    :desktop_app:common/developer_manual/architecture/desktop/architecture
    :pelicun:common/developer_manual/architecture/pelicun/architecture
 
-   :desktop_app:common/developer_manual/how_to_extend/desktop/how_to_extend
    :pelicun:common/developer_manual/how_to_extend/pelicun/how_to_extend
 
    :desktop_app:common/developer_manual/verification/desktop/verification

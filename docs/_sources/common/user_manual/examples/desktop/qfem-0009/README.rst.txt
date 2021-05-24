@@ -17,7 +17,7 @@ of the response quantities of interest with respect to the problem’s
 random variables.
 
 
-.. figure:: qfem-0009.png
+.. figure:: figures/qfem-0009.png
    :align: center
    :width: 400
    :figclass: align-center
@@ -50,6 +50,13 @@ The following parameters are defined in the **RV** tab of quoFEM:
 
    Random variables for simple truss.
 
+
+.. figure:: figures/trussPDF.png
+   :alt: Random variables for simple truss.
+   :align: center
+
+
+   Probability density function of E (press Show PDF button)
 
 The vertical displacement at node 2 is considered as a response. It is specified in the **QoI** tab as ``Node_2_Disp_2``.
 
