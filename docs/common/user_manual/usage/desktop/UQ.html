@@ -13,7 +13,12 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -31,11 +36,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -101,7 +106,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
@@ -109,7 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
@@ -123,7 +128,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#simcenter-uq-engine">2.1.2. SimCenter UQ Engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.2.1. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">2.1.2.1. Forward Propagation Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">2.1.2.3. Surrogate Modeling</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#ucsd-uq-engine">2.1.3. UCSD UQ Engine</a><ul>
@@ -131,8 +138,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#custom-uq-engine">2.1.4. Custom UQ Engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#configuring-uq-tab">2.1.4.1. Configuring UQ tab</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#adding-uq-engine-to-customized-backend">2.1.4.2. Adding UQ Engine to Customized Backend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Configuring_CustomUQ.html">2.1.4.1. Configuring CustomUQ Engine</a></li>
 </ul>
 </li>
 </ul>
@@ -147,16 +153,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -229,7 +236,7 @@
   <div class="section" id="uq-uncertainty-quantification">
 <h1><span class="section-number">2.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
 <p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel where the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations.</p>
-<p>Presently the <strong>UQ Engine</strong> option supports Dakota, SimCenterUQ, UCSD and users own custom UQ engines.</p>
+<p>Presently the <strong>UQ Engine</strong> option supports Dakota, SimCenterUQ, UCSD-UQ and users’ own custom UQ engines.</p>
 <div class="section" id="dakota-uq-engine">
 <h2><span class="section-number">2.1.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of different methods. For this reason we have divided the methods into categories though a pull-down menu, as shown in <a class="reference internal" href="#figdakota"><span class="std std-numref">Fig. 2.1.1.1</span></a>. Once the category has been selected, a number of different methods are made available to the user.</p>
@@ -250,16 +257,28 @@
 </div>
 <div class="section" id="simcenter-uq-engine">
 <h2><span class="section-number">2.1.2. </span>SimCenter UQ Engine<a class="headerlink" href="#simcenter-uq-engine" title="Permalink to this headline">¶</a></h2>
-<p>This is an in-house developed UQ engine of SimCenter that accommodates different UQ methods. Currently the option is limited to global sensitivity analysis:</p>
+<p>The <strong>SimCenterUQ</strong> engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown in <a class="reference internal" href="#figsimcenteruq"><span class="std std-numref">Fig. 2.1.2.1</span></a>.</p>
+<div class="align-center figure" id="id2">
+<span id="figsimcenteruq"></span><img alt="../../../../_images/SimCenterUQ.png" src="../../../../_images/SimCenterUQ.png" />
+<p class="caption"><span class="caption-number">Fig. 2.1.2.1 </span><span class="caption-text">SimCenterUQ engine and category selection.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Currently the category option is limited to global sensitivity analysis:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.2.1. Global Sensitivity Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSampling.html">2.1.2.1. Forward Propagation Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSurrogate.html">2.1.2.3. Surrogate Modeling</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="ucsd-uq-engine">
 <h2><span class="section-number">2.1.3. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
-<p>This is a module developed at UCSD. This module currently offers support for Bayesian calibration using the Transitional Markov chain Monte Carlo (TMCMC) algorithm, which is also known as the Sequential Monte Carlo algorithm:</p>
+<p>The <strong>UCSD-UQ</strong> engine is a module developed at the SimCenter in collaboration with UCSD. It provides algrithms for Bayesian estimation, which can be accessed through a pull-down menu, as shown in figure <a class="reference internal" href="#figucsduq"><span class="std std-numref">Fig. 2.1.3.1</span></a>.</p>
+<div class="align-center figure" id="id3">
+<span id="figucsduq"></span><img alt="../../../../_images/UCSDUQ.png" src="../../../../_images/UCSDUQ.png" />
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1 </span><span class="caption-text">UCSD-UQ engine and category selection.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>This module currently offers support for Bayesian estimation using the Transitional Markov chain Monte Carlo (TMCMC) algorithm, which is also known as the Sequential Monte Carlo algorithm:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="UCSD_UQ_TMCMC.html">2.1.3.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm</a></li>
@@ -268,154 +287,21 @@
 </div>
 <div class="section" id="custom-uq-engine">
 <h2><span class="section-number">2.1.4. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this headline">¶</a></h2>
-<p>This option enables users to switch out the UQ engine in the quoFEM workflow such
-that different methods and tools can be applied within the SimCenter
-framework with minimal effort on the part of the user. In order to do so,
-two steps are required:</p>
+<p>The <strong>CustomUQ</strong> option enables users to switch out the UQ engine in the quoFEM workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown in figure <a class="reference internal" href="#figcustomuq"><span class="std std-numref">Fig. 2.1.4.1</span></a>.</p>
+<div class="align-center figure" id="id4">
+<span id="figcustomuq"></span><img alt="../../../../_images/customUQ.png" src="../../../../_images/customUQ.png" />
+<p class="caption"><span class="caption-number">Fig. 2.1.4.1 </span><span class="caption-text">CustomUQ engine selection.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>In order to use the CustomUQ engine option, two steps are required:</p>
 <ul class="simple">
-<li><p>Configure UQ tab to accept the required inputs</p></li>
+<li><p>Configuring UQ tab to accept the required inputs</p></li>
 <li><p>Adding UQ engine to customized UQ backend</p></li>
 </ul>
-<p>These steps are described in more detail below.</p>
-<div class="section" id="configuring-uq-tab">
-<h3><span class="section-number">2.1.4.1. </span>Configuring UQ tab<a class="headerlink" href="#configuring-uq-tab" title="Permalink to this headline">¶</a></h3>
-<p>The quoFEM interface can be customized to accept the required inputs for
-user-specified UQ engines. The “CustomUQ” option should be selected, as shown in
-<a class="reference internal" href="#customuqinput"><span class="std std-numref">Fig. 2.1.4.1.1</span></a>. The UQ application name should then be input as “Other-UQ” as
-this will direct quoFEM to invoke the customized UQ backend where users can plug
-in their own functionality.</p>
-<div class="figure align-default" id="id2">
-<span id="customuqinput"></span><img alt="../../../../_images/CustomUQEngine.png" src="../../../../_images/CustomUQEngine.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.4.1.1 </span><span class="caption-text">Custom UQ Engine Configuration</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
-<p>Next, users must configure the interface to accept inputs required to run their
-UQ engine. This is done through a JSON configuration file that is specified
-through “Configuration Input File”. Once this file is input, the user interface
-will be automatically updated to accept the inputs specified in the JSON
-configuration. An example JSON configuration is shown <a class="reference internal" href="#jsoninput"><span class="std std-ref">below</span></a>. This
-configuration file generates the interface shown in <a class="reference internal" href="#customuqinput"><span class="std std-numref">Fig. 2.1.4.1.1</span></a>.</p>
-<div class="highlight-default notranslate" id="jsoninput"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Example</span> <span class="n">JSON</span> <span class="n">Configuration</span> <span class="k">for</span> <span class="n">Custom</span> <span class="n">UQ</span> <span class="n">Engine</span>
-
-<span class="p">{</span>
-    <span class="s2">&quot;Parameters&quot;</span> <span class="p">:</span>  <span class="p">[</span>
-	<span class="p">{</span>
-	    <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;ComboBox&quot;</span><span class="p">,</span>
-	    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Combo Box Input&quot;</span><span class="p">,</span>
-	    <span class="s2">&quot;values&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Choice 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Choice 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Choice 3&quot;</span><span class="p">]</span>
-	<span class="p">},</span>
-	<span class="p">{</span>
-	    <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
-	    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;An Integer Input&quot;</span>
-	<span class="p">},</span>	
-	<span class="p">{</span>
-	    <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;DoubleSpinBox&quot;</span><span class="p">,</span>
-	    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;A Real Number Input&quot;</span>
-	<span class="p">},</span>
-	<span class="p">{</span>
-	    <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;FileInput&quot;</span><span class="p">,</span>
-	    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;A File Input&quot;</span>
-	<span class="p">},</span>	
-	<span class="p">{</span>
-	    <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
-	    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;UQ Driver&quot;</span>
-	<span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Currently, users are able to specify the following types of inputs:</p>
-<ol class="arabic simple">
-<li><p><strong>ComboBox</strong>: Allows selection of a particular option from a specified set</p></li>
-<li><p><strong>Spin Box</strong>: Used to input integer values</p></li>
-<li><p><strong>Double Spin Box</strong>: Used to input floating point numbers</p></li>
-<li><p><strong>File Input</strong>: Used for inputting file locations</p></li>
-<li><p><strong>Line Edit</strong>: Used to input text values</p></li>
-</ol>
-<p>Lastly, users must specify the UQ driver name. This is required to direct the
-customized UQ backend to the correct UQ driver. The driver name must correspond
-the name provided in the customized backend, as described below.</p>
-</div>
-<div class="section" id="adding-uq-engine-to-customized-backend">
-<h3><span class="section-number">2.1.4.2. </span>Adding UQ Engine to Customized Backend<a class="headerlink" href="#adding-uq-engine-to-customized-backend" title="Permalink to this headline">¶</a></h3>
-<p>In addition to configuring the user interface to accept the required inputs, it is necessary
-to make the custom UQ engine accessible to the customized UQ backend in quoFEM. This is achieved
-by providing a UQ runner class in Python that follows the defined interface. Users must create
-a UQ runner class that inherits from the <em>UqRunner</em> class, which is shown <a class="reference internal" href="#uqrunner"><span class="std std-ref">below</span></a></p>
-<div class="highlight-python notranslate" id="uqrunner"><div class="highlight"><pre><span></span><span class="c1"># written: Michael Gardner @ UNR</span>
-
-<span class="c1"># DO NOT CHANGE THE FACTORY, JUST IMPORT IT INTO ADDITIONAL DERIVED CLASSES</span>
-<span class="c1"># Polymorhophic factory for running UQ apps</span>
-<span class="k">class</span> <span class="nc">UqRunnerFactory</span><span class="p">:</span>
-    <span class="n">factories</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">def</span> <span class="nf">addFactory</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">runnerFactory</span><span class="p">):</span>
-        <span class="n">UqRunnerFactory</span><span class="o">.</span><span class="n">factories</span><span class="o">.</span><span class="n">put</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">runnerFactory</span>
-    <span class="n">addFactory</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">addFactory</span><span class="p">)</span>
-    <span class="c1"># A Template Method:</span>
-    <span class="k">def</span> <span class="nf">createRunner</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">UqRunnerFactory</span><span class="o">.</span><span class="n">factories</span><span class="p">:</span>
-            <span class="n">UqRunnerFactory</span><span class="o">.</span><span class="n">factories</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> \
-              <span class="nb">eval</span><span class="p">(</span><span class="nb">id</span> <span class="o">+</span> <span class="s1">&#39;.Factory()&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">UqRunnerFactory</span><span class="o">.</span><span class="n">factories</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-    
-    <span class="n">createRunner</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">createRunner</span><span class="p">)</span>
-
-<span class="c1"># Abstract base class</span>
-<span class="k">class</span> <span class="nc">UqRunner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">runUQ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uqData</span><span class="p">,</span> <span class="n">simulationData</span><span class="p">,</span> <span class="n">randomVarsData</span><span class="p">,</span> <span class="n">demandParams</span><span class="p">,</span>
-              <span class="n">workingDir</span><span class="p">,</span> <span class="n">runType</span><span class="p">,</span> <span class="n">localAppDir</span><span class="p">,</span> <span class="n">remoteAppDir</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This function configures and runs a UQ simulation based on the </span>
-<span class="sd">        input UQ configuration, simulation configuration, random variables,</span>
-<span class="sd">        and requested demand parameters</span>
-<span class="sd">        </span>
-<span class="sd">        Input:</span>
-<span class="sd">        uqData:         JsonObject that UQ options as input into the quoFEM GUI</span>
-<span class="sd">        simulationData: JsonObject that contains information on the analysis package to run and its</span>
-<span class="sd">                    configuration as input in the quoFEM GUI</span>
-<span class="sd">        randomVarsData: JsonObject that specifies the input random variables, their distributions,</span>
-<span class="sd">                    and associated parameters as input in the quoFEM GUI</span>
-<span class="sd">        demandParams:   JsonObject that specifies the demand parameters as input in the quoFEM GUI</span>
-<span class="sd">        workingDir:     Directory in which to run simulations and store temporary results</span>
-<span class="sd">        runType:        Specifies whether computations are being run locally or on an HPC cluster</span>
-<span class="sd">        localAppDir:    Directory containing apps for local run</span>
-<span class="sd">        remoteAppDir:   Directory containing apps for remote run</span>
-<span class="sd">        &quot;&quot;&quot;</span>    
-        <span class="k">pass</span>
-
-    <span class="c1"># Factory for creating UQ runner</span>
-    <span class="k">class</span> <span class="nc">Factory</span><span class="p">:</span>
-        <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="k">pass</span>
-</pre></div>
-</div>
-<p>This runner class only needs to provide a <em>runUQ</em> method and a factory class
-that creates an instance of this class. The <em>runUQ</em> method is where the
-customized inputs from the user interface can be accessed and passed to the
-custom UQ driver.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The parameters generated by the UQ engine must be stored in a file named
-<code class="docutils literal notranslate"><span class="pre">params.in</span></code> and placed in the current working directory. The file must
-follow the format shown in the example <code class="docutils literal notranslate"><span class="pre">params.in</span></code> file shown <a class="reference internal" href="#paramsin"><span class="std std-ref">below</span></a>. The first line specifies the number of random variables while
-the subsequent lines first contain the name of the random variable and the
-value of the current realization separated by a space.</p>
-<div class="highlight-default notranslate" id="paramsin"><div class="highlight"><pre><span></span><span class="mi">2</span>
-<span class="n">randomVariable</span> <span class="mf">2.719191180014362e+02</span>
-<span class="n">anotherRandomVariable</span> <span class="mf">7.518852020241320e+01</span>
-</pre></div>
-</div>
-</div>
-<p>As an example, <strong>UQpy</strong> has been implemented in the customized
-backend–the source code for the customized <em>UqRunner</em> class can be found in the
-quoFEM repository in the <code class="docutils literal notranslate"><span class="pre">repositoryRoot/applications/performUQ/other</span></code>
-directory.</p>
-<p>Lastly, the name of the UQ driver needs to be added to <em>configureAndRunUQ.py</em> in
-the list of UQ driver options–this corresponds to the UQ driver name provided
-in the customized user interface. The <em>configureAndRunUQ.py</em> file is also
-located in <em>repositoryRoot/applications/performUQ/other</em>. With the derived UQ
-runner class and the name of the UQ driver added to the list of UQ driver
-options, the custom UQ engine has been plugged into the quoFEM backend and can
-now be invoked from the quoFEM user interface</p>
+<p>These steps are described in more detail here:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Configuring_CustomUQ.html">2.1.4.1. Configuring CustomUQ Engine</a></li>
+</ul>
 </div>
 </div>
 </div>

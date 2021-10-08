@@ -13,7 +13,12 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -31,11 +36,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -99,7 +104,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
@@ -107,7 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
@@ -116,16 +121,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -207,125 +213,67 @@ The distribution of the buildings’ structural types and stories are illustrate
 <ol class="arabic simple">
 <li><p><strong>Configuration file</strong>: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.</p></li>
 </ol>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;rWHALE_&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;Author&quot;</span><span class="p">:</span> <span class="s2">&quot;Kuanshi Zhong&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;WorkflowType&quot;</span><span class="p">:</span> <span class="s2">&quot;Regional Simulation&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;buildingFile&quot;</span><span class="p">:</span><span class="s2">&quot;buildings.json&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;runDir&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;localAppDir&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/rWHALE/&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;force&quot;</span><span class="p">:</span> <span class="s2">&quot;kips&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;speed&quot;</span><span class="p">:</span> <span class="s2">&quot;mph&quot;</span>
-   <span class="p">},</span>
-  <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;EDP&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-    <span class="s2">&quot;DM&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-    <span class="s2">&quot;DV&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-    <span class="s2">&quot;every_realization&quot;</span><span class="p">:</span> <span class="n">false</span>
-  <span class="p">},</span>
-  <span class="s2">&quot;Applications&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;Building&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;CSV_to_BIM&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;Min&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Max&quot;</span><span class="p">:</span> <span class="s2">&quot;20&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;buildingSourceFile&quot;</span><span class="p">:</span><span class="s2">&quot;input_params_hu.csv&quot;</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;RegionalMapping&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;NearestNeighborEvents&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;filenameEVENTgrid&quot;</span><span class="p">:</span> <span class="s2">&quot;IMs/EventGrid.csv&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;samples&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">&quot;neighbors&quot;</span><span class="p">:</span> <span class="mi">4</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;Events&quot;</span><span class="p">:</span> <span class="p">[{</span>
-      <span class="s2">&quot;EventClassification&quot;</span><span class="p">:</span> <span class="s2">&quot;Hurricane&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;SimCenterEvent&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;pathEventData&quot;</span><span class="p">:</span> <span class="s2">&quot;IMs/&quot;</span>
-      <span class="p">}</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;Simulation&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;IMasEDP&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;DL&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;pelicun&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="s2">&quot;DL_Method&quot;</span><span class="p">:</span> <span class="s2">&quot;HAZUS MH HU&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;Realizations&quot;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span>
-          <span class="s2">&quot;coupled_EDP&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-          <span class="s2">&quot;detailed_results&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-          <span class="s2">&quot;log_file&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-          <span class="s2">&quot;auto_script&quot;</span><span class="p">:</span> <span class="s2">&quot;auto_HU_NJ.py&quot;</span>
-       <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
+<span class="linenos"> 2</span>  <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;rWHALE_&quot;</span><span class="p">,</span>
+<span class="linenos"> 3</span>  <span class="s2">&quot;Author&quot;</span><span class="p">:</span> <span class="s2">&quot;Kuanshi Zhong&quot;</span><span class="p">,</span>
+<span class="linenos"> 4</span>  <span class="s2">&quot;WorkflowType&quot;</span><span class="p">:</span> <span class="s2">&quot;Regional Simulation&quot;</span><span class="p">,</span>
+<span class="linenos"> 5</span>  <span class="s2">&quot;buildingFile&quot;</span><span class="p">:</span><span class="s2">&quot;buildings.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 6</span>  <span class="s2">&quot;runDir&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="linenos"> 7</span>  <span class="s2">&quot;localAppDir&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/rWHALE/&quot;</span><span class="p">,</span>
+<span class="linenos"> 8</span>  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 9</span>      <span class="s2">&quot;force&quot;</span><span class="p">:</span> <span class="s2">&quot;kips&quot;</span><span class="p">,</span>
+<span class="linenos">10</span>      <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span>
+<span class="linenos">11</span>      <span class="s2">&quot;speed&quot;</span><span class="p">:</span> <span class="s2">&quot;mph&quot;</span>
+<span class="linenos">12</span>   <span class="p">},</span>
+<span class="linenos">13</span>  <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">14</span>    <span class="s2">&quot;EDP&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="linenos">15</span>    <span class="s2">&quot;DM&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="linenos">16</span>    <span class="s2">&quot;DV&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="linenos">17</span>    <span class="s2">&quot;every_realization&quot;</span><span class="p">:</span> <span class="n">false</span>
+<span class="linenos">18</span>  <span class="p">},</span>
+<span class="linenos">19</span>  <span class="s2">&quot;Applications&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">20</span>    <span class="s2">&quot;Building&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">21</span>      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;CSV_to_BIM&quot;</span><span class="p">,</span>
+<span class="linenos">22</span>      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">23</span>        <span class="s2">&quot;Min&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="linenos">24</span>        <span class="s2">&quot;Max&quot;</span><span class="p">:</span> <span class="s2">&quot;20&quot;</span><span class="p">,</span>
+<span class="linenos">25</span>        <span class="s2">&quot;buildingSourceFile&quot;</span><span class="p">:</span><span class="s2">&quot;input_params_hu.csv&quot;</span>
+<span class="linenos">26</span>      <span class="p">}</span>
+<span class="linenos">27</span>    <span class="p">},</span>
+<span class="linenos">28</span>    <span class="s2">&quot;RegionalMapping&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">29</span>      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;NearestNeighborEvents&quot;</span><span class="p">,</span>
+<span class="linenos">30</span>      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">31</span>        <span class="s2">&quot;filenameEVENTgrid&quot;</span><span class="p">:</span> <span class="s2">&quot;IMs/EventGrid.csv&quot;</span><span class="p">,</span>
+<span class="linenos">32</span>        <span class="s2">&quot;samples&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+<span class="linenos">33</span>        <span class="s2">&quot;neighbors&quot;</span><span class="p">:</span> <span class="mi">4</span>
+<span class="linenos">34</span>      <span class="p">}</span>
+<span class="linenos">35</span>    <span class="p">},</span>
+<span class="linenos">36</span>    <span class="s2">&quot;Events&quot;</span><span class="p">:</span> <span class="p">[{</span>
+<span class="linenos">37</span>      <span class="s2">&quot;EventClassification&quot;</span><span class="p">:</span> <span class="s2">&quot;Hurricane&quot;</span><span class="p">,</span>
+<span class="linenos">38</span>      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;SimCenterEvent&quot;</span><span class="p">,</span>
+<span class="linenos">39</span>      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">40</span>        <span class="s2">&quot;pathEventData&quot;</span><span class="p">:</span> <span class="s2">&quot;IMs/&quot;</span>
+<span class="linenos">41</span>      <span class="p">}</span>
+<span class="linenos">42</span>    <span class="p">}],</span>
+<span class="linenos">43</span>    <span class="s2">&quot;Simulation&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">44</span>       <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;IMasEDP&quot;</span><span class="p">,</span>
+<span class="linenos">45</span>       <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{}</span>
+<span class="linenos">46</span>    <span class="p">},</span>
+<span class="linenos">47</span>    <span class="s2">&quot;DL&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">48</span>       <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;pelicun&quot;</span><span class="p">,</span>
+<span class="linenos">49</span>       <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">50</span>          <span class="s2">&quot;DL_Method&quot;</span><span class="p">:</span> <span class="s2">&quot;HAZUS MH HU&quot;</span><span class="p">,</span>
+<span class="linenos">51</span>          <span class="s2">&quot;Realizations&quot;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span>
+<span class="linenos">52</span>          <span class="s2">&quot;coupled_EDP&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="linenos">53</span>          <span class="s2">&quot;detailed_results&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+<span class="linenos">54</span>          <span class="s2">&quot;log_file&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="linenos">55</span>          <span class="s2">&quot;auto_script&quot;</span><span class="p">:</span> <span class="s2">&quot;auto_HU_NJ.py&quot;</span>
+<span class="linenos">56</span>       <span class="p">}</span>
+<span class="linenos">57</span>    <span class="p">}</span>
+<span class="linenos">58</span>  <span class="p">}</span>
+<span class="linenos">59</span><span class="p">}</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <ol class="arabic simple" start="2">
 <li><p><strong>Building Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/buildingApps.html#lblbuildingapp"><span class="std std-ref">CSV_to_BIM</span></a> building application. In the configuration file, the Max and Min parameters are set to run the full set of 20 buildings, and the name of the building source file is provided as “input_params.csv”. In the <a class="reference internal" href="../../architecture/desktop/file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">building source file</span></a>, input parameters for the DL assessment (e.g., <code class="docutils literal notranslate"><span class="pre">NumberofStories</span></code>, <code class="docutils literal notranslate"><span class="pre">YearBuilt</span></code>, <code class="docutils literal notranslate"><span class="pre">OccupancyClass</span></code>, <code class="docutils literal notranslate"><span class="pre">StructureType</span></code>, <code class="docutils literal notranslate"><span class="pre">PlanArea</span></code>, <code class="docutils literal notranslate"><span class="pre">ReplacementCost</span></code>) are specified.</p></li>
 </ol>

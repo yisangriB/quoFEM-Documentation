@@ -13,7 +13,12 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -31,13 +36,13 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -102,7 +107,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
@@ -110,7 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
@@ -133,16 +138,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -298,8 +304,8 @@
 <p>User provides the <span class="math notranslate nohighlight">\(N\)</span> discrete values (<span class="math notranslate nohighlight">\(x_i\)</span>) and their weights (probability <span class="math notranslate nohighlight">\(p_i\)</span>) for a multinomial distribution. The probability mass function of the discrete distribution is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-8">
 <span class="eqno">(2.4.1.2.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-8" title="Permalink to this equation">¶</a></span>\[\begin{split}p(x)=\begin{cases}
-           p_i, &amp; \text{if $x=x_i$}\\
-           0, &amp; \text{otherwise}
+        p_i, &amp; \text{if $x=x_i$}\\
+        0, &amp; \text{otherwise}
 \end{cases}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(p_i&gt;0\)</span>. The weights (<span class="math notranslate nohighlight">\(p_i\)</span>) will be automatically normalized if they do not sum up to one. The option to define by moments is not supported for the discrete distribution.</p>
 </li>
@@ -345,6 +351,11 @@
 <li><p>Clicking the <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">PDF</span></code> or <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">PMF</span></code> button will display probability distribution (or mass) function of each random variable with the specified parameters/moments. If the PDF or PMF is not displayed, we recommend the users to double-check the parameters/moments if they are in a valid range. The plotting button is not activated for the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> input type.</p></li>
 </ul>
 </div>
+<dl class="citation">
+<dt class="label" id="era19"><span class="brackets"><a class="fn-backref" href="#id1">ERA19</a></span></dt>
+<dd><p>Engineering Risk Analysis Group, Technische Universität München: <a class="reference external" href="https://www.bgu.tum.de/era/software/eradist/">https://www.bgu.tum.de/era/software/eradist/</a> (Matlab/python programs and documentations)</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="correlation-matrix">
@@ -362,11 +373,10 @@
 <li><p>When more than one random variable is provided as <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>, correlations between the data pairs will not be incorporated automatically. If correlations exist, user can define them manually at the correlation matrix window.</p></li>
 </ul>
 </div>
-<dl class="citation">
-<dt class="label" id="era19"><span class="brackets"><a class="fn-backref" href="#id1">ERA19</a></span></dt>
-<dd><p>Engineering Risk Analysis Group, Technische Universität München: <a class="reference external" href="https://www.bgu.tum.de/era/software/eradist/">https://www.bgu.tum.de/era/software/eradist/</a> (Matlab/python programs and documentations)</p>
-</dd>
-</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Correlation warping for Nataf variable transformation of <strong>beta</strong> distributions is not currently supported.</p>
+</div>
 </div>
 </div>
 

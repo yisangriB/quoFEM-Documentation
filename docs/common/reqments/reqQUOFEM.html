@@ -13,7 +13,12 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
   
@@ -31,11 +36,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -44,7 +49,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6. Bugs &amp; Feature Requests" href="../user_manual/bugs.html" />
-    <link rel="prev" title="4.9. Custom UQ for UQpy" href="../user_manual/examples/desktop/qfem-0017/README.html" />
+    <link rel="prev" title="4.11. Bayesian Calibration of Material Model Parameters" href="../user_manual/examples/desktop/qfem-0019/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -101,7 +106,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../front-matter/ack.html">2. Acknowledgments</a></li>
@@ -109,7 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../user_manual/installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
@@ -124,16 +129,17 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -210,170 +216,13 @@
 <caption><span class="caption-number">Table 5.1.1 </span><span class="caption-text">Requirements - QF</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
-<col style="width: 60%" />
+<col style="width: 50%" />
+<col style="width: 10%" />
 <col style="width: 10%" />
 <col style="width: 10%" />
 <col style="width: 10%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>#</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Source</p></th>
-<th class="head"><p>Priority</p></th>
-<th class="head"><p>Status</p></th>
-</tr>
-</thead>
 <tbody>
-<tr class="row-even"><td><p>QF</p></td>
-<td><p><em>Application to Promote and aid use of UQ Methods in NHE Research for response estimation, surrogate modeling, and calibration</em></p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>QF1</p></td>
-<td><p><strong>Ability to use Various UQ Methods and Variable Options</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>QF1.1</p></td>
-<td><p>Ability to use Forward Propagtion methods listed in UQ under UF</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>QF1.2</p></td>
-<td><p>Ability to use Random Variable Distributions defeined in RV</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>QF1.3</p></td>
-<td><p>Ability to use Reliability Methods listed in UQ under UR</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>QF1.4</p></td>
-<td><p>Ability to use Global Sensitivity Methods listed in UQ under UG</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>QF1.5</p></td>
-<td><p>Ability to both use and create surrogates listed in UQ under US</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>QF1.6</p></td>
-<td><p>Ability to use High Dimensional UQ listed in UQ under UH</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>QF1.7</p></td>
-<td><p>Ability to use Bayesian Calibration methods listed in UQ under UB</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>QF1.8</p></td>
-<td><p>Ability to use Nonlinear Least Squares  methods listed in UQ under UN</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>QF2</p></td>
-<td><p><strong>Ability to use Different Simulation Applications</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>QF2.1</p></td>
-<td><p>Ability to use OpenSees</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>QF2.2</p></td>
-<td><p>Ability to use OpenSeesPy</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>QF2.3</p></td>
-<td><p>Ability to use OpenSeesPy</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>QF2.3</p></td>
-<td><p>Ability to Incorporate User Own Applkications</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>QF2</p></td>
-<td><p>Ability to Visualize the Results</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>QF2.1</p></td>
-<td><p>Ability to view individual sample results</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>QF2.2</p></td>
-<td><p>Ability to graphically view the results to show distribution in respone</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>QF2.2</p></td>
-<td><p>Ability to view statistical measures of response</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>QF3</p></td>
-<td><p><strong>Misc User Requests</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>QF3.1</p></td>
-<td><p>Run application from command line, include option to run remotely</p></td>
-<td><p>UF</p></td>
-<td><p>D</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>QF7</p></td>
-<td><p><strong>General Software Requirements</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>QF7.1</p></td>
-<td><p>Application to Provide Common SimCenter Research Application Requirements listed in CR</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>InProgresss</p></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <div class="line-block">
@@ -389,7 +238,8 @@
 <caption><span class="caption-number">Table 5.2.1 </span><span class="caption-text">Requirements - Uncertainty Quantification Methods and Variables</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
-<col style="width: 60%" />
+<col style="width: 50%" />
+<col style="width: 10%" />
 <col style="width: 10%" />
 <col style="width: 10%" />
 <col style="width: 10%" />
@@ -400,249 +250,10 @@
 <th class="head"><p>Source</p></th>
 <th class="head"><p>Priority</p></th>
 <th class="head"><p>Status</p></th>
+<th class="head"><p>Implementation</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>UF</strong></p></td>
-<td><p><strong>Forward Propagation Methods</strong></p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>UF1</p></td>
-<td><p>Ability to use basic Monte Carlo and LHS methods</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>UF2</p></td>
-<td><p>Ability to use Multi-Scale Monte Carlo</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>UF3</p></td>
-<td><p>Ability to use Multi-Fidelity Models</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>UR</strong></p></td>
-<td><p><strong>Reliability Methods</strong></p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>UR1</p></td>
-<td><p>Ability to use First Order Reliability method</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>UR2</p></td>
-<td><p>Ability to use Second Order Reliability method</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>UR3</p></td>
-<td><p>Ability to use Surrogate Based Reliability</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>UR4</p></td>
-<td><p>Ability to use Importance Sampling</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>UG</strong></p></td>
-<td><p><strong>Global Sensitivity Methods</strong></p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>UG1</p></td>
-<td><p>Ability to obtain Global Sensitivity Sobol indices</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>UG2</p></td>
-<td><p>Ability to use probability model-based global sensitivity analysis (PM-GSA)</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>US</strong></p></td>
-<td><p><strong>Surrogate Models</strong></p></td>
-<td><p>	UF</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>US1</p></td>
-<td><p>Ability to Construct Gaussian Process (GP) Regression Model from a Simulation Model</p></td>
-<td><p>	SP</p></td>
-<td><p>	M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>US2</p></td>
-<td><p>Ability to Construct GP Regression Model from Input-output Dataset</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>US3</p></td>
-<td><p>Ability to use Surrogate Model for UQ Analysis</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>US4</p></td>
-<td><p>Ability to Save the Surrogate Model</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>US5</p></td>
-<td><p>Ability to Use Adaptive Design of Experiments</p></td>
-<td><p>	SP</p></td>
-<td><p>	M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>US6</p></td>
-<td><p>Ability to Asses Reliability of Surrogate Model</p></td>
-<td><p>	SP</p></td>
-<td><p>	M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>US7</p></td>
-<td><p>Ability to Build Surrogate Under Stochastic Excitation</p></td>
-<td><p>	SP</p></td>
-<td><p>	M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>US8</p></td>
-<td><p>Ability to Use Physics-Informed Machine Learning</p></td>
-<td><p>	SP</p></td>
-<td><p>	M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>UN</strong></p></td>
-<td><p><strong>Non-linear Least Squares Optimization</strong></p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>UN1</p></td>
-<td><p>Ability to use Gauss-Newton solvers for parameter estimation</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>UN2</p></td>
-<td><p>Ability to read calibration data from file</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>UN3</p></td>
-<td><p>Ability to handle non-scalar response quantities</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>UB</strong></p></td>
-<td><p><strong>Bayesian Calibration</strong></p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>UB1</p></td>
-<td><p>Ability to use DREAM algorithm for Bayesian inference</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>UB2</p></td>
-<td><p>Ability to use TMCMC algorithm for Bayesian inference</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>UB3</p></td>
-<td><p>Ability to read calibration data from file</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>UB4</p></td>
-<td><p>Ability to handle non-scalar response quantities</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>UB5</p></td>
-<td><p>Ability to calibrate multipliers on error covariance</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>UB6</p></td>
-<td><p>Ability to use a default log-likelihood function</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>UB7</p></td>
-<td><p>Ability to use Kalman Filtering</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>UB8</p></td>
-<td><p>Ability to use Particle Filtering</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>UH</strong></p></td>
-<td><p><strong>High Dimensional UQ</strong></p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>UH1</p></td>
-<td><p>Ability to sample from manifold</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>UH2</p></td>
-<td><p>Ability to build Reduced Order Model</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>UO</strong></p></td>
-<td><p><strong>Other/General Features</strong></p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>UO1</p></td>
-<td><p>Ability to use Own External UQ Engine</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>UO2</p></td>
-<td><p>Ability to use Own External FEM Application</p></td>
-<td><p>UF</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
 </tbody>
 </table>
 <div class="line-block">
@@ -655,10 +266,11 @@
 <div class="section" id="rv-requirements">
 <h2><span class="section-number">5.3. </span>RV Requirements<a class="headerlink" href="#rv-requirements" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-given docutils align-default" id="id3">
-<caption><span class="caption-number">Table 5.3.1 </span><span class="caption-text">Requirements - Random Variables</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 5.3.1 </span><span class="caption-text">Requirements - CR</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
-<col style="width: 60%" />
+<col style="width: 50%" />
+<col style="width: 10%" />
 <col style="width: 10%" />
 <col style="width: 10%" />
 <col style="width: 10%" />
@@ -669,81 +281,10 @@
 <th class="head"><p>Source</p></th>
 <th class="head"><p>Priority</p></th>
 <th class="head"><p>Status</p></th>
+<th class="head"><p>Implementation</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>RV</p></td>
-<td><p><strong>Random Variables</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>RV1</p></td>
-<td><p>Various Random Variable Probability Distributions</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>RV1.1</p></td>
-<td><p>Normal</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>RV1.2</p></td>
-<td><p>Lognormal</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>RV1.3</p></td>
-<td><p>Uniform</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>RV1.4</p></td>
-<td><p>Beta</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>RV1.5</p></td>
-<td><p>Weibull</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>RV1.6</p></td>
-<td><p>Gumbel</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>RV2</p></td>
-<td><p>User defined Distribution</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>RV3</p></td>
-<td><p>Define Correlation Matrix</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>RV4</p></td>
-<td><p>Random Fields</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>RV5</p></td>
-<td><p>Ability to View Graphically the density function when defining the RV</p></td>
-<td><p>UF</p></td>
-<td><p>D</p></td>
-<td><p>Implemented</p></td>
-</tr>
 </tbody>
 </table>
 <div class="line-block">
@@ -759,7 +300,8 @@
 <caption><span class="caption-number">Table 5.4.1 </span><span class="caption-text">Requirements - CR</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
-<col style="width: 60%" />
+<col style="width: 50%" />
+<col style="width: 10%" />
 <col style="width: 10%" />
 <col style="width: 10%" />
 <col style="width: 10%" />
@@ -770,159 +312,10 @@
 <th class="head"><p>Source</p></th>
 <th class="head"><p>Priority</p></th>
 <th class="head"><p>Status</p></th>
+<th class="head"><p>Implementation</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>CR</p></td>
-<td><p><em>Common Requirements of all SimCenter Research Applications</em></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>CR1</p></td>
-<td><p>Open-source software where developers can test new data and develop algorithms</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>CR1.1</p></td>
-<td><p>Provide open-source applications utilizing code hosting platforms, e.g. GitHub</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>CR1.2</p></td>
-<td><p>Assign an open-source licensce that allows free use.</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>CR2</p></td>
-<td><p>Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>CR2.1</p></td>
-<td><p>Allow users to launch scientifiv workflows</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>CR3</p></td>
-<td><p>Ability to utilize resources beyond the desktop including HPC</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>CR3.1</p></td>
-<td><p>Allow users to utilize HPC resources at TACC through DesignSafe</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>CR4</p></td>
-<td><p><em>Efficient use of multiple coupled and linked models requiring sharing and inter-operability of databases, computing environments, networks, visualization tools, and analysis systems</em></p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>CR4.1</p></td>
-<td><p>Identify and include external analysis systems</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>CR4.2</p></td>
-<td><p>Identify and include external databases</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>CR4.3</p></td>
-<td><p>Identify and include external viz tools</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>CR4.4</p></td>
-<td><p>Identify and include external computing env</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Inprogress</p></td>
-</tr>
-<tr class="row-odd"><td><p>CR5</p></td>
-<td><p>Tool available for download from web</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>CR5.1</p></td>
-<td><p>Tool downloadable from DesignSafe website</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>CR6</p></td>
-<td><p>Ability to benefit from programs that move research results into practice and obtain training</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>CR6.1</p></td>
-<td><p>Ability to use educational provisions to gain interdisclipinary education so as to gain expertise in earth sciences and physics, engineering mechanics, geotechnical engineering, and structural engineering in order to be qualified to perform these simulations</p></td>
-<td><p>GC</p></td>
-<td><p>D</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>CR6.1</p></td>
-<td><p>Documentation exists demonstrainting application usage</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>CR6.2</p></td>
-<td><p>Video Exists demonstrating application usage</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>CR6.3</p></td>
-<td><p>Tool Training through online and in person training events</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>CR7</p></td>
-<td><p>Verification Examples Exist</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>CR8</p></td>
-<td><p>validation of proposed analytical models against existing empirical datasets</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>CR8.1</p></td>
-<td><p>Validation Examples Exist, validated against tests or other software</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>CR9</p></td>
-<td><p>Tool to allow user to load and save user inputs</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-even"><td><p>CR10</p></td>
-<td><p>Installer which installs application and all needed software</p></td>
-<td><p>UF</p></td>
-<td><p>D</p></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <div class="line-block">

@@ -13,7 +13,12 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -31,11 +36,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -99,7 +104,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
@@ -107,7 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
@@ -116,16 +121,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -246,7 +252,7 @@
 </div>
 <p>The interaction between the frontend and the backend is best understood by looking at the sequence of events that occurs when the user presses the <code class="docutils literal notranslate"><span class="pre">Run</span></code> button. As shown in the figure below, the UI application will first perform a number of steps:</p>
 <ol class="arabic simple">
-<li><p>It will create a temporary directory in the Documents folder named <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, and inside <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> will create another dircetory <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>.</p></li>
+<li><p>It will create a temporary directory in the Documents folder named <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, and inside <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> will create another directory <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>.</p></li>
 <li><p>It will then run through all the currently selected widgets and on each invoke the <code class="docutils literal notranslate"><span class="pre">copyFiles()</span></code> method, telling these widgets to copy all files that will be needed during the workflow to the <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> directory.</p></li>
 <li><p>It will then create a JSON file and will run through the currenly selected widgets and on each invoke the methods <code class="docutils literal notranslate"><span class="pre">outputToJSON()</span></code> and <code class="docutils literal notranslate"><span class="pre">outputAppDataToJSON</span></code>, these telling the application to augment the JSOIN file with the inputs the user has provided in the widget and also the name of the widget.</p></li>
 <li><p>The UI will now start the backend application and will spin until the backend application returns with a completion signal.</p></li>
@@ -262,13 +268,13 @@
 <li><p>The UQengine will notify the UQpreprocessor that it is done.</p></li>
 <li><p>The UQpreprocessor will notify the femUQ application that it is done.</p></li>
 <li><p>The femUQ application will notify the UI that it is done.</p></li>
-<li><p>The UI will read in the reuslts and present them to the user.</p></li>
+<li><p>The UI will read in the results and present them to the user.</p></li>
 </ol>
 <div class="align-center figure" id="figsequencelocal">
 <a class="reference internal image-reference" href="../../../../_images/sequenceLocal.png"><img alt="../../../../_images/sequenceLocal.png" src="../../../../_images/sequenceLocal.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-text">Sequence diagram showing what happens when a workflow runs locally.</span><a class="headerlink" href="#figsequencelocal" title="Permalink to this image">¶</a></p>
 </div>
-<p>That is for the case where the computations are performed on the local computer. When the somputations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the <a class="reference external" href="https://tapis-project.org/">TACC tapis</a> interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.</p>
+<p>That is for the case where the computations are performed on the local computer. When the computations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the <a class="reference external" href="https://tapis-project.org/">TACC tapis</a> interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.</p>
 <div class="align-center figure" id="figsequenceremote">
 <a class="reference internal image-reference" href="../../../../_images/sequenceRemote.png"><img alt="../../../../_images/sequenceRemote.png" src="../../../../_images/sequenceRemote.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-text">Sequence diagram showing what happens when a workflow runs remotely.</span><a class="headerlink" href="#figsequenceremote" title="Permalink to this image">¶</a></p>

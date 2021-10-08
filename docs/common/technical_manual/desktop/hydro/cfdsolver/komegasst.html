@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>k-Omega SST model &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/about/quoFEM/aboutQUOFEM.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Quantified Uncertainty with Optimization for the FEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>k-Omega SST model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/technical_manual/desktop/hydro/cfdsolver/komegasst.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="k-omega-sst-model">
+<h1>k-Omega SST model<a class="headerlink" href="#k-omega-sst-model" title="Permalink to this headline">¶</a></h1>
+<p>The k-<span class="math notranslate nohighlight">\(\omega\)</span> Shear Stress Transport (SST) turbulence model was originally proposed by <a class="reference internal" href="#me1994" id="id1"><span>[Me1994]</span></a> as a two-equation eddy-viscosity model. The version available in Hydro-UQ is based on the implementation of <a class="reference internal" href="#mekula2003" id="id2"><span>[MeKuLa2003]</span></a> which is available through OpenFOAM.</p>
+<p>The standard k-<span class="math notranslate nohighlight">\(\omega\)</span> model is well suited for simulating the flow in the sub-viscous layer while the k-<span class="math notranslate nohighlight">\(\epsilon\)</span> model is ideal for predicting the flow slightly away from the wall. Further on, the standard k-<span class="math notranslate nohighlight">\(\omega\)</span> is more suitable for low-Reynolds number flows, highly nonlinear, often sensitive to the initial guess and thus more difficult to converge.</p>
+<p>Alternatively, the k-<span class="math notranslate nohighlight">\(\omega\)</span> SST is a hybrid model that combines the advantages of the k-<span class="math notranslate nohighlight">\(\omega\)</span> and k-<span class="math notranslate nohighlight">\(\epsilon\)</span> models by switching between them. The k-<span class="math notranslate nohighlight">\(\omega\)</span> SST model uses the k-<span class="math notranslate nohighlight">\(\omega\)</span> model is used near the wall and switches to the k-<span class="math notranslate nohighlight">\(\epsilon\)</span> model as it approaches the free-stream. The SST models are generally less sensitive to the free-stream conditions and avoid build-up of excessive turbulent kinetic energy near <a class="reference external" href="https://en.wikipedia.org/wiki/Stagnation_point">stagnation points</a> as compared to the usual k-<span class="math notranslate nohighlight">\(\epsilon\)</span> models.</p>
+<p>The governing equations of the k-<span class="math notranslate nohighlight">\(\omega\)</span> SST model are based on the turbulence kinetic energy <span class="math notranslate nohighlight">\((k)\)</span> and the turbulence specific dissipation rate <span class="math notranslate nohighlight">\((\omega)\)</span>. They are</p>
+<ul>
+<li><p>For turbulence kinetic energy <span class="math notranslate nohighlight">\((k)\)</span></p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-0">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-0" title="Permalink to this equation">¶</a></span>\[\frac{D}{Dt} \left(\rho k\right) = \nabla \cdot \left( \rho D_k \nabla k \right) + \rho G - \frac{2}{3} \rho k \left(\nabla \cdot \mathbf{u}\right) - \rho \beta^{*} \omega k + S_k\]</div>
+</div></blockquote>
+</li>
+<li><p>For turbulence specific dissipation rate <span class="math notranslate nohighlight">\((\omega)\)</span></p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-1">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-1" title="Permalink to this equation">¶</a></span>\[\frac{D}{Dt} \left(\rho \omega\right) = \nabla \cdot \left( \rho D_k \nabla \omega \right) + \frac{\rho \gamma G}{\nu} - \frac{2}{3} \rho \gamma \omega \left(\nabla \cdot \mathbf{u}\right) - \rho \beta \omega^2 - \rho \left(F_1 - 1 \right) CD_{k\omega} + S_{\omega}\]</div>
+</div></blockquote>
+</li>
+</ul>
+<p>The turbulence viscosity is obtained as</p>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-2">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-2" title="Permalink to this equation">¶</a></span>\[\nu_t = a_1 \frac{k}{\text{max} \left( a_1, \omega, b_1, F_{23} \right)}\]</div>
+<p>A more comprehensive overview on the k-Epsilon model is discussed in the below video</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/myv-ityFnS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<dl class="citation">
+<dt class="label" id="me1994"><span class="brackets"><a class="fn-backref" href="#id1">Me1994</a></span></dt>
+<dd><p>F.R. Menter, “Two-equation eddy-viscosity turbulence models for engineering applications,” AIAA Journal, vol. 32(8), pp. 1598-1605 (1994)</p>
+</dd>
+<dt class="label" id="mekula2003"><span class="brackets"><a class="fn-backref" href="#id2">MeKuLa2003</a></span></dt>
+<dd><p>F.R. Menter, M. Kuntz, and R. Langtry, “Ten years of industrial experience with the SST turbulence model,” In Proceedings of the fourth international symposium on turbulence, heat and mass transfer, pages 625–632, Antalya, Turkey, 2003. Begell House</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018-2021, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-4', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
