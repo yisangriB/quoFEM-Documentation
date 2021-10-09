@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4. QoI: Quantities of Interest &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.5. RES: Results &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.5. RES: Results" href="resQUO.html" />
-    <link rel="prev" title="2.3. RV: Random Variables" href="../RV.html" />
+    <link rel="next" title="3. Troubleshooting" href="../../../troubleshooting/desktop/troubleshooting.html" />
+    <link rel="prev" title="2.4. QoI: Quantities of Interest" href="QuantitiesOfInterest.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -121,8 +121,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="FEM.html">2.2. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../RV.html">2.3. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. QoI: Quantities of Interest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resQUO.html">2.5. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
@@ -191,13 +191,13 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">2.4. </span>QoI: Quantities of Interest</li>
+      <li><span class="section-number">2.5. </span>RES: Results</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../../../_sources/common/user_manual/usage/desktop/quoFEM/QuantitiesOfInterest.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/quoFEM/resQUO.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -210,22 +210,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="qoi-quantities-of-interest">
-<span id="lblquo-qoi"></span><h1><span class="section-number">2.4. </span>QoI: Quantities of Interest<a class="headerlink" href="#qoi-quantities-of-interest" title="Permalink to this headline">¶</a></h1>
-<p>The <strong>QoI</strong> tab is where the user specifies the variable names associated with the FEM results. The result quantity might be a scalar (i.e. of length 1) or a vector/field quantity (i.e., of length &gt; 1). For each result quantity that the users’ application generates and places in the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file, the user must provide a variable name and specify its length. A new response quantity is added by the user selecting the <strong>Add</strong> button. Quantities can be removed by selecting it, this is done by clicking in the circle before the variable name, and then selecting the <strong>Remove</strong> button.</p>
+  <div class="section" id="res-results">
+<span id="lblquo-res"></span><h1><span class="section-number">2.5. </span>RES: Results<a class="headerlink" href="#res-results" title="Permalink to this headline">¶</a></h1>
+<p>After the user hits the <strong>Run</strong> or the <strong>Run at DesignSafe</strong> button, the quoFEM app performs the simulations required as part of the uncertainty analysis defined by the user in the four other input panels. If the analysis completed successfully, the quoFEM app brings up to the <strong>RES</strong> panel to present the results. A successful run or download of a job that ran successfully will typically result in two tabbed widgets being displayed in this panel. The tabs in the <strong>RES</strong> panel depend on the uncertainty analysis that was conducted, and specific results tabs for analyses that differ from the typical two tabs will be described later.</p>
+<p>The first tab <a class="reference internal" href="#figresultssummaryquofem"><span class="std std-numref">Fig. 2.5.1</span></a> shows summary statistics: mean, standard deviation, skewness, and kurtosis of the outputs of interest in the problem.</p>
 <div class="align-center figure" id="id1">
-<span id="figqoi"></span><img alt="../../../../../_images/QoI.png" src="../../../../../_images/QoI.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.1 </span><span class="caption-text">Input for the <strong>QoI</strong> tab.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<span id="figresultssummaryquofem"></span><img alt="../../../../../_images/resultsSummaryquoFEM.png" src="../../../../../_images/resultsSummaryquoFEM.png" />
+<p class="caption"><span class="caption-number">Fig. 2.5.1 </span><span class="caption-text">Summary tab of the <strong>RES</strong> panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>In <a class="reference internal" href="#figqoi"><span class="std std-numref">Fig. 2.4.1</span></a>, the user has defined three response quantities, <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_2</span></code>, <code class="docutils literal notranslate"><span class="pre">Node_4_Disp_1</span></code> and <code class="docutils literal notranslate"><span class="pre">stress</span></code>. If a postprocessing Python script has been provided, it will be passed these three names as arguments.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<ol class="arabic simple">
-<li><p>There can be no spaces in variable names, underscores are permitted.</p></li>
-<li><p>Names cannot begin with a numeral, i.e. 0,1,2,3,4,5,6,7,8,9.</p></li>
-<li><p>Names cannot be duplicated.</p></li>
+<p>The second tab consists of a visualization area in the top portion, and a spreadsheet at the bottom portion. The spreadsheet presents results for each realization in tabular format. By clicking inside various columns in the spreadsheet area with the left and right mouse buttons, the information in the visualization area is updated <a class="reference internal" href="#figresultsdata-quofem"><span class="std std-numref">Fig. 2.5.2</span></a>. The plot displayed in the visualization area is controlled as follows:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Selection with the left mouse button identifies the variable on the Y axis.</p></li>
+<li><p>Selection with the right mouse button identifies the variable on the X axis.</p></li>
+<li><p>If the same column is selected with both mouse buttons, then the distribution of the selected Decision Variable is plotted. A left click on the column triggers a cumulative distribution function plot, while a right click triggers a probability density function plot.</p></li>
 </ol>
+</div></blockquote>
+<div class="align-center figure" id="id2">
+<span id="figresultsdata-quofem"></span><img alt="../../../../../_images/resultsDataquoFEM.png" src="../../../../../_images/resultsDataquoFEM.png" />
+<p class="caption"><span class="caption-number">Fig. 2.5.2 </span><span class="caption-text">Data values tab of the <strong>RES</strong> panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
+<p>The columns in the table are labeled by the variable names defined in the <strong>QoI</strong> panel, with a suffix showing the component number for non-scalar quantities of interest.</p>
+<p>Users can also save the data to csv files by clicking on the buttons between the visualization area and the spredsheet area.</p>
 </div>
 
 

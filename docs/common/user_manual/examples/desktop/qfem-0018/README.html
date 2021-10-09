@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.10. Deterministic Calibration of Material Model Parameters &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>Deterministic Calibration of Material Model Parameters &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -49,8 +49,6 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.11. Bayesian Calibration of Material Model Parameters" href="../qfem-0019/README.html" />
-    <link rel="prev" title="4.9. Custom UQ for UQpy" href="../qfem-0017/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -116,30 +114,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0001/README.html">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0002/README.html">4.2. Forward Propagation - OpenSeesPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0005/README.html">4.3. Basic modeling with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">4.4. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">4.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">4.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">4.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">4.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">4.9. Custom UQ for UQpy</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.10. Deterministic Calibration of Material Model Parameters</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#outline">4.10.1. Outline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#problem-description">4.10.2. Problem description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#files-required">4.10.3. Files required</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#uq-workflow">4.10.4. UQ workflow</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">4.11. Bayesian Calibration of Material Model Parameters</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -202,9 +181,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
-        
-      <li><span class="section-number">4.10. </span>Deterministic Calibration of Material Model Parameters</li>
+      <li>Deterministic Calibration of Material Model Parameters</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -224,7 +201,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="deterministic-calibration-of-material-model-parameters">
-<h1><span class="section-number">4.10. </span>Deterministic Calibration of Material Model Parameters<a class="headerlink" href="#deterministic-calibration-of-material-model-parameters" title="Permalink to this headline">¶</a></h1>
+<h1>Deterministic Calibration of Material Model Parameters<a class="headerlink" href="#deterministic-calibration-of-material-model-parameters" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -237,14 +214,14 @@
 </tbody>
 </table>
 <div class="section" id="outline">
-<h2><span class="section-number">4.10.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
 <p>In this example, the parameters of the STEEL02 material model in OpenSees
 are calibrated using non-linear least squares optimization. Experimental data is
 passed in to quoFEM from an external file, and the output is the time-history of
 stress.</p>
 </div>
 <div class="section" id="problem-description">
-<h2><span class="section-number">4.10.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+<h2>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
 <p>The STEEL02 material model in OpenSees can take a total of 11 parameters as input, as described in the <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel02_Material_--_Giuffré-Menegotto-Pinto_Model_with_Isotropic_Strain_Hardening">documentation</a>. Of these 11 parameters, the value of 7 of these parameters will be calibrated in this example.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -330,7 +307,7 @@ stress.</p>
 </div>
 </div>
 <div class="section" id="files-required">
-<h2><span class="section-number">4.10.3. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
+<h2>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains a lot of files.</p>
@@ -342,7 +319,7 @@ stress.</p>
 </ol>
 </div>
 <div class="section" id="uq-workflow">
-<h2><span class="section-number">4.10.4. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<h2>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <p>The steps involved are as follows:</p>
 <ol class="arabic simple">
 <li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Engine</strong> drop down menu, select the <strong>Dakota</strong> engine. In the <strong>Dakota Method Category</strong> drop down menu the <strong>Parameters Estimation</strong> option must be selected. In the <strong>Calibration data file</strong> field, enter the path to the file which containes the calibration data, or select <strong>Choose</strong> and navigate to the file. Enter the maximum number of iterations, the convergence tolerance, and the scaling factors, if any in the corresponding fields.</p></li>

@@ -134,8 +134,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.3. QoI: Quantities of Interest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">2.4. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.3. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
@@ -227,7 +228,7 @@
             
   <div class="section" id="forward-propagation-methods">
 <span id="lbldakotaforward"></span><h1><span class="section-number">2.1.1.1. </span>Forward Propagation Methods<a class="headerlink" href="#forward-propagation-methods" title="Permalink to this headline">¶</a></h1>
-<p>The forward propagation analysis provides probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis). Currently four sampling methods are available:</p>
+<p>The forward propagation analysis provides probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis) of the quantities of interest. Currently four sampling methods are available:</p>
 <ol class="arabic simple">
 <li><p><strong>Monte Carlo Sampling (MCS)</strong></p></li>
 <li><p><strong>Latin Hypercube Sampling (LHS)</strong></p></li>
@@ -237,11 +238,11 @@
 <li><p><strong>Gaussian Process Regression (GPR)</strong></p></li>
 <li><p><strong>Polynomial Chaos Expansion (PCE)</strong></p></li>
 </ol>
-<p>Depending on the option selected, the user must specify the appropriate input parameters. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a random seed allows the user to reproduce the sampling results multiple times. The user selects the sampling method from the dropdown <code class="docutils literal notranslate"><span class="pre">Dakota</span> <span class="pre">Method</span> <span class="pre">Category</span></code> menu. Additional information regarding sampling techniques offered in Dakota can be found <a class="reference external" href="https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html">here</a>.</p>
+<p>Depending on the option selected, the user must specify the appropriate input parameters. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a seed value for the pseudo-random number generator allows the user to reproduce the sampling results multiple times. The user selects the sampling method from the dropdown <code class="docutils literal notranslate"><span class="pre">Dakota</span> <span class="pre">Method</span> <span class="pre">Category</span></code> menu. Additional information regarding sampling techniques offered in Dakota can be found <a class="reference external" href="https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html">here</a>.</p>
 <div class="section" id="monte-carlo-sampling-mcs">
 <h2>Monte Carlo Sampling (MCS)<a class="headerlink" href="#monte-carlo-sampling-mcs" title="Permalink to this headline">¶</a></h2>
 <p>MCS is among the most robust and universally applicable sampling methods. Moreover, the convergence rate of MCS methods are independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow at <span class="math notranslate nohighlight">\(N^{-1/2}\)</span>. In MCS, a sample drawn at any step is independent of all previous samples.</p>
-<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">figMCS</span></code> shows the input panel corresponding to the Monte Carlo Sampling setting. Two input parameters need to be specified: the number of samples to be executed, and the random seed.</p>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">figMCS</span></code> shows the input panel corresponding to the Monte Carlo Sampling setting. Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.</p>
 <div class="align-center figure" id="id1">
 <span id="figmcs"></span><img alt="../../../../_images/fwMC.png" src="../../../../_images/fwMC.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.1.1 </span><span class="caption-text">Monte Carlo Sampling input panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -249,8 +250,8 @@
 </div>
 <div class="section" id="latin-hypercube-sampling-lhs">
 <h2>Latin Hypercube Sampling (LHS)<a class="headerlink" href="#latin-hypercube-sampling-lhs" title="Permalink to this headline">¶</a></h2>
-<p>Latin hypercube sampling (LHS) is a pseudo-random, stratified sampling approach. To achieve a better convergence, LHS evenly spreads out the samples to cover the whole range of the input domain. Each sample from LHS effectively represents each of N equal probability intervals of a cumulative density function.</p>
-<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">figLHS</span></code> shows the input panel corresponding to the Latin hypercube sampling (LHS) scheme. Two input parameters need to be specified: the number of samples to be executed and the random seed.</p>
+<p>Latin hypercube sampling (LHS) is a type of stratified sampling approach. To achieve a better convergence, LHS evenly spreads out the samples to cover the whole range of the input domain. Each sample from LHS effectively represents each of N equal probability intervals of a cumulative density function.</p>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">figLHS</span></code> shows the input panel corresponding to the Latin hypercube sampling (LHS) scheme. Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.</p>
 <div class="align-center figure" id="id2">
 <span id="figlhs"></span><img alt="../../../../_images/fwLHS.png" src="../../../../_images/fwLHS.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.1.2 </span><span class="caption-text">Latin Hypercube Sampling input panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -258,12 +259,14 @@
 </div>
 <div class="section" id="gaussian-process-regression-gpr">
 <h2>Gaussian Process Regression (GPR)<a class="headerlink" href="#gaussian-process-regression-gpr" title="Permalink to this headline">¶</a></h2>
-<p>For the problems which computationally expensive models are involved, conventional sampling schemes such as LHS and MCS can be extremely time-consuming. In such case, surrogate model can be constructed based on fewer number of simulation runs, and then the surrogate model can be used to efficiently generate required number of samples replacing the expensive simulations.</p>
+<p>For the problems in which computationally expensive models are involved, conventional sampling schemes such as LHS and MCS can be extremely time-consuming. In such case, a surrogate model can be constructed based on a smaller number of simulation runs, and then the surrogate model can be used to efficiently generate the required number of samples replacing the expensive simulations.</p>
 <p>Gaussian Process Regression (GPR), also known as Kriging is one of the well-established surrogate techniques, which constructs an approximated response surface based on Gaussian process modeling and covariance matrix optimizations. <code class="xref std std-numref docutils literal notranslate"><span class="pre">figGPR</span></code> shows the input panel for the GPR model that consists of training and sampling panels.</p>
 <div class="align-center figure" id="id3">
 <span id="figgpr"></span><img alt="../../../../_images/fwGP.png" src="../../../../_images/fwGP.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.1.3 </span><span class="caption-text">GPR forward propagation input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
+<p>In the <strong>Surrogate Training Data</strong> panel, the users specify the number of samples of the output of the computationally expensive model to be  select either Monte Carlo Sampling or Latin Hypercube Sampling to generate sample output values from the computationally expensive model, which, along with the corresponding input values are used to train the surrogate models.</p>
+<p>Other surrogate models, different from Gaussian process regression are also available in the drop-down menu titled <strong>Surface Fitting Method</strong>. All thse surrogate models utilize either Monte Carlo Sampling or Latin Hypercube Sampling to generate sample output values, which, along with the corresponding input values are used to train the surrogate models.</p>
 </div>
 <div class="section" id="polynomial-chaos-expansion-pce">
 <h2>Polynomial Chaos Expansion (PCE)<a class="headerlink" href="#polynomial-chaos-expansion-pce" title="Permalink to this headline">¶</a></h2>
