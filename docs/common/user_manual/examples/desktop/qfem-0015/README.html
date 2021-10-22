@@ -263,7 +263,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Material Quality</p></td>
-<td><p>0.0</p></td>
+<td><p>0.2</p></td>
 <td><p>1.0</p></td>
 </tr>
 <tr class="row-odd"><td><p>Plan Area</p></td>
@@ -338,7 +338,7 @@
 <div class="section" id="uq-workflow">
 <h2><span class="section-number">4.7.4. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Start the application, and the <strong>UQ</strong> Selection will be highlighted. Change the UQ Engine to <strong>SimCenterUQ</strong> and the Method Category to <strong>Training GP Surrogate Model</strong>. Since the model is provided, the Training Dataset will be obtained by <strong>Sampling and Simulation</strong>. Since it is known that peak drift and acceleration values are always positive, log-transform is introduced. Since a trend is expected, a linear trend function is introduced. The number of Initial Design of Experiments is set to 10.</p></li>
+<li><p>Start the application, and the <strong>UQ</strong> Selection will be highlighted. Change the UQ Engine to <strong>SimCenterUQ</strong> and the Method Category to <strong>Training GP Surrogate Model</strong>. Since the model is provided, the Training Dataset will be obtained by <strong>Sampling and Simulation</strong>.</p></li>
 </ol>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR-UQtab1.png"><img alt="../../../../../_images/SUR-UQtab1.png" src="../../../../../_images/SUR-UQtab1.png" style="width: 1200px;" /></a>
@@ -392,7 +392,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/SUR-UQtab2.png"><img alt="../../../../../_images/SUR-UQtab2.png" src="../../../../../_images/SUR-UQtab2.png" style="width: 1200px;" /></a>
 </div>
 <div class="line-block">
-<div class="line">Click on the <strong>Run</strong> button, and surrogate model training will be continued. Followings are the results after 144 more simulations.</div>
+<div class="line">Click on the <strong>Run</strong> button, and surrogate model training will be continued. Followings are the results after 150 more simulations.</div>
 </div>
 <ul class="simple">
 <li><p>Summary:</p></li>
@@ -409,7 +409,7 @@
 <p>Users may want to perform additional simulations in a similar way.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note that in the second training period, 150 initial samples were provided from the data files and 144 more simulations were conducted. However, the number of total samples used to train the surrogate model is displayed as 293 since one simulation is consumed to check the consistency between the user provided model (in the <strong>FEM tab</strong>) and the dataset (in the <strong>UQ tab</strong>).</p>
+<p>Note that in the second training period, 150 initial samples were provided from the data files and 150 more simulations were conducted. However, the number of total samples used to train the surrogate model is displayed as 299 since one simulation is consumed to check the consistency between the user provided model (in the <strong>FEM tab</strong>) and the dataset (in the <strong>UQ tab</strong>).</p>
 </div>
 </div>
 <div class="section" id="verification-of-the-surrogate-model">
@@ -435,7 +435,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/SUR-VER2.png"><img alt="../../../../../_images/SUR-VER2.png" src="../../../../../_images/SUR-VER2.png" style="width: 1200px;" /></a>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Select the <strong>FEM tab</strong>  from the input panel and choose <strong>SurrogateGP</strong> application. For the <strong>SurrogateGP Info</strong> field, copy the path to the <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code> or click choose and navigate to the file. Similarly, the  <strong>SurroateGP Model field</strong> calls <code class="docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code> file. Once the first file is imported, additional options will be visible. Here, the user can specify the Maximum Allowable Normalized Variance level. The exceedance percentage is provided to help users decision along with the pre-informed accuracy of the surrogate model obtained right after the training session. In this example, we would like to compare two cases: <strong>(CASE 1)</strong> (Ignore the precision tolerance and) <strong>Continue</strong> analysis, <strong>(CASE 2)</strong> <strong>Run Exact FEM simulation</strong> for those samples prediction variance is high. The Maximum Allowable Normalized Variance level is set as 0.08.</p></li>
+<li><p>Select the <strong>FEM tab</strong>  from the input panel and choose <strong>SurrogateGP</strong> application. For the <strong>SurrogateGP Info</strong> field, copy the path to the <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code> or click choose and navigate to the file. Similarly, the  <strong>SurroateGP Model field</strong> calls <code class="docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code> file. Once the first file is imported, additional options will be visible. Here, the user can specify the Maximum Allowable Normalized Variance level. The exceedance percentage is provided to help users decision along with the pre-informed accuracy of the surrogate model obtained right after the training session. In this example, we would like to compare two cases: <strong>(CASE 1)</strong> (Ignore the precision tolerance and) <strong>Continue</strong> analysis, <strong>(CASE 2)</strong> <strong>Run Exact FEM simulation</strong> for those samples prediction variance is high. The Maximum Allowable Normalized Variance level is set as 0.15.</p></li>
 </ol>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR-VER3.png"><img alt="../../../../../_images/SUR-VER3.png" src="../../../../../_images/SUR-VER3.png" style="width: 1200px;" /></a>
@@ -470,29 +470,29 @@
 <tr class="row-odd"><th class="head"><p>Prob. Moments</p></th>
 <th class="head"><p>Reference (only simulation)</p></th>
 <th class="head"><p>CASE1 (only surrogate)</p></th>
-<th class="head"><p>CASE1 (surrogate and simulation)</p></th>
+<th class="head"><p>CASE2 (surrogate and simulation)</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Mean</p></td>
-<td><p>4.33e-4</p></td>
-<td><p>4.33e-4</p></td>
-<td><p>4.33e-4</p></td>
+<td><p>4.54e-4</p></td>
+<td><p>4.53e-4</p></td>
+<td><p>4.54e-4</p></td>
 </tr>
 <tr class="row-odd"><td><p>StdDev</p></td>
-<td><p>1.66e-5</p></td>
-<td><p>1.71e-5</p></td>
-<td><p>1.70e-5</p></td>
+<td><p>6.01e-5</p></td>
+<td><p>5.99e-5</p></td>
+<td><p>6.01e-5</p></td>
 </tr>
 <tr class="row-even"><td><p>Skewness</p></td>
-<td><p>1.21</p></td>
-<td><p>1.20</p></td>
-<td><p>1.23</p></td>
+<td><p>2.59</p></td>
+<td><p>2.53</p></td>
+<td><p>2.58</p></td>
 </tr>
 <tr class="row-odd"><td><p>Kurtosis</p></td>
-<td><p>6.74</p></td>
-<td><p>6.51</p></td>
-<td><p>6.54</p></td>
+<td><p>13.49</p></td>
+<td><p>13.16</p></td>
+<td><p>13.49</p></td>
 </tr>
 </tbody>
 </table>
@@ -510,29 +510,29 @@
 <tr class="row-odd"><th class="head"><p>Prob. Moments</p></th>
 <th class="head"><p>Reference (only simulation)</p></th>
 <th class="head"><p>CASE1 (only surrogate)</p></th>
-<th class="head"><p>CASE1 (surrogate and simulation)</p></th>
+<th class="head"><p>CASE2 (surrogate and simulation)</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Mean</p></td>
-<td><p>37.4</p></td>
-<td><p>37.3</p></td>
-<td><p>37.5</p></td>
+<td><p>35.84</p></td>
+<td><p>36.2</p></td>
+<td><p>35.79</p></td>
 </tr>
 <tr class="row-odd"><td><p>StdDev</p></td>
-<td><p>1.84</p></td>
-<td><p>1.62</p></td>
-<td><p>1.80</p></td>
+<td><p>3.20</p></td>
+<td><p>3.63</p></td>
+<td><p>3.10</p></td>
 </tr>
 <tr class="row-even"><td><p>Skewness</p></td>
-<td><p>0.39</p></td>
-<td><p>0.06</p></td>
-<td><p>0.20</p></td>
+<td><p>0.46</p></td>
+<td><p>1.36</p></td>
+<td><p>0.31</p></td>
 </tr>
 <tr class="row-odd"><td><p>Kurtosis</p></td>
-<td><p>1.85</p></td>
-<td><p>2.12</p></td>
-<td><p>1.97</p></td>
+<td><p>4.86</p></td>
+<td><p>9.76</p></td>
+<td><p>5.38</p></td>
 </tr>
 </tbody>
 </table>
