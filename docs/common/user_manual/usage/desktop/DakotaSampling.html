@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -128,9 +129,9 @@
 <li class="toctree-l4"><a class="reference internal" href="DakotaInverseProblems.html">2.1.1.5. Inverse Problem</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">2.1.2. SimCenter UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.3. UCSD UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.4. Custom UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#id1">2.1.3. SimCenter UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.5. Custom UQ Engine</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
@@ -242,7 +243,7 @@
 <div class="section" id="monte-carlo-sampling-mcs">
 <h2>Monte Carlo Sampling (MCS)<a class="headerlink" href="#monte-carlo-sampling-mcs" title="Permalink to this headline">¶</a></h2>
 <p>MCS is among the most robust and universally applicable sampling methods. Moreover, the convergence rate of MCS methods are independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow at <span class="math notranslate nohighlight">\(N^{-1/2}\)</span>. In MCS, a sample drawn at any step is independent of all previous samples.</p>
-<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">figMCS</span></code> shows the input panel corresponding to the Monte Carlo Sampling setting. Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.</p>
+<p><a class="reference internal" href="#figmcs"><span class="std std-numref">Fig. 2.1.1.1.1</span></a> shows the input panel corresponding to the Monte Carlo Sampling setting. Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.</p>
 <div class="align-center figure" id="id1">
 <span id="figmcs"></span><img alt="../../../../_images/fwMC.png" src="../../../../_images/fwMC.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.1.1 </span><span class="caption-text">Monte Carlo Sampling input panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -251,7 +252,7 @@
 <div class="section" id="latin-hypercube-sampling-lhs">
 <h2>Latin Hypercube Sampling (LHS)<a class="headerlink" href="#latin-hypercube-sampling-lhs" title="Permalink to this headline">¶</a></h2>
 <p>Latin hypercube sampling (LHS) is a type of stratified sampling approach. To achieve a better convergence, LHS evenly spreads out the samples to cover the whole range of the input domain. Each sample from LHS effectively represents each of N equal probability intervals of a cumulative density function.</p>
-<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">figLHS</span></code> shows the input panel corresponding to the Latin hypercube sampling (LHS) scheme. Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.</p>
+<p><a class="reference internal" href="#figlhs"><span class="std std-numref">Fig. 2.1.1.1.2</span></a> shows the input panel corresponding to the Latin hypercube sampling (LHS) scheme. Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.</p>
 <div class="align-center figure" id="id2">
 <span id="figlhs"></span><img alt="../../../../_images/fwLHS.png" src="../../../../_images/fwLHS.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.1.2 </span><span class="caption-text">Latin Hypercube Sampling input panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -260,7 +261,7 @@
 <div class="section" id="gaussian-process-regression-gpr">
 <h2>Gaussian Process Regression (GPR)<a class="headerlink" href="#gaussian-process-regression-gpr" title="Permalink to this headline">¶</a></h2>
 <p>For the problems in which computationally expensive models are involved, conventional sampling schemes such as LHS and MCS can be extremely time-consuming. In such case, a surrogate model can be constructed based on a smaller number of simulation runs, and then the surrogate model can be used to efficiently generate the required number of samples replacing the expensive simulations.</p>
-<p>Gaussian Process Regression (GPR), also known as Kriging is one of the well-established surrogate techniques, which constructs an approximated response surface based on Gaussian process modeling and covariance matrix optimizations. <code class="xref std std-numref docutils literal notranslate"><span class="pre">figGPR</span></code> shows the input panel for the GPR model that consists of training and sampling panels.</p>
+<p>Gaussian Process Regression (GPR), also known as Kriging is one of the well-established surrogate techniques, which constructs an approximated response surface based on Gaussian process modeling and covariance matrix optimizations. <a class="reference internal" href="#figgpr"><span class="std std-numref">Fig. 2.1.1.1.3</span></a> shows the input panel for the GPR model that consists of training and sampling panels.</p>
 <div class="align-center figure" id="id3">
 <span id="figgpr"></span><img alt="../../../../_images/fwGP.png" src="../../../../_images/fwGP.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.1.3 </span><span class="caption-text">GPR forward propagation input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
@@ -270,7 +271,7 @@
 </div>
 <div class="section" id="polynomial-chaos-expansion-pce">
 <h2>Polynomial Chaos Expansion (PCE)<a class="headerlink" href="#polynomial-chaos-expansion-pce" title="Permalink to this headline">¶</a></h2>
-<p>Response surface can be approximated using Polynomial Chaos Expansion (PCE) model as well. Similar to the input GPR panel, input panel for PCE model shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figPCE</span></code> consists of training and sampling parts. The input parameters in the <em>surrogate training data</em> set specify the dataset used for training the surrogate model, while the parameters in the <em>surrogate sampling data</em> are related to the samples generated using the surrogate. Extreme care must be taken in specifying the parameters of the training dataset to results in an accurate response surface approximation.</p>
+<p>Response surface can be approximated using Polynomial Chaos Expansion (PCE) model as well. Similar to the input GPR panel, input panel for PCE model shown in <a class="reference internal" href="#figpce"><span class="std std-numref">Fig. 2.1.1.1.4</span></a> consists of training and sampling parts. The input parameters in the <em>surrogate training data</em> set specify the dataset used for training the surrogate model, while the parameters in the <em>surrogate sampling data</em> are related to the samples generated using the surrogate. Extreme care must be taken in specifying the parameters of the training dataset to results in an accurate response surface approximation.</p>
 <div class="align-center figure" id="id4">
 <span id="figpce"></span><img alt="../../../../_images/fwPCE.png" src="../../../../_images/fwPCE.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1.1.1.4 </span><span class="caption-text">PCE forward propagation input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
@@ -289,7 +290,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2021, The Regents of the University of California.
+        &#169; Copyright 2018-2022, The Regents of the University of California.
 
     </p>
   </div>

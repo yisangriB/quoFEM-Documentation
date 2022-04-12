@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -133,6 +134,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">4.10. Bayesian Calibration of Material Model Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0022/README.html">4.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
@@ -267,7 +269,7 @@
 </tr>
 </tbody>
 </table>
-<p>The goal of the exercise is to implement UQpy as a <strong>custom UQ engine</strong> and estimate the mean and standard deviation of the vertical displacement at node2.</p>
+<p>The goal of the exercise is to implement UQpy as a <strong>custom UQ engine</strong> and estimate the mean and standard deviation of the vertical displacement at node 3.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <a class="reference external" href="https://sites.google.com/site/jhusurg/UQpy">UQpy</a> python package is required to be installed to run this example, e.g. pip install UQpy</p>
@@ -275,59 +277,66 @@
 <div class="section" id="uq-workflow">
 <h2><span class="section-number">4.9.1. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Start the application and the <strong>UQ</strong> Selection will be highlighted. In the panel for the UQ selection, change the UQ Engine to <strong>CustomUQ</strong>. In UQ Application Name, type <strong>Other-UQ</strong>.</p></li>
+<li><p>Start the application and the <strong>UQ</strong> Selection will be highlighted. In the panel for the UQ selection, change the UQ Engine to <strong>CustomUQ</strong>.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/CUS_UQtab.png" src="../../../../../_images/CUS_UQtab.png" />
 </div>
-<p>Next, provide the configuration input file path.  In the configuration file, users specify the interface for the parameters (type, name, values of each parameters) required for the custom UQ analysis. The provided script will generate 1 combo box to define sample types, 4 spin boxes to define number of samples, concurrent tasks, and notes, and 1 line edit field to specify the UQ Driver.</p>
+<p>Next, provide the configuration input file path.  In the configuration file, users specify the interface for the parameters (type, name, values of each parameters) required for the custom UQ analysis. The provided script will generate 1 combo box to define sample types, 2 line edit fields to define the number of samples and seed, 3 spin boxes to define number of concurrent tasks, nodes, and cores per task, and 1 line edit field to specify the UQ Driver.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 4.9.1.1 </span><span class="caption-text">UQpySimpleExample.json</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;Parameters&quot;</span> <span class="p">:</span>  <span class="p">[</span>
 	<span class="p">{</span>
-	    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;ComboBox&quot;</span><span class="p">,</span>
-	    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sampling Method&quot;</span><span class="p">,</span>
-	    <span class="nt">&quot;values&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;LHS&quot;</span><span class="p">]</span>
+		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;ComboBox&quot;</span><span class="p">,</span>
+		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sampling Method&quot;</span><span class="p">,</span>
+		<span class="nt">&quot;values&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;LHS&quot;</span><span class="p">]</span>
 	<span class="p">},</span>
 	<span class="p">{</span>
-	    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
-	    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Number of Samples&quot;</span>
+		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
+		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Number of Samples&quot;</span>
 	<span class="p">},</span>
 	<span class="p">{</span>
-	    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
-	    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Number of Concurrent Tasks&quot;</span>
+		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
+		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Seed&quot;</span>
 	<span class="p">},</span>
 	<span class="p">{</span>
-	    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
-	    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Number of Nodes&quot;</span>
+		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
+		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Number of Concurrent Tasks&quot;</span>
 	<span class="p">},</span>
 	<span class="p">{</span>
-	    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
-	    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Cores per Task&quot;</span>
+		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
+		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Number of Nodes&quot;</span>
 	<span class="p">},</span>
 	<span class="p">{</span>
-	    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
-	    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;UQ Driver&quot;</span>
+		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
+		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Cores per Task&quot;</span>
+	<span class="p">},</span>
+	<span class="p">{</span>
+		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
+		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;UQ Driver&quot;</span>
 	<span class="p">}</span>	
     <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<p>Note that configuration input file specifies the front-end interfaces while the back-end interface should be modified in the backend directory (See Section 2.1.4.1. Custom Uncertainty Quantification Engine Input). As an example, UQpy has been already implemented in the customized backend where users can find at <code class="docutils literal notranslate"><span class="pre">{Backend</span> <span class="pre">Applications</span> <span class="pre">Directory}/applications/performUQ/other</span></code>, where the <code class="docutils literal notranslate"><span class="pre">{Backend</span> <span class="pre">Applications</span> <span class="pre">Directory}</span></code> is specified from the file-preference in the menu bar). Once the <code class="docutils literal notranslate"><span class="pre">UQpySimpleExample.json</span></code> is called, the following customized user interface will appear in UQ panel.</p>
+<p>Note that configuration input file specifies the front-end interfaces while the back-end interface should be modified in the backend directory (Refer the <a class="reference internal" href="../../../usage/desktop/Configuring_CustomUQ.html#lblcustomuq"><span class="std std-ref">Configuring CustomUQ Engine</span></a> section for details). As an example, UQpy has been already implemented in the customized backend where users can find at <code class="docutils literal notranslate"><span class="pre">{Backend</span> <span class="pre">Applications</span> <span class="pre">Directory}/applications/performUQ/other</span></code>, where the <code class="docutils literal notranslate"><span class="pre">{Backend</span> <span class="pre">Applications</span> <span class="pre">Directory}</span></code> is specified from the file-preference in the menu bar). Once the <code class="docutils literal notranslate"><span class="pre">UQpySimpleExample.json</span></code> is called, the following customized user interface will appear in UQ panel.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/CUS_UQtab2.png" src="../../../../../_images/CUS_UQtab2.png" />
 </div>
-<p>Let us sample 50 samples by latine hypercube sampling (LHS).</p>
+<p>Let us sample 50 samples by Latin hypercube sampling (LHS). The UQ Driver field must be filled in as <strong>UQpy</strong>, as shown in the following figure.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/CUS_UQtab3.png" src="../../../../../_images/CUS_UQtab3.png" />
+</div>
 <ol class="arabic simple" start="2">
-<li><p>Select the <strong>FEM</strong> tab from the input panel. For the main script copy the path to the <code class="docutils literal notranslate"><span class="pre">TrussModel.tcl</span></code> or select choose and navigate to the file. For the post-process script field, repeat the same procedure for the <code class="docutils literal notranslate"><span class="pre">TrussPost.tcl</span> <span class="pre">script</span></code>. (See example ‘q0001:Two-Dimensional Truss: Sampling, Reliability and Sensitivity’ for the model details)</p></li>
+<li><p>Select the <strong>FEM</strong> tab from the input panel. For the main script copy the path to the <code class="docutils literal notranslate"><span class="pre">TrussModel.tcl</span></code> or select choose and navigate to the file. For the post-process script field, repeat the same procedure for the <code class="docutils literal notranslate"><span class="pre">TrussPost.tcl</span> <span class="pre">script</span></code>. (See example <a class="reference internal" href="../qfem-0001/README.html#qfem-0001"><span class="std std-ref">Two-Dimensional Truss: Sampling, Reliability and Sensitivity</span></a> for the model details)</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/CUS_FEMtab.png" src="../../../../../_images/CUS_FEMtab.png" />
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Select the <strong>RV</strong> tab from the input panel. This should be pre-populated with four random variables with same names as those having <code class="docutils literal notranslate"><span class="pre">pset</span></code> in the tcl script. For each variable, from the drop down menu change them uniform one and then provide the lower and upper bounds specified for the problem.</p></li>
+<li><p>Select the <strong>RV</strong> tab from the input panel. This should be pre-populated with four random variables with same names as those having <code class="docutils literal notranslate"><span class="pre">pset</span></code> in the tcl script. For each variable, from the drop down menu change them to uniform and provide the lower and upper bounds specified for the problem.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/CUS_RVtab.png" src="../../../../../_images/CUS_RVtab.png" />
@@ -337,21 +346,21 @@
 <p>Only <strong>uniform distribution</strong> is supported in this preliminary example.</p>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Next select the <strong>QoI</strong> tab. Here enter <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_2</span></code> for the one variable.</p></li>
+<li><p>Next select the <strong>QoI</strong> tab. Here enter <code class="docutils literal notranslate"><span class="pre">Node_3_Disp_2</span></code> for the one variable.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/CUS_QoItab.png" src="../../../../../_images/CUS_QoItab.png" />
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch dakota.</p></li>
+<li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch the CustomUQ engine which will run UQpy.</p></li>
 <li><p>When done the <strong>RES</strong> panel will be selected and the results will be displayed. The results show the values the mean and standard deviation.</p></li>
 </ol>
 <p>Summary:</p>
 <ul class="simple">
-<li><p>Mean = 7.322</p></li>
-<li><p>Std = 4.29</p></li>
-<li><p>Skewness = 1.89</p></li>
-<li><p>Kurtosis = 7.13</p></li>
+<li><p>Mean = 5.77619</p></li>
+<li><p>Std = 2.4664</p></li>
+<li><p>Skewness = 0.456808</p></li>
+<li><p>Kurtosis = 2.7146</p></li>
 </ul>
 <p>Data Table:</p>
 <div class="align-center figure">
@@ -370,7 +379,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2021, The Regents of the University of California.
+        &#169; Copyright 2018-2022, The Regents of the University of California.
 
     </p>
   </div>

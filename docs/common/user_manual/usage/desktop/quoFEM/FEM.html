@@ -49,7 +49,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="2.3. RV: Random Variables" href="../RV.html" />
-    <link rel="prev" title="2.1.4.1. Configuring CustomUQ Engine" href="../Configuring_CustomUQ.html" />
+    <link rel="prev" title="2.1.5.1. Configuring CustomUQ Engine" href="../Configuring_CustomUQ.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -240,7 +241,7 @@ and a custom user-specified application.</p>
 <li><p><strong>Input Script</strong>: The user must specify a main input script. When entered the application will parse this file looking for variables set with the <code class="docutils literal notranslate"><span class="pre">pset</span></code> option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with <code class="docutils literal notranslate"><span class="pre">pset</span></code>, the program will auto populate the variable in the <strong>RV</strong> tab.</p></li>
 </ol>
 <ol class="arabic simple" start="2">
-<li><p><strong>Postprocess Script</strong>: This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file after the main script runs.</p></li>
+<li><p><strong>Postprocess Script</strong> (optional): This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file after the main script runs.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -261,7 +262,6 @@ and a custom user-specified application.</p>
 <ol class="arabic simple">
 <li><p><strong>Input File</strong>: The user must specify a main input file.  A part of this file may contain variables set in the <code class="docutils literal notranslate"><span class="pre">PARA</span></code> section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the <strong>RV</strong> tab. For example if a file containing the following code was specified:</p></li>
 </ol>
-<p>then the parameters <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">Ao</span></code>, <code class="docutils literal notranslate"><span class="pre">Au</span></code> would be read by the application and placed in the <strong>RV</strong> tab.</p>
 <ol class="arabic simple" start="2">
 <li><p><strong>Postprocess Script</strong>: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file. Currently the user has no control over the name of the output file created by FEAPpv, <code class="docutils literal notranslate"><span class="pre">SimCenterOut.txt</span></code>. It is this file the post-process script must open and use to create the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file.</p></li>
 </ol>
@@ -273,8 +273,8 @@ and a custom user-specified application.</p>
 <img alt="../../../../../_images/openseespyFEM.png" src="../../../../../_images/openseespyFEM.png" />
 </div>
 <ol class="arabic simple">
-<li><p><strong>Postprocess Script</strong>. This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file with a single line as described for the OpenSees application.</p></li>
-<li><p><strong>Parameters File</strong> (Optional). This file allows for the automatic population of the <strong>RV</strong> tab with any variables found in the file. For example if the file contained the following:</p></li>
+<li><p><strong>Postprocess Script</strong> (Optional): This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file with a single line as described for the OpenSees application.</p></li>
+<li><p><strong>Parameters File</strong>: This file allows for the automatic population of the <strong>RV</strong> tab with any variables found in the file. For example if the file contained the following:</p></li>
 </ol>
 <p>The <strong>RV</strong> tab would be populated with the <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">Ao</span></code>, and <code class="docutils literal notranslate"><span class="pre">Au</span></code> random variables.</p>
 </div>
@@ -377,7 +377,7 @@ the need to explicitly input each one of these files.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2021, The Regents of the University of California.
+        &#169; Copyright 2018-2022, The Regents of the University of California.
 
     </p>
   </div>

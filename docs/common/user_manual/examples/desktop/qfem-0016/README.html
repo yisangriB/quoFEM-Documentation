@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -137,6 +138,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">4.9. Custom UQ for UQpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">4.10. Bayesian Calibration of Material Model Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0022/README.html">4.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
@@ -235,10 +237,6 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This example may run up to 20 minutes depending on the computer performance. For a quick test run, the user may want to reduce the <strong>Max Computation Time</strong> or <strong>Max Number of model Runs</strong>.</p>
-</div>
 <div class="section" id="outline">
 <h2><span class="section-number">4.8.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
 <p>This example constructs a Gaussian process-based surrogate model for mean and standard deviation of a building structure given ten ground motion set.</p>
@@ -260,24 +258,24 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>weight (w)</p></td>
-<td><p>0.0</p></td>
-<td><p>1.0</p></td>
+<td><p>50</p></td>
+<td><p>150</p></td>
 </tr>
 <tr class="row-odd"><td><p>roof weight (wR)</p></td>
-<td><p>800</p></td>
-<td><p>2400</p></td>
+<td><p>40</p></td>
+<td><p>80</p></td>
 </tr>
 <tr class="row-even"><td><p>initial stiffness (k)</p></td>
-<td><p>0.4</p></td>
-<td><p>0.8</p></td>
+<td><p>240</p></td>
+<td><p>360</p></td>
 </tr>
 <tr class="row-odd"><td><p>post-yield stiff. ratio (alp)</p></td>
-<td><p>0.02</p></td>
-<td><p>0.1</p></td>
+<td><p>0.05</p></td>
+<td><p>0.15</p></td>
 </tr>
 <tr class="row-even"><td><p>yield strength (Fy)</p></td>
-<td><p>0.5</p></td>
-<td><p>0.8</p></td>
+<td><p>18</p></td>
+<td><p>22</p></td>
 </tr>
 </tbody>
 </table>
@@ -298,7 +296,7 @@
 <div class="section" id="uq-workflow">
 <h2><span class="section-number">4.8.4. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Since the model is provided, Training Dataset can be obtained by <strong>Sampling and Simulation</strong>. Since it is known that the mean and variance of peak drift are always positive, log-transform is introduced. Since a trend is expected, a linear trend function is introduced. The number of Initial Design of Experiments are set as 10.</p></li>
+<li><p>Since the model is provided, Training Dataset can be obtained by <strong>Sampling and Simulation</strong>. Since it is known that the mean and variance of peak drift are always positive, log-transform is introduced. Since a trend is expected, a linear trend function is introduced.</p></li>
 </ol>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-UQtab.png"><img alt="../../../../../_images/SUR2-UQtab.png" src="../../../../../_images/SUR2-UQtab.png" style="width: 1200px;" /></a>
@@ -317,13 +315,13 @@
 </div>
 <p>When the user needs to manually add random variables with <strong>add</strong> button, eg. when using a custom FEM application, the user should set the distribution to be <strong>Uniform</strong> using the drop-down menu.</p>
 <ol class="arabic simple" start="4">
-<li><p>Select the <strong>QoI</strong> tab. Here enter two output names as <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_1_Mean</span></code> and <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_1_Std</span></code>. Note that Node_2_Disp_1 means x-direction displacement of second story floor.</p></li>
+<li><p>Select the <strong>QoI</strong> tab. Here enter two output names as <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_1_Mean</span></code> and <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_1_Std</span></code>. Note that Node_2_Disp_1 means x-direction displacement of second story floor. These QoI names are processed in the <code class="docutils literal notranslate"><span class="pre">postprocess.tcl</span></code> provided at the <strong>FEM</strong> tab.</p></li>
 </ol>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-QoItab.png"><img alt="../../../../../_images/SUR2-QoItab.png" src="../../../../../_images/SUR2-QoItab.png" style="width: 1200px;" /></a>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Click on the <strong>Run</strong> button. This will cause the back-end application to run SimCenterUQ Engine.</p></li>
+<li><p>Click on the <strong>Run</strong> button. This will cause the backend application to run SimCenterUQ Engine.</p></li>
 <li><p>When done, the <strong>RES</strong> tab will be selected and the results will be displayed.</p></li>
 </ol>
 <ul class="simple">
@@ -336,7 +334,7 @@
 <li><p>Leave-one-out cross-validation (LOOCV) predictions:</p></li>
 </ul>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/SUR2-REStab2.png"><img alt="../../../../../_images/SUR2-REStab2.png" src="../../../../../_images/SUR2-REStab2.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/SUR2-REStab2.png"><img alt="../../../../../_images/SUR2-REStab2.png" src="../../../../../_images/SUR2-REStab2.png" style="width: 1200px;" /></a>
 </div>
 <ol class="arabic simple" start="7">
 <li><p>Save the surrogate model by clicking <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">GP</span> <span class="pre">Surrogate</span></code></p></li>
@@ -372,7 +370,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <strong>Continue</strong> option should be used only when users are familiar with the process and potential issues.</p>
+<p>The <strong>Continue</strong> option should be used only when users are familiar with potential issues.</p>
 </div>
 <ol class="arabic simple" start="4">
 <li><p>Once the SurrogateGP Info field in the <strong>FEM</strong> tab is entered, the <strong>RV tab</strong> is automatically populated. The user can select the distribution and its parameters. This example applied the following distributions.</p></li>
@@ -380,15 +378,9 @@
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-VER4.png"><img alt="../../../../../_images/SUR2-VER4.png" src="../../../../../_images/SUR2-VER4.png" style="width: 1200px;" /></a>
 </div>
-<p>Also correlation between the floor weight and roof weight is assumed to be 0.3.</p>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/SUR2-VER3.png"><img alt="../../../../../_images/SUR2-VER3.png" src="../../../../../_images/SUR2-VER3.png" style="width: 300px;" /></a>
-</div>
 <ol class="arabic simple" start="5">
-<li><p>Once the SurrogateGP Info field in the <strong>FEM</strong> tab is entered, the <strong>QoI tab</strong> is automatically populated by <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_1_Mean</span></code> and <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_1_Std</span></code>. Users are allowed to remove some of the QoIs if not interested but may not add new QoIs or modify the names of existing QoIs.</p></li>
-</ol>
-<ol class="arabic simple" start="5">
-<li><p>Click on the <strong>Run</strong> button. This will cause the back-end application to launch dakota.</p></li>
+<li><p>Users need to manually fill in the <strong>QoI tab</strong>. Users do not need to include here all the QoIs used for the training, but the users may not add new QoIs or modify the names of existing QoIs. <strong>[Tip]</strong> List of the trained QoI names can be found and copied in the <strong>FEM tab</strong>.</p></li>
+<li><p>Click on the <strong>Run</strong> button. This will cause the backend application to launch dakota.</p></li>
 <li><p>When done, the <strong>RES</strong> tab will be selected and the results will be displayed.</p></li>
 </ol>
 <ul class="simple">
@@ -398,8 +390,8 @@
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-VER5.png"><img alt="../../../../../_images/SUR2-VER5.png" src="../../../../../_images/SUR2-VER5.png" style="width: 1200px;" /></a>
 </div>
 <div class="line-block">
-<div class="line"><strong>Surrogate model training time</strong>: 14.6 min. (number of simulation model runs: 300)</div>
-<div class="line"><strong>Analysis time</strong>: 11.8 min. (number of surrogate model evaluations: 1400)</div>
+<div class="line"><strong>Surrogate model training time</strong>: 1.4 min. (number of FEM runs: 50)</div>
+<div class="line"><strong>Sensitivity analysis time</strong>: 10.3 min. (number of surrogate model evaluations: 1400)</div>
 </div>
 <ul class="simple">
 <li><p>Reference simulation model results</p></li>
@@ -408,7 +400,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-VER6.png"><img alt="../../../../../_images/SUR2-VER6.png" src="../../../../../_images/SUR2-VER6.png" style="width: 1200px;" /></a>
 </div>
 <div class="line-block">
-<div class="line"><strong>Analysis time</strong>: 83.7 min. (number of simulation model runs: 1400)</div>
+<div class="line"><strong>Sensitivity analysis time</strong>: 83.7 min. (number of FEM runs: 1400)</div>
 </div>
 </div>
 </div>
@@ -423,7 +415,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2021, The Regents of the University of California.
+        &#169; Copyright 2018-2022, The Regents of the University of California.
 
     </p>
   </div>

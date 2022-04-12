@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -127,6 +128,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#simcenteruq-engine">2.3.1.2. SimCenterUQ Engine</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#correlation-matrix">2.3.2. Correlation matrix</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
@@ -354,11 +356,16 @@
 <dl class="citation">
 <dt class="label" id="era19"><span class="brackets"><a class="fn-backref" href="#id1">ERA19</a></span></dt>
 <dd><p>Engineering Risk Analysis Group, Technische Universität München: <a class="reference external" href="https://www.bgu.tum.de/era/software/eradist/">https://www.bgu.tum.de/era/software/eradist/</a> (Matlab/python programs and documentations)</p>
-<blockquote>
-<div><p>Correlation coefficients between each variable can be defined by clicking the <code class="docutils literal notranslate"><span class="pre">Correlation</span> <span class="pre">Matrix</span></code> button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="correlation-matrix">
+<h2><span class="section-number">2.3.2. </span>Correlation matrix<a class="headerlink" href="#correlation-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Correlation coefficients between each variable can be defined by clicking the <code class="docutils literal notranslate"><span class="pre">Correlation</span> <span class="pre">Matrix</span></code> button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified.</p>
 <div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../_images/rv4.png"><img alt="../../../../_images/rv4.png" src="../../../../_images/rv4.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.1.2.3 </span><span class="caption-text">Example of a valid correlation matrix</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.1 </span><span class="caption-text">Example of a valid correlation matrix</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once the <code class="docutils literal notranslate"><span class="pre">OK</span></code> button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not <strong>positive definite</strong>, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.</p>
 <div class="admonition note">
@@ -371,10 +378,6 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Correlation warping for Nataf variable transformation of <strong>beta</strong> distributions is not currently supported.</p>
-</div>
-</div></blockquote>
-</dd>
-</dl>
 </div>
 </div>
 </div>
@@ -389,7 +392,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2021, The Regents of the University of California.
+        &#169; Copyright 2018-2022, The Regents of the University of California.
 
     </p>
   </div>

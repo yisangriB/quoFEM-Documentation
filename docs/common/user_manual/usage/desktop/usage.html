@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -212,21 +213,18 @@
 <span id="lbl-usage"></span><h1><span class="section-number">2. </span>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
 <p>The quoFEM app, as will be discussed in <a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html#lblarchitecture"><span class="std std-ref">Software Architecture</span></a>, is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different backend applications. Once the quoFEM app is started, the user is presented with the user interface shown in <a class="reference internal" href="#figgenericui-quofem"><span class="std std-numref">Fig. 2.1</span></a>. It is in this UI where the user selects the applications to run in a workflow, inputs the necessary parameters for each of these applications, starts the workflow either locally or
 remotely, and finally views the simulation results. The main window of the UI is divided into several separate areas:</p>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id4">
 <span id="figgenericui-quofem"></span><img alt="../../../../_images/quoFEMPanel.png" src="../../../../_images/quoFEMPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">The quoFEM app user interface.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">The quoFEM app user interface.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<ol class="arabic simple">
-<li><p>Login Button:</p></li>
-</ol>
-<p>The <strong>Login</strong> button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the <a class="reference external" href="https://www.designsafe-ci.org/account/register">DesignSafe-CI</a> website <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
-<ol class="arabic simple" start="2">
-<li><p>Input Panel:</p></li>
-</ol>
+<ol class="arabic">
+<li><p>Login Button:</p>
+<p>The <strong>Login</strong> button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the <a class="reference external" href="https://www.designsafe-ci.org/account/register">DesignSafe-CI</a> website <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
+</li>
+<li><p>Input Panel:</p>
 <p>The input panel is the large central area of the user-interface where the user provides input for the various applications, and also where they can view the results.</p>
-<ol class="arabic simple" start="3">
-<li><p>Input Panel Selection Ribbon:</p></li>
-</ol>
+</li>
+<li><p>Input Panel Selection Ribbon:</p>
 <p>The ribbon on the left side provides the user with a selection of buttons to choose from (e.g. <strong>RV: Random Variables</strong>, <strong>RES: Results</strong>). Selecting any of these buttons will change what is displayed in the central input panel. Each panel will present the user with an option for which application to choose for that part of the workflow, and will then allow a user to provide inputs for that application. In the following sections, each of the panels in the input panel selection ribbon are reviewed:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -237,9 +235,8 @@ remotely, and finally views the simulation results. The main window of the UI is
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
 </ul>
 </div>
-<ol class="arabic simple" start="4">
-<li><p>Push Buttons:</p></li>
-</ol>
+</li>
+<li><p>Push Buttons:</p>
 <p>This is the area near the bottom of the UI in which 4 buttons are contained:</p>
 <blockquote>
 <div><ul class="simple">
@@ -249,15 +246,48 @@ remotely, and finally views the simulation results. The main window of the UI is
 <li><p><strong>Exit</strong>: Exit the application.</p></li>
 </ul>
 </div></blockquote>
-<ol class="arabic simple" start="5">
-<li><p>Message Area:</p></li>
-</ol>
+<p>Clicking on the <strong>RUN at DesignSafe</strong> button will show the remote job submission dialog, given in <a class="reference internal" href="#figremjobpanel"><span class="std std-numref">Fig. 2.7</span></a>.</p>
+<div class="align-center figure" id="id10">
+<span id="figremjobpanel"></span><img alt="../../../../_images/RemoteJobPanel.png" src="../../../../_images/RemoteJobPanel.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7 </span><span class="caption-text">Remote job submission dialog.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>Descriptions and guidelines for each input are given below:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Job Name</strong>: An easy to remember and meaningful name to differentiate this job from others.</p></li>
+<li><p><strong>Number of Nodes</strong>: Number of compute nodes requested. Each node has many cores, and each core typically contains several processors/threads.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a large number of nodes are requested (e.g., more than 10), the job may stay longer in the queue before it starts.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Number of processors per Node</strong>: Number of processors that will be utilized on each node. Typically, it is advantageous to use all available processors of a node when the memory demand of a job is small. When a job is memory intensive, e.g., large finite element models, utilizing all available processors may overwhelm the memory cache of a core and the computation will slow down. Currently, the maximum number of processors is 48 and the minimum is 1.</p></li>
+<li><p><strong>Number of Buildings per Task</strong>: Number of buildings per task.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each task will run in parallel on its own processor. The number of tasks is equal to the number of nodes multiplied by the number of processors per node. Since it takes time to assign buildings to a task and spool up the computation, it may be advantageous to assign a batch of buildings to a task when the individual building analyses are expected to have a short runtime. A good approach is to estimate the total number of buildings to be analyzed and then select the <strong>Number of Nodes</strong>, <strong>Number of processors per Node</strong>, and <strong>Number of Buildings per Task</strong> so that the buildings can be strategically distributed across all processors. This is so that all processors are effectively utilized and do not sit idle.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Save Intermediate Results</strong>: Save intermediate results to a compressed folder. This is typically not recommended as this as this will use up disk space.</p></li>
+<li><p><strong>Max Run Time</strong>: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. Job will stop if the run time exceeds this threshold.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A user can check the status of a remote run by clicking on the <strong>GET from DesignSafe</strong> button. If the analysis status shows FAILED, users are encouraged to log into their DesignSafe account to view the detailed output of the run. To view the detailed output of a run go to the <a class="reference external" href="https://www.designsafe-ci.org/help/new-ticket/">DesignSafe</a> webpage and log in with your credentials. Next, click on the menus <strong>Workspace</strong> -&gt; <strong>Tools &amp; Applications</strong> -&gt; <strong>Job Status</strong> and then select <strong>More info</strong> to view the status of a job.</p>
+</div>
+</li>
+<li><p>Message Area:</p>
 <p>The message area is located in the bottom of the UI and displays the status and error messages for a running background application. The message area is a dockable dialog which can be resized, moved, and closed as needed. The dialog visibility can be toggled by clicking on the menu item <strong>View</strong> -&gt; <strong>Program Output</strong>. If moved from its default location, the status dialog can be restored to the bottom of the UI by dragging the dialog back to the bottom of the UI and hovering over the area.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>For more help on external services provided by DesignSafe-CI, such as creating an account, we encourage users to explore their <a class="reference external" href="https://www.designsafe-ci.org/rw/user-guides/">documentation</a> or consider <a class="reference external" href="https://www.designsafe-ci.org/help/new-ticket/">submitting a ticket</a>.</p>
 </dd>
 </dl>
+</li>
+</ol>
 </div>
 
 
@@ -270,7 +300,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2021, The Regents of the University of California.
+        &#169; Copyright 2018-2022, The Regents of the University of California.
 
     </p>
   </div>

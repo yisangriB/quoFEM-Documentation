@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.1.2.3. Surrogate Modeling &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.1.3.1. Surrogate Modeling &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.3.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm" href="UCSD_UQ_TMCMC.html" />
-    <link rel="prev" title="2.1.2.2. Global Sensitivity Analysis" href="SimCenterUQSensitivity.html" />
+    <link rel="next" title="2.1.4.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm" href="UCSD_UQ_TMCMC.html" />
+    <link rel="prev" title="2.1.2.3. Probabilistic Learning on Manifolds (PLoM)" href="SimCenterUQPLoM.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -121,14 +122,15 @@
 <li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">2.1.1. Dakota UQ Engine</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#simcenter-uq-engine">2.1.2. SimCenter UQ Engine</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#id1">2.1.3. SimCenter UQ Engine</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">2.1.2.1. Forward Propagation Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.2.3. Surrogate Modeling</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.3.1. Surrogate Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">2.1.2.3. Probabilistic Learning on Manifolds (PLoM)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.3. UCSD UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.4. Custom UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.5. Custom UQ Engine</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
@@ -205,7 +207,7 @@
         
           <li><a href="UQ.html"><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
         
-      <li><span class="section-number">2.1.2.3. </span>Surrogate Modeling</li>
+      <li><span class="section-number">2.1.3.1. </span>Surrogate Modeling</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -225,14 +227,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="surrogate-modeling">
-<span id="lblsimsurrogate"></span><h1><span class="section-number">2.1.2.3. </span>Surrogate Modeling<a class="headerlink" href="#surrogate-modeling" title="Permalink to this headline">¶</a></h1>
+<span id="lblsimsurrogate"></span><h1><span class="section-number">2.1.3.1. </span>Surrogate Modeling<a class="headerlink" href="#surrogate-modeling" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Surrogate modeling functionality of quoFEM is built upon <a class="reference external" href="https://sheffieldml.github.io/GPy/">GPy</a> library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group.</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">GP</span> <span class="pre">Surrogate</span> <span class="pre">Model</span></code> module is used to construct a Gaussian process (GP) based <strong>surrogate model</strong> that substitutes expensive computational <strong>simulation models</strong> or physical experiments. Consider a simulation model, with input random variables (or parameters) <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> and output quantity of interests, denoted as <span class="math notranslate nohighlight">\(\boldsymbol{y}=f(\boldsymbol{x})\)</span>. A surrogate model for the corresponding simulation model can be built by different user-provided information types:</p>
 <table class="colwidths-given docutils align-default" id="id2">
-<caption><span class="caption-number">Table 2.1.2.3.1 </span><span class="caption-text">User-provided information types</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.1.3.1.1 </span><span class="caption-text">User-provided information types</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 43%" />
@@ -263,7 +265,7 @@
 <p><strong>Case 2 (Import RV Dataset and run Simulation)</strong>: User provides sample population of RVs as a separate text file. quoFEM will run simulations to get QoI values and build a surrogate model.</p>
 <p><strong>Case 3 (Import both RV and QoI Dataset)</strong>:  User provides sample population of RVs and QoIs. quoFEM will not run any simulations and build a surrogate model purely based on the provided dataset.</p>
 <table class="colwidths-given docutils align-center" id="id3">
-<caption><span class="caption-number">Table 2.1.2.3.2 </span><span class="caption-text">quoFEM workflow</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.1.3.1.2 </span><span class="caption-text">quoFEM workflow</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 12%" />
 <col style="width: 29%" />
@@ -303,7 +305,7 @@
 <p>When the <strong>Training Dataset</strong> option is set to the <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code>, a simulation model should be presented in the <strong>FEM tab</strong>. The training points are sampled adaptively by the design of experiments.</p>
 <div class="align-center figure" id="id4">
 <span id="figsim1"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate1_SimUQ.jpg"><img alt="../../../../_images/Surrogate1_SimUQ.jpg" src="../../../../_images/Surrogate1_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.1 </span><span class="caption-text">Input panel for surrogate modeling</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.1 </span><span class="caption-text">Input panel for surrogate modeling</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
 <li><p><strong>Maximum Number of Model Runs</strong>: When the number of simulation runs reaches the limit, the analysis will be terminated.</p></li>
@@ -312,7 +314,7 @@
 <blockquote>
 <div><blockquote>
 <div><div class="math notranslate nohighlight" id="equation-nrmse">
-<span class="eqno">(2.1.2.3.3)<a class="headerlink" href="#equation-nrmse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+<span class="eqno">(2.1.3.1.3)<a class="headerlink" href="#equation-nrmse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
         \rm{NRMSE} ~ &amp;= \frac{\sqrt{\frac{1}{N} \sum^{N}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N}(y_k)-\min_{k=1,...,N}(y_k)}
 \end{align*}\]</div>
 </div></blockquote>
@@ -333,19 +335,19 @@
 <p>User can also activate the <strong>Advanced Options for Gaussian Process Model</strong></p>
 <div class="align-center figure" id="id5">
 <span id="figsim2"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate2_SimUQ.jpg"><img alt="../../../../_images/Surrogate2_SimUQ.jpg" src="../../../../_images/Surrogate2_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.2 </span><span class="caption-text">Sampling and Simulation - Case 1</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.2 </span><span class="caption-text">Sampling and Simulation - Case 1</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p><strong>Kernel function</strong>: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions are additionally supported.</p></li>
 <li><p><strong>Add Linear Trend Function</strong>: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is unchecked, ie. no trend function.</p></li>
 <li><p><strong>Log-space Transform of QoI</strong>: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is unchecked, ie. original physical coordinate.</p></li>
-<li><p><strong>Design of Experiments options</strong>: User may select the Adaptive DoE method and the number of the initial design of experiments (DoE) manually. The default method is “pareto” and the default number of DoE is 4 times the number of random variables.</p></li>
+<li><p><strong>Design of Experiments options</strong>: User may select the Adaptive DoE method and the number of the initial design of experiments (DoE) manually. The default is “none” and the default number of DoE is 4 times the number of random variables.</p></li>
 <li><p><strong>Nugget Variances</strong>: User may define nugget variances or bounds of the nugget variances if needed. The default is “optimize”.</p></li>
 </ul>
 <p>Additionally, users may populate the initial samples directly from data files by activating <strong>Start with Existing Dataset</strong></p>
 <div class="align-center figure" id="id6">
 <span id="figsim3"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate3_SimUQ.jpg"><img alt="../../../../_images/Surrogate3_SimUQ.jpg" src="../../../../_images/Surrogate3_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.3 </span><span class="caption-text">Input panel for surrogate modeling</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.3 </span><span class="caption-text">Input panel for surrogate modeling</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following two data files are requested:</p>
 <ul class="simple">
@@ -356,14 +358,14 @@
 <ul class="simple">
 <li><p>Each text file is a numeric table with the columns separated by a tab, space, or comma. Multiple headers can be presented following the symbol %.</p></li>
 <li><p>The number of rows corresponds to the number of training data samples.</p></li>
-<li><p>Train Points (Input): The number of columns should match the number of RVs presented in the <strong>RV tab</strong> and also match with required inputs of the simulation model provided in the <strong>FEM tab</strong>. <strong>The order of the columns should match thoses of the random variables presented in the RV tab</strong> (See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.1.2.3.4</span></a> and <a class="reference internal" href="#figsim7"><span class="std std-numref">Fig. 2.1.2.3.11</span></a> for example.)</p></li>
+<li><p>Train Points (Input): The number of columns should match the number of RVs presented in the <strong>RV tab</strong> and also match with required inputs of the simulation model provided in the <strong>FEM tab</strong>. <strong>The order of the columns should match thoses of the random variables presented in the RV tab</strong> (See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.1.3.1.4</span></a> and <a class="reference internal" href="#figsim7"><span class="std std-numref">Fig. 2.1.3.1.10</span></a> for example.)</p></li>
 <li><p>System Responses (Output): The number of columns  and the order of columns should match the QoI quantities presented in <strong>QoI tab</strong>.</p></li>
 <li><p>Both files need to be provided, and the number of columns for the two files should be the same.</p></li>
-<li><p>See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.1.2.3.4</span></a> for example input data sheets.</p></li>
+<li><p>See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.1.3.1.4</span></a> for example input data sheets.</p></li>
 </ul>
 <div class="align-center figure" id="id7">
 <span id="figsim4"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate4_SimUQ.jpg"><img alt="../../../../_images/Surrogate4_SimUQ.jpg" src="../../../../_images/Surrogate4_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.4 </span><span class="caption-text">Example of data input files</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.4 </span><span class="caption-text">Example of data input files</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -378,7 +380,7 @@
 <p>When the <strong>Training Dataset</strong> option is set to <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Data</span> <span class="pre">File</span></code> AND <strong>Get results from datafile</strong> check box is unchecked, quoFEM will run simulations to get result (QoI)  values for imported RV locations and build a surrogate model.</p>
 <div class="align-center figure" id="id8">
 <span id="figsim5"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate5_SimUQ.jpg"><img alt="../../../../_images/Surrogate5_SimUQ.jpg" src="../../../../_images/Surrogate5_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.5 </span><span class="caption-text">Import Data File - Case 2</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.5 </span><span class="caption-text">Import Data File - Case 2</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following data file is requested</p>
 <ul class="simple">
@@ -389,7 +391,7 @@
 <li><p>The text file is a numeric table with columns separated by a tab, space, or comma. Multiple headers can be presented following the symbol %.</p></li>
 <li><p>The number of rows corresponds to the number of training data samples.</p></li>
 <li><p>The number of columns should match the number of RVs presented in the FEM model in the <strong>FEM tab</strong>. The order of columns should match those presented in the <strong>RV tab</strong>.</p></li>
-<li><p>See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.1.2.3.4</span></a> (left) for an example data file.</p></li>
+<li><p>See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.1.3.1.4</span></a> (left) for an example data file.</p></li>
 </ul>
 </div>
 <div class="section" id="case-3-import-both-rv-and-qoi-dataset">
@@ -397,7 +399,7 @@
 <p>When the <strong>Training Dataset</strong> option is set to <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Data</span> <span class="pre">File</span></code> AND <strong>Get results from datafile</strong> check box is unchecked, quoFEM will not run any simulations and build a surrogate model purely based on the user-provided dataset.</p>
 <div class="align-center figure" id="id9">
 <span id="figsim6"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate6_SimUQ.jpg"><img alt="../../../../_images/Surrogate6_SimUQ.jpg" src="../../../../_images/Surrogate6_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.6 </span><span class="caption-text">Import Data File - Case 3</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.6 </span><span class="caption-text">Import Data File - Case 3</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following two data files are requested:</p>
 <ul class="simple">
@@ -410,7 +412,7 @@
 <li><p>The number of columns corresponds to the number of training data samples.</p></li>
 <li><p>The number of rows of each file respectively corresponds to the number of RVs and QoIs.</p></li>
 <li><p>Both files need to be presented, and the number of columns should correspond to each other.</p></li>
-<li><p>See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.1.2.3.4</span></a> for example data files.</p></li>
+<li><p>See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.1.3.1.4</span></a> for example data files.</p></li>
 </ul>
 <p><strong>FEM tab</strong> will be inactivated in Case 3 as model information is not required.</p>
 <div class="admonition tip">
@@ -429,28 +431,24 @@
 </div>
 <div class="align-center figure" id="id10">
 <span id="figsimmf1"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF1.png"><img alt="../../../../_images/SimUQ_surrogate_MF1.png" src="../../../../_images/SimUQ_surrogate_MF1.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.7 </span><span class="caption-text">Multi-fidelity modeling panel</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.7 </span><span class="caption-text">Multi-fidelity modeling panel</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>For each fidelity models, either model, data, or both can be provided for each fidelity level.</p>
 <div class="align-center figure" id="id11">
 <span id="figsimmf2"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF2.png"><img alt="../../../../_images/SimUQ_surrogate_MF2.png" src="../../../../_images/SimUQ_surrogate_MF2.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.8 </span><span class="caption-text">An option to define high-fidelity simulation model</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.8 </span><span class="caption-text">Providing a simulation model for the high-fidelity response</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id12">
-<span id="figsimmf3"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF2.png"><img alt="../../../../_images/SimUQ_surrogate_MF2.png" src="../../../../_images/SimUQ_surrogate_MF2.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.9 </span><span class="caption-text">An option to define high-fidelity simulation model</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="id13">
-<span id="figsimmf4"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF3.png"><img alt="../../../../_images/SimUQ_surrogate_MF3.png" src="../../../../_images/SimUQ_surrogate_MF3.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.10 </span><span class="caption-text">An option to define high-fidelity simulation model and datafile. The datafile format is same as those used for Case 3.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<span id="figsimmf3"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF3.png"><img alt="../../../../_images/SimUQ_surrogate_MF3.png" src="../../../../_images/SimUQ_surrogate_MF3.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.9 </span><span class="caption-text">Directly providing input(RV)-response(QoI) data pair of high-fidelity model</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="rv-random-variables-tab">
 <h3>RV (Random Variables) Tab<a class="headerlink" href="#rv-random-variables-tab" title="Permalink to this headline">¶</a></h3>
 <p><strong>Case 1 and 2</strong>: The bounds of RVs need to cover the domain of interest in future applications, while it should not be unnecessarily stretched. <strong>Input type</strong> and <strong>Distribution</strong> should be set to <strong>Parameters</strong> and <strong>Uniform</strong>. When dataset is provided, make sure to match the order of RVs in the <strong>RV tab</strong> to the order of data columns. Any correlation values will be ignored.</p>
-<div class="align-center figure" id="id14">
+<div class="align-center figure" id="id13">
 <span id="figsim7"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate7_SimUQ.jpg"><img alt="../../../../_images/Surrogate7_SimUQ.jpg" src="../../../../_images/Surrogate7_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.11 </span><span class="caption-text">Example of RV tab</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.10 </span><span class="caption-text">Example of RV tab</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Case 3</strong>: <strong>RV data tab</strong> will be populated automatically as soon as the dataset is imported.</p>
 </div>
@@ -472,7 +470,7 @@
 </div>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-r2">
-<span class="eqno">(2.1.2.3.2)<a class="headerlink" href="#equation-r2" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+<span class="eqno">(2.1.3.1.2)<a class="headerlink" href="#equation-r2" title="Permalink to this equation">¶</a></span>\[\begin{align*}
         R^2 &amp;= 1 - \frac{\sum^N_{k=1} (\hat{y}_k-\mu_\hat{y})^2}{\sum^N_{k=1} (\hat{y}_k-y_k)^2}
 \end{align*}\]</div>
 </div></blockquote>
@@ -483,7 +481,7 @@
 <li><p><strong>Normalized root-mean-squared-error (NRMSE)</strong></p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-nrmse">
-<span class="eqno">(2.1.2.3.3)<a class="headerlink" href="#equation-nrmse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+<span class="eqno">(2.1.3.1.3)<a class="headerlink" href="#equation-nrmse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
         \rm{NRMSE} ~ &amp;= \frac{\sqrt{\frac{1}{N_t} \sum^{N_t}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N_t}(y_k)-\min_{k=1,...,N_t}(y_k)}
 \end{align*}\]</div>
 </div></blockquote>
@@ -496,7 +494,7 @@
 <div class="line">Correlation coefficient is a statistic that measures linear correlation between two variables</div>
 </div>
 <div class="math notranslate nohighlight" id="equation-corr">
-<span class="eqno">(2.1.2.3.4)<a class="headerlink" href="#equation-corr" title="Permalink to this equation">¶</a></span>\[  \rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}\]</div>
+<span class="eqno">(2.1.3.1.4)<a class="headerlink" href="#equation-corr" title="Permalink to this equation">¶</a></span>\[  \rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}\]</div>
 <div class="line-block">
 <div class="line">where</div>
 <div class="line-block">
@@ -512,9 +510,9 @@
 </li>
 <li><p>Additionally <strong>scatter plot</strong> between the predicted and exact responses are presented: Well-trained model will form a clear diagonal line while poorly trained model are more scattered around.</p></li>
 </ul>
-<div class="align-center figure" id="id15">
+<div class="align-center figure" id="id14">
 <span id="figsim8"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate8_SimUQ.jpg"><img alt="../../../../_images/Surrogate8_SimUQ.jpg" src="../../../../_images/Surrogate8_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.12 </span><span class="caption-text">Well-trained surrogate (left) and poorly trained surrogate (right) models</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.11 </span><span class="caption-text">Well-trained surrogate (left) and poorly trained surrogate (right) models</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -532,13 +530,13 @@
 <li><p><strong>Save GP Info</strong>: This is a report generated for user reference. It contains the GP model parameter and other information. The default file name is <code class="docutils literal notranslate"><span class="pre">GPresults.out</span></code>.</p></li>
 <li><p><strong>RV Data</strong>, <strong>QoI Data</strong>:It saves the samples of RV and QoI. The default file names are <code class="docutils literal notranslate"><span class="pre">X.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">Y.txt</span></code>, respectively. <strong>IMPORTANT</strong>: To continue surrogate modeling with additional simulations, save the RV and QoI sample files using this button and import them as initial points. Refer to the ‘Start with Existing Dataset’ option in Case 1.</p></li>
 </ul>
-<div class="align-center figure" id="id16">
+<div class="align-center figure" id="id15">
 <span id="figsim9"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate9_SimUQ.jpg"><img alt="../../../../_images/Surrogate9_SimUQ.jpg" src="../../../../_images/Surrogate9_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.13 </span><span class="caption-text">Saving options</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.12 </span><span class="caption-text">Saving options</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id17">
+<div class="align-center figure" id="id16">
 <span id="figsim10"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate10_SimUQ.jpg"><img alt="../../../../_images/Surrogate10_SimUQ.jpg" src="../../../../_images/Surrogate10_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.3.14 </span><span class="caption-text">Example outputs from saving options</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.13 </span><span class="caption-text">Example outputs from saving options</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="patsialis2021"><span class="brackets"><a class="fn-backref" href="#id1">Patsialis2021</a></span></dt>
@@ -559,7 +557,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2021, The Regents of the University of California.
+        &#169; Copyright 2018-2022, The Regents of the University of California.
 
     </p>
   </div>

@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -274,8 +275,17 @@
 </div>
 <div class="section" id="build-the-applications">
 <h3><span class="section-number">1.2.2. </span>Build the applications<a class="headerlink" href="#build-the-applications" title="Permalink to this headline">¶</a></h3>
-<p>To build the applications you need to now navigate to the <strong>backend</strong> folder in the quoFEM repo. Once there you will issue the following set of commands to create a <strong>build</strong> folder, change director to that folder, install needed software using conan, and finally use <strong>cmake</strong> to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).</p>
-<p>For those developers using the Windows operating system, in a terminal or powershell window you need to type the following:</p>
+<ol class="arabic">
+<li><p>Obtain the code in the SimCenterBackendApplications repository from <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterBackendApplications">Github</a>. You can do that by using your preferred Git client/GUI or by using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command in the terminal:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">SimCenterBackendApplications</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>To build the applications you need to now navigate to the <strong>SimCenterBackendApplications</strong> folder that was created with the <strong>git clone</strong> command. Once there you will issue the following set of commands to create a <strong>build</strong> folder, change director to that folder, install needed software using conan, and finally use <strong>cmake</strong> to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).</p>
+<blockquote>
+<div><p>For those developers using the Windows operating system, in a terminal or powershell window you need to type the following:</p>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir build</span>
 <span class="go">cd build</span>
@@ -316,6 +326,9 @@
 </li>
 </ol>
 </div>
+</div></blockquote>
+</li>
+</ol>
 <p>If building and installation were successful, you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it.   The name of this folder should not be changed.</p>
 </div>
 </div>
@@ -342,7 +355,7 @@
 <div><pre class="literal-block">mkdir build
 cd build
 conan install .. --build missing
-qmake ..|short tool id|.pro
+qmake ../quoFEM.pro
 nmake</pre>
 </div></blockquote>
 <p>Linux or Mac users will type the following in a terminal window from inside the quoFEM app directory:</p>
@@ -393,7 +406,7 @@ make</pre>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2021, The Regents of the University of California.
+        &#169; Copyright 2018-2022, The Regents of the University of California.
 
     </p>
   </div>
