@@ -114,14 +114,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#version-3-0">6.1. Version 3.0</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#version-3-0-0-current">6.1.1. Version 3.0.0 (Current)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#major-version-3-0">6.1. Major Version 3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app-version-3-0-0-current">6.1.1. quoFEM app Version 3.0.0 (Current)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#version-2-4">6.2. Version 2.4</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#version-2-3">6.2.1. Version 2.3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#version-2-2">6.2.2. Version 2.2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#version-2-0">6.2.3. Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#major-version-2-0">6.2. Major Version 2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app-version-2-4-1">6.2.1. quoFEM app Version 2.4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app-version-2-4-0">6.2.2. quoFEM app Version 2.4.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app-version-2-3">6.2.3. quoFEM app Version 2.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app-version-2-2">6.2.4. quoFEM app Version 2.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app-version-2-0">6.2.5. quoFEM app Version 2.0</a></li>
 </ul>
 </li>
 </ul>
@@ -216,68 +218,1369 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release-quofem"></span><h1><span class="section-number">6. </span>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="version-3-0">
-<h2><span class="section-number">6.1. </span>Version 3.0<a class="headerlink" href="#version-3-0" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="version-3-0-0-current">
-<h3><span class="section-number">6.1.1. </span>Version 3.0.0 (Current)<a class="headerlink" href="#version-3-0-0-current" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="major-version-3-0">
+<h2><span class="section-number">6.1. </span>Major Version 3.0<a class="headerlink" href="#major-version-3-0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="app-version-3-0-0-current">
+<h3><span class="section-number">6.1.1. </span>quoFEM app Version 3.0.0 (Current)<a class="headerlink" href="#app-version-3-0-0-current" title="Permalink to this headline">¶</a></h3>
 <p><strong>Release date:</strong> March. 2022</p>
-<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
 <ol class="arabic simple">
-<li><p>New option for surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</p></li>
-<li><p>Restructured surrogate model scripts</p></li>
-<li><p>Improvements to the user interface for RV, QoI and RES tabs</p></li>
-<li><p>Improvements to the message are</p></li>
 <li><p>Major restructuring of the backend</p></li>
-<li><p>Minor bug fixes in the user interface, surrogate modeling and sensitivity analysis scripts</p></li>
 <li><p>Updated example files</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The version # was increased as changes were made to input and output formats. This means old examples will not load in this version of the tool.</p>
 </div>
+<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
+<ol class="arabic">
+<li><p><strong>UQ (Uncertainty Quantification and Optimization Options)</strong>:</p>
+<ul>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
+</ol>
+</li>
+<li><p>Parameter Estimation:</p>
+<ol class="arabic simple">
+<li><p>NL2SOL</p></li>
+<li><p>OPT++GaussNewton</p></li>
+</ol>
+</li>
+<li><p>Inverse Problem:</p>
+<ol class="arabic simple">
+<li><p>DREAM</p></li>
+</ol>
+</li>
+<li><p>Reliability:</p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+<li><p>Importance Sampling</p></li>
+</ol>
+</li>
+<li><p>Sensitivity Analysis:</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>SimCenterUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Sensitivity Analysis</p>
+<ol class="arabic simple">
+<li><p>Probability Model-based Global Sensitivity Analysis (PM-GSA)</p>
+<ol class="loweralpha simple">
+<li><p>First-order Sobol indices</p></li>
+<li><p>Group-wise Sobol indices</p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Sampling</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)
+a. Resample from existing correlated dataset of samples</p></li>
+</ol>
+</li>
+<li><p>Train Gaussian Process (GP) Surrogate Model</p>
+<ol class="arabic simple">
+<li><p>Multifidelity surrogate modeling</p></li>
+<li><p>Adaptive design of experiments options for surrogate modeling</p></li>
+<li><p>Nugget optimization options for surrogate modeling</p></li>
+</ol>
+</li>
+<li><p><span class="blue">Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</span></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>UCSD_UQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation</p>
+<ol class="arabic simple">
+<li><p>Override default log-likelihood function</p></li>
+<li><p>Override default error covariance structure</p></li>
+<li><p>Calibrate multipliers on error covariance structure</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>CustomUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Configure UQ analysis using JSON file</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>FEM (Computational Model Specification)</strong>:</p>
+<ul class="simple">
+<li><p>OpenSees</p></li>
+<li><p>FEAPpv</p></li>
+<li><p>OpenSeesPy</p></li>
+<li><p>Custom</p></li>
+<li><p>SurrogateGP</p></li>
+</ul>
+</li>
+<li><p><strong>RV (Inputs to Computational Models)</strong>:</p>
+<ul>
+<li><p>Inspect PDF of RV</p></li>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (UQ):</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+</ol>
+</li>
+<li><p>Design variables (Optimization):</p>
+<ol class="arabic simple">
+<li><p>Continuous</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>SimCenterUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+<li><p>Exponential</p></li>
+<li><p>Discrete</p></li>
+<li><p>Gamma</p></li>
+<li><p>Chi-squared</p></li>
+<li><p>Truncated exponential</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>UCSD_UQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (Priors):</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+<li><p><span class="blue">Exponential</span></p></li>
+<li><p><span class="blue">Discrete</span></p></li>
+<li><p><span class="blue">Gamma</span></p></li>
+<li><p><span class="blue">Chi-squared</span></p></li>
+<li><p><span class="blue">Truncated exponential</span></p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>EDP (Outputs from Computational Models)</strong>:</p>
+<ul class="simple">
+<li><p>Scalar quantities of interest</p></li>
+<li><p>Vector quantities of interest</p></li>
+</ul>
+</li>
+<li><p><strong>RES (Summary and Visualization of UQ Analysis Results)</strong>:</p>
+<ul>
+<li><p>Summary statistics of outputs displayed</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Mean</p></li>
+<li><p>Standard deviation</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>All output values presented in spreadsheet</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Update chart by clicking on spreadsheet columns</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Output values visualized in interactive chart</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Scatter plot</p></li>
+<li><p>Histogram</p></li>
+<li><p>Cumulative distribution</p></li>
+<li><p><span class="blue">Inspect points on chart</span></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Visualization of surrogate modeling results</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Goodness-of-fit measures</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><span class="blue">Visualization of PLoM training results</span></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><span class="blue">PCA representation error plot</span></p></li>
+<li><p><span class="blue">Diffusion maps eigenvalue plot</span></p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Remote (Support for Analysis on DesignSafe’s high performance super computer)</strong>:</p>
+<ul>
+<li><p>Dakota</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
+</ol>
+</li>
+<li><p>Reliability:</p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+<li><p>Importance Sampling</p></li>
+</ol>
+</li>
+<li><p>Sensitivity Analysis:</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>SimCenterUQ</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation</p></li>
+<li><p>PM-GSA</p></li>
+<li><p>Train GP Surrogate Model</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>UCSD_UQ</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>TMCMC</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ol>
 </div>
 </div>
-<div class="section" id="version-2-4">
-<h2><span class="section-number">6.2. </span>Version 2.4<a class="headerlink" href="#version-2-4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="major-version-2-0">
+<h2><span class="section-number">6.2. </span>Major Version 2.0<a class="headerlink" href="#major-version-2-0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="app-version-2-4-1">
+<h3><span class="section-number">6.2.1. </span>quoFEM app Version 2.4.1<a class="headerlink" href="#app-version-2-4-1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Release date:</strong> Dec. 2021</p>
+<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
+<ol class="arabic">
+<li><p><strong>UQ (Uncertainty Quantification and Optimization Options)</strong>:</p>
+<ul>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
+</ol>
+</li>
+<li><p>Parameter Estimation:</p>
+<ol class="arabic simple">
+<li><p>NL2SOL</p></li>
+<li><p>OPT++GaussNewton</p></li>
+</ol>
+</li>
+<li><p>Inverse Problem:</p>
+<ol class="arabic simple">
+<li><p>DREAM</p></li>
+</ol>
+</li>
+<li><p>Reliability:</p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+<li><p>Importance Sampling</p></li>
+</ol>
+</li>
+<li><p>Sensitivity Analysis:</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>SimCenterUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Sensitivity Analysis</p>
+<ol class="arabic simple">
+<li><p>Probability Model-based Global Sensitivity Analysis (PM-GSA)</p></li>
+</ol>
+</li>
+<li><p>Sampling</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)
+a. Resample from existing correlated dataset of samples</p></li>
+</ol>
+</li>
+<li><p>Train Gaussian Process (GP) Surrogate Model</p>
+<ol class="arabic simple">
+<li><p>Multifidelity surrogate modeling</p></li>
+<li><p>Adaptive design of experiments options for surrogate modeling</p></li>
+<li><p>Nugget optimization options for surrogate modeling</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>UCSD_UQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation</p>
+<ol class="arabic simple">
+<li><p>Override default log-likelihood function</p></li>
+<li><p>Override default error covariance structure</p></li>
+<li><p>Calibrate multipliers on error covariance structure</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>CustomUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Configure UQ analysis using JSON file</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>FEM (Computational Model Specification)</strong>:</p>
+<ul class="simple">
+<li><p>OpenSees</p></li>
+<li><p>FEAPpv</p></li>
+<li><p>OpenSeesPy</p></li>
+<li><p>Custom</p></li>
+<li><p>SurrogateGP</p></li>
+</ul>
+</li>
+<li><p><strong>RV (Inputs to Computational Models)</strong>:</p>
+<ul>
+<li><p>Inspect PDF of RV</p></li>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (UQ):</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+</ol>
+</li>
+<li><p>Design variables (Optimization):</p>
+<ol class="arabic simple">
+<li><p>Continuous</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>SimCenterUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+<li><p>Exponential</p></li>
+<li><p>Discrete</p></li>
+<li><p>Gamma</p></li>
+<li><p>Chi-squared</p></li>
+<li><p>Truncated exponential</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>UCSD_UQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (Priors):</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>EDP (Outputs from Computational Models)</strong>:</p>
+<ul class="simple">
+<li><p>Scalar quantities of interest</p></li>
+<li><p>Vector quantities of interest</p></li>
+</ul>
+</li>
+<li><p><strong>RES (Summary and Visualization of UQ Analysis Results)</strong>:</p>
+<ul>
+<li><p>Summary statistics of outputs displayed</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Mean</p></li>
+<li><p>Standard deviation</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>All output values presented in spreadsheet</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Update chart by clicking on spreadsheet columns</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Output values visualized in interactive chart</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Scatter plot</p></li>
+<li><p>Histogram</p></li>
+<li><p>Cumulative distribution</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Visualization of surrogate modeling results</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Goodness-of-fit measures</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Remote (Support for Analysis on DesignSafe’s high performance super computer)</strong>:</p>
+<ul>
+<li><p>Dakota</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
+</ol>
+</li>
+<li><p>Reliability:</p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+<li><p>Importance Sampling</p></li>
+</ol>
+</li>
+<li><p>Sensitivity Analysis:</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>SimCenterUQ</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation</p></li>
+<li><p>PM-GSA</p></li>
+<li><p>Train GP Surrogate Model</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><span class="blue">UCSD_UQ</span></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><span class="blue">TMCMC</span></p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="app-version-2-4-0">
+<h3><span class="section-number">6.2.2. </span>quoFEM app Version 2.4.0<a class="headerlink" href="#app-version-2-4-0" title="Permalink to this headline">¶</a></h3>
 <p><strong>Release date:</strong> Oct. 2021</p>
+<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
+<ol class="arabic">
+<li><p><strong>UQ (Uncertainty Quantification and Optimization Options)</strong>:</p>
+<ul>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
 <ol class="arabic simple">
-<li><p>new forward propagation method in SimCenterUQ to import existing sample sets (eg. samples obtained by MCMC)</p></li>
-<li><p>new multi-fidelity surrogate modeling option in SimCenterUQ</p></li>
-<li><p>local/remote parallel computing support for SimCenterUQ methods</p></li>
-<li><p>visualization improved for surrogate results</p></li>
-<li><p>more adaptive design of experiments options added for surrogate modeling</p></li>
-<li><p>nugget optimization options added for surrogate modeling</p></li>
-<li><p>minor improvements and bug fixes</p></li>
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Importance Sampling</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
 </ol>
-<div class="section" id="version-2-3">
-<h3><span class="section-number">6.2.1. </span>Version 2.3<a class="headerlink" href="#version-2-3" title="Permalink to this headline">¶</a></h3>
+</li>
+<li><p>Parameter Estimation:</p>
+<ol class="arabic simple">
+<li><p>NL2SOL</p></li>
+<li><p>OPT++GaussNewton</p></li>
+</ol>
+</li>
+<li><p>Inverse Problem:</p>
+<ol class="arabic simple">
+<li><p>DREAM</p></li>
+</ol>
+</li>
+<li><p>Reliability:</p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+</ol>
+</li>
+<li><p>Sensitivity Analysis:</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>SimCenterUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Sensitivity Analysis</p>
+<ol class="arabic simple">
+<li><p>Probability Model-based Global Sensitivity Analysis (PM-GSA)</p></li>
+</ol>
+</li>
+<li><p>Sampling</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p>
+<ol class="loweralpha simple">
+<li><p><span class="blue">Resample from existing correlated dataset of samples</span></p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><span class="blue">Train Gaussian Process (GP) Surrogate Model</span></p>
+<ol class="arabic simple">
+<li><p><span class="blue">Multifidelity surrogate modeling</span></p></li>
+<li><p><span class="blue">Adaptive design of experiments options for surrogate modeling</span></p></li>
+<li><p><span class="blue">Nugget optimization options for surrogate modeling</span></p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>UCSD_UQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation</p>
+<ol class="arabic simple">
+<li><p>Override default log-likelihood function</p></li>
+<li><p>Override default error covariance structure</p></li>
+<li><p>Calibrate multipliers on error covariance structure</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>CustomUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Configure UQ analysis using JSON file</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>FEM (Computational Model Specification)</strong>:</p>
+<ul class="simple">
+<li><p>OpenSees</p></li>
+<li><p>FEAPpv</p></li>
+<li><p>OpenSeesPy</p></li>
+<li><p>Custom</p></li>
+<li><p><span class="blue">SurrogateGP</span></p></li>
+</ul>
+</li>
+<li><p><strong>RV (Inputs to Computational Models)</strong>:</p>
+<ul>
+<li><p>Inspect PDF of RV</p></li>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (UQ):</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+</ol>
+</li>
+<li><p>Design variables (Optimization):</p>
+<ol class="arabic simple">
+<li><p>Continuous</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>SimCenterUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+<li><p>Exponential</p></li>
+<li><p>Discrete</p></li>
+<li><p>Gamma</p></li>
+<li><p>Chi-squared</p></li>
+<li><p>Truncated exponential</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>UCSD_UQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (Priors):</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>EDP (Outputs from Computational Models)</strong>:</p>
+<ul class="simple">
+<li><p>Scalar quantities of interest</p></li>
+<li><p>Vector quantities of interest</p></li>
+</ul>
+</li>
+<li><p><strong>RES (Summary and Visualization of UQ Analysis Results)</strong>:</p>
+<ul>
+<li><p>Summary statistics of outputs displayed</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Mean</p></li>
+<li><p>Standard deviation</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>All output values presented in spreadsheet</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Update chart by clicking on spreadsheet columns</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Output values visualized in interactive chart</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Scatter plot</p></li>
+<li><p>Histogram</p></li>
+<li><p>Cumulative distribution</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><span class="blue">Visualization of surrogate modeling results</span></p></li>
+</ul>
+</li>
+<li><p><strong>Remote (Support for Analysis on DesignSafe’s high performance super computer)</strong>:</p>
+<ul>
+<li><p>Dakota</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Importance Sampling</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
+</ol>
+</li>
+<li><p>Reliability:</p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+</ol>
+</li>
+<li><p>Sensitivity Analysis:</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><span class="blue">SimCenterUQ</span></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><span class="blue">Forward Uncertainty Propagation</span></p></li>
+<li><p><span class="blue">PM-GSA</span></p></li>
+<li><p><span class="blue">Train GP Surrogate Model</span></p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="app-version-2-3">
+<h3><span class="section-number">6.2.3. </span>quoFEM app Version 2.3<a class="headerlink" href="#app-version-2-3" title="Permalink to this headline">¶</a></h3>
 <p><strong>Release date:</strong> May 2021</p>
+<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
+<ol class="arabic">
+<li><p><strong>UQ (Uncertainty Quantification and Optimization Options)</strong>:</p>
+<ul>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
 <ol class="arabic simple">
-<li><p>Data for calibration methods (DREAM, TMCMC, parameter estimation) required #. to be provided in a file</p></li>
-<li><p>Option to supply a covariance structure for error in Bayesian calibration methods</p></li>
-<li><p>Option to calibrate values of multipliers on error covariance structure in Bayesian calibration methods</p></li>
-<li><p>Log-likelihood function specification made optional for TMCMC</p></li>
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Importance Sampling</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
+</ol>
+</li>
+<li><p>Parameter Estimation:</p>
+<ol class="arabic simple">
+<li><p>NL2SOL</p></li>
+<li><p>OPT++GaussNewton</p></li>
+</ol>
+</li>
+<li><p>Inverse Problem:</p>
+<ol class="arabic simple">
+<li><p>DREAM</p></li>
+</ol>
+</li>
+<li><p>Reliability:</p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+</ol>
+</li>
+<li><p>Sensitivity Analysis:</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>SimCenterUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Sensitivity Analysis</p>
+<ol class="arabic simple">
+<li><p>Probability Model-based Global Sensitivity Analysis (PM-GSA)</p></li>
+</ol>
+</li>
+<li><p>Sampling</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>UCSD_UQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation</p>
+<ol class="arabic simple">
+<li><p><span class="blue">Override default log-likelihood function</span></p></li>
+<li><p><span class="blue">Override default error covariance structure</span></p></li>
+<li><p><span class="blue">Calibrate multipliers on error covariance structure</span></p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>CustomUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Configure UQ analysis using JSON file</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>FEM (Computational Model Specification)</strong>:</p>
+<ul class="simple">
+<li><p>OpenSees</p></li>
+<li><p>FEAPpv</p></li>
+<li><p>OpenSeesPy</p></li>
+<li><p>Custom</p></li>
+</ul>
+</li>
+<li><p><strong>RV (Inputs to Computational Models)</strong>:</p>
+<ul>
+<li><p>Inspect PDF of RV</p></li>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (UQ):</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+</ol>
+</li>
+<li><p>Design variables (Optimization):</p>
+<ol class="arabic simple">
+<li><p>Continuous</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>SimCenterUQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+<li><p>Exponential</p></li>
+<li><p>Discrete</p></li>
+<li><p>Gamma</p></li>
+<li><p>Chi-squared</p></li>
+<li><p>Truncated exponential</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>UCSD_UQ:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (Priors):</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>EDP (Outputs from Computational Models)</strong>:</p>
+<ul class="simple">
+<li><p>Scalar quantities of interest</p></li>
+<li><p><span class="blue">Vector quantities of interest</span></p></li>
+</ul>
+</li>
+<li><p><strong>RES (Summary and Visualization of UQ Analysis Results)</strong>:</p>
+<ul>
+<li><p>Summary statistics of outputs displayed</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Mean</p></li>
+<li><p>Standard deviation</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>All output values presented in spreadsheet</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Update chart by clicking on spreadsheet columns</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Output values visualized in interactive chart</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Scatter plot</p></li>
+<li><p>Histogram</p></li>
+<li><p>Cumulative distribution</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Remote (Support for Analysis on DesignSafe’s high performance super computer)</strong>:</p>
+<ul>
+<li><p>Dakota</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Importance Sampling</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
+</ol>
+</li>
+<li><p>Reliability:</p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+</ol>
+</li>
+<li><p>Sensitivity Analysis:</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
 </ol>
 </div>
-<div class="section" id="version-2-2">
-<h3><span class="section-number">6.2.2. </span>Version 2.2<a class="headerlink" href="#version-2-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="app-version-2-2">
+<h3><span class="section-number">6.2.4. </span>quoFEM app Version 2.2<a class="headerlink" href="#app-version-2-2" title="Permalink to this headline">¶</a></h3>
 <p><strong>Release date:</strong> Oct. 2020</p>
+<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
+<ol class="arabic">
+<li><p><strong>UQ (Uncertainty Quantification and Optimization Options)</strong>:</p>
+<ul>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
 <ol class="arabic simple">
-<li><p>Included new sensitivity method: probability model-based global sensitivity analysis (PM-GSA)</p></li>
-<li><p>Included new reliability method: transitional Markov chain Monte Carlo (TMCMC)</p></li>
-<li><p>Option to allow user to include their own UQ engine</p></li>
-<li><p>Option to allow user to include their own FEM engine</p></li>
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Importance Sampling</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
+</ol>
+</li>
+<li><p>Parameter Estimation:</p>
+<ol class="arabic simple">
+<li><p>NL2SOL</p></li>
+<li><p>OPT++GaussNewton</p></li>
+</ol>
+</li>
+<li><p>Inverse Problem:</p>
+<ol class="arabic simple">
+<li><p>DREAM</p></li>
+</ol>
+</li>
+<li><p>Reliability:</p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+</ol>
+</li>
+<li><p>Sensitivity Analysis:</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><span class="blue">SimCenterUQ</span>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><span class="blue">Sensitivity Analysis</span></p>
+<ol class="arabic simple">
+<li><p><span class="blue">Probability Model-based Global Sensitivity Analysis (PM-GSA)</span></p></li>
+</ol>
+</li>
+<li><p><span class="blue">Sampling</span></p>
+<ol class="arabic simple">
+<li><p><span class="blue">Monte Carlo Sampling (MCS)</span></p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><span class="blue">UCSD_UQ</span>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><span class="blue">Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation</span></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><span class="blue">CustomUQ</span>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><span class="blue">Configure UQ analysis using JSON file</span></p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>FEM (Computational Model Specification)</strong>:</p>
+<ul class="simple">
+<li><p>OpenSees</p></li>
+<li><p>FEAPpv</p></li>
+<li><p><span class="blue">OpenSeesPy</span></p></li>
+<li><p><span class="blue">Custom</span></p></li>
+</ul>
+</li>
+<li><p><strong>RV (Inputs to Computational Models)</strong>:</p>
+<ul>
+<li><p><span class="blue">Inspect PDF of RV</span></p></li>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (UQ):</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+</ol>
+</li>
+<li><p>Design variables (Optimization):</p>
+<ol class="arabic simple">
+<li><p>Continuous</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><span class="blue">SimCenterUQ</span>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><span class="blue">Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.</span></p>
+<ol class="arabic simple">
+<li><p><span class="blue">Normal</span></p></li>
+<li><p><span class="blue">Lognormal</span></p></li>
+<li><p><span class="blue">Beta</span></p></li>
+<li><p><span class="blue">Uniform</span></p></li>
+<li><p><span class="blue">Weibull</span></p></li>
+<li><p><span class="blue">Gumbel</span></p></li>
+<li><p><span class="blue">Exponential</span></p></li>
+<li><p><span class="blue">Discrete</span></p></li>
+<li><p><span class="blue">Gamma</span></p></li>
+<li><p><span class="blue">Chi-squared</span></p></li>
+<li><p><span class="blue">Truncated exponential</span></p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><span class="blue">UCSD_UQ</span>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><span class="blue">Random variables (Priors)</span>:</p>
+<ol class="arabic simple">
+<li><p><span class="blue">Normal</span></p></li>
+<li><p><span class="blue">Lognormal</span></p></li>
+<li><p><span class="blue">Beta</span></p></li>
+<li><p><span class="blue">Uniform</span></p></li>
+<li><p><span class="blue">Weibull</span></p></li>
+<li><p><span class="blue">Gumbel</span></p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>EDP (Outputs from Computational Models)</strong>:</p>
+<ul class="simple">
+<li><p>Scalar quantities of interest</p></li>
+</ul>
+</li>
+<li><p><strong>RES (Summary and Visualization of UQ Analysis Results)</strong>:</p>
+<ul>
+<li><p>Summary statistics of outputs displayed</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Mean</p></li>
+<li><p>Standard deviation</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>All output values presented in spreadsheet</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Update chart by clicking on spreadsheet columns</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Output values visualized in interactive chart</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Scatter plot</p></li>
+<li><p>Histogram</p></li>
+<li><p>Cumulative distribution</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Remote (Support for Analysis on DesignSafe’s high performance super computer)</strong>:</p>
+<ul>
+<li><p>Dakota</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Importance Sampling</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
+</ol>
+</li>
+<li><p>Reliability:</p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+</ol>
+</li>
+<li><p>Sensitivity Analysis:</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
 </ol>
 </div>
-<div class="section" id="version-2-0">
-<h3><span class="section-number">6.2.3. </span>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="app-version-2-0">
+<h3><span class="section-number">6.2.5. </span>quoFEM app Version 2.0<a class="headerlink" href="#app-version-2-0" title="Permalink to this headline">¶</a></h3>
 <p><strong>Release date:</strong> Sept. 2019</p>
+<p>This is a SimCenter research application whose purpose is to allow users to perform uncertainty quantification and optimization utilizing existing finite element applictions.</p>
+<p>It will run the computations locally utilizing laptop/desktop or remotely utilizing the computational resources at TACC made available through DesignSafe-CI.</p>
+<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
+<ol class="arabic">
+<li><p><strong>UQ (Uncertainty Quantification and Optimization Options)</strong>:</p>
+<ul>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
 <ol class="arabic simple">
-<li><p>forward uncertainty: Importance Sampling, Gaussian Process Regression</p></li>
-<li><p>reliability: FORM and SORM</p></li>
-<li><p>sensitivity with Monte Carlo or LHS</p></li>
-<li><p>Parameter Estimation</p></li>
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p><span class="blue">Importance Sampling</span></p></li>
+<li><p><span class="blue">Gaussian Process Regression</span></p></li>
+<li><p><span class="blue">Polynomial Chaos Expansion</span></p></li>
 </ol>
+</li>
+<li><p>Parameter Estimation:</p>
+<ol class="arabic simple">
+<li><p>NL2SOL</p></li>
+<li><p>OPT++GaussNewton</p></li>
+</ol>
+</li>
+<li><p>Inverse Problem:</p>
+<ol class="arabic simple">
+<li><p>DREAM</p></li>
+</ol>
+</li>
+<li><p><span class="blue">Reliability</span>:</p>
+<ol class="arabic simple">
+<li><p><span class="blue">FORM</span></p></li>
+<li><p><span class="blue">SORM</span></p></li>
+</ol>
+</li>
+<li><p><span class="blue">Sensitivity Analysis</span>:</p>
+<ol class="arabic simple">
+<li><p><span class="blue">MCS</span></p></li>
+<li><p><span class="blue">LHS</span></p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>FEM (Computational Model Specification)</strong>:</p>
+<ul class="simple">
+<li><p>OpenSees</p></li>
+<li><p>FEAPpv</p></li>
+</ul>
+</li>
+<li><p><strong>RV (Inputs to Computational Models)</strong>:</p>
+<ul>
+<li><p>Dakota:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Random variables (UQ):</p>
+<ol class="arabic simple">
+<li><p>Normal</p></li>
+<li><p>Lognormal</p></li>
+<li><p>Beta</p></li>
+<li><p>Uniform</p></li>
+<li><p>Weibull</p></li>
+<li><p>Gumbel</p></li>
+</ol>
+</li>
+<li><p>Design variables (Optimization):</p>
+<ol class="arabic simple">
+<li><p>Continuous</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>EDP (Outputs from Computational Models)</strong>:</p>
+<ul class="simple">
+<li><p>Scalar quantities of interest</p></li>
+</ul>
+</li>
+<li><p><strong>RES (Summary and Visualization of UQ Analysis Results)</strong>:</p>
+<ul>
+<li><p>Summary statistics of outputs displayed</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Mean</p></li>
+<li><p>Standard deviation</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>All output values presented in spreadsheet</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Update chart by clicking on spreadsheet columns</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Output values visualized in interactive chart</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Scatter plot</p></li>
+<li><p>Histogram</p></li>
+<li><p>Cumulative distribution</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Remote (Support for Analysis on DesignSafe’s high performance super computer)</strong>:</p>
+<ul>
+<li><p>Dakota</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Forward Uncertainty Propagation:</p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p><span class="blue">Importance Sampling</span></p></li>
+<li><p><span class="blue">Gaussian Process Regression</span></p></li>
+<li><p><span class="blue">Polynomial Chaos Expansion</span></p></li>
+</ol>
+</li>
+<li><p><span class="blue">Reliability</span>:</p>
+<ol class="arabic simple">
+<li><p><span class="blue">FORM</span></p></li>
+<li><p><span class="blue">SORM</span></p></li>
+</ol>
+</li>
+<li><p><span class="blue">Sensitivity Analysis</span>:</p>
+<ol class="arabic simple">
+<li><p><span class="blue">MCS</span></p></li>
+<li><p><span class="blue">LHS</span></p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<p>We encourage new feature suggestions, please write to us at <a class="reference internal" href="../../../bugs.html#lblbugs"><span class="std std-ref">Bugs &amp; Feature Requests</span></a>.</p>
 </div>
 </div>
 </div>

@@ -126,6 +126,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#probability-distribution">2.3.1. Probability distribution</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#dakota-engine">2.3.1.1. Dakota Engine</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#simcenteruq-engine">2.3.1.2. SimCenterUQ Engine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ucsd-uq-engine">2.3.1.3. UCSD-UQ Engine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#customuq-engine">2.3.1.4. CustomUQ Engine</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#correlation-matrix">2.3.2. Correlation matrix</a></li>
@@ -359,13 +361,27 @@
 </dd>
 </dl>
 </div>
+<div class="section" id="ucsd-uq-engine">
+<h3><span class="section-number">2.3.1.3. </span>UCSD-UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h3>
+<p>The same set of distributions that are supported by the SimCenterUQ engine are supported in the UCSD-UQ engine. Currently, the distributions can only be defined through their <strong>Parameters</strong>. Correlation between the random variables is not supported in the UCSD-UQ engine.</p>
+</div>
+<div class="section" id="customuq-engine">
+<h3><span class="section-number">2.3.1.4. </span>CustomUQ Engine<a class="headerlink" href="#customuq-engine" title="Permalink to this headline">¶</a></h3>
+<p>The same set of distributions and correlation options as that supported by the SimCenterUQ engine can also be selected when the CustomUQ engine is used. Additionally, two options - <strong>User defined</strong> and <strong>User defined vector</strong> are also available.</p>
+<p>When the <strong>User defined</strong> option is chosen, the user must provide the path to a script file that makes the desired functionality for the CustomUQ engine available, such as methods to draw samples from the user-defined distribution, or to evaluate the probability density of the user-defined distribution at specified sample points, etc.</p>
+<p>When the <strong>User defined vector</strong> option is chosen, in addition to the path to the script file, the user must also enter the number of components in the random vector.</p>
+<div class="align-center figure" id="id6">
+<a class="reference internal image-reference" href="../../../../_images/userDefinedDists.png"><img alt="../../../../_images/userDefinedDists.png" src="../../../../_images/userDefinedDists.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.4.1 </span><span class="caption-text">Specifying user-defined distributions under CustomUQ engine</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 </div>
 <div class="section" id="correlation-matrix">
 <h2><span class="section-number">2.3.2. </span>Correlation matrix<a class="headerlink" href="#correlation-matrix" title="Permalink to this headline">¶</a></h2>
 <p>Correlation coefficients between each variable can be defined by clicking the <code class="docutils literal notranslate"><span class="pre">Correlation</span> <span class="pre">Matrix</span></code> button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified.</p>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../_images/rv4.png"><img alt="../../../../_images/rv4.png" src="../../../../_images/rv4.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.2.1 </span><span class="caption-text">Example of a valid correlation matrix</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.1 </span><span class="caption-text">Example of a valid correlation matrix</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once the <code class="docutils literal notranslate"><span class="pre">OK</span></code> button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not <strong>positive definite</strong>, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.</p>
 <div class="admonition note">
