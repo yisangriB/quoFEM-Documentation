@@ -112,9 +112,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -133,7 +134,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">4.9. Custom UQ for UQpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">4.10. Bayesian Calibration of Material Model Parameters</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#plom-modeling">4.11.1. PLoM Modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#about-plom">4.11.1. About PLoM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement">4.11.2. Problem Statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plom-modeling">4.11.3. PLoM Modeling</a></li>
 </ul>
 </li>
 </ul>
@@ -234,6 +237,20 @@
 </tr>
 </tbody>
 </table>
+<div class="section" id="about-plom">
+<h2><span class="section-number">4.11.1. </span>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this headline">¶</a></h2>
+<p><strong>PLoM</strong> is an open source python package that implements the algorithm of <strong>Probabilistic
+Learning on Manifolds</strong> with and without constraints (<a class="reference internal" href="#soizeghanem2016" id="id1"><span>[SoizeGhanem2016]</span></a>, <a class="reference internal" href="#soizeghanem2020" id="id2"><span>[SoizeGhanem2020]</span></a>)
+for <em>generating realizations of a random vector in a finite Euclidean space that are
+statistically consistent with a given dataset of that vector</em>.</p>
+<p>PLoM functionality in SimCenter tools is built upon <a class="reference external" href="https://github.com/sanjayg0/PLoM">PLoM</a>
+package (available under MIT license), an opensource python package for Probabilistic
+Learning on Manifolds <a class="reference internal" href="#zhonggualgovindjee2021" id="id3"><span>[ZhongGualGovindjee2021]</span></a>. The package mainly consists of python
+modules and invokes a dynamic library for more efficiently computing the gradient of
+the potential, and can be imported and run on Linux, macOS, and Windows platform.</p>
+</div>
+<div class="section" id="problem-statement">
+<h2><span class="section-number">4.11.2. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
 <p>Consider the problem simulating response of a two-dimensional truss structure with uncertain material properties shown in the following figure.
 The goal of the exercise is to demonstrate the use of <code class="docutils literal notranslate"><span class="pre">PLoM</span> <span class="pre">model</span></code> method under <code class="docutils literal notranslate"><span class="pre">SimCenterUQ</span></code>.</p>
 <div class="figure align-center">
@@ -355,8 +372,9 @@ The goal of the exercise is to demonstrate the use of <code class="docutils lite
 <span class="nb">close</span> <span class="nv">$resultFile</span>
 </pre></div>
 </div>
+</div>
 <div class="section" id="plom-modeling">
-<h2><span class="section-number">4.11.1. </span>PLoM Modeling<a class="headerlink" href="#plom-modeling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.11.3. </span>PLoM Modeling<a class="headerlink" href="#plom-modeling" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, select <code class="docutils literal notranslate"><span class="pre">SimCenterUQ</span></code> as the UQ engine.
 Select <code class="docutils literal notranslate"><span class="pre">PLoM</span> <span class="pre">Model</span></code> for the UQ method, and use <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code> as the Training Dataset.
@@ -392,13 +410,13 @@ For the new sample number ratio, input 5 by which 250 new realizations will be c
 <li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch the job. When done the <strong>RES</strong> panel will be selected and the results will be displayed.
 The landing page of <strong>RES</strong> will show summarize the training information including training sampling number along with two PLoM model trucation plots for PCA and KDE.</p></li>
 </ol>
-<div class="align-center figure" id="id1">
+<div class="align-center figure" id="id4">
 <img alt="../../../../../_images/RES1.png" src="../../../../../_images/RES1.png" />
-<p class="caption"><span class="caption-number">Fig. 4.11.1.1 </span><span class="caption-text">PCA representation error versus the PCA eigenvalues overlapped by the truncating PCA eigenvalue used in training</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.11.3.1 </span><span class="caption-text">PCA representation error versus the PCA eigenvalues overlapped by the truncating PCA eigenvalue used in training</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id5">
 <img alt="../../../../../_images/RES2.png" src="../../../../../_images/RES2.png" />
-<p class="caption"><span class="caption-number">Fig. 4.11.1.2 </span><span class="caption-text">Diffusion map eigenvalue by components overlapped by the truncating eigenvalue used in training</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.11.3.2 </span><span class="caption-text">Diffusion map eigenvalue by components overlapped by the truncating eigenvalue used in training</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>If the user selects the <strong>Data</strong> tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data.
 Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data. If a singular column of
@@ -411,6 +429,17 @@ page would bring up a dialogue window for saving the model file to a user-define
 <div class="align-center figure">
 <img alt="../../../../../_images/RES4.png" src="../../../../../_images/RES4.png" />
 </div>
+<dl class="citation">
+<dt class="label" id="soizeghanem2016"><span class="brackets"><a class="fn-backref" href="#id1">SoizeGhanem2016</a></span></dt>
+<dd><p>Soize, C., &amp; Ghanem, R. (2016). Data-driven probability concentration and sampling on manifold. Journal of Computational Physics, 321, 242-258.</p>
+</dd>
+<dt class="label" id="soizeghanem2020"><span class="brackets"><a class="fn-backref" href="#id2">SoizeGhanem2020</a></span></dt>
+<dd><p>Soize, C., &amp; Ghanem, R. (2020). Physics‐constrained non‐Gaussian probabilistic learning on manifolds. International Journal for Numerical Methods in Engineering, 121(1), 110-145.</p>
+</dd>
+<dt class="label" id="zhonggualgovindjee2021"><span class="brackets"><a class="fn-backref" href="#id3">ZhongGualGovindjee2021</a></span></dt>
+<dd><p>Zhong, K., Gual, J., and Govindjee, S., PLoM python package v1.0, <a class="reference external" href="https://github.com/sanjayg0/PLoM">https://github.com/sanjayg0/PLoM</a> (2021).</p>
+</dd>
+</dl>
 </div>
 </div>
 
