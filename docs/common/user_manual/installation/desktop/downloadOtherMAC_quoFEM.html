@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>MacOS Users &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -202,18 +204,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="macos-users">
-<span id="lbldownloadothermac"></span><h1>MacOS Users<a class="headerlink" href="#macos-users" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="install-location">
-<h2>Install Location<a class="headerlink" href="#install-location" title="Permalink to this headline">¶</a></h2>
+  <section id="macos-users">
+<span id="lbldownloadothermac"></span><h1>MacOS Users<a class="headerlink" href="#macos-users" title="Permalink to this heading">¶</a></h1>
+<section id="install-location">
+<h2>Install Location<a class="headerlink" href="#install-location" title="Permalink to this heading">¶</a></h2>
 <p>The following set of instructions assumes all files will be placed in the <strong>bin</strong> folder in your home directory. You can of course place them anywhere you want, you just need to make appropriate changes to the <strong>env PATH</strong> settings discussed later. If you wish to follow our placement strategy, inside this <strong>bin</strong> folder create <strong>3</strong> additional folders named <strong>dakota</strong>, <strong>OpenSees</strong> and <strong>FEAPpv</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Placement of terminal applications in your home <strong>bin</strong> folder is common practice for the terminal applications on a <strong>MacOS</strong> system. It is legacy practice from the operating systems Linux heritage.</p>
 </div>
-</div>
-<div class="section" id="python">
-<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this heading">¶</a></h2>
 <p>The Mac comes with Python pre-installed, which is currently the somewhat
 dated version 2.7. We recommend installing Python 3.7 from <a class="reference external" href="https://www.python.org/downloads/mac-osx">Python.org</a> . We recommend installing using the
 <strong>macOS 64-bit installer</strong>. The installer used to place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH, Version 3.8 does not appear to do so anymore, see the note below.</p>
@@ -223,10 +225,12 @@ dated version 2.7. We recommend installing Python 3.7 from <a class="reference e
 <li><p>We use the <a class="reference external" href="https://www.python.org/downloads/windows">Python.org</a> installation over others, due to it’s simplicity of install.</p></li>
 <li><p>In the current installation of Python it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: <strong>Update Shell Profile.command.sh</strong> and <strong>Install CertificateCommand.sh</strong>.</p></li>
 </ol>
-<div class="align-center figure" id="id6">
+<figure class="align-center" id="id6">
 <img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" />
-<p class="caption"><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <p>Once Python is installed, you need to extend it by installing the following packages: <strong>numpy</strong>, <strong>scipy</strong>, and <strong>pandas</strong>. To install these packages, start a terminal window and type the following instructions:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">numpy</span>
@@ -254,14 +258,14 @@ dated version 2.7. We recommend installing Python 3.7 from <a class="reference e
 </div>
 </div></blockquote>
 </div>
-</div>
-<div class="section" id="id3">
-<h2>Dakota<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id3">
+<h2>Dakota<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://dakota.sandia.gov/">Dakota</a> is the default UQ engine used by the quoFEM app that is publicly available from the <a class="reference external" href="https://dakota.sandia.gov/download.html">Dakota Download</a> page. The download page offers an extensive list of downloadable files. You can narrow this down to the file to be selected by selecting <strong>MacOS</strong> in the <cite>Platform</cite>, <strong>6.10</strong> in the <cite>Release</cite>, and <strong>Command Line Only</strong> for the <cite>interface type</cite>. In the <cite>Public</cite>
 area you should now only have a single option, click on the link to download <strong>Dakota</strong>. When you extract the files that you download, they will all be contained in a single folder. Rename this folder <strong>dakota-6.10.0</strong> and move that folder to your <strong>bin/dakota</strong> folder.</p>
-</div>
-<div class="section" id="id4">
-<h2>OpenSees<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id4">
+<h2>OpenSees<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://opensees.berkeley.edu">OpenSees</a> is one of the FEM engines used by the quoFEM app that is publicly available from the <a class="reference external" href="https://opensees.berkeley.edu/OpenSees/user/download.php">OpenSees Download</a> page. To download the <strong>OpenSees</strong> you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page under the section <strong>Mac Version</strong> is a table with two links: one for the <strong>OpenSees</strong> and also a link to <strong>Tcl</strong>, whose libraries OpenSees needs on your computer to run. You will need to follow both links to download both applications.</p>
 <dl class="simple">
 <dt>Steps to Install OpenSees on a Mac:</dt><dd><ol class="arabic simple">
@@ -274,13 +278,13 @@ area you should now only have a single option, click on the link to download <st
 <p class="admonition-title">Note</p>
 <p>The additional requirement of installing <strong>Tcl</strong> is about to be removed from the <strong>OpenSees</strong> installation process. If the table for the <strong>Mac Download</strong> does not contain a second link, it has been removed and no <strong>Tcl</strong> install is required.</p>
 </div>
-</div>
-<div class="section" id="id5">
-<h2>FEAPpv<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id5">
+<h2>FEAPpv<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <p><strong>FEAPpv</strong> is the another FEM engine used by the quoFEM app that is publicly available from the <a class="reference external" href="http://projects.ce.berkeley.edu/feap/feappv/">FEAPpv</a> page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install <strong>FEAPpv</strong> you must download the source code and follow the build instructions on the <strong>Source Code Download and Compile Instructions</strong> section of the <a class="reference external" href="http://projects.ce.berkeley.edu/feap/feappv/">FEAPpv</a> page.</p>
-</div>
-<div class="section" id="openseespy">
-<h2>OpenSeesPy<a class="headerlink" href="#openseespy" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="openseespy">
+<h2>OpenSeesPy<a class="headerlink" href="#openseespy" title="Permalink to this heading">¶</a></h2>
 <p><strong>OpenSeesPy</strong> is the another FEM engine used by the quoFEM app that is publicly available using pip.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">OpenSeesPy</span>
 </pre></div>
@@ -296,9 +300,9 @@ area you should now only have a single option, click on the link to download <st
 <li><p>In addition, if the intent is to run locally, only those applications you intend to use need to be installed, i.e. if you only intend to run <strong>FEAPpv</strong> then <strong>OpenSees</strong> and <strong>OpenSeesPy</strong> need not be installed. The other applications are only needed if you want to use them. If not installed and you select that application, the backend application will fail when you press the <code class="docutils literal notranslate"><span class="pre">Run</span></code> button.</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="edit-your-shell-file">
-<h2>Edit Your Shell file<a class="headerlink" href="#edit-your-shell-file" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="edit-your-shell-file">
+<h2>Edit Your Shell file<a class="headerlink" href="#edit-your-shell-file" title="Permalink to this heading">¶</a></h2>
 <p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e. there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <strong>PATH</strong>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
 <p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
 <p>To find which shell program you are using when you issue commands inside the terminal window, type the following in a terminal window:</p>
@@ -315,9 +319,9 @@ export PATH=$HOME/bin/dakota-6.10.0/bin:$PATH
 export PYTHONPATH=$HOME/bin/dakota-6.10.0/share/dakota/Python
 </pre></div>
 </div>
-</div>
-<div class="section" id="test-the-install-of-python-opensees-dakota">
-<h2>Test the Install of Python, OpenSees &amp; Dakota<a class="headerlink" href="#test-the-install-of-python-opensees-dakota" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="test-the-install-of-python-opensees-dakota">
+<h2>Test the Install of Python, OpenSees &amp; Dakota<a class="headerlink" href="#test-the-install-of-python-opensees-dakota" title="Permalink to this heading">¶</a></h2>
 <dl>
 <dt>Steps to Test the Installation of the Applications:</dt><dd><ol class="arabic simple">
 <li><p>Open a terminal windows (type <code class="docutils literal notranslate"><span class="pre">terminal</span></code> in spotlight search)</p></li>
@@ -346,10 +350,12 @@ export PYTHONPATH=$HOME/bin/dakota-6.10.0/share/dakota/Python
 <p class="admonition-title">Note</p>
 <p>Apple, in the latest release of their operating system, MacOS 10.16 Catalina, has changed the default working of Gatekeeper. Gatekeeper, first introduced in OS X Mountain Lion, is a Mac security feature that helps protect your Mac from Malware and other malicious software. Gatekeeper checks to make sure the application is safe to run by checking it against the list of apps that Apple has vetted and approved for the Apple Mac Store and/or approved by Apple even if not offered through the app store. In previous versions of MacOS, Gatekeeper had three security level options: App Store, App Store and Identified Developers, and Anywhere. Anywhere has been removed and this will cause problems with Dakota.</p>
 <p>Apple has greatly increased security with <strong>Catalina</strong> and now by default terminal applications can no longer run if they are downloaded from the internet and not signed by a recognized Apple developer. To over come this issue, before you start issuing the above commands in a terminal, open <strong>System Preferences/Security and Privacy</strong>. As you issue the commands, click the <strong>Cancel</strong> button in the window that pops warning you the <strong>application cannot be opened because the Developer cannot be verified</strong> up and then click the button <strong>Allow Anayway</strong> that now appears beside the application name in the <strong>Security an Privacy</strong> window, as shown in figure below. Rerun the application and it should now work without the warning window popping up.</p>
-<div class="align-center figure" id="id7">
+<figure class="align-center" id="id7">
 <img alt="../../../../_images/macSecurity.png" src="../../../../_images/macSecurity.png" />
-<p class="caption"><span class="caption-text">Catalina: Security and Privacy Panel for Unsigned Terminal Applications.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Catalina: Security and Privacy Panel for Unsigned Terminal Applications.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -361,8 +367,8 @@ sudo spctl --master-enable
 </div>
 <p>This will temporarily disable gatekeeper (basically setting Gatekeeper options to Anywhere), allow the Dakota application and it’s <code class="docutils literal notranslate"><span class="pre">.dylib</span></code> files to be registered as safe, and then turn Gatekeeper options back to default.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

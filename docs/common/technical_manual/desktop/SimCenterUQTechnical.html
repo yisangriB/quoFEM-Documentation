@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1.2. Methods in SimCenterUQ Engine &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -136,6 +138,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#global-sensitivity-analysis">Global sensitivity analysis</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#variance-based-global-sensitivity-indices">Variance-based global sensitivity indices</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#estimation-of-sobol-indices">Estimation of Sobol indices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dealing-with-high-dimensional-responses-with-pca-psa">Dealing with high-dimensional responses with PCA-PSA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregated-sensitivity-index">Aggregated sensitivity index</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#global-surrogate-modeling">Global surrogate modeling</a><ul>
@@ -227,15 +231,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="methods-in-simcenteruq-engine">
-<h1><span class="section-number">1.2. </span>Methods in SimCenterUQ Engine<a class="headerlink" href="#methods-in-simcenteruq-engine" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="nataf-transformation">
-<h2>Nataf transformation<a class="headerlink" href="#nataf-transformation" title="Permalink to this headline">¶</a></h2>
+  <section id="methods-in-simcenteruq-engine">
+<span id="lbluqsimtechnical"></span><h1><span class="section-number">1.2. </span>Methods in SimCenterUQ Engine<a class="headerlink" href="#methods-in-simcenteruq-engine" title="Permalink to this heading">¶</a></h1>
+<section id="nataf-transformation">
+<h2>Nataf transformation<a class="headerlink" href="#nataf-transformation" title="Permalink to this heading">¶</a></h2>
 <p>Nataf transformation is introduced to standardize the interface between UQ methods and Simulation models. Nataf converts the samples in the physical space (X-space) into the standard normal samples (U-space), <span class="math notranslate nohighlight">\(T:\rm{X} \rightarrow \rm{U}\)</span>, and vice versa, during UQ computations <a class="reference internal" href="#liu1986" id="id1"><span>[Liu1986]</span></a>. Specifically, the latter transformation, called inverse Nataf <span class="math notranslate nohighlight">\(T^{-1}\)</span>, is performed each time when UQ engine generates sample points and calls external workflow applications, so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits <strong>marginal distributions</strong> of each physical variables and their <strong>correlation coefficients</strong>.</p>
-<div class="align-center figure" id="id12">
+<figure class="align-center" id="id16">
 <span id="fignataf1"></span><a class="reference internal image-reference" href="../../../_images/SimCenterNataf1.png"><img alt="../../../_images/SimCenterNataf1.png" src="../../../_images/SimCenterNataf1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.1 </span><span class="caption-text">Standardization of random variables using Nataf transformation</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2.1 </span><span class="caption-text">Standardization of random variables using Nataf transformation</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>(Ongoing implementation) All the custom UQ algorithm need to prepare for the standard Gaussian input while quoFEM intertwines with the simulation model to receive standard normal input u and gives physical y=G(u) back.</p>
 <p>For the Nataf trasformation, the SimCenterUQ engine borrows a part of the distribution class structure developed by ERA group in the Technical University of Munich <a class="reference internal" href="#era2019" id="id2"><span>[ERA2019]</span></a></p>
 <dl class="citation">
@@ -246,51 +252,73 @@
 <dd><p>Engineering Risk Analysis Group, Technische Universität München: <a class="reference external" href="https://www.bgu.tum.de/era/software/eradist/">https://www.bgu.tum.de/era/software/eradist/</a> (Matlab, python programs and documentations)</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="global-sensitivity-analysis">
-<h2>Global sensitivity analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="variance-based-global-sensitivity-indices">
-<h3>Variance-based global sensitivity indices<a class="headerlink" href="#variance-based-global-sensitivity-indices" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="global-sensitivity-analysis">
+<h2>Global sensitivity analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this heading">¶</a></h2>
+<section id="variance-based-global-sensitivity-indices">
+<h3>Variance-based global sensitivity indices<a class="headerlink" href="#variance-based-global-sensitivity-indices" title="Permalink to this heading">¶</a></h3>
 <p>Global sensitivity analysis (GSA) is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. GSA helps users to understand the overall impact of different sources of uncertainties, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.</p>
-<div class="align-center figure" id="id13">
+<figure class="align-center" id="id17">
 <span id="figsensitivity1"></span><a class="reference internal image-reference" href="../../../_images/SimCenterSensitivity1.png"><img alt="../../../_images/SimCenterSensitivity1.png" src="../../../_images/SimCenterSensitivity1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.2 </span><span class="caption-text">Concept of global sensitivity analysis</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2.2 </span><span class="caption-text">Concept of global sensitivity analysis</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>Sobol indices are widely used variance-based global sensitivity measures. It has two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> finds the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account.</p>
 <p>Given the output of model <span class="math notranslate nohighlight">\(y=g(\boldsymbol{x})\)</span> and input random variables <span class="math notranslate nohighlight">\(\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}\)</span>, the first-order main and total effect indices of each input variable is defined as</p>
 <div class="math notranslate nohighlight" id="equation-si">
 <span class="eqno">(1.2.1)<a class="headerlink" href="#equation-si" title="Permalink to this equation">¶</a></span>\[S_i=\frac{\text{Var}_{x_i}[\text{E}_{\boldsymbol{x}_{\sim i}}[y|x_i]]}{\text{Var}[y]}, \qquad i=1, \cdots ,d\]</div>
 <div class="math notranslate nohighlight" id="equation-sit">
 <span class="eqno">(1.2.2)<a class="headerlink" href="#equation-sit" title="Permalink to this equation">¶</a></span>\[S_i^T=\frac{\text{E}_{\boldsymbol{x}_{\sim i}}[\text{Var}_{x_i}[y|\boldsymbol{x}_{\sim i}]]}{\text{Var}[y]},  \qquad  i=1, \cdots ,d\]</div>
-<p>respectively, where <span class="math notranslate nohighlight">\(\boldsymbol{x}_{\sim i}\)</span> indicates the set of all input variables except <span class="math notranslate nohighlight">\(x_i\)</span>. It is noteworthy that in both equations, the variance operator <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> captures only the part of uncertainty associated with <span class="math notranslate nohighlight">\(x_i\)</span>, while the mean operator <span class="math notranslate nohighlight">\(\text{E}_{\boldsymbol{x}_{\sim i}}[\cdot]\)</span> averages out all remaining uncertainties. From the definitions, two indices theoretically have values between zero and one. Eq. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-si">(2.1.2.2.1)</a> can also be understood intuitively. For example, if the QoI is insensitive to <span class="math notranslate nohighlight">\(x_i\)</span>, the term inside <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> is nearly constant and <span class="math notranslate nohighlight">\(S_i\)</span> approaches zero. On the other hand, when one single variable <span class="math notranslate nohighlight">\(x_i\)</span> dominates QoI, inside <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> is approximately the same as <span class="math notranslate nohighlight">\(y\)</span>, and thus <span class="math notranslate nohighlight">\(S_i\)</span> approaches one. Eq. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-sit">(2.1.2.2.2)</a> can be understood in similar ways. The second-order main effect index that provides the pair-wise interaction effect is defined as</p>
+<p>respectively, where <span class="math notranslate nohighlight">\(\boldsymbol{x}_{\sim i}\)</span> indicates the set of all input variables except <span class="math notranslate nohighlight">\(x_i\)</span>. It is noteworthy that in both equations, the variance operator <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> captures only the part of uncertainty associated with <span class="math notranslate nohighlight">\(x_i\)</span>, while the mean operator <span class="math notranslate nohighlight">\(\text{E}_{\boldsymbol{x}_{\sim i}}[\cdot]\)</span> averages out all remaining uncertainties. From the definitions, two indices theoretically have values between zero and one. Eq. <a class="reference internal" href="#equation-si">(1.2.1)</a> can also be understood intuitively. For example, if the QoI is insensitive to <span class="math notranslate nohighlight">\(x_i\)</span>, the term inside <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> is nearly constant and <span class="math notranslate nohighlight">\(S_i\)</span> approaches zero. On the other hand, when one single variable <span class="math notranslate nohighlight">\(x_i\)</span> dominates QoI, inside <span class="math notranslate nohighlight">\(\text{Var}_{x_i}[\cdot]\)</span> is approximately the same as <span class="math notranslate nohighlight">\(y\)</span>, and thus <span class="math notranslate nohighlight">\(S_i\)</span> approaches one. Eq. <a class="reference internal" href="#equation-sit">(1.2.2)</a> can be understood in similar ways. The second-order main effect index that provides the pair-wise interaction effect is defined as</p>
 <div class="math notranslate nohighlight" id="equation-sij">
 <span class="eqno">(1.2.3)<a class="headerlink" href="#equation-sij" title="Permalink to this equation">¶</a></span>\[S_{ij}=\frac{\text{Var}_{x_i,x_j}[\text{E}_{\boldsymbol{x}\sim ij}[y|x_i,x_j]]}{\text{Var}[y]} - S_i - S_j,  \qquad  i,j=1, \cdots ,d\]</div>
 <p>where <span class="math notranslate nohighlight">\(\boldsymbol{x}_{\sim ij}\)</span> indicates the set of all input variables except <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span>. The higher-order indices are derived likewise. Theoretically, When all the input variables are uncorrelated to each other, the following equality holds.</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-simcenteruqtechnical-0">
 <span class="eqno">(1.2.4)<a class="headerlink" href="#equation-common-technical-manual-desktop-simcenteruqtechnical-0" title="Permalink to this equation">¶</a></span>\[\sum^d_{i=1} S_i + \sum^d_{i&lt;j} S_{ij} + \cdots + S_{12 \cdots d} = 1\]</div>
-</div>
-<div class="section" id="estimation-of-sobol-indices">
-<h3>Estimation of Sobol indices<a class="headerlink" href="#estimation-of-sobol-indices" title="Permalink to this headline">¶</a></h3>
-<p>GSA is typically computationally expensive. High computation cost attributes to the multiple integrations (<span class="math notranslate nohighlight">\(d\)</span>-dimensional) associated with the variance and expectation operations shown in Eqs. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-si">(2.1.2.2.1)</a> and <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-sit">(2.1.2.2.2)</a>. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based GSA (PM-GSA) framework developed by <a class="reference internal" href="#hu2019" id="id3"><span>[Hu2019]</span></a>.</p>
+</section>
+<section id="estimation-of-sobol-indices">
+<h3>Estimation of Sobol indices<a class="headerlink" href="#estimation-of-sobol-indices" title="Permalink to this heading">¶</a></h3>
+<p>GSA is typically computationally expensive. High computation cost attributes to the multiple integrations (<span class="math notranslate nohighlight">\(d\)</span>-dimensional) associated with the variance and expectation operations shown in Eqs. <a class="reference internal" href="#equation-si">(1.2.1)</a> and <a class="reference internal" href="#equation-sit">(1.2.2)</a>. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based GSA (PM-GSA) framework developed by <a class="reference internal" href="#hu2019" id="id3"><span>[Hu2019]</span></a>.</p>
 <p>The framework first conducts ordinary MCS to obtain input-output data pairs. Then by extracting only a subset dimension of the dataset, the probability distribution of a reduced dimension can be approximated and used for estimating the Sobol index. Among different probability distribution models introduced in <a class="reference internal" href="#hu2019" id="id4"><span>[Hu2019]</span></a>  the Gaussian mixture model is implemented in this engine to approximate this lower dimension distribution. For example, to identify 1st order main Sobol index for a variable <span class="math notranslate nohighlight">\(x_i\)</span>, a bivariate Gaussian mixture model is fitted for the joint probability distribution of <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, i.e.</p>
 <div class="math notranslate nohighlight" id="equation-gm">
 <span class="eqno">(1.2.5)<a class="headerlink" href="#equation-gm" title="Permalink to this equation">¶</a></span>\[f_{x_i,y}(x_i,y) \simeq f_{x_i,y}^{GM} (x_i,y)\]</div>
-<p>using expectation-maximization (EM) algorithm. The mean operation Eq. <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSensitivity.html#equation-si">(2.1.2.2.1)</a> is then derived analytically from the Gaussian mixture model, while variance is approximated to be the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in <a class="reference internal" href="#hu2019" id="id5"><span>[Hu2019]</span></a>. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations.</p>
-<div class="align-center figure" id="id14">
+<p>using expectation-maximization (EM) algorithm. The mean operation Eq. <a class="reference internal" href="#equation-si">(1.2.1)</a> is then derived analytically from the Gaussian mixture model, while variance is approximated to be the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in <a class="reference internal" href="#hu2019" id="id5"><span>[Hu2019]</span></a>. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations.</p>
+<figure class="align-center" id="id18">
 <span id="figsensitivity2"></span><a class="reference internal image-reference" href="../../../_images/SimCenterSensitivity2.png"><img alt="../../../_images/SimCenterSensitivity2.png" src="../../../_images/SimCenterSensitivity2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.3 </span><span class="caption-text">Data-driven global sensitivity analysis by Hu and Mahadevan (2019)</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2.3 </span><span class="caption-text">Data-driven global sensitivity analysis by Hu and Mahadevan (2019)</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <dl class="citation">
 <dt class="label" id="hu2019"><span class="brackets">Hu2019</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>,<a href="#id5">3</a>)</span></dt>
 <dd><p>Hu, Z. and Mahadevan, S. (2019). Probability models for data-driven global sensitivity analysis. <em>Reliability Engineering &amp; System Safety</em>, 187, 40-57.</p>
 </dd>
 </dl>
-</div>
-</div>
-<div class="section" id="global-surrogate-modeling">
-<h2>Global surrogate modeling<a class="headerlink" href="#global-surrogate-modeling" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="introduction-to-gaussian-process-regression-kriging">
-<h3>Introduction to Gaussian process regression (Kriging)<a class="headerlink" href="#introduction-to-gaussian-process-regression-kriging" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dealing-with-high-dimensional-responses-with-pca-psa">
+<h3>Dealing with high-dimensional responses with PCA-PSA<a class="headerlink" href="#dealing-with-high-dimensional-responses-with-pca-psa" title="Permalink to this heading">¶</a></h3>
+<p>When the number of the quantities of interest (QoI) is very large, it is computationally cumbersome to perform above Gaussian fitting independently for each QoI. To promote efficient global sensitivity analysis for such cases, SimCenterUQ provides the ‘principal component analysis-based PM-GSA’ module, which is referred to as PCA-PSA <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0023/README.html#jung2022" id="id6"><span>[Jung2022]</span></a>. In this method, the dimension of QoI is first reduced by principal component analysis (PCA), and the conditional variance required to calculate the Sobol indices (the numerators in <a class="reference internal" href="#equation-si">(1.2.1)</a> and <a class="reference internal" href="#equation-sit">(1.2.2)</a>) is approximately reconstructed from those of the conditional variance/covariance information of the reduced dimension variables. If the high-dimensional QoI has a linear data structure that be reconstructed with a small number of principal components, the computational gain of this approach can be significant. For example, suppose QoI can be reconstructed using 10 principal components. In that case, the Gaussian mixture fitting, which is the most time-consuming step of PM-GSA apart from FEM analysis, needs to be repeated only 10 times per random variable or group of random variables regardless of the actual dimension of QoI. <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0023/README.html#qfem-0023"><span class="std std-ref">This example</span></a> shows how PCA-PSA can facilitate efficient global sensitivity analysis for a field (time series) QoI.</p>
+<dl class="citation">
+<dt class="label" id="jung2022"><span class="brackets">Jung2022</span></dt>
+<dd><p>To be added</p>
+</dd>
+</dl>
+</section>
+<section id="aggregated-sensitivity-index">
+<h3>Aggregated sensitivity index<a class="headerlink" href="#aggregated-sensitivity-index" title="Permalink to this heading">¶</a></h3>
+<p>When the quantities of interest (QoI) are given as a vector or field variable, aggregated sensitivity index can provide insight into the system’s overall sensitivity characteristics. The aggregated sensitivity index achieves this by calculating the weighted average of the sensitivity indices of each QoI component, where the weights are proportional to the variances of the components <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0023/README.html#jung2022" id="id7"><span>[Jung2022]</span></a>. Component sensitivity indices are useful for visualization, while the aggregated sensitivity index gives instant intuition on how much each variable influences the system response overall. See <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0023/README.html#qfem-0023"><span class="std std-ref">this example</span></a>.</p>
+<dl class="citation">
+<dt class="label" id="id8"><span class="brackets">Jung2022</span></dt>
+<dd><p>To be added</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="global-surrogate-modeling">
+<h2>Global surrogate modeling<a class="headerlink" href="#global-surrogate-modeling" title="Permalink to this heading">¶</a></h2>
+<section id="introduction-to-gaussian-process-regression-kriging">
+<h3>Introduction to Gaussian process regression (Kriging)<a class="headerlink" href="#introduction-to-gaussian-process-regression-kriging" title="Permalink to this heading">¶</a></h3>
 <p>Global surrogate modeling aims to build a regression model that reproduces the outcomes of computationally expensive high fidelity simulations.</p>
 <div class="math notranslate nohighlight" id="equation-gp">
 <span class="eqno">(1.2.9)<a class="headerlink" href="#equation-gp" title="Permalink to this equation">¶</a></span>\[\boldsymbol{y}=f^{\rm{ex}} (\boldsymbol{x}) \simeq f^{\rm{sur}} (\boldsymbol{x})\]</div>
@@ -302,40 +330,44 @@
 <span class="eqno">(1.2.8)<a class="headerlink" href="#equation-gpresidual" title="Permalink to this equation">¶</a></span>\[z(\boldsymbol{x}) \sim GP (\boldsymbol{x};0,K(\boldsymbol{x_i},\boldsymbol{x_j}))\]</div>
 <p>Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic parameters <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\beta}}\)</span> and <span class="math notranslate nohighlight">\(\hat{K}(x_i,x_j)\)</span> that best match the observations, and (2) to predict the response at an arbitrary sample point <span class="math notranslate nohighlight">\(\boldsymbol{x^*}\)</span> as a conditional distribution of <span class="math notranslate nohighlight">\(f(\boldsymbol{y^*}|\boldsymbol{y^{obs}})\)</span>, exploiting the fact that
 <span class="math notranslate nohighlight">\(\boldsymbol{y^*}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{y^{obs}}\)</span> are joint Gaussian distribution with known mean and covariances.</p>
-<div class="align-center figure" id="id15">
+<figure class="align-center" id="id19">
 <span id="figsensitivity2-2"></span><a class="reference internal image-reference" href="../../../_images/SimCenterSurrogate.png"><img alt="../../../_images/SimCenterSurrogate.png" src="../../../_images/SimCenterSurrogate.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.4 </span><span class="caption-text">Surrogate model for UQ/Optimization</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2.4 </span><span class="caption-text">Surrogate model for UQ/Optimization</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <ul>
 <li><p><strong>Dealing with noisy measurements</strong></p>
-<div class="line-block">
+<blockquote>
+<div><div class="line-block">
 <div class="line">In natural hazard applications, often the exact observations of <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> are not available and only the noisy observations <span class="math notranslate nohighlight">\(\boldsymbol{y^{obs}}\)</span> are available:</div>
 </div>
-<blockquote>
-<div><div class="math notranslate nohighlight" id="equation-gp">
+<div class="math notranslate nohighlight" id="equation-gp">
 <span class="eqno">(1.2.9)<a class="headerlink" href="#equation-gp" title="Permalink to this equation">¶</a></span>\[        \boldsymbol{y^{obs}}=\boldsymbol{y} + \boldsymbol{\varepsilon} =f^{\rm{ex}} (\boldsymbol{x}) + \boldsymbol{\varepsilon}\]</div>
-</div></blockquote>
 <div class="line-block">
 <div class="line">where a common assumption is that the measurement noise, <span class="math notranslate nohighlight">\(\boldsymbol{\varepsilon}\)</span>, follows a white Gaussian distribution (i.e. <span class="math notranslate nohighlight">\(\varepsilon\)</span> is unbiased, follows a normal distribution with variance <span class="math notranslate nohighlight">\(\tau\)</span>, and is independent of other observation noises). Additionally since the noise level is often unknown, <span class="math notranslate nohighlight">\(\tau\)</span> is also calibrated along with <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(K(x_i,x_j)\)</span>. In such settings, surrogate model estimation will not interpolate the observation outputs <span class="math notranslate nohighlight">\(\boldsymbol{y^{obs}}\)</span>, but instead make a regression curve passing through the optimal estimation of the true underlying outputs <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span>. Additional to the measurement noise, a mild amount of inherent uncertainty in the simulation model (mild compared to a global trend) can be accounted for in terms of the same noise parameter <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</div>
 </div>
+</div></blockquote>
 </li>
 <li><p><strong>Nugget effect: artificial noise for numerical stability</strong></p>
 <blockquote>
 <div><div class="line-block">
-<div class="line">The constructed Kriging surrogate model is always smooth and continuous as it is a realization of a Gaussian process, while the actual response may be non-smooth, discontinuous, or highly variant that goes beyond the flexibility of the surrogate model. Especially when the measurements are noiseless, the Gaussian process training can suffer from numerical instability. In such ill-posed problems, the introduction of a small amount of artificial noise, often referred to as <em>nugget</em>, may significantly improve the algorithmic stability. In the quoFEM, the nugget parameter is automatically optimized in the loop along with the other parameters. (Note: technically, nugget effect and measurement noise do not coincide in the mathematical formulation as the nugget effect conserves the <em>interpolating</em> property while measurement noise does not <a class="reference internal" href="#roustant2012" id="id6"><span>[Roustant2012]</span></a>. However, this program treats the nugget as an artificial noise as their outcomes are often practically indistinguishable.)</div>
+<div class="line">The constructed Kriging surrogate model is always smooth and continuous as it is a realization of a Gaussian process, while the actual response may be non-smooth, discontinuous, or highly variant that goes beyond the flexibility of the surrogate model. Especially when the measurements are noiseless, the Gaussian process training can suffer from numerical instability. In such ill-posed problems, the introduction of a small amount of artificial noise, often referred to as <em>nugget</em>, may significantly improve the algorithmic stability. In the quoFEM, the nugget parameter is automatically optimized in the loop along with the other parameters. (Note: technically, nugget effect and measurement noise do not coincide in the mathematical formulation as the nugget effect conserves the <em>interpolating</em> property while measurement noise does not <a class="reference internal" href="#roustant2012" id="id9"><span>[Roustant2012]</span></a>. However, this program treats the nugget as an artificial noise as their outcomes are often practically indistinguishable.)</div>
 </div>
 </div></blockquote>
 </li>
 </ul>
-<div class="align-center figure" id="id16">
+<figure class="align-center" id="id20">
 <span id="figgp1-2"></span><a class="reference internal image-reference" href="../../../_images/GPnugget.png"><img alt="../../../_images/GPnugget.png" src="../../../_images/GPnugget.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.5 </span><span class="caption-text">Gaussian process regression with and without measurement noise ( or nugget effect)</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="construction-of-surrogate-model">
-<h3>Construction of surrogate model<a class="headerlink" href="#construction-of-surrogate-model" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="input-output-settings">
-<h4>Input-Output settings<a class="headerlink" href="#input-output-settings" title="Permalink to this headline">¶</a></h4>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2.5 </span><span class="caption-text">Gaussian process regression with and without measurement noise ( or nugget effect)</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="construction-of-surrogate-model">
+<h3>Construction of surrogate model<a class="headerlink" href="#construction-of-surrogate-model" title="Permalink to this heading">¶</a></h3>
+<section id="input-output-settings">
+<h4>Input-Output settings<a class="headerlink" href="#input-output-settings" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -382,9 +414,9 @@
 <li><p><strong>Case2</strong> : users can provide pairs of input-output dataset</p></li>
 <li><p><strong>Case3</strong> : users can provide input data points and a simulation model</p></li>
 </ul>
-</div>
-<div class="section" id="kernel-and-basis-functions">
-<h4>Kernel and basis functions<a class="headerlink" href="#kernel-and-basis-functions" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="kernel-and-basis-functions">
+<h4>Kernel and basis functions<a class="headerlink" href="#kernel-and-basis-functions" title="Permalink to this heading">¶</a></h4>
 <p>The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical form of the kernel is first assumed, and its parameters are calibrated based on the observation data. Followings are some of the popular stationary covariance kernels.</p>
 <ul>
 <li><p><strong>Radial-basis function (RBF)</strong></p>
@@ -400,10 +432,12 @@
 </div>
 </li>
 </ul>
-<div class="align-center figure" id="id17">
+<figure class="align-center" id="id21">
 <span id="figgp2"></span><a class="reference internal image-reference" href="../../../_images/GPtmp.png"><img alt="../../../_images/GPtmp.png" src="../../../_images/GPtmp.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.6 </span><span class="caption-text">Gaussian process regression for different correlation length parameters</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2.6 </span><span class="caption-text">Gaussian process regression for different correlation length parameters</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <ul>
 <li><p><strong>Exponential</strong></p>
 <div class="line-block">
@@ -416,7 +450,7 @@
 </li>
 <li><p><strong>Matern Class</strong></p>
 <div class="line-block">
-<div class="line">Matern class of covariance function is another popular choice. It has a positive shape  parameter often denotoed as <span class="math notranslate nohighlight">\(\nu\)</span> which additionally determines the roughness of the parameters. For Kriging regression, <span class="math notranslate nohighlight">\(\nu=5/2\)</span> and <span class="math notranslate nohighlight">\(\nu=3/2\)</span> is known to be generally applicable choices considering roughness property and the simplicity of the functional form. <a class="reference internal" href="#rasmussen2006" id="id7"><span>[Rasmussen2006]</span></a></div>
+<div class="line">Matern class of covariance function is another popular choice. It has a positive shape  parameter often denotoed as <span class="math notranslate nohighlight">\(\nu\)</span> which additionally determines the roughness of the parameters. For Kriging regression, <span class="math notranslate nohighlight">\(\nu=5/2\)</span> and <span class="math notranslate nohighlight">\(\nu=3/2\)</span> is known to be generally applicable choices considering roughness property and the simplicity of the functional form. <a class="reference internal" href="#rasmussen2006" id="id10"><span>[Rasmussen2006]</span></a></div>
 </div>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-matern1">
@@ -435,28 +469,32 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 </div>
 </li>
 </ul>
-<p>Once the kernel form is selected, the parameters are calibrated to maximize the likelihood of observations within the Gaussian process model. The default optimization function embedded in GPy is limited-memory BFGS with bound constraints (L-BFGS-B) algorithm from <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.minimize-lbfgsb.html">Python/Numpy</a> package. <a class="reference internal" href="#shaffieldml2012" id="id8"><span>[ShaffieldML2012]</span></a></p>
-</div>
-</div>
-<div class="section" id="adaptive-design-of-experiments-doe">
-<h3>Adaptive Design of Experiments (DoE)<a class="headerlink" href="#adaptive-design-of-experiments-doe" title="Permalink to this headline">¶</a></h3>
+<p>Once the kernel form is selected, the parameters are calibrated to maximize the likelihood of observations within the Gaussian process model. The default optimization function embedded in GPy is limited-memory BFGS with bound constraints (L-BFGS-B) algorithm from <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.minimize-lbfgsb.html">Python/Numpy</a> package. <a class="reference internal" href="#shaffieldml2012" id="id11"><span>[ShaffieldML2012]</span></a></p>
+</section>
+</section>
+<section id="adaptive-design-of-experiments-doe">
+<h3>Adaptive Design of Experiments (DoE)<a class="headerlink" href="#adaptive-design-of-experiments-doe" title="Permalink to this heading">¶</a></h3>
 <p>In the case where bounds of input variables and a simulator model is provided (Case 1), model evaluation points can be selected by space-filling methods, e.g. Latin hyper cube sampling (LHS). This is non-adaptive Design of Experiments (DoE) in a sense that the whole samples can be located before running any simulations. On the other hand, the number of model evaluations can be reduced by selecting evaluation points <em>adaptively</em> after each run to get the best model improvements.</p>
-<div class="align-center figure" id="id18">
+<figure class="align-center" id="id22">
 <span id="figgp-doe1"></span><a class="reference internal image-reference" href="../../../_images/GPtmp1.png"><img alt="../../../_images/GPtmp1.png" src="../../../_images/GPtmp1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.7 </span><span class="caption-text">Two optimizations in design of experiments</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2.7 </span><span class="caption-text">Two optimizations in design of experiments</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal DoE. Therefore, it is noted that the adaptive DoE is efficient only when model evaluation time is significantly greater than the optimization time.</p>
-<p><strong>Adaptive DoE algorithm: IMSEw, MMSEw [Kyprioti2020]_</strong></p>
-<p>The optimal design points can be selected by finding arguments that maximize (or minimize) the so-called score function. The score function in global surrogate modeling is often designed to predict the amount of reduced (or remaining) variance and bias after adding the new sample points. While there are many variations of the score function <a class="reference internal" href="#fuhg2020" id="id9"><span>[Fuhg2020]</span></a>, in quoFEM, the modified integrated mean squared error (IMSE) from Kyprioti <em>et al.</em> (2020) is introduced as:</p>
+<p><strong>Adaptive DoE algorithm: IMSEw, MMSEw</strong> (<a class="reference internal" href="#kyprioti2020" id="id12"><span>[Kyprioti2020]</span></a>)</p>
+<p>The optimal design points can be selected by finding arguments that maximize (or minimize) the so-called score function. The score function in global surrogate modeling is often designed to predict the amount of reduced (or remaining) variance and bias after adding the new sample points. While there are many variations of the score function <a class="reference internal" href="#fuhg2020" id="id13"><span>[Fuhg2020]</span></a>, in quoFEM, the modified integrated mean squared error (IMSE) from Kyprioti <em>et al.</em> (2020) is introduced as:</p>
 <div class="math notranslate nohighlight" id="equation-imse">
 <span class="eqno">(1.2.14)<a class="headerlink" href="#equation-imse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
         \rm{IMSE}_w(\boldsymbol{X},\boldsymbol{x_{new}}) &amp;= \int_{\boldsymbol{X_d}} \phi^\rho\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})dx
 \end{align*}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\phi\)</span> is bias measure from leave-one-out cross validation (LOOCV) analysis, <span class="math notranslate nohighlight">\(\rho\)</span> is a weighting coefficient, and <span class="math notranslate nohighlight">\(\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})\)</span> is the predictive variance after additional observation <span class="math notranslate nohighlight">\(x_{new}\)</span> <a class="reference internal" href="#kyprioti2020" id="id10"><span>[Kyprioti2020]</span></a>. To find the sample location that gives minimum IMSE value, two step screening-clustering algorithm is implemented.</p>
-<div class="align-center figure" id="id19">
+<p>where <span class="math notranslate nohighlight">\(\phi\)</span> is bias measure from leave-one-out cross validation (LOOCV) analysis, <span class="math notranslate nohighlight">\(\rho\)</span> is a weighting coefficient, and <span class="math notranslate nohighlight">\(\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})\)</span> is the predictive variance after additional observation <span class="math notranslate nohighlight">\(x_{new}\)</span> <a class="reference internal" href="#kyprioti2020" id="id14"><span>[Kyprioti2020]</span></a>. To find the sample location that gives minimum IMSE value, two step screening-clustering algorithm is implemented.</p>
+<figure class="align-center" id="id23">
 <span id="figgp-doe2"></span><a class="reference internal image-reference" href="../../../_images/GPtmp2.png"><img alt="../../../_images/GPtmp2.png" src="../../../_images/GPtmp2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.8 </span><span class="caption-text">Adaptive DoE procedure by Kyprioti et al. (2020) <a class="reference internal" href="#kyprioti2020" id="id11"><span>[Kyprioti2020]</span></a></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2.8 </span><span class="caption-text">Adaptive DoE procedure by Kyprioti et al. (2020) <a class="reference internal" href="#kyprioti2020" id="id15"><span>[Kyprioti2020]</span></a></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p><strong>Adaptive DoE algorithm: Pareto</strong></p>
 <p>Alternatively, multiple design points can be selected by multi-objective optimization scheme. The variance mesure and bias measure defined by</p>
 <div class="math notranslate nohighlight" id="equation-pareto">
@@ -469,9 +507,9 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 <li><p><strong>Count</strong>: number of model evaluation exceeds a predefined count constraint</p></li>
 <li><p><strong>Accuracy</strong>: accuracy measure of the model meets a predefined convergence level</p></li>
 </ul>
-</div>
-<div class="section" id="verification-of-surrogate-model">
-<h3>Verification of surrogate model<a class="headerlink" href="#verification-of-surrogate-model" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="verification-of-surrogate-model">
+<h3>Verification of surrogate model<a class="headerlink" href="#verification-of-surrogate-model" title="Permalink to this heading">¶</a></h3>
 <p>Once the training is completed, the following three verification measures are presented based on leave-one-out cross-validation (LOOCV) error estimation.</p>
 <ul>
 <li><p><strong>Leave-one-out cross-validation (LOOCV)</strong></p>
@@ -529,29 +567,29 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 <p>Since these measures are calculated from the cross-validation predictions rather than external validation predictions, they can be biased, particularly when a <strong>highly localized nonlinear range exists in the actual response surface</strong> and those regions are not covered by the training samples.</p>
 </div>
 <dl class="citation">
-<dt class="label" id="rasmussen2006"><span class="brackets"><a class="fn-backref" href="#id7">Rasmussen2006</a></span></dt>
+<dt class="label" id="rasmussen2006"><span class="brackets"><a class="fn-backref" href="#id10">Rasmussen2006</a></span></dt>
 <dd><p>Rasmussen, C.E. and Williams, C.K. (2006). <em>Gaussian Process for Machine Learning</em>. Cambridge, MA: The MIT Press, 2006 (available on-line at <a class="reference external" href="http://www.gaussianprocess.org/gpml/">http://www.gaussianprocess.org/gpml/</a>)</p>
 </dd>
-<dt class="label" id="kyprioti2020"><span class="brackets">Kyprioti2020</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id11">2</a>)</span></dt>
+<dt class="label" id="kyprioti2020"><span class="brackets">Kyprioti2020</span><span class="fn-backref">(<a href="#id12">1</a>,<a href="#id14">2</a>,<a href="#id15">3</a>)</span></dt>
 <dd><p>Kyprioti, A.P., Zhang, J., and Taflanidis, A.A. (2020). Adaptive design of experiments for global Kriging metamodeling through cross-validation information. <em>Structural and Multidisciplinary Optimization</em>, 1-23.</p>
 </dd>
-<dt class="label" id="shaffieldml2012"><span class="brackets"><a class="fn-backref" href="#id8">ShaffieldML2012</a></span></dt>
+<dt class="label" id="shaffieldml2012"><span class="brackets"><a class="fn-backref" href="#id11">ShaffieldML2012</a></span></dt>
 <dd><p>GPy, A Gaussian process framework in python, <a class="reference external" href="http://github.com/SheffieldML/GPy">http://github.com/SheffieldML/GPy</a>, since 2012</p>
 </dd>
 <dt class="label" id="sacks1989"><span class="brackets">Sacks1989</span></dt>
 <dd><p>Sacks J.,Welch W.J.,Mitchell T.J.,Wynn H.P. (1989). Design and analysis of
 computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 </dd>
-<dt class="label" id="fuhg2020"><span class="brackets"><a class="fn-backref" href="#id9">Fuhg2020</a></span></dt>
+<dt class="label" id="fuhg2020"><span class="brackets"><a class="fn-backref" href="#id13">Fuhg2020</a></span></dt>
 <dd><p>Fuhg, J.N., Fau, A., and Nackenhorst, U. (2020). State-of-the-art and comparative review of adaptive sampling methods for kriging. <em>Archives of Computational Methods in Engineering</em>, 1-59.</p>
 </dd>
-<dt class="label" id="roustant2012"><span class="brackets"><a class="fn-backref" href="#id6">Roustant2012</a></span></dt>
+<dt class="label" id="roustant2012"><span class="brackets"><a class="fn-backref" href="#id9">Roustant2012</a></span></dt>
 <dd><p>Roustant, O., Ginsbourger, D., and Deville, Y. (2012). DiceKriging, DiceOptim: Two R packages for the analysis of computer experiments by kriging-based metamodeling and optimization. <em>Journal of Statistical Software</em>, 21:1–55, 2012</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

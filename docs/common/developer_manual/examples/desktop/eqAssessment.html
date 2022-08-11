@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Earthquake Assessment &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -202,14 +204,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="earthquake-assessment">
-<span id="lbleqassessment"></span><h1>Earthquake Assessment<a class="headerlink" href="#earthquake-assessment" title="Permalink to this headline">¶</a></h1>
+  <section id="earthquake-assessment">
+<span id="lbleqassessment"></span><h1>Earthquake Assessment<a class="headerlink" href="#earthquake-assessment" title="Permalink to this heading">¶</a></h1>
 <p>This example is a small-scale regional earthquake risk assessment which performs response simulation and damage/loss estimation for a group of 20 buildings. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>. The buildings are distributed in space in a 4x5 grid, within a 3x3 grid of event sites. At each event site, 5 ground motion records of similar intensity are assigned.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/regionalearthquakeexample.png" src="../../../../_images/regionalearthquakeexample.png" />
-</div>
-<div class="section" id="inputs">
-<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+</figure>
+<section id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
 <p>The example input files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/9d1170da0a9ec0e257f8cfcbae5c671f/example_eq.zip"><code class="xref download docutils literal notranslate"><span class="pre">example_eq.zip</span></code></a>. For more information about required input files, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">Inputs</span></a>.</p>
 <ol class="arabic simple">
 <li><p><strong>Configuration file</strong>: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.</p></li>
@@ -602,9 +604,9 @@
 <ol class="arabic simple" start="3">
 <li><p><strong>Regional Mapping Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/regionalMapApps.html#lblregionalmapapp"><span class="std std-ref">NearestNeighborEvents</span></a> regional mapping application. From the parameters set in the configuration file, the algorithm is set to randomly select 5 samples of ground motion records from the 4 nearest neighbors for each building asset.</p></li>
 </ol>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/regionalearthquakeexample_annot.png" src="../../../../_images/regionalearthquakeexample_annot.png" />
-</div>
+</figure>
 <ol class="arabic simple" start="4">
 <li><p><strong>Event Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/eventApps.html#lbleventapp"><span class="std std-ref">SimCenterEvents</span></a> event application. It takes as input the EventGrid.csv, event files with the ground motion intensity measures, and the site files which specify the five ground motions assigned to each event site.</p></li>
 </ol>
@@ -1039,9 +1041,9 @@
 <li><p><strong>UQ Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/UQApps.html#lbluqapp"><span class="std std-ref">Dakota-UQ</span></a> UQ application to run the response simulation. In the configuration file, the number of samples specified for the UQ application should match the number of ground motion samples per building asset specified for the RegionalMapping application.</p></li>
 <li><p><strong>DL Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/DLApps.html#lbldlapp"><span class="std std-ref">pelicun</span></a> DL application. From the <a class="reference internal" href="../../architecture/desktop/file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">building source file</span></a>, since the DL method selected is “HAZUS MH EQ”, damage/loss estimation is performed using the HAZUS loss assessment method based on earthquake EDPs produced from the response simulation.</p></li>
 </ol>
-</div>
-<div class="section" id="run-workflow">
-<h2>Run Workflow<a class="headerlink" href="#run-workflow" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="run-workflow">
+<h2>Run Workflow<a class="headerlink" href="#run-workflow" title="Permalink to this heading">¶</a></h2>
 <p>The workflow can be executed by uploading the appropriate files to <a class="reference internal" href="../../architecture/desktop/run-manually/runRemote.html#lblrunremote"><span class="std std-ref">DesignSafe</span></a>, or by running the example on your <a class="reference internal" href="../../architecture/desktop/run-manually/runLocal.html#lblrunlocal"><span class="std std-ref">local desktop</span></a>, using the following <em>initialization command</em> in the terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/R2D_workflow.py&quot;</span> <span class="s2">&quot;C:/rWHALE/cantilever_example/rWHALE_config_eq.json&quot;</span> <span class="o">--</span><span class="n">registry</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/WorkflowApplications.json&quot;</span> <span class="o">--</span><span class="n">referenceDir</span> <span class="s2">&quot;C:/rWHALE/cantilever_example/input_data/&quot;</span> <span class="o">-</span><span class="n">w</span> <span class="s2">&quot;C:/rWHALE/cantilever_example/results&quot;</span>
 </pre></div>
@@ -1070,9 +1072,9 @@ cantilever_example
     └── input_params.csv            # building source file
 </pre></div>
 </div>
-</div>
-<div class="section" id="outputs">
-<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="outputs">
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h2>
 <p>The example output files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/d6cbb7f7e871d08dfebeb4dd03de42a5/output_data_eq.zip"><code class="xref download docutils literal notranslate"><span class="pre">output_data_eq.zip</span></code></a>. For more information about the output files produced, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Outputs.html#lbloutputs"><span class="std std-ref">Outputs</span></a>.</p>
 <ol class="arabic simple">
 <li><p><strong>EDP_1-19.csv</strong>: reports statistics on the EDP results from simulating 5 ground motions for each building asset. The statistics reported are the median and lognormal standard deviation of peak interstory drift (PID) and peak floor acceleration (PFA) in two directions.</p></li>
@@ -3291,8 +3293,8 @@ cantilever_example
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

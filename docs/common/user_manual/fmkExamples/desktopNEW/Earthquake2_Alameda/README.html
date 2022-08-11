@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Earthquake - Alameda &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -202,8 +204,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="earthquake-alameda">
-<h1>Earthquake - Alameda<a class="headerlink" href="#earthquake-alameda" title="Permalink to this headline">¶</a></h1>
+  <section id="earthquake-alameda">
+<h1>Earthquake - Alameda<a class="headerlink" href="#earthquake-alameda" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -217,56 +219,56 @@
 </table>
 <ol class="arabic">
 <li><p><strong>VIZ</strong> This example shows simulation for pseudo earthquake scenarios in Bay Area. The damage and loss of a sample of buildings in the Alameda County due to the soil liquefaction are estimated.  The results presented herein are only for demonstrating the use of R2DTool and do not serve as an accurate representation of the real losses.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-VIZ.png"><img alt="../../../../../_images/r2dt-0002-VIZ.png" src="../../../../../_images/r2dt-0002-VIZ.png" style="width: 600px;" /></a>
-</div>
+</figure>
 </li>
 <li><p><strong>GI</strong> Next, the general information panel is used to broadly characterize the problem at hand. In this example, the imperial force and length units are used, and we’re interested in the engineering demand parameters, damage measures, and the resulting decision variable (e.g., expected replacement cost).</p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-GI.png"><img alt="../../../../../_images/r2dt-0002-GI.png" src="../../../../../_images/r2dt-0002-GI.png" style="width: 600px;" /></a>
-</div>
+</figure>
 </li>
 <li><p><strong>HAZ</strong> Now in the hazard panel, the <strong>User Specified Ground Motions</strong> option is selected which allows for the use of pre-generated earthquake scenarios. The following figure shows the relevant example files which are now entered in this pane. The peak ground acceleration, peak ground deformation (in both the horizontal and vertical directions) are used as intensity measure to quantify the potential earthquake effects.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-HAZ.png"><img alt="../../../../../_images/r2dt-0002-HAZ.png" src="../../../../../_images/r2dt-0002-HAZ.png" style="width: 600px;" /></a>
-</div>
+</figure>
 </li>
 <li><p><strong>ASD</strong> In the asset definition panel, the path to the <code class="docutils literal notranslate"><span class="pre">all_bldgs.csv</span></code> file is specified. Once this file is loaded, the user can select which particular assets will be included in the analysis by entering a valid range in the form and clicking <strong>Select</strong>. For this example, the range <strong>1-20</strong> is used to include all buildings. The <code class="docutils literal notranslate"><span class="pre">input_params.csv</span></code> includes parameters for the damage and loss assessment (i.e., number of stories, year of built, occupancy class, structure type, plan area, replacement cost, population, and soil type).</p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-ASD.png"><img alt="../../../../../_images/r2dt-0002-ASD.png" src="../../../../../_images/r2dt-0002-ASD.png" style="width: 600px;" /></a>
-</div>
+</figure>
 </li>
 <li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbour</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as show in the following figure with <strong>1000</strong> samples in <strong>4</strong> neighborhoods.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-HTA.png"><img alt="../../../../../_images/r2dt-0002-HTA.png" src="../../../../../_images/r2dt-0002-HTA.png" style="width: 600px;" /></a>
-</div>
+</figure>
 </li>
 <li><p><strong>MOD</strong> In the building modeling panel, simply leave the first dropdown box set to <strong>None</strong>.</p></li>
 <li><p><strong>ANA</strong> In the analysis panel, <strong>IMasEDP</strong> is selected from the primary dropdown.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-ANA.png"><img alt="../../../../../_images/r2dt-0002-ANA.png" src="../../../../../_images/r2dt-0002-ANA.png" style="width: 600px;" /></a>
-</div>
+</figure>
 </li>
 <li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ IM</strong> damage and loss method is selected and configured as shown in the following figure:</p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-DL.png"><img alt="../../../../../_images/r2dt-0002-DL.png" src="../../../../../_images/r2dt-0002-DL.png" style="width: 600px;" /></a>
-</div>
+</figure>
 </li>
 <li><p><strong>UQ</strong></p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-UQ.png"><img alt="../../../../../_images/r2dt-0002-UQ.png" src="../../../../../_images/r2dt-0002-UQ.png" style="width: 600px;" /></a>
-</div>
+</figure>
 </li>
 <li><p><strong>RV</strong></p>
 <p>The random variable panel will be left empty for this example.</p>
 </li>
 <li><p><strong>RES</strong> The analysis outputs for the selected 20 buildings are show in the figure below. The buildings may experience severe damage states (Damage State 3 or 4 per HAZUS). The repair costs range from 3% to 7% of the total replacement costs, and the repair time range from 9 to more than 20 days.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-RES.png"><img alt="../../../../../_images/r2dt-0002-RES.png" src="../../../../../_images/r2dt-0002-RES.png" style="width: 600px;" /></a>
-</div>
+</figure>
 </li>
 </ol>
-</div>
+</section>
 
 
            </div>

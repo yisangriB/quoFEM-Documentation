@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2.4. QoI: Quantities of Interest &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -213,13 +215,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="qoi-quantities-of-interest">
-<span id="lblquo-qoi"></span><h1><span class="section-number">2.4. </span>QoI: Quantities of Interest<a class="headerlink" href="#qoi-quantities-of-interest" title="Permalink to this headline">¶</a></h1>
+  <section id="qoi-quantities-of-interest">
+<span id="lblquo-qoi"></span><h1><span class="section-number">2.4. </span>QoI: Quantities of Interest<a class="headerlink" href="#qoi-quantities-of-interest" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>QoI</strong> tab is where the user specifies the variable names associated with the FEM results. The result quantity might be a scalar (i.e. of length 1) or a vector/field quantity (i.e., of length &gt; 1). For each result quantity that the users’ application generates and places in the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file, the user must provide a variable name and specify its length. A new response quantity is added by the user selecting the <strong>Add</strong> button. Quantities can be removed by selecting it, this is done by clicking in the circle before the variable name, and then selecting the <strong>Remove</strong> button.</p>
-<div class="align-center figure" id="id1">
+<figure class="align-center" id="id1">
 <span id="figqoi"></span><img alt="../../../../../_images/QoI.png" src="../../../../../_images/QoI.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.1 </span><span class="caption-text">Input for the <strong>QoI</strong> tab.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 2.4.1 </span><span class="caption-text">Input for the <strong>QoI</strong> tab.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>In <a class="reference internal" href="#figqoi"><span class="std std-numref">Fig. 2.4.1</span></a>, the user has defined three response quantities, <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_2</span></code>, <code class="docutils literal notranslate"><span class="pre">Node_4_Disp_1</span></code> and <code class="docutils literal notranslate"><span class="pre">stress_time_history</span></code>. If a postprocessing Python script has been provided, it will be passed these three names as arguments.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -229,7 +233,7 @@
 <li><p>Names cannot be duplicated.</p></li>
 </ol>
 </div>
-</div>
+</section>
 
 
            </div>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Steel Frame: Bayesian Calibration using TMCMC &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../../_static/jquery.js"></script>
         <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../../_static/doctools.js"></script>
         <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -203,8 +205,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="steel-frame-bayesian-calibration-using-tmcmc">
-<h1>Steel Frame: Bayesian Calibration using TMCMC<a class="headerlink" href="#steel-frame-bayesian-calibration-using-tmcmc" title="Permalink to this headline">¶</a></h1>
+  <section id="steel-frame-bayesian-calibration-using-tmcmc">
+<h1>Steel Frame: Bayesian Calibration using TMCMC<a class="headerlink" href="#steel-frame-bayesian-calibration-using-tmcmc" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 43%" />
@@ -216,22 +218,22 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="outline">
-<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<section id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
 <p>In this example, Bayesian estimation is used to estimate the lateral story
 stiffnesses of the two stories of a simple steel frame, given data about
 its mode shapes and frequencies. The transitional Markov chain Monte Carlo
 algorithm is used to obtain samples from the posterior probability distribution
 of the lateral story stiffnesses.</p>
-</div>
-<div class="section" id="problem-description">
-<h2>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="problem-description">
+<h2>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
 <p>Provided by Professor Joel Conte and his doctoral students Maitreya
 Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at
 the following simplified finite element model of a steel building.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../../../../../../_images/frameFigure1.png"><img alt="../../../../../../_images/frameFigure1.png" src="../../../../../../_images/frameFigure1.png" style="width: 400px;" /></a>
-</div>
+</figure>
 <p>Each floor slab of the building is made of composite metal deck and is
 supported on four steel columns. The story heights are measured at
 <span class="math notranslate nohighlight">\(10'\)</span> and in plan the side lengths measure <span class="math notranslate nohighlight">\(33'-4&quot;\)</span> by
@@ -266,9 +268,9 @@ distribution with a lower bound <span class="math notranslate nohighlight">\((L_
 of <span class="math notranslate nohighlight">\(1150.33 \ \mathrm{kips/in}\)</span>.</p></li>
 </ol>
 <p>A Gaussian likelihood model is employed. This is done by assuming that the error between the finite element prediction of the modal properties and the simulated measurement data follows a bivariate Normal/Gaussian distribution with independent components. Here, the standard deviation of the error is assumed to be known, and equal to <span class="math notranslate nohighlight">\(5\%\)</span> of the true eigenvalue and eigenvector values. The components of the error vector are assumed to be statistically independent and identically distributed.</p>
-</div>
-<div class="section" id="files-required">
-<h2>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="files-required">
+<h2>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h2>
 <p>The exercise requires two script files - an OpenSees script file which builds the finite element model and conducts the analysis, and a Python script file which post-processes the output from the finite element analysis. The user should download these file and place it in a <em>new</em> folder. The post-processing script calculates the log-likelihood that the input values of the story stiffness produced the set of measurement data.</p>
 <ol class="arabic simple">
 <li><p><a href="#id3"><span class="problematic" id="id4">:quo-14:`model.tcl &lt;src/model.tcl&gt;`</span></a></p></li>
@@ -445,53 +447,53 @@ wipe
 <p class="admonition-title">Warning</p>
 <p>Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like me, your root, Downloads or Documents folders contains and awful lot of files.</p>
 </div>
-</div>
-<div class="section" id="solving-the-problem-using-quofem">
-<h2>Solving the problem using quoFEM<a class="headerlink" href="#solving-the-problem-using-quofem" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="solving-the-problem-using-quofem">
+<h2>Solving the problem using quoFEM<a class="headerlink" href="#solving-the-problem-using-quofem" title="Permalink to this heading">¶</a></h2>
 <p>The steps involved are as follows:</p>
 <ol class="arabic simple">
 <li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Engine</strong> drop down menu, select the <strong>UCSD_UQ</strong> engine. In the <strong>Method</strong> category drop down menu the <strong>Transitional Markov chain Monte Carlo</strong> option will be highlighted. In the <strong>Log Likelihood Script</strong> field, enter the path to the script which computes the log-likelihood (i.e., the file called <code class="docutils literal notranslate"><span class="pre">postProcessing.py</span></code> in this example), or select <strong>Choose</strong> and navigate to the file. Enter the number of samples desired to be drawn from the posterior distribution in the <strong># Samples</strong> field.</p></li>
 </ol>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../../_images/quo-14-UQ3.png" src="../../../../../../_images/quo-14-UQ3.png" />
-</div>
+</figure>
 <ol class="arabic simple" start="2">
 <li><p>Next select the <strong>FEM</strong> panel from the input panel selection. This will default to the <strong>OpenSees</strong> FEM engine. In the <strong>Input Script</strong> field, enter the path to the <code class="docutils literal notranslate"><span class="pre">model.tcl</span></code> file or select <strong>Choose</strong> and navigate to the file.</p></li>
 </ol>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../../_images/quo-14-FEM3.png" src="../../../../../../_images/quo-14-FEM3.png" />
-</div>
+</figure>
 <ol class="arabic simple" start="3">
 <li><p>Next select the <strong>RV</strong> tab from the input panel. This panel should be pre-populated with two random variables named <code class="docutils literal notranslate"><span class="pre">k1</span></code> snd <code class="docutils literal notranslate"><span class="pre">k2</span></code>. If not, press the <strong>Add</strong> button twice to create two fields to define the input random variables. Enter the same variable names (<code class="docutils literal notranslate"><span class="pre">k1</span></code> and <code class="docutils literal notranslate"><span class="pre">k2</span></code>), as required in the <code class="docutils literal notranslate"><span class="pre">model.tcl</span></code> script.</p></li>
 </ol>
 <p>For each variable, specify the prior probability distribution - from the <strong>Distribution</strong> drop down menu, select <strong>Uniform</strong> and then provide the lower bounds and upper bounds shown in the figure below.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../../_images/quo-14-RV3.png" src="../../../../../../_images/quo-14-RV3.png" />
-</div>
+</figure>
 <ol class="arabic simple" start="4">
 <li><p>The <strong>QoI</strong> panel can be left blank for this example and for problems using the <strong>UCSD_UQ</strong> engine.</p></li>
 <li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch the <strong>UCSD_UQ</strong> engine, which performs Bayesian calibration using the TMCMC algorithm. When done the <strong>RES</strong> tab will be selected and the results will be displayed as shown in the figure below. The results show the first four moments of the posterior marginal probability distribution of <code class="docutils literal notranslate"><span class="pre">k1</span></code> and <code class="docutils literal notranslate"><span class="pre">k2</span></code>.</p></li>
 </ol>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../../_images/quo-14-RES-Summary3.png" src="../../../../../../_images/quo-14-RES-Summary3.png" />
-</div>
+</figure>
 <p>If the user selects the <strong>Data Values</strong> tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../../_images/quo-14-RES-DataValues13.png" src="../../../../../../_images/quo-14-RES-DataValues13.png" />
-</div>
+</figure>
 <p>Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../../_images/quo-14-RES-DataValues23.png" src="../../../../../../_images/quo-14-RES-DataValues23.png" />
-</div>
+</figure>
 <p>If a singular column of the tabular data is pressed with both right and left buttons a histogram and CDF will be displayed, as shown in figure below.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../../_images/quo-14-RES-DataValues33.png" src="../../../../../../_images/quo-14-RES-DataValues33.png" />
-</div>
-<div class="align-center figure">
+</figure>
+<figure class="align-center">
 <img alt="../../../../../../_images/quo-14-RES-DataValues43.png" src="../../../../../../_images/quo-14-RES-DataValues43.png" />
-</div>
-</div>
-</div>
+</figure>
+</section>
+</section>
 
 
            </div>

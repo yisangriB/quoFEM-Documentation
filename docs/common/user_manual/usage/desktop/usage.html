@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2. User Guide &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -211,14 +213,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="user-guide">
-<span id="lbl-usage"></span><h1><span class="section-number">2. </span>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+  <section id="user-guide">
+<span id="lbl-usage"></span><h1><span class="section-number">2. </span>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this heading">¶</a></h1>
 <p>The quoFEM app, as will be discussed in <a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html#lblarchitecture"><span class="std std-ref">Software Architecture</span></a>, is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different backend applications. Once the quoFEM app is started, the user is presented with the user interface shown in <a class="reference internal" href="#figgenericui-quofem"><span class="std std-numref">Fig. 2.1</span></a>. It is in this UI where the user selects the applications to run in a workflow, inputs the necessary parameters for each of these applications, starts the workflow either locally or
 remotely, and finally views the simulation results. The main window of the UI is divided into several separate areas:</p>
-<div class="align-center figure" id="id4">
+<figure class="align-center" id="id4">
 <span id="figgenericui-quofem"></span><img alt="../../../../_images/quoFEMPanel.png" src="../../../../_images/quoFEMPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">The quoFEM app user interface.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">The quoFEM app user interface.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <ol class="arabic">
 <li><p>Login Button:</p>
 <p>The <strong>Login</strong> button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the <a class="reference external" href="https://www.designsafe-ci.org/account/register">DesignSafe-CI</a> website <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
@@ -249,10 +253,12 @@ remotely, and finally views the simulation results. The main window of the UI is
 </ul>
 </div></blockquote>
 <p>Clicking on the <strong>RUN at DesignSafe</strong> button will show the remote job submission dialog, given in <a class="reference internal" href="#figremjobpanel"><span class="std std-numref">Fig. 2.7</span></a>.</p>
-<div class="align-center figure" id="id10">
+<figure class="align-center" id="id10">
 <span id="figremjobpanel"></span><img alt="../../../../_images/RemoteJobPanel.png" src="../../../../_images/RemoteJobPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.7 </span><span class="caption-text">Remote job submission dialog.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">Remote job submission dialog.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>Descriptions and guidelines for each input are given below:</p>
 <blockquote>
 <div><ul class="simple">
@@ -290,7 +296,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 </dl>
 </li>
 </ol>
-</div>
+</section>
 
 
            </div>

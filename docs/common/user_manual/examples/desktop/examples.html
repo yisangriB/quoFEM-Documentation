@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4. Examples &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -133,6 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="qfem-0017/README.html">4.9. Custom UQ for UQpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qfem-0019/README.html">4.10. Bayesian Calibration of Material Model Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qfem-0022/README.html">4.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0023/README.html">4.12. Global Sensitivity Analysis for Field QoI</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
@@ -217,8 +220,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="examples">
-<span id="lbl-examples"></span><h1><span class="section-number">4. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+  <section id="examples">
+<span id="lbl-examples"></span><h1><span class="section-number">4. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h1>
 <p>The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided for selected problems. The files for the examples are available on Github.</p>
 <div class="toctree-wrapper compound">
 </div>
@@ -498,6 +501,34 @@ stress - a non-scalar response quantity.
   </div>
 </div>
 
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./qfem-0023/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Global Sensitivity Analysis for Field QoI</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">In this example, the parameters of the STEEL02 material model in OpenSees
+are calibrated by Bayesian inference. Experimental data is
+passed in to quoFEM from an external file, and the output is the time-history of
+stress - a non-scalar response quantity.
+</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/qf-0023-Steel02.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
   </div>
 </div>
 
@@ -569,7 +600,7 @@ for (const filter of filters) {
 };
 */
 </script>
-</div>
+</section>
 
 
            </div>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2.2.7. UQ Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -208,16 +210,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="uq-applications">
-<span id="lbluqapp"></span><h1><span class="section-number">2.2.7. </span>UQ Applications<a class="headerlink" href="#uq-applications" title="Permalink to this headline">¶</a></h1>
+  <section id="uq-applications">
+<span id="lbluqapp"></span><h1><span class="section-number">2.2.7. </span>UQ Applications<a class="headerlink" href="#uq-applications" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>UQ application</strong> is used to sample <em>random variables</em> (RV) specified in any of the workflow steps (Event, Modeling, EDP, Simulation) for the purpose of uncertainty quantification, then to run commands written in the <strong>driver file</strong> which call on the backend applications to execute the R2D Workflow.
 It first populates values for the RVs, sampled from specified probability distributions, in the corresponding files (EVENT.json, SAM.json, EDP.json, SIM.json) for each simulation before executing the workflow.
 If no RVs are specified, then the UQ application directly runs commands in the driver file without random sampling.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../_images/backendapps_UQ.png" src="../../../../../_images/backendapps_UQ.png" />
-</div>
+</figure>
 <p>The following options for UQ applications vary in the software package used to perform uncertainty quantification.</p>
-main.html</div>
+main.html</section>
 
 
            </div>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2.1.2.2. Global Sensitivity Analysis &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -50,7 +52,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="2.1.2.3. Probabilistic Learning on Manifolds (PLoM)" href="SimCenterUQPLoM.html" />
-    <link rel="prev" title="2.1.2.1. Forward Propagation Methods" href="SimCenterUQSampling.html" />
+    <link rel="prev" title="2.1.2.1. Forward Propagation" href="SimCenterUQSampling.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -118,28 +120,9 @@
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">2.1.1. Dakota UQ Engine</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#id1">2.1.3. SimCenter UQ Engine</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">2.1.2.1. Forward Propagation Methods</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.2.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">2.1.3.1. Surrogate Modeling</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">2.1.2.3. Probabilistic Learning on Manifolds (PLoM)</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.5. Custom UQ Engine</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">2.3. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
@@ -228,49 +211,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="global-sensitivity-analysis">
-<span id="lblsimsensitivity"></span><h1><span class="section-number">2.1.2.2. </span>Global Sensitivity Analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this headline">¶</a></h1>
+  <section id="global-sensitivity-analysis">
+<span id="lblsimsensitivity"></span><h1><span class="section-number">2.1.2.2. </span>Global Sensitivity Analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this heading">¶</a></h1>
 <p>Global sensitivity analysis is used to quantify contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. Global sensitivity analysis helps users to understand the overall impact of different sources of uncertainties and their intersections, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables. This can also be useful identifying the input variables for which extra experimentation/research may be useful in reducing the uncertainty in the initial specification.</p>
-<p><strong>Sobol indices</strong> are widely used variance-based global sensitivity measures which has two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account.</p>
-<p>Given an output of a model <span class="math notranslate nohighlight">\(y=g(\boldsymbol{x})\)</span> and input random variables <span class="math notranslate nohighlight">\(\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}\)</span>, the first-order main and total effect indices of each input variable <span class="math notranslate nohighlight">\(x_i\)</span> is defined as</p>
-<div class="math notranslate nohighlight" id="equation-si">
-<span class="eqno">(2.1.2.2.1)<a class="headerlink" href="#equation-si" title="Permalink to this equation">¶</a></span>\[S_i=\frac{\text{Var}_{x_i}[\text{E}_{\boldsymbol{x}_{\sim i}}[y|x_i]]}{\text{Var}[y]}, \qquad i=1, \cdots ,d\]</div>
-<div class="math notranslate nohighlight" id="equation-sit">
-<span class="eqno">(2.1.2.2.2)<a class="headerlink" href="#equation-sit" title="Permalink to this equation">¶</a></span>\[S_i^T=\frac{\text{E}_{\boldsymbol{x}_{\sim i}}[\text{Var}_{x_i}[y|\boldsymbol{x}_{\sim i}]]}{\text{Var}[y]},  \qquad  i=1, \cdots ,d\]</div>
-<p>respectively, where <span class="math notranslate nohighlight">\(\boldsymbol{x}_{\sim i}\)</span> indicates the set of all input variables except <span class="math notranslate nohighlight">\(x_i\)</span>. From the definitions, two indices theoretically have values between zero and one. The second-order main effect index that provides the pair-wise interaction effect is defined as</p>
-<div class="math notranslate nohighlight" id="equation-sij">
-<span class="eqno">(2.1.2.2.3)<a class="headerlink" href="#equation-sij" title="Permalink to this equation">¶</a></span>\[S_{ij}=\frac{\text{Var}_{x_i,x_j}[\text{E}_{\boldsymbol{x}\sim ij}[y|x_i,x_j]]}{\text{Var}[y]} - S_i - S_j,  \qquad  i,j=1, \cdots ,d\]</div>
-<p>where <span class="math notranslate nohighlight">\(\boldsymbol{x}_{\sim ij}\)</span> indicates the set of all input variables except <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span>. The higher-order indices are derived likewise. When all the input variables are uncorrelated to each other, the following equality holds.</p>
-<div class="math notranslate nohighlight" id="equation-sbound">
-<span class="eqno">(2.1.2.2.4)<a class="headerlink" href="#equation-sbound" title="Permalink to this equation">¶</a></span>\[\sum^d_{i=1} S_i + \sum^d_{i&lt;j} S_{ij} + \cdots + S_{12 \cdots d} = 1\]</div>
-<p>When the variables are correlated to each other, the summation may be greater or smaller than one.</p>
-<div class="section" id="first-order-sobol-indices">
-<h2>First-order Sobol indices<a class="headerlink" href="#first-order-sobol-indices" title="Permalink to this headline">¶</a></h2>
-<p>In the SimCenterUQ engine, Sensitivity indices are estimated by Gaussian mixture model-based probability distribution approximation framework presented in Hu and Mahadevan (2019) <a class="reference internal" href="#hu19" id="id1"><span>[Hu19]</span></a>. To run this sensitivity analysis, the user has to specify the number of samples and a random seed. The framework can handle correlated random variables as well.</p>
-<div class="align-center figure" id="id2">
-<span id="figsimsensitivity"></span><a class="reference internal image-reference" href="../../../../_images/SensitivityAnalysisSimUQ.png"><img alt="../../../../_images/SensitivityAnalysisSimUQ.png" src="../../../../_images/SensitivityAnalysisSimUQ.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.2.1 </span><span class="caption-text">Sensitivity analysis input panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<p><strong>Sobol indices</strong> are widely used variance-based global sensitivity measures which has two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account. <strong>Please read</strong> <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical"><span class="std std-ref">HERE</span></a> <strong>for more details on the equations and implemented algorithms</strong>.</p>
+<section id="main-effect-first-order-and-total-effect-sobol-indices">
+<h2>Main-effect (first-order) and Total-effect Sobol Indices<a class="headerlink" href="#main-effect-first-order-and-total-effect-sobol-indices" title="Permalink to this heading">¶</a></h2>
+<p>In the SimCenterUQ engine, sensitivity indices are estimated by Gaussian mixture model-based probability distribution approximation method presented in Hu and Mahadevan (2019) <a class="reference internal" href="#hu19" id="id1"><span>[Hu19]</span></a>. To run this sensitivity analysis, the user has to specify the number of samples and a random seed. The method can handle correlated random variables as well.</p>
+<figure class="align-center" id="id4">
+<span id="figsimsensitivity"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity1.png"><img alt="../../../../_images/Sensitivity1.png" src="../../../../_images/Sensitivity1.png" style="width: 1200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1.2.2.1 </span><span class="caption-text">Sensitivity analysis input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>The numerical results of global sensitivity analysis may show negative values due to the sampling variability.</p></li>
-<li><p>The numerical results of Eq. <a class="reference internal" href="#equation-sbound">(2.1.2.2.4)</a> for uncorrelated inputs may not hold due to the sampling variability and approximation errors. If this error is very high, the sensitivity index may not be reliable. However, the sensitivity rank between variables is relatively robust.</p></li>
+<li><p>The numerical results of Eq. <code class="xref eq docutils literal notranslate"><span class="pre">Sbound</span></code> for uncorrelated inputs may not hold due to the sampling variability and approximation errors. If this error is very high, the sensitivity index may not be reliable. However, the sensitivity rank between variables is relatively robust.</p></li>
 <li><p>When a constant variable is defined, the sensitivity analysis algorithm will ignore the variable.</p></li>
+<li><p>If “NaN” is written in the FEM output script (<cite>results.out</cite>) instead of a number SimCenterUQ engine will exclude this samples from the sensitivity analysis. This may be useful when one wants to get ‘condition’ sensitivity indices, i.e. conditional to non-NaN cases.</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="group-wise-sobol-indices">
-<h2>Group-wise Sobol indices<a class="headerlink" href="#group-wise-sobol-indices" title="Permalink to this headline">¶</a></h2>
-<p>By default, the analysis results are first-order sensitivity indices of each random variable. User may activate the option to specify advanced outputs at the bottom of the <strong>QoI</strong> tab. Using this option, the user can manually provide groups of relevant random variables to get so-called group-wise Sobol indices.</p>
-<div class="align-center figure" id="id3">
-<span id="figsimsensitivity2"></span><a class="reference internal image-reference" href="../../../../_images/SensitivityAnalysis2SimUQ.png"><img alt="../../../../_images/SensitivityAnalysis2SimUQ.png" src="../../../../_images/SensitivityAnalysis2SimUQ.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.2.2 </span><span class="caption-text">Group-wise Sobol indicies</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
+</section>
+<section id="group-wise-sobol-indices">
+<h2>Group-wise Sobol Indices<a class="headerlink" href="#group-wise-sobol-indices" title="Permalink to this heading">¶</a></h2>
+<p>By default, the analysis results are first-order sensitivity indices of each random variable. In order to also account for the higher-order interaction effect, the user may activate the option to specify advanced outputs at the bottom of the <strong>QoI</strong> tab. Using this option, the user can manually provide groups of relevant random variables to get so-called group-wise Sobol indices.</p>
+<figure class="align-center" id="id5">
+<span id="figsimsensitivity2"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity2.png"><img alt="../../../../_images/Sensitivity2.png" src="../../../../_images/Sensitivity2.png" style="width: 1200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1.2.2.2 </span><span class="caption-text">Group-wise Sobol indicies</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>The group-wise Sobol indices are useful when the user wants to obtain a sensitivity measure corresponding to a categorical group of input variables, for example, to compare the relative sensitivity between structural parameters and excitation parameters. In particular, when there are non-causal correlations between some random variables or when the user expects interactive contributions of the random variables that are in nature inseparable, one can introduce the group index. The group-wise Sobol index for joint variables <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span> is defined as</p>
 <div class="math notranslate nohighlight" id="equation-groupsij">
-<span class="eqno">(2.1.2.2.5)<a class="headerlink" href="#equation-groupsij" title="Permalink to this equation">¶</a></span>\[S_{ij}^G=\frac{\text{Var}_{x_i,x_j}[\text{E}_{\boldsymbol{x}\sim ij}[y|x_i,x_j]]}{\text{Var}[y]},  \qquad  i,j=1, \cdots ,d\]</div>
-<p>In order to associate more input variables, the set {<span class="math notranslate nohighlight">\(x_i,x_j\)</span>} can be simply replaced by a larger set, e.g. {<span class="math notranslate nohighlight">\(x_i,x_j,x_k\)</span>}. Results of Eq. <a class="reference internal" href="#equation-groupsij">(2.1.2.2.5)</a> can be post-processed to obtain higher-order Sobol indices presented in Eq. <a class="reference internal" href="#equation-sij">(2.1.2.2.3)</a>, i.e. it is obtained by subtracting the lower-order interaction terms from the group index.</p>
+<span class="eqno">(2.1.2.2.1)<a class="headerlink" href="#equation-groupsij" title="Permalink to this equation">¶</a></span>\[S_{ij}^G=\frac{\text{Var}_{x_i,x_j}[\text{E}_{\boldsymbol{x}\sim ij}[y|x_i,x_j]]}{\text{Var}[y]},  \qquad  i,j=1, \cdots ,d\]</div>
+<p>In order to associate more input variables, the set {<span class="math notranslate nohighlight">\(x_i,x_j\)</span>} can be simply replaced by a larger set, e.g. {<span class="math notranslate nohighlight">\(x_i,x_j,x_k\)</span>}. Results of Eq. <a class="reference internal" href="#equation-groupsij">(2.1.2.2.1)</a> can be post-processed to obtain higher-order Sobol indices presented in Eq. <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#equation-sij">(1.2.3)</a>, i.e. it is obtained by subtracting the lower-order interaction terms from the group index.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -278,13 +254,40 @@
 <li><p>When random variables defined in <strong>RV</strong> tab is not exhaustive, i.e. if the model contains <em>unexplained</em> randomness, total Sobol index value may be underestimated by omitting the interaction with the missing variables.</p></li>
 </ul>
 </div>
+</section>
+<section id="principal-component-analysis-pca-with-qoi">
+<h2>Principal Component Analysis (PCA) with QoI<a class="headerlink" href="#principal-component-analysis-pca-with-qoi" title="Permalink to this heading">¶</a></h2>
+<p>When the number of the quantity of interests (QoI) exceeds 15, quoFEM, by default, performs ‘principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)’. The user can otherwise manually specify the option by selecting either <code class="docutils literal notranslate"><span class="pre">Yes</span></code> or <code class="docutils literal notranslate"><span class="pre">No</span></code>. If <code class="docutils literal notranslate"><span class="pre">Yes</span></code> is selected, the user can also provide the <code class="docutils literal notranslate"><span class="pre">potion</span> <span class="pre">of</span> <span class="pre">variance</span> <span class="pre">explained</span></code> in range of 0 and 1.0. As this value gets close to 1, the accuracy of the approximation improves while the computational demand also increases. Note that when 1.0 is selected, dimension will not be reduced. The default value is 0.99. We do not recommend using a value lower than 0.99 unless the user thoroughly understands its consequence.</p>
+<figure class="align-center" id="id6">
+<span id="figsimsensitivity4"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity3.png"><img alt="../../../../_images/Sensitivity3.png" src="../../../../_images/Sensitivity3.png" style="width: 1200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1.2.2.3 </span><span class="caption-text">Principal Component Analysis</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="results-display">
+<h2>Results Display<a class="headerlink" href="#results-display" title="Permalink to this heading">¶</a></h2>
+<p>The main and total effect indices are displayed for each random variable (or group of random variables if the user specifies the group in the UQ tab) and quantity of interest (QoI) pair.</p>
+<figure class="align-center" id="id7">
+<span id="id2"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity4.png"><img alt="../../../../_images/Sensitivity4.png" src="../../../../_images/Sensitivity4.png" style="width: 1200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1.2.2.4 </span><span class="caption-text">Results from <a class="reference internal" href="../../examples/desktop/qfem-0009/README.html#qfem-0009"><span class="std std-ref">an example</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Only when the quantities of interest (QoI) are defined as a <strong>field variable</strong>, i.e. by setting a length greater than 1 in the EDP tab, the aggregated sensitivity indices will also be displayed.</p>
+<figure class="align-center" id="id8">
+<span id="id3"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity5.png"><img alt="../../../../_images/Sensitivity5.png" src="../../../../_images/Sensitivity5.png" style="width: 1200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1.2.2.5 </span><span class="caption-text">Results from <a class="reference internal" href="../../examples/desktop/qfem-0023/README.html#qfem-0023"><span class="std std-ref">an example</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <dl class="citation">
 <dt class="label" id="hu19"><span class="brackets"><a class="fn-backref" href="#id1">Hu19</a></span></dt>
 <dd><p>Hu, Z. and Mahadevan, S. (2019). Probability models for data-driven global sensitivity analysis. <em>Reliability Engineering &amp; System Safety</em>, 187, 40-57.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

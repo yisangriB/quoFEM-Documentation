@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>5. Coding Style &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -213,28 +215,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="coding-style">
-<span id="lblcodingstyle"></span><h1><span class="section-number">5. </span>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h1>
+  <section id="coding-style">
+<span id="lblcodingstyle"></span><h1><span class="section-number">5. </span>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this heading">¶</a></h1>
 <p>The SimCenter frontend applications are written in <strong>C++</strong>. The applications that run in the backend are written in a mixture of languages: <strong>Python</strong>, <strong>C</strong>, and <strong>C++</strong>. The SimCenter strives to use a standard style across the applications. This section outlines that style. Consistency is the most important aspect of style. The second most important aspect is following a style that the average programmer is used to reading. Not all code will follow the guide,</p>
-<div class="section" id="python-style">
-<h2><span class="section-number">5.1. </span>Python Style<a class="headerlink" href="#python-style" title="Permalink to this headline">¶</a></h2>
+<section id="python-style">
+<h2><span class="section-number">5.1. </span>Python Style<a class="headerlink" href="#python-style" title="Permalink to this heading">¶</a></h2>
 <p>For code written in Python, SimCenter programmers follow the widely used
 <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">Guide PEP 8</a></p>
-</div>
-<div class="section" id="c-c-style">
-<h2><span class="section-number">5.2. </span>C/C++ Style<a class="headerlink" href="#c-c-style" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="c-c-style">
+<h2><span class="section-number">5.2. </span>C/C++ Style<a class="headerlink" href="#c-c-style" title="Permalink to this heading">¶</a></h2>
 <p>Unlike Python, C/C++ does not have a widely accepted style guideline. Some guidelines of note include the <a class="reference external" href="https://google.github.io/styleguide/cppguide.html">Google Style</a>, the <a class="reference external" href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html">C++ Core Guidelines</a> (edited by Stroustrup and Sutter), and an older
 C++</p>
-<div class="section" id="comments">
-<h3><span class="section-number">5.2.1. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<section id="comments">
+<h3><span class="section-number">5.2.1. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this heading">¶</a></h3>
 <p>It goes without saying that you must use them. Try to use <code class="code docutils literal notranslate"><span class="pre">//</span></code> as opposed to <code class="code docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code>, making it easier to comment out a block of code when debugging.</p>
-</div>
-<div class="section" id="naming-conventions">
-<h3><span class="section-number">5.2.2. </span>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="naming-conventions">
+<h3><span class="section-number">5.2.2. </span>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this heading">¶</a></h3>
 <p>All names should be meaningful and Follow a camel case approach. For classes, the names start with an uppercase letter; all class methods, functions, and variables shall begin with a lowercase letter. The exception is constant variables, which should be all uppercase, e.g. <code class="code docutils literal notranslate"><span class="pre">const</span> <span class="pre">double</span> <span class="pre">PI=3.14159265358979323;</span></code></p>
-</div>
-<div class="section" id="files">
-<h3><span class="section-number">5.2.3. </span>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="files">
+<h3><span class="section-number">5.2.3. </span>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Use a <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> extension for code files and a <code class="docutils literal notranslate"><span class="pre">.h</span></code> extension for interface files.</p></li>
 <li><p>All files should include at the start the <a class="reference internal" href="../../../front-matter/license.html#lbllicense"><span class="std std-ref">Copyright and License</span></a></p></li>
@@ -360,16 +362,16 @@ C++</p>
 <span class="cp">#endif </span><span class="c1">// SIMCENTER_WIDGET_H</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="variables">
-<h3><span class="section-number">5.2.4. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="variables">
+<h3><span class="section-number">5.2.4. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Initialize all variables</p></li>
 <li><p>When initializing float and double variables with values that could be read as integer always include a <code class="docutils literal notranslate"><span class="pre">.0</span></code>, e.g. <code class="code docutils literal notranslate"><span class="pre">double</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">1.0;</span></code></p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

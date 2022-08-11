@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Deterministic Calibration of Material Model Parameters &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -203,8 +205,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="deterministic-calibration-of-material-model-parameters">
-<h1>Deterministic Calibration of Material Model Parameters<a class="headerlink" href="#deterministic-calibration-of-material-model-parameters" title="Permalink to this headline">¶</a></h1>
+  <section id="deterministic-calibration-of-material-model-parameters">
+<h1>Deterministic Calibration of Material Model Parameters<a class="headerlink" href="#deterministic-calibration-of-material-model-parameters" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -216,15 +218,15 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="outline">
-<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<section id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
 <p>In this example, the parameters of the STEEL02 material model in OpenSees
 are calibrated using non-linear least squares optimization. Experimental data is
 passed in to quoFEM from an external file, and the output is the time-history of
 stress.</p>
-</div>
-<div class="section" id="problem-description">
-<h2>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="problem-description">
+<h2>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
 <p>The STEEL02 material model in OpenSees can take a total of 11 parameters as input, as described in the <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel02_Material_--_Giuffré-Menegotto-Pinto_Model_with_Isotropic_Strain_Hardening">documentation</a>. Of these 11 parameters, the value of 7 of these parameters will be calibrated in this example.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -305,12 +307,12 @@ stress.</p>
 </tbody>
 </table>
 <p>In order to calibrate the material model, the stress data measured experimentally is provided in a separate file. The strain history corresponding to the experiment where the stress is measured is shown in the figure below:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../_images/qf-0018-StrainHistory.png" src="../../../../../_images/qf-0018-StrainHistory.png" />
-</div>
-</div>
-<div class="section" id="files-required">
-<h2>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
+</figure>
+</section>
+<section id="files-required">
+<h2>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains a lot of files.</p>
@@ -320,54 +322,54 @@ stress.</p>
 <li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0018/src/matTestAllParams.tcl">matTestAllParams.tcl</a> - This is an OpenSees script written in tcl which builds a single element FE model and conducts the analysis. This script creates a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code> when it runs. This file contains the stress response corresponding to the strain history input to the material model.</p></li>
 <li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0018/src/calDataField.csv">calDataField.csv</a> - This is csv file that contains the stress data. There is one row of data, which implies that the data is obtained from one experiment. If additinal data is available from multiple experiments, then the data from each experiment must be passed in on each line.</p></li>
 </ol>
-</div>
-<div class="section" id="uq-workflow">
-<h2>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="uq-workflow">
+<h2>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
 <p>The steps involved are as follows:</p>
 <ol class="arabic simple">
 <li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Engine</strong> drop down menu, select the <strong>Dakota</strong> engine. In the <strong>Dakota Method Category</strong> drop down menu the <strong>Parameters Estimation</strong> option must be selected. In the <strong>Calibration data file</strong> field, enter the path to the file which containes the calibration data, or select <strong>Choose</strong> and navigate to the file. Enter the maximum number of iterations, the convergence tolerance, and the scaling factors, if any in the corresponding fields.</p></li>
 </ol>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../_images/qf-0018-UQ.png" src="../../../../../_images/qf-0018-UQ.png" />
-</div>
+</figure>
 <ol class="arabic simple" start="2">
 <li><p>Next select the <strong>FEM</strong> panel from the input panel selection. This will default to the <strong>OpenSees</strong> FEM engine. In the <strong>Input Script</strong> field, enter the path to the <code class="docutils literal notranslate"><span class="pre">model.tcl</span></code> file or select <strong>Choose</strong> and navigate to the file.</p></li>
 </ol>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../_images/qf-0018-FEM.png" src="../../../../../_images/qf-0018-FEM.png" />
-</div>
+</figure>
 <ol class="arabic simple" start="3">
 <li><p>Next select the <strong>RV</strong> tab from the input panel. This panel should be pre-populated with seven random variables. If not, press the <strong>Add</strong> button to create new fields to define the input random variables. Enter the same variable names, as required in the model script.</p></li>
 </ol>
 <p>For each variable, specify the lower bounds, upper bounds and initial point from where the optimization will be started, as shown in the figure below.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../_images/qf-0018-RV.png" src="../../../../../_images/qf-0018-RV.png" />
-</div>
+</figure>
 <ol class="arabic simple" start="4">
 <li><p>In the <strong>QoI</strong> panel denote that the variable named <code class="docutils literal notranslate"><span class="pre">stress</span></code> is not a scalar response variable, but has a length of 342.</p></li>
 </ol>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../_images/qf-0018-QOI.png" src="../../../../../_images/qf-0018-QOI.png" />
-</div>
+</figure>
 <ol class="arabic simple" start="5">
 <li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch the <strong>Dakota</strong> engine, which performs calibration using the selected algorithm in the <strong>UQ</strong> panel. When done the <strong>RES</strong> tab will be selected and the results will be displayed as shown in the figure below. The results show a summary of the best-fit values of each parameters.</p></li>
 </ol>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../_images/qf-0018-RES1.png" src="../../../../../_images/qf-0018-RES1.png" />
-</div>
+</figure>
 <p>If the user selects the <strong>Data Values</strong> tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../_images/qf-0018-RES2.png" src="../../../../../_images/qf-0018-RES2.png" />
-</div>
+</figure>
 <p>The best-fit obtained is shown in the figures below:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../../_images/qf-0018-StressResults.png" src="../../../../../_images/qf-0018-StressResults.png" />
-</div>
-<div class="align-center figure">
+</figure>
+<figure class="align-center">
 <img alt="../../../../../_images/qf-0018-DeterministicCalibrationResults.png" src="../../../../../_images/qf-0018-DeterministicCalibrationResults.png" />
-</div>
-</div>
-</div>
+</figure>
+</section>
+</section>
 
 
            </div>

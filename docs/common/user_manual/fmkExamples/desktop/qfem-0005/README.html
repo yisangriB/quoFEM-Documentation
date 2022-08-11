@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Basic modeling with Python &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -39,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -203,8 +205,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="basic-modeling-with-python">
-<h1>Basic modeling with Python<a class="headerlink" href="#basic-modeling-with-python" title="Permalink to this headline">¶</a></h1>
+  <section id="basic-modeling-with-python">
+<h1>Basic modeling with Python<a class="headerlink" href="#basic-modeling-with-python" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 11%" />
@@ -236,8 +238,8 @@ statistically independent random variables:</p>
 <span class="math notranslate nohighlight">\((L_B)\)</span> of <span class="math notranslate nohighlight">\(1.4\)</span>, upper bound <span class="math notranslate nohighlight">\((U_B)\)</span> of
 <span class="math notranslate nohighlight">\(1.6\)</span>,</p></li>
 </ol>
-<div class="section" id="uq-workflow">
-<h2>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<section id="uq-workflow">
+<h2>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
 <p>The objective of this UQ problem is to numerically integrate the
 following integrals with a forward propagation routine:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-fmkexamples-desktop-qfem-0005-readme-1">
@@ -268,9 +270,9 @@ quoFEM by entering the following inputs in the <strong>UQ</strong> tab:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="model-files">
-<h2>Model Files<a class="headerlink" href="#model-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="model-files">
+<h2>Model Files<a class="headerlink" href="#model-files" title="Permalink to this heading">¶</a></h2>
 <p>For this forward propagation problem, we need to define a Python script
 that will import a set of random variable values, apply them to the
 Rosenbrock function, then write the results to a file named
@@ -337,16 +339,16 @@ variables as objects in the Python runtime. It is supplied to the
 which are assigned to variables in this file will be varied at
 runtime by the UQ engine.</em></p></li>
 </ol>
-</div>
-<div class="section" id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h2>
 <p>The result for a forward propagation run with a maximum of <span class="math notranslate nohighlight">\(200\)</span>
 iterations is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-fmkexamples-desktop-qfem-0005-readme-3">
 <span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-fmkexamples-desktop-qfem-0005-readme-3" title="Permalink to this equation">¶</a></span>\[\begin{split}\mu_g = 146.519 \\
 \sigma_g = 134.01\end{split}\]</div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
