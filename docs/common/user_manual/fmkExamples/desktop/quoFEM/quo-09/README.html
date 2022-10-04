@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../../_static/jquery.js"></script>
         <script src="../../../../../../_static/underscore.js"></script>
-        <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../../_static/doctools.js"></script>
         <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -205,8 +203,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="two-dimensional-truss-global-sensitivity-analysis-using-simcenteruq-engine">
-<h1>Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine<a class="headerlink" href="#two-dimensional-truss-global-sensitivity-analysis-using-simcenteruq-engine" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="two-dimensional-truss-global-sensitivity-analysis-using-simcenteruq-engine">
+<h1>Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine<a class="headerlink" href="#two-dimensional-truss-global-sensitivity-analysis-using-simcenteruq-engine" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 48%" />
@@ -225,9 +223,9 @@ that shown in the following figure. A sensitivity
 analysis procedure is coordinated by quoFEM which will estimate the sensitivities
 of the response quantities of interest with respect to the problem’s
 random variables.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../../_images/truss3.png"><img alt="../../../../../../_images/truss3.png" src="../../../../../../_images/truss3.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <p>The following parameters are defined in the <strong>RV</strong> tab of quoFEM:</p>
 <ol class="arabic simple">
 <li><p>Elastic modulus, <code class="docutils literal notranslate"><span class="pre">E</span></code>: <strong>Weibull</strong> distribution with a scale
@@ -244,15 +242,13 @@ deviation <span class="math notranslate nohighlight">\((\sigma)\)</span> of <spa
 distribution with a mean <span class="math notranslate nohighlight">\((\mu)\)</span> of <span class="math notranslate nohighlight">\(500.0\)</span>, standard
 deviation <span class="math notranslate nohighlight">\((\sigma)\)</span> of <span class="math notranslate nohighlight">\(100.0\)</span>,</p></li>
 </ol>
-<figure class="align-center" id="id7">
+<div class="figure align-center" id="id7">
 <img alt="Random variables for simple truss." src="../../../../../../_images/trussSensitivity-input-SimUQ2.png" />
-<figcaption>
-<p><span class="caption-text">Random variables for simple truss.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Random variables for simple truss.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
 <p>The vertical displacement at node 2 is considered as a response. It is specified in the <strong>QoI</strong> tab as <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_2</span></code>.</p>
-<section id="uq-workflow">
-<h2>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="uq-workflow">
+<h2>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <p>To define the uncertainty workflow in quoFEM, select <strong>Sensitivity
 Analysis</strong> for the <strong>SimCenterUQ</strong> engine, and enter the following
 inputs:</p>
@@ -270,9 +266,9 @@ inputs:</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="model-files">
-<h2>Model Files<a class="headerlink" href="#model-files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="model-files">
+<h2>Model Files<a class="headerlink" href="#model-files" title="Permalink to this headline">¶</a></h2>
 <p>The following files make up the <strong>FEM</strong> model definition.</p>
 <ol class="arabic simple">
 <li><p><a href="#id3"><span class="problematic" id="id4">:quo-09:`TrussModel.tcl &lt;src/TrussModel.tcl&gt;`</span></a>:
@@ -286,21 +282,19 @@ identifiers supplied in the <strong>QoI</strong> tab, and writes the relevant
 response quantities to <code class="docutils literal notranslate"><span class="pre">results.out</span></code> from an OpenSees process. It
 is supplied to the <strong>Postprocess File</strong> field of the <strong>FEM</strong> tab.</p></li>
 </ol>
-<!-- <div class="admonition warning">Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</div> --></section>
-<section id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h2>
+<!-- <div class="admonition warning">Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</div> --></div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
 <p>Once the analysis is complete the <strong>RES</strong> panel will be automatically
 selected and the results will be displayed as shown in the following
 figure:</p>
-<figure class="align-center" id="id8">
+<div class="figure align-center" id="id8">
 <img alt="Sensitivity analysis results for simple truss." src="../../../../../../_images/trussSensitivity-RES-SimUQ3.png" />
-<figcaption>
-<p><span class="caption-text">Sensitivity analysis results for simple truss.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="comparison-with-dakota-engine">
-<h2>Comparison with Dakota engine<a class="headerlink" href="#comparison-with-dakota-engine" title="Permalink to this heading">¶</a></h2>
+<p class="caption"><span class="caption-text">Sensitivity analysis results for simple truss.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="comparison-with-dakota-engine">
+<h2>Comparison with Dakota engine<a class="headerlink" href="#comparison-with-dakota-engine" title="Permalink to this headline">¶</a></h2>
 <p>QuoFEM also supports MCS-based sensitivity analysis method offered in Dakota engine. In this section, the sensitivity analysis is conducted using different number of samples, and the results were compared with those from Dakota engine.</p>
 <table class="docutils align-center" id="id9">
 <caption><span class="caption-text">SimCenterUQ: Sensitivity indices from different number of samples</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
@@ -410,32 +404,26 @@ figure:</p>
 </tbody>
 </table>
 <p>In the current example, the probability model (PM) based approximation method in the SimCenterUQ engine converges faster within a smaller number of simulations. However, caution should be taken when using PM-based method. It is noteworthy that while the MCS method in the Dakota engine always converges to exact value when a sufficiently large number of simulations are involved, such asymptotic exactness is not guaranteed for the PM-based method. Still, the sensitivity rank between the variables is relatively robust.</p>
-</section>
-<section id="result-with-correlated-inputs">
-<h2>Result with correlated inputs<a class="headerlink" href="#result-with-correlated-inputs" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="result-with-correlated-inputs">
+<h2>Result with correlated inputs<a class="headerlink" href="#result-with-correlated-inputs" title="Permalink to this headline">¶</a></h2>
 <p>Consider the case with correlated random variables. For example, below shows correlation matrix where the correlation between the variables <code class="docutils literal notranslate"><span class="pre">Au</span></code> and <code class="docutils literal notranslate"><span class="pre">Ao</span></code> are <span class="math notranslate nohighlight">\(\rho=0.5\)</span>.</p>
-<figure class="align-center" id="id11">
+<div class="figure align-center" id="id11">
 <img alt="Sensitivity analysis results for simple truss." src="../../../../../../_images/trussSensitivity-corr2.png" />
-<figcaption>
-<p><span class="caption-text">Correlation matrix</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Correlation matrix</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
 <p>The group-wise Sobol indices for {<span class="math notranslate nohighlight">\(Au,Ao\)</span>} can be defined at the <strong>QoI</strong> tab.</p>
-<figure class="align-center" id="id12">
+<div class="figure align-center" id="id12">
 <img alt="Sensitivity analysis results for simple truss." src="../../../../../../_images/trussSensitivity-advanced2.png" />
-<figcaption>
-<p><span class="caption-text">Setting advanced options for group-wise Sobol indices</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Setting advanced options for group-wise Sobol indices</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
 <p>The results of sensitivity analysis:</p>
-<figure class="align-center" id="id13">
+<div class="figure align-center" id="id13">
 <img alt="Sensitivity analysis results for simple truss." src="../../../../../../_images/trussSensitivity-RES-SimUQ22.png" />
-<figcaption>
-<p><span class="caption-text">Sensitivity analysis results for simple truss (with correlations)</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
+<p class="caption"><span class="caption-text">Sensitivity analysis results for simple truss (with correlations)</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
 
 
            </div>

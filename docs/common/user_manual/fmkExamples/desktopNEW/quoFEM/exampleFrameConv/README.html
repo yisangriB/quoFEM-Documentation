@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Steel Frame: Conventional Calibration &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../../_static/jquery.js"></script>
         <script src="../../../../../../_static/underscore.js"></script>
-        <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../../_static/doctools.js"></script>
         <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -205,8 +203,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="steel-frame-conventional-calibration">
-<h1>Steel Frame: Conventional Calibration<a class="headerlink" href="#steel-frame-conventional-calibration" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="steel-frame-conventional-calibration">
+<h1>Steel Frame: Conventional Calibration<a class="headerlink" href="#steel-frame-conventional-calibration" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 42%" />
@@ -224,9 +222,9 @@ shapes and frequencies.</p>
 <p>Provided by Professor Joel Conte and his doctoral students Maitreya
 Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at
 the following simplified finite element model of a steel building.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../../_images/frameFE3.png"><img alt="../../../../../../_images/frameFE3.png" src="../../../../../../_images/frameFE3.png" style="width: 400px;" /></a>
-</figure>
+</div>
 <p>Each floor slab of the building is made of composite metal deck and is
 supported on four steel columns. The story heights are measured at
 <span class="math notranslate nohighlight">\(10'\)</span> and in plan the side lengths measure <span class="math notranslate nohighlight">\(33'-4&quot;\)</span> by
@@ -361,15 +359,15 @@ close $outFile
 <ol class="arabic simple">
 <li><p>Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. In the UQ Method category drop down menu change the category to <strong>Parameters Estimation</strong>, and the method as <strong>NL2SOL</strong>, the convergence tolerance to <code class="docutils literal notranslate"><span class="pre">1.0e-6</span></code> and leave the scaling factors empty (assumes weights of 1.0 on all response values) as shown in the figure.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../../_images/joelUQ1.png"><img alt="../../../../../../_images/joelUQ1.png" src="../../../../../../_images/joelUQ1.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <ol class="arabic simple" start="2">
 <li><p>Next select the <strong>FEM</strong> tab from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the <code class="docutils literal notranslate"><span class="pre">fem.tcl</span></code> file or select <strong>choose</strong> and navigate to the file.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../../_images/joelCalFEM1.png"><img alt="../../../../../../_images/joelCalFEM1.png" src="../../../../../../_images/joelCalFEM1.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>As discussed but it is worth noting again, because the script generates a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file, no postprocessing script is needed for this example. This might not always be the case for some of your problems.</p>
@@ -377,9 +375,9 @@ close $outFile
 <ol class="arabic simple" start="3">
 <li><p>Next select the <strong>RV</strong> tab from the input panel. This should be prepopulated with two random variables with same names as those having <code class="docutils literal notranslate"><span class="pre">pset</span></code> in the tcl script, i.e. <code class="docutils literal notranslate"><span class="pre">Ic1</span></code> and <code class="docutils literal notranslate"><span class="pre">Ic2</span></code>. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../../_images/joelCalRV1.png"><img alt="../../../../../../_images/joelCalRV1.png" src="../../../../../../_images/joelCalRV1.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For the Parameter Estimation category of UQ methods, only continuous design distributions may be entered.</p>
@@ -387,9 +385,9 @@ close $outFile
 <ol class="arabic simple" start="4">
 <li><p>Next select the <strong>QoI</strong> panel. Here enter <strong>10</strong> variable names. The following figure shows the first nine names used; the tenth entry used, which does not show up in the image was <code class="docutils literal notranslate"><span class="pre">eps_p5</span></code>.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../../_images/joelCalQoI3.png"><img alt="../../../../../../_images/joelCalQoI3.png" src="../../../../../../_images/joelCalQoI3.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For this particular problem setup in which the user is not using a postprocessing script, the user may specify any names for the QoI variables. They are only being used by Dakota to return information on the errors.</p>
@@ -397,13 +395,13 @@ close $outFile
 <ol class="arabic simple" start="5">
 <li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch Dakota. When done the <strong>RES</strong> tab will be selected and the results will be displayed as shown in the figure below. The figure shows Dakota returned, for inputs provided, estimates of our unknown parameters, <code class="docutils literal notranslate"><span class="pre">Ic1</span></code> and <code class="docutils literal notranslate"><span class="pre">Ic2</span></code> are <strong>1168.83</strong> and <strong>1211.25</strong> respectively.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../../_images/quo-07-res-sum1.png"><img alt="../../../../../../_images/quo-07-res-sum1.png" src="../../../../../../_images/quo-07-res-sum1.png" style="width: 600px;" /></a>
-</figure>
-<figure class="align-center">
+</div>
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../../_images/quo-07-res-dat1.png"><img alt="../../../../../../_images/quo-07-res-dat1.png" src="../../../../../../_images/quo-07-res-dat1.png" style="width: 600px;" /></a>
-</figure>
-</section>
+</div>
+</div>
 
 
            </div>

@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>7. Running in Your Browser &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -206,13 +204,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="running-in-your-browser">
-<h1><span class="section-number">7. </span>Running in Your Browser<a class="headerlink" href="#running-in-your-browser" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="running-in-your-browser">
+<h1><span class="section-number">7. </span>Running in Your Browser<a class="headerlink" href="#running-in-your-browser" title="Permalink to this headline">¶</a></h1>
 <p>It is possible to run quoFEM remotely at DesignSafe through your browser using <a class="reference external" href="https://aws.amazon.com/hpc/dcv/">NICE DCV</a>, a high-performance remote display protocol that provides users with a remote desktop experience. Running quoFEM app in this manner requires that you create a directory in DataDepot and upload yur working files to that directory. The advantage of using the remote desktop service is that you don’t have to install quoFEM app, the disadvantage is that you have to upload and download files and will sometimes have to wait awhile for your application to start.</p>
 <p>To launch quoFEM app in your browser you select the following <a class="reference external" href="https://www.designsafe-ci.org/rw/workspace/#!/quoFEM-frontera-1.0.0">link</a>. This will open up a page as shown below:</p>
-<figure class="align-center" id="figdcv-quofem">
+<div class="align-center figure" id="figdcv-quofem">
 <img alt="../../../../_images/quoFEM.png" src="../../../../_images/quoFEM.png" />
-</figure>
+</div>
 <p>This page requires that you fill in the following:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -227,9 +225,9 @@
 </ol>
 </div></blockquote>
 <p>Once all information has been entered you can slect the <strong>RUN</strong> button to actually launch the job. Depending how busy the <a class="reference external" href="https://https://portal.tacc.utexas.edu/system-monitor">**Frontera**</a> at TACC is, your job may start within 30sec or it may take longer. When it starts an email will be sent to the adress provided in the input containing a link to the runnig application, and if you have remained on the page a popup page will appear with a <strong>CONNECT</strong> button, which when pressed will take you to same address contained in the email. The page it takes you to is as shown below:</p>
-<figure class="align-center" id="id1">
+<div class="align-center figure" id="id1">
 <img alt="../../../../_images/dcvLogin.png" src="../../../../_images/dcvLogin.png" />
-</figure>
+</div>
 <p>On this page you must re-enter your DesignSafe username and password.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -238,7 +236,7 @@
 <li><p>DesignSafe has a limited number of licensces at it’s disposal, so your job may not always run.</p></li>
 </ol>
 </div>
-</section>
+</div>
 
 
            </div>

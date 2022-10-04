@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.1.2.1. Forward Propagation &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.1.3.1. Forward Propagation &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -51,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.2.2. Global Sensitivity Analysis" href="SimCenterUQSensitivity.html" />
-    <link rel="prev" title="2.1.1.5. Inverse Problem" href="DakotaInverseProblems.html" />
+    <link rel="next" title="2.1.3.2. Global Sensitivity Analysis" href="SimCenterUQSensitivity.html" />
+    <link rel="prev" title="2.1.2.6. Gradient-free Parameter Estimation" href="DakotaGradientFreeOptimization.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -120,9 +118,29 @@
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">2.1.1. UQ Features At-a-Glance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">2.1.2. Dakota UQ Engine</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#simcenter-uq-engine">2.1.3. SimCenter UQ Engine</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.3.1. Forward Propagation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.3.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">2.1.3.3. Surrogate Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">2.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.5. Custom UQ Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.3. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
@@ -192,7 +210,7 @@
         
           <li><a href="UQ.html"><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
         
-      <li><span class="section-number">2.1.2.1. </span>Forward Propagation</li>
+      <li><span class="section-number">2.1.3.1. </span>Forward Propagation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,53 +229,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="forward-propagation">
-<span id="lblsimforward"></span><h1><span class="section-number">2.1.2.1. </span>Forward Propagation<a class="headerlink" href="#forward-propagation" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="forward-propagation">
+<span id="lblsimforward"></span><h1><span class="section-number">2.1.3.1. </span>Forward Propagation<a class="headerlink" href="#forward-propagation" title="Permalink to this headline">¶</a></h1>
 <p>The forward propagation provides a probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis). Currently, only the Monte Carlo Sampling (MCS) method is available in the SimCenterUQ engine and the other sampling methods (Latin hypercube sampling, Surrogate model-based efficient sampling) are available in the Dakota engine.</p>
-<section id="sampling-from-dataset">
-<h2>Sampling from dataset<a class="headerlink" href="#sampling-from-dataset" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="sampling-from-dataset">
+<h2>Sampling from dataset<a class="headerlink" href="#sampling-from-dataset" title="Permalink to this headline">¶</a></h2>
 <p>SimCenterUQ uniquely provides an option to define the distribution of random variables (RVs) directly from the samples of the RVs (See <a class="reference internal" href="RV.html#rv"><span class="std std-ref">RV: Random Variables</span></a>). This feature is useful when the user does not know the actual distribution of an RV but has sample realizations. When a dataset is provided, quoFEM either treats the data as a discrete distribution (when <code class="docutils literal notranslate"><span class="pre">Discrete</span></code> distribution option is selected) or fits a parametric distribution to the data (when another distribution option is selected). For the former case, quoFEM uniformly samples the discrete index of the dataset provided by the user and uses the value corresponding to the index for the forward propagation analysis. The index is sampled either <strong>with</strong> replacement if the data size is smaller than the number of samples to draw or <strong>without</strong> replacement if the data size is larger than the number of samples to draw. Further, when the user provides coupled samples of <em>correlated</em> RVs, vector-wise resampling can be performed instead of independent resampling. In particular, a single index is sampled and shared in multiple variables for each realization.</p>
-<figure class="align-center" id="id1">
+<div class="align-center figure" id="id1">
 <span id="figsimsamp3"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling3.png"><img alt="../../../../_images/SimUQ_sampling3.png" src="../../../../_images/SimUQ_sampling3.png" style="width: 1200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.1.1 </span><span class="caption-text">Click check box to import correlated datasets</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.1 </span><span class="caption-text">Click check box to import correlated datasets</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <p>To enable this feature, the user can explicitly define the group of RVs which will share the index samples in the UQ tab using the <code class="docutils literal notranslate"><span class="pre">Resample</span> <span class="pre">RVs</span> <span class="pre">from</span> <span class="pre">correlated</span> <span class="pre">dataset</span></code>:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>The actual datasets of the RVs written in this field should be imported in the RV tab, through <code class="docutils literal notranslate"><span class="pre">parameters</span></code>-<code class="docutils literal notranslate"><span class="pre">discrete</span></code> option.</p></li>
-<li><p>The RVs inside each group should be provided with the same length of the samples (e.g. in <a class="reference internal" href="#figsimsamp3"><span class="std std-numref">Fig. 2.1.2.1.1</span></a>, <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> should have the same sample size <span class="math notranslate nohighlight">\(N_1\)</span> and <span class="math notranslate nohighlight">\(alp\)</span> and <span class="math notranslate nohighlight">\(F_y\)</span> should have the same sample size <span class="math notranslate nohighlight">\(N_2\)</span>)</p></li>
+<li><p>The RVs inside each group should be provided with the same length of the samples (e.g. in <a class="reference internal" href="#figsimsamp3"><span class="std std-numref">Fig. 2.1.3.1.1</span></a>, <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> should have the same sample size <span class="math notranslate nohighlight">\(N_1\)</span> and <span class="math notranslate nohighlight">\(alp\)</span> and <span class="math notranslate nohighlight">\(F_y\)</span> should have the same sample size <span class="math notranslate nohighlight">\(N_2\)</span>)</p></li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Any correlation values for this coupled datasets <strong>additionally specified in the RV tab</strong> will be <strong>ignored</strong>. Note that the correlation of the data is already reflected in the analysis by introducing the same resampling index.</p>
 </div>
-<p>For example, consider the case where two variables <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> are provided as 10 discrete data points in RV tab as in <a class="reference internal" href="#figsimsamp4"><span class="std std-numref">Fig. 2.1.2.1.2</span></a>.</p>
-<figure class="align-center" id="id2">
+<p>For example, consider the case where two variables <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> are provided as 10 discrete data points in RV tab as in <a class="reference internal" href="#figsimsamp4"><span class="std std-numref">Fig. 2.1.3.1.2</span></a>.</p>
+<div class="align-center figure" id="id2">
 <span id="figsimsamp4"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling4.png"><img alt="../../../../_images/SimUQ_sampling4.png" src="../../../../_images/SimUQ_sampling4.png" style="width: 1200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.1.2 </span><span class="caption-text">Example RV tab. RVs <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> have the same sample size when they are specified to be coupled as shown in <a class="reference internal" href="#figsimsamp3"><span class="std std-numref">Fig. 2.1.2.1.1</span></a>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.2 </span><span class="caption-text">Example RV tab. RVs <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> have the same sample size when they are specified to be coupled as shown in <a class="reference internal" href="#figsimsamp3"><span class="std std-numref">Fig. 2.1.3.1.1</span></a>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <p>Below is the an example 100 realization the two variables when they are considered to be <em>independent</em>, i.e. without checking the “Resample RVs from correlated dataset” option.</p>
-<figure class="align-center" id="id3">
+<div class="align-center figure" id="id3">
 <span id="figsimsamp1"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling2.png"><img alt="../../../../_images/SimUQ_sampling2.png" src="../../../../_images/SimUQ_sampling2.png" style="width: 1200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.1.3 </span><span class="caption-text">Example of correlated samples (when “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>On the other hand, if the two datasets are considered correlated, i.e. if “Resample RVs from correlated dataset” are checked and the group {w,wR} is reported in the field as shown in <a class="reference internal" href="#figsimsamp3"><span class="std std-numref">Fig. 2.1.2.1.1</span></a>, 100 realization pairs of the RVs will be stacked on top of the provided 10 dataset.</p>
-<figure class="align-center" id="id4">
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.3 </span><span class="caption-text">Example of correlated samples (when “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>On the other hand, if the two datasets are considered correlated, i.e. if “Resample RVs from correlated dataset” are checked and the group {w,wR} is reported in the field as shown in <a class="reference internal" href="#figsimsamp3"><span class="std std-numref">Fig. 2.1.3.1.1</span></a>, 100 realization pairs of the RVs will be stacked on top of the provided 10 dataset.</p>
+<div class="align-center figure" id="id4">
 <span id="figsimsamp2"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling1.png"><img alt="../../../../_images/SimUQ_sampling1.png" src="../../../../_images/SimUQ_sampling1.png" style="width: 1200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.1.4 </span><span class="caption-text">Example of uncorrelated samples (when “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.4 </span><span class="caption-text">Example of uncorrelated samples (when “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
 <p>This feature is especially useful when the user wants to perform a forward UQ analysis directly using the posterior samples obtained from Markov Chain Monte Carlo or other Bayesian sampling approaches.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

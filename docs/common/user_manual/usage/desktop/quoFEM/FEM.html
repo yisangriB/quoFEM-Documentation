@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2.2. FEM: Finite Element Method &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -125,8 +123,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. FEM: Finite Element Method</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">2.2.1. OpenSees</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">2.2.2. FEAPpv</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#openseespy">2.2.3. OpenSeesPy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python">2.2.2. Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.2.3. FEAPpv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#custom">2.2.4. Custom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#surrogategp">2.2.5. SurrogateGP</a></li>
 </ul>
@@ -222,17 +220,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="fem-finite-element-method">
-<span id="lblfem"></span><h1><span class="section-number">2.2. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="fem-finite-element-method">
+<span id="lblfem"></span><h1><span class="section-number">2.2. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
 <p>The <strong>FEM</strong> tab will present users with a selection of FEM
-applications. Currently, there are four options: OpenSees, FEAPpv, OpenSeesPy,
+applications. Currently, there are four options: OpenSees, Python, FEAPpv,
 and a custom user-specified application.</p>
-<figure class="align-center" id="id3">
+<div class="align-center figure" id="id3">
 <span id="figfem"></span><img alt="../../../../../_images/FEM1.png" src="../../../../../_images/FEM1.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 2.2.1 </span><span class="caption-text">Input for the <strong>FEM</strong> tab.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.2.1 </span><span class="caption-text">Input for the <strong>FEM</strong> tab.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named <code class="docutils literal notranslate"><span class="pre">results.out</span></code> and be placed in the same directory as the main input file. The <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file must contain a single line. That line must contain as many QoI values as the user will enter in the <strong>QoI</strong> panel. Each value must be separated by a space. An example <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file for a problem specifying four response QoI values is as shown:</p>
@@ -240,14 +236,83 @@ and a custom user-specified application.</p>
 </pre></div>
 </div>
 </div>
-<section id="id1">
-<h2><span class="section-number">2.2.1. </span>OpenSees<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id1">
+<h2><span class="section-number">2.2.1. </span>OpenSees<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>When the choice of FEM application is OpenSees (the default application), the user is presented with the input panel shown in figure above and there are two entry fields for filenames:</p>
 <ol class="arabic simple">
 <li><p><strong>Input Script</strong>: The user must specify a main input script. When entered the application will parse this file looking for variables set with the <code class="docutils literal notranslate"><span class="pre">pset</span></code> option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with <code class="docutils literal notranslate"><span class="pre">pset</span></code>, the program will auto populate the variable in the <strong>RV</strong> tab.</p></li>
 </ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># units kN &amp; mm</span>
+
+<span class="c">#</span>
+<span class="c"># set some parameters</span>
+<span class="c">#</span>
+
+<span class="nv">pset</span> E <span class="mi">205</span>
+<span class="nv">pset</span> P <span class="mi">25</span>
+<span class="nv">pset</span> Au <span class="mi">500</span>
+<span class="nv">pset</span> Ao <span class="mi">250</span>
+
+<span class="c">#</span>
+<span class="c"># build the model</span>
+<span class="c">#</span>
+
+<span class="nv">model</span> Basic <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">2</span>
+
+<span class="nv">node</span> <span class="mi">1</span>     <span class="mi">0</span>    <span class="mi">0</span>
+<span class="nv">node</span> <span class="mi">2</span>  <span class="mi">4000</span>    <span class="mi">0</span>
+<span class="nv">node</span> <span class="mi">3</span>  <span class="mi">8000</span>    <span class="mi">0</span>
+<span class="nv">node</span> <span class="mi">4</span> <span class="mi">12000</span>    <span class="mi">0</span>
+<span class="nv">node</span> <span class="mi">5</span>  <span class="mi">4000</span> <span class="mi">4000</span>
+<span class="nv">node</span> <span class="mi">6</span>  <span class="mi">8000</span> <span class="mi">4000</span>
+
+<span class="nv">fix</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="mi">4</span> <span class="mi">0</span> <span class="mi">1</span>
+
+<span class="nv">uniaxialMaterial</span> Elastic <span class="mi">1</span> <span class="nv">$E</span>
+
+<span class="nv">element</span> truss <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="nv">$Ao</span> <span class="mi">1</span>
+<span class="nv">element</span> truss <span class="mi">2</span> <span class="mi">2</span> <span class="mi">3</span> <span class="nv">$Ao</span> <span class="mi">1</span>
+<span class="nv">element</span> truss <span class="mi">3</span> <span class="mi">3</span> <span class="mi">4</span> <span class="nv">$Ao</span> <span class="mi">1</span>
+<span class="nv">element</span> truss <span class="mi">4</span> <span class="mi">1</span> <span class="mi">5</span> <span class="nv">$Au</span> <span class="mi">1</span>
+<span class="nv">element</span> truss <span class="mi">5</span> <span class="mi">5</span> <span class="mi">6</span> <span class="nv">$Au</span> <span class="mi">1</span>
+<span class="nv">element</span> truss <span class="mi">6</span> <span class="mi">6</span> <span class="mi">4</span> <span class="nv">$Au</span> <span class="mi">1</span>
+<span class="nv">element</span> truss <span class="mi">7</span> <span class="mi">2</span> <span class="mi">5</span> <span class="nv">$Ao</span> <span class="mi">1</span>
+<span class="nv">element</span> truss <span class="mi">8</span> <span class="mi">3</span> <span class="mi">6</span> <span class="nv">$Ao</span> <span class="mi">1</span>
+<span class="nv">element</span> truss <span class="mi">9</span> <span class="mi">5</span> <span class="mi">3</span> <span class="nv">$Ao</span> <span class="mi">1</span>
+<span class="nv">timeSeries</span> Linear <span class="mi">1</span>
+<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
+    <span class="nb">load</span> <span class="mi">2</span> <span class="mi">0</span> <span class="k">[expr</span> <span class="o">-</span><span class="nv">$P</span><span class="k">]</span>
+    <span class="nb">load</span> <span class="mi">3</span> <span class="mi">0</span> <span class="k">[expr</span> <span class="o">-</span><span class="nv">$P</span><span class="k">]</span>
+<span class="k">}</span>
+
+<span class="c">#</span>
+<span class="c"># create a recorder</span>
+<span class="c">#</span>
+
+<span class="nv">recorder</span> Node <span class="o">-</span>file node.out <span class="o">-</span>scientific <span class="o">-</span>precision <span class="mi">10</span> <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> disp
+
+<span class="c">#</span>
+<span class="c"># build and perform the analysis</span>
+<span class="c">#</span>
+
+<span class="nv">algorithm</span> Linear
+<span class="nv">integrator</span> LoadControl <span class="mf">1.0</span>
+<span class="nv">system</span> ProfileSPD
+<span class="nv">numberer</span> RCM
+<span class="nv">constraints</span> Plain
+<span class="nv">analysis</span> Static
+<span class="nv">analyze</span> <span class="mi">1</span>
+
+<span class="c">#</span>
+<span class="c"># remove the recorders</span>
+<span class="c">#</span>
+
+<span class="nv">remove</span> recorders
+</pre></div>
+</div>
 <ol class="arabic simple" start="2">
-<li><p><strong>Postprocess Script</strong> (optional): This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file after the main script runs.</p></li>
+<li><p><strong>Postprocess Script</strong> (optional): This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file after the main script runs. See for instance, <a class="reference internal" href="../../../examples/desktop/qfem-0001/README.html#qfem-0001"><span class="std std-ref">example 1</span></a>.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -257,35 +322,51 @@ and a custom user-specified application.</p>
 <p class="admonition-title">Warning</p>
 <p>If a tcl script file and the user is reading results from files created with OpenSees recorder commands, the user must ensure there is a <code class="docutils literal notranslate"><span class="pre">wipe</span> <span class="pre">recorders</span></code> command at the end of the main script or at the start of the postprocessing script.</p>
 </div>
-</section>
-<section id="id2">
-<h2><span class="section-number">2.2.2. </span>FEAPpv<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="python">
+<h2><span class="section-number">2.2.2. </span>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>The user provides a main script and has the option to provide 2 other scripts:</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/openseespyFEM.png" src="../../../../../_images/openseespyFEM.png" />
+</div>
+<ol class="arabic simple">
+<li><p><strong>Postprocess Script</strong> (Optional): This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file with a single line as described for the OpenSees application.</p></li>
+<li><p><strong>Parameters File</strong>: This file allows for the automatic population of the <strong>RV</strong> tab with any variables found in the file. For example if the file contained the following:</p></li>
+</ol>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># set some parameters</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="mi">205</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">Ao</span> <span class="o">=</span> <span class="mi">250</span>
+<span class="n">Au</span> <span class="o">=</span> <span class="mi">500</span>
+</pre></div>
+</div>
+<p>The <strong>RV</strong> tab would be populated with the <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">Ao</span></code>, and <code class="docutils literal notranslate"><span class="pre">Au</span></code> random variables. See <a class="reference internal" href="../../../examples/desktop/qfem-0002/README.html#qfem-0002"><span class="std std-ref">example 2</span></a> for more.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The windows version of quoFEM app is shipped with its own python executable (which can be found and modified in <code class="docutils literal notranslate"><span class="pre">File</span></code>-<code class="docutils literal notranslate"><span class="pre">Preference</span></code> in the Menu bar.) Therefore, before running quoFEM app, one should check carefully if the python packages required in the main model script are fully installed in the correct python exe that quoFEM runs. For example, if one wants to import seaborn in the main script, make sure to install it in the terminal using something like</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{$PathToPythonExe} -m pip install seaborn</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">{$PathToPythonExe}</span></code> should be replaced with the python exe path defined in the Preference.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">2.2.3. </span>FEAPpv<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p><strong>FEAPpv</strong> is another FEM engine used by the quoFEM app that is publicly available from the <a class="reference external" href="http://projects.ce.berkeley.edu/feap/feappv/">FEAPpv</a> page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install <strong>FEAPpv</strong> you must download the source code and follow the build instructions on the <strong>Source Code Download and Compile Instructions</strong> section of the <a class="reference external" href="http://projects.ce.berkeley.edu/feap/feappv/">FEAPpv</a> page.</p>
 <p>Similar to the OpenSees application, when the user selects FEAPpv the user is requested to provide two files.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/feapFEM.png" src="../../../../../_images/feapFEM.png" />
-</figure>
+</div>
 <ol class="arabic simple">
 <li><p><strong>Input File</strong>: The user must specify a main input file.  A part of this file may contain variables set in the <code class="docutils literal notranslate"><span class="pre">PARA</span></code> section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the <strong>RV</strong> tab. For example if a file containing the following code was specified:</p></li>
 </ol>
 <ol class="arabic simple" start="2">
 <li><p><strong>Postprocess Script</strong>: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file. Currently the user has no control over the name of the output file created by FEAPpv, <code class="docutils literal notranslate"><span class="pre">SimCenterOut.txt</span></code>. It is this file the post-process script must open and use to create the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file.</p></li>
 </ol>
-</section>
-<section id="openseespy">
-<h2><span class="section-number">2.2.3. </span>OpenSeesPy<a class="headerlink" href="#openseespy" title="Permalink to this heading">¶</a></h2>
-<p>For the OpenSeesPy application, the user provides a main script and has the option to provide 2 other scripts:</p>
-<figure class="align-center">
-<img alt="../../../../../_images/openseespyFEM.png" src="../../../../../_images/openseespyFEM.png" />
-</figure>
-<ol class="arabic simple">
-<li><p><strong>Postprocess Script</strong> (Optional): This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file with a single line as described for the OpenSees application.</p></li>
-<li><p><strong>Parameters File</strong>: This file allows for the automatic population of the <strong>RV</strong> tab with any variables found in the file. For example if the file contained the following:</p></li>
-</ol>
-<p>The <strong>RV</strong> tab would be populated with the <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">Ao</span></code>, and <code class="docutils literal notranslate"><span class="pre">Au</span></code> random variables.</p>
-</section>
-<section id="custom">
-<h2><span class="section-number">2.2.4. </span>Custom<a class="headerlink" href="#custom" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="custom">
+<h2><span class="section-number">2.2.4. </span>Custom<a class="headerlink" href="#custom" title="Permalink to this headline">¶</a></h2>
 <p>This option allows users to specify custom simulation applications which do not
 necessarily need to be limited to only Finite Element Method software. With this
 option all users need to do is provide a driver script that takes the input file
@@ -318,22 +399,18 @@ provided workflow driver script – quoFEM will automatically copy any files in 
 directory. This is particularly helpful if several different applications with
 numerous inputs are all being called by the workflow driver script and avoids
 the need to explicitly input each one of these files.</p>
-<figure class="align-center" id="id4">
+<div class="align-center figure" id="id4">
 <span id="customfem"></span><img alt="../../../../../_images/customFEM.png" src="../../../../../_images/customFEM.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 2.2.4.1 </span><span class="caption-text">Input for Custom Analysis Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="surrogategp">
-<h2><span class="section-number">2.2.5. </span>SurrogateGP<a class="headerlink" href="#surrogategp" title="Permalink to this heading">¶</a></h2>
+<p class="caption"><span class="caption-number">Fig. 2.2.4.1 </span><span class="caption-text">Input for Custom Analysis Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="surrogategp">
+<h2><span class="section-number">2.2.5. </span>SurrogateGP<a class="headerlink" href="#surrogategp" title="Permalink to this headline">¶</a></h2>
 <p>In place of the physical simulation models, the Gaussian process surrogate model trained in quoFEM can be imported for UQ/Optimization analyses.</p>
-<figure class="align-center" id="id5">
+<div class="align-center figure" id="id5">
 <span id="surrogatefem1"></span><img alt="../../../../../_images/SurrogateFEM1.png" src="../../../../../_images/SurrogateFEM1.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 2.2.5.1 </span><span class="caption-text">Input for Surrogate model FEM Application</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.2.5.1 </span><span class="caption-text">Input for Surrogate model FEM Application</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
 <p>When users select the SurrogateGP option, they are requested to provide the following files:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -366,18 +443,16 @@ the need to explicitly input each one of these files.</p>
 </ul>
 <p>Additionally, <strong>GP output</strong> can be set as either the <em>median prediction</em> or a <em>random sample</em> generated from the normal distribution (or lognormal distribution if the user used log-transform when training) with the predictive median and variance. <strong>NOTE:</strong> the random generator does not account for the Gaussian process correlation, and each realization of QoI given RVs is independent of each other. Only users familiar with GP modeling and who understand the limitation are recommended to use the <em>random sample</em> option.</p>
 <p>If the user wants to inspect the simulation status or check error/warning messages related to the surrogate model, they can refer to the messages written at: <code class="docutils literal notranslate"><span class="pre">{Local</span> <span class="pre">Jobs</span> <span class="pre">Directory}/tmp.SimCenter/surrogateLog.err</span></code>. (Note: <code class="docutils literal notranslate"><span class="pre">{Local</span> <span class="pre">Jobs</span> <span class="pre">Directory}</span></code> is specified from the file-preference in the menu bar.)</p>
-<figure class="align-center" id="id6">
+<div class="align-center figure" id="id6">
 <span id="surrogatefem2"></span><a class="reference internal image-reference" href="../../../../../_images/SurrogateFEM2.png"><img alt="../../../../../_images/SurrogateFEM2.png" src="../../../../../_images/SurrogateFEM2.png" style="width: 800px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.2.5.2 </span><span class="caption-text">Example of surrogateLog.err file</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.2.5.2 </span><span class="caption-text">Example of surrogateLog.err file</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Once the surrogate model is imported, RV and QoI tab will be auto-populated. Users are allowed to remove some of the QoIs if not interested but may not add new QoIs or modify the names of existing QoIs.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Steel Frame Calibration with DREAM &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -205,8 +203,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="steel-frame-calibration-with-dream">
-<h1>Steel Frame Calibration with DREAM<a class="headerlink" href="#steel-frame-calibration-with-dream" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="steel-frame-calibration-with-dream">
+<h1>Steel Frame Calibration with DREAM<a class="headerlink" href="#steel-frame-calibration-with-dream" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 29%" />
@@ -224,9 +222,9 @@ and mass distribution.</p>
 <p>Provided by Professor Joel Conte and his doctoral students Maitreya
 Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at
 the following simplified finite element model of a steel building.</p>
-<figure class="align-center">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/qfem-0008.png"><img alt="../../../../../_images/qfem-0008.png" src="../../../../../_images/qfem-0008.png" style="width: 500px;" /></a>
-</figure>
+</div>
 <div class="line-block">
 <div class="line">Each floor slab of the building is made of composite metal deck and is
 supported on four steel columns. The story heights are measured at
@@ -263,8 +261,8 @@ bound <span class="math notranslate nohighlight">\((U_B)\)</span> of <span class
 distribution with a lower bound <span class="math notranslate nohighlight">\((L_B)\)</span> of <span class="math notranslate nohighlight">\(500.0\)</span>, upper
 bound <span class="math notranslate nohighlight">\((U_B)\)</span> of <span class="math notranslate nohighlight">\(2000.0\)</span>,</p></li>
 </ol>
-<section id="uq-workflow">
-<h2>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="uq-workflow">
+<h2>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <p>To define the uncertainty workflow in quoFEM, select <strong>Inverse Problem</strong>
 for the <strong>Dakota Method Category</strong>, and enter the following inputs:</p>
 <table class="docutils align-default">
@@ -293,9 +291,9 @@ for the <strong>Dakota Method Category</strong>, and enter the following inputs:
 </tr>
 </tbody>
 </table>
-</section>
-<section id="model-files">
-<h2>Model Files<a class="headerlink" href="#model-files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="model-files">
+<h2>Model Files<a class="headerlink" href="#model-files" title="Permalink to this headline">¶</a></h2>
 <p>The following files make up the <strong>FEM</strong> model definition.</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://raw.githubusercontent.com/claudioperez/SimCenterExamples/master/static/frame/fem.tcl">fem.tcl</a>:
@@ -311,9 +309,9 @@ parameters (<code class="docutils literal notranslate"><span class="pre">Ic1</sp
 The user must take this fact into account when formulating the output
 from their own scripts for their own problems.</p></li>
 </ol>
-</section>
-<section id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
 <p>Once the analysis is complete the <strong>RES</strong> tab will be automatically
 selected and the results will be displayed.</p>
 <p>The resulting estimates for the column stiffnesses with 40 chain samples
@@ -322,8 +320,8 @@ are as follows:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">Ic1</span></code>: Mean <span class="math notranslate nohighlight">\(=1229.1\)</span>, Std. Dev <span class="math notranslate nohighlight">\(=192.407\)</span>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Ic2</span></code>: Mean <span class="math notranslate nohighlight">\(=1404.03\)</span>, Std. Dev <span class="math notranslate nohighlight">\(=253.584\)</span>.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

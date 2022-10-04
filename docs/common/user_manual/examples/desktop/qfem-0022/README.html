@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.11. Two-Dimensional Truss: PLoM Modeling and Simulation &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -228,27 +226,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="two-dimensional-truss-plom-modeling-and-simulation">
-<span id="qfem-0022"></span><h1><span class="section-number">4.11. </span>Two-Dimensional Truss: PLoM Modeling and Simulation<a class="headerlink" href="#two-dimensional-truss-plom-modeling-and-simulation" title="Permalink to this heading">¶</a></h1>
-<section id="about-plom">
-<h2><span class="section-number">4.11.1. </span>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="two-dimensional-truss-plom-modeling-and-simulation">
+<span id="qfem-0022"></span><h1><span class="section-number">4.11. </span>Two-Dimensional Truss: PLoM Modeling and Simulation<a class="headerlink" href="#two-dimensional-truss-plom-modeling-and-simulation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about-plom">
+<h2><span class="section-number">4.11.1. </span>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this headline">¶</a></h2>
 <p><strong>PLoM</strong> is an open source python package that implements the algorithm of <strong>Probabilistic
-Learning on Manifolds</strong> with and without constraints (<a class="reference internal" href="../../../usage/desktop/SimCenterUQPLoM.html#soizeghanem2016" id="id1"><span>[SoizeGhanem2016]</span></a>, <a class="reference internal" href="../../../usage/desktop/SimCenterUQPLoM.html#soizeghanem2020" id="id2"><span>[SoizeGhanem2020]</span></a>)
+Learning on Manifolds</strong> with and without constraints (<a class="reference internal" href="#soizeghanem2016" id="id1"><span>[SoizeGhanem2016]</span></a>, <a class="reference internal" href="#soizeghanem2020" id="id2"><span>[SoizeGhanem2020]</span></a>)
 for <em>generating realizations of a random vector in a finite Euclidean space that are
 statistically consistent with a given dataset of that vector</em>.</p>
 <p>PLoM functionality in SimCenter tools is built upon <a class="reference external" href="https://github.com/sanjayg0/PLoM">PLoM</a>
 package (available under MIT license), an opensource python package for Probabilistic
-Learning on Manifolds <a class="reference internal" href="../../../usage/desktop/SimCenterUQPLoM.html#zhonggualgovindjee2021" id="id3"><span>[ZhongGualGovindjee2021]</span></a>. The package mainly consists of python
+Learning on Manifolds <a class="reference internal" href="#zhonggualgovindjee2021" id="id3"><span>[ZhongGualGovindjee2021]</span></a>. The package mainly consists of python
 modules and invokes a dynamic library for more efficiently computing the gradient of
 the potential, and can be imported and run on Linux, macOS, and Windows platform.</p>
-</section>
-<section id="problem-statement">
-<h2><span class="section-number">4.11.2. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="problem-statement">
+<h2><span class="section-number">4.11.2. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
 <p>Consider the problem simulating response of a two-dimensional truss structure with uncertain material properties shown in the following figure.
 The goal of the exercise is to demonstrate the use of <code class="docutils literal notranslate"><span class="pre">PLoM</span> <span class="pre">model</span></code> method under <code class="docutils literal notranslate"><span class="pre">SimCenterUQ</span></code>.</p>
-<figure class="align-center">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/truss1.png"><img alt="../../../../../_images/truss1.png" src="../../../../../_images/truss1.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <ol class="arabic simple">
 <li><p>Elastic modulus(<code class="docutils literal notranslate"><span class="pre">E</span></code>): mean <span class="math notranslate nohighlight">\(\mu_E=205 kN/{mm^2}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_E =15 kN/{mm^2}\)</span> (COV = 7.3%)</p></li>
 <li><p>Load (<code class="docutils literal notranslate"><span class="pre">P</span></code>): mean <span class="math notranslate nohighlight">\(\mu_P =25 kN\)</span> and a standard deviation of <span class="math notranslate nohighlight">\(\sigma_P = 3 kN\)</span>, (COV = 12%).</p></li>
@@ -365,36 +363,36 @@ The goal of the exercise is to demonstrate the use of <code class="docutils lite
 <span class="nb">close</span> <span class="nv">$resultFile</span>
 </pre></div>
 </div>
-</section>
-<section id="plom-modeling">
-<h2><span class="section-number">4.11.3. </span>PLoM Modeling<a class="headerlink" href="#plom-modeling" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="plom-modeling">
+<h2><span class="section-number">4.11.3. </span>PLoM Modeling<a class="headerlink" href="#plom-modeling" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, select <code class="docutils literal notranslate"><span class="pre">SimCenterUQ</span></code> as the UQ engine.
 Select <code class="docutils literal notranslate"><span class="pre">PLoM</span> <span class="pre">Model</span></code> for the UQ method, and use <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code> as the Training Dataset.
 For sampling method, select <code class="docutils literal notranslate"><span class="pre">LHS</span></code> with 50 initial simulations for generating training data (with a random seed specified).
 For the new sample number ratio, input 5 by which 250 new realizations will be created from the trained PLoM model.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/UQ.png" src="../../../../../_images/UQ.png" />
-</figure>
+</div>
 <ol class="arabic simple" start="2">
 <li><p>Next select the <strong>FEM</strong> panel from the input panel. This will default in the <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> engine. For the main script copy the path name to <code class="docutils literal notranslate"><span class="pre">TrussModel.tcl</span></code> or select <strong>choose</strong> and navigate to the file. For the <strong>post-process script</strong> field, repeat the same procedure for the <code class="docutils literal notranslate"><span class="pre">TrussPost.tcl</span></code> script.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/FEM.png" src="../../../../../_images/FEM.png" />
-</figure>
+</div>
 <ol class="arabic simple" start="3">
 <li><p>Next select the <strong>RV</strong> panel from the input panel. This should be pre-populated with four random variables with same names as those having <code class="docutils literal notranslate"><span class="pre">pset</span></code> in the tcl script. For each variable, from the drop down menu change them from having a constant distribution to a normal one and then provide the means and standard deviations specified for the problem.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/RV.png" src="../../../../../_images/RV.png" />
-</figure>
+</div>
 <ol class="arabic simple" start="4">
 <li><p>Next select the <strong>EDP</strong> tab. Here two response variables <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_2</span></code> and <code class="docutils literal notranslate"><span class="pre">Node_3_Disp_2</span></code> are defined, which should be consistent with the post-process script.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/EDP.png" src="../../../../../_images/EDP.png" />
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The user can add extra EDP by selecting add and then providing additional names. As seen from the post-process script any of the 6 nodes may be specified and for any node either the 1 or 2 DOF direction.</p>
@@ -403,29 +401,25 @@ For the new sample number ratio, input 5 by which 250 new realizations will be c
 <li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch the job. When done the <strong>RES</strong> panel will be selected and the results will be displayed.
 The landing page of <strong>RES</strong> will show summarize the training information including training sampling number along with two PLoM model trucation plots for PCA and KDE.</p></li>
 </ol>
-<figure class="align-center" id="id4">
+<div class="align-center figure" id="id4">
 <img alt="../../../../../_images/RES1.png" src="../../../../../_images/RES1.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 4.11.3.1 </span><span class="caption-text">PCA representation error versus the PCA eigenvalues overlapped by the truncating PCA eigenvalue used in training</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id5">
+<p class="caption"><span class="caption-number">Fig. 4.11.3.1 </span><span class="caption-text">PCA representation error versus the PCA eigenvalues overlapped by the truncating PCA eigenvalue used in training</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id5">
 <img alt="../../../../../_images/RES2.png" src="../../../../../_images/RES2.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 4.11.3.2 </span><span class="caption-text">Diffusion map eigenvalue by components overlapped by the truncating eigenvalue used in training</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 4.11.3.2 </span><span class="caption-text">Diffusion map eigenvalue by components overlapped by the truncating eigenvalue used in training</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
 <p>If the user selects the <strong>Data</strong> tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data.
 Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data. If a singular column of
 the tabular data is pressed with both right and left buttons a frequency and CDF will be displayed, as shown in figure below.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/RES3.png" src="../../../../../_images/RES3.png" />
-</figure>
+</div>
 <p>The PLoM model can be saved and be loaded back for future use. The <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">PLoM</span> <span class="pre">Model</span></code> button at the bottom of Summary
 page would bring up a dialogue window for saving the model file to a user-defined directory.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/RES4.png" src="../../../../../_images/RES4.png" />
-</figure>
+</div>
 <dl class="citation">
 <dt class="label" id="soizeghanem2016"><span class="brackets"><a class="fn-backref" href="#id1">SoizeGhanem2016</a></span></dt>
 <dd><p>Soize, C., &amp; Ghanem, R. (2016). Data-driven probability concentration and sampling on manifold. Journal of Computational Physics, 321, 242-258.</p>
@@ -437,8 +431,8 @@ page would bring up a dialogue window for saving the model file to a user-define
 <dd><p>Zhong, K., Gual, J., and Govindjee, S., PLoM python package v1.0, <a class="reference external" href="https://github.com/sanjayg0/PLoM">https://github.com/sanjayg0/PLoM</a> (2021).</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

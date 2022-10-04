@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.1. Interpoint Distances &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -212,8 +210,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="interpoint-distances">
-<span id="lblinterpointdistveri"></span><h1><span class="section-number">4.1. </span>Interpoint Distances<a class="headerlink" href="#interpoint-distances" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="interpoint-distances">
+<span id="lblinterpointdistveri"></span><h1><span class="section-number">4.1. </span>Interpoint Distances<a class="headerlink" href="#interpoint-distances" title="Permalink to this headline">¶</a></h1>
 <p>This is not a structural example, it is one used in the literature to verify sampling methods as a mathematical formula
 exists for the solution. The example presented is computing the average distance between randomly chosen points
 in a rectangular region. Such average distances come up in many settings. For cell phone companies, the probability that a distributed network is fully connected depends on average distances between communicating nodes. For city planners preparing for disasters,
@@ -299,33 +297,33 @@ it could represent the average distances from dwellings to fire stations or from
 <ol class="arabic simple" start="2">
 <li><p>Start the quoFEM app and select Dakota UQ Engine, Forward propagation type of problem and LHS method. Specify <code class="docutils literal notranslate"><span class="pre">10000</span></code> samples and a seed of <code class="docutils literal notranslate"><span class="pre">175</span></code>.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/ghoshUQ.png" src="../../../../../_images/ghoshUQ.png" />
-</figure>
+</div>
 <ol class="arabic simple" start="3">
 <li><p>Select next the <strong>FEM</strong> tab. From this tab select either OpenSees or OpenSeesPy depending on which file you choose to place in the folder. For the input file specify the full path to this file.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/ghoshFEM.png" src="../../../../../_images/ghoshFEM.png" />
-</figure>
+</div>
 <ol class="arabic simple" start="4">
 <li><p>Select the <strong>RV</strong> tab. Create four random variables named <code class="docutils literal notranslate"><span class="pre">X1</span></code>, <code class="docutils literal notranslate"><span class="pre">Y1</span></code>, <code class="docutils literal notranslate"><span class="pre">X2</span></code>, <code class="docutils literal notranslate"><span class="pre">Y2</span></code>. For each specify a uniform distribution with the range for the <code class="docutils literal notranslate"><span class="pre">X</span></code> variables being <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">Lw</span></code> and range of <code class="docutils literal notranslate"><span class="pre">Y</span></code> variables being <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">Lh</span></code>. This is as shown for <code class="docutils literal notranslate"><span class="pre">Lw</span> <span class="pre">=</span> <span class="pre">1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">Lh</span> <span class="pre">=</span> <span class="pre">0.6</span></code>.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/ghoshRV.png" src="../../../../../_images/ghoshRV.png" />
-</figure>
+</div>
 <ol class="arabic simple" start="5">
 <li><p>Select the <strong>QoI</strong> tab. Create one EDP and name it <code class="docutils literal notranslate"><span class="pre">E</span></code> as shown.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/ghoshQoI.png" src="../../../../../_images/ghoshQoI.png" />
-</figure>
+</div>
 <ol class="arabic simple" start="6">
 <li><p>Press the Run button. The results should show the mean to be <code class="docutils literal notranslate"><span class="pre">0.425709</span></code>.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/ghoshRES.png" src="../../../../../_images/ghoshRES.png" />
-</figure>
+</div>
 <p>These simulations can be performed for a number of the different sampling methods for a number of different number of samples.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -374,7 +372,7 @@ it could represent the average distances from dwellings to fire stations or from
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 
 
            </div>

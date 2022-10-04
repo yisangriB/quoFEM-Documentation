@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.9. Custom UQ for UQpy &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -225,8 +223,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="custom-uq-for-uqpy">
-<span id="qfem-0017"></span><h1><span class="section-number">4.9. </span>Custom UQ for UQpy<a class="headerlink" href="#custom-uq-for-uqpy" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="custom-uq-for-uqpy">
+<span id="qfem-0017"></span><h1><span class="section-number">4.9. </span>Custom UQ for UQpy<a class="headerlink" href="#custom-uq-for-uqpy" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 28%" />
@@ -239,9 +237,9 @@
 </tbody>
 </table>
 <p>This example illustrates how quoFEM can interface a custom UQ engine. A simple forward propagation is conducted using <a class="reference external" href="https://sites.google.com/site/jhusurg/UQpy">UQpy</a>, a python package for general uncertainty quantification problems.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/qfem-0017.png"><img alt="../../../../../_images/qfem-0017.png" src="../../../../../_images/qfem-0017.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <p>Consider a two-dimensional truss structure that has uncertain properties that all follow uniform distribution:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -279,14 +277,14 @@
 <p class="admonition-title">Note</p>
 <p>The <a class="reference external" href="https://sites.google.com/site/jhusurg/UQpy">UQpy</a> python package is required to be installed to run this example, e.g. pip install UQpy</p>
 </div>
-<section id="uq-workflow">
-<h2><span class="section-number">4.9.1. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="uq-workflow">
+<h2><span class="section-number">4.9.1. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Start the application and the <strong>UQ</strong> Selection will be highlighted. In the panel for the UQ selection, change the UQ Engine to <strong>CustomUQ</strong>.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/CUS_UQtab.png" src="../../../../../_images/CUS_UQtab.png" />
-</figure>
+</div>
 <p>Next, provide the configuration input file path.  In the configuration file, users specify the interface for the parameters (type, name, values of each parameters) required for the custom UQ analysis. The provided script will generate 1 combo box to define sample types, 2 line edit fields to define the number of samples and seed, 3 spin boxes to define number of concurrent tasks, nodes, and cores per task, and 1 line edit field to specify the UQ Driver.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 4.9.1.1 </span><span class="caption-text">UQpySimpleExample.json</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
@@ -327,25 +325,25 @@
 </div>
 </div>
 <p>Note that configuration input file specifies the front-end interfaces while the back-end interface should be modified in the backend directory (Refer the <a class="reference internal" href="../../../usage/desktop/Configuring_CustomUQ.html#lblcustomuq"><span class="std std-ref">Configuring CustomUQ Engine</span></a> section for details). As an example, UQpy has been already implemented in the customized backend where users can find at <code class="docutils literal notranslate"><span class="pre">{Backend</span> <span class="pre">Applications</span> <span class="pre">Directory}/applications/performUQ/other</span></code>, where the <code class="docutils literal notranslate"><span class="pre">{Backend</span> <span class="pre">Applications</span> <span class="pre">Directory}</span></code> is specified from the file-preference in the menu bar). Once the <code class="docutils literal notranslate"><span class="pre">UQpySimpleExample.json</span></code> is called, the following customized user interface will appear in UQ panel.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/CUS_UQtab2.png" src="../../../../../_images/CUS_UQtab2.png" />
-</figure>
+</div>
 <p>Let us sample 50 samples by Latin hypercube sampling (LHS). The UQ Driver field must be filled in as <strong>UQpy</strong>, as shown in the following figure.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/CUS_UQtab3.png" src="../../../../../_images/CUS_UQtab3.png" />
-</figure>
+</div>
 <ol class="arabic simple" start="2">
 <li><p>Select the <strong>FEM</strong> tab from the input panel. For the main script copy the path to the <code class="docutils literal notranslate"><span class="pre">TrussModel.tcl</span></code> or select choose and navigate to the file. For the post-process script field, repeat the same procedure for the <code class="docutils literal notranslate"><span class="pre">TrussPost.tcl</span> <span class="pre">script</span></code>. (See example <a class="reference internal" href="../qfem-0001/README.html#qfem-0001"><span class="std std-ref">Two-Dimensional Truss: Sampling, Reliability and Sensitivity</span></a> for the model details)</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/CUS_FEMtab.png" src="../../../../../_images/CUS_FEMtab.png" />
-</figure>
+</div>
 <ol class="arabic simple" start="3">
 <li><p>Select the <strong>RV</strong> tab from the input panel. This should be pre-populated with four random variables with same names as those having <code class="docutils literal notranslate"><span class="pre">pset</span></code> in the tcl script. For each variable, from the drop down menu change them to uniform and provide the lower and upper bounds specified for the problem.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/CUS_RVtab.png" src="../../../../../_images/CUS_RVtab.png" />
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Only <strong>uniform distribution</strong> is supported in this preliminary example.</p>
@@ -353,9 +351,9 @@
 <ol class="arabic simple" start="4">
 <li><p>Next select the <strong>QoI</strong> tab. Here enter <code class="docutils literal notranslate"><span class="pre">Node_3_Disp_2</span></code> for the one variable.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/CUS_QoItab.png" src="../../../../../_images/CUS_QoItab.png" />
-</figure>
+</div>
 <ol class="arabic simple" start="5">
 <li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch the CustomUQ engine which will run UQpy.</p></li>
 <li><p>When done the <strong>RES</strong> panel will be selected and the results will be displayed. The results show the values the mean and standard deviation.</p></li>
@@ -368,11 +366,11 @@
 <li><p>Kurtosis = 2.7146</p></li>
 </ul>
 <p>Data Table:</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/CUS_REStab.png" src="../../../../../_images/CUS_REStab.png" />
-</figure>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>

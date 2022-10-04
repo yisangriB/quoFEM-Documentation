@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.1.1.5. Inverse Problem &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.1.2.5. Bayesian Calibration &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -50,8 +48,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.2.1. Forward Propagation" href="SimCenterUQSampling.html" />
-    <link rel="prev" title="2.1.1.4. Parameter Estimation" href="DakotaParameterEstimation.html" />
+    <link rel="next" title="2.1.2.6. Gradient-free Parameter Estimation" href="DakotaGradientFreeOptimization.html" />
+    <link rel="prev" title="2.1.2.4. Deterministic Calibration" href="DakotaDeterministicCalibration.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -119,9 +117,31 @@
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">2.1.1. UQ Features At-a-Glance</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#dakota-uq-engine">2.1.2. Dakota UQ Engine</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">2.1.2.1. Forward Propagation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaReliability.html">2.1.2.3. Reliability Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaDeterministicCalibration.html">2.1.2.4. Deterministic Calibration</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.2.5. Bayesian Calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaGradientFreeOptimization.html">2.1.2.6. Gradient-free Parameter Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">2.1.3. SimCenter UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.5. Custom UQ Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.3. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
@@ -191,13 +211,13 @@
         
           <li><a href="UQ.html"><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
         
-      <li><span class="section-number">2.1.1.5. </span>Inverse Problem</li>
+      <li><span class="section-number">2.1.2.5. </span>Bayesian Calibration</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../../_sources/common/user_manual/usage/desktop/DakotaInverseProblems.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/common/user_manual/usage/desktop/DakotaBayesianCalibration.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -210,12 +230,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="inverse-problem">
-<span id="lblinverseproblem"></span><h1><span class="section-number">2.1.1.5. </span>Inverse Problem<a class="headerlink" href="#inverse-problem" title="Permalink to this heading">¶</a></h1>
-<p>The methods in the inverse problem category are concerned with estimation of the probability distribution of the parameter values given observational measurements. Unlike parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using the methods in this category, the user has some idea about the probability distribution of the parameter values. This information is provided in the form of the prior distributions in the <strong>RV</strong> panel. The Inverse methods take this prior information and combine it with information from the observed data provided in the <strong>UQ</strong> panel, to infer posterior distributions of the parameter values. For the Inverse problem, a Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. The likelihood function  specifies the likelihood that a particular parameter value of the model produced the observed data. Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to characterize the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) methods. Currently, quoFEM app provides access to the DREAM algorithm implemented in Dakota.</p>
-<section id="dream">
-<h2>DREAM<a class="headerlink" href="#dream" title="Permalink to this heading">¶</a></h2>
-<p>The Differential Evolution Adaptive Metropolis (<a class="reference internal" href="#id2" id="id1"><span>[DREAM]</span></a>) method runs multiple Markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. <a class="reference internal" href="#figdream"><span class="std std-numref">Fig. 2.1.1.5.1</span></a> shows the input panel corresponding to the DREAM method. The required inputs for this method are:</p>
+  <div class="section" id="bayesian-calibration">
+<span id="lbldakotabayesiancalibration"></span><h1><span class="section-number">2.1.2.5. </span>Bayesian Calibration<a class="headerlink" href="#bayesian-calibration" title="Permalink to this headline">¶</a></h1>
+<p>The methods in the Bayesian calibration category are concerned with estimation of the probability distribution of the parameter values given observational measurements. Unlike deterministic parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using the methods in this category, the user has some idea about the probability distribution of the parameter values. This information is provided in the form of the prior distributions in the <strong>RV</strong> panel. The Bayesian calibration methods take this prior information and combine it with information from the observed data provided in the <strong>UQ</strong> panel, to infer posterior distributions of the parameter values. A Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. The likelihood function  specifies the likelihood that a particular parameter value of the model produced the observed data. Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to characterize the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) methods. Currently, quoFEM app provides access to the DREAM algorithm implemented in Dakota.</p>
+<div class="section" id="dream">
+<h2>DREAM<a class="headerlink" href="#dream" title="Permalink to this headline">¶</a></h2>
+<p>The Differential Evolution Adaptive Metropolis (<a class="reference internal" href="#id2" id="id1"><span>[DREAM]</span></a>) method runs multiple Markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. <a class="reference internal" href="#figdream"><span class="std std-numref">Fig. 2.1.2.5.1</span></a> shows the input panel corresponding to the DREAM method. The required inputs for this method are:</p>
 <ol class="arabic simple">
 <li><p># Chains: number of chains in the DREAM algorithm</p></li>
 <li><p># Chain Samples: number of sample values to be drawn from the posterior probability distribution of the parameters</p></li>
@@ -234,12 +254,10 @@
 </ol>
 <p>For example, if there are data from two experiments, and there are 2 response quantities, of length 2 and 1 respectively, then, there must be two rows of values in the calibration data file, the length of each row must be 3, the first two values in each row correspond to the first response quantity and the third value in each row corresponds to the second response quantity.</p>
 </div>
-<figure class="align-center" id="id3">
-<span id="figdream"></span><img alt="../../../../_images/DREAM.png" src="../../../../_images/DREAM.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.1.5.1 </span><span class="caption-text">DREAM input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<div class="align-center figure" id="id3">
+<span id="figdream"></span><img alt="../../../../_images/BayesianCalibration.png" src="../../../../_images/BayesianCalibration.png" />
+<p class="caption"><span class="caption-number">Fig. 2.1.2.5.1 </span><span class="caption-text">DREAM input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
 <dl class="citation">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">DREAM</a></span></dt>
 <dd><ol class="upperalpha simple" start="10">
@@ -250,8 +268,8 @@
 </ol>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

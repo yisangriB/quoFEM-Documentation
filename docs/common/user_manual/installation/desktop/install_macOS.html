@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1.2. Install on macOS 10 &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -217,10 +215,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="install-on-macos-10">
-<span id="lblinstallmac"></span><h1><span class="section-number">1.2. </span>Install on macOS 10<a class="headerlink" href="#install-on-macos-10" title="Permalink to this heading">¶</a></h1>
-<section id="install-python-3-9">
-<h2><span class="section-number">1.2.1. </span>Install Python 3.9<a class="headerlink" href="#install-python-3-9" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="install-on-macos-10">
+<span id="lblinstallmac"></span><h1><span class="section-number">1.2. </span>Install on macOS 10<a class="headerlink" href="#install-on-macos-10" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-python-3-9">
+<h2><span class="section-number">1.2.1. </span>Install Python 3.9<a class="headerlink" href="#install-python-3-9" title="Permalink to this headline">¶</a></h2>
 <p>The new M1 chip MacBooks provide super fast and efficient ARM based processors. Older MacBooks utilize Intel x86 processors. The newer processor presents a problem for Python users of scientific applications. This is beacuse python programs typically import many different modules and not all modules have been ported to include arm based versions. The python3 kernels provided with the current operating systems, Monterey, are ARM based. As a consequence, to use the SimCenter applications, you will need to download and install an <strong>x86</strong> version of python. These will run on the M1 machines, thanks to <a class="reference external" href="https://support.apple.com/en-us/HT211861#:~:text=Rosetta%202%20is%20available%20only,to%20allow%20installation%20to%20proceed.">Rosetta</a>.</p>
 <p>You may also be using other distributions of Python, e.g. anaconda or homebrew. To see if your python kernel is compatable with SimCenter tools, issue the following in a terminal window.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span>
@@ -230,23 +228,19 @@
 </pre></div>
 </div>
 <p>As shown in screenshot below, you should see machine=’x86_64’ in the output of platform.uname(), if you see machine=’arm64’ [app] will not run on your machine when you press the <strong>Run</strong> button.</p>
-<figure class="align-center" id="id1">
+<div class="align-center figure" id="id1">
 <img alt="../../../../_images/pythonKernel.png" src="../../../../_images/pythonKernel.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can use the spotlight app (magnifying glass at the top right corner of the desktop) to start a Terminal window. Start the spotlight app and type in terminal. The Terminal application should appear as the top hit.</p>
 </div>
 <p><strong>1.</strong> To obtain an x86 version of Python, we recommend installing Python 3.9, we tested the 3.9.13 version,  from <a class="reference external" href="https://www.python.org/downloads/release/python-386/">Python.org</a>. It is important to select the <strong>macOS 64-bit Intel-only installer</strong> version of the installer. The <strong>intel-only</strong> is key to obtaining the x64 version.</p>
-<figure class="align-center" id="id2">
+<div class="align-center figure" id="id2">
 <img alt="../../../../_images/pythonDownload.png" src="../../../../_images/pythonDownload.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: python.org MacOS Download Page</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: python.org MacOS Download Page</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
@@ -257,12 +251,10 @@
 </div>
 <p><strong>2.</strong> The Python.org installer leaves two script files in the Python directory at the end of the installation and these appear in a pop up window when installation is complete. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal application. To execute the files, double click on them with your mouse. The two files, shown in the image below, are: <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code>.</p>
 <blockquote>
-<div><figure class="align-center" id="id3">
+<div><div class="align-center figure" id="id3">
 <img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1.2.1.3 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.3 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
 </div></blockquote>
 <p><strong>3.</strong> Once Python is installed, you need to extend it by installing a few additional packages. To facilitate this phase of the installation, we created a <strong>nheri_simcenter</strong> python package that automatically installs all other dependencies. Start a Terminal window and type the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install nheri_simcenter --upgrade
@@ -280,43 +272,39 @@
 </div>
 <p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which of these other installers have modified.</p>
 </div>
-</section>
-<section id="download-the-application">
-<h2><span class="section-number">1.2.3. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="download-the-application">
+<h2><span class="section-number">1.2.3. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this headline">¶</a></h2>
 <p>To download the quoFEM app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM">quoFEM Download</a> page which should resemble <a class="reference internal" href="#figdownload-quofem"><span class="std std-numref">Fig. 1.2.3.5</span></a>. The download page contains a list of downloadable files and directories.</p>
-<figure class="align-center" id="id8">
+<div class="align-center figure" id="id8">
 <span id="figdownload-quofem"></span><img alt="../../../../_images/quoFEMDownload.png" src="../../../../_images/quoFEMDownload.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1.2.3.5 </span><span class="caption-text">quoFEM download page.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1.2.3.5 </span><span class="caption-text">quoFEM download page.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
 <p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the quoFEM app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download has completed, open the dmg file and copy the quoFEM app application to a location in your filesystem.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We suggest copying the application to your Desktop. After copying the application, you can move the dmg file to the trash or eject it.</p>
 </div>
-</section>
-<section id="test-the-installation">
-<h2><span class="section-number">1.2.4. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="test-the-installation">
+<h2><span class="section-number">1.2.4. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this headline">¶</a></h2>
 <p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the quoFEM.exe executable. You should see the user interface shown in <a class="reference internal" href="#figui-quofem"><span class="std std-numref">Fig. 1.2.4.5</span></a>. The installation can be tested by running the example problem <a class="reference internal" href="../../examples/desktop/qfem-0001/README.html#qfem-0001"><span class="std std-ref">Two-Dimensional Truss: Sampling, Reliability and Sensitivity</span></a> which is provided with the installation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as such. As a consequence, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open.</p>
 </div>
-<figure class="align-center" id="id14">
+<div class="align-center figure" id="id14">
 <span id="figui-quofem"></span><img alt="../../../../_images/quoFEM1.png" src="../../../../_images/quoFEM1.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1.2.4.5 </span><span class="caption-text">quoFEM application on startup.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1.2.4.5 </span><span class="caption-text">quoFEM application on startup.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When the quoFEM app is running, open the app/preferences or File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>, as shown in the figure below If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal applicationagain and typich <strong>which python3</strong>. Enter the new path to the executable in the Python: line edit and then press the <strong>Save</strong> button.</p>
 <blockquote>
 <div><blockquote>
-<div><figure class="align-default">
+<div><div class="figure align-default">
 <img alt="../../../../_images/pythonPreferences.png" src="../../../../_images/pythonPreferences.png" />
-</figure>
+</div>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">align</dt>
@@ -329,8 +317,8 @@
 <p>Set Python Preferences.</p>
 </div></blockquote>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.4. Steel Frame: Conventional Calibration &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -237,8 +235,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="steel-frame-conventional-calibration">
-<span id="qfem-0007"></span><h1><span class="section-number">4.4. </span>Steel Frame: Conventional Calibration<a class="headerlink" href="#steel-frame-conventional-calibration" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="steel-frame-conventional-calibration">
+<span id="qfem-0007"></span><h1><span class="section-number">4.4. </span>Steel Frame: Conventional Calibration<a class="headerlink" href="#steel-frame-conventional-calibration" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 26%" />
@@ -250,38 +248,34 @@
 </tr>
 </tbody>
 </table>
-<section id="outline">
-<h2><span class="section-number">4.4.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="outline">
+<h2><span class="section-number">4.4.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
 <p>In this example, a parameter estimation routine is used to estimate
 column stiffnesses of a simple steel frame, given synthetic data about its mode
 shapes and frequencies, by minimizing the sum of the squared errors between the data and the model predictions.</p>
-</section>
-<section id="problem-description">
-<h2><span class="section-number">4.4.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="problem-description">
+<h2><span class="section-number">4.4.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
 <p>This example is provided by Professor Joel Conte and his doctoral students Maitreya Kurumbhati and Mukesh Ramancha from UC San Diego.</p>
-<section id="structural-system">
-<h3><span class="section-number">4.4.2.1. </span>Structural system<a class="headerlink" href="#structural-system" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="structural-system">
+<h3><span class="section-number">4.4.2.1. </span>Structural system<a class="headerlink" href="#structural-system" title="Permalink to this headline">¶</a></h3>
 <p>Consider the two-story building structure shown in <a class="reference internal" href="#figsteelstructuralsystem"><span class="std std-numref">Fig. 4.4.2.1.1</span></a>. Each floor slab is made of a composite metal deck and is supported on the steel columns. These four columns are fixed at the base. The story height is <span class="math notranslate nohighlight">\(h = 10'\)</span>, length of each slab is <span class="math notranslate nohighlight">\(33'4''\)</span> and <span class="math notranslate nohighlight">\(30'\)</span> along the X and Y direction, respectively. <span class="math notranslate nohighlight">\(m_1 = 0.52 kips-s^2/in\)</span> and <span class="math notranslate nohighlight">\(m_2 = 0.26 kips-s^2/in\)</span> are the total mass of floor 1 and floor 2, respectively. For the steel columns, Young’s modulus is <span class="math notranslate nohighlight">\(E_s^{col} = 29000 ksi\)</span> and the moment of inertia <span class="math notranslate nohighlight">\(I_{yy}^{col} = 1190 in^4\)</span>.</p>
-<figure class="align-center" id="id1">
+<div class="align-center figure" id="id1">
 <span id="figsteelstructuralsystem"></span><a class="reference internal image-reference" href="../../../../../_images/qfem-0007-SteelStructuralSystem.png"><img alt="../../../../../_images/qfem-0007-SteelStructuralSystem.png" src="../../../../../_images/qfem-0007-SteelStructuralSystem.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.4.2.1.1 </span><span class="caption-text">Steel structural system being studied in this example.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="finite-element-model">
-<h3><span class="section-number">4.4.2.2. </span>Finite element model<a class="headerlink" href="#finite-element-model" title="Permalink to this heading">¶</a></h3>
+<p class="caption"><span class="caption-number">Fig. 4.4.2.1.1 </span><span class="caption-text">Steel structural system being studied in this example.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="finite-element-model">
+<h3><span class="section-number">4.4.2.2. </span>Finite element model<a class="headerlink" href="#finite-element-model" title="Permalink to this headline">¶</a></h3>
 <p>In this example, only the response of the system along the X direction is considered. For modeling purposes, the floor diaphragms are assumed rigid both in plane and in flexure, and the columns are assumed axially rigid. The structure is modeled as a two-story 2D shear building model as shown in <a class="reference internal" href="#figsteelframemodel"><span class="std std-numref">Fig. 4.4.2.2.1</span></a>. The finite element (FE) software framework <strong>OpenSees</strong> is utilized for modeling and analysis of the considered structural system. The developed FE model consists of 6 nodes and 6 elastic beam-column elements. To simulate the flexural rigidity of the floors, the moment of inertia <span class="math notranslate nohighlight">\(I_{yy}\)</span> of the horizontal elements is set to a very large number. The horizontal degrees of freedom of node 3 and node 4 are constrained to be equal throughout the analysis to mimic the axial rigidity of floor 1. Similar modeling is performed for floor 2. The vertical displacements of nodes 3, 4, 5, and 6 are constrained to be zero to model the axial rigidity of the columns (see roller supports in <a class="reference internal" href="#figsteelframemodel"><span class="std std-numref">Fig. 4.4.2.2.1</span></a>). After making these modeling assumptions, the only active degrees of freedom of the FE model are the horizontal displacements (translations) of floors 1 and 2, <span class="math notranslate nohighlight">\(u_1\)</span> and <span class="math notranslate nohighlight">\(u_2\)</span>, respectively, as shown in <a class="reference internal" href="#figsteelframemodel"><span class="std std-numref">Fig. 4.4.2.2.1</span></a>.</p>
 <p>A translational mass <span class="math notranslate nohighlight">\(m_1/2\)</span> and <span class="math notranslate nohighlight">\(m_2/2\)</span> is lumped at the nodes of floor 1 and 2, respectively, along the X direction. The lateral story stiffnesses <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span> of story 1 and 2, respectively, are equal to <span class="math notranslate nohighlight">\(48 E_s^{col} I_{yy}^{col}/{h^3}\)</span>.</p>
-<figure class="align-center" id="id2">
+<div class="align-center figure" id="id2">
 <span id="figsteelframemodel"></span><a class="reference internal image-reference" href="../../../../../_images/qfem-0007.png"><img alt="../../../../../_images/qfem-0007.png" src="../../../../../_images/qfem-0007.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.4.2.2.1 </span><span class="caption-text">Model of the structural system used in finite element analysis.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="natural-vibration-frequencies-and-mode-shapes">
-<h3><span class="section-number">4.4.2.3. </span>Natural vibration frequencies and mode shapes<a class="headerlink" href="#natural-vibration-frequencies-and-mode-shapes" title="Permalink to this heading">¶</a></h3>
+<p class="caption"><span class="caption-number">Fig. 4.4.2.2.1 </span><span class="caption-text">Model of the structural system used in finite element analysis.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="natural-vibration-frequencies-and-mode-shapes">
+<h3><span class="section-number">4.4.2.3. </span>Natural vibration frequencies and mode shapes<a class="headerlink" href="#natural-vibration-frequencies-and-mode-shapes" title="Permalink to this headline">¶</a></h3>
 <p>Since the shear building model shown in <a class="reference internal" href="#figsteelframemodel"><span class="std std-numref">Fig. 4.4.2.2.1</span></a> has only two degrees of freedom, it has two natural modes of vibration. Let <span class="math notranslate nohighlight">\(\lambda_i\)</span> and <span class="math notranslate nohighlight">\(\phi_i\)</span> be the <span class="math notranslate nohighlight">\(i^{th}\)</span> eigenvalue and its corresponding eigenvector, respectively. The two eigenvalues and eigenvectors are obtained by solving the generalized eigenvalue problem of the considered system in OpenSees. The following two eigenvalues are obtained:</p>
 <div class="math notranslate nohighlight" id="equation-eqneigenvalues">
 <span class="eqno">(4.4.2.3.1)<a class="headerlink" href="#equation-eqneigenvalues" title="Permalink to this equation">¶</a></span>\[\begin{array}{l}
@@ -291,19 +285,17 @@ shapes and frequencies, by minimizing the sum of the squared errors between the 
 <div class="math notranslate nohighlight" id="equation-eqneigenvectors">
 <span class="eqno">(4.4.2.3.2)<a class="headerlink" href="#equation-eqneigenvectors" title="Permalink to this equation">¶</a></span>\[\begin{split}\phi_1 = \begin{pmatrix}\phi_{11} \\ \phi_{12}\end{pmatrix} = \begin{pmatrix}1.00 \\ 1.41\end{pmatrix} in, \qquad \phi_2 = \begin{pmatrix}\phi_{21} \\ \phi_{22}\end{pmatrix} = \begin{pmatrix}1.00 \\ -1.41\end{pmatrix} in\end{split}\]</div>
 <p>The eigenvectors in <a class="reference internal" href="#equation-eqneigenvectors">(4.4.2.3.2)</a> are normalized such that the first component is 1.0. The two vibration mode shapes are shown in <a class="reference internal" href="#fignaturalmodeshapes"><span class="std std-numref">Fig. 4.4.2.3.1</span></a>.</p>
-<figure class="align-center" id="id3">
+<div class="align-center figure" id="id3">
 <span id="fignaturalmodeshapes"></span><a class="reference internal image-reference" href="../../../../../_images/qfem-0007-NaturalModeShapes.png"><img alt="../../../../../_images/qfem-0007-NaturalModeShapes.png" src="../../../../../_images/qfem-0007-NaturalModeShapes.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.4.2.3.1 </span><span class="caption-text">Natural vibration mode shapes: (a) Mode 1 (b) Mode 2.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="parameters-to-be-estimated">
-<h3><span class="section-number">4.4.2.4. </span>Parameters to be estimated<a class="headerlink" href="#parameters-to-be-estimated" title="Permalink to this heading">¶</a></h3>
+<p class="caption"><span class="caption-number">Fig. 4.4.2.3.1 </span><span class="caption-text">Natural vibration mode shapes: (a) Mode 1 (b) Mode 2.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="parameters-to-be-estimated">
+<h3><span class="section-number">4.4.2.4. </span>Parameters to be estimated<a class="headerlink" href="#parameters-to-be-estimated" title="Permalink to this headline">¶</a></h3>
 <p>The FE model of a real structural system often consists of parameters that are unknown to some degree. For example, the parameters related to the mass or stiffness or damping of the system might be unknown. The goal of parameter estimation is to estimate such unknown parameters using some measurement data. The measurement data is obtained by using sensors deployed on the real system. To demonstrate the parameter estimation concept/framework on the considered two-story building system, the first and second story column moment of inertias, <span class="math notranslate nohighlight">\(I_{c1}\)</span> and <span class="math notranslate nohighlight">\(I_{c2}\)</span>, are assumed to be unknown while the mass parameters are assumed to be known. In this illustration example, the unknown parameter vector <span class="math notranslate nohighlight">\(\mathbf{\theta}=(I_{c1}, I_{c2})^T\)</span> is estimated using the first eigenvalue and the first eigenvector data.</p>
-</section>
-<section id="synthetic-data-generation">
-<h3><span class="section-number">4.4.2.5. </span>Synthetic data generation<a class="headerlink" href="#synthetic-data-generation" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="synthetic-data-generation">
+<h3><span class="section-number">4.4.2.5. </span>Synthetic data generation<a class="headerlink" href="#synthetic-data-generation" title="Permalink to this headline">¶</a></h3>
 <p>In a real-world application, data on the first eigenvalue and the first eigenvector would consist of system identification results obtained from sensor measurement data. Note that the considered two-story building structure (see <a class="reference internal" href="#figsteelstructuralsystem"><span class="std std-numref">Fig. 4.4.2.1.1</span></a>) is used here as a conceptual/pedagogical example and does not exist in the real world. Therefore, sensor measurement data cannot be collected from the system. As a substitute, measurement data (in the form of estimated first eigenvalue and first eigenvector) are artificially simulated for the purpose of this example, i.e., system identification results for <span class="math notranslate nohighlight">\(\lambda_i\)</span> and <span class="math notranslate nohighlight">\(\phi_i\)</span> from multiple ambient vibration datasets are simulated. To simulate these system identification results (i.e., measurement data), an eigenvalue analysis of the system is performed assuming the following true principal moment of inertia of the columns:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-examples-desktop-qfem-0007-readme-0">
 <span class="eqno">(4.4.2.5.1)<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0007-readme-0" title="Permalink to this equation">¶</a></span>\[\mathbf{\theta}^{true} = \left(I_{c1}^{true}, I_{c2}^{true}\right)^T; \quad I_{c1}^{true} = I_{c2}^{true} = 1190 in^4.\]</div>
@@ -319,9 +311,9 @@ shapes and frequencies, by minimizing the sum of the squared errors between the 
 \lambda_{1}^{(1)}=1025.21, \quad \lambda_{1}^{(2)}=1138.11, \quad \lambda_{1}^{(3)}=1099.39, \quad \lambda_{1}^{(4)}=1002.41, \quad \lambda_{1}^{(5)}=1052.69 \\
 \phi_{12}^{(1)}=1.53, \quad \phi_{12}^{(2)}=1.24, \quad \phi_{12}^{(3)}=1.38, \quad \phi_{12}^{(4)}=1.50, \quad \phi_{12}^{(5)}=1.35
 \end{array}\end{split}\]</div>
-</section>
-<section id="parameter-estimation-setup">
-<h3><span class="section-number">4.4.2.6. </span>Parameter estimation setup<a class="headerlink" href="#parameter-estimation-setup" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="parameter-estimation-setup">
+<h3><span class="section-number">4.4.2.6. </span>Parameter estimation setup<a class="headerlink" href="#parameter-estimation-setup" title="Permalink to this headline">¶</a></h3>
 <p>Our goal will be to estimate the column moments of inertia from
 the data in <a class="reference internal" href="#equation-eqndata">(4.4.2.5.4)</a> using a conventional calibration procedure (i.e., a method based on non-linear least squares minimization of the sum of the squared errors between the data and the model predictions).</p>
 <p>The unknown quantities of interest are the moments of inertia for the
@@ -337,10 +329,10 @@ distribution with an initial point <span class="math notranslate nohighlight">\(
 lower bound <span class="math notranslate nohighlight">\((L_B)\)</span> of <span class="math notranslate nohighlight">\(500.0\)</span>, upper bound <span class="math notranslate nohighlight">\((U_B)\)</span>
 of <span class="math notranslate nohighlight">\(2000.0\)</span>,</p></li>
 </ol>
-</section>
-</section>
-<section id="files-required">
-<h2><span class="section-number">4.4.3. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="files-required">
+<h2><span class="section-number">4.4.3. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
 <p>The exercise requires two files. The user is required to download these file and place them in a <strong>new</strong> folder.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -362,9 +354,9 @@ of <span class="math notranslate nohighlight">\(2000.0\)</span>,</p></li>
 <p class="admonition-title">Note</p>
 <p>Since the tcl script creates a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file when it runs, no postprocessing script is needed.</p>
 </div>
-</section>
-<section id="uq-workflow">
-<h2><span class="section-number">4.4.4. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="uq-workflow">
+<h2><span class="section-number">4.4.4. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is the <code class="docutils literal notranslate"><span class="pre">Steel</span> <span class="pre">Frame:</span> <span class="pre">Deterministic</span> <span class="pre">Calibration</span></code> example in the quoFEM Examples menu. Selecting this example from the menu will autopopulate all the input fields required to run this example.
@@ -373,15 +365,15 @@ The procedure outlined below demonstrates how to manually set up this problem in
 <ol class="arabic simple">
 <li><p>Start the application and the <strong>UQ</strong> panel will be presented. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. In the UQ Method category drop down menu change the category to <strong>Parameters Estimation</strong>, and the method as <strong>NL2SOL</strong>, and enter the fields as shown in the figure below. If manually setting up this problem, choose the path to the file containing the calibration data on your system.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/qfem-0007-UQ.png"><img alt="../../../../../_images/qfem-0007-UQ.png" src="../../../../../_images/qfem-0007-UQ.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <ol class="arabic simple" start="2">
 <li><p>Next select the <strong>FEM</strong> tab from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the <code class="docutils literal notranslate"><span class="pre">fem.tcl</span></code> file or select <strong>choose</strong> and navigate to the file.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/qfem-0007-FEM.png"><img alt="../../../../../_images/qfem-0007-FEM.png" src="../../../../../_images/qfem-0007-FEM.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>As discussed previously, but worth noting again - since the script generates a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file, no postprocessing script is needed for this example. This might not always be the case for some of your problems.</p>
@@ -389,9 +381,9 @@ The procedure outlined below demonstrates how to manually set up this problem in
 <ol class="arabic simple" start="3">
 <li><p>Next select the <strong>RV</strong> tab from the input panel. This should be prepopulated with two random variables with same names as those having <code class="docutils literal notranslate"><span class="pre">pset</span></code> in the tcl script, i.e. <code class="docutils literal notranslate"><span class="pre">Ic1</span></code> and <code class="docutils literal notranslate"><span class="pre">Ic2</span></code>. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/qfem-0007-RV.png"><img alt="../../../../../_images/qfem-0007-RV.png" src="../../../../../_images/qfem-0007-RV.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For the Parameter Estimation category of UQ methods, only continuous design distributions may be entered.</p>
@@ -399,9 +391,9 @@ The procedure outlined below demonstrates how to manually set up this problem in
 <ol class="arabic simple" start="4">
 <li><p>Next select the <strong>QoI</strong> panel. Here enter <strong>2</strong> variable names for the two quantities output from the model.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/qfem-0007-QoI.png"><img alt="../../../../../_images/qfem-0007-QoI.png" src="../../../../../_images/qfem-0007-QoI.png" style="width: 600px;" /></a>
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For this particular problem setup in which the user is not using a postprocessing script, the user may specify any names for the QoI variables. They are only being used by Dakota to return information on the results.</p>
@@ -409,14 +401,14 @@ The procedure outlined below demonstrates how to manually set up this problem in
 <ol class="arabic simple" start="5">
 <li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch Dakota. When done the <strong>RES</strong> tab will be selected and the results will be displayed as shown in the figure below. The figure shows that Dakota estimated the parameters <code class="docutils literal notranslate"><span class="pre">Ic1</span></code> and <code class="docutils literal notranslate"><span class="pre">Ic2</span></code> as <strong>1168.83</strong> and <strong>1211.25</strong> respectively, for the input data provided. The true value of these parameters, as described in the earlier sections is <strong>1190</strong>.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/qfem-0007-RES1.png"><img alt="../../../../../_images/qfem-0007-RES1.png" src="../../../../../_images/qfem-0007-RES1.png" style="width: 600px;" /></a>
-</figure>
-<figure class="align-center">
+</div>
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/qfem-0007-RES2.png"><img alt="../../../../../_images/qfem-0007-RES2.png" src="../../../../../_images/qfem-0007-RES2.png" style="width: 600px;" /></a>
-</figure>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>

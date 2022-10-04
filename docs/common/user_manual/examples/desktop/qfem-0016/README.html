@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -229,8 +227,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="surrogate-modeling-to-predict-mean-and-variance-of-earthquake-response">
-<span id="qfem-0016"></span><h1><span class="section-number">4.8. </span>Surrogate Modeling to Predict Mean and Variance of Earthquake Response<a class="headerlink" href="#surrogate-modeling-to-predict-mean-and-variance-of-earthquake-response" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="surrogate-modeling-to-predict-mean-and-variance-of-earthquake-response">
+<span id="qfem-0016"></span><h1><span class="section-number">4.8. </span>Surrogate Modeling to Predict Mean and Variance of Earthquake Response<a class="headerlink" href="#surrogate-modeling-to-predict-mean-and-variance-of-earthquake-response" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 28%" />
@@ -242,12 +240,12 @@
 </tr>
 </tbody>
 </table>
-<section id="outline">
-<h2><span class="section-number">4.8.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="outline">
+<h2><span class="section-number">4.8.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
 <p>This example constructs a Gaussian process-based surrogate model for mean and standard deviation of a building structure given ten ground motion set.</p>
-</section>
-<section id="problem-description">
-<h2><span class="section-number">4.8.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="problem-description">
+<h2><span class="section-number">4.8.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
 <p>The structure (<a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0016/src/ShearBuilding_NL.py">three story nonlinear building stick model</a>) has the following uncertain properties:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -285,46 +283,46 @@
 </tbody>
 </table>
 <p>The goal is to make a surrogate model that predicts mean and standard deviation of the peak displacement at node 1.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-sturcture.PNG"><img alt="../../../../../_images/SUR2-sturcture.PNG" src="../../../../../_images/SUR2-sturcture.PNG" style="width: 600px;" /></a>
-</figure>
-</section>
-<section id="input-files">
-<h2><span class="section-number">4.8.3. </span>Input files<a class="headerlink" href="#input-files" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="input-files">
+<h2><span class="section-number">4.8.3. </span>Input files<a class="headerlink" href="#input-files" title="Permalink to this headline">¶</a></h2>
 <p>Once the user selects OpenSeesPy as FEM applications, the below two fields are requested.</p>
 <ol class="arabic simple">
 <li><p>Input Script - <code class="docutils literal notranslate"><span class="pre">ShearBuilding_NL.tcl</span></code>: This file is the main OpenSees input script that implements builds the model, reads ground motion time histories, and runs the analysis repeatedly. It is supplied to the Input Script field of the FEM tab.</p></li>
 <li><p>Postprocess Script (Optional) - <code class="docutils literal notranslate"><span class="pre">postprocess.tcl</span></code>: This file is a postprocess script that connects the QoI name to the output value. According to this postprocess file, the QoI should be entered as either in the format of <code class="docutils literal notranslate"><span class="pre">Node_i_Disp_j_Mean</span></code> or <code class="docutils literal notranslate"><span class="pre">Node_i_Disp_j_Std</span></code>, where i and j respectively denote the node number and degree of freedom.</p></li>
 </ol>
 <p><strong>The other subsidiary scripts (including ground motion time histories) are stored in the same directory of the main input script.</strong></p>
-</section>
-<section id="uq-workflow">
-<h2><span class="section-number">4.8.4. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="uq-workflow">
+<h2><span class="section-number">4.8.4. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Since the model is provided, Training Dataset can be obtained by <strong>Sampling and Simulation</strong>. Since it is known that the mean and variance of peak drift are always positive, log-transform is introduced. Since a trend is expected, a linear trend function is introduced.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-UQtab.png"><img alt="../../../../../_images/SUR2-UQtab.png" src="../../../../../_images/SUR2-UQtab.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <ol class="arabic simple" start="2">
 <li><p>Select the <strong>FEM</strong> tab from the input panel. Choose the engine to be OpenSeesPy. For the main script copy the path name to <code class="docutils literal notranslate"><span class="pre">ShearBuilding_NL.tcl</span></code> or click choose and navigate to the file. For the postprocess script field, repeat the same procedure for the <code class="docutils literal notranslate"><span class="pre">postprocess.tcl</span></code> script.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-FEMtab.png"><img alt="../../../../../_images/SUR2-FEMtab.png" src="../../../../../_images/SUR2-FEMtab.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <ol class="arabic simple" start="3">
 <li><p>Select the <strong>RV</strong> tab from the input panel. This should be pre-populated with 5 random variables by detecting <code class="docutils literal notranslate"><span class="pre">pset</span></code> command in <code class="docutils literal notranslate"><span class="pre">ShearBuilding_NL.tcl</span></code>. For each variable, the distribution option is fixed to be <strong>Uniform</strong>, and only the lower and upper bounds need to be specified as given in the table.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-RVtab.png"><img alt="../../../../../_images/SUR2-RVtab.png" src="../../../../../_images/SUR2-RVtab.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <p>When the user needs to manually add random variables with <strong>add</strong> button, eg. when using a custom FEM application, the user should set the distribution to be <strong>Uniform</strong> using the drop-down menu.</p>
 <ol class="arabic simple" start="4">
 <li><p>Select the <strong>QoI</strong> tab. Here enter two output names as <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_1_Mean</span></code> and <code class="docutils literal notranslate"><span class="pre">Node_2_Disp_1_Std</span></code>. Note that Node_2_Disp_1 means x-direction displacement of second story floor. These QoI names are processed in the <code class="docutils literal notranslate"><span class="pre">postprocess.tcl</span></code> provided at the <strong>FEM</strong> tab.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-QoItab.png"><img alt="../../../../../_images/SUR2-QoItab.png" src="../../../../../_images/SUR2-QoItab.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <ol class="arabic simple" start="5">
 <li><p>Click on the <strong>Run</strong> button. This will cause the backend application to run SimCenterUQ Engine.</p></li>
 <li><p>When done, the <strong>RES</strong> tab will be selected and the results will be displayed.</p></li>
@@ -332,28 +330,28 @@
 <ul class="simple">
 <li><p>Summary of Results:</p></li>
 </ul>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-REStab1.png"><img alt="../../../../../_images/SUR2-REStab1.png" src="../../../../../_images/SUR2-REStab1.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <ul class="simple">
 <li><p>Leave-one-out cross-validation (LOOCV) predictions:</p></li>
 </ul>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-REStab2.png"><img alt="../../../../../_images/SUR2-REStab2.png" src="../../../../../_images/SUR2-REStab2.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <ol class="arabic simple" start="7">
 <li><p>Save the surrogate model by clicking <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">GP</span> <span class="pre">Surrogate</span></code></p></li>
 </ol>
-</section>
-<section id="sensitivity-analysis-using-the-surrogate-model">
-<h2><span class="section-number">4.8.5. </span>Sensitivity analysis using the Surrogate model<a class="headerlink" href="#sensitivity-analysis-using-the-surrogate-model" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="sensitivity-analysis-using-the-surrogate-model">
+<h2><span class="section-number">4.8.5. </span>Sensitivity analysis using the Surrogate model<a class="headerlink" href="#sensitivity-analysis-using-the-surrogate-model" title="Permalink to this headline">¶</a></h2>
 <p>Once the surrogate model is trained, it can be used for various UQ/optimization applications. Here we perform a sensitivity analysis and compare it with the results from simulation model.</p>
 <ol class="arabic simple">
 <li><p>The constructed surrogate model can be saved by <strong>Save GP Model</strong> button. Two files and a folder will be saved which are <strong>SurroateGP Info File</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code>), <strong>SurroateGP model file</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code>) and <strong>Simulation template directory</strong> which contains the simulation model information (<code class="docutils literal notranslate"><span class="pre">templatedir_SIM</span></code>).</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-VER0.png"><img alt="../../../../../_images/SUR2-VER0.png" src="../../../../../_images/SUR2-VER0.png" style="width: 800px;" /></a>
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -364,15 +362,15 @@
 <ol class="arabic simple" start="2">
 <li><p>Restart the quoFEM (or press <strong>UQ tab</strong>) and select Dakota sensitivity analysis method.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-VER1.png"><img alt="../../../../../_images/SUR2-VER1.png" src="../../../../../_images/SUR2-VER1.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <ol class="arabic simple" start="3">
 <li><p>Select the <strong>FEM tab</strong>  from the input panel and choose <strong>SurrogateGP</strong> application. For the <strong>SurrogateGP Info field</strong>, copy the path to <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code> or click choose and navigate to the file. Similarly, the  <strong>SurroateGP Model field</strong> calls <code class="docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code> file. Once the first file is imported, additional options will be displayed. Here, the user can specify the Maximum Allowable Normalized Variance level. The exceedance percentage is provided to help the user’s decision along with the pre-informed accuracy of the surrogate model obtained after the training session. Select continue to use only surrogate model predictions.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-VER2.png"><img alt="../../../../../_images/SUR2-VER2.png" src="../../../../../_images/SUR2-VER2.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <strong>Continue</strong> option should be used only when users are familiar with potential issues.</p>
@@ -380,9 +378,9 @@
 <ol class="arabic simple" start="4">
 <li><p>Once the SurrogateGP Info field in the <strong>FEM</strong> tab is entered, the <strong>RV tab</strong> is automatically populated. The user can select the distribution and its parameters. This example applied the following distributions.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-VER4.png"><img alt="../../../../../_images/SUR2-VER4.png" src="../../../../../_images/SUR2-VER4.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <ol class="arabic simple" start="5">
 <li><p>Users need to manually fill in the <strong>QoI tab</strong>. Users do not need to include here all the QoIs used for the training, but the users may not add new QoIs or modify the names of existing QoIs. <strong>[Tip]</strong> List of the trained QoI names can be found and copied in the <strong>FEM tab</strong>.</p></li>
 <li><p>Click on the <strong>Run</strong> button. This will cause the backend application to launch dakota.</p></li>
@@ -391,9 +389,9 @@
 <ul class="simple">
 <li><p>Surrogate model prediction</p></li>
 </ul>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-VER5.png"><img alt="../../../../../_images/SUR2-VER5.png" src="../../../../../_images/SUR2-VER5.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <div class="line-block">
 <div class="line"><strong>Surrogate model training time</strong>: 1.4 min. (number of FEM runs: 50)</div>
 <div class="line"><strong>Sensitivity analysis time</strong>: 10.3 min. (number of surrogate model evaluations: 1400)</div>
@@ -401,14 +399,14 @@
 <ul class="simple">
 <li><p>Reference simulation model results</p></li>
 </ul>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/SUR2-VER6.png"><img alt="../../../../../_images/SUR2-VER6.png" src="../../../../../_images/SUR2-VER6.png" style="width: 1200px;" /></a>
-</figure>
+</div>
 <div class="line-block">
 <div class="line"><strong>Sensitivity analysis time</strong>: 83.7 min. (number of FEM runs: 1400)</div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

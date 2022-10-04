@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Reliability Analysis &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -205,8 +203,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="reliability-analysis">
-<h1>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="reliability-analysis">
+<h1>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 28%" />
@@ -227,9 +225,9 @@ define a <a class="reference external" href="/common/user_manual/usage/desktop/D
 procedure to be coordinated by quoFEM which will estimate response
 magnitudes whose probabilities of exceedance are 0.02, 0.2, 0.4, 0.6,
 0.8, and 0.99.</p>
-<figure class="align-center">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/qfem-0003.png"><img alt="../../../../../_images/qfem-0003.png" src="../../../../../_images/qfem-0003.png" style="width: 500px;" /></a>
-</figure>
+</div>
 <p>The following parameters are defined in the <strong>RV</strong> tab of quoFEM:</p>
 <ol class="arabic simple">
 <li><p>Elastic modulus, <code class="docutils literal notranslate"><span class="pre">E</span></code>: <strong>Weibull</strong> distribution with a scale
@@ -246,8 +244,8 @@ deviation <span class="math notranslate nohighlight">\((\sigma)\)</span> of <spa
 distribution with a mean <span class="math notranslate nohighlight">\((\mu)\)</span> of <span class="math notranslate nohighlight">\(500.0\)</span>, standard
 deviation <span class="math notranslate nohighlight">\((\sigma)\)</span> of <span class="math notranslate nohighlight">\(100.0\)</span>,</p></li>
 </ol>
-<section id="uq-workflow">
-<h2>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="uq-workflow">
+<h2>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <p>To define the uncertainty workflow in quoFEM, select <strong>Reliability
 Analysis</strong> for the <strong>Dakota Method Category</strong>, and enter the following
 inputs:</p>
@@ -277,9 +275,9 @@ inputs:</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="model-files">
-<h2>Model Files<a class="headerlink" href="#model-files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="model-files">
+<h2>Model Files<a class="headerlink" href="#model-files" title="Permalink to this headline">¶</a></h2>
 <p>The following files make up the <strong>FEM</strong> model definition.</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://raw.githubusercontent.com/claudioperez/SimCenterExamples/master/static/truss/model.tcl">model.tcl</a>:
@@ -293,21 +291,19 @@ identifiers supplied in the <strong>QoI</strong> tab, and writes the relevant
 response quantities to <code class="docutils literal notranslate"><span class="pre">results.out</span></code> from an OpenSees process. It
 is supplied to the <strong>Postprocess File</strong> field of the <strong>FEM</strong> tab.</p></li>
 </ol>
-</section>
-<section id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
 <p>Once the analysis is complete the <strong>RES</strong> tab will be automatically
 selected and the results will be displayed as shown in the following
 figure:</p>
-<figure class="align-default" id="id1">
+<div class="figure align-default" id="id1">
 <img alt="common/user_manual/examples/desktop/qfem-0003/figures/trussSORM-RES.png" src="common/user_manual/examples/desktop/qfem-0003/figures/trussSORM-RES.png" />
-<figcaption>
-<p><span class="caption-text">Reliability analysis (Second order apprximation)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="other-reliability-methods">
-<h2>Other reliability methods<a class="headerlink" href="#other-reliability-methods" title="Permalink to this heading">¶</a></h2>
+<p class="caption"><span class="caption-text">Reliability analysis (Second order apprximation)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="other-reliability-methods">
+<h2>Other reliability methods<a class="headerlink" href="#other-reliability-methods" title="Permalink to this headline">¶</a></h2>
 <p><strong>First Order</strong> Integration Method: The user can change only the integration method to get the first order approximation (instead of the second order approximation) results.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -335,12 +331,10 @@ figure:</p>
 </tr>
 </tbody>
 </table>
-<figure class="align-default" id="id2">
+<div class="figure align-default" id="id2">
 <img alt="../../../../../_images/trussFORM-RES2.png" src="../../../../../_images/trussFORM-RES2.png" />
-<figcaption>
-<p><span class="caption-text">Reliability analysis (First order apprximation)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Reliability analysis (First order apprximation)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <p><strong>Global reliability</strong> and <strong>Importance sampling</strong> methods can to identify probability levels corresponding to given response thresholds.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -361,12 +355,10 @@ figure:</p>
 </tr>
 </tbody>
 </table>
-<figure class="align-default" id="id3">
+<div class="figure align-default" id="id3">
 <img alt="../../../../../_images/trussGP-RES2.png" src="../../../../../_images/trussGP-RES2.png" />
-<figcaption>
-<p><span class="caption-text">Global reliability results.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Global reliability results.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
 <p>Importance Sampling (IS):</p>
 <table class="docutils align-default">
 <colgroup>
@@ -388,14 +380,12 @@ figure:</p>
 </tr>
 </tbody>
 </table>
-<figure class="align-default" id="id4">
+<div class="figure align-default" id="id4">
 <img alt="../../../../../_images/trussIS-RES2.png" src="../../../../../_images/trussIS-RES2.png" />
-<figcaption>
-<p><span class="caption-text">Importance Sampling (IS) results.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
+<p class="caption"><span class="caption-text">Importance Sampling (IS) results.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
 
 
            </div>

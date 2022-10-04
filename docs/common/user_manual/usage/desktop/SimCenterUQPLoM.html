@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.1.2.3. Probabilistic Learning on Manifolds (PLoM) &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.1.3.4. Probabilistic Learning on Manifolds (PLoM) &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -50,8 +48,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.3.1. Surrogate Modeling" href="SimCenterUQSurrogate.html" />
-    <link rel="prev" title="2.1.2.2. Global Sensitivity Analysis" href="SimCenterUQSensitivity.html" />
+    <link rel="next" title="2.1.4.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm" href="UCSD_UQ_TMCMC.html" />
+    <link rel="prev" title="2.1.3.3. Surrogate Modeling" href="SimCenterUQSurrogate.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -119,9 +117,29 @@
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">2.1.1. UQ Features At-a-Glance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">2.1.2. Dakota UQ Engine</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#simcenter-uq-engine">2.1.3. SimCenter UQ Engine</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">2.1.3.1. Forward Propagation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.3.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">2.1.3.3. Surrogate Modeling</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.5. Custom UQ Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.3. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
@@ -191,7 +209,7 @@
         
           <li><a href="UQ.html"><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
         
-      <li><span class="section-number">2.1.2.3. </span>Probabilistic Learning on Manifolds (PLoM)</li>
+      <li><span class="section-number">2.1.3.4. </span>Probabilistic Learning on Manifolds (PLoM)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -210,10 +228,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="probabilistic-learning-on-manifolds-plom">
-<span id="lblsimcenteruqplom"></span><h1><span class="section-number">2.1.2.3. </span>Probabilistic Learning on Manifolds (PLoM)<a class="headerlink" href="#probabilistic-learning-on-manifolds-plom" title="Permalink to this heading">¶</a></h1>
-<section id="about-plom">
-<h2>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="probabilistic-learning-on-manifolds-plom">
+<span id="lblsimcenteruqplom"></span><h1><span class="section-number">2.1.3.4. </span>Probabilistic Learning on Manifolds (PLoM)<a class="headerlink" href="#probabilistic-learning-on-manifolds-plom" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about-plom">
+<h2>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this headline">¶</a></h2>
 <p><strong>PLoM</strong> is an open source python package that implements the algorithm of <strong>Probabilistic
 Learning on Manifolds</strong> with and without constraints (<a class="reference internal" href="#soizeghanem2016" id="id1"><span>[SoizeGhanem2016]</span></a>, <a class="reference internal" href="#soizeghanem2020" id="id2"><span>[SoizeGhanem2020]</span></a>)
 for <em>generating realizations of a random vector in a finite Euclidean space that are
@@ -223,21 +241,19 @@ package (available under MIT license), an opensource python package for Probabil
 Learning on Manifolds <a class="reference internal" href="#zhonggualgovindjee2021" id="id3"><span>[ZhongGualGovindjee2021]</span></a>. The package mainly consists of python
 modules and invokes a dynamic library for more efficiently computing the gradient of
 the potential, and can be imported and run on Linux, macOS, and Windows platform.</p>
-</section>
-<section id="basic-model">
-<h2>Basic Model<a class="headerlink" href="#basic-model" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="basic-model">
+<h2>Basic Model<a class="headerlink" href="#basic-model" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">PLoM</span> <span class="pre">Model</span></code> is a SimCenterUQ method to learn data structure and generate new
 realizations from a training dataset. It can be used for data sampling, dimension reduction,
 and surrogate modeling. Currently, there are two training data options: <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Data</span> <span class="pre">File</span></code>
 and <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code>.</p>
-<figure class="align-center" id="id4">
+<div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../_images/uqPLoM.png"><img alt="../../../../_images/uqPLoM.png" src="../../../../_images/uqPLoM.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.1 </span><span class="caption-text">SimCenterUQ method: PLoM Model</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<section id="option-1-import-data-file">
-<h3>Option 1: Import Data File<a class="headerlink" href="#option-1-import-data-file" title="Permalink to this heading">¶</a></h3>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.1 </span><span class="caption-text">SimCenterUQ method: PLoM Model</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="option-1-import-data-file">
+<h3>Option 1: Import Data File<a class="headerlink" href="#option-1-import-data-file" title="Permalink to this headline">¶</a></h3>
 <p>Under <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Data</span> <span class="pre">File</span></code> option, UQ Engine expects users to directly provide the
 training data matrices. For instance, users can upload tabulated data files for input variables
 and corresponding output responses, by using the <code class="docutils literal notranslate"><span class="pre">Raw</span> <span class="pre">Data</span></code> mode. Example input and output variables
@@ -245,94 +261,80 @@ and corresponding output responses, by using the <code class="docutils literal n
 <a class="reference download internal" download="" href="../../../../_downloads/e78b711799b2348382883c78f09052a5/PLoM_responses.csv"><code class="xref download docutils literal notranslate"><span class="pre">PLoM_responses.csv</span></code></a>) are
 provided for demonstrating the format: (1) the first row describes the variable names, (2) the first
 variable name starts with “%”, and (3) data are tabulated from the second row.</p>
-<figure class="align-center" id="id5">
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../_images/plomImportData.png"><img alt="../../../../_images/plomImportData.png" src="../../../../_images/plomImportData.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.2 </span><span class="caption-text">User-provided raw data files for training dataset</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.2 </span><span class="caption-text">User-provided raw data files for training dataset</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Sample</span> <span class="pre">Number</span> <span class="pre">Ratio</span></code> is an integer defining the ratio of new realization size and the input
 sample size. For instance, if the input file includes 100 data points, using a <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Sample</span> <span class="pre">Number</span> <span class="pre">Ratio</span></code>
 of 5 would produce 500 new realizations. In addition, if <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Sample</span> <span class="pre">Number</span> <span class="pre">Ratio</span></code> is set to zero,
 then no new sample will be generate, however, the trained model can be saved.</p>
-<figure class="align-center" id="id6">
+<div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../_images/plomSampleRatio.png"><img alt="../../../../_images/plomSampleRatio.png" src="../../../../_images/plomSampleRatio.png" style="width: 350px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.3 </span><span class="caption-text">User-provided pre-trained model</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.3 </span><span class="caption-text">User-provided pre-trained model</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
 <p>The alternative mode to <code class="docutils literal notranslate"><span class="pre">Raw</span> <span class="pre">Data</span></code> is <code class="docutils literal notranslate"><span class="pre">Pre-trained</span> <span class="pre">Model</span></code> which allows users to upload
 the saved pre-trained model.</p>
-<figure class="align-center" id="id7">
+<div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../_images/plomPreTrained.png"><img alt="../../../../_images/plomPreTrained.png" src="../../../../_images/plomPreTrained.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.4 </span><span class="caption-text">User-provided pre-trained model</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="option-2-sampling-and-simulation">
-<h3>Option 2: Sampling and Simulation<a class="headerlink" href="#option-2-sampling-and-simulation" title="Permalink to this heading">¶</a></h3>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.4 </span><span class="caption-text">User-provided pre-trained model</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="option-2-sampling-and-simulation">
+<h3>Option 2: Sampling and Simulation<a class="headerlink" href="#option-2-sampling-and-simulation" title="Permalink to this headline">¶</a></h3>
 <p>Under <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code> option, UQ Engine will first invokes <strong>FEM</strong> applications
 (e.g., OpenSees) to run numerical simulations and generate the needed training dataset. So,
 instead of directly providing the training data, users are responsible for configuring the
 simulation model and anlaysis.</p>
-<figure class="align-center" id="id8">
+<div class="align-center figure" id="id8">
 <a class="reference internal image-reference" href="../../../../_images/plomSimulation.png"><img alt="../../../../_images/plomSimulation.png" src="../../../../_images/plomSimulation.png" style="width: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.5 </span><span class="caption-text">User-provided pre-trained model</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
-<section id="advanced-options">
-<h2>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this heading">¶</a></h2>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.5 </span><span class="caption-text">User-provided pre-trained model</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-options">
+<h2>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this headline">¶</a></h2>
 <p>Advanced users are able to configure more modeling parameters by checking
 <code class="docutils literal notranslate"><span class="pre">Advanced</span> <span class="pre">Options</span></code> checkbox.</p>
-<section id="general">
-<h3>General<a class="headerlink" href="#general" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="general">
+<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Log-space Transform</strong>: apply logrithmic transformation to the data metrix</p></li>
 <li><p><strong>Random Seed</strong>: enable replicating analysis</p></li>
 <li><p><strong>PCA Tolerance</strong>: truncating eigen value model representation from principal component analysis</p></li>
 </ul>
-<figure class="align-center" id="id9">
+<div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../_images/plomAdvGeneral.png"><img alt="../../../../_images/plomAdvGeneral.png" src="../../../../_images/plomAdvGeneral.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.6 </span><span class="caption-text">PLoM advanced option: General</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="kernel-density-estimation">
-<h3>Kernel Density Estimation<a class="headerlink" href="#kernel-density-estimation" title="Permalink to this heading">¶</a></h3>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.6 </span><span class="caption-text">PLoM advanced option: General</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="kernel-density-estimation">
+<h3>Kernel Density Estimation<a class="headerlink" href="#kernel-density-estimation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>KDE Smooth Factor</strong>: smooth factor in kernel density base function</p></li>
 <li><p><strong>Diffusion Maps</strong>: whether invokes diffusion maps</p></li>
 <li><p><strong>Diff. Maps Tolerance</strong>: truncating ratio between the last considered eignevalue and the first eigenvalue</p></li>
 </ul>
-<figure class="align-center" id="id10">
+<div class="align-center figure" id="id10">
 <a class="reference internal image-reference" href="../../../../_images/plomAdvKDE.png"><img alt="../../../../_images/plomAdvKDE.png" src="../../../../_images/plomAdvKDE.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.7 </span><span class="caption-text">PLoM advanced option: Kernel Density Estimation</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="constraints">
-<h3>Constraints<a class="headerlink" href="#constraints" title="Permalink to this heading">¶</a></h3>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.7 </span><span class="caption-text">PLoM advanced option: Kernel Density Estimation</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="constraints">
+<h3>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Add constraints</strong>: whether applies constraints to the model</p></li>
 <li><p><strong>Constraints file (.py)</strong>: constraint file path</p></li>
 <li><p><strong>Iteration Number</strong>: maixmum number of iterations</p></li>
 <li><p><strong>Iteration Tolerance</strong>: maximum tolerance in iteration</p></li>
 </ul>
-<figure class="align-center" id="id11">
+<div class="align-center figure" id="id11">
 <a class="reference internal image-reference" href="../../../../_images/plomAdvConstr.png"><img alt="../../../../_images/plomAdvConstr.png" src="../../../../_images/plomAdvConstr.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.8 </span><span class="caption-text">PLoM advanced option: Constraints</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="user-defined-variables">
-<h3>User-Defined Variables<a class="headerlink" href="#user-defined-variables" title="Permalink to this heading">¶</a></h3>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.8 </span><span class="caption-text">PLoM advanced option: Constraints</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="user-defined-variables">
+<h3>User-Defined Variables<a class="headerlink" href="#user-defined-variables" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>None</strong>: no extra variables except for those defined in <strong>RV</strong> and <strong>EDP</strong> panel to be considered</p></li>
 <li><p><strong>User-Defined</strong>: users can upload a script for computing the extra variables in the analysis</p></li>
@@ -342,50 +344,40 @@ simulation model and anlaysis.</p>
 </dl>
 </li>
 </ul>
-<figure class="align-center" id="id12">
+<div class="align-center figure" id="id12">
 <a class="reference internal image-reference" href="../../../../_images/plomAdvUserDefinedVar.png"><img alt="../../../../_images/plomAdvUserDefinedVar.png" src="../../../../_images/plomAdvUserDefinedVar.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.9 </span><span class="caption-text">PLoM advanced option: User-Defined Variables</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
-<section id="results-and-postprocess">
-<h2>Results and Postprocess<a class="headerlink" href="#results-and-postprocess" title="Permalink to this heading">¶</a></h2>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.9 </span><span class="caption-text">PLoM advanced option: User-Defined Variables</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="results-and-postprocess">
+<h2>Results and Postprocess<a class="headerlink" href="#results-and-postprocess" title="Permalink to this headline">¶</a></h2>
 <p>Once the training completed, two plots will be generated in <strong>RES</strong> panel for the PLoM training results:</p>
 <ul class="simple">
 <li><p><strong>PCA</strong>: plots the curve of PCA representation error versus the PCA eigenvalues overlapped by the truncating PCA eigenvalue used in training.</p></li>
 <li><p><strong>KDE</strong>: plots the curve of diffusion map eigenvalue by components overlapped by the truncating eigenvalue used in training</p></li>
 </ul>
-<figure class="align-center" id="id13">
+<div class="align-center figure" id="id13">
 <a class="reference internal image-reference" href="../../../../_images/plomResPCA.png"><img alt="../../../../_images/plomResPCA.png" src="../../../../_images/plomResPCA.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.10 </span><span class="caption-text">PLoM training result plots: PCA</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id14">
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.10 </span><span class="caption-text">PLoM training result plots: PCA</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id14">
 <a class="reference internal image-reference" href="../../../../_images/plomResKDE.png"><img alt="../../../../_images/plomResKDE.png" src="../../../../_images/plomResKDE.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.11 </span><span class="caption-text">PLoM training result plots: KDE</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.11 </span><span class="caption-text">PLoM training result plots: KDE</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
 <p>Users can also save the trained PLoM model by clicking on the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">PLoM</span> <span class="pre">Model</span></code> at the bottom of the <strong>RES</strong> Summary page.
 The training data and model information will be saved as a .h5 data file to a user-defined directory, which can be
 loaded back for generating extra samples in the future (as described previously).</p>
-<figure class="align-center" id="id15">
+<div class="align-center figure" id="id15">
 <a class="reference internal image-reference" href="../../../../_images/plomResSaveModel.png"><img alt="../../../../_images/plomResSaveModel.png" src="../../../../_images/plomResSaveModel.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.12 </span><span class="caption-text">Save PLoM model</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.12 </span><span class="caption-text">Save PLoM model</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
 <p>The training data / new sample points can be visualized under the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Values</span></code> tab, and saved to a
 user-defined directory by clicking <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Table</span></code> or <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Column</span> <span class="pre">Seperately</span></code> buttom on the top right corner.</p>
-<figure class="align-center" id="id16">
+<div class="align-center figure" id="id16">
 <a class="reference internal image-reference" href="../../../../_images/plomResPlot.png"><img alt="../../../../_images/plomResPlot.png" src="../../../../_images/plomResPlot.png" style="width: 900px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1.2.3.13 </span><span class="caption-text">Visualization of PLoM results</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.4.13 </span><span class="caption-text">Visualization of PLoM results</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
 <dl class="citation">
 <dt class="label" id="soizeghanem2016"><span class="brackets"><a class="fn-backref" href="#id1">SoizeGhanem2016</a></span></dt>
 <dd><p>Soize, C., &amp; Ghanem, R. (2016). Data-driven probability concentration and sampling on manifold. Journal of Computational Physics, 321, 242-258.</p>
@@ -397,8 +389,8 @@ user-defined directory by clicking <code class="docutils literal notranslate"><s
 <dd><p>Zhong, K., Gual, J., and Govindjee, S., PLoM python package v1.0, <a class="reference external" href="https://github.com/sanjayg0/PLoM">https://github.com/sanjayg0/PLoM</a> (2021).</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

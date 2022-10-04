@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.12. Global Sensitivity Analysis for Field QoI &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
@@ -40,7 +39,6 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -230,8 +228,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="global-sensitivity-analysis-for-field-qoi">
-<span id="qfem-0023"></span><h1><span class="section-number">4.12. </span>Global Sensitivity Analysis for Field QoI<a class="headerlink" href="#global-sensitivity-analysis-for-field-qoi" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="global-sensitivity-analysis-for-field-qoi">
+<span id="qfem-0023"></span><h1><span class="section-number">4.12. </span>Global Sensitivity Analysis for Field QoI<a class="headerlink" href="#global-sensitivity-analysis-for-field-qoi" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -243,18 +241,16 @@
 </tr>
 </tbody>
 </table>
-<section id="outline">
-<h2><span class="section-number">4.12.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="outline">
+<h2><span class="section-number">4.12.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
 <p>In this example, we investigate how much each parameter affects multiple outputs of a model. In particular, influence of different martial model parameters to the resulting stress time history under cyclic load setting will be compared via global sensitivity analysis. To gain efficiency dealing with such high-dimensional outputs, ‘principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)’ method is used in the analysis.</p>
-</section>
-<section id="problem-description">
-<h2><span class="section-number">4.12.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
-<figure class="align-center" id="id2">
+</div>
+<div class="section" id="problem-description">
+<h2><span class="section-number">4.12.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+<div class="align-center figure" id="id2">
 <span id="figsteel02"></span><a class="reference internal image-reference" href="../../../../../_images/qf-0023-Steel02.png"><img alt="../../../../../_images/qf-0023-Steel02.png" src="../../../../../_images/qf-0023-Steel02.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.12.2.1 </span><span class="caption-text">Steel02 Material – Hysteretic Behavior of Model with Isotropic Hardening in Compression</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 4.12.2.1 </span><span class="caption-text">Steel02 Material – Hysteretic Behavior of Model with Isotropic Hardening in Compression</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <p>Consider STEEL02 material model in OpenSees that describes cyclic stress-strain response of the steel reinforcing bar in finite element simulations. The STEEL02 material model in OpenSees can take up to 11 parameters as input, as described in the <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel02_Material_--_Giuffré-Menegotto-Pinto_Model_with_Isotropic_Strain_Hardening">documentation</a>. Of these 11 parameters, 7 parameters shown in <a class="reference internal" href="#table-1">Table 1</a> will be considered.</p>
 <p id="table-1">Table 1: Parameters of the STEEL02 material model</p>
 <table class="docutils align-default">
@@ -326,9 +322,9 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="files-required">
-<h2><span class="section-number">4.12.3. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files-required">
+<h2><span class="section-number">4.12.3. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
 <p>The exercise requires one main script file and one supplementary file. The user should download these files and place them in a <strong>NEW</strong> folder.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -342,15 +338,13 @@
 <p class="admonition-title">Note</p>
 <p>Since the tcl script creates a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file when it runs, no postprocessing script is needed.</p>
 </div>
-<figure class="align-center" id="id3">
+<div class="align-center figure" id="id3">
 <span id="figexperimentaldatasteelcouponstrain"></span><a class="reference internal image-reference" href="../../../../../_images/qf-0023-StrainHistory.png"><img alt="../../../../../_images/qf-0023-StrainHistory.png" src="../../../../../_images/qf-0023-StrainHistory.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.12.3.1 </span><span class="caption-text">Strain history in ‘stress.1.coords’.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="uq-workflow">
-<h2><span class="section-number">4.12.4. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
+<p class="caption"><span class="caption-number">Fig. 4.12.3.1 </span><span class="caption-text">Strain history in ‘stress.1.coords’.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uq-workflow">
+<h2><span class="section-number">4.12.4. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Selecting the <code class="docutils literal notranslate"><span class="pre">Global</span> <span class="pre">Sensitivity</span> <span class="pre">Analysis</span> <span class="pre">for</span> <span class="pre">Field</span> <span class="pre">QoI</span></code> example in the quoFEM Examples menu will autopopulate all the input fields required to run this example.
@@ -360,17 +354,17 @@ The procedure outlined below demonstrates how to manually set up this problem in
 <ol class="arabic simple">
 <li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Engine</strong> drop down menu, select the <strong>SimCenterUQ</strong> engine. In the <strong>Method</strong> select <strong>Sensitivity Analysis</strong> option. Enter the values in this panel as shown in the figure below.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/qf-0023-UQ.png" src="../../../../../_images/qf-0023-UQ.png" />
-</figure>
+</div>
 <p>If the total number of QoI components exceeds 15, quoFEM will automatically run ‘principal component analysis and probability model-based sensitivity analysis (PCA-PSA)’ <a class="reference internal" href="#jung2022" id="id1"><span>[Jung2022]</span></a> to gain efficiency.
 Because this example have 342 QoI components representing stress values of discretized time series, PCA will be performed for the QoI vector by default to gain efficiency.</p>
 <ol class="arabic simple" start="2">
 <li><p>Next select the <strong>FEM</strong> panel from the input panel selection. This will default to the <strong>OpenSees</strong> FEM engine. In the <strong>Input Script</strong> field, enter the path to the <code class="docutils literal notranslate"><span class="pre">matTestAllParamsReadStrain.tcl</span></code> file or select <strong>Choose</strong> and navigate to the file.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/qf-0023-FEM.png" src="../../../../../_images/qf-0023-FEM.png" />
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Since the tcl script creates a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file when it runs, no postprocessing script is needed.</p>
@@ -379,9 +373,9 @@ Because this example have 342 QoI components representing stress values of discr
 <li><p>Select the <strong>RV</strong> tab from the input panel. This panel should be pre-populated with seven random variables. If not, press the <strong>Add</strong> button to create new fields to define the input random variables. Enter the same variable names, as required in the model script.</p></li>
 </ol>
 <p>For each variable, specify the probability distribution and its parameters, as shown in the figure below.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/qf-0023-RV.png" src="../../../../../_images/qf-0023-RV.png" />
-</figure>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The results of sensitivity analysis will depend on the the choice of distribution types and parameters. Higher uncertainty leads to higher influece on the response.</p>
@@ -389,38 +383,38 @@ Because this example have 342 QoI components representing stress values of discr
 <ol class="arabic simple" start="4">
 <li><p>In the <strong>QoI</strong> panel denote that the variable named <code class="docutils literal notranslate"><span class="pre">stress</span></code> is not a scalar response variable, but has a length of 342.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/qf-0023-QOI.png" src="../../../../../_images/qf-0023-QOI.png" />
-</figure>
+</div>
 <p><strong>Note that the aggregated sensitivity indices will also be provided for the field QoIs. The aggregated sensitivity indices is obtained by weighted sum of the component sensitivity indices, where the weight is proportional to the variance of each QoI component. If multiple of field QoIs are defined, aggregated sensitivity indices will be provided for each of them.</strong></p>
 <ol class="arabic simple" start="5">
 <li><p>Click on the <strong>Run</strong> button. This will cause the backend application to launch the <strong>SimCenterUQ</strong> engine, which performs Global Sensitivity Analysis. When done, the <strong>RES</strong> tab will be selected and the results will be displayed as shown in the figure below.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/qf-0023-RES1.png" src="../../../../../_images/qf-0023-RES1.png" />
-</figure>
+</div>
 <p>The results show the sensitivity indices (Sobol indices) for each QoIs. The results tab first shows the aggregated sensitivity indices for the fields QoIs. Using the drop down menu, the user can also inspect individual sensitivity indices. See <a class="reference external" href="../../../../technical_manual/desktop/SimCenterUQTechnical.html">here</a> to learn about the difference between the main and total indices. The analysis took around 28.5 seconds and 5 principal components are used to reduce the dimension during the analysis.</p>
 <p>If the user selects the <strong>Data Values</strong> tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/qf-0023-RES2.png" src="../../../../../_images/qf-0023-RES2.png" />
-</figure>
-</section>
-<section id="comparison-with-the-results-without-pca">
-<h2><span class="section-number">4.12.5. </span>Comparison with the results without PCA<a class="headerlink" href="#comparison-with-the-results-without-pca" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="comparison-with-the-results-without-pca">
+<h2><span class="section-number">4.12.5. </span>Comparison with the results without PCA<a class="headerlink" href="#comparison-with-the-results-without-pca" title="Permalink to this headline">¶</a></h2>
 <p>Using the same configuration but without PCA (with <code class="docutils literal notranslate"><span class="pre">No</span></code> option selected for ‘Perform PCA with QoI’ in the UQ panel), the analysis took 1198 seconds on the same computer used to run the case above with PCA. The below figure shows the aggregated sensitivity indices which appears to be similar to the previous results.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../../_images/qf-0023-RES3.png" src="../../../../../_images/qf-0023-RES3.png" />
-</figure>
-<figure class="align-center">
+</div>
+<div class="align-center figure">
 <img alt="../../../../../_images/qf-0023-RES4.png" src="../../../../../_images/qf-0023-RES4.png" />
-</figure>
+</div>
 <dl class="citation">
 <dt class="label" id="jung2022"><span class="brackets"><a class="fn-backref" href="#id1">Jung2022</a></span></dt>
 <dd><p>To be added</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
