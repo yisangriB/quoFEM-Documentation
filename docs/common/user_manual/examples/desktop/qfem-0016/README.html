@@ -108,13 +108,12 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">3. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -143,9 +142,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0023/README.html">4.12. Global Sensitivity Analysis for Field QoI</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">7. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">6. Running in Your Browser</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -246,7 +244,7 @@
 </div>
 <div class="section" id="problem-description">
 <h2><span class="section-number">4.8.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
-<p>The structure (<a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0016/src/ShearBuilding_NL.py">three story nonlinear building stick model</a>) has the following uncertain properties:</p>
+<p>The structure ( <a href="#id1"><span class="problematic" id="id2">:ref:`three story nonlinear building stick model &lt;https://github.com/NHERI-SimCenter/quoFEM/blob/master/Examples/qfem-0016/src/ShearBuilding_NL.tcl&gt;`_</span></a> ) has the following uncertain properties:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 56%" />
@@ -358,6 +356,10 @@
 <li><p>Do not change the name of <code class="docutils literal notranslate"><span class="pre">templatedir_SIM</span></code>. <strong>SurrogateGP Info and model</strong> file names may be changed.</p></li>
 <li><p>When location of the files are changed, <code class="docutils literal notranslate"><span class="pre">templatedir_SIM</span></code> should be always located in the directory same to the <strong>SurroateGP Info file</strong>.</p></li>
 </ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not place above surrogate model files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Restart the quoFEM (or press <strong>UQ tab</strong>) and select Dakota sensitivity analysis method.</p></li>

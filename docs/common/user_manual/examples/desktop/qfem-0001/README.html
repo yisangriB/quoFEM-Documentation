@@ -109,13 +109,12 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">3. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -142,9 +141,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0023/README.html">4.12. Global Sensitivity Analysis for Field QoI</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">7. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">6. Running in Your Browser</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -240,9 +238,13 @@
 <li><p>Cross sectional area for the other six bars (<code class="docutils literal notranslate"><span class="pre">Ao</span></code>): mean <span class="math notranslate nohighlight">\(\mu_{Ao} = 250mm^2\)</span>, and <span class="math notranslate nohighlight">\(\sigma_{Ao} = 10mm^2\)</span> (COV = 4%)</p></li>
 </ol>
 <p>The goal of the exercise is to estimate the mean and standard deviation of the vertical displacement at node 3. The exercise requires two files. The user is required to download these files and place them in a <strong>NEW</strong> folder. The two files are:</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/src/TrussModel.tcl">TrussTemplate.tcl</a></p></li>
-</ol>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+1. Main file: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/src/TrussModel.tcl">TrussTemplate.tcl</a><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># units kN &amp; mm</span>
 
 <span class="c">#</span>
@@ -312,14 +314,19 @@
 <span class="nv">remove</span> recorders
 </pre></div>
 </div>
-<div class="admonition note">
+</div>
+</details><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The first lines containing <code class="docutils literal notranslate"><span class="pre">pset</span></code> will be read by the application when the file is selected and the application will autopopulate the Random Variables input panel with these same variable names. It is of course possible to explicitly use Random Variables without the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command as is demonstrated in the verification section.</p>
 </div>
-<ol class="arabic simple" start="2">
-<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/../qfem-0001/src/TrussPost.tcl">TrussPost.tcl</a>.</p></li>
-</ol>
 <p>The <code class="docutils literal notranslate"><span class="pre">TrussPost.tcl</span></code> script shown below will accept as input any of the 6 nodes in the domain and for each of the two dof directions.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+2. Postprocessing file: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/../qfem-0001/src/TrussPost.tcl">TrussPost.tcl</a>.<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># create file handler to write results to output &amp; list into which we will put results</span>
 <span class="k">set</span> resultFile <span class="k">[</span><span class="nb">open</span> results.out w<span class="k">]</span>
 <span class="k">set</span> results <span class="k">[]</span>
@@ -353,9 +360,17 @@
 <span class="nb">close</span> <span class="nv">$resultFile</span>
 </pre></div>
 </div>
-<div class="admonition note">
+</div>
+</details><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The use has the option to provide no post-process script (in which case the main script must create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file containing a single line with as many space separated numbers as QoI or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/src/TrussPost.py">TrussPost.py</a>.</p>
+<p>The use has the option to provide no post-process script (in which case the main script must create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file containing a single line with as many space separated numbers as QoI or the user may provide a Python script that also performs the postprocessing. Below is an example of a postprocessing Python script.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Alternative postprocessing file: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/src/TrussPost.py">TrussPost.py</a><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 
 <span class="c1"># written: fmk, adamzs 01/18</span>
@@ -426,6 +441,7 @@
 </pre></div>
 </div>
 </div>
+</details></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
@@ -527,7 +543,6 @@
 </tbody>
 </table>
 <p>In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.</p>
-<p>To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the <strong>UQ</strong> tab in which the user would select a Reliability as the Dakota Method Category and then choose Local reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/trussSens-UQ.png" src="../../../../../_images/trussSens-UQ.png" />
 </div>

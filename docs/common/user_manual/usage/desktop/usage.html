@@ -108,13 +108,12 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">3. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -129,9 +128,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">7. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">6. Running in Your Browser</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -213,22 +211,49 @@
             
   <div class="section" id="user-guide">
 <span id="lbl-usage"></span><h1><span class="section-number">2. </span>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
-<p>The quoFEM app, as will be discussed in <a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html#lblarchitecture"><span class="std std-ref">Software Architecture</span></a>, is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different backend applications. Once the quoFEM app is started, the user is presented with the user interface shown in <a class="reference internal" href="#figgenericui-quofem"><span class="std std-numref">Fig. 2.1</span></a>. It is in this UI where the user selects the applications to run in a workflow, inputs the necessary parameters for each of these applications, starts the workflow either locally or
-remotely, and finally views the simulation results. The main window of the UI is divided into several separate areas:</p>
+<p>The quoFEM app is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different workflow applications (see more information the backend and workflows under <a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html#lblarchitecture"><span class="std std-ref">Software Architecture</span></a>). Once the quoFEM app is started, the user is presented with the user interface (UI) shown in <a class="reference internal" href="#figgenericui-quofem"><span class="std std-numref">Fig. 2.1</span></a>. This interface allows the user to select the applications to run in a workflow, input the controlling parameters for each of these applications, start the workflow either locally or
+remotely, and finally view the results of the simulation.</p>
 <div class="align-center figure" id="id4">
 <span id="figgenericui-quofem"></span><img alt="../../../../_images/quoFEMPanel.png" src="../../../../_images/quoFEMPanel.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">The quoFEM app user interface.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
+<p>The main window of the UI is made up from the following areas:</p>
 <ol class="arabic">
-<li><p>Login Button:</p>
-<p>The <strong>Login</strong> button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the <a class="reference external" href="https://www.designsafe-ci.org/account/register">DesignSafe-CI</a> website <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
+<li><p><strong>Input Panel Selection Ribbon</strong></p>
+<div class="line-block">
+<div class="line">The ribbon on the left side provides buttons that represent each step of the simulation workflow (e.g., <strong>EVT: Event Description</strong>, <strong>SIM: Structural Model</strong>, <strong>RES: Results</strong>). Clicking on one of these buttons shows the corresponding workflow applications in the central input panel.</div>
+</div>
 </li>
-<li><p>Input Panel:</p>
-<p>The input panel is the large central area of the user-interface where the user provides input for the various applications, and also where they can view the results.</p>
+<li><p><strong>Input Panel</strong></p>
+<div class="line-block">
+<div class="line">The input panel is the large central area of the user-interface where the user provides input for the workflow applications. You can select a workflow application using the drop-down menu at the top of each input panel. Each panel collects input parameters and paths to files with input data for the selected workflow application. The RES (results) panel is different; it shows the results after a simulation is completed.</div>
+</div>
 </li>
-<li><p>Input Panel Selection Ribbon:</p>
-<p>The ribbon on the left side provides the user with a selection of buttons to choose from (e.g. <strong>RV: Random Variables</strong>, <strong>RES: Results</strong>). Selecting any of these buttons will change what is displayed in the central input panel. Each panel will present the user with an option for which application to choose for that part of the workflow, and will then allow a user to provide inputs for that application. In the following sections, each of the panels in the input panel selection ribbon are reviewed:</p>
-<div class="toctree-wrapper compound">
+<li><p><strong>Login Button</strong></p>
+<div class="line-block">
+<div class="line">The <strong>Login</strong> button is at the top right of the user interface. You can only launch jobs on DesignSafe after logging in to DesignSafe using your DesignSafe login and password. Pressing the login button will open up the login window to enter this information. You can register for an account on the <a class="reference external" href="https://www.designsafe-ci.org/account/register">DesignSafe-CI</a> website <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</div>
+</div>
+</li>
+<li><p><strong>Push Buttons</strong></p>
+<div class="line-block">
+<div class="line">This is the area near the bottom of the UI with the following four buttons:</div>
+</div>
+<ul class="simple">
+<li><p><strong>RUN</strong>: Run the simulation locally on your computer.</p></li>
+<li><p><strong>RUN at DesignSafe</strong>: Process the input information and send the data to DesignSafe. The simulation will be run there on a supercomputer and the results will be stored in your DesignSafe jobs folder.</p></li>
+<li><p><strong>GET from DesignSafe</strong>: Obtain the list of jobs you ran on DesignSafe. You can select a job to download its results to your computer.</p></li>
+<li><p><strong>Exit</strong>: Close the application.</p></li>
+</ul>
+</li>
+<li><p><strong>Message Area</strong></p>
+<div class="line-block">
+<div class="line">The message area is located in the bottom of the UI and displays the status and error messages for a running background application. The message area is a dockable dialog which can be resized, moved, and closed as needed. The dialog visibility can be toggled by clicking on the menu item <strong>View</strong> -&gt; <strong>Program Output</strong>. If moved from its default location, the status dialog can be restored to the bottom of the UI by dragging the dialog back to the bottom of the UI and hovering over the area.</div>
+</div>
+</li>
+</ol>
+<p>The following sections of the user guide describe in detail each of the steps presented in the input panel selection ribbon and the corresponding workflow applications available in the tool:</p>
+<blockquote>
+<div><div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
@@ -237,59 +262,37 @@ remotely, and finally views the simulation results. The main window of the UI is
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
 </ul>
 </div>
-</li>
-<li><p>Push Buttons:</p>
-<p>This is the area near the bottom of the UI in which 4 buttons are contained:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>RUN</strong>: Run the simulation locally on the user’s desktop machine.</p></li>
-<li><p><strong>RUN at DesignSafe</strong>: Process the information, and send to DesignSafe. The simulation will be run there on a supercomputer, and results will be stored in the user’s DesignSafe jobs folder.</p></li>
-<li><p><strong>GET from DesignSafe</strong>: Obtain the list of jobs for the user from DesignSafe and select a job to download from that list.</p></li>
-<li><p><strong>Exit</strong>: Exit the application.</p></li>
-</ul>
 </div></blockquote>
-<p>Clicking on the <strong>RUN at DesignSafe</strong> button will show the remote job submission dialog, given in <a class="reference internal" href="#figremjobpanel"><span class="std std-numref">Fig. 2.7</span></a>.</p>
+<p><strong>Running Jobs Remotely</strong></p>
+<p>Clicking on the <strong>RUN at DesignSafe</strong> button will show the remote job submission dialog shown below (<a class="reference internal" href="#figremjobpanel-notr2d"><span class="std std-numref">Fig. 2.7</span></a>)</p>
 <div class="align-center figure" id="id10">
-<span id="figremjobpanel"></span><img alt="../../../../_images/RemoteJobPanel.png" src="../../../../_images/RemoteJobPanel.png" />
+<span id="figremjobpanel-notr2d"></span><a class="reference internal image-reference" href="../../../../_images/RemoteJobPanel_sWHALE.png"><img alt="../../../../_images/RemoteJobPanel_sWHALE.png" src="../../../../_images/RemoteJobPanel_sWHALE.png" style="width: 296.75px; height: 198.5px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.7 </span><span class="caption-text">Remote job submission dialog.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>Descriptions and guidelines for each input are given below:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><strong>Job Name</strong>: An easy to remember and meaningful name to differentiate this job from others.</p></li>
-<li><p><strong>Number of Nodes</strong>: Number of compute nodes requested. Each node has many cores, and each core typically contains several processors/threads.</p></li>
+<li><p><strong>Number of Nodes</strong>: Number of compute nodes requested. Each node includes several cores and each core can run one thread of a parallel calculation.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If a large number of nodes are requested (e.g., more than 10), the job may stay longer in the queue before it starts.</p>
+<p>The number of nodes requested affects the time it takes for the job to start. Jobs are queued by a so-called scheduler on the supercomputer that optimizes its performance. Jobs that use 1-2 nodes typically start almost immediately, while a larger number of nodes (e.g., more than 10) may stay in the queue for several hours.</p>
 </div>
 <ul class="simple">
-<li><p><strong>Number of processors per Node</strong>: Number of processors that will be utilized on each node. Typically, it is advantageous to use all available processors of a node when the memory demand of a job is small. When a job is memory intensive, e.g., large finite element models, utilizing all available processors may overwhelm the memory cache of a core and the computation will slow down. Currently, the maximum number of processors is 48 and the minimum is 1.</p></li>
-<li><p><strong>Number of Buildings per Task</strong>: Number of buildings per task.</p></li>
+<li><p><strong>Number of processes per Node</strong>: Number of processors that will be utilized on each node. It is advantageous to use all available processors of a node when the memory demand of a job is small. When a job is memory intensive, e.g., large finite element models, utilizing all available processors may overwhelm the memory cache of a core and the computation will slow down. Currently, the maximum number of processors is 48 and the minimum is 1.</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Each task will run in parallel on its own processor. The number of tasks is equal to the number of nodes multiplied by the number of processors per node. Since it takes time to assign buildings to a task and spool up the computation, it may be advantageous to assign a batch of buildings to a task when the individual building analyses are expected to have a short runtime. A good approach is to estimate the total number of buildings to be analyzed and then select the <strong>Number of Nodes</strong>, <strong>Number of processors per Node</strong>, and <strong>Number of Buildings per Task</strong> so that the buildings can be strategically distributed across all processors. This is so that all processors are effectively utilized and do not sit idle.</p>
-</div>
 <ul class="simple">
-<li><p><strong>Save Intermediate Results</strong>: Save intermediate results to a compressed folder. This is typically not recommended as this as this will use up disk space.</p></li>
-<li><p><strong>Max Run Time</strong>: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. Job will stop if the run time exceeds this threshold.</p></li>
+<li><p><strong>Max Run Time</strong>: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. The job will be terminated and the intermediate results will be lost if the run time exceeds this threshold. The maximum runtime allowed for a job on DesignSafe is 48 hours.</p></li>
 </ul>
-</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A user can check the status of a remote run by clicking on the <strong>GET from DesignSafe</strong> button. If the analysis status shows FAILED, users are encouraged to log into their DesignSafe account to view the detailed output of the run. To view the detailed output of a run go to the <a class="reference external" href="https://www.designsafe-ci.org/help/new-ticket/">DesignSafe</a> webpage and log in with your credentials. Next, click on the menus <strong>Workspace</strong> -&gt; <strong>Tools &amp; Applications</strong> -&gt; <strong>Job Status</strong> and then select <strong>More info</strong> to view the status of a job.</p>
+<p>You can check the status of a remote run by clicking on the <strong>GET from DesignSafe</strong> button. If the analysis status shows FAILED,  log into your DesignSafe account to view the detailed output of the run. First, log in with your credentials on the <a class="reference external" href="https://www.designsafe-ci.org/help/new-ticket/">DesignSafe</a> webpage. Next, use the menu to navigate to <strong>Workspace</strong> -&gt; <strong>Tools &amp; Applications</strong> -&gt; <strong>Job Status</strong> and then select a job and click on <strong>More info</strong> to view the status of that job.</p>
 </div>
-</li>
-<li><p>Message Area:</p>
-<p>The message area is located in the bottom of the UI and displays the status and error messages for a running background application. The message area is a dockable dialog which can be resized, moved, and closed as needed. The dialog visibility can be toggled by clicking on the menu item <strong>View</strong> -&gt; <strong>Program Output</strong>. If moved from its default location, the status dialog can be restored to the bottom of the UI by dragging the dialog back to the bottom of the UI and hovering over the area.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>For more help on external services provided by DesignSafe-CI, such as creating an account, we encourage users to explore their <a class="reference external" href="https://www.designsafe-ci.org/rw/user-guides/">documentation</a> or consider <a class="reference external" href="https://www.designsafe-ci.org/help/new-ticket/">submitting a ticket</a>.</p>
 </dd>
 </dl>
-</li>
-</ol>
 </div>
 
 

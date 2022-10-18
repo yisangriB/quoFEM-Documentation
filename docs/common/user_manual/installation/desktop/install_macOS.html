@@ -108,13 +108,12 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/aboutQUOFEM.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/quoFEM/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">3. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/quoFEM/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -131,9 +130,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFEM.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">7. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">6. Running in Your Browser</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -219,24 +217,30 @@
 <span id="lblinstallmac"></span><h1><span class="section-number">1.2. </span>Install on macOS 10<a class="headerlink" href="#install-on-macos-10" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-python-3-9">
 <h2><span class="section-number">1.2.1. </span>Install Python 3.9<a class="headerlink" href="#install-python-3-9" title="Permalink to this headline">¶</a></h2>
-<p>The new M1 chip MacBooks provide super fast and efficient ARM based processors. Older MacBooks utilize Intel x86 processors. The newer processor presents a problem for Python users of scientific applications. This is beacuse python programs typically import many different modules and not all modules have been ported to include arm based versions. The python3 kernels provided with the current operating systems, Monterey, are ARM based. As a consequence, to use the SimCenter applications, you will need to download and install an <strong>x86</strong> version of python. These will run on the M1 machines, thanks to <a class="reference external" href="https://support.apple.com/en-us/HT211861#:~:text=Rosetta%202%20is%20available%20only,to%20allow%20installation%20to%20proceed.">Rosetta</a>.</p>
-<p>You may also be using other distributions of Python, e.g. anaconda or homebrew. To see if your python kernel is compatable with SimCenter tools, issue the following in a terminal window.</p>
+<p>SimCenter tools require an x86-based version of Python 3.9 to run properly. You may already use other versions of Python, or Python served by a larger scientific package such as Anaconda or homebrew.</p>
+<p>To see if your python kernel is compatable with SimCenter tools, issue the following in a terminal window.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use the spotlight app (magnifying glass at the top right corner of the desktop) to start a Terminal window. Start the spotlight app and type in terminal. The Terminal application should appear as the top hit.</p>
+</div>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span>
 <span class="kn">import</span> <span class="nn">platform</span>
 <span class="n">platform</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span>
 <span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>As shown in screenshot below, you should see machine=’x86_64’ in the output of platform.uname(), if you see machine=’arm64’ [app] will not run on your machine when you press the <strong>Run</strong> button.</p>
+<p>As shown in screenshot below, you should see Python 3.9 after issuing the python3 command and machine=’x86_64’ in the last line of output of the platform.uname() command. If you see another Python version or machine=’arm64’, you will need to install an x86 Python 3.9 on your computer.</p>
 <div class="align-center figure" id="id1">
 <img alt="../../../../_images/pythonKernel.png" src="../../../../_images/pythonKernel.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can use the spotlight app (magnifying glass at the top right corner of the desktop) to start a Terminal window. Start the spotlight app and type in terminal. The Terminal application should appear as the top hit.</p>
+<p>The latest MacBooks use ARM-based processors in their M1 and M2 chips. Older MacBooks utilize Intel x86 processors. The new ARM-based processors present a problem for Python users of scientific applications beacuse Python programs typically import many different modules and not all modules have been ported to the new ARM environments. The python3 kernels provided with macOS 12 (Monterey) and later are ARM based. You will need to download and install an <strong>x86</strong> version of Python to use the SimCenter applications on these systems. Such Python versions will run fine on the ARM-based machines, thanks to <a class="reference external" href="https://support.apple.com/en-us/HT211861#:~:text=Rosetta%202%20is%20available%20only,to%20allow%20installation%20to%20proceed.">Rosetta</a>.</p>
 </div>
-<p><strong>1.</strong> To obtain an x86 version of Python, we recommend installing Python 3.9, we tested the 3.9.13 version,  from <a class="reference external" href="https://www.python.org/downloads/release/python-386/">Python.org</a>. It is important to select the <strong>macOS 64-bit Intel-only installer</strong> version of the installer. The <strong>intel-only</strong> is key to obtaining the x64 version.</p>
+<p><strong>1.</strong> To obtain an x86 version of Python, we recommend installing Python 3.9, we tested the 3.9.13 version,  from <a class="reference external" href="https://www.python.org/downloads/release/python-386/">Python.org</a>. It is important to select the <strong>macOS 64-bit Intel-only installer</strong> version of the installer. The <strong>intel-only</strong> is key to obtaining the 64-bit x86 version.</p>
 <div class="align-center figure" id="id2">
 <img alt="../../../../_images/pythonDownload.png" src="../../../../_images/pythonDownload.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: python.org MacOS Download Page</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -244,7 +248,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>We use the python.org installation over others, due to it’s simplicity of installation.</p></li>
+<li><p>We prefer the python.org installation over others due to it’s simplicity.</p></li>
 <li><p>Python 3.10 from python.org, does not provide an x86 version.</p></li>
 <li><p>Homebrew can also be used to install a Python x86 version, the instructions are convoluted but can be found using <strong>Google</strong>.. If installed correctly python3 will be in /usr/local/Cellar directory and not in the /usr/local/opt directory. Remember the platform.uname() output above will show you if you have installed a correct version.</p></li>
 </ol>
@@ -288,18 +292,19 @@
 </div>
 <div class="section" id="test-the-installation">
 <h2><span class="section-number">1.2.4. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this headline">¶</a></h2>
-<p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the quoFEM.exe executable. You should see the user interface shown in <a class="reference internal" href="#figui-quofem"><span class="std std-numref">Fig. 1.2.4.5</span></a>. The installation can be tested by running the example problem <a class="reference internal" href="../../examples/desktop/qfem-0001/README.html#qfem-0001"><span class="std std-ref">Two-Dimensional Truss: Sampling, Reliability and Sensitivity</span></a> which is provided with the installation.</p>
+<p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the quoFEM.exe executable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as such. As a consequence, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open.</p>
+<p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Restart the app by right clicking on it and selecting open.</p>
 </div>
+<p>Once the application started, you should see the user interface shown in <a class="reference internal" href="#figui-quofem"><span class="std std-numref">Fig. 1.2.4.5</span></a>. We recommend running the example problem <a class="reference internal" href="../../examples/desktop/qfem-0001/README.html#qfem-0001"><span class="std std-ref">Two-Dimensional Truss: Sampling, Reliability and Sensitivity</span></a> to test the application.</p>
 <div class="align-center figure" id="id14">
 <span id="figui-quofem"></span><img alt="../../../../_images/quoFEM1.png" src="../../../../_images/quoFEM1.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.4.5 </span><span class="caption-text">quoFEM application on startup.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When the quoFEM app is running, open the app/preferences or File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>, as shown in the figure below If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal applicationagain and typich <strong>which python3</strong>. Enter the new path to the executable in the Python: line edit and then press the <strong>Save</strong> button.</p>
+<p>When the quoFEM app is running, open the app/preferences or File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal application and executing the <strong>which python3</strong> command. Enter the path shown as a response to the Preferences panel under Python and then press the <strong>Save</strong> button.</p>
 <blockquote>
 <div><blockquote>
 <div><div class="figure align-default">
