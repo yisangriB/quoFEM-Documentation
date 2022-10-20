@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.1.5.1. Configuring CustomUQ Engine &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>3.1.5.1. Configuring CustomUQ Engine &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -48,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.2. FEM: Finite Element Method" href="quoFEM/FEM.html" />
-    <link rel="prev" title="2.1.4.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm" href="UCSD_UQ_TMCMC.html" />
+    <link rel="next" title="3.2. FEM: Finite Element Method" href="quoFEM/FEM.html" />
+    <link rel="prev" title="3.1.4.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm" href="UCSD_UQ_TMCMC.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -108,38 +109,41 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">3. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">2.1.1. UQ Features At-a-Glance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">2.1.2. Dakota UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">2.1.3. SimCenter UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.5. Custom UQ Engine</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.5.1. Configuring CustomUQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">3.1. UQ: Uncertainty Quantification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">3.1.1. UQ Features At-a-Glance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">3.1.2. Dakota UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">3.1.3. SimCenter UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">3.1.4. UCSD UQ Engine</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#custom-uq-engine">3.1.5. Custom UQ Engine</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.1. Configuring CustomUQ Engine</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">2.3. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">3.2. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">3.3. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">3.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">3.5. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">6. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -200,11 +204,11 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
         
-          <li><a href="UQ.html"><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
+          <li><a href="UQ.html"><span class="section-number">3.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
         
-      <li><span class="section-number">2.1.5.1. </span>Configuring CustomUQ Engine</li>
+      <li><span class="section-number">3.1.5.1. </span>Configuring CustomUQ Engine</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -224,7 +228,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="configuring-customuq-engine">
-<span id="lblcustomuq"></span><h1><span class="section-number">2.1.5.1. </span>Configuring CustomUQ Engine<a class="headerlink" href="#configuring-customuq-engine" title="Permalink to this headline">¶</a></h1>
+<span id="lblcustomuq"></span><h1><span class="section-number">3.1.5.1. </span>Configuring CustomUQ Engine<a class="headerlink" href="#configuring-customuq-engine" title="Permalink to this headline">¶</a></h1>
 <p>In order to use the <strong>CustomUQ</strong> engine option, the following two tasks need to be performed:</p>
 <ul class="simple">
 <li><p>Configure UQ tab to accept the required inputs</p></li>
@@ -233,13 +237,13 @@
 <p>These two steps are explained in more detail next.</p>
 <div class="section" id="configuring-uq-tab">
 <h2>Configuring UQ tab<a class="headerlink" href="#configuring-uq-tab" title="Permalink to this headline">¶</a></h2>
-<p>The quoFEM interface can be customized to accept the required inputs for user-specified UQ engines. The “CustomUQ” option should be selected, as shown in <a class="reference internal" href="#figcustomuqoption"><span class="std std-numref">Fig. 2.1.5.1.1</span></a>. This will direct quoFEM to invoke the customized UQ backend where users can plug in their own functionality.</p>
+<p>The quoFEM interface can be customized to accept the required inputs for user-specified UQ engines. The “CustomUQ” option should be selected, as shown in <a class="reference internal" href="#figcustomuqoption"><span class="std std-numref">Fig. 3.1.5.1.1</span></a>. This will direct quoFEM to invoke the customized UQ backend where users can plug in their own functionality.</p>
 <div class="align-center figure" id="id2">
 <span id="figcustomuqoption"></span><img alt="../../../../_images/customUQ.png" src="../../../../_images/customUQ.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.5.1.1 </span><span class="caption-text">CustomUQ engine selection.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.5.1.1 </span><span class="caption-text">CustomUQ engine selection.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Next, users must configure the interface to accept inputs required to run their UQ engine. This is done through a JSON configuration file that is specified through “Configuration Input File”. Once this file is input, the user interface will be automatically updated to accept the inputs specified in the JSON configuration. An example JSON configuration is shown <a class="reference internal" href="#jsoninput"><span class="std std-ref">below</span></a>. This
-configuration file generates the interface shown in <a class="reference internal" href="#customuqinput"><span class="std std-numref">Fig. 2.1.5.1.2</span></a>.</p>
+configuration file generates the interface shown in <a class="reference internal" href="#customuqinput"><span class="std std-numref">Fig. 3.1.5.1.2</span></a>.</p>
 <div class="highlight-default notranslate" id="jsoninput"><div class="highlight"><pre><span></span><span class="p">{</span>
 	<span class="s2">&quot;Parameters&quot;</span> <span class="p">:</span>  <span class="p">[</span>
 		<span class="p">{</span>
@@ -269,7 +273,7 @@ configuration file generates the interface shown in <a class="reference internal
 </div>
 <div class="figure align-default" id="id3">
 <span id="customuqinput"></span><img alt="../../../../_images/CustomUQEngine.png" src="../../../../_images/CustomUQEngine.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.5.1.2 </span><span class="caption-text">Custom UQ Engine Configuration</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.5.1.2 </span><span class="caption-text">Custom UQ Engine Configuration</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Currently, users are able to specify the following types of inputs:</p>
 <ol class="arabic simple">

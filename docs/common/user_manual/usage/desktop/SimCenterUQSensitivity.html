@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.1.3.2. Global Sensitivity Analysis &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>3.1.3.2. Global Sensitivity Analysis &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -49,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.3.3. Surrogate Modeling" href="SimCenterUQSurrogate.html" />
-    <link rel="prev" title="2.1.3.1. Forward Propagation" href="SimCenterUQSampling.html" />
+    <link rel="next" title="3.1.3.3. Surrogate Modeling" href="SimCenterUQSurrogate.html" />
+    <link rel="prev" title="3.1.3.1. Forward Propagation" href="SimCenterUQSampling.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -109,41 +110,44 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">3. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">2.1.1. UQ Features At-a-Glance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">2.1.2. Dakota UQ Engine</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#simcenter-uq-engine">2.1.3. SimCenter UQ Engine</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">2.1.3.1. Forward Propagation</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.3.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">2.1.3.3. Surrogate Modeling</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">2.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">3.1. UQ: Uncertainty Quantification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">3.1.1. UQ Features At-a-Glance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">3.1.2. Dakota UQ Engine</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#simcenter-uq-engine">3.1.3. SimCenter UQ Engine</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">3.1.3.1. Forward Propagation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">3.1.3.3. Surrogate Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">3.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.5. Custom UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">3.1.4. UCSD UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">3.1.5. Custom UQ Engine</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">2.3. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">3.2. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">3.3. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">3.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">3.5. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">6. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -204,11 +208,11 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
         
-          <li><a href="UQ.html"><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
+          <li><a href="UQ.html"><span class="section-number">3.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
         
-      <li><span class="section-number">2.1.3.2. </span>Global Sensitivity Analysis</li>
+      <li><span class="section-number">3.1.3.2. </span>Global Sensitivity Analysis</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -228,7 +232,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="global-sensitivity-analysis">
-<span id="lblsimsensitivity"></span><h1><span class="section-number">2.1.3.2. </span>Global Sensitivity Analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this headline">¶</a></h1>
+<span id="lblsimsensitivity"></span><h1><span class="section-number">3.1.3.2. </span>Global Sensitivity Analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this headline">¶</a></h1>
 <p>Global sensitivity analysis is used to quantify contribution of each input variable to the uncertainty in the quantities of interest (QoI). Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. Global sensitivity analysis helps users to understand the overall impact of different sources of uncertainties and their intersections, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables. This can also be useful identifying the input variables for which extra experimentation/research may be useful in reducing the uncertainty in the initial specification.</p>
 <p><strong>Sobol indices</strong> are widely used variance-based global sensitivity measures which has two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interaction effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account. <strong>Please read</strong> <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical"><span class="std std-ref">HERE</span></a> <strong>for more details on the equations and implemented algorithms</strong>.</p>
 <div class="section" id="algorithm">
@@ -251,7 +255,7 @@
 <blockquote>
 <div><div class="align-center figure" id="id4">
 <span id="figsimsensitivity"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity1.png"><img alt="../../../../_images/Sensitivity1.png" src="../../../../_images/Sensitivity1.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.2.1 </span><span class="caption-text">Sensitivity analysis input panel (MCS).</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.2.1 </span><span class="caption-text">Sensitivity analysis input panel (MCS).</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.</p></li>
@@ -263,7 +267,7 @@
 <blockquote>
 <div><div class="align-center figure" id="id5">
 <span id="figsimsensitivity1-data"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity1_data.png"><img alt="../../../../_images/Sensitivity1_data.png" src="../../../../_images/Sensitivity1_data.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.2.2 </span><span class="caption-text">Sensitivity analysis input panel (Import Dataset).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.2.2 </span><span class="caption-text">Sensitivity analysis input panel (Import Dataset).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
 <li><p>The directory to input and output dataset needs to be provided. The dataset can either be comma/tab-separated file, or binary file.</p></li>
@@ -275,18 +279,18 @@
 <li><p>Train Points (Input): The number of columns should match the number of RVs presented in the <strong>RV tab</strong> and also match with required inputs of the simulation model provided in the <strong>FEM tab</strong>. <strong>The order of the columns should match thoses of the random variables presented in the RV tab</strong></p></li>
 <li><p>System Responses (Output): The number of columns and the order of columns should match the QoI quantities presented in <strong>QoI tab</strong>.</p></li>
 <li><p>Both files need to be provided, and the number of columns for the two files should be the same.</p></li>
-<li><p>See <a class="reference internal" href="SimCenterUQSurrogate.html#figsim4"><span class="std std-numref">Fig. 2.1.3.3.4</span></a> for example input data sheets.</p></li>
+<li><p>See <a class="reference internal" href="SimCenterUQSurrogate.html#figsim4"><span class="std std-numref">Fig. 3.1.3.3.4</span></a> for example input data sheets.</p></li>
 </ul>
 <div class="align-center figure" id="id6">
 <span id="figsim4"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate4_SimUQ.jpg"><img alt="../../../../_images/Surrogate4_SimUQ.jpg" src="../../../../_images/Surrogate4_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.2.3 </span><span class="caption-text">Example of data input files</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.2.3 </span><span class="caption-text">Example of data input files</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
 <li><p><strong>Binary (.bin)</strong>: quoFEM app accepts binary <strong>floating-point</strong> numeric matrix in a <strong>row major order</strong>. Below is an example Matlab script that can be used to create proper binary input files from [number of samples] x [input or output dimension] matlab matrix</p>
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-number">Listing 2.1.3.2.1 </span><span class="caption-text">Creating binary dataset (row-major, float point) using Matlab</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 3.1.3.2.1 </span><span class="caption-text">Creating binary dataset (row-major, float point) using Matlab</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% RV and QoI are matrices with size of (nsamp x ndim) </span><span class="w"></span>
 <span class="c">% nsamp: number of samples</span><span class="w"></span>
 <span class="c">% ndim : number of RVs or QoIs</span><span class="w"></span>
@@ -314,12 +318,12 @@
 <p>By default, the analysis results are first-order sensitivity indices of each random variable. In order to also account for the higher-order interaction effect, the user may activate the option to specify advanced outputs at the bottom of the <strong>QoI</strong> tab. Using this option, the user can manually provide groups of relevant random variables to get so-called group-wise Sobol indices.</p>
 <div class="align-center figure" id="id8">
 <span id="figsimsensitivity2"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity2.png"><img alt="../../../../_images/Sensitivity2.png" src="../../../../_images/Sensitivity2.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.2.4 </span><span class="caption-text">Group-wise Sobol indicies</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.2.4 </span><span class="caption-text">Group-wise Sobol indicies</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The group-wise Sobol indices are useful when the user wants to obtain a sensitivity measure corresponding to a categorical group of input variables, for example, to compare the relative sensitivity between structural parameters and excitation parameters. In particular, when there are non-causal correlations between some random variables or when the user expects interactive contributions of the random variables that are in nature inseparable, one can introduce the group index. The group-wise Sobol index for joint variables <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span> is defined as</p>
 <div class="math notranslate nohighlight" id="equation-groupsij">
-<span class="eqno">(2.1.3.2.1)<a class="headerlink" href="#equation-groupsij" title="Permalink to this equation">¶</a></span>\[S_{ij}^G=\frac{\text{Var}_{x_i,x_j}[\text{E}_{\boldsymbol{x}\sim ij}[y|x_i,x_j]]}{\text{Var}[y]},  \qquad  i,j=1, \cdots ,d\]</div>
-<p>In order to associate more input variables, the set {<span class="math notranslate nohighlight">\(x_i,x_j\)</span>} can be simply replaced by a larger set, e.g. {<span class="math notranslate nohighlight">\(x_i,x_j,x_k\)</span>}. Results of Eq. <a class="reference internal" href="#equation-groupsij">(2.1.3.2.1)</a> can be post-processed to obtain higher-order Sobol indices presented in Eq. <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#equation-sij">(1.2.3)</a>, i.e. it is obtained by subtracting the lower-order interaction terms from the group index.</p>
+<span class="eqno">(3.1.3.2.1)<a class="headerlink" href="#equation-groupsij" title="Permalink to this equation">¶</a></span>\[S_{ij}^G=\frac{\text{Var}_{x_i,x_j}[\text{E}_{\boldsymbol{x}\sim ij}[y|x_i,x_j]]}{\text{Var}[y]},  \qquad  i,j=1, \cdots ,d\]</div>
+<p>In order to associate more input variables, the set {<span class="math notranslate nohighlight">\(x_i,x_j\)</span>} can be simply replaced by a larger set, e.g. {<span class="math notranslate nohighlight">\(x_i,x_j,x_k\)</span>}. Results of Eq. <a class="reference internal" href="#equation-groupsij">(3.1.3.2.1)</a> can be post-processed to obtain higher-order Sobol indices presented in Eq. <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#equation-sij">(1.2.3)</a>, i.e. it is obtained by subtracting the lower-order interaction terms from the group index.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -333,7 +337,7 @@
 <p>When the number of the quantity of interests (QoI) exceeds 15, quoFEM, by default, performs <strong>principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)</strong>. The user can otherwise manually specify the option by selecting either <code class="docutils literal notranslate"><span class="pre">Yes</span></code> or <code class="docutils literal notranslate"><span class="pre">No</span></code>. If <code class="docutils literal notranslate"><span class="pre">Yes</span></code> is selected, the user can also provide the <code class="docutils literal notranslate"><span class="pre">potion</span> <span class="pre">of</span> <span class="pre">variance</span> <span class="pre">explained</span></code> in range of 0 and 1.0. As this value gets close to 1, the accuracy of the approximation improves while the computational demand also increases. Note that when 1.0 is selected, dimension will not be reduced. The default value is 0.99. We do not recommend using a value lower than 0.99 unless the user thoroughly understands its consequence.</p>
 <div class="align-center figure" id="id9">
 <span id="figsimsensitivity4"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity3.png"><img alt="../../../../_images/Sensitivity3.png" src="../../../../_images/Sensitivity3.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.2.5 </span><span class="caption-text">Principal Component Analysis</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.2.5 </span><span class="caption-text">Principal Component Analysis</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="results-display">
@@ -341,12 +345,12 @@
 <p>The main and total effect indices are displayed for each random variable (or group of random variables if the user specifies the group in the UQ tab) and quantity of interest (QoI) pair.</p>
 <div class="align-center figure" id="id10">
 <span id="id2"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity4.png"><img alt="../../../../_images/Sensitivity4.png" src="../../../../_images/Sensitivity4.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.2.6 </span><span class="caption-text">Results from <a class="reference internal" href="../../examples/desktop/qfem-0009/README.html#qfem-0009"><span class="std std-ref">an example</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.2.6 </span><span class="caption-text">Results from <a class="reference internal" href="../../examples/desktop/qfem-0009/README.html#qfem-0009"><span class="std std-ref">an example</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>Only when the quantities of interest (QoI) are defined as a <strong>field variable</strong>, i.e. by setting a length greater than 1 in the EDP tab, the aggregated sensitivity indices will also be displayed.</p>
 <div class="align-center figure" id="id11">
 <span id="id3"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity5.png"><img alt="../../../../_images/Sensitivity5.png" src="../../../../_images/Sensitivity5.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.2.7 </span><span class="caption-text">Aggregated results from <a class="reference internal" href="../../examples/desktop/qfem-0023/README.html#qfem-0023"><span class="std std-ref">an example</span></a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.2.7 </span><span class="caption-text">Aggregated results from <a class="reference internal" href="../../examples/desktop/qfem-0023/README.html#qfem-0023"><span class="std std-ref">an example</span></a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="hu19"><span class="brackets"><a class="fn-backref" href="#id1">Hu19</a></span></dt>

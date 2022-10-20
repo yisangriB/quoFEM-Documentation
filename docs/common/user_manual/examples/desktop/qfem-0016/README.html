@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>5.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -48,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.9. Custom UQ for UQpy" href="../qfem-0017/README.html" />
-    <link rel="prev" title="4.7. Surrogate Modeling for One Story Building Earthquake Response" href="../qfem-0015/README.html" />
+    <link rel="next" title="5.9. Custom UQ for UQpy" href="../qfem-0017/README.html" />
+    <link rel="prev" title="5.7. Surrogate Modeling for One Story Building Earthquake Response" href="../qfem-0015/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -108,42 +109,46 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">3. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0001/README.html">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0002/README.html">4.2. Forward Propagation - OpenSeesPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0005/README.html">4.3. Basic modeling with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">4.4. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">4.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">4.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">4.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#outline">4.8.1. Outline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#problem-description">4.8.2. Problem description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#input-files">4.8.3. Input files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#uq-workflow">4.8.4. UQ Workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sensitivity-analysis-using-the-surrogate-model">4.8.5. Sensitivity analysis using the Surrogate model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">3. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">5. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0001/README.html">5.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0002/README.html">5.2. Forward Propagation - OpenSeesPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0005/README.html">5.3. Basic modeling with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">5.4. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">5.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">5.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">5.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#outline">5.8.1. Outline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-description">5.8.2. Problem description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-files">5.8.3. Input files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uq-workflow">5.8.4. UQ Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sensitivity-analysis-using-the-surrogate-model">5.8.5. Sensitivity analysis using the Surrogate model</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">4.9. Custom UQ for UQpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">4.10. Bayesian Calibration of Material Model Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0022/README.html">4.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0023/README.html">4.12. Global Sensitivity Analysis for Field QoI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">5.9. Custom UQ for UQpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">5.10. Bayesian Calibration of Material Model Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0022/README.html">5.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0023/README.html">5.12. Global Sensitivity Analysis for Field QoI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0025/README.html">5.13. Heteroscedastic Gaussian Process modeling</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">6. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -204,9 +209,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+          <li><a href="../examples.html"><span class="section-number">5. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">4.8. </span>Surrogate Modeling to Predict Mean and Variance of Earthquake Response</li>
+      <li><span class="section-number">5.8. </span>Surrogate Modeling to Predict Mean and Variance of Earthquake Response</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -226,7 +231,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="surrogate-modeling-to-predict-mean-and-variance-of-earthquake-response">
-<span id="qfem-0016"></span><h1><span class="section-number">4.8. </span>Surrogate Modeling to Predict Mean and Variance of Earthquake Response<a class="headerlink" href="#surrogate-modeling-to-predict-mean-and-variance-of-earthquake-response" title="Permalink to this headline">¶</a></h1>
+<span id="qfem-0016"></span><h1><span class="section-number">5.8. </span>Surrogate Modeling to Predict Mean and Variance of Earthquake Response<a class="headerlink" href="#surrogate-modeling-to-predict-mean-and-variance-of-earthquake-response" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 28%" />
@@ -239,11 +244,11 @@
 </tbody>
 </table>
 <div class="section" id="outline">
-<h2><span class="section-number">4.8.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
 <p>This example constructs a Gaussian process-based surrogate model for mean and standard deviation of a building structure given ten ground motion set.</p>
 </div>
 <div class="section" id="problem-description">
-<h2><span class="section-number">4.8.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
 <p>The structure ( <a href="#id1"><span class="problematic" id="id2">:ref:`three story nonlinear building stick model &lt;https://github.com/NHERI-SimCenter/quoFEM/blob/master/Examples/qfem-0016/src/ShearBuilding_NL.tcl&gt;`_</span></a> ) has the following uncertain properties:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -286,7 +291,7 @@
 </div>
 </div>
 <div class="section" id="input-files">
-<h2><span class="section-number">4.8.3. </span>Input files<a class="headerlink" href="#input-files" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.3. </span>Input files<a class="headerlink" href="#input-files" title="Permalink to this headline">¶</a></h2>
 <p>Once the user selects OpenSeesPy as FEM applications, the below two fields are requested.</p>
 <ol class="arabic simple">
 <li><p>Input Script - <code class="docutils literal notranslate"><span class="pre">ShearBuilding_NL.tcl</span></code>: This file is the main OpenSees input script that implements builds the model, reads ground motion time histories, and runs the analysis repeatedly. It is supplied to the Input Script field of the FEM tab.</p></li>
@@ -295,7 +300,7 @@
 <p><strong>The other subsidiary scripts (including ground motion time histories) are stored in the same directory of the main input script.</strong></p>
 </div>
 <div class="section" id="uq-workflow">
-<h2><span class="section-number">4.8.4. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.4. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Since the model is provided, Training Dataset can be obtained by <strong>Sampling and Simulation</strong>. Since it is known that the mean and variance of peak drift are always positive, log-transform is introduced. Since a trend is expected, a linear trend function is introduced.</p></li>
 </ol>
@@ -342,7 +347,7 @@
 </ol>
 </div>
 <div class="section" id="sensitivity-analysis-using-the-surrogate-model">
-<h2><span class="section-number">4.8.5. </span>Sensitivity analysis using the Surrogate model<a class="headerlink" href="#sensitivity-analysis-using-the-surrogate-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.5. </span>Sensitivity analysis using the Surrogate model<a class="headerlink" href="#sensitivity-analysis-using-the-surrogate-model" title="Permalink to this headline">¶</a></h2>
 <p>Once the surrogate model is trained, it can be used for various UQ/optimization applications. Here we perform a sensitivity analysis and compare it with the results from simulation model.</p>
 <ol class="arabic simple">
 <li><p>The constructed surrogate model can be saved by <strong>Save GP Model</strong> button. Two files and a folder will be saved which are <strong>SurroateGP Info File</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code>), <strong>SurroateGP model file</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code>) and <strong>Simulation template directory</strong> which contains the simulation model information (<code class="docutils literal notranslate"><span class="pre">templatedir_SIM</span></code>).</p></li>

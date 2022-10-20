@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.1. UQ: Uncertainty Quantification &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>3.1. UQ: Uncertainty Quantification &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -48,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.2.1. Forward Propagation" href="DakotaSampling.html" />
-    <link rel="prev" title="2. User Guide" href="usage.html" />
+    <link rel="next" title="3.1.2.1. Forward Propagation" href="DakotaSampling.html" />
+    <link rel="prev" title="3. User Guide" href="usage.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -108,55 +109,58 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">3. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. UQ: Uncertainty Quantification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#uq-features-at-a-glance">2.1.1. UQ Features At-a-Glance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dakota-uq-engine">2.1.2. Dakota UQ Engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">2.1.2.1. Forward Propagation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaReliability.html">2.1.2.3. Reliability Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaDeterministicCalibration.html">2.1.2.4. Deterministic Calibration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaBayesianCalibration.html">2.1.2.5. Bayesian Calibration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaGradientFreeOptimization.html">2.1.2.6. Gradient-free Parameter Estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. UQ: Uncertainty Quantification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#uq-features-at-a-glance">3.1.1. UQ Features At-a-Glance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dakota-uq-engine">3.1.2. Dakota UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">3.1.2.1. Forward Propagation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaSensitivity.html">3.1.2.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaReliability.html">3.1.2.3. Reliability Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaDeterministicCalibration.html">3.1.2.4. Deterministic Calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaBayesianCalibration.html">3.1.2.5. Bayesian Calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaGradientFreeOptimization.html">3.1.2.6. Gradient-free Parameter Estimation</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#simcenter-uq-engine">2.1.3. SimCenter UQ Engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">2.1.3.1. Forward Propagation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.3.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">2.1.3.3. Surrogate Modeling</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">2.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simcenter-uq-engine">3.1.3. SimCenter UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">3.1.3.1. Forward Propagation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">3.1.3.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">3.1.3.3. Surrogate Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">3.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="UCSD_UQ_TMCMC.html">2.1.4.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ucsd-uq-engine">3.1.4. UCSD UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="UCSD_UQ_TMCMC.html">3.1.4.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#custom-uq-engine">2.1.5. Custom UQ Engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Configuring_CustomUQ.html">2.1.5.1. Configuring CustomUQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-uq-engine">3.1.5. Custom UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Configuring_CustomUQ.html">3.1.5.1. Configuring CustomUQ Engine</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">2.3. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">3.2. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">3.3. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">3.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">3.5. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">6. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -217,9 +221,9 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</li>
+      <li><span class="section-number">3.1. </span>UQ: Uncertainty Quantification</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -239,11 +243,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="uq-uncertainty-quantification">
-<h1><span class="section-number">2.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
+<span id="lbluq"></span><h1><span class="section-number">3.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
 <p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel that the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. The <strong>UQ Engine</strong> provides algorithms for solving various types of uncertainty analysis and optimization problems.</p>
 <p>The <strong>UQ Engine</strong> options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM to use their own UQ methods and algorithms in the quoFEM workflow by selecting the CustomUQ option.</p>
 <div class="section" id="uq-features-at-a-glance">
-<h2><span class="section-number">2.1.1. </span>UQ Features At-a-Glance<a class="headerlink" href="#uq-features-at-a-glance" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.1. </span>UQ Features At-a-Glance<a class="headerlink" href="#uq-features-at-a-glance" title="Permalink to this headline">¶</a></h2>
 <div class="sphinx-bs container-lg pb-3 docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
@@ -255,16 +259,18 @@
 <dt><span class="uqblue">Forward propagation</span></dt><dd><div class="line-block">
 <div class="line">Forward propagation generates sample realizations of input random variables (RVs) and output quantity of interests (QoIs) to provide statistics such as mean, variance, skewness, and kurtosis.</div>
 </div>
-<div class="line-block">
-<div class="line">* <a class="reference internal" href="DakotaSampling.html#lbldakotaforward"><span class="std std-ref">Forward Propagation</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0002/README.html"><span>Example2</span></a></div>
-<div class="line">* <a class="reference internal" href="SimCenterUQSampling.html#lblsimforward"><span class="std std-ref">Forward Propagation</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0015/README.html"><span>Example</span></a></div>
+<blockquote>
+<div><div class="line-block">
+<div class="line">▪ <a class="reference internal" href="DakotaSampling.html#lbldakotaforward"><span class="std std-ref">Forward Propagation</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0002/README.html"><span>Example2</span></a></div>
+<div class="line">▪ <a class="reference internal" href="SimCenterUQSampling.html#lblsimforward"><span class="std std-ref">Forward Propagation</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0015/README.html"><span>Example</span></a></div>
 </div>
+</div></blockquote>
 </dd>
 </dl>
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-9c58e0bc-f352-4d00-83fe-8cd2a37b3a86"
+               data-lightbox="group-c2d3d604-276a-4c32-ae6c-b8bcade9b32a"
                href="../../../../_images/method_forward1.png"
                title=""
                data-title=""
@@ -288,16 +294,18 @@
 <dt><span class="uqblue">Global Sensitivity Analysis</span></dt><dd><div class="line-block">
 <div class="line">Global sensitivity analysis is used to quantify contribution of each input RV to the uncertainty in an output QoI. Dakota engine provides classical non-parametric estimation based on smart sampling approach and SimCenterUQ engine provides probabilistic model-based approximation. See Dakota user manual and <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical-sensitivity"><span class="std std-ref">here</span></a> for theory details.</div>
 </div>
-<div class="line-block">
-<div class="line">* <a class="reference internal" href="DakotaSensitivity.html#lbldakotasensitivity"><span class="std std-ref">Global Sensitivity Analysis</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example</span></a></div>
-<div class="line">* <a class="reference internal" href="SimCenterUQSensitivity.html#lblsimsensitivity"><span class="std std-ref">Global Sensitivity Analysis</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0009/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0023/README.html"><span>Example2</span></a></div>
+<blockquote>
+<div><div class="line-block">
+<div class="line">▪ <a class="reference internal" href="DakotaSensitivity.html#lbldakotasensitivity"><span class="std std-ref">Global Sensitivity Analysis</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example</span></a></div>
+<div class="line">▪ <a class="reference internal" href="SimCenterUQSensitivity.html#lblsimsensitivity"><span class="std std-ref">Global Sensitivity Analysis</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0009/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0023/README.html"><span>Example2</span></a></div>
 </div>
+</div></blockquote>
 </dd>
 </dl>
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-3a6a8346-dad4-4159-9e7c-122dd3a30c05"
+               data-lightbox="group-9938ed9c-48ce-4432-9182-2fcd31e29e72"
                href="../../../../_images/method_sensitivity1.png"
                title=""
                data-title=""
@@ -323,7 +331,7 @@
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">* <a class="reference internal" href="DakotaReliability.html#lbldakotareliability"><span class="std std-ref">Reliability Analysis</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example</span></a></div>
+<div class="line">▪ <a class="reference internal" href="DakotaReliability.html#lbldakotareliability"><span class="std std-ref">Reliability Analysis</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example</span></a></div>
 </div>
 </div></blockquote>
 </dd>
@@ -331,7 +339,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-9ed89c8b-5f40-4dba-96eb-6ac7bb5561f6"
+               data-lightbox="group-d9d4dd29-c641-4c72-897c-fc4ebe26b533"
                href="../../../../_images/method_reliability1.png"
                title=""
                data-title=""
@@ -357,8 +365,8 @@
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">* <a class="reference internal" href="DakotaBayesianCalibration.html#lbldakotabayesiancalibration"><span class="std std-ref">Bayesian Calibration</span></a> in Dakota</div>
-<div class="line">* <a class="reference internal" href="UCSD_UQ_TMCMC.html#lblucsdtmcmc"><span class="std std-ref">Transitional Markov chain Monte Carlo (TMCMC) algorithm</span></a> in UCSD-UQ   <a class="sphinx-bs badge badge-danger text-white reference external" href="../../examples/desktop/qfem-0014/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-danger text-white reference external" href="../../examples/desktop/qfem-0019/README.html"><span>Example2</span></a></div>
+<div class="line">▪ <a class="reference internal" href="DakotaBayesianCalibration.html#lbldakotabayesiancalibration"><span class="std std-ref">Bayesian Calibration</span></a> in Dakota</div>
+<div class="line">▪ <a class="reference internal" href="UCSD_UQ_TMCMC.html#lblucsdtmcmc"><span class="std std-ref">Transitional Markov chain Monte Carlo (TMCMC) algorithm</span></a> in UCSD-UQ   <a class="sphinx-bs badge badge-danger text-white reference external" href="../../examples/desktop/qfem-0014/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-danger text-white reference external" href="../../examples/desktop/qfem-0019/README.html"><span>Example2</span></a></div>
 </div>
 </div></blockquote>
 </dd>
@@ -366,7 +374,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-161f7ab9-07e1-492a-8a2d-bda38bc10492"
+               data-lightbox="group-61be72a3-50b1-47fe-a7ed-be43d23fbbdc"
                href="../../../../_images/method_Bayesian1.png"
                title=""
                data-title=""
@@ -392,8 +400,8 @@
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">* <a class="reference internal" href="DakotaDeterministicCalibration.html#lbldakotadeterministiccalibration"><span class="std std-ref">Deterministic Calibration</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0007/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0019/README.html"><span>Example2</span></a></div>
-<div class="line">* <a class="reference internal" href="DakotaGradientFreeOptimization.html#lbldakotagradientfreeestimation"><span class="std std-ref">Gradient-free Parameter Estimation</span></a> in Dakota</div>
+<div class="line">▪ <a class="reference internal" href="DakotaDeterministicCalibration.html#lbldakotadeterministiccalibration"><span class="std std-ref">Deterministic Calibration</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0007/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0019/README.html"><span>Example2</span></a></div>
+<div class="line">▪ <a class="reference internal" href="DakotaGradientFreeOptimization.html#lbldakotagradientfreeestimation"><span class="std std-ref">Gradient-free Parameter Estimation</span></a> in Dakota</div>
 </div>
 </div></blockquote>
 </dd>
@@ -401,7 +409,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-b5ca31f7-6e10-4afc-a10d-a9efde66b8f4"
+               data-lightbox="group-d199e26a-c9f9-4910-9a4b-85ec1d5e0015"
                href="../../../../_images/method_deterministic1.png"
                title=""
                data-title=""
@@ -421,22 +429,22 @@
 <div class="card-body docutils">
 <div class="twocol docutils container">
 <div class="leftside docutils container">
-<dl>
-<dt><span class="uqblue">Surrogate Modeling</span></dt><dd><div class="line-block">
+<p class="card-text"><span class="uqblue">Surrogate Modeling</span></p>
+<blockquote>
+<div><div class="line-block">
 <div class="line">quoFEM app can be used to train a surrogate model model that substitutes expensive computational simulation models or physical experiments. Theory details can be found in <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical"><span class="std std-ref">here</span></a>.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">* <a class="reference internal" href="SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Surrogate Modeling</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0015/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0016/README.html"><span>Example2</span></a></div>
-<div class="line">* <a class="reference internal" href="SimCenterUQPLoM.html#lblsimcenteruqplom"><span class="std std-ref">Probabilistic Learning on Manifolds (PLoM)</span></a> in SimCenterUQ</div>
+<div class="line">▪ <a class="reference internal" href="SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Surrogate Modeling</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0015/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0016/README.html"><span>Example2</span></a></div>
+<div class="line">▪ <a class="reference internal" href="SimCenterUQPLoM.html#lblsimcenteruqplom"><span class="std std-ref">Probabilistic Learning on Manifolds (PLoM)</span></a> in SimCenterUQ</div>
 </div>
 </div></blockquote>
-</dd>
-</dl>
+</div></blockquote>
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-b76da887-0da1-4873-bb12-8f0ff1834e72"
+               data-lightbox="group-568d643c-e751-47fd-8141-d17c3e9513fe"
                href="../../../../_images/method_surrogate1.png"
                title=""
                data-title=""
@@ -462,7 +470,7 @@
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">* <a class="reference internal" href="Configuring_CustomUQ.html#lblcustomuq"><span class="std std-ref">Configuring CustomUQ Engine</span></a> in CustomUQ engine   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0017/README.html"><span>Example</span></a></div>
+<div class="line">▪ <a class="reference internal" href="Configuring_CustomUQ.html#lblcustomuq"><span class="std std-ref">Configuring CustomUQ Engine</span></a> in CustomUQ engine   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0017/README.html"><span>Example</span></a></div>
 </div>
 </div></blockquote>
 </dd>
@@ -470,7 +478,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-3f569c00-b8bb-4c86-8e7e-48d5543e5e6a"
+               data-lightbox="group-498fab61-3939-4be2-a142-cd7d21352ce7"
                href="../../../../_images/method_custom1.png"
                title=""
                data-title=""
@@ -489,7 +497,7 @@
 </div>
 </div>
 <div class="section" id="dakota-uq-engine">
-<h2><span class="section-number">2.1.2. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.2. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of methods for different kinds of analyses. For this reason we have divided the methods into categories though a pull-down menu, as shown below. Once the category has been selected, a number of different methods are made available to the user.</p>
 <ul class="simple">
 <li><p>By checking the <code class="docutils literal notranslate"><span class="pre">Parallel</span> <span class="pre">Execution</span></code>, the UQ analysis will be performed in parallel. It will try to use all the processors available in the machine.</p></li>
@@ -497,58 +505,58 @@
 </ul>
 <div class="align-center figure" id="id3">
 <span id="figdakota"></span><a class="reference internal image-reference" href="../../../../_images/dakotaUQ.png"><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.2.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.2.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following categories are available:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">2.1.2.1. Forward Propagation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DakotaSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DakotaReliability.html">2.1.2.3. Reliability Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DakotaDeterministicCalibration.html">2.1.2.4. Deterministic Calibration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DakotaBayesianCalibration.html">2.1.2.5. Bayesian Calibration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DakotaGradientFreeOptimization.html">2.1.2.6. Gradient-free Parameter Estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">3.1.2.1. Forward Propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaSensitivity.html">3.1.2.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaReliability.html">3.1.2.3. Reliability Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaDeterministicCalibration.html">3.1.2.4. Deterministic Calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaBayesianCalibration.html">3.1.2.5. Bayesian Calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaGradientFreeOptimization.html">3.1.2.6. Gradient-free Parameter Estimation</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="simcenter-uq-engine">
-<h2><span class="section-number">2.1.3. </span>SimCenter UQ Engine<a class="headerlink" href="#simcenter-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.3. </span>SimCenter UQ Engine<a class="headerlink" href="#simcenter-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>SimCenterUQ</strong> engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:</p>
 <div class="align-center figure" id="id4">
 <span id="figsimcenteruq"></span><a class="reference internal image-reference" href="../../../../_images/SimCenterUQ.png"><img alt="../../../../_images/SimCenterUQ.png" src="../../../../_images/SimCenterUQ.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.1 </span><span class="caption-text">SimCenterUQ engine and category selection.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1 </span><span class="caption-text">SimCenterUQ engine and category selection.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following category options are available:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSampling.html">2.1.3.1. Forward Propagation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.3.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSurrogate.html">2.1.3.3. Surrogate Modeling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SimCenterUQPLoM.html">2.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSampling.html">3.1.3.1. Forward Propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSensitivity.html">3.1.3.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSurrogate.html">3.1.3.3. Surrogate Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQPLoM.html">3.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="ucsd-uq-engine">
-<h2><span class="section-number">2.1.4. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>UCSD-UQ</strong> engine is a module developed at the SimCenter in collaboration with UCSD. It provides algorithms for Bayesian estimation, which can be accessed through a pull-down menu, as shown in <a class="reference internal" href="#figucsduq"><span class="std std-numref">Fig. 2.1.4.1</span></a>.</p>
+<h2><span class="section-number">3.1.4. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>UCSD-UQ</strong> engine is a module developed at the SimCenter in collaboration with UCSD. It provides algorithms for Bayesian estimation, which can be accessed through a pull-down menu, as shown in <a class="reference internal" href="#figucsduq"><span class="std std-numref">Fig. 3.1.4.1</span></a>.</p>
 <div class="align-center figure" id="id5">
 <span id="figucsduq"></span><a class="reference internal image-reference" href="../../../../_images/UCSDUQ.png"><img alt="../../../../_images/UCSDUQ.png" src="../../../../_images/UCSDUQ.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.1 </span><span class="caption-text">UCSD-UQ engine and category selection.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.4.1 </span><span class="caption-text">UCSD-UQ engine and category selection.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>This module currently offers support for Bayesian estimation using the Transitional Markov chain Monte Carlo (TMCMC) algorithm:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="UCSD_UQ_TMCMC.html">2.1.4.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UCSD_UQ_TMCMC.html">3.1.4.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="custom-uq-engine">
-<h2><span class="section-number">2.1.5. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>CustomUQ</strong> option enables users to switch out the UQ engine in the quoFEM workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
 .. _figCustomUQ:</p>
 <div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../_images/customUQ.png"><img alt="../../../../_images/customUQ.png" src="../../../../_images/customUQ.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.5.1 </span><span class="caption-text">CustomUQ engine selection.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.5.1 </span><span class="caption-text">CustomUQ engine selection.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>In order to use the CustomUQ engine option, two steps are required:</p>
 <ul class="simple">
@@ -558,7 +566,7 @@
 <p>These steps are described in more detail here:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Configuring_CustomUQ.html">2.1.5.1. Configuring CustomUQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring_CustomUQ.html">3.1.5.1. Configuring CustomUQ Engine</a></li>
 </ul>
 </div>
 </div>

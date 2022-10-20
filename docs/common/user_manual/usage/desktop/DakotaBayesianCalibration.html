@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.1.2.5. Bayesian Calibration &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>3.1.2.5. Bayesian Calibration &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -48,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.2.6. Gradient-free Parameter Estimation" href="DakotaGradientFreeOptimization.html" />
-    <link rel="prev" title="2.1.2.4. Deterministic Calibration" href="DakotaDeterministicCalibration.html" />
+    <link rel="next" title="3.1.2.6. Gradient-free Parameter Estimation" href="DakotaGradientFreeOptimization.html" />
+    <link rel="prev" title="3.1.2.4. Deterministic Calibration" href="DakotaDeterministicCalibration.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -108,43 +109,46 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">3. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">2.1.1. UQ Features At-a-Glance</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#dakota-uq-engine">2.1.2. Dakota UQ Engine</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">2.1.2.1. Forward Propagation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaReliability.html">2.1.2.3. Reliability Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaDeterministicCalibration.html">2.1.2.4. Deterministic Calibration</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.2.5. Bayesian Calibration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DakotaGradientFreeOptimization.html">2.1.2.6. Gradient-free Parameter Estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">3.1. UQ: Uncertainty Quantification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">3.1.1. UQ Features At-a-Glance</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#dakota-uq-engine">3.1.2. Dakota UQ Engine</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">3.1.2.1. Forward Propagation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaSensitivity.html">3.1.2.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaReliability.html">3.1.2.3. Reliability Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaDeterministicCalibration.html">3.1.2.4. Deterministic Calibration</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.2.5. Bayesian Calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaGradientFreeOptimization.html">3.1.2.6. Gradient-free Parameter Estimation</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">2.1.3. SimCenter UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">2.1.5. Custom UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">3.1.3. SimCenter UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">3.1.4. UCSD UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">3.1.5. Custom UQ Engine</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">2.2. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">2.3. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">2.4. QoI: Quantities of Interest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">2.5. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">3.2. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">3.3. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/QuantitiesOfInterest.html">3.4. QoI: Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">3.5. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">6. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -205,11 +209,11 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
         
-          <li><a href="UQ.html"><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
+          <li><a href="UQ.html"><span class="section-number">3.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
         
-      <li><span class="section-number">2.1.2.5. </span>Bayesian Calibration</li>
+      <li><span class="section-number">3.1.2.5. </span>Bayesian Calibration</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -229,11 +233,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="bayesian-calibration">
-<span id="lbldakotabayesiancalibration"></span><h1><span class="section-number">2.1.2.5. </span>Bayesian Calibration<a class="headerlink" href="#bayesian-calibration" title="Permalink to this headline">¶</a></h1>
+<span id="lbldakotabayesiancalibration"></span><h1><span class="section-number">3.1.2.5. </span>Bayesian Calibration<a class="headerlink" href="#bayesian-calibration" title="Permalink to this headline">¶</a></h1>
 <p>The methods in the Bayesian calibration category are concerned with estimation of the probability distribution of the parameter values given observational measurements. Unlike deterministic parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using the methods in this category, the user has some idea about the probability distribution of the parameter values. This information is provided in the form of the prior distributions in the <strong>RV</strong> panel. The Bayesian calibration methods take this prior information and combine it with information from the observed data provided in the <strong>UQ</strong> panel, to infer posterior distributions of the parameter values. A Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. The likelihood function  specifies the likelihood that a particular parameter value of the model produced the observed data. Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to characterize the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) methods. Currently, quoFEM app provides access to the DREAM algorithm implemented in Dakota.</p>
 <div class="section" id="dream">
 <h2>DREAM<a class="headerlink" href="#dream" title="Permalink to this headline">¶</a></h2>
-<p>The Differential Evolution Adaptive Metropolis (<a class="reference internal" href="#id2" id="id1"><span>[DREAM]</span></a>) method runs multiple Markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. <a class="reference internal" href="#figdream"><span class="std std-numref">Fig. 2.1.2.5.1</span></a> shows the input panel corresponding to the DREAM method. The required inputs for this method are:</p>
+<p>The Differential Evolution Adaptive Metropolis (<a class="reference internal" href="#id2" id="id1"><span>[DREAM]</span></a>) method runs multiple Markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. <a class="reference internal" href="#figdream"><span class="std std-numref">Fig. 3.1.2.5.1</span></a> shows the input panel corresponding to the DREAM method. The required inputs for this method are:</p>
 <ol class="arabic simple">
 <li><p># Chains: number of chains in the DREAM algorithm</p></li>
 <li><p># Chain Samples: number of sample values to be drawn from the posterior probability distribution of the parameters</p></li>
@@ -254,7 +258,7 @@
 </div>
 <div class="align-center figure" id="id3">
 <span id="figdream"></span><img alt="../../../../_images/BayesianCalibration.png" src="../../../../_images/BayesianCalibration.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.2.5.1 </span><span class="caption-text">DREAM input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.2.5.1 </span><span class="caption-text">DREAM input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">DREAM</a></span></dt>
