@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>7. Release Plans &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>Release Plans &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -49,8 +49,6 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="8. Glossary" href="../../front-matter/glossary.html" />
-    <link rel="prev" title="6. Release Notes" href="quoReleaseNotes.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -108,19 +106,14 @@
             
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../about/quoFEM/about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoCapabilities.html">5. Capabilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoReleaseNotes.html">6. Release Notes</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Release Plans</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#january-2023">7.1. January 2023</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sept-2023">7.2. Sept 2023</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#march-2024">7.3. March 2024</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="quoPlans.html">7. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">8. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
@@ -194,13 +187,13 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">7. </span>Release Plans</li>
+      <li>Release Plans</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../_sources/common/user_manual/releases/quoPlans.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/common/user_manual/releases/wePlans.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -214,38 +207,44 @@
            <div itemprop="articleBody">
             
   <div class="section" id="release-plans">
-<span id="lbl-future-quofem"></span><h1><span class="section-number">7. </span>Release Plans<a class="headerlink" href="#release-plans" title="Permalink to this headline">¶</a></h1>
-<p>The following features are planned to be developed for upcoming releases of quoFEM app. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.</p>
+<span id="lbl-future-we"></span><h1>Release Plans<a class="headerlink" href="#release-plans" title="Permalink to this headline">¶</a></h1>
+<p>The following features are intended to be included in quoFEM app  in upcoming releases. These may change, depending on feedback and changing priorities, though the ones closest out are things we are actively working and will be delivered. If you have any suggestions or wish to contribute, please contact us through the SimCenter Forum.</p>
 <div class="section" id="january-2023">
-<h2><span class="section-number">7.1. </span>January 2023<a class="headerlink" href="#january-2023" title="Permalink to this headline">¶</a></h2>
+<h2>January 2023<a class="headerlink" href="#january-2023" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Digital Twin of Wall of Wind Facility (1.2.5.2) - Allow users to run CFD simulations of wall of wind facility</p></li>
+</ol>
+</div>
+<div class="section" id="march-2023">
+<h2>March 2023<a class="headerlink" href="#march-2023" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Quantify epistemic uncertainty by considering multiple models to represent behavior (1.2.4.1) - Define weights for each model candidate and propagate epistemic uncertainty by randomly selecting a model for each realization according to these weights.</p></li>
+<li><p>CFD Database of Simulations</p></li>
+<li><p>Multi-model (1.2.4.1) - defining weights for multiple models (Events, Structural Models and Analysis) for the same response and predicting the response statistics accounting for the model weights.</p></li>
 </ol>
 </div></blockquote>
 </div>
 <div class="section" id="sept-2023">
-<h2><span class="section-number">7.2. </span>Sept 2023<a class="headerlink" href="#sept-2023" title="Permalink to this headline">¶</a></h2>
+<h2>Sept 2023<a class="headerlink" href="#sept-2023" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>New, state-of-the-art surrogate methods - Heteroscedastic Gaussian Process Surrogates (1.2.2.2) - First, train a GP surrogate to capture the mean response, then train another GP surrogate the capture the variance using the residuals. This approach is especially powerful when large differences are observed in the variance of the output in different parts of the input space.</p></li>
-<li><p>Efficient forward propagation using Multi-Fidelity Monte-Carlo (1.2.3.1) - Use a few realizations of the output calculated with expensive, high-fidelity models to evaluate and correct the bias in efficient, approximate models, such as surrogates. With little extra computational demands, this method provides a substantial improvement in surrogate model performance if you have the high-fidelity models available that were used to train the surrogates.</p></li>
-<li><p>Accelerate Bayesian calibration using advanced Markov Chain Monte Carlo methods (1.2.3.3) - Build a surrogate model iteratively that will replace the original model in MCMC sampling. In each iteration, use a batch of data generated by evaluating the original model at carefully selected points to improve the surrogate model approximation of the target probability density. This is especially helpful when the original model is expensive to run and conventional MCMC is not feasible.</p></li>
-<li><p>Additional calibration examples developed with researchers running projects at NHERI experimental facilities (1.2.5.3) - These examples demonstrate real-world application of quoFEM app and they can also serve as templates for future users of NHERI facilities.</p></li>
+<li><p>Multi-Fidelity Monte-Carlo (1.2.3.1) - - utilizing low fidelity models to predict the response of high fidelity model efficiently</p></li>
+<li><p>Surrogate support for regional assesment (1.3.6.1) - allow surrogates to developed in EE_UQ that can be utilized in R2D for earthquake hazard.</p></li>
 </ol>
 </div></blockquote>
 </div>
-<div class="section" id="march-2024">
-<h2><span class="section-number">7.3. </span>March 2024<a class="headerlink" href="#march-2024" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>2024<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><blockquote>
 <div><ol class="arabic simple">
-<li><p>Advanced model calibration methods using recursive stochastic filters and particle filters (1.2.3.4)</p></li>
+<li><p>Ability to save &amp; utilize surrogate models using advanced Surrogate-Modeling  algorithms (1.2.2.2)</p></li>
+<li><p>Reduced order surrogates given CFD simulations (1.2.2.3)</p></li>
 </ol>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The numbers in parentheses are for internal tracking purposes.</p>
+<p>The numbers in brackets are for internal tracking purposes.</p>
 </div>
 </div></blockquote>
 </div>

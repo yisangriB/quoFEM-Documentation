@@ -74,7 +74,8 @@
    :PBE:common/user_manual/usage/desktop/PBE/releasenotes
    :R2D:common/user_manual/releases/r2dPlans
    :EEUQ:common/user_manual/releases/eePlans
-   :PBE:common/user_manual/releases/pbePlans	 
+   :PBE:common/user_manual/releases/pbePlans
+   :WEUQ:common/user_manual/releases/wePlans	 	
 	    
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
