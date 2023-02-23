@@ -221,10 +221,10 @@
 <div class="section" id="uq-uncertainty-quantification-and-optimization-options">
 <h2><span class="section-number">5.1. </span>UQ (Uncertainty Quantification and Optimization Options)<a class="headerlink" href="#uq-uncertainty-quantification-and-optimization-options" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p>Dakota: <span class="blue">[← New option to discard working directories after each model evaluation]</span></p>
+<li><p>Forward Uncertainty Propagation</p>
 <blockquote>
-<div><ol class="loweralpha simple">
-<li><p>Forward Uncertainty Propagation:</p>
+<div><ol class="upperalpha simple">
+<li><p><a class="reference internal" href="../usage/desktop/DakotaSampling.html#lbldakotaforward"><span class="std std-ref">Dakota</span></a> <span class="blue">[← New option to discard working directories after each model evaluation]</span></p>
 <ol class="arabic simple">
 <li><p>Monte Carlo Sampling (MCS)</p></li>
 <li><p>Latin Hypercube Sampling (LHS)</p></li>
@@ -232,37 +232,28 @@
 <li><p>Polynomial Chaos Expansion</p></li>
 </ol>
 </li>
-<li><p>Deterministic Calibration <span class="blue">[← formerly Parameter Estimation]</span>:</p>
+<li><p><a class="reference internal" href="../usage/desktop/SimCenterUQSampling.html#lblsimforward"><span class="std std-ref">SimCenterUQ</span></a></p>
 <ol class="arabic simple">
-<li><p>NL2SOL</p></li>
-<li><p>OPT++GaussNewton</p></li>
+<li><p>Monte Carlo Sampling (MCS)</p>
+<ol class="loweralpha simple">
+<li><p>Resample from existing correlated dataset of samples</p></li>
 </ol>
 </li>
-<li><p>Bayesian Calibration <span class="blue">[← formerly Inverse Problem]</span>:</p>
-<ol class="arabic simple">
-<li><p>DREAM</p></li>
-</ol>
-</li>
-<li><p>Reliability:</p>
-<ol class="arabic simple">
-<li><p>Local Reliability</p></li>
-<li><p>Global Reliability</p></li>
-<li><p>Importance Sampling</p></li>
-</ol>
-</li>
-<li><p>Sensitivity Analysis:</p>
-<ol class="arabic simple">
-<li><p>MCS</p></li>
-<li><p>LHS</p></li>
 </ol>
 </li>
 </ol>
 </div></blockquote>
 </li>
-<li><p>SimCenterUQ:</p>
+<li><p>Global Sensitivity Analysis</p>
 <blockquote>
-<div><ol class="loweralpha simple">
-<li><p>Sensitivity Analysis</p>
+<div><ol class="upperalpha simple">
+<li><p><a class="reference internal" href="../usage/desktop/DakotaSensitivity.html#lbldakotasensitivity"><span class="std std-ref">Dakota</span></a></p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+<li><p><a class="reference internal" href="../usage/desktop/SimCenterUQSensitivity.html#lblsimsensitivity"><span class="std std-ref">SimCenterUQ</span></a></p>
 <ol class="arabic simple">
 <li><p>Probability Model-based Global Sensitivity Analysis (PM-GSA)</p>
 <ol class="loweralpha simple">
@@ -276,40 +267,79 @@
 </li>
 </ol>
 </li>
-<li><p>Sampling</p>
-<ol class="arabic simple">
-<li><p>Monte Carlo Sampling (MCS)
-a. Resample from existing correlated dataset of samples
-c. Train Gaussian Process (GP) Surrogate Model <span class="blue">[← Enhanced speed and stability]</span></p></li>
-<li><p>Multifidelity surrogate modeling</p></li>
-<li><p>Adaptive design of experiments options for surrogate modeling</p></li>
-<li><p>Nugget optimization options for surrogate modeling</p></li>
-<li><p><span class="blue">Stochastic Kriging</span></p>
-<ol class="loweralpha simple" start="4">
-<li><p>Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</p></li>
 </ol>
+</div></blockquote>
 </li>
+<li><p>Reliability Analysis</p>
+<blockquote>
+<div><ol class="upperalpha simple">
+<li><p><a class="reference internal" href="../usage/desktop/DakotaReliability.html#lbldakotareliability"><span class="std std-ref">Dakota</span></a></p>
+<ol class="arabic simple">
+<li><p>Local Reliability</p></li>
+<li><p>Global Reliability</p></li>
+<li><p>Importance Sampling</p></li>
 </ol>
 </li>
 </ol>
 </div></blockquote>
 </li>
-<li><p>UCSD_UQ:</p>
+<li><p>Bayesian Calibration <span class="blue">[← formerly Inverse Problem]</span></p>
 <blockquote>
-<div><ol class="loweralpha simple">
-<li><p>Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation</p>
+<div><ol class="upperalpha simple">
+<li><p><a class="reference internal" href="../usage/desktop/DakotaBayesianCalibration.html#lbldakotabayesiancalibration"><span class="std std-ref">Dakota</span></a></p>
 <ol class="arabic simple">
+<li><p>DREAM</p></li>
+</ol>
+</li>
+<li><p><a class="reference internal" href="../usage/desktop/UCSD_UQ_TMCMC.html#lblucsdtmcmc"><span class="std std-ref">UCSD_UQ</span></a></p>
+<ol class="arabic simple">
+<li><p>Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation</p>
+<ol class="loweralpha simple">
 <li><p>Override default log-likelihood function</p></li>
 <li><p>Override default error covariance structure</p></li>
 <li><p>Calibrate multipliers on error covariance structure</p></li>
 </ol>
 </li>
 </ol>
+</li>
+</ol>
 </div></blockquote>
 </li>
-<li><p>CustomUQ:</p>
+<li><p>Deterministic Calibration <span class="blue">[← formerly Parameter Estimation]</span></p>
 <blockquote>
-<div><ol class="loweralpha simple">
+<div><ol class="upperalpha simple">
+<li><p><a class="reference internal" href="../usage/desktop/DakotaDeterministicCalibration.html#lbldakotadeterministiccalibration"><span class="std std-ref">Dakota</span></a></p>
+<ol class="arabic simple">
+<li><p>NL2SOL</p></li>
+<li><p>OPT++GaussNewton</p></li>
+<li><p>Gradient-free optimization</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Surrogate Modeling</p>
+<blockquote>
+<div><ol class="upperalpha simple">
+<li><p>SimCenterUQ</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Train Gaussian Process (GP) Surrogate Model</span></a> <span class="blue">[← Enhanced speed and stability]</span></p>
+<ol class="loweralpha simple">
+<li><p>Multifidelity surrogate modeling</p></li>
+<li><p>Adaptive design of experiments options for surrogate modeling</p></li>
+<li><p>Nugget optimization options for surrogate modeling</p></li>
+<li><p><span class="blue">Stochastic Kriging</span></p></li>
+</ol>
+</li>
+<li><p><a class="reference internal" href="../usage/desktop/SimCenterUQPLoM.html#lblsimcenteruqplom"><span class="std std-ref">Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</span></a> *</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="../usage/desktop/Configuring_CustomUQ.html#lblcustomuq"><span class="std std-ref">CustomUQ</span></a></p>
+<blockquote>
+<div><ol class="arabic simple">
 <li><p>Configure UQ analysis using JSON file</p></li>
 </ol>
 </div></blockquote>
@@ -317,7 +347,7 @@ c. Train Gaussian Process (GP) Surrogate Model <span class="blue">[← Enhanced 
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Support for the running computation to be preformed on TACC’s high performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star.</p>
+<p>Support for the running computation to be preformed on TACC’s high performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star (*).</p>
 </div>
 </div>
 <div class="section" id="fem-computational-model-specification">
@@ -325,7 +355,7 @@ c. Train Gaussian Process (GP) Surrogate Model <span class="blue">[← Enhanced 
 <ol class="arabic simple">
 <li><p>OpenSees</p></li>
 <li><p>FEAPpv</p></li>
-<li><p>Python <span class="blue">[← formerly OpenSeesPy]</span>:</p></li>
+<li><p>Python <span class="blue">[← formerly OpenSeesPy]</span></p></li>
 <li><p>Custom</p></li>
 <li><p>SurrogateGP</p></li>
 <li><p><span class="blue">None</span></p></li>
@@ -373,7 +403,7 @@ c. Train Gaussian Process (GP) Surrogate Model <span class="blue">[← Enhanced 
 <ol class="arabic">
 <li><p>Summary statistics of outputs displayed</p>
 <blockquote>
-<div><ol class="arabic simple">
+<div><ol class="upperalpha simple">
 <li><p>Mean</p></li>
 <li><p>Standard deviation</p></li>
 </ol>
@@ -381,14 +411,14 @@ c. Train Gaussian Process (GP) Surrogate Model <span class="blue">[← Enhanced 
 </li>
 <li><p>All output values presented in spreadsheet</p>
 <blockquote>
-<div><ol class="arabic simple">
+<div><ol class="upperalpha simple">
 <li><p>Update chart by clicking on spreadsheet columns</p></li>
 </ol>
 </div></blockquote>
 </li>
 <li><p>Output values visualized in interactive chart</p>
 <blockquote>
-<div><ol class="arabic simple">
+<div><ol class="upperalpha simple">
 <li><p>Scatter plot</p></li>
 <li><p>Histogram</p></li>
 <li><p>Cumulative distribution</p></li>
@@ -398,7 +428,7 @@ c. Train Gaussian Process (GP) Surrogate Model <span class="blue">[← Enhanced 
 </li>
 <li><p>Spreadsheet save options</p>
 <blockquote>
-<div><ol class="arabic simple">
+<div><ol class="upperalpha simple">
 <li><p>Save Table</p></li>
 <li><p>Save Columns Separately (Useful after Bayesian updating, the posterior samples can later be directly loaded in quoFEM)</p></li>
 <li><p>Save RVs (Useful for surrogate model training)</p></li>
@@ -409,7 +439,7 @@ c. Train Gaussian Process (GP) Surrogate Model <span class="blue">[← Enhanced 
 </li>
 <li><p>Visualization of surrogate modeling results</p>
 <blockquote>
-<div><ol class="arabic simple">
+<div><ol class="upperalpha simple">
 <li><p>Goodness-of-fit measures</p></li>
 <li><p>90% confidence interval and <span class="blue">prediction interval</span></p></li>
 </ol>
@@ -417,7 +447,7 @@ c. Train Gaussian Process (GP) Surrogate Model <span class="blue">[← Enhanced 
 </li>
 <li><p>Visualization of PLoM training results</p>
 <blockquote>
-<div><ol class="arabic simple">
+<div><ol class="upperalpha simple">
 <li><p>PCA representation error plot</p></li>
 <li><p>Diffusion maps eigenvalue plot</p></li>
 </ol>

@@ -208,411 +208,89 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release-eeuq"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="version-3-2">
-<h2>Version 3.2<a class="headerlink" href="#version-3-2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="version-3-2-0-current">
-<h3>Version 3.2.0 (Current)<a class="headerlink" href="#version-3-2-0-current" title="Permalink to this headline">¶</a></h3>
+<h2>Version 3.2.0 (Current)<a class="headerlink" href="#version-3-2-0-current" title="Permalink to this headline">¶</a></h2>
 <p><strong>Release date:</strong> Sept. 2022</p>
-<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
+<p><strong>Highlights</strong></p>
 <ol class="arabic simple">
 <li><dl class="simple">
-<dt><strong>Structural Information Model</strong></dt><dd><ol class="loweralpha simple">
-<li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
-<li><p>OpenSees: user-defined OpenSees models</p></li>
-<li><p>Steel Building Model: automating steel frame design and modeling</p></li>
-<li><p><span class="blue">Concrete Building Model: automating concrete moment frame design and modeling</span></p></li>
-<li><p><span class="blue">MDOF-LU: MDOF shear building model</span></p></li>
+<dt><strong>New Structural Information Model Generators</strong></dt><dd><ol class="loweralpha simple">
+<li><p>Concrete Building Model: automatic concrete building design and model generation</p></li>
+<li><p>MDOF-LU: MDOF shear building model built using user supplied Hazus data</p></li>
 </ol>
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
-<dt><strong>Ground Motion Event</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Stochastic Ground Motion: simulating stochastic ground motion recordings</p></li>
-<li><p>PEER NGA Records: selecting and scaling PEER NGA West2 ground motions</p></li>
-<li><p>Site Response: propagating rock motions to the surface</p></li>
-<li><p>Multiple PEER: using multiple PEER recordings</p></li>
-<li><p>Multiple SimCenter: using multiple SimCenter-format recordings</p></li>
-<li><p>User Specified Database: selecting and scaling ground motions from the user-specified flatfile</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Finite Element Application</strong></dt><dd><ol class="loweralpha simple">
-<li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Engineering Demand Parameter Generator</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration</p></li>
-<li><p>User Defined: user-specified EDP</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Uncertainty Quantification</strong></dt><dd><ol class="loweralpha simple">
-<li><dl class="simple">
-<dt>Dakota</dt><dd><ul class="simple">
-<li><p>Forward Propagation</p></li>
-<li><p>Sensitivity Analysis</p></li>
-<li><p>Reliability Analysis</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>SimCenterUQ</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Results</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Summary Data</p></li>
-<li><p>Data Values</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Others</strong>: Improvements to the message area, and minor bug fixes</dt><dd><ul class="simple">
-<li><p><span class="blue">Decoupling the output units defined in GI with the units used in the simulation.</span></p></li>
-<li><p><span class="blue">Decoupling the Rayleigh damping ratio with the FEM configuration.</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
+<li><p>Moving damping ratio specification from FEM to SIM panels.</p></li>
+<li><p>Improvements to the message area</p></li>
+<li><p>Decoupling the output units defined in GI with the units used in the simulation.</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="version-3-1">
-<h2>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="version-3-1-0">
-<h3>Version 3.1.0<a class="headerlink" href="#version-3-1-0" title="Permalink to this headline">¶</a></h3>
+<h2>Version 3.1.0<a class="headerlink" href="#version-3-1-0" title="Permalink to this headline">¶</a></h2>
 <p><strong>Release date:</strong> July 2022</p>
-<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
+<p>** Highlights**</p>
 <ol class="arabic simple">
-<li><dl class="simple">
-<dt><strong>Structural Information Model</strong></dt><dd><ol class="loweralpha simple">
-<li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
-<li><p>OpenSees: user-defined OpenSees models</p></li>
-<li><p>Steel Building Model: automating steel frame design and modeling</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Ground Motion Event</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Stochastic Ground Motion: simulating stochastic ground motion recordings</p></li>
-<li><dl class="simple">
-<dt>PEER NGA Records: selecting and scaling PEER NGA West2 ground motions</dt><dd><ul class="simple">
-<li><p><span class="blue">Adding a surrogate hazard model feature to get target response spectrum from Gaussian Process model</span></p></li>
-<li><p><span class="blue">A new example is provided for evaluating target response spectrum from GP surrogate for Hayward earthquake in Bay Area</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>Site Response: propagating rock motions to the surface</p></li>
-<li><p>Multiple PEER: using multiple PEER recordings</p></li>
-<li><p>Multiple SimCenter: using multiple SimCenter-format recordings</p></li>
-<li><p>User Specified Database: selecting and scaling ground motions from the user-specified flatfile</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Finite Element Application</strong></dt><dd><ol class="loweralpha simple">
-<li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Engineering Demand Parameter Generator</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration</p></li>
-<li><p>User Defined: user-specified EDP</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Uncertainty Quantification</strong></dt><dd><ol class="loweralpha simple">
-<li><dl class="simple">
-<dt>Dakota</dt><dd><ul class="simple">
-<li><p>Forward Propagation</p></li>
-<li><p>Sensitivity Analysis</p></li>
-<li><p>Reliability Analysis</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>SimCenterUQ</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Results</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Summary Data</p></li>
-<li><p>Data Values</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Others</strong>: Improvements to the message area, and minor bug fixes</dt><dd><ul class="simple">
-<li><p><span class="blue">Fixing the radio button in Multiple Event (uncheck is now enabled)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
+<li><p>New Surrogate option in defining spectrum in PEER event</p></li>
+<li><p>Fixing the radio button in Multiple Event (uncheck is now enabled)</p></li>
+<li><p>Improvements to the message area, and minor bug fixes</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="version-3-0">
-<h2>Version 3.0<a class="headerlink" href="#version-3-0" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="version-3-0-0">
-<h3>Version 3.0.0<a class="headerlink" href="#version-3-0-0" title="Permalink to this headline">¶</a></h3>
+<h2>Version 3.0.0<a class="headerlink" href="#version-3-0-0" title="Permalink to this headline">¶</a></h2>
 <p><strong>Release date:</strong> March. 2022</p>
-<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
+<p><strong>Highlights</strong></p>
 <ol class="arabic simple">
-<li><dl class="simple">
-<dt><strong>Structural Information Model</strong></dt><dd><ol class="loweralpha simple">
-<li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
-<li><p>OpenSees: user-defined OpenSees models</p></li>
-<li><p>Steel Building Model: automating steel frame design and modeling</p></li>
+<li><p>New UQ engine: PLoM</p></li>
 </ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Ground Motion Event</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Stochastic Ground Motion: simulating stochastic ground motion recordings</p></li>
-<li><dl class="simple">
-<dt>PEER NGA Records: selecting and scaling PEER NGA West2 ground motions</dt><dd><ul class="simple">
-<li><p><span class="blue">Adding a USGS seismic disaggregation feature for given return periods and user-defined IM</span></p></li>
-<li><p><span class="blue">Computing conditional mean spectrum target (ASCE 7) based on disaggregated mean magnitude and distance</span></p></li>
-<li><p><span class="blue">Selecting and scaling records to the disaggregation-based target spectrum</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>Site Response: propagating rock motions to the surface</p></li>
-<li><p>Multiple PEER: using multiple PEER recordings</p></li>
-<li><p>Multiple SimCenter: using multiple SimCenter-format recordings</p></li>
-<li><p>User Specified Database: selecting and scaling ground motions from the user-specified flatfile</p></li>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Training surrogate model for defined structural model</p></li>
+<li><p>Training surrogate using user-supplied response data metric</p></li>
+<li><p>Generating new realizations of structural responses from trained surrogate</p></li>
+<li><p>Including user-defined ground motion intensity measures in the modeling training</p></li>
 </ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Finite Element Application</strong></dt><dd><ol class="loweralpha simple">
-<li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Site-specific seismic disaggregation</p></li>
 </ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Engineering Demand Parameter Generator</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration</p></li>
-<li><p>User Defined: user-specified EDP</p></li>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Seismic hazard disaggregation at given return period and user-defined IM</p></li>
+<li><p>Target conditional mean spectrum (ASCE7) calculation based on disaggregated mean magnitude and distance</p></li>
+<li><p>Ground motion selection and scaling to the disaggregation-based target spectrum</p></li>
 </ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Uncertainty Quantification</strong></dt><dd><ol class="loweralpha simple">
-<li><dl class="simple">
-<dt>Dakota</dt><dd><ul class="simple">
-<li><p>Forward Propagation</p></li>
-<li><p>Sensitivity Analysis</p></li>
-<li><p>Reliability Analysis</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><span class="blue">SimCenterUQ</span></dt><dd><ul class="simple">
-<li><p><span class="blue">New UQ engine: PLoM - training surrogate model for defined structural model or user-supplied response data matrix</span></p></li>
-<li><p><span class="blue">Generating new realizations of structural responses from trained surrogate model</span></p></li>
-<li><p><span class="blue">Including user-defined ground motion intensity measure in the model training</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Refactored results panel synced from new SimCenterCommon</p></li>
 </ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Results</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Summary Data</p></li>
-<li><dl class="simple">
-<dt>Data Values</dt><dd><ul class="simple">
-<li><p><span class="blue">New data visualization panel</span></p></li>
-<li><p><span class="blue">Highlighting data points in the result table</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>New data visualization panel</p></li>
+<li><p>Highlighting data points</p></li>
 </ol>
-</dd>
-</dl>
-</li>
-<li><p><strong>Others</strong>: Improvements to the message area, and minor bug fixes</p></li>
-</ol>
+</div></blockquote>
 </div>
-</div>
-<div class="section" id="version-2-2">
-<h2>Version 2.2<a class="headerlink" href="#version-2-2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="version-2-2-7">
-<h3>Version 2.2.7<a class="headerlink" href="#version-2-2-7" title="Permalink to this headline">¶</a></h3>
+<h2>Version 2.2.7<a class="headerlink" href="#version-2-2-7" title="Permalink to this headline">¶</a></h2>
 <p><strong>Release date:</strong> Jan. 2022</p>
-<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt><strong>Structural Information Model</strong></dt><dd><ol class="loweralpha simple">
-<li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
-<li><p>OpenSees: user-defined OpenSees models</p></li>
-<li><p>Steel Building Model: automating steel frame design and modeling</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Ground Motion Event</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Stochastic Ground Motion: simulating stochastic ground motion recordings</p></li>
-<li><p>PEER NGA Records: selecting and scaling PEER NGA West2 ground motions</p></li>
-<li><p>Site Response: propagating rock motions to the surface</p></li>
-<li><p>Multiple PEER: using multiple PEER recordings</p></li>
-<li><p>Multiple SimCenter: using multiple SimCenter-format recordings</p></li>
-<li><p>User Specified Database: selecting and scaling ground motions from the user-specified flatfile</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Finite Element Application</strong></dt><dd><ol class="loweralpha simple">
-<li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Engineering Demand Parameter Generator</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration</p></li>
-<li><p>User Defined: user-specified EDP</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Uncertainty Quantification</strong></dt><dd><ol class="loweralpha simple">
-<li><dl class="simple">
-<dt>Dakota</dt><dd><ul class="simple">
-<li><p>Forward Propagation</p></li>
-<li><p>Sensitivity Analysis</p></li>
-<li><p>Reliability Analysis</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Results</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Summary Data</p></li>
-<li><p>Data Values</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-</ol>
+<p><strong>Highlights</strong></p>
+<p>#. New Options added for PEER NGA Event:
+Specifying the fault type, pulse-like feature, and duration filter in ground motion selection
+Adding the option of “Geometric” suite average for the PEER NGA West2 ground motion selection
+#. In User Defined EDP fixed a bug of using user-specified EDP names</p>
 </div>
 <div class="section" id="version-2-2-6">
-<h3>Version 2.2.6<a class="headerlink" href="#version-2-2-6" title="Permalink to this headline">¶</a></h3>
+<h2>Version 2.2.6<a class="headerlink" href="#version-2-2-6" title="Permalink to this headline">¶</a></h2>
 <p><strong>Release date:</strong> Dec. 22nd, 2021</p>
-<p><em>Current Availability</em> (New features and fixes in this release are denoted with a blue font color in the following list of features.)</p>
+<p><strong>Highlights</strong></p>
 <ol class="arabic simple">
+<li><p>Specifying the fault type, pulse-like feature, and duration filter in ground motion selection</p></li>
+<li><p>Adding the option of “Geometric” suite average for the PEER NGA West2 ground motion selection</p></li>
 <li><dl class="simple">
-<dt><strong>Structural Information Model</strong></dt><dd><ol class="loweralpha simple">
-<li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
-<li><p>OpenSees: user-defined OpenSees models</p></li>
-<li><p>Steel Building Model: automating steel frame design and modeling</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Ground Motion Event</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Stochastic Ground Motion: simulating stochastic ground motion recordings</p></li>
-<li><dl class="simple">
-<dt>PEER NGA Records: selecting and scaling PEER NGA West2 ground motions</dt><dd><ul class="simple">
-<li><p><span class="blue">Specifying the fault type, pulse-like feature, and duration filter in ground motion selection</span></p></li>
-<li><p><span class="blue">Adding the option of “Geometric” suite average for the PEER NGA West2 ground motion selection</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>Site Response: propagating rock motions to the surface</p></li>
-<li><p>Multiple PEER: using multiple PEER recordings</p></li>
-<li><p>Multiple SimCenter: using multiple SimCenter-format recordings</p></li>
-<li><p>User Specified Database: selecting and scaling ground motions from the user-specified flatfile</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Finite Element Application</strong></dt><dd><ol class="loweralpha simple">
-<li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Engineering Demand Parameter Generator</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration</p></li>
-<li><dl class="simple">
-<dt>User Defined: user-specified EDP</dt><dd><ul class="simple">
-<li><p><span class="blue">Fixing the bug of using user-specified EDP names</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Uncertainty Quantification</strong></dt><dd><ol class="loweralpha simple">
-<li><dl class="simple">
-<dt>Dakota</dt><dd><ul class="simple">
-<li><p>Forward Propagation</p></li>
-<li><p>Sensitivity Analysis</p></li>
-<li><p>Reliability Analysis</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Results</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Summary Data</p></li>
-<li><dl class="simple">
-<dt>Data Values</dt><dd><ul class="simple">
-<li><p><span class="blue">Fixing the bug of exporting ground motion names in the “Save Data”</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
+<dt>Bug fixes:</dt><dd><ol class="loweralpha simple">
+<li><p>exporting ground motion names in the “Save Data</p></li>
+<li><p>using user-specified EDP name</p></li>
 </ol>
 </dd>
 </dl>
@@ -620,75 +298,42 @@
 </ol>
 </div>
 <div class="section" id="version-2-2-5">
-<h3>Version 2.2.5<a class="headerlink" href="#version-2-2-5" title="Permalink to this headline">¶</a></h3>
+<h2>Version 2.2.5<a class="headerlink" href="#version-2-2-5" title="Permalink to this headline">¶</a></h2>
 <p><strong>Release date:</strong> Oct. 4th, 2021</p>
-<p><em>Current Availability</em></p>
+<p><strong>Highlights</strong>
+#. new options for NGA selection
+#. option to select motions from user flat file
+#. changing look and feel for message box location</p>
+</div>
+<div class="section" id="version-2-2-0">
+<h2>Version 2.2.0<a class="headerlink" href="#version-2-2-0" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> Nov 6, 2020</p>
+<p><strong>Highlights</strong></p>
 <ol class="arabic simple">
-<li><dl class="simple">
-<dt><strong>Structural Information Model</strong></dt><dd><ol class="loweralpha simple">
-<li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
-<li><p>OpenSees: user-defined OpenSees models</p></li>
-<li><p>Steel Building Model: automating steel frame design and modeling</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Ground Motion Event</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Stochastic Ground Motion: simulating stochastic ground motion recordings</p></li>
-<li><p>PEER NGA Records: selecting and scaling PEER NGA West2 ground motions</p></li>
-<li><p>Site Response: propagating rock motions to the surface</p></li>
-<li><p>Multiple PEER: using multiple PEER recordings</p></li>
-<li><p>Multiple SimCenter: using multiple SimCenter-format recordings</p></li>
-<li><p>User Specified Database: selecting and scaling ground motions from the user-specified flatfile</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Finite Element Application</strong></dt><dd><ol class="loweralpha simple">
-<li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Engineering Demand Parameter Generator</strong></dt><dd><ol class="loweralpha simple">
-<li><p>Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration</p></li>
-<li><p>User Defined: user-specified EDP</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Uncertainty Quantification</strong></dt><dd><ol class="loweralpha simple">
-<li><dl class="simple">
-<dt>Dakota</dt><dd><ul class="simple">
-<li><p>Forward Propagation</p></li>
-<li><p>Sensitivity Analysis</p></li>
-<li><p>Reliability Analysis</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
+<li><p>Site response now allows for random fields in soil layers for soil properties</p></li>
+<li><p>Steel building model generator (designs and creates a model for steel buildiung)</p></li>
+<li><p>PEER NGA scaling options added</p></li>
 </ol>
 </div>
-<div class="section" id="id1">
-<h3>Version 3.1.0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p><strong>Release plan</strong>: June 2022</p>
-<p><em>Planned features</em></p>
+<div class="section" id="version-2-1-0">
+<h2>Version 2.1.0<a class="headerlink" href="#version-2-1-0" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> June, 2020</p>
+<p><strong>Highlights</strong></p>
 <ol class="arabic simple">
-<li><p>UQ: New surrogate modeling methods (e.g., SAF-IDA)</p></li>
-<li><p>EVT: Invoking OpenQuake to generate scenario-based or classical PSHA ground motion spectral targets</p></li>
-<li><p>FEM: invoking OpenSeesPy</p></li>
-<li><p>…*</p></li>
+<li><p>Added Sensitivity and Reliability</p></li>
+<li><p>Added new spectrum options for peerNGA</p></li>
+<li><p>Modified FEM interface provides different damping options and more analysis options to user</p></li>
 </ol>
-<p>*: Users are welcome to contact us on <a class="reference external" href="http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0">forum</a> for new feature requests.</p>
 </div>
+<div class="section" id="version-2-0-0">
+<h2>Version 2.0.0<a class="headerlink" href="#version-2-0-0" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> October, 2019</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>More UQ Sampling capabilities,</p></li>
+<li><p>another stocahstic loading module</p></li>
+<li><p>calling PEER NGA to select and download files</p></li>
+</ol>
 </div>
 </div>
 
