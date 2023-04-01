@@ -217,14 +217,14 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-quofem"></span><h1><span class="section-number">5. </span>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
-<p><strong>Version 3.2</strong> of the quoFEM app was released in <strong>September 22</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p>Version 3.3 of the quoFEM app was released in <strong>March 30</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="uq-uncertainty-quantification-and-optimization-options">
 <h2><span class="section-number">5.1. </span>UQ (Uncertainty Quantification and Optimization Options)<a class="headerlink" href="#uq-uncertainty-quantification-and-optimization-options" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Forward Uncertainty Propagation</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><p><a class="reference internal" href="../usage/desktop/DakotaSampling.html#lbldakotaforward"><span class="std std-ref">Dakota</span></a> <span class="blue">[← New option to discard working directories after each model evaluation]</span></p>
+<li><p><a class="reference internal" href="../usage/desktop/DakotaSampling.html#lbldakotaforward"><span class="std std-ref">Dakota</span></a></p>
 <ol class="arabic simple">
 <li><p>Monte Carlo Sampling (MCS)</p></li>
 <li><p>Latin Hypercube Sampling (LHS)</p></li>
@@ -262,7 +262,7 @@
 <li><p>Group-wise Sobol indices</p></li>
 <li><p>Principal component analysis and probabilistic model-based GSA (PCA-PSA) for high-dimensional QoIs</p></li>
 <li><p>Aggregated Sobol indices for field QoIs</p></li>
-<li><p><span class="blue">Import input/output samples from data files</span></p></li>
+<li><p>Import input/output samples from data files</p></li>
 </ol>
 </li>
 </ol>
@@ -275,7 +275,7 @@
 <div><ol class="upperalpha simple">
 <li><p><a class="reference internal" href="../usage/desktop/DakotaReliability.html#lbldakotareliability"><span class="std std-ref">Dakota</span></a></p>
 <ol class="arabic simple">
-<li><p>Local Reliability</p></li>
+<li><p>Local Reliability <span class="blue">[← minor bug fix]</span></p></li>
 <li><p>Global Reliability</p></li>
 <li><p>Importance Sampling</p></li>
 </ol>
@@ -283,7 +283,7 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p>Bayesian Calibration <span class="blue">[← formerly Inverse Problem]</span></p>
+<li><p>Bayesian Calibration <span class="blue">[← minor bug fix]</span></p>
 <blockquote>
 <div><ol class="upperalpha simple">
 <li><p><a class="reference internal" href="../usage/desktop/DakotaBayesianCalibration.html#lbldakotabayesiancalibration"><span class="std std-ref">Dakota</span></a></p>
@@ -305,7 +305,7 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p>Deterministic Calibration <span class="blue">[← formerly Parameter Estimation]</span></p>
+<li><p>Deterministic Calibration</p>
 <blockquote>
 <div><ol class="upperalpha simple">
 <li><p><a class="reference internal" href="../usage/desktop/DakotaDeterministicCalibration.html#lbldakotadeterministiccalibration"><span class="std std-ref">Dakota</span></a></p>
@@ -323,12 +323,12 @@
 <div><ol class="upperalpha simple">
 <li><p>SimCenterUQ</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="../usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Train Gaussian Process (GP) Surrogate Model</span></a> <span class="blue">[← Enhanced speed and stability]</span></p>
+<li><p><a class="reference internal" href="../usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Train Gaussian Process (GP) Surrogate Model</span></a></p>
 <ol class="loweralpha simple">
 <li><p>Multifidelity surrogate modeling</p></li>
 <li><p>Adaptive design of experiments options for surrogate modeling</p></li>
 <li><p>Nugget optimization options for surrogate modeling</p></li>
-<li><p><span class="blue">Stochastic Kriging</span></p></li>
+<li><p>Stochastic Kriging <span class="blue">[← new option for ‘no replications’]</span></p></li>
 </ol>
 </li>
 <li><p><a class="reference internal" href="../usage/desktop/SimCenterUQPLoM.html#lblsimcenteruqplom"><span class="std std-ref">Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</span></a> *</p></li>
@@ -355,10 +355,11 @@
 <ol class="arabic simple">
 <li><p>OpenSees</p></li>
 <li><p>FEAPpv</p></li>
-<li><p>Python <span class="blue">[← formerly OpenSeesPy]</span></p></li>
+<li><p>Python</p></li>
 <li><p>Custom</p></li>
-<li><p>SurrogateGP</p></li>
-<li><p><span class="blue">None</span></p></li>
+<li><p>SurrogateGP  <span class="blue">[← simplified user interface]</span></p></li>
+<li><p>None</p></li>
+<li><p><span class="blue">Multi model</span></p></li>
 </ol>
 </div>
 <div class="section" id="rv-random-variable-options">
@@ -388,7 +389,7 @@
 <p class="admonition-title">Note</p>
 <p><sup>1</sup>: For SimCentreUQ and UCSD algorithms only, the RVs can be defined by any of parameters, moments, or a dataset.
 <sup>2</sup>: Available for Optimization routines in Dakota only.
-<sup>3</sup>: Avaliable in SimCenterUQ and UCSD only.</p>
+<sup>3</sup>: Available in SimCenterUQ and UCSD only.</p>
 </div>
 </div>
 <div class="section" id="edp-outputs-from-computational-models">
@@ -419,7 +420,7 @@
 <li><p>Output values visualized in interactive chart</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><p>Scatter plot</p></li>
+<li><p>Scatter plot  <span class="blue">[← display of correlation coefficient]</span></p></li>
 <li><p>Histogram</p></li>
 <li><p>Cumulative distribution</p></li>
 <li><p>Inspect points on chart</p></li>
@@ -437,11 +438,12 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p>Visualization of surrogate modeling results</p>
+<li><p>Visualization of surrogate modeling (GP) results</p>
 <blockquote>
 <div><ol class="upperalpha simple">
 <li><p>Goodness-of-fit measures</p></li>
-<li><p>90% confidence interval and <span class="blue">prediction interval</span></p></li>
+<li><p>90% confidence interval and prediction interval</p></li>
+<li><p>Save GP model <span class="blue">[← simplified surrogate model file]</span></p></li>
 </ol>
 </div></blockquote>
 </li>

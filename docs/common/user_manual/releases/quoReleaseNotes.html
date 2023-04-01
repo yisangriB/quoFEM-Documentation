@@ -115,8 +115,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoCapabilities.html">5. Capabilities</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#major-version-3">6.1. Major Version 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#major-version-2">6.2. Major Version 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#major-version-3">6.1. Major Version 3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#version-3-3-current">6.1.1. Version 3.3 (<span class="blue">Current</span>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-3-2">6.1.2. Version 3.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-3-1">6.1.3. Version 3.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-3-0">6.1.4. Version 3.0</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#major-version-2">6.2. Major Version 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#version-2-4-1">6.2.1. Version 2.4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-2-4-0">6.2.2. Version 2.4.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-2-3">6.2.3. Version 2.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-2-2">6.2.4. Version 2.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-2-0">6.2.5. Version 2.0</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quoPlans.html">7. Release Plans</a></li>
@@ -221,176 +234,165 @@
 <p class="admonition-title">Warning</p>
 <p>The major version number was increased from 2 to 3 as changes were made to input and output formats of quoFEM app. This means old examples will not be loaded in this version of the tool.</p>
 </div>
-<details class="sphinx-bs dropdown card mb-3" open="open">
-<summary class="summary-title card-header">
-Version 3.2.0 (<span class="blue">Current</span>)<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> September. 2022</p>
+</div></blockquote>
+<div class="section" id="version-3-3-current">
+<h3><span class="section-number">6.1.1. </span>Version 3.3 (<span class="blue">Current</span>)<a class="headerlink" href="#version-3-3-current" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Release date:</strong> March. 2023</p>
 <dl class="simple">
 <dt><strong>Highlights</strong></dt><dd><ol class="arabic simple">
-<li><p class="card-text">Support for <strong>a gradient-free optimization</strong> and <strong>stochastic Kriging</strong></p></li>
-<li><p class="card-text">Fast global sensitivity analysis for <strong>very high dimensional</strong> output (tested on 2 million QoIs)</p></li>
-<li><p class="card-text">New option to <strong>discard working directories</strong> after each model simulation</p></li>
-<li><p class="card-text">Support for <strong>PLoM on DesignSafe</strong></p></li>
-<li><p class="card-text">Significantly <strong>enhanced speed</strong> of surrogate validation and prediction</p></li>
-<li><p class="card-text"><strong>None</strong> option for FEM</p></li>
-<li><p class="card-text">Improved user interface including error bounds of the surrogate prediction</p></li>
-<li><p class="card-text">Major renaming:</p>
+<li><p><strong>Multimodel</strong> uncertainty propagation</p></li>
+<li><p>Stochastic kriging <strong>without replications</strong></p></li>
+<li><p>Display of correlation coefficients within the input/output dataset</p></li>
+<li><p>Switching the display order of the UQ method and UQ engine</p></li>
+</ol>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="version-3-2">
+<h3><span class="section-number">6.1.2. </span>Version 3.2<a class="headerlink" href="#version-3-2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Release date:</strong> September. 2022</p>
+<dl class="simple">
+<dt><strong>Highlights</strong></dt><dd><ol class="arabic simple">
+<li><p>Support for <strong>a gradient-free optimization</strong> and <strong>stochastic Kriging</strong></p></li>
+<li><p>Fast global sensitivity analysis for <strong>very high dimensional</strong> output (tested on 2 million QoIs)</p></li>
+<li><p>New option to <strong>discard working directories</strong> after each model simulation</p></li>
+<li><p>Support for <strong>PLoM on DesignSafe</strong></p></li>
+<li><p>Significantly <strong>enhanced speed</strong> of surrogate validation and prediction</p></li>
+<li><p><strong>None</strong> option for FEM</p></li>
+<li><p>Improved user interface including error bounds of the surrogate prediction</p></li>
+<li><p>Major renaming:</p>
 <ul class="simple">
-<li><p class="card-text">OpenseesPy → <strong>python</strong></p></li>
-<li><p class="card-text">Parameters estimation → <strong>deterministic calibration</strong></p></li>
-<li><p class="card-text">Inverse problem → <strong>Bayesian calibration</strong></p></li>
+<li><p>OpenseesPy → <strong>python</strong></p></li>
+<li><p>Parameters estimation → <strong>deterministic calibration</strong></p></li>
+<li><p>Inverse problem → <strong>Bayesian calibration</strong></p></li>
 </ul>
 </li>
 </ol>
 </dd>
 </dl>
-</div>
-</details><details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Version 3.1.0<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> June. 2022</p>
-<p class="card-text">Highlights</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p class="card-text">New efficient global sensitivity analysis method for high-dimensional output (GSA-PCA)</p></li>
-<li><p class="card-text">“Save RVs” and “Save QoIs” buttons added to the results tab spreadsheet</p></li>
-<li><p class="card-text">“NaN” handling option added to SimCenterUQ engine</p></li>
-<li><p class="card-text">Improvements to reliability analysis and global sensitivity analysis user interface</p></li>
-<li><p class="card-text">Minor bug fixes in the user interface, surrogate modeling, and sensitivity analysis scripts</p></li>
-</ol>
 </div></blockquote>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Version 3.0.0<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> March. 2022</p>
-<p class="card-text">Highlights</p>
+<div class="section" id="version-3-1">
+<h3><span class="section-number">6.1.3. </span>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Release date:</strong> June. 2022</p>
+<p>Highlights</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p class="card-text">New option for surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</p></li>
-<li><p class="card-text">Restructured surrogate model scripts</p></li>
-<li><p class="card-text">Improvements to the user interface for RV, QoI and RES tabs</p></li>
-<li><p class="card-text">Improvements to the message area</p></li>
-<li><p class="card-text">Major restructuring of the backend</p></li>
-<li><p class="card-text">Minor bug fixes in the user interface, surrogate modeling and sensitivity analysis scripts</p></li>
-<li><p class="card-text">Updated example files</p></li>
+<li><p>New efficient global sensitivity analysis method for high-dimensional output (GSA-PCA)</p></li>
+<li><p>“Save RVs” and “Save QoIs” buttons added to the results tab spreadsheet</p></li>
+<li><p>“NaN” handling option added to SimCenterUQ engine</p></li>
+<li><p>Improvements to reliability analysis and global sensitivity analysis user interface</p></li>
+<li><p>Minor bug fixes in the user interface, surrogate modeling, and sensitivity analysis scripts</p></li>
 </ol>
 </div></blockquote>
+</div></blockquote>
 </div>
-</details></div></blockquote>
+<div class="section" id="version-3-0">
+<h3><span class="section-number">6.1.4. </span>Version 3.0<a class="headerlink" href="#version-3-0" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Release date:</strong> March. 2022</p>
+<p>Highlights</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>New option for surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</p></li>
+<li><p>Restructured surrogate model scripts</p></li>
+<li><p>Improvements to the user interface for RV, QoI and RES tabs</p></li>
+<li><p>Improvements to the message area</p></li>
+<li><p>Major restructuring of the backend</p></li>
+<li><p>Minor bug fixes in the user interface, surrogate modeling and sensitivity analysis scripts</p></li>
+<li><p>Updated example files</p></li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="major-version-2">
 <h2><span class="section-number">6.2. </span>Major Version 2<a class="headerlink" href="#major-version-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-2-4-1">
+<h3><span class="section-number">6.2.1. </span>Version 2.4.1<a class="headerlink" href="#version-2-4-1" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Version 2.4.1<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> Dec. 2021</p>
-<p class="card-text">Highlights</p>
+<div><p><strong>Release date:</strong> Dec. 2021</p>
+<p>Highlights</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p class="card-text">Added ‘file_save’ keyword in dakota.in to not delete paramsDakota.in files</p></li>
-<li><p class="card-text">SimCenterUQ RV tab - preventing path strings from being deleted when “choose” is clicked (dataset inputs)</p></li>
-<li><p class="card-text">SimCenterUQ checks if python packages are missing in the environment and shows an error message if needed</p></li>
-<li><p class="card-text">Minor fixes in surrogate UI (nugget values option should not show up by default, RVs should be uniform by default)</p></li>
-<li><p class="card-text">A fix to prevent the mixed-use of slash/backslash when printing a path</p></li>
-<li><p class="card-text">Parameter values are passed to the log-likelihood script when using the UCSD_UQ engine</p></li>
+<li><p>Added ‘file_save’ keyword in dakota.in to not delete paramsDakota.in files</p></li>
+<li><p>SimCenterUQ RV tab - preventing path strings from being deleted when “choose” is clicked (dataset inputs)</p></li>
+<li><p>SimCenterUQ checks if python packages are missing in the environment and shows an error message if needed</p></li>
+<li><p>Minor fixes in surrogate UI (nugget values option should not show up by default, RVs should be uniform by default)</p></li>
+<li><p>A fix to prevent the mixed-use of slash/backslash when printing a path</p></li>
+<li><p>Parameter values are passed to the log-likelihood script when using the UCSD_UQ engine</p></li>
 </ol>
 </div></blockquote>
+</div></blockquote>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Version 2.4.0<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> Oct. 2021</p>
-<p class="card-text">Highlights</p>
+<div class="section" id="version-2-4-0">
+<h3><span class="section-number">6.2.2. </span>Version 2.4.0<a class="headerlink" href="#version-2-4-0" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Release date:</strong> Oct. 2021</p>
+<p>Highlights</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p class="card-text">New forward propagation method in SimCenterUQ to import existing sample sets (eg. samples obtained by MCMC)</p></li>
-<li><p class="card-text">New multi-fidelity surrogate modeling option in SimCenterUQ</p></li>
-<li><p class="card-text">Local/remote parallel computing support for SimCenterUQ methods</p></li>
-<li><p class="card-text">Visualization improved for surrogate results</p></li>
-<li><p class="card-text">More adaptive design of experiments options added for surrogate modeling</p></li>
-<li><p class="card-text">Nugget optimization options added for surrogate modeling</p></li>
-<li><p class="card-text">Minor improvements and bug fixes</p></li>
+<li><p>New forward propagation method in SimCenterUQ to import existing sample sets (eg. samples obtained by MCMC)</p></li>
+<li><p>New multi-fidelity surrogate modeling option in SimCenterUQ</p></li>
+<li><p>Local/remote parallel computing support for SimCenterUQ methods</p></li>
+<li><p>Visualization improved for surrogate results</p></li>
+<li><p>More adaptive design of experiments options added for surrogate modeling</p></li>
+<li><p>Nugget optimization options added for surrogate modeling</p></li>
+<li><p>Minor improvements and bug fixes</p></li>
 </ol>
 </div></blockquote>
+</div></blockquote>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Version 2.3<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> May 2021</p>
-<p class="card-text">Highlights</p>
+<div class="section" id="version-2-3">
+<h3><span class="section-number">6.2.3. </span>Version 2.3<a class="headerlink" href="#version-2-3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Release date:</strong> May 2021</p>
+<p>Highlights</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p class="card-text">Data for calibration methods (DREAM, TMCMC, parameter estimation) required to be provided in a file</p></li>
-<li><p class="card-text">Option to supply a covariance structure for error in Bayesian calibration methods</p></li>
-<li><p class="card-text">Option to calibrate values of multipliers on error covariance structure in Bayesian calibration methods</p></li>
-<li><p class="card-text">Log-likelihood function specification made optional for TMCMC</p></li>
+<li><p>Data for calibration methods (DREAM, TMCMC, parameter estimation) required to be provided in a file</p></li>
+<li><p>Option to supply a covariance structure for error in Bayesian calibration methods</p></li>
+<li><p>Option to calibrate values of multipliers on error covariance structure in Bayesian calibration methods</p></li>
+<li><p>Log-likelihood function specification made optional for TMCMC</p></li>
 </ol>
 </div></blockquote>
+</div></blockquote>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Version 2.2<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> Oct. 2020</p>
-<p class="card-text">Highlights</p>
+<div class="section" id="version-2-2">
+<h3><span class="section-number">6.2.4. </span>Version 2.2<a class="headerlink" href="#version-2-2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Release date:</strong> Oct. 2020</p>
+<p>Highlights</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p class="card-text">Included new sensitivity method: probability model-based global sensitivity analysis (PM-GSA)</p></li>
-<li><p class="card-text">Included new Bayesian calibration method: transitional Markov chain Monte Carlo (TMCMC)</p></li>
-<li><p class="card-text">Option to allow user to include their own UQ engine</p></li>
-<li><p class="card-text">Option to allow user to include their own FEM engine</p></li>
-<li><p class="card-text">Changes to UI to reduce wasted space</p></li>
+<li><p>Included new sensitivity method: probability model-based global sensitivity analysis (PM-GSA)</p></li>
+<li><p>Included new Bayesian calibration method: transitional Markov chain Monte Carlo (TMCMC)</p></li>
+<li><p>Option to allow user to include their own UQ engine</p></li>
+<li><p>Option to allow user to include their own FEM engine</p></li>
+<li><p>Changes to UI to reduce wasted space</p></li>
 </ol>
 </div></blockquote>
+</div></blockquote>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Version 2.0<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> Sept. 2019</p>
-<p class="card-text">Highlights</p>
+<div class="section" id="version-2-0">
+<h3><span class="section-number">6.2.5. </span>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Release date:</strong> Sept. 2019</p>
+<p>Highlights</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p class="card-text">Forward uncertainty: Importance Sampling, Gaussian Process Regression</p></li>
-<li><p class="card-text">Reliability: FORM and SORM</p></li>
-<li><p class="card-text">Sensitivity with Monte Carlo or LHS</p></li>
-<li><p class="card-text">Parameter Estimation</p></li>
+<li><p>Forward uncertainty: Importance Sampling, Gaussian Process Regression</p></li>
+<li><p>Reliability: FORM and SORM</p></li>
+<li><p>Sensitivity with Monte Carlo or LHS</p></li>
+<li><p>Parameter Estimation</p></li>
 </ol>
 </div></blockquote>
+</div></blockquote>
 </div>
-</details></div></blockquote>
 </div>
 </div>
 

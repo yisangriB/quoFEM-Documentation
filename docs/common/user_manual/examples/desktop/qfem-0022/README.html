@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.11. Two-Dimensional Truss: PLoM Modeling and Simulation &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>5.12. Two-Dimensional Truss: PLoM Modeling and Simulation &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="5.12. Global Sensitivity Analysis for Field QoI" href="../qfem-0023/README.html" />
-    <link rel="prev" title="5.10. Bayesian Calibration of Material Model Parameters" href="../qfem-0019/README.html" />
+    <link rel="next" title="5.13. Global Sensitivity Analysis for Field QoI" href="../qfem-0023/README.html" />
+    <link rel="prev" title="5.11. Bayesian Calibration of Material Model Parameters" href="../qfem-0019/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -130,21 +130,22 @@
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0001/README.html">5.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0002/README.html">5.2. Forward Propagation - OpenSeesPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0005/README.html">5.3. Basic modeling with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">5.4. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">5.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">5.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">5.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">5.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">5.9. Custom UQ for UQpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">5.10. Bayesian Calibration of Material Model Parameters</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#about-plom">5.11.1. About PLoM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#problem-statement">5.11.2. Problem Statement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#plom-modeling">5.11.3. PLoM Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0027/README.html">5.4. Forward propagation of uncertainty with multiple simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">5.5. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">5.6. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">5.7. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">5.8. Surrogate Modeling for One Story Building Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">5.9. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">5.10. Custom UQ for UQpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">5.11. Bayesian Calibration of Material Model Parameters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.12. Two-Dimensional Truss: PLoM Modeling and Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#about-plom">5.12.1. About PLoM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement">5.12.2. Problem Statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plom-modeling">5.12.3. PLoM Modeling</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0023/README.html">5.12. Global Sensitivity Analysis for Field QoI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0025/README.html">5.13. Heteroscedastic Gaussian Process modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0023/README.html">5.13. Global Sensitivity Analysis for Field QoI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0025/README.html">5.14. Heteroscedastic Gaussian Process modeling</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
@@ -212,7 +213,7 @@
         
           <li><a href="../examples.html"><span class="section-number">5. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">5.11. </span>Two-Dimensional Truss: PLoM Modeling and Simulation</li>
+      <li><span class="section-number">5.12. </span>Two-Dimensional Truss: PLoM Modeling and Simulation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -232,9 +233,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="two-dimensional-truss-plom-modeling-and-simulation">
-<span id="qfem-0022"></span><h1><span class="section-number">5.11. </span>Two-Dimensional Truss: PLoM Modeling and Simulation<a class="headerlink" href="#two-dimensional-truss-plom-modeling-and-simulation" title="Permalink to this headline">¶</a></h1>
+<span id="qfem-0022"></span><h1><span class="section-number">5.12. </span>Two-Dimensional Truss: PLoM Modeling and Simulation<a class="headerlink" href="#two-dimensional-truss-plom-modeling-and-simulation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="about-plom">
-<h2><span class="section-number">5.11.1. </span>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.12.1. </span>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this headline">¶</a></h2>
 <p><strong>PLoM</strong> is an open source python package that implements the algorithm of <strong>Probabilistic
 Learning on Manifolds</strong> with and without constraints (<a class="reference internal" href="#soizeghanem2016" id="id1"><span>[SoizeGhanem2016]</span></a>, <a class="reference internal" href="#soizeghanem2020" id="id2"><span>[SoizeGhanem2020]</span></a>)
 for <em>generating realizations of a random vector in a finite Euclidean space that are
@@ -246,7 +247,7 @@ modules and invokes a dynamic library for more efficiently computing the gradien
 the potential, and can be imported and run on Linux, macOS, and Windows platform.</p>
 </div>
 <div class="section" id="problem-statement">
-<h2><span class="section-number">5.11.2. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.12.2. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
 <p>Consider the problem simulating response of a two-dimensional truss structure with uncertain material properties shown in the following figure.
 The goal of the exercise is to demonstrate the use of <code class="docutils literal notranslate"><span class="pre">PLoM</span> <span class="pre">model</span></code> method under <code class="docutils literal notranslate"><span class="pre">SimCenterUQ</span></code>.</p>
 <div class="figure align-center">
@@ -370,7 +371,7 @@ The goal of the exercise is to demonstrate the use of <code class="docutils lite
 </div>
 </div>
 <div class="section" id="plom-modeling">
-<h2><span class="section-number">5.11.3. </span>PLoM Modeling<a class="headerlink" href="#plom-modeling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.12.3. </span>PLoM Modeling<a class="headerlink" href="#plom-modeling" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, select <code class="docutils literal notranslate"><span class="pre">SimCenterUQ</span></code> as the UQ engine.
 Select <code class="docutils literal notranslate"><span class="pre">PLoM</span> <span class="pre">Model</span></code> for the UQ method, and use <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code> as the Training Dataset.
@@ -408,11 +409,11 @@ The landing page of <strong>RES</strong> will show summarize the training inform
 </ol>
 <div class="align-center figure" id="id4">
 <img alt="../../../../../_images/RES1.png" src="../../../../../_images/RES1.png" />
-<p class="caption"><span class="caption-number">Fig. 5.11.3.1 </span><span class="caption-text">PCA representation error versus the PCA eigenvalues overlapped by the truncating PCA eigenvalue used in training</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.12.3.1 </span><span class="caption-text">PCA representation error versus the PCA eigenvalues overlapped by the truncating PCA eigenvalue used in training</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id5">
 <img alt="../../../../../_images/RES2.png" src="../../../../../_images/RES2.png" />
-<p class="caption"><span class="caption-number">Fig. 5.11.3.2 </span><span class="caption-text">Diffusion map eigenvalue by components overlapped by the truncating eigenvalue used in training</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.12.3.2 </span><span class="caption-text">Diffusion map eigenvalue by components overlapped by the truncating eigenvalue used in training</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>If the user selects the <strong>Data</strong> tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data.
 Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data. If a singular column of

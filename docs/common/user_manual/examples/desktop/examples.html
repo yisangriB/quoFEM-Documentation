@@ -129,16 +129,17 @@
 <li class="toctree-l2"><a class="reference internal" href="qfem-0001/README.html">5.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qfem-0002/README.html">5.2. Forward Propagation - OpenSeesPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qfem-0005/README.html">5.3. Basic modeling with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qfem-0007/README.html">5.4. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qfem-0009/README.html">5.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qfem-0014/README.html">5.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qfem-0015/README.html">5.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qfem-0016/README.html">5.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qfem-0017/README.html">5.9. Custom UQ for UQpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qfem-0019/README.html">5.10. Bayesian Calibration of Material Model Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qfem-0022/README.html">5.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qfem-0023/README.html">5.12. Global Sensitivity Analysis for Field QoI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qfem-0025/README.html">5.13. Heteroscedastic Gaussian Process modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0027/README.html">5.4. Forward propagation of uncertainty with multiple simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0007/README.html">5.5. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0009/README.html">5.6. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0014/README.html">5.7. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0015/README.html">5.8. Surrogate Modeling for One Story Building Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0016/README.html">5.9. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0017/README.html">5.10. Custom UQ for UQpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0019/README.html">5.11. Bayesian Calibration of Material Model Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0022/README.html">5.12. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0023/README.html">5.13. Global Sensitivity Analysis for Field QoI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qfem-0025/README.html">5.14. Heteroscedastic Gaussian Process modeling</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
@@ -312,6 +313,31 @@
   <div class="row g-0 mb-3">
     <div class="card-header">
         <p>
+        <a href="./qfem-0027/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Forward propagation of uncertainty with multiple simulation models</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">Two models of a 6-story structure are used to predict the maximum base shear experienced during a nonlinear time history analysis of the structure subjected to seismic excitation
+</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/UQ.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
         <a href="./qfem-0007/README.html"> 
               <h5 style="--bs-gutter-x: 1.5em;">Steel Frame: Conventional Calibration</h5>
           </a>
@@ -325,7 +351,7 @@
     </div>
         
       <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/qfem-0007.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+       <img src="../../../../_images/qfem-0007-SteelStructuralSystem.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>
@@ -373,7 +399,7 @@
     </div>
         
       <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/qfem-0014.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+       <img src="../../../../_images/qfem-0014-SteelStructuralSystem.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>
@@ -415,7 +441,7 @@
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">This example constructs a Gaussian process-based surrogate model for the mean and variance of peak building responses subjected to ten different ground motions. The 2nd floor response of a six-story shear building model is investigated.</p>
+        <p class="card-text bg-light">This example constructs a Gaussian process-based surrogate model for the mean and variance of building responses subjected to ten different ground motions. A floor response of a six-story shear building model is investigated.</p>
           
       </div>
     </div>
@@ -473,7 +499,7 @@ stress - a non-scalar response quantity.
     </div>
         
       <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/qf-0019-StressResults.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+       <img src="../../../../_images/qf-0019-StressStrainData.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>
@@ -491,8 +517,7 @@ stress - a non-scalar response quantity.
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">In this example, the goal is to demonstrate the use of PLoM model method 
-to predict the response of the example truss under the given load.
+        <p class="card-text bg-light">Consider the problem simulating response of a two-dimensional truss structure with uncertain material properties. The goal of the exercise is to demonstrate the use of ``PLoM model`` method under ``SimCenterUQ`` to predict the response of the truss under the given load.
 </p>
           
       </div>
@@ -517,13 +542,17 @@ to predict the response of the example truss under the given load.
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">In this example, global sensitivity analysis is demonstrated for field QoI quantities. To gain efficiency dealing with high-dimension outputs, principal component analysis and probability model-based global sensitivity analysis (PCA-PSA) method is used in the analysis.</p>
+        <p class="card-text bg-light">In this example, the parameters of the STEEL02 material model in OpenSees
+are calibrated by Bayesian inference. Experimental data is
+passed in to quoFEM from an external file, and the output is the time-history of
+stress - a non-scalar response quantity.
+</p>
           
       </div>
     </div>
         
       <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/qf-0023-StrainHistory.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+       <img src="../../../../_images/qf-0023-Steel02.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>
@@ -535,19 +564,20 @@ to predict the response of the example truss under the given load.
     <div class="card-header">
         <p>
         <a href="./qfem-0025/README.html"> 
-              <h5 style="--bs-gutter-x: 1.5em;">Heteroscedastic Gaussian Process</h5>
+              <h5 style="--bs-gutter-x: 1.5em;">Heteroscedastic Gaussian Process modeling</h5>
           </a>
         </p>
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">The Heteroscedastic Gaussian process model is trained based on partial replication strategy</p>
+        <p class="card-text bg-light">In this example, demonstrates the heteroscedastic Gaussian process model
+</p>
           
       </div>
     </div>
         
       <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/qf-0025-main.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+       <img src="../../../../_images/qf-0025-data.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>

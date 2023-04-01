@@ -135,7 +135,6 @@
 <li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">3.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">3.1.4. UCSD UQ Engine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">3.1.5. Custom UQ Engine</a></li>
 </ul>
 </li>
@@ -311,7 +310,7 @@
 <h3>Case 1: Sampling and Simulation<a class="headerlink" href="#case-1-sampling-and-simulation" title="Permalink to this headline">¶</a></h3>
 <p>When the <strong>Training Dataset</strong> option is set to the <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code>, a simulation model should be presented in the <strong>FEM tab</strong>. The training points are sampled adaptively by the design of experiments.</p>
 <div class="align-center figure" id="id4">
-<span id="figsim1"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate1_SimUQ.jpg"><img alt="../../../../_images/Surrogate1_SimUQ.jpg" src="../../../../_images/Surrogate1_SimUQ.jpg" style="width: 1200px;" /></a>
+<span id="figsim1"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate1_SimUQ.png"><img alt="../../../../_images/Surrogate1_SimUQ.png" src="../../../../_images/Surrogate1_SimUQ.png" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.3.1 </span><span class="caption-text">Input panel for surrogate modeling</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
@@ -341,7 +340,7 @@
 <p>Note that the results from the parallel and serial run may not be exactly the same because parallel execution sets the number of batch design of experiments (DoE) in order to maximize the use of resources (Default DoE interval: 5)</p>
 <p>User can also activate the <strong>Advanced Options for Gaussian Process Model</strong></p>
 <div class="align-center figure" id="id5">
-<span id="figsim2"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate2_SimUQ.jpg"><img alt="../../../../_images/Surrogate2_SimUQ.jpg" src="../../../../_images/Surrogate2_SimUQ.jpg" style="width: 1200px;" /></a>
+<span id="figsim2"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate2_SimUQ.png"><img alt="../../../../_images/Surrogate2_SimUQ.png" src="../../../../_images/Surrogate2_SimUQ.png" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.3.2 </span><span class="caption-text">Sampling and Simulation - Case 1</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
@@ -353,7 +352,7 @@
 </ul>
 <p>Additionally, users may populate the initial samples directly from data files by activating <strong>Start with Existing Dataset</strong></p>
 <div class="align-center figure" id="id6">
-<span id="figsim3"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate3_SimUQ.jpg"><img alt="../../../../_images/Surrogate3_SimUQ.jpg" src="../../../../_images/Surrogate3_SimUQ.jpg" style="width: 1200px;" /></a>
+<span id="figsim3"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate3_SimUQ.png"><img alt="../../../../_images/Surrogate3_SimUQ.png" src="../../../../_images/Surrogate3_SimUQ.png" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.3.3 </span><span class="caption-text">Input panel for surrogate modeling</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following two data files are requested:</p>
@@ -386,7 +385,7 @@
 <h3>Case 2: Import RV Dataset and run Simulation<a class="headerlink" href="#case-2-import-rv-dataset-and-run-simulation" title="Permalink to this headline">¶</a></h3>
 <p>When the <strong>Training Dataset</strong> option is set to <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Data</span> <span class="pre">File</span></code> AND <strong>Get results from datafile</strong> check box is unchecked, quoFEM will run simulations to get result (QoI) values for imported RV locations and build a surrogate model.</p>
 <div class="align-center figure" id="id8">
-<span id="figsim5"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate5_SimUQ.jpg"><img alt="../../../../_images/Surrogate5_SimUQ.jpg" src="../../../../_images/Surrogate5_SimUQ.jpg" style="width: 1200px;" /></a>
+<span id="figsim5"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate5_SimUQ.png"><img alt="../../../../_images/Surrogate5_SimUQ.png" src="../../../../_images/Surrogate5_SimUQ.png" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.3.5 </span><span class="caption-text">Import Data File - Case 2</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following data file is requested</p>
@@ -405,7 +404,7 @@
 <h3>Case 3: Import both RV and QoI Dataset<a class="headerlink" href="#case-3-import-both-rv-and-qoi-dataset" title="Permalink to this headline">¶</a></h3>
 <p>When the <strong>Training Dataset</strong> option is set to <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Data</span> <span class="pre">File</span></code> AND <strong>Get results from datafile</strong> check box is unchecked, quoFEM will not run any simulations and build a surrogate model purely based on the user-provided dataset.</p>
 <div class="align-center figure" id="id9">
-<span id="figsim6"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate6_SimUQ.jpg"><img alt="../../../../_images/Surrogate6_SimUQ.jpg" src="../../../../_images/Surrogate6_SimUQ.jpg" style="width: 1200px;" /></a>
+<span id="figsim6"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate6_SimUQ.png"><img alt="../../../../_images/Surrogate6_SimUQ.png" src="../../../../_images/Surrogate6_SimUQ.png" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.3.6 </span><span class="caption-text">Import Data File - Case 3</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following two data files are requested:</p>
@@ -562,7 +561,7 @@
 <p class="caption"><span class="caption-number">Fig. 3.1.3.3.13 </span><span class="caption-text">Saving options</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id17">
-<span id="figsim10"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate10_SimUQ.jpg"><img alt="../../../../_images/Surrogate10_SimUQ.jpg" src="../../../../_images/Surrogate10_SimUQ.jpg" style="width: 1200px;" /></a>
+<span id="figsim10"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate10_SimUQ.png"><img alt="../../../../_images/Surrogate10_SimUQ.png" src="../../../../_images/Surrogate10_SimUQ.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.3.14 </span><span class="caption-text">Example outputs from saving options</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">

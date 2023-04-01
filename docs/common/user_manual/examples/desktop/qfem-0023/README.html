@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.12. Global Sensitivity Analysis for Field QoI &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>5.13. Global Sensitivity Analysis for Field QoI &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="5.13. Heteroscedastic Gaussian Process modeling" href="../qfem-0025/README.html" />
-    <link rel="prev" title="5.11. Two-Dimensional Truss: PLoM Modeling and Simulation" href="../qfem-0022/README.html" />
+    <link rel="next" title="5.14. Heteroscedastic Gaussian Process modeling" href="../qfem-0025/README.html" />
+    <link rel="prev" title="5.12. Two-Dimensional Truss: PLoM Modeling and Simulation" href="../qfem-0022/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -130,23 +130,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0001/README.html">5.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0002/README.html">5.2. Forward Propagation - OpenSeesPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0005/README.html">5.3. Basic modeling with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">5.4. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">5.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">5.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">5.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">5.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">5.9. Custom UQ for UQpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">5.10. Bayesian Calibration of Material Model Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0022/README.html">5.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.12. Global Sensitivity Analysis for Field QoI</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#outline">5.12.1. Outline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#problem-description">5.12.2. Problem description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#files-required">5.12.3. Files required</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#uq-workflow">5.12.4. UQ workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comparison-with-the-results-without-pca">5.12.5. Comparison with the results without PCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0027/README.html">5.4. Forward propagation of uncertainty with multiple simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">5.5. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">5.6. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">5.7. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">5.8. Surrogate Modeling for One Story Building Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">5.9. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">5.10. Custom UQ for UQpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">5.11. Bayesian Calibration of Material Model Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0022/README.html">5.12. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.13. Global Sensitivity Analysis for Field QoI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#outline">5.13.1. Outline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-description">5.13.2. Problem description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#files-required">5.13.3. Files required</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uq-workflow">5.13.4. UQ workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparison-with-the-results-without-pca">5.13.5. Comparison with the results without PCA</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0025/README.html">5.13. Heteroscedastic Gaussian Process modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0025/README.html">5.14. Heteroscedastic Gaussian Process modeling</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
@@ -214,7 +215,7 @@
         
           <li><a href="../examples.html"><span class="section-number">5. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">5.12. </span>Global Sensitivity Analysis for Field QoI</li>
+      <li><span class="section-number">5.13. </span>Global Sensitivity Analysis for Field QoI</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -234,7 +235,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="global-sensitivity-analysis-for-field-qoi">
-<span id="qfem-0023"></span><h1><span class="section-number">5.12. </span>Global Sensitivity Analysis for Field QoI<a class="headerlink" href="#global-sensitivity-analysis-for-field-qoi" title="Permalink to this headline">¶</a></h1>
+<span id="qfem-0023"></span><h1><span class="section-number">5.13. </span>Global Sensitivity Analysis for Field QoI<a class="headerlink" href="#global-sensitivity-analysis-for-field-qoi" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -247,14 +248,14 @@
 </tbody>
 </table>
 <div class="section" id="outline">
-<h2><span class="section-number">5.12.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.13.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
 <p>In this example, we investigate how much each parameter affects multiple outputs of a model. In particular, influence of different martial model parameters to the resulting stress time history under cyclic load setting will be compared via global sensitivity analysis. To gain efficiency dealing with such high-dimensional outputs, ‘principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)’ method is used in the analysis.</p>
 </div>
 <div class="section" id="problem-description">
-<h2><span class="section-number">5.12.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.13.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
 <div class="align-center figure" id="id2">
 <span id="figsteel02"></span><a class="reference internal image-reference" href="../../../../../_images/qf-0023-Steel02.png"><img alt="../../../../../_images/qf-0023-Steel02.png" src="../../../../../_images/qf-0023-Steel02.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.12.2.1 </span><span class="caption-text">Steel02 Material – Hysteretic Behavior of Model with Isotropic Hardening in Compression</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.13.2.1 </span><span class="caption-text">Steel02 Material – Hysteretic Behavior of Model with Isotropic Hardening in Compression</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Consider STEEL02 material model in OpenSees that describes cyclic stress-strain response of the steel reinforcing bar in finite element simulations. The STEEL02 material model in OpenSees can take up to 11 parameters as input, as described in the <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel02_Material_--_Giuffré-Menegotto-Pinto_Model_with_Isotropic_Strain_Hardening">documentation</a>. Of these 11 parameters, 7 parameters shown in <a class="reference internal" href="#table-1">Table 1</a> will be considered.</p>
 <p id="table-1">Table 1: Parameters of the STEEL02 material model</p>
@@ -329,7 +330,7 @@
 </table>
 </div>
 <div class="section" id="files-required">
-<h2><span class="section-number">5.12.3. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.13.3. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
 <p>The exercise requires one main script file and one supplementary file. The user should download these files and place them in a <strong>NEW</strong> folder.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -345,11 +346,11 @@
 </div>
 <div class="align-center figure" id="id3">
 <span id="figexperimentaldatasteelcouponstrain"></span><a class="reference internal image-reference" href="../../../../../_images/qf-0023-StrainHistory.png"><img alt="../../../../../_images/qf-0023-StrainHistory.png" src="../../../../../_images/qf-0023-StrainHistory.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.12.3.1 </span><span class="caption-text">Strain history in ‘stress.1.coords’.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.13.3.1 </span><span class="caption-text">Strain history in ‘stress.1.coords’.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="uq-workflow">
-<h2><span class="section-number">5.12.4. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.13.4. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Selecting the <code class="docutils literal notranslate"><span class="pre">Global</span> <span class="pre">Sensitivity</span> <span class="pre">Analysis</span> <span class="pre">for</span> <span class="pre">Field</span> <span class="pre">QoI</span></code> example in the quoFEM Examples menu will autopopulate all the input fields required to run this example.
@@ -405,7 +406,7 @@ Because this example have 342 QoI components representing stress values of discr
 </div>
 </div>
 <div class="section" id="comparison-with-the-results-without-pca">
-<h2><span class="section-number">5.12.5. </span>Comparison with the results without PCA<a class="headerlink" href="#comparison-with-the-results-without-pca" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.13.5. </span>Comparison with the results without PCA<a class="headerlink" href="#comparison-with-the-results-without-pca" title="Permalink to this headline">¶</a></h2>
 <p>Using the same configuration but without PCA (with <code class="docutils literal notranslate"><span class="pre">No</span></code> option selected for ‘Perform PCA with QoI’ in the UQ panel), the analysis took 1198 seconds on the same computer used to run the case above with PCA. The below figure shows the aggregated sensitivity indices which appears to be similar to the previous results.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/qf-0023-RES3.png" src="../../../../../_images/qf-0023-RES3.png" />

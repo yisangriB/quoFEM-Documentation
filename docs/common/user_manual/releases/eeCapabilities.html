@@ -216,8 +216,9 @@
 <li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
 <li><p>OpenSees: user-defined OpenSees models</p></li>
 <li><p>Steel Building Model: automating steel frame design and modeling</p></li>
-<li><p><span class="blue">Concrete Building Model: automating concrete moment frame design and modeling</span></p></li>
-<li><p><span class="blue">MDOF-LU: MDOF shear building model</span></p></li>
+<li><p>Concrete Building Model: automating concrete moment frame design and modeling`</p></li>
+<li><p>MDOF-LU: MDOF shear building model</p></li>
+<li><p><span class="blue">MultiModel (allow multiple combinations of above)</span></p></li>
 </ol>
 </div>
 <div class="section" id="earthquake-motion-event">
@@ -245,6 +246,7 @@
 <p>Applications used to determine the response output parameters given the ground motion and structural model.</p>
 <ol class="arabic simple">
 <li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
+<li><p><span class="blue">MultiModel (allow multiple combinations of above)</span></p></li>
 </ol>
 </div>
 <div class="section" id="uncertainty-quantification">
@@ -254,7 +256,7 @@
 <li><p>Forward Uncertainty Propagation</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><p>Dakota Options <span class="blue">[← New option to discard working directories after each model evaluation]</span></p>
+<li><p>Dakota Options</p>
 <ol class="arabic simple">
 <li><p>Monte Carlo Sampling (MCS)</p></li>
 <li><p>Latin Hypercube Sampling (LHS)</p></li>
@@ -262,13 +264,10 @@
 <li><p>Polynomial Chaos Expansion</p></li>
 </ol>
 </li>
-<li><p><span class="blue">SimCenterUQ Options</span></p>
+<li><p>SimCenterUQ Options</p>
 <ol class="arabic simple">
-<li><p><span class="blue">Monte Carlo Sampling (MCS)</span></p>
-<ol class="loweralpha simple">
-<li><p><span class="blue">Resample from existing correlated dataset of samples</span></p></li>
-</ol>
-</li>
+<li><p>Monte Carlo Sampling (MCS)
+a. Resample from existing correlated dataset of samples</p></li>
 </ol>
 </li>
 </ol>
@@ -283,11 +282,11 @@
 <li><p>LHS</p></li>
 </ol>
 </li>
-<li><p><span class="blue">SimCenterUQ Sensitivity Options</span></p>
+<li><p>SimCenterUQ Sensitivity Options</p>
 <ol class="arabic simple">
-<li><p><span class="blue">Probability Model-based Global Sensitivity Analysis (PM-GSA)</span></p>
+<li><p>Probability Model-based Global Sensitivity Analysis (PM-GSA)</p>
 <ol class="loweralpha simple">
-<li><p><span class="blue">Import input/output samples from data files</span></p></li>
+<li><p>Import input/output samples from data files</p></li>
 </ol>
 </li>
 </ol>
@@ -301,6 +300,7 @@
 <li><p>SimCenterUQ Engine Surrogating Options:</p>
 <ol class="arabic simple">
 <li><p>Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</p></li>
+<li><p>blue:<cite>Gaussian process surrogate modeling</cite></p></li>
 </ol>
 </li>
 </ol>

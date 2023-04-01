@@ -208,8 +208,24 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release-eeuq"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="version-3-2-0-current">
-<h2>Version 3.2.0 (Current)<a class="headerlink" href="#version-3-2-0-current" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-3-3-0-current">
+<h2>Version 3.3.0 (Current)<a class="headerlink" href="#version-3-3-0-current" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> March. 2023</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Multi-model Quantify epistemic uncertainty in structural response by considering multiple models to represent various candidates for structural models (SIM), or simulation methods (FEM) - Define weights for each model candidate</p></li>
+</ol>
+</div></blockquote>
+<dl class="simple">
+<dt>Gaussian process surrogate modelingand propagate epistemic uncertainty by randomly selecting a model for each realization according to these weights.</dt><dd><ol class="arabic simple">
+<li><p>Use any simulation engine with the CustomPy feature - CustomPy allows you to execute a Python script that can serve as a wrapper for any other application. After preparing a wrapper, you can take leverage the applications in the SimCenter backend while running the FEM engine of your choice - OpenSeesPy, ETABS, Perform3D, ANSYS, Abaqus, etc.</p></li>
+<li><p>Gaussian process surrogate modeling, allowing useer to create a surrogate for subsequent use.</p></li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="version-3-2-0">
+<h2>Version 3.2.0<a class="headerlink" href="#version-3-2-0" title="Permalink to this headline">¶</a></h2>
 <p><strong>Release date:</strong> Sept. 2022</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">

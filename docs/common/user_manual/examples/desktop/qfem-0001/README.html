@@ -135,16 +135,17 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0002/README.html">5.2. Forward Propagation - OpenSeesPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qfem-0005/README.html">5.3. Basic modeling with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">5.4. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">5.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">5.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">5.7. Surrogate Modeling for One Story Building Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">5.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">5.9. Custom UQ for UQpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">5.10. Bayesian Calibration of Material Model Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0022/README.html">5.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0023/README.html">5.12. Global Sensitivity Analysis for Field QoI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0025/README.html">5.13. Heteroscedastic Gaussian Process modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0027/README.html">5.4. Forward propagation of uncertainty with multiple simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">5.5. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">5.6. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">5.7. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0015/README.html">5.8. Surrogate Modeling for One Story Building Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">5.9. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">5.10. Custom UQ for UQpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">5.11. Bayesian Calibration of Material Model Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0022/README.html">5.12. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0023/README.html">5.13. Global Sensitivity Analysis for Field QoI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0025/README.html">5.14. Heteroscedastic Gaussian Process modeling</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
@@ -245,13 +246,8 @@
 <li><p>Cross sectional area for the other six bars (<code class="docutils literal notranslate"><span class="pre">Ao</span></code>): mean <span class="math notranslate nohighlight">\(\mu_{Ao} = 250mm^2\)</span>, and <span class="math notranslate nohighlight">\(\sigma_{Ao} = 10mm^2\)</span> (COV = 4%)</p></li>
 </ol>
 <p>The goal of the exercise is to estimate the mean and standard deviation of the vertical displacement at node 3. The exercise requires two files. The user is required to download these files and place them in a <strong>NEW</strong> folder. The two files are:</p>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-1. Main file: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/src/TrussModel.tcl">TrussTemplate.tcl</a><div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
+<ol class="arabic">
+<li><p>Main file: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/src/TrussModel.tcl">TrussTemplate.tcl</a></p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># units kN &amp; mm</span>
 
 <span class="c">#</span>
@@ -321,19 +317,15 @@
 <span class="nv">remove</span> recorders
 </pre></div>
 </div>
-</div>
-</details><div class="admonition note">
+</li>
+</ol>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The first lines containing <code class="docutils literal notranslate"><span class="pre">pset</span></code> will be read by the application when the file is selected and the application will autopopulate the Random Variables input panel with these same variable names. It is of course possible to explicitly use Random Variables without the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command as is demonstrated in the verification section.</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">TrussPost.tcl</span></code> script shown below will accept as input any of the 6 nodes in the domain and for each of the two dof directions.</p>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-2. Postprocessing file: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/../qfem-0001/src/TrussPost.tcl">TrussPost.tcl</a>.<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
+<ol class="arabic" start="2">
+<li><p>Postprocessing file: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/../qfem-0001/src/TrussPost.tcl">TrussPost.tcl</a>.</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># create file handler to write results to output &amp; list into which we will put results</span>
 <span class="k">set</span> resultFile <span class="k">[</span><span class="nb">open</span> results.out w<span class="k">]</span>
 <span class="k">set</span> results <span class="k">[]</span>
@@ -367,18 +359,14 @@
 <span class="nb">close</span> <span class="nv">$resultFile</span>
 </pre></div>
 </div>
-</div>
-</details><div class="admonition note">
+</li>
+</ol>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The use has the option to provide no post-process script (in which case the main script must create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file containing a single line with as many space separated numbers as QoI or the user may provide a Python script that also performs the postprocessing. Below is an example of a postprocessing Python script.</p>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Alternative postprocessing file: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/src/TrussPost.py">TrussPost.py</a><div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<p>Alternative postprocessing file: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/src/TrussPost.py">TrussPost.py</a></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 
 <span class="c1"># written: fmk, adamzs 01/18</span>
 
@@ -447,8 +435,8 @@ Alternative postprocessing file: <a class="reference external" href="https://git
     <span class="n">process_results</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
 </pre></div>
 </div>
+</div></blockquote>
 </div>
-</details></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
