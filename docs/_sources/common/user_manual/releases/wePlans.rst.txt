@@ -10,10 +10,10 @@ The following features are intended to be included in |app|  in upcoming release
 
 
 May 2023
---------
+------------
    #. CFD Database of Simulations
+   #. Digital Twin of Wall of Wind Facility (1.2.5.2) - Auto  Generated Models for Rectangular Buildings        
    #. Multi-model (1.2.4.1) - defining weights for multiple models (Events, Structural Models and Analysis) for the same response and predicting the response statistics accounting for the model weights.
-   #. Digital Wind Tunnel (1.2.5.2) - Auto  Generated Models for Rectangular Buildings  
 
       
 Sept 2023

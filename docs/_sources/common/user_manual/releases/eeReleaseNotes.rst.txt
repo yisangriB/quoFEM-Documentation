@@ -5,17 +5,15 @@
 Release Notes
 *************
 
-
-Version 3.3.0 (Current)
+Version 3.2.0 (Current)
 -----------------------
 
 **Release date:** March. 2023
 
-   #. Multi-model Quantify epistemic uncertainty in structural response by considering multiple models to represent various candidates for structural models (SIM), or simulation methods (FEM) - Define weights for each model candidate 
-Gaussian process surrogate modelingand propagate epistemic uncertainty by randomly selecting a model for each realization according to these weights.
-   #. Use any simulation engine with the CustomPy feature - CustomPy allows you to execute a Python script that can serve as a wrapper for any other application. After preparing a wrapper, you can take leverage the applications in the SimCenter backend while running the FEM engine of your choice - OpenSeesPy, ETABS, Perform3D, ANSYS, Abaqus, etc.
-   #. Gaussian process surrogate modeling, allowing useer to create a surrogate for subsequent use.
-      
+**Highlights**
+
+#. Multi model uncertainty propagation options for Modeling (SIM) and Analysis (FEM) tabs
+#. Gaussian process surrogate modeling
 
 
 Version 3.2.0

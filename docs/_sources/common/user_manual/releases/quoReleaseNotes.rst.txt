@@ -14,8 +14,8 @@ Major Version 3
       The major version number was increased from 2 to 3 as changes were made to input and output formats of |app|. This means old examples will not be loaded in this version of the tool.
 
 
-Version 3.3 (:blue:`Current`)
------------------------------
+   .. dropdown::    Version 3.3 (:blue:`Current`)
+      :open:
 
       **Release date:** March. 2023
 
@@ -25,8 +25,7 @@ Version 3.3 (:blue:`Current`)
          #. Display of correlation coefficients within the input/output dataset
          #. Switching the display order of the UQ method and UQ engine
 
-Version 3.2
------------
+   .. dropdown::    Version 3.2
 
       **Release date:** September. 2022
 
@@ -44,8 +43,8 @@ Version 3.2
             * Parameters estimation → **deterministic calibration** 
             * Inverse problem → **Bayesian calibration** 
 
-Version 3.1
------------
+
+   .. dropdown::    Version 3.1
 
       **Release date:** June. 2022
 
@@ -62,8 +61,7 @@ Version 3.1
          #. Minor bug fixes in the user interface, surrogate modeling, and sensitivity analysis scripts
 
 
-Version 3.0
------------
+   .. dropdown::    Version 3.0
 
       **Release date:** March. 2022
 
@@ -86,9 +84,7 @@ Version 3.0
 
 Major Version 2
 =================
-
-Version 2.4.1
--------------
+   .. dropdown::    Version 2.4.1
 
       **Release date:** Dec. 2021
 
@@ -107,8 +103,7 @@ Version 2.4.1
          #. Parameter values are passed to the log-likelihood script when using the UCSD_UQ engine
 
 
-Version 2.4.0
--------------
+   .. dropdown::    Version 2.4.0
 
       **Release date:** Oct. 2021
 
@@ -128,8 +123,7 @@ Version 2.4.0
 
          #. Minor improvements and bug fixes
 
-Version 2.3
------------
+   .. dropdown::    Version 2.3
 
       **Release date:** May 2021
 
@@ -144,8 +138,7 @@ Version 2.3
          #. Log-likelihood function specification made optional for TMCMC
 
 
-Version 2.2
------------
+   .. dropdown::    Version 2.2
 
       **Release date:** Oct. 2020
 
@@ -161,8 +154,7 @@ Version 2.2
 
          #. Changes to UI to reduce wasted space
 
-Version 2.0
------------
+   .. dropdown::    Version 2.0
 
       **Release date:** Sept. 2019
 

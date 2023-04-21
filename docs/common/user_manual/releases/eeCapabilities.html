@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cababilities &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>Capabilities &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -187,7 +187,7 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Cababilities</li>
+      <li>Capabilities</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,9 +206,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cababilities">
-<span id="lbl-capabilities-eeuq"></span><h1>Cababilities<a class="headerlink" href="#cababilities" title="Permalink to this headline">¶</a></h1>
-<p><strong>Version 3.2</strong> of quoFEM app was released <strong>Sept 22</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+  <div class="section" id="capabilities">
+<span id="lbl-capabilities-eeuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
+<p><strong>Version 3.3</strong> of quoFEM app was released <strong>March 23</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="structural-information-model">
 <h2>Structural Information Model<a class="headerlink" href="#structural-information-model" title="Permalink to this headline">¶</a></h2>
 <p>Applications used to specify/select the structural model to be used in analysis.</p>
@@ -216,9 +216,8 @@
 <li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
 <li><p>OpenSees: user-defined OpenSees models</p></li>
 <li><p>Steel Building Model: automating steel frame design and modeling</p></li>
-<li><p>Concrete Building Model: automating concrete moment frame design and modeling`</p></li>
+<li><p>Concrete Building Model: automating concrete moment frame design and modeling</p></li>
 <li><p>MDOF-LU: MDOF shear building model</p></li>
-<li><p><span class="blue">MultiModel (allow multiple combinations of above)</span></p></li>
 </ol>
 </div>
 <div class="section" id="earthquake-motion-event">
@@ -246,7 +245,6 @@
 <p>Applications used to determine the response output parameters given the ground motion and structural model.</p>
 <ol class="arabic simple">
 <li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
-<li><p><span class="blue">MultiModel (allow multiple combinations of above)</span></p></li>
 </ol>
 </div>
 <div class="section" id="uncertainty-quantification">
@@ -256,7 +254,7 @@
 <li><p>Forward Uncertainty Propagation</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><p>Dakota Options</p>
+<li><p>Dakota Options <span class="blue">[← New option to discard working directories after each model evaluation]</span></p>
 <ol class="arabic simple">
 <li><p>Monte Carlo Sampling (MCS)</p></li>
 <li><p>Latin Hypercube Sampling (LHS)</p></li>
@@ -266,8 +264,11 @@
 </li>
 <li><p>SimCenterUQ Options</p>
 <ol class="arabic simple">
-<li><p>Monte Carlo Sampling (MCS)
-a. Resample from existing correlated dataset of samples</p></li>
+<li><p>Monte Carlo Sampling (MCS)</p>
+<ol class="loweralpha simple">
+<li><p>Resample from existing correlated dataset of samples</p></li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
@@ -300,7 +301,7 @@ a. Resample from existing correlated dataset of samples</p></li>
 <li><p>SimCenterUQ Engine Surrogating Options:</p>
 <ol class="arabic simple">
 <li><p>Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</p></li>
-<li><p>blue:<cite>Gaussian process surrogate modeling</cite></p></li>
+<li><p><span class="blue">Gaussian process surrogate modeling</span></p></li>
 </ol>
 </li>
 </ol>

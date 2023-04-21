@@ -308,55 +308,55 @@ C++</p>
 <span class="cm"> * different widgets.</span>
 <span class="cm"> */</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;QWidget&gt;</span><span class="cp"></span>
-<span class="k">class</span> <span class="nc">QJsonObject</span><span class="p">;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QWidget&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">QJsonObject</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">SimCenterWidget</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QWidget</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SimCenterWidget</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QWidget</span>
 <span class="p">{</span>
-    <span class="n">Q_OBJECT</span>
+<span class="w">    </span><span class="n">Q_OBJECT</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="k">explicit</span> <span class="n">SimCenterWidget</span><span class="p">(</span><span class="n">QWidget</span> <span class="o">*</span><span class="n">parent</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="k">virtual</span> <span class="o">~</span><span class="n">SimCenterWidget</span><span class="p">();</span>
-    <span class="cm">/** </span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">SimCenterWidget</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">SimCenterWidget</span><span class="p">();</span>
+<span class="w">    </span><span class="cm">/** </span>
 <span class="cm">     *   @brief outputToJSON method to write all objects data neeed to reconstruct object to JsonObject</span>
 <span class="cm">     *   @param rvObject the JSON object to be written to</span>
 <span class="cm">     *   @return bool - true for success, otherwise false</span>
-<span class="cm">     */</span>  
+<span class="cm">     */</span><span class="w">  </span>
 
-    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">outputToJSON</span><span class="p">(</span><span class="n">QJsonObject</span> <span class="o">&amp;</span><span class="n">jsonObject</span><span class="p">);</span>
-    <span class="cm">/** </span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">outputToJSON</span><span class="p">(</span><span class="n">QJsonObject</span><span class="w"> </span><span class="o">&amp;</span><span class="n">jsonObject</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/** </span>
 <span class="cm">     *   @brief inputFromJSON method to instantiate itself from a JSON object</span>
 <span class="cm">     *   @param jsonObject the JSON object contaiing data to instantiate the object</span>
 <span class="cm">     *   @return bool - true for success, otherwise false</span>
-<span class="cm">     */</span>  
-    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">inputFromJSON</span><span class="p">(</span><span class="n">QJsonObject</span> <span class="o">&amp;</span><span class="n">jsonObject</span><span class="p">);</span>
+<span class="cm">     */</span><span class="w">  </span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">inputFromJSON</span><span class="p">(</span><span class="n">QJsonObject</span><span class="w"> </span><span class="o">&amp;</span><span class="n">jsonObject</span><span class="p">);</span>
 
 <span class="nl">signals</span><span class="p">:</span>
 
-    <span class="cm">/**</span>
+<span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     *   @brief sendFatalMessage signal to be emitted when object needs to shut program down</span>
 <span class="cm">     *   @param message to be returned</span>
 <span class="cm">     *   @return void</span>
 <span class="cm">     */</span>
-    <span class="kt">void</span> <span class="n">sendFatalMessage</span><span class="p">(</span><span class="n">QString</span> <span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendFatalMessage</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
 
-    <span class="cm">/**</span>
+<span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     *   @brief sendErrorMessage signal to be emitted when object needs to communicate error with user</span>
 <span class="cm">     *   @param message to be returned</span>
 <span class="cm">     *   @return void</span>
 <span class="cm">     */</span>
-    <span class="kt">void</span> <span class="nf">sendErrorMessage</span><span class="p">(</span><span class="n">QString</span> <span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendErrorMessage</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
 
-    <span class="cm">/**</span>
+<span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     *   @brief sendStatusMessage signal to be emitted when object needs to communicate status with user</span>
 <span class="cm">     *   @param message to be passed</span>
 <span class="cm">     *   @return void</span>
 <span class="cm">     */</span>
-    <span class="kt">void</span> <span class="nf">sendStatusMessage</span><span class="p">(</span><span class="n">QString</span> <span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendStatusMessage</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
 
 
 
-<span class="k">public</span> <span class="nl">slots</span><span class="p">:</span>
+<span class="k">public</span><span class="w"> </span><span class="n">slots</span><span class="o">:</span>
 
 <span class="k">private</span><span class="o">:</span>
 <span class="p">};</span>

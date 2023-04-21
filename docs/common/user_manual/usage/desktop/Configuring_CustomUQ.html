@@ -128,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">3.1.1. UQ Features At-a-Glance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">3.1.2. Dakota UQ Engine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#simcenter-uq-engine">3.1.3. SimCenter UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">3.1.4. UCSD UQ Engine</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="UQ.html#custom-uq-engine">3.1.5. Custom UQ Engine</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.1. Configuring CustomUQ Engine</a></li>
 </ul>
@@ -316,7 +317,7 @@ a UQ runner class that inherits from the <em>UqRunner</em> class, which is shown
 <span class="k">class</span> <span class="nc">UqRunner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">runUQ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uqData</span><span class="p">,</span> <span class="n">simulationData</span><span class="p">,</span> <span class="n">randomVarsData</span><span class="p">,</span> <span class="n">demandParams</span><span class="p">,</span>
               <span class="n">workingDir</span><span class="p">,</span> <span class="n">runType</span><span class="p">,</span> <span class="n">localAppDir</span><span class="p">,</span> <span class="n">remoteAppDir</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This function configures and runs a UQ simulation based on the </span>
 <span class="sd">        input UQ configuration, simulation configuration, random variables,</span>
 <span class="sd">        and requested demand parameters</span>

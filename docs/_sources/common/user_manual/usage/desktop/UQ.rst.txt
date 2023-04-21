@@ -64,7 +64,7 @@ The first selection panel the user must select from and enter data into is the *
 
        .. container:: rightside
 
-         .. thumbnail:: figures/UQtab/method_Reliability.png
+         .. thumbnail:: figures/UQtab/method_reliability.png
                 :width: 25%
 
     ---
@@ -162,9 +162,6 @@ The following categories are available:
    DakotaSampling
    :EEUQ:DakotaSensitivity
    :EEUQ:DakotaReliability
-   :EEUQ:DakotaSensitivity	 
-   :WEUQ:DakotaSensitivity
-   :WEUQ:DakotaReliability
    :Hydro:DakotaSensitivity
    :Hydro:DakotaReliability    
    :quoFEM:DakotaSensitivity
@@ -173,9 +170,10 @@ The following categories are available:
    :quoFEM:DakotaBayesianCalibration
    :quoFEM:DakotaGradientFreeOptimization
 
+.. only:: quoFEM_app
 
-SimCenter UQ Engine
--------------------
+   SimCenter UQ Engine
+   -------------------
 
    The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:
 
@@ -198,7 +196,6 @@ SimCenter UQ Engine
       SimCenterUQSurrogate
       SimCenterUQPLoM
 
-.. only:: notQuoFEM      
 
    UCSD UQ Engine
    --------------
@@ -221,11 +218,10 @@ SimCenter UQ Engine
 
      UCSD_UQ_TMCMC
 
-Custom UQ Engine
-----------------
+   Custom UQ Engine
+   ----------------
 
-The **CustomUQ** option enables users to switch out the UQ engine in the quoFEM workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
-
+   The **CustomUQ** option enables users to switch out the UQ engine in the quoFEM workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
    .. _figCustomUQ:
 
    .. figure:: figures/customUQ.png

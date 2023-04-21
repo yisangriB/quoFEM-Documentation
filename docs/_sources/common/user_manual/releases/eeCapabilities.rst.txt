@@ -2,10 +2,10 @@
 .. role:: blue
 
 ************
-Cababilities
+Capabilities
 ************
 
-**Version 3.2** of |app| was released **Sept 22**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.3** of |app| was released **March 23**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -16,9 +16,8 @@ Applications used to specify/select the structural model to be used in analysis.
 #. MDOF: creating idealized multi-degree-of-freedom models
 #. OpenSees: user-defined OpenSees models
 #. Steel Building Model: automating steel frame design and modeling
-#. Concrete Building Model: automating concrete moment frame design and modeling`
+#. Concrete Building Model: automating concrete moment frame design and modeling
 #. MDOF-LU: MDOF shear building model
-#. :blue:`MultiModel (allow multiple combinations of above)`
 
     
 Earthquake Motion Event
@@ -49,7 +48,6 @@ Finite Element Application
 Applications used to determine the response output parameters given the ground motion and structural model.
 
 #.  OpenSees: Open System for Earthquake Engineering Simulation
-#. :blue:`MultiModel (allow multiple combinations of above)`    
 
 
 Uncertainty Quantification
@@ -59,7 +57,7 @@ Applications to perform the uncertainty quantification for the response paramete
 
 #. Forward Uncertainty Propagation
 
-     A. Dakota Options 
+     A. Dakota Options :blue:`[← New option to discard working directories after each model evaluation]` 
 
         #. Monte Carlo Sampling (MCS)
         #. Latin Hypercube Sampling (LHS)
@@ -69,6 +67,7 @@ Applications to perform the uncertainty quantification for the response paramete
      B. SimCenterUQ Options
 
         #. Monte Carlo Sampling (MCS)
+
            a. Resample from existing correlated dataset of samples
 
 #. Global Sensitivity Analysis
@@ -90,4 +89,5 @@ Applications to perform the uncertainty quantification for the response paramete
      A. SimCenterUQ Engine Surrogating Options:
 
         #. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
-	#. blue:`Gaussian process surrogate modeling`
+	#. :blue:`Gaussian process surrogate modeling`
+	   
