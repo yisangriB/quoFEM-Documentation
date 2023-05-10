@@ -124,9 +124,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">3. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -314,7 +314,7 @@
 <p>When the quantities of interest (QoI) are given as a vector or field variable, aggregated sensitivity index can provide insight into the system’s overall sensitivity characteristics. The aggregated sensitivity index achieves this by calculating the weighted average of the sensitivity indices of each QoI component, where the weights are proportional to the variances of the components <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0023/README.html#jung2022" id="id7"><span>[Jung2022]</span></a>. Component sensitivity indices are useful for visualization, while the aggregated sensitivity index gives instant intuition on how much each variable influences the system response overall. See <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0023/README.html#qfem-0023"><span class="std std-ref">this example</span></a>.</p>
 <dl class="citation">
 <dt class="label" id="id8"><span class="brackets">Jung2022</span></dt>
-<dd><p>To be added</p>
+<dd><p>Jung, W., &amp; Taflanidis, A. A. (2023). Efficient global sensitivity analysis for high-dimensional outputs combining data-driven probability models and dimensionality reduction. <em>Reliability Engineering &amp; System Safety</em>, 231, 108805.</p>
 </dd>
 </dl>
 </div>
@@ -368,7 +368,7 @@
 <li><p><strong>Heteroscedastic measurement noise</strong></p>
 <blockquote>
 <div><div class="line-block">
-<div class="line">When one expects a high noise level in the response observations with varying variance scales across the domain, one may want to consider modeling the heteroscedastic noise. Note that the observation noise here comes from the variability not captured by the RV values we defined (i.e. <span class="math notranslate nohighlight">\(x\)</span>). For example, mapping between structural parameters (<span class="math notranslate nohighlight">\(x\)</span>) and its earthquake response (<span class="math notranslate nohighlight">\(y\)</span>) typically requires heteroscedastic GP models to capture effect of the aleatoric variability in the response ground motion time history. The below figure shows an example data shape for which a heteroscedastic GP model is required. quoFEM app introduces the <strong>stochastic Kriging</strong> algorithm in <a class="reference internal" href="#kyprioti2021" id="id10"><span>[Kyprioti2021]</span></a> to achieve this, which relies on the so-called <strong>partial replication strategy</strong>, that is, to generate multiple realizations for a subset of inputs to examine response variance. In particular, a subset of initial samples are replicated to obtain variance estimates, i.e., variance realizations, at different sample locations, and these values are used to construct a variance-field model. Then by constraining the relative scales of the variance, the stochastic kriging emulator is trained using both replication and unique (non-replicated) samples. <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0025/README.html#qfem-0025"><span class="std std-ref">This example</span></a> reproduces the results of <a class="reference internal" href="#figgp1-3"><span class="std std-numref">Fig. 1.2.6</span></a></div>
+<div class="line">When one expects a high noise level in the response observations with varying variance scales across the domain, one may want to consider modeling the heteroscedastic noise. Note that the observation noise here comes from the variability not captured by the RV values we defined (i.e. <span class="math notranslate nohighlight">\(x\)</span>). For example, mapping between structural parameters (<span class="math notranslate nohighlight">\(x\)</span>) and its earthquake response (<span class="math notranslate nohighlight">\(y\)</span>) typically requires heteroscedastic GP models to capture effect of the aleatoric variability in the response ground motion time history. The below figure shows an example data shape for which a heteroscedastic GP model is required. quoFEM app introduces the <strong>stochastic Kriging</strong> algorithm in <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#kyprioti2021" id="id10"><span>[Kyprioti2021]</span></a> to achieve this, which relies on the so-called <strong>partial replication strategy</strong>, that is, to generate multiple realizations for a subset of inputs to examine response variance. In particular, a subset of initial samples are replicated to obtain variance estimates, i.e., variance realizations, at different sample locations, and these values are used to construct a variance-field model. Then by constraining the relative scales of the variance, the stochastic kriging emulator is trained using both replication and unique (non-replicated) samples. <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0025/README.html#qfem-0025"><span class="std std-ref">This example</span></a> reproduces the results of <a class="reference internal" href="#figgp1-3"><span class="std std-numref">Fig. 1.2.6</span></a></div>
 </div>
 <div class="align-center figure" id="id22">
 <span id="figgp1-3"></span><a class="reference internal image-reference" href="../../../_images/StochasticGP.png"><img alt="../../../_images/StochasticGP.png" src="../../../_images/StochasticGP.png" style="width: 500px;" /></a>
@@ -515,6 +515,10 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 <li><p><strong>Count</strong>: number of model evaluation exceeds a predefined count constraint</p></li>
 <li><p><strong>Accuracy</strong>: accuracy measure of the model meets a predefined convergence level</p></li>
 </ul>
+<p>only:: EEUQ_app</p>
+<blockquote>
+<div><p>Currently not supported in EE-UQ.</p>
+</div></blockquote>
 </div>
 <div class="section" id="verification-of-surrogate-model">
 <h3>Verification of surrogate model<a class="headerlink" href="#verification-of-surrogate-model" title="Permalink to this headline">¶</a></h3>
@@ -522,9 +526,15 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 <ul>
 <li><p><strong>Leave-one-out cross-validation (LOOCV)</strong></p>
 <div class="line-block">
-<div class="line">LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> at each sample location <span class="math notranslate nohighlight">\(\boldsymbol{x}_k\)</span> is obatined by the following procedure: A temporary surrogate model <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})\)</span> is constructed using the samples <span class="math notranslate nohighlight">\(\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}\)</span> and the calibrated parameters, and the prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)\)</span> is compared with the exact outcome <span class="math notranslate nohighlight">\(y_k=f(\boldsymbol{x}_k)\)</span>.</div>
+<div class="line">LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> at each sample location <span class="math notranslate nohighlight">\(\boldsymbol{x}_k\)</span> is obatined by the following procedure: A temporary surrogate model <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})\)</span> is constructed using the samples <span class="math notranslate nohighlight">\(\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}\)</span> and the calibrated parameters, and the prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)\)</span> is compared with the exact outcome .</div>
 </div>
 </li>
+</ul>
+<p>We provide different verification measures for two different cases.</p>
+<ol class="lowerroman simple">
+<li><p>When nugget variance is low : The LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> is expected to match the exact outcome <span class="math notranslate nohighlight">\(\boldsymbol{y_k}=f(\boldsymbol{x}_k)\)</span> when the surrogate model is well-trained. To quantify the goodness, R2 error, normalized root-mean-squared-error (NRMSE), and correlation coefficient are provided:</p></li>
+</ol>
+<ul>
 <li><p><strong>R2 error</strong></p>
 <div class="line-block">
 <div class="line">R2 error is defined in terms of the total sum of squares over the residual sum of squares</div>
@@ -574,6 +584,21 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 <p class="admonition-title">Note</p>
 <p>Since these measures are calculated from the cross-validation predictions rather than external validation predictions, they can be biased, particularly when a <strong>highly localized nonlinear range exists in the actual response surface</strong> and those regions are not covered by the training samples.</p>
 </div>
+<ol class="lowerroman simple" start="2">
+<li><p>When nugget variance is high : The distance between LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> and the exact outcome <span class="math notranslate nohighlight">\(\boldsymbol{y_k}=f(\boldsymbol{x}_k)\)</span> is expected to follow a normal distribution when the surrogate model is well-trained. To quantify the goodness, inter-quartile ratio (IQR) and Cramer-Von Mises statistics can be evaluated:</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p><strong>Inter-quartile ratio (IQR)</strong>: IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.</p></li>
+<li><p><strong>Cramer-Von Mises statistics</strong>: Cramer-Von Mises statistics calculates the normality score. The assumption of a GP is that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction <span class="math notranslate nohighlight">\(\hat{y}_k\)</span> and the sample observation  <span class="math notranslate nohighlight">\(y_k\)</span> value is divided by the standard deviation prediction from surrogate <span class="math notranslate nohighlight">\(\hat{\sigma}_{y,k}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-normed">
+<span class="eqno">(1.2.19)<a class="headerlink" href="#equation-normed" title="Permalink to this equation">¶</a></span>\[  u_k = \frac{y_k-\hat{y}_k} {\hat{\sigma}_{y,k}}\]</div>
+</li>
+</ul>
+<blockquote>
+<div><p>If the values of <span class="math notranslate nohighlight">\({u_k}\)</span> follow standard normal distribution, the resulting surrogate model may be considered well-constructed. The Cramer-Von Mises test is calculated using the <code class="docutils literal notranslate"><span class="pre">scipy.stats.cramervonmises</span></code> function in the Python package Scipy, and the resulting p-value is displayed. Conventionally, if the p-value exceeds a significance threshold, e.g. 0.05, the null hypothesis that the samples are from a normal distribution is not rejected, meaning the samples may be considered to follow a Gaussian distribution.</p>
+</div></blockquote>
+</div></blockquote>
 <dl class="citation">
 <dt class="label" id="rasmussen2006"><span class="brackets"><a class="fn-backref" href="#id11">Rasmussen2006</a></span></dt>
 <dd><p>Rasmussen, C.E. and Williams, C.K. (2006). <em>Gaussian Process for Machine Learning</em>. Cambridge, MA: The MIT Press, 2006 (available on-line at <a class="reference external" href="http://www.gaussianprocess.org/gpml/">http://www.gaussianprocess.org/gpml/</a>)</p>

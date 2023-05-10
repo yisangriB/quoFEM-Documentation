@@ -51,7 +51,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3. User Guide" href="../../usage/desktop/usage.html" />
+    <link rel="next" title="3. User Interface" href="../../usage/desktop/usage.html" />
     <link rel="prev" title="1.2. Install on macOS 10" href="../../installation/desktop/install_macOS.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -129,9 +129,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#quofem-for-a-python-model-interface">2.2. quoFEM for a Python Model Interface</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">3. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -240,8 +240,8 @@
 <li><p><strong>Step 3</strong>. Run quoFEM at DesignSafe</p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="7d3995c7-ab76-4479-9cf8-63685ed108bb" name="25b10484-3e02-437a-bd83-dc09e4902072" type="radio">
-</input><label class="tabbed-label" for="7d3995c7-ab76-4479-9cf8-63685ed108bb">
+<input checked="checked" id="ddcad6f6-a205-44ad-9334-8d4c6f10708e" name="a55ea661-48a7-458d-81d5-62e49b014a76" type="radio">
+</input><label class="tabbed-label" for="ddcad6f6-a205-44ad-9334-8d4c6f10708e">
 Step 0</label><div class="tabbed-content docutils">
 <p><span class="uqblue">Step 0. Prepare a Python Model</span></p>
 <blockquote>
@@ -313,8 +313,8 @@ Step 0</label><div class="tabbed-content docutils">
 </div></blockquote>
 </div></blockquote>
 </div>
-<input id="bd1edb16-afe3-43d8-891d-64a8c4138f5c" name="25b10484-3e02-437a-bd83-dc09e4902072" type="radio">
-</input><label class="tabbed-label" for="bd1edb16-afe3-43d8-891d-64a8c4138f5c">
+<input id="ad04aff0-ab24-4b21-8f6f-7456573e48f9" name="a55ea661-48a7-458d-81d5-62e49b014a76" type="radio">
+</input><label class="tabbed-label" for="ad04aff0-ab24-4b21-8f6f-7456573e48f9">
 Step 1</label><div class="tabbed-content docutils">
 <p><span class="uqblue">Step 1. Modify the Model Script to Define Random Variables and Quantities of Interest</span></p>
 <blockquote>
@@ -545,8 +545,8 @@ Step 1</label><div class="tabbed-content docutils">
 </div>
 </div></blockquote>
 </div>
-<input id="4b76ebb2-8206-4832-a025-c36d85b22149" name="25b10484-3e02-437a-bd83-dc09e4902072" type="radio">
-</input><label class="tabbed-label" for="4b76ebb2-8206-4832-a025-c36d85b22149">
+<input id="72e1dc59-414f-447c-aac5-4fb432cc5848" name="a55ea661-48a7-458d-81d5-62e49b014a76" type="radio">
+</input><label class="tabbed-label" for="72e1dc59-414f-447c-aac5-4fb432cc5848">
 Step 2</label><div class="tabbed-content docutils">
 <p><span class="uqblue">Step 2. Run quoFEM</span></p>
 <blockquote>
@@ -605,7 +605,7 @@ Step 2</label><div class="tabbed-content docutils">
 <p>The order should match that written in the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file, and the specified name of QoIs are used only for the display in this example. Please see <a class="reference internal" href="../../usage/desktop/quoFEM/QuantitiesOfInterest.html#lblquo-qoi"><span class="std std-ref">here</span></a> to learn about vector QoIs which have a length greater than 1</p>
 </li>
 </ol>
-<p>When all the fields are filled in, click the <strong>Run</strong> button, and the analysis will be performed. The program will go into “not responding”, but that means quoFEM is busy running the analysis. You can check the progress status in your <strong>Local Working directory</strong> which can be found in the preference window. The number attached to ‘workdir.’ indicates the simulation index, and each folder contains the details for each simulation run.</p>
+<p>When all the fields are filled in, click the <strong>Run</strong> button, and the analysis will be performed. <strong>Do not press the Run button twice</strong> - it will give you an error. You can check the progress status in your <strong>Local Working directory</strong> which can be found in the preference window. The number attached to ‘workdir.’ indicates the simulation index, and each folder contains the details for each simulation run.</p>
 <blockquote>
 <div><div class="align-center figure" id="id12">
 <a class="reference internal image-reference" href="../../../../_images/step2_RES1.PNG"><img alt="../../../../_images/step2_RES1.PNG" src="../../../../_images/step2_RES1.PNG" style="width: 600px;" /></a>
@@ -634,8 +634,8 @@ Step 2</label><div class="tabbed-content docutils">
 </div></blockquote>
 </div></blockquote>
 </div>
-<input id="d1363d78-99cc-4af9-98c4-5f0c7422f8f3" name="25b10484-3e02-437a-bd83-dc09e4902072" type="radio">
-</input><label class="tabbed-label" for="d1363d78-99cc-4af9-98c4-5f0c7422f8f3">
+<input id="710aa0f5-6086-4073-93a4-9fbc6c990dc8" name="a55ea661-48a7-458d-81d5-62e49b014a76" type="radio">
+</input><label class="tabbed-label" for="710aa0f5-6086-4073-93a4-9fbc6c990dc8">
 Step 3</label><div class="tabbed-content docutils">
 <p><span class="uqblue">Step 3. Run quoFEM at DesignSafe</span></p>
 <blockquote>
@@ -694,8 +694,8 @@ Step 3</label><div class="tabbed-content docutils">
 </div></blockquote>
 </div></blockquote>
 </div>
-<input id="614336a3-0b8a-4fd0-961e-82af60e2ac84" name="25b10484-3e02-437a-bd83-dc09e4902072" type="radio">
-</input><label class="tabbed-label" for="614336a3-0b8a-4fd0-961e-82af60e2ac84">
+<input id="2b11059d-3a7e-47cf-8092-b385d2259693" name="a55ea661-48a7-458d-81d5-62e49b014a76" type="radio">
+</input><label class="tabbed-label" for="2b11059d-3a7e-47cf-8092-b385d2259693">
 Moving forward..</label><div class="tabbed-content docutils">
 <p><span class="uqblue">Things to Consider</span></p>
 <blockquote>

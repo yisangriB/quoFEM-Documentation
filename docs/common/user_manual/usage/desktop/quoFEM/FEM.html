@@ -123,7 +123,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">3. User Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">3. User Interface</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">3.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. FEM: Finite Element Method</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">3.2.1. OpenSees</a></li>
@@ -139,8 +139,8 @@
 <li class="toctree-l2"><a class="reference internal" href="resQUO.html">3.5. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -204,7 +204,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
+          <li><a href="../usage.html"><span class="section-number">3. </span>User Interface</a> &raquo;</li>
         
       <li><span class="section-number">3.2. </span>FEM: Finite Element Method</li>
     
@@ -436,20 +436,7 @@ the need to explicitly input each one of these files.</p>
 <span id="surrogatefem1"></span><a class="reference internal image-reference" href="../../../../../_images/SurrogateFEM1.png"><img alt="../../../../../_images/SurrogateFEM1.png" src="../../../../../_images/SurrogateFEM1.png" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.5.1 </span><span class="caption-text">Input for Surrogate model FEM Application</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<p>When users select the SurrogateGP option, they are requested to provide the following files:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All the required input files described below can be generated from the quoFEM. See <a class="reference internal" href="../SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Surrogate Modeling</span></a>.</p>
-</div>
-<ol class="arabic simple">
-<li><p><strong>Surrogate info file (.json)</strong>: This file contains the meta-information about the surrogate model. Users can open it with a text editor to see the contents.</p></li>
-<li><p><strong>Surrogate model file (.pkl)</strong>: Surrogate model is saved in a binary format. GPy python package is required to view or use this model outside of quoFEM.</p></li>
-</ol>
-<p>Additionally, if users want to allow alternation between the exact simulation model and surrogate model depending on the predicted error rate, an additional folder that contains the simulation information is required (See <strong>Run Exact FEM Simulation</strong> option below). Note that this folder is not explicitly specified in the input panel, but it needs to be located in the specific directory under the specific name (<code class="docutils literal notranslate"><span class="pre">templatedir_SIM</span></code>).</p>
-<ol class="arabic simple" start="3">
-<li><p><strong>Simulation template folder (templatedir_SIM)</strong>: This folder contains the simulator scripts (workflow driver) and required files to run the original simulation model. <strong>Note that the folder should be located in the same directory as the Surrogate info file</strong>. If the folder is not presented in the right directory, the analysis can fail. The name of the folder should not be modified.</p></li>
-</ol>
-<p>Once the files are loaded, users may choose the tolerance level of the predictive variance.</p>
+<p>When users select the SurrogateGP option, they are requested to provide <strong>Surrogate info file (.json)</strong> that contains the information about the surrogate model. Users can open it with a text editor to see the contents. Once the file is loaded, users may choose the tolerance level of the predictive variance.</p>
 <ul class="simple">
 <li><p><strong>Maximum Allowable Normalized Variance</strong>: Prediction variance divided by the variance level of the training dataset. If more than one QoIs is introduced, only the highest normalized variance value will be considered.</p></li>
 </ul>
@@ -464,8 +451,12 @@ the need to explicitly input each one of these files.</p>
 <ul class="simple">
 <li><p><strong>Stop Analysis</strong>: The analysis is immediately terminated. quoFEM will show the error (eg. dakota engine gives “No dakotaTab.out file” error)</p></li>
 <li><p><strong>Continue</strong>: The tolerance level is ignored and the analysis is continued. This option is not recommended.</p></li>
-<li><p><strong>Run Exact FEM Simulation</strong>: The program will run the exact FEM simulation user provided in the training session. In case the surrogate model is constructed purely based on the data and without any model information (case 3 in section 2.1.2.2), this option will be disabled.</p></li>
+<li><p><strong>Run Exact FEM Simulation</strong>: The program will run the exact FEM simulation user provided in the training session. In case the surrogate model is constructed purely based on the data and without any model information (case 3 in section 2.1.2.2), this option will be disabled. To allow this option, an additional folder that contains the simulation information is required. This folder, called <strong>Simulation template folder (templatedir_SIM)</strong>, contains the simulator scripts (workflow driver) and required files to run the original simulation model. This file can be obtained by</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>surrogate model file (.json)</strong> and <strong>Simulation template folder (templatedir_SIM)</strong> can be generated from the quoFEM. See <a class="reference internal" href="../SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Gaussian Process (GP) Surrogate Modeling</span></a>.</p>
+</div>
 <p>Additionally, <strong>GP output</strong> can be set as either the <em>median prediction</em> or a <em>random sample</em> generated from the normal distribution (or lognormal distribution if the user used log-transform when training) with the predictive median and variance. <strong>NOTE:</strong> the random generator does not account for the Gaussian process correlation, and each realization of QoI given RVs is independent of each other. Only users familiar with GP modeling and who understand the limitation are recommended to use the <em>random sample</em> option.</p>
 <p>If the user wants to inspect the simulation status or check error/warning messages related to the surrogate model, they can refer to the messages written at: <code class="docutils literal notranslate"><span class="pre">{Local</span> <span class="pre">Jobs</span> <span class="pre">Directory}/tmp.SimCenter/surrogateLog.err</span></code>. (Note: <code class="docutils literal notranslate"><span class="pre">{Local</span> <span class="pre">Jobs</span> <span class="pre">Directory}</span></code> is specified from the file-preference in the menu bar.)</p>
 <div class="align-center figure" id="id7">

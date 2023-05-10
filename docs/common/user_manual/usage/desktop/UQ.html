@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.1.2.1. Forward Propagation" href="DakotaSampling.html" />
-    <link rel="prev" title="3. User Guide" href="usage.html" />
+    <link rel="prev" title="3. User Interface" href="usage.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -123,7 +123,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Interface</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. UQ: Uncertainty Quantification</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#uq-features-at-a-glance">3.1.1. UQ Features At-a-Glance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dakota-uq-engine">3.1.2. Dakota UQ Engine</a><ul>
@@ -138,7 +138,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#simcenter-uq-engine">3.1.3. SimCenter UQ Engine</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">3.1.3.1. Forward Propagation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">3.1.3.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">3.1.3.3. Surrogate Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">3.1.3.3. Gaussian Process (GP) Surrogate Modeling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">3.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
 </ul>
 </li>
@@ -158,8 +158,8 @@
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">3.5. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -223,7 +223,7 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">3. </span>User Interface</a> &raquo;</li>
         
       <li><span class="section-number">3.1. </span>UQ: Uncertainty Quantification</li>
     
@@ -247,7 +247,7 @@
   <div class="section" id="uq-uncertainty-quantification">
 <span id="lbluq"></span><h1><span class="section-number">3.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
 <p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel that the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. The <strong>UQ Engine</strong> provides algorithms for solving various types of uncertainty analysis and optimization problems.</p>
-<p>The <strong>UQ Engine</strong> options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM to use their own UQ methods and algorithms in the quoFEM workflow by selecting the CustomUQ option.</p>
+<p>The <strong>UQ Engine</strong> options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM app to use their own UQ methods and algorithms in the quoFEM app workflow by selecting the CustomUQ option.</p>
 <div class="section" id="uq-features-at-a-glance">
 <h2><span class="section-number">3.1.1. </span>UQ Features At-a-Glance<a class="headerlink" href="#uq-features-at-a-glance" title="Permalink to this headline">¶</a></h2>
 <div class="sphinx-bs container-lg pb-3 docutils">
@@ -272,7 +272,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-67dba06d-077b-46bf-ab96-5dd003eb9bf6"
+               data-lightbox="group-fe823346-ae62-4bc4-83af-6949d2ea2052"
                href="../../../../_images/method_forward1.png"
                title=""
                data-title=""
@@ -307,7 +307,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-eff3c508-7864-470e-b066-6d5218cbd79d"
+               data-lightbox="group-51f9e09a-922e-4e2d-bf4e-43faca43414a"
                href="../../../../_images/method_sensitivity1.png"
                title=""
                data-title=""
@@ -341,7 +341,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-597ff437-3c6f-4024-ba9b-02ad43fdb6fc"
+               data-lightbox="group-051ffc39-b1c7-4a97-8bfb-ec355e2abf02"
                href="../../../../_images/method_reliability1.png"
                title=""
                data-title=""
@@ -376,7 +376,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-ef706fe6-b994-438c-96c6-e646a825d40a"
+               data-lightbox="group-2f448b75-ab4b-4059-b742-333c0c858ab5"
                href="../../../../_images/method_Bayesian1.png"
                title=""
                data-title=""
@@ -411,7 +411,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-f0514f97-db78-477e-a287-75748452f72e"
+               data-lightbox="group-e0f4f1fb-a49c-4857-96df-12b65469573b"
                href="../../../../_images/method_deterministic1.png"
                title=""
                data-title=""
@@ -438,7 +438,7 @@
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">▪ <a class="reference internal" href="SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Surrogate Modeling</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0015/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0016/README.html"><span>Example2</span></a></div>
+<div class="line">▪ <a class="reference internal" href="SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Gaussian Process (GP) Surrogate Modeling</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0015/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0016/README.html"><span>Example2</span></a></div>
 <div class="line">▪ <a class="reference internal" href="SimCenterUQPLoM.html#lblsimcenteruqplom"><span class="std std-ref">Probabilistic Learning on Manifolds (PLoM)</span></a> in SimCenterUQ</div>
 </div>
 </div></blockquote>
@@ -446,7 +446,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-6ccae3c5-4ff6-4c25-9af0-088ca5c10247"
+               data-lightbox="group-560d5381-eabd-4cee-b009-ab36e679ac36"
                href="../../../../_images/method_surrogate1.png"
                title=""
                data-title=""
@@ -480,7 +480,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-cb28d6b7-fe67-4396-b025-4055c1138194"
+               data-lightbox="group-d524c288-89b5-4122-ae5f-0f596681bc76"
                href="../../../../_images/method_custom1.png"
                title=""
                data-title=""
@@ -505,9 +505,9 @@
 <li><p>By checking the <code class="docutils literal notranslate"><span class="pre">Parallel</span> <span class="pre">Execution</span></code>, the UQ analysis will be performed in parallel. It will try to use all the processors available in the machine.</p></li>
 <li><p>By checking the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Woring</span> <span class="pre">dirs</span></code>, individual working directories will be saved at Local Jobs Directory. Local Jobs Directory is defined at <code class="docutils literal notranslate"><span class="pre">File</span></code>-<code class="docutils literal notranslate"><span class="pre">Preference</span></code> in the menubar. Otherwise, individual simulation files will be deleted after each simulation run. Users might uncheck this box when a large number of simulations is requested, to manage driver space.</p></li>
 </ul>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id1">
 <span id="figdakota"></span><a class="reference internal image-reference" href="../../../../_images/dakotaUQ.png"><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.2.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.2.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following categories are available:</p>
 <div class="toctree-wrapper compound">
@@ -524,16 +524,16 @@
 <div class="section" id="simcenter-uq-engine">
 <h2><span class="section-number">3.1.3. </span>SimCenter UQ Engine<a class="headerlink" href="#simcenter-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>SimCenterUQ</strong> engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:</p>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id2">
 <span id="figsimcenteruq"></span><a class="reference internal image-reference" href="../../../../_images/SimCenterUQ.png"><img alt="../../../../_images/SimCenterUQ.png" src="../../../../_images/SimCenterUQ.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.3.1 </span><span class="caption-text">SimCenterUQ engine and category selection.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1 </span><span class="caption-text">SimCenterUQ engine and category selection.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following category options are available:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="SimCenterUQSampling.html">3.1.3.1. Forward Propagation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SimCenterUQSensitivity.html">3.1.3.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSurrogate.html">3.1.3.3. Surrogate Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSurrogate.html">3.1.3.3. Gaussian Process (GP) Surrogate Modeling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SimCenterUQPLoM.html">3.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
 </ul>
 </div>
@@ -541,9 +541,9 @@
 <div class="section" id="ucsd-uq-engine">
 <h2><span class="section-number">3.1.4. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>UCSD-UQ</strong> engine is a module developed at the SimCenter in collaboration with UCSD. It provides algorithms for Bayesian estimation, which can be accessed through a pull-down menu, as shown in <a class="reference internal" href="#figucsduq"><span class="std std-numref">Fig. 3.1.4.1</span></a>.</p>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id3">
 <span id="figucsduq"></span><a class="reference internal image-reference" href="../../../../_images/UCSDUQ.png"><img alt="../../../../_images/UCSDUQ.png" src="../../../../_images/UCSDUQ.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.4.1 </span><span class="caption-text">UCSD-UQ engine and category selection.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.4.1 </span><span class="caption-text">UCSD-UQ engine and category selection.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>This module currently offers support for Bayesian estimation using the Transitional Markov chain Monte Carlo (TMCMC) algorithm:</p>
 <div class="toctree-wrapper compound">
@@ -554,11 +554,11 @@
 </div>
 <div class="section" id="custom-uq-engine">
 <h2><span class="section-number">3.1.5. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>CustomUQ</strong> option enables users to switch out the UQ engine in the quoFEM workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
+<p>The <strong>CustomUQ</strong> option enables users to switch out the UQ engine in the quoFEM app workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
 .. _figCustomUQ:</p>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../_images/customUQ.png"><img alt="../../../../_images/customUQ.png" src="../../../../_images/customUQ.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.5.1 </span><span class="caption-text">CustomUQ engine selection.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.5.1 </span><span class="caption-text">CustomUQ engine selection.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>In order to use the CustomUQ engine option, two steps are required:</p>
 <ul class="simple">
