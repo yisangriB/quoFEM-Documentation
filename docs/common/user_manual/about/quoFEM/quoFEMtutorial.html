@@ -51,7 +51,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3. User Guide" href="../../usage/desktop/usage.html" />
+    <link rel="next" title="3. User Interface" href="../../usage/desktop/usage.html" />
     <link rel="prev" title="1.2. Install on macOS 10" href="../../installation/desktop/install_macOS.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -129,9 +129,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#quofem-for-a-python-model-interface">2.2. quoFEM for a Python Model Interface</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">3. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -232,7 +232,7 @@
 </div>
 <div class="section" id="quofem-for-a-python-model-interface">
 <h2><span class="section-number">2.2. </span>quoFEM for a Python Model Interface<a class="headerlink" href="#quofem-for-a-python-model-interface" title="Permalink to this headline">¶</a></h2>
-<p>This tutorial will show how a <strong>deterministic</strong> model written/interfaced in python script can be used for <strong>Uncertainty Quantification</strong> analysis, using an example of global sensitivity analysis.</p>
+<p>This tutorial will show how a <strong>deterministic</strong> model written/interfaced in a python script can be used for <strong>Uncertainty Quantification</strong> analysis, using an example of global sensitivity analysis.</p>
 <ul class="simple">
 <li><p><strong>Step 0</strong>. Prepare a Python Model</p></li>
 <li><p><strong>Step 1</strong>. Modify the Model Script to Define Random Variables and Quantities of Interest</p></li>
@@ -240,8 +240,8 @@
 <li><p><strong>Step 3</strong>. Run quoFEM at DesignSafe</p></li>
 </ul>
 <div class="tabbed-set docutils">
-<input checked="checked" id="43b3deed-dbb4-47e4-9ce0-f198f73d8b8e" name="a8e79580-f392-468c-9aee-948eef1ede6c" type="radio">
-</input><label class="tabbed-label" for="43b3deed-dbb4-47e4-9ce0-f198f73d8b8e">
+<input checked="checked" id="91d0222f-f847-4ff6-b3f1-a5c6b358eb74" name="3d394ba9-7459-4639-a38c-f71db74688d5" type="radio">
+</input><label class="tabbed-label" for="91d0222f-f847-4ff6-b3f1-a5c6b358eb74">
 Step 0</label><div class="tabbed-content docutils">
 <p><span class="uqblue">Step 0. Prepare a Python Model</span></p>
 <blockquote>
@@ -275,7 +275,7 @@ Step 0</label><div class="tabbed-content docutils">
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li><p><span class="sphinx-bs badge badge-primary">Test Your Model</span> Test if the input script <code class="docutils literal notranslate"><span class="pre">ElasticTruss.py</span></code> runs successfully using the commend prompt (Windows) or terminal (Mac). To do this,  navigate into <code class="docutils literal notranslate"><span class="pre">TrussExample</span></code> folder using ‘cd’ command and type the following.</p></li>
+<li><p><span class="sphinx-bs badge badge-primary">Test Your Model</span> Test if the input script <code class="docutils literal notranslate"><span class="pre">ElasticTruss.py</span></code> runs successfully using the command prompt (Windows) or terminal (Mac). To do this,  navigate into <code class="docutils literal notranslate"><span class="pre">TrussExample</span></code> folder using ‘cd’ command and type the following.</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{$PathToPythonExe} ElasticTruss.py</span>
@@ -284,7 +284,7 @@ Step 0</label><div class="tabbed-content docutils">
 <p>where <code class="docutils literal notranslate"><span class="pre">{$PathToPythonExe}</span></code> should be replaced with the python path found in the preference window.</p>
 <div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../_images/step1_preference_default.svg"><img alt="../../../../_images/step1_preference_default.svg" src="../../../../_images/step1_preference_default.svg" width="800" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.2 </span><span class="caption-text">Find the python path in <code class="docutils literal notranslate"><span class="pre">File</span></code>-<code class="docutils literal notranslate"><span class="pre">Preference</span></code> in the manu bar</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.2 </span><span class="caption-text">Find the python path in <code class="docutils literal notranslate"><span class="pre">File</span></code>-<code class="docutils literal notranslate"><span class="pre">Preference</span></code> in the menu bar</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>According to <code class="docutils literal notranslate"><span class="pre">ElasticTruss.py</span></code>, the analysis should print out “Passed!”, meaning the model ran successfully.</p>
 <div class="align-center figure" id="id5">
@@ -297,7 +297,7 @@ Step 0</label><div class="tabbed-content docutils">
 <p>openseespy, numpy and matplotlib libraries are readily available in quoFEM because:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt>Windows</dt><dd><p>quoFEM is bundled with a python executable which have those packages pre-installed. See <a class="reference internal" href="../../usage/desktop/quoFEM/FEM.html#lblfem"><span class="std std-ref">here</span></a>.</p>
+<dt>Windows</dt><dd><p>quoFEM is bundled with a python executable which has those packages pre-installed. See <a class="reference internal" href="../../usage/desktop/quoFEM/FEM.html#lblfem"><span class="std std-ref">here</span></a>.</p>
 </dd>
 </dl>
 </li>
@@ -313,8 +313,8 @@ Step 0</label><div class="tabbed-content docutils">
 </div></blockquote>
 </div></blockquote>
 </div>
-<input id="478826c9-5b82-47b6-911e-1f11909dc028" name="a8e79580-f392-468c-9aee-948eef1ede6c" type="radio">
-</input><label class="tabbed-label" for="478826c9-5b82-47b6-911e-1f11909dc028">
+<input id="a7cc2ca1-9c1c-4f52-bccb-993a3973d703" name="3d394ba9-7459-4639-a38c-f71db74688d5" type="radio">
+</input><label class="tabbed-label" for="a7cc2ca1-9c1c-4f52-bccb-993a3973d703">
 Step 1</label><div class="tabbed-content docutils">
 <p><span class="uqblue">Step 1. Modify the Model Script to Define Random Variables and Quantities of Interest</span></p>
 <blockquote>
@@ -545,8 +545,8 @@ Step 1</label><div class="tabbed-content docutils">
 </div>
 </div></blockquote>
 </div>
-<input id="d1710d1e-6d65-4eff-9f79-90de5091a7cf" name="a8e79580-f392-468c-9aee-948eef1ede6c" type="radio">
-</input><label class="tabbed-label" for="d1710d1e-6d65-4eff-9f79-90de5091a7cf">
+<input id="c822eb55-e0b1-4aa4-803c-5df42a7a650c" name="3d394ba9-7459-4639-a38c-f71db74688d5" type="radio">
+</input><label class="tabbed-label" for="c822eb55-e0b1-4aa4-803c-5df42a7a650c">
 Step 2</label><div class="tabbed-content docutils">
 <p><span class="uqblue">Step 2. Run quoFEM</span></p>
 <blockquote>
@@ -602,10 +602,10 @@ Step 2</label><div class="tabbed-content docutils">
 <a class="reference internal image-reference" href="../../../../_images/step2_QoI.PNG"><img alt="../../../../_images/step2_QoI.PNG" src="../../../../_images/step2_QoI.PNG" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.9 </span><span class="caption-text">EDP Panel</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
-<p>The order should match that written in the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file, and the specified name of QoIs are used only for the display in this example. Please see <a class="reference internal" href="../../usage/desktop/quoFEM/QuantitiesOfInterest.html#lblquo-qoi"><span class="std std-ref">here</span></a> to learn about vector QoIs which have a length greater than 1</p>
+<p>The order should match that written in the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file, and the specified name of QoIs are used only for the display in this example. Please see <a class="reference internal" href="../../usage/desktop/quoFEM/QuantitiesOfInterest.html#lblquo-qoi"><span class="std std-ref">here</span></a> to learn about vector QoIs that have a length greater than 1</p>
 </li>
 </ol>
-<p>When all the fields are filled in, click the <strong>Run</strong> button, and the analysis will be performed. The program will go into “not responding”, but that means quoFEM is busy running the analysis. You can check the progress status in your <strong>Local Working directory</strong> which can be found in the preference window. The number attached to ‘workdir.’ indicates the simulation index, and each folder contains the details for each simulation run.</p>
+<p>When all the fields are filled in, click the <strong>Run</strong> button, and the analysis will be performed. <strong>Do not press the Run button twice</strong> - it will give you an error. You can check the progress status in your <strong>Local Working directory</strong> which can be found in the preference window. The number attached to ‘workdir.’ indicates the simulation index, and each folder contains the details for each simulation run.</p>
 <blockquote>
 <div><div class="align-center figure" id="id12">
 <a class="reference internal image-reference" href="../../../../_images/step2_RES1.PNG"><img alt="../../../../_images/step2_RES1.PNG" src="../../../../_images/step2_RES1.PNG" style="width: 600px;" /></a>
@@ -634,8 +634,8 @@ Step 2</label><div class="tabbed-content docutils">
 </div></blockquote>
 </div></blockquote>
 </div>
-<input id="7e1a450f-477f-4a77-9557-8aca4a15ba5e" name="a8e79580-f392-468c-9aee-948eef1ede6c" type="radio">
-</input><label class="tabbed-label" for="7e1a450f-477f-4a77-9557-8aca4a15ba5e">
+<input id="c3d6968a-4b62-4875-bf7f-645afc9eabf0" name="3d394ba9-7459-4639-a38c-f71db74688d5" type="radio">
+</input><label class="tabbed-label" for="c3d6968a-4b62-4875-bf7f-645afc9eabf0">
 Step 3</label><div class="tabbed-content docutils">
 <p><span class="uqblue">Step 3. Run quoFEM at DesignSafe</span></p>
 <blockquote>
@@ -659,7 +659,7 @@ Step 3</label><div class="tabbed-content docutils">
 <p class="caption"><span class="caption-number">Fig. 2.2.13 </span><span class="caption-text">Login window</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
-<p>If you don’t have the DesignSafe account, you can easily sign up at <a href="https://www.designsafe-ci.org/" target="_blank">DesignSafe</a>.</p>
+<p>If you don’t have a DesignSafe account, you can easily sign up at <a href="https://www.designsafe-ci.org/" target="_blank">DesignSafe</a>.</p>
 <p>Then by clicking <strong>RUN at DesignSafe</strong>, one can specify the job details. Please see <a class="reference internal" href="../../usage/desktop/usage.html#lbl-usage"><span class="std std-ref">here</span></a> for more details on the number of nodes and processors.</p>
 <blockquote>
 <div><div class="align-center figure" id="id16">
@@ -694,8 +694,8 @@ Step 3</label><div class="tabbed-content docutils">
 </div></blockquote>
 </div></blockquote>
 </div>
-<input id="c3d44a0e-4b0e-40a7-a136-e6d3d9962532" name="a8e79580-f392-468c-9aee-948eef1ede6c" type="radio">
-</input><label class="tabbed-label" for="c3d44a0e-4b0e-40a7-a136-e6d3d9962532">
+<input id="d66372b5-7874-46a6-95a3-c3626805d85d" name="3d394ba9-7459-4639-a38c-f71db74688d5" type="radio">
+</input><label class="tabbed-label" for="d66372b5-7874-46a6-95a3-c3626805d85d">
 Moving forward..</label><div class="tabbed-content docutils">
 <p><span class="uqblue">Things to Consider</span></p>
 <blockquote>
@@ -705,7 +705,7 @@ Moving forward..</label><div class="tabbed-content docutils">
 <div><p>On Windows, it is important to install python packages to the correct python executable. Please read <a class="reference internal" href="../../usage/desktop/quoFEM/FEM.html#lblfem"><span class="std std-ref">here</span></a> about pip-installing python packages and changing the python version.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>When running at DesingSafe (e.g. Step 3)</strong>, SimCenter workflow uses its own python executable installed on the cloud computer. Currently, the only supported python packages are those installed through ‘nheri_simcenter’ package. The available list of packages include - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.</p>
+<p><strong>When running at DesingSafe (e.g. Step 3)</strong>, SimCenter workflow uses its own python executable installed on the cloud computer. Currently, the only supported python packages are those installed through ‘nheri_simcenter’ package. The available list of packages includes - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.</p>
 <p>An option to allow user-defined python packages on DesignSafe is under implementation. Meanwhile, if you need to request to use additional python packages, please contact us through <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0">user forum</a>.</p>
 </div>
 </div></blockquote>

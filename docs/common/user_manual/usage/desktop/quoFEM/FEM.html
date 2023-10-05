@@ -123,7 +123,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">3. User Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">3. User Interface</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">3.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. FEM: Finite Element Method</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">3.2.1. OpenSees</a></li>
@@ -131,6 +131,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">3.2.3. FEAPpv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#custom">3.2.4. Custom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#surrogategp">3.2.5. SurrogateGP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multi-model">3.2.6. Multi Model</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../RV.html">3.3. RV: Random Variables</a></li>
@@ -138,8 +139,8 @@
 <li class="toctree-l2"><a class="reference internal" href="resQUO.html">3.5. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -203,7 +204,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
+          <li><a href="../usage.html"><span class="section-number">3. </span>User Interface</a> &raquo;</li>
         
       <li><span class="section-number">3.2. </span>FEM: Finite Element Method</li>
     
@@ -227,14 +228,13 @@
   <div class="section" id="fem-finite-element-method">
 <span id="lblfem"></span><h1><span class="section-number">3.2. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
 <p>The <strong>FEM</strong> tab will present users with a selection of FEM
-applications. Currently, there are four options: OpenSees, Python, FEAPpv,
-and a custom user-specified application.</p>
+applications. Currently, there are six options: OpenSees, Python, FEAPpv, SurrogateGP (using a surrogate model trained in quoFEM in place of a numerical simulation model), Custom (user-specified application), Multi Model (using more than one model in an analysis), along with the option of specifying no simulation model.</p>
 <div class="align-center figure" id="figfem">
 <a class="reference internal image-reference" href="../../../../../_images/FEM1.png"><img alt="../../../../../_images/FEM1.png" src="../../../../../_images/FEM1.png" style="width: 1200px;" /></a>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named <code class="docutils literal notranslate"><span class="pre">results.out</span></code> and be placed in the same directory as the main input file. The <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file must contain a single line. That line must contain as many QoI values as the user will enter in the <strong>QoI</strong> panel. Each value must be separated by a space. An example <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file for a problem specifying four response QoI values is as shown:</p>
+<p>Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named <code class="docutils literal notranslate"><span class="pre">results.out</span></code> and be placed in the same directory as the main input file. The <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file must contain a single line. That line must contain as many QoI values as the sum of the length of all the EDPs defined by the user in the <strong>QoI</strong> panel. Each value must be separated by a space. An example <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file for a problem specifying four response QoI values is as shown:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">63.8314</span> <span class="mf">43.312</span> <span class="mf">0.846004</span> <span class="mf">0.00587503</span> 
 </pre></div>
 </div>
@@ -436,20 +436,7 @@ the need to explicitly input each one of these files.</p>
 <span id="surrogatefem1"></span><a class="reference internal image-reference" href="../../../../../_images/SurrogateFEM1.png"><img alt="../../../../../_images/SurrogateFEM1.png" src="../../../../../_images/SurrogateFEM1.png" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.5.1 </span><span class="caption-text">Input for Surrogate model FEM Application</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<p>When users select the SurrogateGP option, they are requested to provide the following files:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All the required input files described below can be generated from the quoFEM. See <a class="reference internal" href="../SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Surrogate Modeling</span></a>.</p>
-</div>
-<ol class="arabic simple">
-<li><p><strong>Surrogate info file (.json)</strong>: This file contains the meta-information about the surrogate model. Users can open it with a text editor to see the contents.</p></li>
-<li><p><strong>Surrogate model file (.pkl)</strong>: Surrogate model is saved in a binary format. GPy python package is required to view or use this model outside of quoFEM.</p></li>
-</ol>
-<p>Additionally, if users want to allow alternation between the exact simulation model and surrogate model depending on the predicted error rate, an additional folder that contains the simulation information is required (See <strong>Run Exact FEM Simulation</strong> option below). Note that this folder is not explicitly specified in the input panel, but it needs to be located in the specific directory under the specific name (<code class="docutils literal notranslate"><span class="pre">templatedir_SIM</span></code>).</p>
-<ol class="arabic simple" start="3">
-<li><p><strong>Simulation template folder (templatedir_SIM)</strong>: This folder contains the simulator scripts (workflow driver) and required files to run the original simulation model. <strong>Note that the folder should be located in the same directory as the Surrogate info file</strong>. If the folder is not presented in the right directory, the analysis can fail. The name of the folder should not be modified.</p></li>
-</ol>
-<p>Once the files are loaded, users may choose the tolerance level of the predictive variance.</p>
+<p>When users select the SurrogateGP option, they are requested to provide <strong>Surrogate info file (.json)</strong> that contains the information about the surrogate model. Users can open it with a text editor to see the contents. Once the file is loaded, users may choose the tolerance level of the predictive variance.</p>
 <ul class="simple">
 <li><p><strong>Maximum Allowable Normalized Variance</strong>: Prediction variance divided by the variance level of the training dataset. If more than one QoIs is introduced, only the highest normalized variance value will be considered.</p></li>
 </ul>
@@ -464,8 +451,12 @@ the need to explicitly input each one of these files.</p>
 <ul class="simple">
 <li><p><strong>Stop Analysis</strong>: The analysis is immediately terminated. quoFEM will show the error (eg. dakota engine gives “No dakotaTab.out file” error)</p></li>
 <li><p><strong>Continue</strong>: The tolerance level is ignored and the analysis is continued. This option is not recommended.</p></li>
-<li><p><strong>Run Exact FEM Simulation</strong>: The program will run the exact FEM simulation user provided in the training session. In case the surrogate model is constructed purely based on the data and without any model information (case 3 in section 2.1.2.2), this option will be disabled.</p></li>
+<li><p><strong>Run Exact FEM Simulation</strong>: The program will run the exact FEM simulation user provided in the training session. In case the surrogate model is constructed purely based on the data and without any model information (case 3 in section 2.1.2.2), this option will be disabled. To allow this option, an additional folder that contains the simulation information is required. This folder, called <strong>Simulation template folder (templatedir_SIM)</strong>, contains the simulator scripts (workflow driver) and required files to run the original simulation model. This file can be obtained by</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>surrogate model file (.json)</strong> and <strong>Simulation template folder (templatedir_SIM)</strong> can be generated from the quoFEM. See <a class="reference internal" href="../SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Gaussian Process (GP) Surrogate Modeling</span></a>.</p>
+</div>
 <p>Additionally, <strong>GP output</strong> can be set as either the <em>median prediction</em> or a <em>random sample</em> generated from the normal distribution (or lognormal distribution if the user used log-transform when training) with the predictive median and variance. <strong>NOTE:</strong> the random generator does not account for the Gaussian process correlation, and each realization of QoI given RVs is independent of each other. Only users familiar with GP modeling and who understand the limitation are recommended to use the <em>random sample</em> option.</p>
 <p>If the user wants to inspect the simulation status or check error/warning messages related to the surrogate model, they can refer to the messages written at: <code class="docutils literal notranslate"><span class="pre">{Local</span> <span class="pre">Jobs</span> <span class="pre">Directory}/tmp.SimCenter/surrogateLog.err</span></code>. (Note: <code class="docutils literal notranslate"><span class="pre">{Local</span> <span class="pre">Jobs</span> <span class="pre">Directory}</span></code> is specified from the file-preference in the menu bar.)</p>
 <div class="align-center figure" id="id7">
@@ -475,6 +466,23 @@ the need to explicitly input each one of these files.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Once the surrogate model is imported, RV and QoI tab will be auto-populated. Users are allowed to remove some of the QoIs if not interested but may not add new QoIs or modify the names of existing QoIs.</p>
+</div>
+</div>
+<div class="section" id="multi-model">
+<h2><span class="section-number">3.2.6. </span>Multi Model<a class="headerlink" href="#multi-model" title="Permalink to this headline">¶</a></h2>
+<p>By selecting this option, users can define multiple numerical simulation models for use in their UQ analysis. The Add and Remove buttons allow users to control the number of models they want to use in the analysis.</p>
+<div class="align-center figure" id="id8">
+<a class="reference internal image-reference" href="../../../../../_images/multiModel1.png"><img alt="../../../../../_images/multiModel1.png" src="../../../../../_images/multiModel1.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2.6.1 </span><span class="caption-text">Input for Multi Model FEM Application</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>By adding a model, a new tab is created in the FEM panel where users can choose one of the FEM applications described in the sections above and provide the inputs necessary to define the model. Users also need to specify their belief about the credibility of the model in the tab corresponding to that model. The beliefs are expressed as non-negative numerical values. The belief value for each model is defined relative to the other models, and the beliefs do not need to sum to 1.</p>
+<div class="align-center figure" id="id9">
+<a class="reference internal image-reference" href="../../../../../_images/multiModel2.png"><img alt="../../../../../_images/multiModel2.png" src="../../../../../_images/multiModel2.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2.6.2 </span><span class="caption-text">Selecting a FEM application within a model tab</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a Multi Model application is selected, at least 2 models must be defined.</p>
 </div>
 </div>
 </div>

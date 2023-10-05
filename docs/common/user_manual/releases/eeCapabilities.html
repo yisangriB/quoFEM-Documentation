@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cababilities &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>Capabilities &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -121,9 +121,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">3. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -187,7 +187,7 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Cababilities</li>
+      <li>Capabilities</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,9 +206,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cababilities">
-<span id="lbl-capabilities-eeuq"></span><h1>Cababilities<a class="headerlink" href="#cababilities" title="Permalink to this headline">¶</a></h1>
-<p><strong>Version 3.2</strong> of quoFEM app was released <strong>Sept 22</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+  <div class="section" id="capabilities">
+<span id="lbl-capabilities-eeuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
+<p><strong>Version 3.4</strong> of quoFEM app was released <strong>September 29</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="structural-information-model">
 <h2>Structural Information Model<a class="headerlink" href="#structural-information-model" title="Permalink to this headline">¶</a></h2>
 <p>Applications used to specify/select the structural model to be used in analysis.</p>
@@ -216,9 +216,10 @@
 <li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
 <li><p>OpenSees: user-defined OpenSees models</p></li>
 <li><p>Steel Building Model: automating steel frame design and modeling</p></li>
-<li><p>Concrete Building Model: automating concrete moment frame design and modeling`</p></li>
+<li><p>Concrete Building Model: automating concrete moment frame design and modeling</p></li>
 <li><p>MDOF-LU: MDOF shear building model</p></li>
-<li><p><span class="blue">MultiModel (allow multiple combinations of above)</span></p></li>
+<li><p>SurrogateGP: surrogate model trained in EE-UQ</p></li>
+<li><p>Multiple models: selecting multiple structural information models <span class="blue">[&lt;- renaming from Multimodel]</span></p></li>
 </ol>
 </div>
 <div class="section" id="earthquake-motion-event">
@@ -239,6 +240,7 @@
 <ol class="arabic simple">
 <li><p>Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration</p></li>
 <li><p>User Defined: user-specified EDP</p></li>
+<li><p>None: used only for surrogate model-based predictions</p></li>
 </ol>
 </div>
 <div class="section" id="finite-element-application">
@@ -246,7 +248,9 @@
 <p>Applications used to determine the response output parameters given the ground motion and structural model.</p>
 <ol class="arabic simple">
 <li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
-<li><p><span class="blue">MultiModel (allow multiple combinations of above)</span></p></li>
+<li><p>CustomPy-Simulation: user-provided python script`</p></li>
+<li><p>None: used only for surrogate model-based predictions</p></li>
+<li><p>Multiple models: selecting multiple finite element applications <span class="blue">[&lt;- renaming from Multimodel]</span></p></li>
 </ol>
 </div>
 <div class="section" id="uncertainty-quantification">
@@ -266,8 +270,12 @@
 </li>
 <li><p>SimCenterUQ Options</p>
 <ol class="arabic simple">
-<li><p>Monte Carlo Sampling (MCS)
-a. Resample from existing correlated dataset of samples</p></li>
+<li><p>Monte Carlo Sampling (MCS)</p>
+<ol class="loweralpha simple">
+<li><p>Resample from existing correlated dataset of samples</p></li>
+</ol>
+</li>
+<li><p><span class="blue">Multi-fidelity Monte Carlo (MFMC)</span></p></li>
 </ol>
 </li>
 </ol>
@@ -297,10 +305,10 @@ a. Resample from existing correlated dataset of samples</p></li>
 <li><p>Surrogate Modeling</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><p>SimCenterUQ Engine Surrogating Options:</p>
+<li><p>SimCenterUQ Engine Surrogate Options:</p>
 <ol class="arabic simple">
-<li><p>Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</p></li>
-<li><p>blue:<cite>Gaussian process surrogate modeling</cite></p></li>
+<li><p>Probabilistic Learning on Manifolds (PLoM) Surrogate modeling</p></li>
+<li><p>Gaussian Process Surrogate Modeling</p></li>
 </ol>
 </li>
 </ol>

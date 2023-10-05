@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.8. Surrogate Modeling for One Story Building Earthquake Response &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>4.7. Surrogate Modeling for One Story Building Earthquake Response &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="5.9. Surrogate Modeling to Predict Mean and Variance of Earthquake Response" href="../qfem-0016/README.html" />
-    <link rel="prev" title="5.7. Steel Frame: Bayesian Calibration using TMCMC" href="../qfem-0014/README.html" />
+    <link rel="next" title="4.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response" href="../qfem-0016/README.html" />
+    <link rel="prev" title="4.6. Steel Frame: Bayesian Calibration using TMCMC" href="../qfem-0014/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -123,32 +123,32 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">3. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">5. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0001/README.html">5.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0002/README.html">5.2. Forward Propagation - OpenSeesPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0005/README.html">5.3. Basic modeling with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0027/README.html">5.4. Forward propagation of uncertainty with multiple simulation models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">5.5. Steel Frame: Conventional Calibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">5.6. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">5.7. Steel Frame: Bayesian Calibration using TMCMC</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.8. Surrogate Modeling for One Story Building Earthquake Response</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#outline">5.8.1. Outline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#problem-description">5.8.2. Problem description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#input-files">5.8.3. Input files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#uq-workflow">5.8.4. UQ Workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#verification-of-the-surrogate-model">5.8.5. Verification of the Surrogate model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0001/README.html">4.1. Two-Dimensional Truss: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0002/README.html">4.2. Forward Propagation - OpenSeesPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0005/README.html">4.3. Basic modeling with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0007/README.html">4.4. Steel Frame: Conventional Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0009/README.html">4.5. Two-Dimensional Truss: Global Sensitivity Analysis using SimCenterUQ Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0014/README.html">4.6. Steel Frame: Bayesian Calibration using TMCMC</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.7. Surrogate Modeling for One Story Building Earthquake Response</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#outline">4.7.1. Outline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-description">4.7.2. Problem description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-files">4.7.3. Input files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uq-workflow">4.7.4. UQ Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verification-of-the-surrogate-model">4.7.5. Verification of the Surrogate model</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">5.9. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">5.10. Custom UQ for UQpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">5.11. Bayesian Calibration of Material Model Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0022/README.html">5.12. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0023/README.html">5.13. Global Sensitivity Analysis for Field QoI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qfem-0025/README.html">5.14. Heteroscedastic Gaussian Process modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0016/README.html">4.8. Surrogate Modeling to Predict Mean and Variance of Earthquake Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0017/README.html">4.9. Custom UQ for UQpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0019/README.html">4.10. Bayesian Calibration of Material Model Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0022/README.html">4.11. Two-Dimensional Truss: PLoM Modeling and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0023/README.html">4.12. Global Sensitivity Analysis for Field QoI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0025/README.html">4.13. Heteroscedastic Gaussian Process modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qfem-0027/README.html">4.14. Forward propagation of uncertainty with multiple simulation models</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -212,9 +212,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../examples.html"><span class="section-number">5. </span>Examples</a> &raquo;</li>
+          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">5.8. </span>Surrogate Modeling for One Story Building Earthquake Response</li>
+      <li><span class="section-number">4.7. </span>Surrogate Modeling for One Story Building Earthquake Response</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -234,7 +234,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="surrogate-modeling-for-one-story-building-earthquake-response">
-<span id="qfem-0015"></span><h1><span class="section-number">5.8. </span>Surrogate Modeling for One Story Building Earthquake Response<a class="headerlink" href="#surrogate-modeling-for-one-story-building-earthquake-response" title="Permalink to this headline">¶</a></h1>
+<span id="qfem-0015"></span><h1><span class="section-number">4.7. </span>Surrogate Modeling for One Story Building Earthquake Response<a class="headerlink" href="#surrogate-modeling-for-one-story-building-earthquake-response" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 28%" />
@@ -251,11 +251,11 @@
 <p>This example may run up to 20 minutes depending on the computer performance. For a quick test run, the user may want to reduce the <strong>Max Computation Time</strong> or <strong>Max Number of model Runs</strong>.</p>
 </div>
 <div class="section" id="outline">
-<h2><span class="section-number">5.8.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
 <p>This example constructs a Gaussian process-based surrogate model for the response of a building structure given a ground motion time history. We are interested in the maximum inter-story drift/acceleration response determined in 14 structural parameters.</p>
 <div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../../../../../_images/SUR-Concept.PNG"><img alt="../../../../../_images/SUR-Concept.PNG" src="../../../../../_images/SUR-Concept.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.8.1.1 </span><span class="caption-text">Conceptual illustration of surrogate modeling</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.7.1.1 </span><span class="caption-text">Conceptual illustration of surrogate modeling</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The building model based on the work described in <a class="reference internal" href="#zou2020" id="id1"><span>[Zou2020]</span></a>.</p>
 <dl class="citation">
@@ -265,7 +265,7 @@
 </dl>
 </div>
 <div class="section" id="problem-description">
-<h2><span class="section-number">5.8.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
 <p>The structure (<a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0015/src/CWH.py">single story building with a cripple wall</a>) has the following uncertain properties:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -344,7 +344,7 @@
 </div>
 </div>
 <div class="section" id="input-files">
-<h2><span class="section-number">5.8.3. </span>Input files<a class="headerlink" href="#input-files" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7.3. </span>Input files<a class="headerlink" href="#input-files" title="Permalink to this headline">¶</a></h2>
 <p>Once the user selects OpenSeesPy as FEM applications, below three fields are requested.</p>
 <ol class="arabic simple">
 <li><p><strong>Input Script</strong> - <code class="docutils literal notranslate"><span class="pre">CWH.py</span></code>: This file is the main Python script that builds the model and runs the analysis. It is supplied to the Input Script field of the FEM tab. Because this file writes directly to results.out, it obviates the need for supplying a post-process script.</p></li>
@@ -354,7 +354,7 @@
 <p><strong>The other subsidiary scripts (including ground motion time history) are stored in the same directory of the main input script.</strong></p>
 </div>
 <div class="section" id="uq-workflow">
-<h2><span class="section-number">5.8.4. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7.4. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Start the application, and the <strong>UQ</strong> Selection will be highlighted. Change the UQ Engine to <strong>SimCenterUQ</strong> and the Method Category to <strong>Training GP Surrogate Model</strong>. Since the model is provided, the Training Dataset will be obtained by <strong>Sampling and Simulation</strong>. Default settings are used for the advanced options.</p></li>
 </ol>
@@ -431,7 +431,7 @@
 <p>Users may want to perform additional simulations in a similar way.</p>
 </div>
 <div class="section" id="verification-of-the-surrogate-model">
-<h2><span class="section-number">5.8.5. </span>Verification of the Surrogate model<a class="headerlink" href="#verification-of-the-surrogate-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7.5. </span>Verification of the Surrogate model<a class="headerlink" href="#verification-of-the-surrogate-model" title="Permalink to this headline">¶</a></h2>
 <p>Once surrogate model is constructed, it can be used for various UQ/optimization applications. Here we perform a simple forward analysis to verify the constructed surrogate model.</p>
 <ol class="arabic simple">
 <li><p>The constructed surrogate model can be saved by <strong>Save GP Model</strong> button. Two files and a folder will be saved which are <strong>SurroateGP Info File</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code>), <strong>SurroateGP model file</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code>) and <strong>Simulation template directory</strong> which contains the simulation model information (<code class="docutils literal notranslate"><span class="pre">templatedir_SIM</span></code>).</p></li>

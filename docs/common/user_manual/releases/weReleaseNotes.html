@@ -121,9 +121,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">3. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -207,86 +207,85 @@
            <div itemprop="articleBody">
             
   <div class="section" id="release-notes">
-<span id="lbl-release-quofem"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="major-version-2">
-<h2>Major Version 2<a class="headerlink" href="#major-version-2" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><details class="sphinx-bs dropdown card mb-3" open="open">
-<summary class="summary-title card-header">
-Version 2.3.0 (<span class="blue">Current</span>)<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> March. 2023</p>
-<dl class="simple">
-<dt><strong>Highlights</strong></dt><dd><ol class="arabic simple">
-<li><p class="card-text">New Digital Twin Event</p></li>
-<li><p class="card-text">New UQ options for sampling, sensitivity, reliability</p></li>
-<li><p class="card-text">Updated FEM analysis options</p></li>
-<li><p class="card-text">TInF modified so no converted negative length scales during OpenFOAM run</p></li>
-<li><p class="card-text">Minor bug fixes</p></li>
+<span id="lbl-release-weuq"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-3-0-current">
+<h2>Version 3.0 (Current)<a class="headerlink" href="#version-3-0-current" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> July. 2023</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p><strong>New CFD-based event for wind load evaluation</strong>:</p></li>
 </ol>
-</dd>
-</dl>
-</div>
-</details><details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Version 2.2.0<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> March. 2023</p>
-<p class="card-text">Highlights</p>
 <blockquote>
-<div><ol class="arabic simple">
-<li><p class="card-text">Initial Digital Twin</p></li>
-<li><p class="card-text">Updated UQ methods for Sampling, Sensitivity, Reliability</p></li>
-<li><p class="card-text">Modification to TInF to remove negative scaling factors if appear during OpenFOAM simulation</p></li>
-<li><p class="card-text">Minor bug fixes</p></li>
+<div><ol class="loweralpha simple">
+<li><p>Implemented CFD modeling option for generic isolated rectangular buildings.</p></li>
+<li><p>Added advanced feature for boundary condition specification including inflow and ground roughness representation.</p></li>
+<li><p>Supports automated monitoring of integrated and cladding loads on the study building.</p></li>
+<li><p>Supports different turbulence modeling options including Large-Eddy Simulation (LES), Reynolds-Averaged Navier-Stokes (RANS) and Detached-Eddy Simulation (DES).</p></li>
+<li><p>Updated solver selection (with PISO, SIMPLE and PIMPLE algorithms) and added new controls for numerical setup.</p></li>
+<li><p>Included support for different OpenFOAM distributions starting from v7 up to v10.</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><strong>Improved GUI design</strong></p></li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Implemented user-friendly GUI support for creating the CFD model</p></li>
+<li><p>Added a new 3D model visualization window using Visualization Toolkit (VTK)</p></li>
+<li><p>Supports reading and writing of the case files to the user’s local machine</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p><strong>Automated mesh generation</strong></p></li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Integrated automated mesh generation workflow with several refinement controls.</p></li>
+<li><p>Added option to generate mesh on the user’s local machine.</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p><strong>Examples</strong></p></li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Added a new CFD example to demonstrate the recently added features with uncertainty quantification.</p></li>
 </ol>
 </div></blockquote>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Version 2.0.0<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> September. 2019</p>
-<p class="card-text">Highlights</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p class="card-text">Nnew UQ features</p></li>
-<li><p class="card-text">added the CWE interface to the tool to aid beginners perform CFD simulations</p></li>
-<li><p class="card-text">integrate with wind tunnel datasets</p></li>
-<li><p class="card-text">Updated example files</p></li>
+<div class="section" id="version-2-3">
+<h2>Version 2.3<a class="headerlink" href="#version-2-3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> March. 2022</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>New Digital Wind Tunnel Event</p></li>
+<li><p>New UQ options for sampling, sensitivity, reliability</p></li>
+<li><p>Updated FEM analysis options</p></li>
+<li><p>Updated TInF to avoid negative length scales during OpenFOAM run</p></li>
+<li><p>Minor bug fixes</p></li>
 </ol>
-</div></blockquote>
 </div>
-</details></div></blockquote>
-</div>
-<div class="section" id="major-version-1">
-<h2>Major Version 1<a class="headerlink" href="#major-version-1" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Version 1.0.0<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> July. 2019</p>
-<p class="card-text">Highlights</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p class="card-text">Initial Release include DEDM_HRP, Stochastic Wind, Expert CFD, and Existing Wind Event applications</p></li>
+<div class="section" id="version-2-0">
+<h2>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> September. 2019</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>Added new UQ features</p></li>
+<li><p>Added the CWE interface to the tool to aid beginners in performing CFD simulations</p></li>
+<li><p>Integrated with wind tunnel datasets</p></li>
+<li><p>Updated example files</p></li>
 </ol>
-</div></blockquote>
 </div>
-</details></div></blockquote>
+<div class="section" id="version-1-0-first-release">
+<h2>Version 1.0 (First Release)<a class="headerlink" href="#version-1-0-first-release" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> July. 2019</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>High-Rise with Pressure Database (DEDM_HRP)</p></li>
+<li><p>Stochastic Wind Load Generator</p></li>
+<li><p>Expert CFD Simulation Option</p></li>
+<li><p>Selection from Existing Wind Event applications</p></li>
+</ol>
 </div>
 </div>
 

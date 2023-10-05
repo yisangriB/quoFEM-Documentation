@@ -50,7 +50,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.3.3. Surrogate Modeling" href="SimCenterUQSurrogate.html" />
+    <link rel="next" title="3.1.3.3. Gaussian Process (GP) Surrogate Modeling" href="SimCenterUQSurrogate.html" />
     <link rel="prev" title="3.1.3.1. Forward Propagation" href="SimCenterUQSampling.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -124,17 +124,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Interface</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="UQ.html">3.1. UQ: Uncertainty Quantification</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#uq-features-at-a-glance">3.1.1. UQ Features At-a-Glance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">3.1.2. Dakota UQ Engine</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="UQ.html#simcenter-uq-engine">3.1.3. SimCenter UQ Engine</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">3.1.3.1. Forward Propagation</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.2. Global Sensitivity Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">3.1.3.3. Surrogate Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">3.1.3.3. Gaussian Process (GP) Surrogate Modeling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">3.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">3.1.4. UCSD UQ Engine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">3.1.5. Custom UQ Engine</a></li>
 </ul>
 </li>
@@ -144,8 +145,8 @@
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">3.5. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -209,7 +210,7 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">3. </span>User Interface</a> &raquo;</li>
         
           <li><a href="UQ.html"><span class="section-number">3.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
         
@@ -234,8 +235,8 @@
             
   <div class="section" id="global-sensitivity-analysis">
 <span id="lblsimsensitivity"></span><h1><span class="section-number">3.1.3.2. </span>Global Sensitivity Analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this headline">¶</a></h1>
-<p>Global sensitivity analysis is used to quantify contribution of each input variable to the uncertainty in the quantities of interest (QoI). Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. Global sensitivity analysis helps users to understand the overall impact of different sources of uncertainties and their intersections, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables. This can also be useful identifying the input variables for which extra experimentation/research may be useful in reducing the uncertainty in the initial specification.</p>
-<p><strong>Sobol indices</strong> are widely used variance-based global sensitivity measures which has two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interaction effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account. <strong>Please read</strong> <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical"><span class="std std-ref">HERE</span></a> <strong>for more details on the equations and implemented algorithms</strong>.</p>
+<p>Global sensitivity analysis is used to quantify the contribution of each input variable to the uncertainty in the quantities of interest (QoI). Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. Global sensitivity analysis helps users to understand the overall impact of different sources of uncertainties and their intersections, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables. This can also be useful in identifying the input variables for which extra experimentation/research may be useful in reducing the uncertainty in the initial specification.</p>
+<p><strong>Sobol indices</strong> are widely used variance-based global sensitivity measures which have two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering the interaction effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account. <strong>Please read</strong> <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical"><span class="std std-ref">HERE</span></a> <strong>for more details on the equations and implemented algorithms</strong>.</p>
 <div class="section" id="algorithm">
 <h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h2>
 <p>In the SimCenterUQ engine, sensitivity indices are estimated by <strong>Gaussian mixture model-based probability distribution approximation</strong> method presented in Hu and Mahadevan (2019) <a class="reference internal" href="#hu19" id="id1"><span>[Hu19]</span></a>. To run this sensitivity analysis, the user has to specify the number of samples and a random seed. The method can handle correlated random variables as well.</p>
@@ -243,16 +244,16 @@
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>When a constant variable is defined, the sensitivity analysis algorithm will ignore the variable.</p></li>
-<li><p>If “NaN” is written in the FEM output script (<cite>results.out</cite>) instead of a number SimCenterUQ engine will exclude this samples from the sensitivity analysis. This may be useful when one wants to get ‘conditional’ sensitivity indices, i.e. conditional to non-NaN cases.</p></li>
+<li><p>If “NaN” is written in the FEM output script (<cite>results.out</cite>) instead of a number SimCenterUQ engine will exclude these samples from the sensitivity analysis. This may be useful when one wants to get ‘conditional’ sensitivity indices, i.e. conditional to non-NaN cases.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="sample-generation">
 <h2>Sample Generation<a class="headerlink" href="#sample-generation" title="Permalink to this headline">¶</a></h2>
-<p>Performing sensitivity analysis requires Monte Calro Samples. This can be either generated by quoFEM or imported from  separate data files.</p>
+<p>Performing sensitivity analysis requires Monte Carlo Samples. This can be either generated by quoFEM or imported from separate data files.</p>
 <blockquote>
 <div><ul>
-<li><p><strong>Monte Carlo</strong>: quoFEM app will randomly generate the samples of RVs, evaluate model to get the samples of QoIs, and perform sensitivity analysis</p>
+<li><p><strong>Monte Carlo</strong>: quoFEM app will randomly generate the samples of RVs, evaluate the model to get the samples of QoIs, and perform sensitivity analysis</p>
 <blockquote>
 <div><div class="align-center figure" id="id4">
 <span id="figsimsensitivity"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity1.png"><img alt="../../../../_images/Sensitivity1.png" src="../../../../_images/Sensitivity1.png" style="width: 1200px;" /></a>
@@ -260,7 +261,7 @@
 </div>
 <ul class="simple">
 <li><p>Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.</p></li>
-<li><p><strong>Resample RVs from correlated dataset</strong> is explaned <a class="reference internal" href="SimCenterUQSampling.html#lblsimforward"><span class="std std-ref">HERE</span></a></p></li>
+<li><p><strong>Resample RVs from correlated dataset</strong> is explained <a class="reference internal" href="SimCenterUQSampling.html#lblsimforward"><span class="std std-ref">HERE</span></a></p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -271,16 +272,16 @@
 <p class="caption"><span class="caption-number">Fig. 3.1.3.2.2 </span><span class="caption-text">Sensitivity analysis input panel (Import Dataset).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
-<li><p>The directory to input and output dataset needs to be provided. The dataset can either be comma/tab-separated file, or binary file.</p></li>
-<li><p><strong>Comma or tab separated file (.csv or .txt)</strong></p>
+<li><p>The directory to input and output dataset needs to be provided. The dataset can either be comma/tab-separated file or binary file.</p></li>
+<li><p><strong>Comma- or tab-separated file (.csv or .txt)</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Each text file is a numeric table with the columns separated by a tab, space, or comma. Multiple headers can be presented following the symbol %.</p></li>
+<li><p>Each text file is a numeric table with columns separated by a tab, space, or comma. Multiple headers can be presented following the symbol %.</p></li>
 <li><p>The number of rows corresponds to the number of training data samples.</p></li>
-<li><p>Train Points (Input): The number of columns should match the number of RVs presented in the <strong>RV tab</strong> and also match with required inputs of the simulation model provided in the <strong>FEM tab</strong>. <strong>The order of the columns should match thoses of the random variables presented in the RV tab</strong></p></li>
+<li><p>Train Points (Input): The number of columns should match the number of RVs presented in the <strong>RV tab</strong> and also match the required inputs of the simulation model provided in the <strong>FEM tab</strong>. <strong>The order of the columns should match those of the random variables presented in the RV tab</strong></p></li>
 <li><p>System Responses (Output): The number of columns and the order of columns should match the QoI quantities presented in <strong>QoI tab</strong>.</p></li>
 <li><p>Both files need to be provided, and the number of columns for the two files should be the same.</p></li>
-<li><p>See <a class="reference internal" href="SimCenterUQSurrogate.html#figsim4"><span class="std std-numref">Fig. 3.1.3.3.4</span></a> for example input data sheets.</p></li>
+<li><p>See <a class="reference internal" href="SimCenterUQSurrogate.html#figsim4"><span class="std std-numref">Fig. 3.1.3.3.5</span></a> for example input data sheets.</p></li>
 </ul>
 <div class="align-center figure" id="id6">
 <span id="figsim4"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate4_SimUQ.jpg"><img alt="../../../../_images/Surrogate4_SimUQ.jpg" src="../../../../_images/Surrogate4_SimUQ.jpg" style="width: 800px;" /></a>
@@ -329,13 +330,13 @@
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>When multiple outputs are considered, global sensitivity analysis is performed separately for each QoI, but the base Monte Carlo samples are can be re-used for different QoIs.</p></li>
-<li><p>When random variables defined in <strong>RV</strong> tab is not exhaustive, i.e. if the model contains <em>unexplained</em> randomness, total Sobol index value may be underestimated by omitting the interaction with the missing variables.</p></li>
+<li><p>When random variables defined in <strong>RV</strong> tab are not exhaustive, i.e. if the model contains <em>unexplained</em> randomness, the total Sobol index value may be underestimated by omitting the interaction with the missing variables.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="principal-component-analysis-pca-with-qoi">
 <h2>Principal Component Analysis (PCA) with QoI<a class="headerlink" href="#principal-component-analysis-pca-with-qoi" title="Permalink to this headline">¶</a></h2>
-<p>When the number of the quantity of interests (QoI) exceeds 15, quoFEM, by default, performs <strong>principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)</strong>. The user can otherwise manually specify the option by selecting either <code class="docutils literal notranslate"><span class="pre">Yes</span></code> or <code class="docutils literal notranslate"><span class="pre">No</span></code>. If <code class="docutils literal notranslate"><span class="pre">Yes</span></code> is selected, the user can also provide the <code class="docutils literal notranslate"><span class="pre">potion</span> <span class="pre">of</span> <span class="pre">variance</span> <span class="pre">explained</span></code> in range of 0 and 1.0. As this value gets close to 1, the accuracy of the approximation improves while the computational demand also increases. Note that when 1.0 is selected, dimension will not be reduced. The default value is 0.99. We do not recommend using a value lower than 0.99 unless the user thoroughly understands its consequence.</p>
+<p>When the number of the quantity of interests (QoI) exceeds 15, quoFEM, by default, performs <strong>principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)</strong>. The user can otherwise manually specify the option by selecting either <code class="docutils literal notranslate"><span class="pre">Yes</span></code> or <code class="docutils literal notranslate"><span class="pre">No</span></code>. If <code class="docutils literal notranslate"><span class="pre">Yes</span></code> is selected, the user can also provide the <code class="docutils literal notranslate"><span class="pre">potion</span> <span class="pre">of</span> <span class="pre">variance</span> <span class="pre">explained</span></code> in the range of 0 and 1.0. As this value gets close to 1, the accuracy of the approximation improves while the computational demand also increases. Note that when 1.0 is selected, the dimension will not be reduced. The default value is 0.99. We do not recommend using a value lower than 0.99 unless the user thoroughly understands its consequences.</p>
 <div class="align-center figure" id="id9">
 <span id="figsimsensitivity4"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity3.png"><img alt="../../../../_images/Sensitivity3.png" src="../../../../_images/Sensitivity3.png" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.2.5 </span><span class="caption-text">Principal Component Analysis</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>

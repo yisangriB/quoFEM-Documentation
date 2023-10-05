@@ -121,9 +121,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">3. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -208,13 +208,13 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-weuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
-<p><strong>Version 2.3.0</strong> of quoFEM app was released <strong>Feb 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p><strong>Version 3.0.0</strong> of quoFEM app was released <strong>July 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="structural-information-model">
 <h2>Structural Information Model<a class="headerlink" href="#structural-information-model" title="Permalink to this headline">¶</a></h2>
-<p>Applications used to specify/select the structural model to be used in analysis.</p>
+<p>Applications used to specify/select the structural model to be used in the analysis.</p>
 <ol class="arabic simple">
 <li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
-<li><p>MDOF-LU: auto generated multi-degree-of-freedom model</p></li>
+<li><p>MDOF-LU: auto-generated multi-degree-of-freedom model</p></li>
 <li><p>OpenSees: user-defined OpenSees models</p></li>
 <li><p>CustomPy: user-defined OpenSees models</p></li>
 </ol>
@@ -224,19 +224,19 @@
 <p>Applications used to specify/select wind loading for the structure.</p>
 <ol class="arabic simple">
 <li><p>Stochastic Wind: simulating stochastic wind speed using spectral method</p></li>
-<li><p>CFD-Basic: generating CFD model for beginners with limited control options</p></li>
-<li><p>CFD-Expert: generating CFD model for advanced with several control options</p></li>
-<li><p><span class="blue">CFD-Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel</span></p></li>
-<li><p>DEDM_HRP: database-enabled design framework based on wind-tunnel data for high rise buildings</p></li>
+<li><p>CFD-Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel</p></li>
+<li><p><span class="blue">CFD-Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings</span></p></li>
+<li><p>DEDM_HRP: database-enabled design framework based on wind-tunnel data for high-rise buildings</p></li>
 <li><p>LowRiseTPU: extracting aerodynamics loads based on TPU database for low-rise buildings</p></li>
 <li><p>Wind Tunnel Experiment: uses pressure tap measurements from building in wind tunnel experiment</p></li>
+<li><p>Existing: User-supplied time-varying floor loads</p></li>
 </ol>
 </div>
 <div class="section" id="engineering-demand-parameter-generator">
 <h2>Engineering Demand Parameter Generator<a class="headerlink" href="#engineering-demand-parameter-generator" title="Permalink to this headline">¶</a></h2>
 <p>Applications to identify the output parameters of interest given the wind loading and the structural model.</p>
 <ol class="arabic simple">
-<li><p>Standard Wind: (servicibility) inter story drift ratio, peak floor acceleration</p></li>
+<li><p>Standard Wind: (serviceability) inter-story drift ratio, peak floor acceleration</p></li>
 <li><p>User Defined: user-specified EDP</p></li>
 </ol>
 </div>
@@ -245,7 +245,7 @@
 <p>Applications used to determine the response output parameters given the ground motion and structural model.</p>
 <ol class="arabic simple">
 <li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
-<li><p>CustomPy: Any user supplied python application can be incorprated</p></li>
+<li><p>CustomPy: Any user-supplied Python application can be incorporated</p></li>
 </ol>
 </div>
 <div class="section" id="uncertainty-quantification">
@@ -265,11 +265,8 @@
 </li>
 <li><p>SimCenterUQ Options</p>
 <ol class="arabic simple">
-<li><p>Monte Carlo Sampling (MCS)</p>
-<ol class="loweralpha simple">
-<li><p>Resample from existing correlated dataset of samples</p></li>
-</ol>
-</li>
+<li><p>Monte Carlo Sampling (MCS)
+a. Resample from an existing correlated dataset of samples</p></li>
 </ol>
 </li>
 </ol>
@@ -299,7 +296,7 @@
 <li><p>Surrogate Modeling</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><p>SimCenterUQ Engine Surrogating Options:</p>
+<li><p>SimCenterUQ Engine Surrogate Options:</p>
 <ol class="arabic simple">
 <li><p>Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</p></li>
 </ol>

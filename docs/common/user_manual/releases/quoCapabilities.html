@@ -130,9 +130,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">3. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
@@ -217,7 +217,7 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-quofem"></span><h1><span class="section-number">5. </span>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
-<p>Version 3.3 of the quoFEM app was released in <strong>March 30</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p>Version 3.4 of the quoFEM app was released on <strong>October 2, 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="uq-uncertainty-quantification-and-optimization-options">
 <h2><span class="section-number">5.1. </span>UQ (Uncertainty Quantification and Optimization Options)<a class="headerlink" href="#uq-uncertainty-quantification-and-optimization-options" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
@@ -236,9 +236,10 @@
 <ol class="arabic simple">
 <li><p>Monte Carlo Sampling (MCS)</p>
 <ol class="loweralpha simple">
-<li><p>Resample from existing correlated dataset of samples</p></li>
+<li><p>Resample from the existing correlated dataset of samples</p></li>
 </ol>
 </li>
+<li><p><span class="blue">Multi-fidelity Monte Calro</span></p></li>
 </ol>
 </li>
 </ol>
@@ -275,7 +276,7 @@
 <div><ol class="upperalpha simple">
 <li><p><a class="reference internal" href="../usage/desktop/DakotaReliability.html#lbldakotareliability"><span class="std std-ref">Dakota</span></a></p>
 <ol class="arabic simple">
-<li><p>Local Reliability <span class="blue">[← minor bug fix]</span></p></li>
+<li><p>Local Reliability</p></li>
 <li><p>Global Reliability</p></li>
 <li><p>Importance Sampling</p></li>
 </ol>
@@ -283,7 +284,7 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p>Bayesian Calibration <span class="blue">[← minor bug fix]</span></p>
+<li><p>Bayesian Calibration</p>
 <blockquote>
 <div><ol class="upperalpha simple">
 <li><p><a class="reference internal" href="../usage/desktop/DakotaBayesianCalibration.html#lbldakotabayesiancalibration"><span class="std std-ref">Dakota</span></a></p>
@@ -326,9 +327,9 @@
 <li><p><a class="reference internal" href="../usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Train Gaussian Process (GP) Surrogate Model</span></a></p>
 <ol class="loweralpha simple">
 <li><p>Multifidelity surrogate modeling</p></li>
-<li><p>Adaptive design of experiments options for surrogate modeling</p></li>
+<li><p>Adaptive design of experiment options for surrogate modeling</p></li>
 <li><p>Nugget optimization options for surrogate modeling</p></li>
-<li><p>Stochastic Kriging <span class="blue">[← new option for ‘no replications’]</span></p></li>
+<li><p>Stochastic Kriging</p></li>
 </ol>
 </li>
 <li><p><a class="reference internal" href="../usage/desktop/SimCenterUQPLoM.html#lblsimcenteruqplom"><span class="std std-ref">Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</span></a> *</p></li>
@@ -357,9 +358,9 @@
 <li><p>FEAPpv</p></li>
 <li><p>Python</p></li>
 <li><p>Custom</p></li>
-<li><p>SurrogateGP  <span class="blue">[← simplified user interface]</span></p></li>
+<li><p>SurrogateGP</p></li>
 <li><p>None</p></li>
-<li><p><span class="blue">Multi model</span></p></li>
+<li><p>Multiple models</p></li>
 </ol>
 </div>
 <div class="section" id="rv-random-variable-options">
@@ -413,14 +414,14 @@
 <li><p>All output values presented in spreadsheet</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><p>Update chart by clicking on spreadsheet columns</p></li>
+<li><p>Update the chart by clicking on spreadsheet columns</p></li>
 </ol>
 </div></blockquote>
 </li>
-<li><p>Output values visualized in interactive chart</p>
+<li><p>Output values visualized in the interactive chart</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><p>Scatter plot  <span class="blue">[← display of correlation coefficient]</span></p></li>
+<li><p>Scatter plot</p></li>
 <li><p>Histogram</p></li>
 <li><p>Cumulative distribution</p></li>
 <li><p>Inspect points on chart</p></li>
@@ -443,7 +444,7 @@
 <div><ol class="upperalpha simple">
 <li><p>Goodness-of-fit measures</p></li>
 <li><p>90% confidence interval and prediction interval</p></li>
-<li><p>Save GP model <span class="blue">[← simplified surrogate model file]</span></p></li>
+<li><p>Save GP model</p></li>
 </ol>
 </div></blockquote>
 </li>
