@@ -137,6 +137,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">3.1.4. UCSD UQ Engine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#custom-uq-engine">3.1.5. Custom UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#video-resources">3.1.6. Video Resources</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/FEM.html">3.2. FEM: Finite Element Method</a></li>
@@ -150,6 +151,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -255,19 +262,19 @@
 <p>Any correlation values for this coupled datasets <strong>additionally specified in the RV tab</strong> will be <strong>ignored</strong>. Note that the correlation of the data is already reflected in the analysis by introducing the same resampling index.</p>
 </div>
 <p>For example, consider the case where two variables <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> are provided as 10 discrete data points in the RV tab as in <a class="reference internal" href="#figsimsamp4"><span class="std std-numref">Fig. 3.1.3.1.1</span></a>.</p>
-<div class="align-center figure" id="id1">
+<div class="align-center figure" id="id3">
 <span id="figsimsamp4"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling4.png"><img alt="../../../../_images/SimUQ_sampling4.png" src="../../../../_images/SimUQ_sampling4.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.3.1.1 </span><span class="caption-text">Example RV tab. The RVs <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> have the same sample size when they are specified to be coupled as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figSimSamp3</span></code>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1.1 </span><span class="caption-text">Example RV tab. The RVs <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> have the same sample size when they are specified to be coupled as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figSimSamp3</span></code>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Below is an example of 100 realizations of the two variables when they are considered to be <em>independent</em>, i.e. without checking the “Resample RVs from correlated dataset” option.</p>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id4">
 <span id="figsimsamp1"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling2.png"><img alt="../../../../_images/SimUQ_sampling2.png" src="../../../../_images/SimUQ_sampling2.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.3.1.2 </span><span class="caption-text">Example of correlated samples (when the “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1.2 </span><span class="caption-text">Example of correlated samples (when the “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>On the other hand, if the two datasets are considered correlated, i.e. if “Resample RVs from correlated dataset” are checked and the group {w,wR} is reported in the field as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figSimSamp3</span></code>, 100 realization pairs of the RVs will be stacked on top of the provided 10 data points.</p>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id5">
 <span id="figsimsamp2"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling1.png"><img alt="../../../../_images/SimUQ_sampling1.png" src="../../../../_images/SimUQ_sampling1.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.3.1.3 </span><span class="caption-text">Example of uncorrelated samples (when the “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1.3 </span><span class="caption-text">Example of uncorrelated samples (when the “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>This feature is especially useful when the user wants to perform a forward UQ analysis directly using the posterior samples obtained from Markov Chain Monte Carlo or other Bayesian sampling approaches.</p>
 <div class="admonition tip">
@@ -282,9 +289,9 @@
 <div class="section" id="multi-fidelity-monte-carlo">
 <span id="lblsimforwardmf"></span><h3>Multi-fidelity Monte Carlo<a class="headerlink" href="#multi-fidelity-monte-carlo" title="Permalink to this headline">¶</a></h3>
 <p>SimCenter UQ supports a multi-fidelity Monte Carlo option, where the user can import both high-fidelity and low-fidelity simulation models to estimate the statistics of high-fidelity models. See more information in the technical manual.</p>
-<div class="align-center figure" id="id4">
-<a class="reference internal image-reference" href="../../../../_images/Sampling_MF1.png"><img alt="../../../../_images/Sampling_MF1.png" src="../../../../_images/Sampling_MF1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.3.1.4 </span><span class="caption-text">Multi-fidelity Monte Carlo</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<div class="align-center figure" id="id6">
+<a class="reference internal image-reference" href="../../../../_images/Sampling_MF1.png"><img alt="../../../../_images/Sampling_MF1.png" src="../../../../_images/Sampling_MF1.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1.4 </span><span class="caption-text">Multi-fidelity Monte Carlo</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>The users should define <strong>Max Computation time</strong> and <strong>Seed</strong></p>
 <ul class="simple">
@@ -292,9 +299,9 @@
 <li><p><strong>Seed</strong>: a positive integer that is used to reproduce the exact sequence of the pseudo-random number generator. The seed is to ensure the reproducibility of the results.</p></li>
 </ul>
 <p>Additionally, advanced options can be selected by checking the option at the bottom</p>
-<div class="align-center figure" id="id5">
-<a class="reference internal image-reference" href="../../../../_images/Sampling_MF2_quoFEM.png"><img alt="../../../../_images/Sampling_MF2_quoFEM.png" src="../../../../_images/Sampling_MF2_quoFEM.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.3.1.5 </span><span class="caption-text">Advanced options</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<div class="align-center figure" id="id7">
+<a class="reference internal image-reference" href="../../../../_images/Sampling_MF2_quoFEM.png"><img alt="../../../../_images/Sampling_MF2_quoFEM.png" src="../../../../_images/Sampling_MF2_quoFEM.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1.5 </span><span class="caption-text">Advanced options</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Using the advanced options, the user can define the minimum number of simulations per model and an option to Perform log-transform</p>
 <ul class="simple">

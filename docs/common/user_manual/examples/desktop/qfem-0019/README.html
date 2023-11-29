@@ -162,6 +162,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -272,7 +278,7 @@ stress.</p>
 <span id="figexperimentaldatasteelcoupon"></span><a class="reference internal image-reference" href="../../../../../_images/qf-0019-StressStrainData.png"><img alt="../../../../../_images/qf-0019-StressStrainData.png" src="../../../../../_images/qf-0019-StressStrainData.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.10.2.1.1 </span><span class="caption-text">Stress-strain curve from cyclic test on test coupon from reinforcing steel bar.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>This stress-strain data was obtained corresponding to a randomized strain history similar to those observed experimentally in reinforcing steel during seismic tests, as shown in <a class="reference internal" href="../qfem-0023/README.html#figexperimentaldatasteelcouponstrain"><span class="std std-numref">Fig. 4.12.3.1</span></a>.</p>
+<p>This stress-strain data was obtained corresponding to a randomized strain history similar to those observed experimentally in reinforcing steel during seismic tests, as shown in <a class="reference internal" href="../qfem-0023/README.html#figexperimentaldatasteelcouponstrain"><span class="std std-numref">Fig. 4.12.4.1</span></a>.</p>
 <div class="align-center figure" id="id2">
 <span id="figexperimentaldatasteelcouponstrain"></span><a class="reference internal image-reference" href="../../../../../_images/qf-0019-StrainHistory.png"><img alt="../../../../../_images/qf-0019-StrainHistory.png" src="../../../../../_images/qf-0019-StrainHistory.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.10.2.1.2 </span><span class="caption-text">The test coupon was subjected to this strain history.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -359,7 +365,7 @@ stress.</p>
 </div>
 <div class="section" id="parameter-estimation-setup">
 <h3><span class="section-number">4.10.2.3. </span>Parameter estimation setup<a class="headerlink" href="#parameter-estimation-setup" title="Permalink to this headline">¶</a></h3>
-<p>In this example, the values of the parameters shown in <a class="reference internal" href="#table-1">Table 1</a> are being estimated. The table also shows the lower and upper bounds of the uniform distribution that is assumed to the prior probability distribution for these parameters. The unkown parameters in this problem, <span class="math notranslate nohighlight">\(\mathbf{\theta}=(f_y, E, b, cR_1, cR_2, a_1, a_3)^T\)</span> are estimated using the data of the stress response corresponding to the strain history shown in <a class="reference internal" href="../qfem-0023/README.html#figexperimentaldatasteelcouponstrain"><span class="std std-numref">Fig. 4.12.3.1</span></a>.</p>
+<p>In this example, the values of the parameters shown in <a class="reference internal" href="#table-1">Table 1</a> are being estimated. The table also shows the lower and upper bounds of the uniform distribution that is assumed to the prior probability distribution for these parameters. The unkown parameters in this problem, <span class="math notranslate nohighlight">\(\mathbf{\theta}=(f_y, E, b, cR_1, cR_2, a_1, a_3)^T\)</span> are estimated using the data of the stress response corresponding to the strain history shown in <a class="reference internal" href="../qfem-0023/README.html#figexperimentaldatasteelcouponstrain"><span class="std std-numref">Fig. 4.12.4.1</span></a>.</p>
 <p>The Gaussian likelihood that is used by default in quoFEM is employed for this problem. This assumes that the errors (i.e. the differences between the finite element prediction of the stress history and the experimentally obtained stress history) follow a zero-mean Gaussian distribution. The components of the error vector are assumed to be statistically independent and identically distributed. Under this assumption, the standard deviation of the error is also an unknown parameter of the likelihood model and is also estimated during the calibration process. quoFEM automatically sets up the prior probability distribution for this additional parameter.</p>
 </div>
 </div>

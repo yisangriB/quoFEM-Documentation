@@ -1,0 +1,13 @@
+
+.. _lbl-dldb_damage_FEMA_P58_2nd_D_40
+
+**********************
+D.40 - Fire Protection
+**********************
+
+The following models are available:
+
+.. toctree::
+   :maxdepth: 1
+
+   D.40.11/index

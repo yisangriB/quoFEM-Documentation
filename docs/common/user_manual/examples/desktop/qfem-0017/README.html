@@ -148,6 +148,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -295,37 +301,37 @@
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 4.9.1.1 </span><span class="caption-text">UQpySimpleExample.json</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;Parameters&quot;</span> <span class="p">:</span>  <span class="p">[</span>
-	<span class="p">{</span>
-		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;ComboBox&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sampling Method&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;values&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;LHS&quot;</span><span class="p">]</span>
-	<span class="p">},</span>
-	<span class="p">{</span>
-		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Number of Samples&quot;</span>
-	<span class="p">},</span>
-	<span class="p">{</span>
-		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Seed&quot;</span>
-	<span class="p">},</span>
-	<span class="p">{</span>
-		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Number of Concurrent Tasks&quot;</span>
-	<span class="p">},</span>
-	<span class="p">{</span>
-		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Number of Nodes&quot;</span>
-	<span class="p">},</span>
-	<span class="p">{</span>
-		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Cores per Task&quot;</span>
-	<span class="p">},</span>
-	<span class="p">{</span>
-		<span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;UQ Driver&quot;</span>
-	<span class="p">}</span>	
-    <span class="p">]</span>
+<span class="w">    </span><span class="nt">&quot;Parameters&quot;</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">[</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ComboBox&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sampling Method&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;values&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;LHS&quot;</span><span class="p">]</span>
+<span class="w">	</span><span class="p">},</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Number of Samples&quot;</span>
+<span class="w">	</span><span class="p">},</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Seed&quot;</span>
+<span class="w">	</span><span class="p">},</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Number of Concurrent Tasks&quot;</span>
+<span class="w">	</span><span class="p">},</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Number of Nodes&quot;</span>
+<span class="w">	</span><span class="p">},</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SpinBox&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cores per Task&quot;</span>
+<span class="w">	</span><span class="p">},</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LineEdit&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UQ Driver&quot;</span>
+<span class="w">	</span><span class="p">}</span><span class="w">	</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>

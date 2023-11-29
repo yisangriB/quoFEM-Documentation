@@ -130,6 +130,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
@@ -246,9 +252,9 @@
 <div class="section" id="nataf-transformation">
 <h2>Nataf transformation<a class="headerlink" href="#nataf-transformation" title="Permalink to this headline">¶</a></h2>
 <p>Nataf transformation is introduced to standardize the interface between UQ methods and Simulation models. Nataf converts the samples in the physical space (X-space) into the standard normal samples (U-space), <span class="math notranslate nohighlight">\(T:\rm{X} \rightarrow \rm{U}\)</span>, and vice versa, during UQ computations <a class="reference internal" href="#liu1986" id="id1"><span>[Liu1986]</span></a>. Specifically, the latter transformation, called inverse Nataf <span class="math notranslate nohighlight">\(T^{-1}\)</span>, is performed each time when UQ engine generates sample points and calls external workflow applications, so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits <strong>marginal distributions</strong> of each physical variables and their <strong>correlation coefficients</strong>.</p>
-<div class="align-center figure" id="id24">
+<div class="align-center figure" id="id25">
 <span id="fignataf1"></span><a class="reference internal image-reference" href="../../../_images/SimCenterNataf1.png"><img alt="../../../_images/SimCenterNataf1.png" src="../../../_images/SimCenterNataf1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.1 </span><span class="caption-text">Standardization of random variables using Nataf transformation</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1 </span><span class="caption-text">Standardization of random variables using Nataf transformation</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>(Ongoing implementation) All the custom UQ algorithms need to prepare for the standard Gaussian input while quoFEM intertwines with the simulation model to receive standard normal input u and gives physical <span class="math notranslate nohighlight">\(y=G(u)\)</span> back.</p>
 <p>For the Nataf transformation, the SimCenterUQ engine borrows a part of the distribution class structure developed by ERA group in the Technical University of Munich <a class="reference internal" href="#era2019" id="id2"><span>[ERA2019]</span></a></p>
@@ -266,9 +272,9 @@
 <div class="section" id="variance-based-global-sensitivity-indices">
 <h3>Variance-based global sensitivity indices<a class="headerlink" href="#variance-based-global-sensitivity-indices" title="Permalink to this headline">¶</a></h3>
 <p>Global sensitivity analysis (GSA) is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. GSA helps users to understand the overall impact of different sources of uncertainties, as well as accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.</p>
-<div class="align-center figure" id="id25">
+<div class="align-center figure" id="id26">
 <span id="figsensitivity1"></span><a class="reference internal image-reference" href="../../../_images/SimCenterSensitivity1.png"><img alt="../../../_images/SimCenterSensitivity1.png" src="../../../_images/SimCenterSensitivity1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.2 </span><span class="caption-text">Concept of Global Sensitivity Analysis</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.2 </span><span class="caption-text">Concept of Global Sensitivity Analysis</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>Sobol indices are widely used variance-based global sensitivity measures. It has two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> finds the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering the interactive effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account.</p>
 <p>Given the output of model <span class="math notranslate nohighlight">\(y=g(\boldsymbol{x})\)</span> and input random variables <span class="math notranslate nohighlight">\(\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}\)</span>, the first-order main and total effect indices of each input variable is defined as</p>
@@ -297,9 +303,9 @@
 <div class="math notranslate nohighlight" id="equation-gm">
 <span class="eqno">(1.2.5)<a class="headerlink" href="#equation-gm" title="Permalink to this equation">¶</a></span>\[f_{x_i,y}(x_i,y) \simeq f_{x_i,y}^{GM} (x_i,y)\]</div>
 <p>using the expectation-maximization (EM) algorithm. The mean operation Eq. <a class="reference internal" href="#equation-si">(1.2.1)</a> is then derived analytically from the Gaussian mixture model, while the variance is approximated to be the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in <a class="reference internal" href="#hu2019" id="id5"><span>[Hu2019]</span></a>. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations.</p>
-<div class="align-center figure" id="id26">
+<div class="align-center figure" id="id27">
 <span id="figsensitivity2"></span><a class="reference internal image-reference" href="../../../_images/SimCenterSensitivity2.png"><img alt="../../../_images/SimCenterSensitivity2.png" src="../../../_images/SimCenterSensitivity2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.3 </span><span class="caption-text">Data-driven global sensitivity analysis by Hu and Mahadevan (2019)</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.3 </span><span class="caption-text">Data-driven global sensitivity analysis by Hu and Mahadevan (2019)</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="hu2019"><span class="brackets">Hu2019</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>,<a href="#id5">3</a>)</span></dt>
@@ -341,9 +347,9 @@
 <span class="eqno">(1.2.8)<a class="headerlink" href="#equation-gpresidual" title="Permalink to this equation">¶</a></span>\[z(\boldsymbol{x}) \sim GP (\boldsymbol{x};0,K(\boldsymbol{x_i},\boldsymbol{x_j}))\]</div>
 <p>Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic parameters <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\beta}}\)</span> and <span class="math notranslate nohighlight">\(\hat{K}(x_i,x_j)\)</span> that best match the observations, and (2) to predict the response at an arbitrary sample point <span class="math notranslate nohighlight">\(\boldsymbol{x^*}\)</span> as a conditional distribution of <span class="math notranslate nohighlight">\(f(\boldsymbol{y^*}|\boldsymbol{y^{obs}})\)</span>, exploiting the fact that
 <span class="math notranslate nohighlight">\(\boldsymbol{y^*}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{y^{obs}}\)</span> are joint Gaussian distribution with known mean and covariances.</p>
-<div class="align-center figure" id="id27">
+<div class="align-center figure" id="id28">
 <span id="figsensitivity2-2"></span><a class="reference internal image-reference" href="../../../_images/SimCenterSurrogate.png"><img alt="../../../_images/SimCenterSurrogate.png" src="../../../_images/SimCenterSurrogate.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.4 </span><span class="caption-text">Surrogate model for UQ/Optimization</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.4 </span><span class="caption-text">Surrogate model for UQ/Optimization</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="dealing-with-noisy-measurements">
@@ -367,9 +373,9 @@
 </div></blockquote>
 </li>
 </ul>
-<div class="align-center figure" id="id28">
+<div class="align-center figure" id="id29">
 <span id="figgp1-2"></span><a class="reference internal image-reference" href="../../../_images/GPnugget.png"><img alt="../../../_images/GPnugget.png" src="../../../_images/GPnugget.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.5 </span><span class="caption-text">Gaussian process regression with and without measurement noise ( or nugget effect)</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.5 </span><span class="caption-text">Gaussian process regression with and without measurement noise ( or nugget effect)</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
 <li><p><strong>Heteroscedastic measurement noise</strong></p>
@@ -377,9 +383,9 @@
 <div><div class="line-block">
 <div class="line">When one expects a high noise level in the response observations with varying variance scales across the domain, one may want to consider modeling the heteroscedastic noise. Note that the observation noise here comes from the variability not captured by the RV values we defined (i.e. <span class="math notranslate nohighlight">\(x\)</span>). For example, mapping between structural parameters (<span class="math notranslate nohighlight">\(x\)</span>) and the earthquake response (<span class="math notranslate nohighlight">\(y\)</span>) typically requires heteroscedastic GP models to capture the effect of the aleatoric variability in the response ground motion time history. The below figure shows an example data shape for which a heteroscedastic GP model is required. quoFEM app introduces the <strong>stochastic Kriging</strong> algorithm in <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#kyprioti2021" id="id10"><span>[Kyprioti2021]</span></a> to achieve this, which relies on the so-called <strong>partial replication strategy</strong>, that is, to generate multiple realizations for a subset of inputs to examine response variance. In particular, a subset of initial samples are replicated to obtain variance estimates, i.e., variance realizations, at different sample locations, and these values are used to construct a variance-field model. Then by constraining the relative scales of the variance, the stochastic kriging emulator is trained using both replication and unique (non-replicated) samples. <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0025/README.html#qfem-0025"><span class="std std-ref">This example</span></a> reproduces the results of <a class="reference internal" href="#figgp1-3"><span class="std std-numref">Fig. 1.2.6</span></a></div>
 </div>
-<div class="align-center figure" id="id29">
+<div class="align-center figure" id="id30">
 <span id="figgp1-3"></span><a class="reference internal image-reference" href="../../../_images/StochasticGP.png"><img alt="../../../_images/StochasticGP.png" src="../../../_images/StochasticGP.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.6 </span><span class="caption-text">When heteroscedastic GP is needed</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.6 </span><span class="caption-text">When heteroscedastic GP is needed</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -453,9 +459,9 @@
 </div>
 </li>
 </ul>
-<div class="align-center figure" id="id30">
+<div class="align-center figure" id="id31">
 <span id="figgp2"></span><a class="reference internal image-reference" href="../../../_images/GPtmp.png"><img alt="../../../_images/GPtmp.png" src="../../../_images/GPtmp.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.7 </span><span class="caption-text">Gaussian process regression for different correlation length parameters</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.7 </span><span class="caption-text">Gaussian process regression for different correlation length parameters</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
 <li><p><strong>Exponential</strong></p>
@@ -494,9 +500,9 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 <div class="section" id="adaptive-design-of-experiments-doe">
 <h3>Adaptive Design of Experiments (DoE)<a class="headerlink" href="#adaptive-design-of-experiments-doe" title="Permalink to this headline">¶</a></h3>
 <p>In the case where bounds of input variables and a simulator model are provided (Case 1), model evaluation points can be selected by space-filling methods, e.g. Latin hypercube sampling (LHS). This is a non-adaptive Design of Experiments (DoE) in the sense that the whole samples can be located before running any simulations. On the other hand, the number of model evaluations can be reduced by selecting evaluation points <em>adaptively</em> after each run to get the best model improvements.</p>
-<div class="align-center figure" id="id31">
+<div class="align-center figure" id="id32">
 <span id="figgp-doe1"></span><a class="reference internal image-reference" href="../../../_images/GPtmp1.png"><img alt="../../../_images/GPtmp1.png" src="../../../_images/GPtmp1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.8 </span><span class="caption-text">Two optimizations in design of experiments</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.8 </span><span class="caption-text">Two optimizations in design of experiments</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
 </div>
 <p>However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal DoE. Therefore, it is noted that the adaptive DoE is efficient only when model evaluation time is significantly greater than the optimization time.</p>
 <p><strong>Adaptive DoE algorithm: IMSEw, MMSEw</strong> (<a class="reference internal" href="#kyprioti2020" id="id13"><span>[Kyprioti2020]</span></a>)</p>
@@ -506,9 +512,9 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
         \rm{IMSE}_w(\boldsymbol{X},\boldsymbol{x_{new}}) &amp;= \int_{\boldsymbol{X_d}} \phi^\rho\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})dx
 \end{align*}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\phi\)</span> is bias measure from leave-one-out cross validation (LOOCV) analysis, <span class="math notranslate nohighlight">\(\rho\)</span> is a weighting coefficient, and <span class="math notranslate nohighlight">\(\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})\)</span> is the predictive variance after additional observation <span class="math notranslate nohighlight">\(x_{new}\)</span> <a class="reference internal" href="#kyprioti2020" id="id15"><span>[Kyprioti2020]</span></a>. To find the sample location that gives minimum IMSE value, a two-step screening-clustering algorithm is implemented.</p>
-<div class="align-center figure" id="id32">
+<div class="align-center figure" id="id33">
 <span id="figgp-doe2"></span><a class="reference internal image-reference" href="../../../_images/GPtmp2.png"><img alt="../../../_images/GPtmp2.png" src="../../../_images/GPtmp2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.9 </span><span class="caption-text">Adaptive DoE procedure by Kyprioti et al. (2020) <a class="reference internal" href="#kyprioti2020" id="id16"><span>[Kyprioti2020]</span></a></span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.9 </span><span class="caption-text">Adaptive DoE procedure by Kyprioti et al. (2020) <a class="reference internal" href="#kyprioti2020" id="id16"><span>[Kyprioti2020]</span></a></span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Adaptive DoE algorithm: Pareto</strong></p>
 <p>Alternatively, multiple design points can be selected by a multi-objective optimization scheme. The variance measure and bias measure are defined by</p>
@@ -644,9 +650,9 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 </ul>
 </div></blockquote>
 <p>The goal of MFMC is to estimate the statistics of the HF model using a small number of HF simulations and a large number of LF simulations. Those <em>fidelity</em> can be attributed to different idealization of models as shown in <a class="reference internal" href="#fig-beamcolumn"><span class="std std-numref">Fig. 1.2.10</span></a> (e.g. reduced order model), or the models with same idealization in different resolutions (e.g. coarser mesh or grids). The latter is also referred to as multi-level Monte Carlo (MLMC).</p>
-<div class="align-center figure" id="id33">
+<div class="align-center figure" id="id34">
 <span id="fig-beamcolumn"></span><a class="reference internal image-reference" href="../../../_images/SimCenterMF.png"><img alt="../../../_images/SimCenterMF.png" src="../../../_images/SimCenterMF.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.10 </span><span class="caption-text">Idealized models of beam-column elements (Fig 2.1 in <a class="reference internal" href="#deierlein2010" id="id17"><span>[Deierlein2010]</span></a>)</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.10 </span><span class="caption-text">Idealized models of beam-column elements (Fig 2.1 in <a class="reference internal" href="#deierlein2010" id="id17"><span>[Deierlein2010]</span></a>)</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="deierlein2010"><span class="brackets"><a class="fn-backref" href="#id17">Deierlein2010</a></span></dt>
@@ -670,15 +676,15 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 <li><p><strong>The models should have clear hierarchy in terms of accuracy and time.</strong> When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if a LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.</p></li>
 <li><p><strong>The response of different models should have high correlation</strong>. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations.</p></li>
 </ul>
-<p><a class="reference internal" href="#fig-mf-sp"><span class="std std-numref">Fig. 1.2.11</span></a> shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant.</p>
-<div class="align-center figure" id="id34">
-<span id="fig-mf-sp"></span><a class="reference internal image-reference" href="../../../_images/SimCenterMF4.png"><img alt="../../../_images/SimCenterMF4.png" src="../../../_images/SimCenterMF4.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.11 </span><span class="caption-text">Speed-up offered by the MFMC estimation (Fig 1 in <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id18"><span>[Patsialis2021]</span></a>), <span class="math notranslate nohighlight">\(c^{FEM}\)</span>: HF model evaluation time, <span class="math notranslate nohighlight">\(c^{ROM}\)</span>: LF model evaluation time, <span class="math notranslate nohighlight">\(\rho\)</span>: correlation between HF and LF responses.</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+<p>Efficiency of MFMC can be evaluated using the speed-up ratio, defined as the reduction of computational effort you need to get the same Monte Carlo statistical accuracy by the MFMC and direct Monte Carlo method. <a class="reference internal" href="#fig-mf-sp"><span class="std std-numref">Fig. 1.2.11</span></a> shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id18"><span>[Patsialis2021]</span></a>. The formulation used to estimate the speed-up ratio can found at the end of this section.</p>
+<div class="align-center figure" id="id35">
+<span id="fig-mf-sp"></span><a class="reference internal image-reference" href="../../../_images/SimCenterMF4.png"><img alt="../../../_images/SimCenterMF4.png" src="../../../_images/SimCenterMF4.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.2.11 </span><span class="caption-text">Speed-up offered by the MFMC estimation (<span class="math notranslate nohighlight">\(c_{HF}\)</span>: HF model evaluation time, <span class="math notranslate nohighlight">\(c_{LF}\)</span>: LF model evaluation time, <span class="math notranslate nohighlight">\(\rho_{LF,HF}\)</span>: correlation between HF and LF responses)</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="algorithm-details">
 <h3>Algorithm details<a class="headerlink" href="#algorithm-details" title="Permalink to this headline">¶</a></h3>
-<p>The implementation of MFMC in quoFEM follows that of <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id19"><span>[Patsialis2021]</span></a>. Let us denote the HF and LF output for a given input <span class="math notranslate nohighlight">\(x\)</span> as</p>
+<p>The implementation of MFMC in quoFEM follows that of <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id19"><span>[Patsialis2021]</span></a> which is based on the original work of <a class="reference internal" href="#peherstorfer2016" id="id20"><span>[Peherstorfer2016]</span></a>. Let us denote the HF and LF output for a given input <span class="math notranslate nohighlight">\(x\)</span> as</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-simcenteruqtechnical-0">
 <span class="eqno">(1.2.20)<a class="headerlink" href="#equation-common-technical-manual-desktop-simcenteruqtechnical-0" title="Permalink to this equation">¶</a></span>\[y_{HF} = g_{HF}(\boldsymbol{x})\]</div>
@@ -690,18 +696,18 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 <p class="admonition-title">Note</p>
 <p>For notational simplicity, the procedure presented on this page is the simplest case where we have single LF model and single output, aiming to estimate first-order statistics. However, once one understands the simplest case, the extension into the advanced cases are fairly straightforward.</p>
 <ul class="simple">
-<li><p>For <strong>multiple LF models</strong>, a similar formulation can be found in the literature. (<a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id20"><span>[Patsialis2021]</span></a>, <a class="reference internal" href="#peherstorfer2016" id="id21"><span>[Peherstorfer2016]</span></a>, etc).</p></li>
+<li><p>For <strong>multiple LF models</strong>, a similar formulation can be found in the literature. (<a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id21"><span>[Patsialis2021]</span></a>, <a class="reference internal" href="#peherstorfer2016" id="id22"><span>[Peherstorfer2016]</span></a>, etc).</p></li>
 <li><p>For <strong>multiple outputs</strong> <span class="math notranslate nohighlight">\(y_{HF}\)</span> and <span class="math notranslate nohighlight">\(y_{LF}\)</span> in the formulations can respectively be replaced with <span class="math notranslate nohighlight">\(y_{j,HF}\)</span> and <span class="math notranslate nohighlight">\(y_{j,LF}\)</span>, meaning it is <span class="math notranslate nohighlight">\(j\)</span>-th output of the models.</p></li>
 <li><p>The presented procedure leads to the estimation of mean of <span class="math notranslate nohighlight">\(\rm{E}[y_{HF}]\)</span>. The <strong>variance can be estimated</strong> by replacing <span class="math notranslate nohighlight">\(y_{HF}\)</span> and <span class="math notranslate nohighlight">\(y_{LF}\)</span> with <span class="math notranslate nohighlight">\(y^2_{HF}\)</span> and <span class="math notranslate nohighlight">\(y^2_{LF}\)</span>, respectively, which lead to the estimation of <span class="math notranslate nohighlight">\(\rm{E}[y_{HF}^2]\)</span> and additionally introducing a post-processing step to subtract <span class="math notranslate nohighlight">\(\rm{E}[y_{HF}]^2\)</span>. Other higher-order statistics can be estimated in a similar manner.</p></li>
 </ul>
-<p>The current implementation can accommodate multiple LF models, process multiple outputs, and output MFMC estimates of the variance. The complete formulations can be found in the literature (<a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id22"><span>[Patsialis2021]</span></a>, <a class="reference internal" href="#peherstorfer2016" id="id23"><span>[Peherstorfer2016]</span></a>, etc).</p>
+<p>The current implementation can accommodate multiple LF models, process multiple outputs, and output MFMC estimates of the variance. The complete formulations can be found in the literature (<a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id23"><span>[Patsialis2021]</span></a>, <a class="reference internal" href="#peherstorfer2016" id="id24"><span>[Peherstorfer2016]</span></a>, etc).</p>
 </div>
 <p><strong>Step 1: Pilot Simulations</strong></p>
-<div class="align-center figure" id="id35">
+<div class="align-center figure" id="id36">
 <a class="reference internal image-reference" href="../../../_images/SimCenterMF2.png"><img alt="../../../_images/SimCenterMF2.png" src="../../../_images/SimCenterMF2.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.12 </span><span class="caption-text">Step 1: Pilot Simulation</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.12 </span><span class="caption-text">Step 1: Pilot Simulation</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
 </div>
-<p>Randomly generate <span class="math notranslate nohighlight">\(N_p\)</span> sample points and run both HF and LF simulations. Compute the correlation between two model outputs (<span class="math notranslate nohighlight">\(\rho_{HF,LF}\)</span>) and estimate the average model evaluation times (<span class="math notranslate nohighlight">\(c_{HF}\)</span> and <span class="math notranslate nohighlight">\(c_{LF}\)</span>). The optimal ratio of HF and LF simulation runs can be decided by</p>
+<p>Randomly generate <span class="math notranslate nohighlight">\(N_p\)</span> sample points and run both HF and LF simulations. Compute the correlation between two model outputs (<span class="math notranslate nohighlight">\(\rho_{LF,HF}\)</span>) and estimate the average model evaluation times (<span class="math notranslate nohighlight">\(c_{HF}\)</span> and <span class="math notranslate nohighlight">\(c_{LF}\)</span>). The optimal ratio of HF and LF simulation runs can be decided by</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-simcenteruqtechnical-2">
 <span class="eqno">(1.2.22)<a class="headerlink" href="#equation-common-technical-manual-desktop-simcenteruqtechnical-2" title="Permalink to this equation">¶</a></span>\[r^* = \sqrt{  \frac{c_{HF}\rho^2_{LF,HF}}{c_{LF}(1-\rho^2_{LF,HF})}  }\]</div>
@@ -717,9 +723,9 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 <li><p>Generate <span class="math notranslate nohighlight">\(N_2\)</span> more sample points and run only LF simulations. We now have <span class="math notranslate nohighlight">\(N_2\)</span> more data points <span class="math notranslate nohighlight">\(\{\boldsymbol{x}^{(n)}\}_{n=N_1,...,N_1+N_2}\)</span>, and corresponding LF outputs <span class="math notranslate nohighlight">\(\{y^{(n)}_{LF}\}_{n=N_1,...,N_1+N_2}\)</span>. Let us denote this batch of data points as <span class="math notranslate nohighlight">\(D_2\)</span>.</p></li>
 </ul>
 <p><strong>Step 3: Estimation of Statistics</strong></p>
-<div class="align-center figure" id="id36">
+<div class="align-center figure" id="id37">
 <a class="reference internal image-reference" href="../../../_images/SimCenterMF3.png"><img alt="../../../_images/SimCenterMF3.png" src="../../../_images/SimCenterMF3.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.13 </span><span class="caption-text">Step 3: Estimation of Statistics</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.13 </span><span class="caption-text">Step 3: Estimation of Statistics</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
 </div>
 <p>Using data sets <span class="math notranslate nohighlight">\(D_1\)</span> and <span class="math notranslate nohighlight">\(D_2\)</span>, the final statistics are estimated as</p>
 <blockquote>
@@ -755,10 +761,10 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 <span class="eqno">(1.2.31)<a class="headerlink" href="#equation-common-technical-manual-desktop-simcenteruqtechnical-11" title="Permalink to this equation">¶</a></span>\[SP_i = \frac{c_{HF}}{c_{HF}+rc_{LF}} \left(1-\left(1-\frac{1}{r}\right)\rho_{LF,HF}^2 \right)^{-1}\]</div>
 </div></blockquote>
 <dl class="citation">
-<dt class="label" id="patsialis2021"><span class="brackets">Patsialis2021</span><span class="fn-backref">(<a href="#id18">1</a>,<a href="#id19">2</a>,<a href="#id20">3</a>,<a href="#id22">4</a>)</span></dt>
+<dt class="label" id="patsialis2021"><span class="brackets">Patsialis2021</span><span class="fn-backref">(<a href="#id18">1</a>,<a href="#id19">2</a>,<a href="#id21">3</a>,<a href="#id23">4</a>)</span></dt>
 <dd><p>Patsialis, D., and A. A. Taflanidis. (2021). Multi-fidelity Monte Carlo for seismic risk assessment applications. <em>Structural Safety</em> 93 (2021): 102129.</p>
 </dd>
-<dt class="label" id="peherstorfer2016"><span class="brackets">Peherstorfer2016</span><span class="fn-backref">(<a href="#id21">1</a>,<a href="#id23">2</a>)</span></dt>
+<dt class="label" id="peherstorfer2016"><span class="brackets">Peherstorfer2016</span><span class="fn-backref">(<a href="#id20">1</a>,<a href="#id22">2</a>,<a href="#id24">3</a>)</span></dt>
 <dd><p>Peherstorfer, B., Willcox, K., Gunzburger, M. (2016). Optimal model management for multifidelity Monte Carlo estimation. <em>SIAM Journal on Scientific Computing</em> 38:A3163-A94.</p>
 </dd>
 </dl>

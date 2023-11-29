@@ -127,6 +127,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -216,7 +222,7 @@
 <div><ul class="simple">
 <li><p><strong>lines 12-13</strong>: Identifies the path to the <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">configuration file</span></a>, which specifies the job details, and the <em>application registry file</em>, which specifies all available applications.</p></li>
 <li><p><strong>line 16-62</strong>: Reads the application registry file and displays all available applications.</p></li>
-<li><p><strong>line 64-85</strong>: Reads the configuration file and displays the units, local application directory, remote application directory, reference directory, and the applications chosen for each workflow step. Any workflow steps which are skipped (excluded from the configuration file) are also listed here.</p></li>
+<li><p><strong>line 64-85</strong>: Reads the configuration file and displays the units, local application directory, remote application directory, reference directory, and the applications chosen for each workflow step. Any workflow steps that are skipped (excluded from the configuration file) are also listed here.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -250,7 +256,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>line 126</strong>: Python command for executing the <a class="reference internal" href="../applications/modelingApps.html#lblmodelingapp"><span class="std std-ref">Modeling</span></a> application, creating the SAM file for the built  asset.</p>
+<li><p><strong>line 126</strong>: Python command for executing the <a class="reference internal" href="../applications/modelingApps.html#lblmodelingapp"><span class="std std-ref">Modeling</span></a> application, creating the SAM file for the built asset.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--mainScript&quot;</span> <span class="s2">&quot;cantilever.py&quot;</span> <span class="s2">&quot;--modelPath&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/model/&quot;</span> <span class="s2">&quot;--ndm&quot;</span> <span class="s2">&quot;3&quot;</span> <span class="s2">&quot;--dofMap&quot;</span> <span class="s2">&quot;1,2,3&quot;</span> <span class="s2">&quot;--getRV&quot;</span>
 </pre></div>

@@ -151,6 +151,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -254,67 +260,67 @@
 <span class="c"># set some parameters</span>
 <span class="c">#</span>
 
-<span class="nv">pset</span> E <span class="mi">205</span>
-<span class="nv">pset</span> P <span class="mi">25</span>
-<span class="nv">pset</span> Au <span class="mi">500</span>
-<span class="nv">pset</span> Ao <span class="mi">250</span>
+<span class="nv">pset</span><span class="w"> </span>E<span class="w"> </span><span class="mi">205</span>
+<span class="nv">pset</span><span class="w"> </span>P<span class="w"> </span><span class="mi">25</span>
+<span class="nv">pset</span><span class="w"> </span>Au<span class="w"> </span><span class="mi">500</span>
+<span class="nv">pset</span><span class="w"> </span>Ao<span class="w"> </span><span class="mi">250</span>
 
 <span class="c">#</span>
 <span class="c"># build the model</span>
 <span class="c">#</span>
 
-<span class="nv">model</span> Basic <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">2</span>
+<span class="nv">model</span><span class="w"> </span>Basic<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">2</span>
 
-<span class="nv">node</span> <span class="mi">1</span>     <span class="mi">0</span>    <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">2</span>  <span class="mi">4000</span>    <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">3</span>  <span class="mi">8000</span>    <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">4</span> <span class="mi">12000</span>    <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">5</span>  <span class="mi">4000</span> <span class="mi">4000</span>
-<span class="nv">node</span> <span class="mi">6</span>  <span class="mi">8000</span> <span class="mi">4000</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">1</span><span class="w">     </span><span class="mi">0</span><span class="w">    </span><span class="mi">0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="mi">4000</span><span class="w">    </span><span class="mi">0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="mi">8000</span><span class="w">    </span><span class="mi">0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">12000</span><span class="w">    </span><span class="mi">0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">5</span><span class="w">  </span><span class="mi">4000</span><span class="w"> </span><span class="mi">4000</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">6</span><span class="w">  </span><span class="mi">8000</span><span class="w"> </span><span class="mi">4000</span>
 
-<span class="nv">fix</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
-<span class="nv">fix</span> <span class="mi">4</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span>
 
-<span class="nv">uniaxialMaterial</span> Elastic <span class="mi">1</span> <span class="nv">$E</span>
+<span class="nv">uniaxialMaterial</span><span class="w"> </span>Elastic<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$E</span>
 
-<span class="nv">element</span> truss <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">2</span> <span class="mi">2</span> <span class="mi">3</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">3</span> <span class="mi">3</span> <span class="mi">4</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">4</span> <span class="mi">1</span> <span class="mi">5</span> <span class="nv">$Au</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">5</span> <span class="mi">5</span> <span class="mi">6</span> <span class="nv">$Au</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">6</span> <span class="mi">6</span> <span class="mi">4</span> <span class="nv">$Au</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">7</span> <span class="mi">2</span> <span class="mi">5</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">8</span> <span class="mi">3</span> <span class="mi">6</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">element</span> truss <span class="mi">9</span> <span class="mi">5</span> <span class="mi">3</span> <span class="nv">$Ao</span> <span class="mi">1</span>
-<span class="nv">timeSeries</span> Linear <span class="mi">1</span>
-<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
-    <span class="nb">load</span> <span class="mi">2</span> <span class="mi">0</span> <span class="k">[expr</span> <span class="o">-</span><span class="nv">$P</span><span class="k">]</span>
-    <span class="nb">load</span> <span class="mi">3</span> <span class="mi">0</span> <span class="k">[expr</span> <span class="o">-</span><span class="nv">$P</span><span class="k">]</span>
+<span class="nv">element</span><span class="w"> </span>truss<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="nv">$Ao</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">element</span><span class="w"> </span>truss<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nv">$Ao</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">element</span><span class="w"> </span>truss<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="nv">$Ao</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">element</span><span class="w"> </span>truss<span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="nv">$Au</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">element</span><span class="w"> </span>truss<span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="nv">$Au</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">element</span><span class="w"> </span>truss<span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="nv">$Au</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">element</span><span class="w"> </span>truss<span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="nv">$Ao</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">element</span><span class="w"> </span>truss<span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="nv">$Ao</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">element</span><span class="w"> </span>truss<span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nv">$Ao</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">timeSeries</span><span class="w"> </span>Linear<span class="w"> </span><span class="mi">1</span>
+<span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">{</span>
+<span class="w">    </span><span class="nb">load</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$P</span><span class="k">]</span>
+<span class="w">    </span><span class="nb">load</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$P</span><span class="k">]</span>
 <span class="k">}</span>
 
 <span class="c">#</span>
 <span class="c"># create a recorder</span>
 <span class="c">#</span>
 
-<span class="nv">recorder</span> Node <span class="o">-</span>file node.out <span class="o">-</span>scientific <span class="o">-</span>precision <span class="mi">10</span> <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> disp
+<span class="nv">recorder</span><span class="w"> </span>Node<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>node.out<span class="w"> </span><span class="o">-</span>scientific<span class="w"> </span><span class="o">-</span>precision<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span>disp
 
 <span class="c">#</span>
 <span class="c"># build and perform the analysis</span>
 <span class="c">#</span>
 
-<span class="nv">algorithm</span> Linear
-<span class="nv">integrator</span> LoadControl <span class="mf">1.0</span>
-<span class="nv">system</span> ProfileSPD
-<span class="nv">numberer</span> RCM
-<span class="nv">constraints</span> Plain
-<span class="nv">analysis</span> Static
-<span class="nv">analyze</span> <span class="mi">1</span>
+<span class="nv">algorithm</span><span class="w"> </span>Linear
+<span class="nv">integrator</span><span class="w"> </span>LoadControl<span class="w"> </span><span class="mf">1.0</span>
+<span class="nv">system</span><span class="w"> </span>ProfileSPD
+<span class="nv">numberer</span><span class="w"> </span>RCM
+<span class="nv">constraints</span><span class="w"> </span>Plain
+<span class="nv">analysis</span><span class="w"> </span>Static
+<span class="nv">analyze</span><span class="w"> </span><span class="mi">1</span>
 
 <span class="c">#</span>
 <span class="c"># remove the recorders</span>
 <span class="c">#</span>
 
-<span class="nv">remove</span> recorders
+<span class="nv">remove</span><span class="w"> </span>recorders
 </pre></div>
 </div>
 </li>
@@ -327,36 +333,36 @@
 <ol class="arabic" start="2">
 <li><p>Postprocessing file: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0001/../qfem-0001/src/TrussPost.tcl">TrussPost.tcl</a>.</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># create file handler to write results to output &amp; list into which we will put results</span>
-<span class="k">set</span> resultFile <span class="k">[</span><span class="nb">open</span> results.out w<span class="k">]</span>
-<span class="k">set</span> results <span class="k">[]</span>
+<span class="k">set</span><span class="w"> </span>resultFile<span class="w"> </span><span class="k">[</span><span class="nb">open</span><span class="w"> </span>results.out<span class="w"> </span>w<span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>results<span class="w"> </span><span class="k">[]</span>
 
 <span class="c"># get list of valid nodeTags</span>
-<span class="k">set</span> nodeTags <span class="k">[</span><span class="nv">getNodeTags</span><span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>nodeTags<span class="w"> </span><span class="k">[</span><span class="nv">getNodeTags</span><span class="k">]</span>
 
 <span class="c"># for each quanity in list of QoI passed</span>
 <span class="c">#  - get nodeTag</span>
 <span class="c">#  - get nodal displacement if valid node, output 0.0 if not</span>
 <span class="c">#  - for valid node output displacement, note if dof not provided output 1&#39;st dof</span>
 
-<span class="k">foreach</span> edp <span class="nv">$listQoI</span> <span class="k">{</span>
-	<span class="k">set</span> splitEDP <span class="k">[</span><span class="nb">split</span> <span class="nv">$edp</span> <span class="s2">&quot;_&quot;</span><span class="k">]</span>	
-	set nodeTag <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">1</span><span class="k">]</span>
-	<span class="k">if</span> <span class="k">{</span><span class="nv">$nodeTag</span> <span class="nv">in</span> <span class="nv">$nodeTags</span><span class="k">}</span> <span class="k">{</span>
-	    <span class="k">set</span> nodeDisp <span class="k">[</span><span class="nv">nodeDisp</span> <span class="nv">$nodeTag</span><span class="k">]</span>
-	    <span class="k">if</span> <span class="k">{[</span><span class="nb">llength</span> <span class="nv">$splitEDP</span><span class="k">]</span> <span class="o">==</span> <span class="nv">3</span><span class="k">}</span> <span class="k">{</span>
-		<span class="k">set</span> result <span class="k">[expr</span> abs<span class="k">([</span><span class="nb">lindex</span> <span class="nv">$nodeDisp</span> <span class="mi">0</span><span class="k">])]</span>
-	    <span class="k">}</span> <span class="k">else</span> <span class="k">{</span>
-		<span class="k">set</span> result <span class="k">[expr</span> abs<span class="k">([</span><span class="nb">lindex</span> <span class="nv">$nodeDisp</span> <span class="k">[expr</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">3</span><span class="k">]</span><span class="o">-</span><span class="mi">1</span><span class="k">]])]</span>
-	    <span class="k">}</span>
-	<span class="k">}</span> <span class="k">else</span> <span class="k">{</span>
-	    <span class="k">set</span> result <span class="mi">0</span>.
-	<span class="k">}</span>
-	<span class="nb">lappend</span> results <span class="nv">$result</span>
+<span class="k">foreach</span><span class="w"> </span>edp<span class="w"> </span><span class="nv">$listQoI</span><span class="w"> </span><span class="k">{</span>
+<span class="w">	</span><span class="k">set</span><span class="w"> </span>splitEDP<span class="w"> </span><span class="k">[</span><span class="nb">split</span><span class="w"> </span><span class="nv">$edp</span><span class="w"> </span><span class="s2">&quot;_&quot;</span><span class="k">]</span><span class="w">	</span>
+<span class="w">	</span>set<span class="w"> </span>nodeTag<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$nodeTag</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">$nodeTags</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">	    </span><span class="k">set</span><span class="w"> </span>nodeDisp<span class="w"> </span><span class="k">[</span><span class="nv">nodeDisp</span><span class="w"> </span><span class="nv">$nodeTag</span><span class="k">]</span>
+<span class="w">	    </span><span class="k">if</span><span class="w"> </span><span class="k">{[</span><span class="nb">llength</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="k">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">3</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">		</span><span class="k">set</span><span class="w"> </span>result<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>abs<span class="k">([</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$nodeDisp</span><span class="w"> </span><span class="mi">0</span><span class="k">])]</span>
+<span class="w">	    </span><span class="k">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">{</span>
+<span class="w">		</span><span class="k">set</span><span class="w"> </span>result<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>abs<span class="k">([</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$nodeDisp</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="w"> </span><span class="mi">3</span><span class="k">]</span><span class="o">-</span><span class="mi">1</span><span class="k">]])]</span>
+<span class="w">	    </span><span class="k">}</span>
+<span class="w">	</span><span class="k">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">{</span>
+<span class="w">	    </span><span class="k">set</span><span class="w"> </span>result<span class="w"> </span><span class="mi">0</span>.
+<span class="w">	</span><span class="k">}</span>
+<span class="w">	</span><span class="nb">lappend</span><span class="w"> </span>results<span class="w"> </span><span class="nv">$result</span>
 <span class="k">}</span>
 
 <span class="c"># send results to output file &amp; close the file</span>
-<span class="nb">puts</span> <span class="nv">$resultFile</span> <span class="nv">$results</span>
-<span class="nb">close</span> <span class="nv">$resultFile</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nv">$resultFile</span><span class="w"> </span><span class="nv">$results</span>
+<span class="nb">close</span><span class="w"> </span><span class="nv">$resultFile</span>
 </pre></div>
 </div>
 </li>

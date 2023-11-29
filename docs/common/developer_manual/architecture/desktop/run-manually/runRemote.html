@@ -127,6 +127,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -223,7 +229,7 @@
 </div></blockquote>
 </li>
 <li><p>Upload the zipped <code class="docutils literal notranslate"><span class="pre">input_data</span></code> file and configuration file to “My Data” on the DesignSafe <a class="reference external" href="https://www.designsafe-ci.org/data/browser/">Data Depot</a>.</p></li>
-<li><p>Upload the <code class="xref download docutils literal notranslate"><span class="pre">CreateLauncherTasks</span> <span class="pre">script</span></code> and a Jupyter notebook with commands for setting up the job on Tapis. You can use this example Jupyter notebook (<code class="xref download docutils literal notranslate"><span class="pre">run_rWHALE.ipynb</span></code>) as a template.</p></li>
+<li><p>Upload the <code class="xref download docutils literal notranslate"><span class="pre">CreateLauncherTasks</span> <span class="pre">script</span></code> and a Jupyter notebook with commands for setting up the job on Tapis. You can use this example Jupyter Notebook (<code class="xref download docutils literal notranslate"><span class="pre">run_rWHALE.ipynb</span></code>) as a template.</p></li>
 </ol>
 <p>On DesignSafe, the files should appear on Data Depot as:</p>
 <div class="align-center figure">
@@ -232,15 +238,15 @@
 </div>
 <div class="section" id="run-job-through-jupyter">
 <h2>Run Job Through Jupyter<a class="headerlink" href="#run-job-through-jupyter" title="Permalink to this headline">¶</a></h2>
-<p>This method uses Jupyter notebook to run the job, accessing Tapis CLI in the backend.</p>
+<p>This method uses Jupyter Notebook to run the job, accessing Tapis CLI in the backend.</p>
 <ol class="arabic simple" start="5">
-<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">run_rWHALE.ipynb</span></code> notebook, then click <strong>Open in Jupyter</strong>. You will be taken to a new page for editing the Jupyter notebook.</p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">run_rWHALE.ipynb</span></code> notebook, then click <strong>Open in Jupyter</strong>. You will be taken to a new page for editing the Jupyter Notebook.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/DS_jupyter.png" src="../../../../../_images/DS_jupyter.png" />
 </div>
 <ol class="arabic simple" start="6">
-<li><p>Specify settings for running the job on Stampede2. Submit the job by running all cells in the Jupyter notebook (Cell &gt; Run All).</p></li>
+<li><p>Specify settings for running the job on Stampede2. Submit the job by running all cells in the Jupyter Notebook (Cell &gt; Run All).</p></li>
 </ol>
 <ol class="arabic simple" start="7">
 <li><p>To view the status of the job, navigate to the <strong>Workspace</strong> on DesignSafe. The right bar will list all jobs that have been submitted in order of newest to oldest. Job outputs can be accessed by clicking on “More Info” on the job.</p></li>
@@ -348,7 +354,7 @@ tacc.prod password for taccuser:
 </li>
 </ol>
 <p>An ACCEPTED status indicates the job.json was valid, and e-mail alerts (if they were specified in job.json) will track
-the progress of the job. Also take note of the long hexadecimal ID (<em>job ID</em>) when you submit the job. This identifier can be
+the progress of the job. Also, take note of the long hexadecimal ID (<em>job ID</em>) when you submit the job. This identifier can be
 used to track progress and download results.</p>
 <ol class="arabic" start="11">
 <li><p>To check on the status of a particular job, run the following command with the job ID:</p>
@@ -356,7 +362,7 @@ used to track progress and download results.</p>
 <div><p><code class="docutils literal notranslate"><span class="pre">tapis</span> <span class="pre">jobs</span> <span class="pre">status</span> <span class="pre">&lt;job</span> <span class="pre">ID&gt;</span></code></p>
 </div></blockquote>
 </li>
-<li><p>Once the job has completed, the results can be downloaded either from the job archives (accessed from the Workspace on DesignSafe) or directly from Tapis, with the following command:</p>
+<li><p>Once the job has been completed, the results can be downloaded either from the job archives (accessed from the Workspace on DesignSafe) or directly from Tapis, with the following command:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">tapis</span> <span class="pre">jobs</span> <span class="pre">outputs</span> <span class="pre">download</span> <span class="pre">--progress</span> <span class="pre">&lt;job</span> <span class="pre">ID</span> <span class="pre">string&gt;</span></code></p>
 </div></blockquote>

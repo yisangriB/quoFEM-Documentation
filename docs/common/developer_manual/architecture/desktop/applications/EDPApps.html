@@ -129,6 +129,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -216,7 +222,7 @@
 <span id="lbledpapp"></span><h1><span class="section-number">2.2.5. </span>EDP Applications<a class="headerlink" href="#edp-applications" title="Permalink to this headline">¶</a></h1>
 <p>The <strong>EDP application</strong> specifies the types of <em>engineering demand parameters</em> (EDP) expected as output from the response simulation.
 It determines the EDP type from building properties in the <a class="reference internal" href="buildingApps.html#lblbuildingapp"><span class="std std-ref">BIM file</span></a>, the type of event in the <a class="reference internal" href="eventApps.html#lbleventapp"><span class="std std-ref">EVENT file</span></a>, and the model information from the <a class="reference internal" href="modelingApps.html#lblmodelingapp"><span class="std std-ref">SAM file</span></a>.
-It writes the type, location, and direction (DOF) of each EDP for a simulation in an <code class="docutils literal notranslate"><span class="pre">EDP.json</span></code> file in, located in its corresponding <strong>simulation working directory</strong>.
+It writes the type, location, and direction (DOF) of each EDP for a simulation in an <code class="docutils literal notranslate"><span class="pre">EDP.json</span></code> file, located in its corresponding <strong>simulation working directory</strong>.
 Note that in the EDP file, DOF=1,2 are assumed to correspond to perpendicular horizontal directions, and DOF=3 corresponds to the vertical direction.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/backendapps_EDP.png" src="../../../../../_images/backendapps_EDP.png" />

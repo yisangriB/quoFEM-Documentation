@@ -138,6 +138,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -223,91 +229,59 @@
 <span id="lblinstallmac"></span><h1><span class="section-number">1.2. </span>Install on macOS 10<a class="headerlink" href="#install-on-macos-10" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-python-3-9">
 <h2><span class="section-number">1.2.1. </span>Install Python 3.9<a class="headerlink" href="#install-python-3-9" title="Permalink to this headline">¶</a></h2>
-<p>SimCenter tools require an x86-based version of Python to run properly currently. The latest version of the Python (i.e. 3.12) breaks up dependencies and we tested the tools using Python 3.10.13 and 3.9.13. You may already use other versions of Python, or Python served by a larger scientific package such as Anaconda or homebrew.</p>
-<p>To see if your python kernel is compatable with SimCenter tools, issue the following in a terminal window.</p>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can use the spotlight app (magnifying glass at the top right corner of the desktop) to start a Terminal window. Start the spotlight app (you can alternatively use command + space shortcut) and type in terminal. The Terminal application should appear as the top hit.</p>
-</div>
-</div></blockquote>
+<p>SimCenter tools require an x86-based version of Python 3.9 to run properly. If you have a different version of Python installed, you will need to add a Python 3.9 x86 version to your system. Below, we will demonstrate the process for installing Python 3.9 using the official distributor of Python, <strong>python.org</strong>.</p>
+<p>To see if you have python installed and whether it is compatable with SimCenter tools, issue the following in a terminal window.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span>
 <span class="kn">import</span> <span class="nn">platform</span>
 <span class="n">platform</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span>
 <span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>As shown in screenshot below, you should see Python 3.10 after issuing the python3 command and machine=’x86_64’ in the last line of output of the platform.uname() command. If you see another Python version or machine=’arm64’, you will need to install an x86 Python 3.9 on your computer.</p>
-<div class="align-center figure" id="id4">
-<img alt="../../../../_images/pythonKernel.png" src="../../../../_images/pythonKernel.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The latest MacBooks use ARM-based processors in their M1 and M2 chips lineups. Older MacBooks utilize Intel x86 processors. The new ARM-based processors present a problem for Python users of scientific applications beacuse Python programs typically import many different modules and not all modules have been ported to the new ARM environments. The python3 kernels provided with macOS 12 (Monterey) and later are ARM based. You will need to download and install an <strong>x86</strong> version of Python to use the SimCenter applications on these systems. Such Python versions will run fine on the ARM-based machines, thanks to <a class="reference external" href="https://support.apple.com/en-us/HT211861#:~:text=Rosetta%202%20is%20available%20only,to%20allow%20installation%20to%20proceed.">Rosetta</a>.</p>
-</div>
-<p><strong>1.</strong> To obtain an x86 version of Python, you can either download and install Python 3.10.13 or Python 3.9.13 version,  from <a class="reference external" href="https://www.python.org/downloads/release/python-386/">Python.org</a>. There will be only one installer for the MacOS platform (both ARM64 and x86_64 versions) for python 3.10.3 and versions above. However, for version 3.9.13, there are 2 installer. The intel-only installer provides <strong>x86</strong> version.</p>
+<p>As shown in screenshot below, you should see a Python 3.9 version after issuing the python3 command and the machine=’x86_64’ in the last line of output from the platform.uname() command. If you see another Python version or machine=’arm64’, you will need to install an x86 Python 3.9 on your computer.</p>
 <div class="align-center figure" id="id5">
+<img alt="../../../../_images/pythonKernel.png" src="../../../../_images/pythonKernel.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>1.</strong> To obtain an x86 version of Python 3.9 use <a class="reference external" href="https://www.python.org/downloads/macos/">Python.org</a> . From their Downloads page, look under the available downloads for a 3.9 version with an <strong>macOS 64-bit Intel-only installer</strong> link below the version number, e.g. Python 3.9.13, and select that installer to download it.</p>
+<div class="align-center figure" id="id6">
 <img alt="../../../../_images/pythonDownload.png" src="../../../../_images/pythonDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: python.org MacOS Download Page</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: python.org MacOS Download Page</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We prefer the python.org installation over others due to it’s simplicity.
-Python Version 3.10.13 and later provides both version and the user must specify <strong>x86</strong> python to be used in SimCenter tools.
-To run x86 version of Python, instead of python3, you need to type python3-intel64.
-.. code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span><span class="o">-</span><span class="n">intel64</span>
-<span class="kn">import</span> <span class="nn">platform</span>
-<span class="n">platform</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span>
-<span class="n">exit</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>you should able to see <strong>machine=’x86_64’</strong> at the line.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Homebrew can also be used to install a Python x86 version, the instructions are convoluted but can be found using <strong>Google</strong>.. If installed correctly python3 will be in /usr/local/Cellar directory and not in the /usr/local/opt directory. Remember the platform.uname() output above will show you if you have installed a correct version.</p>
-</div>
-<p><strong>2.</strong> The Python.org installer leaves two script files in the Python directory at the end of the installation and these appear in a pop up window when installation is complete. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal application. To execute the files, double click on them with your mouse. The two files, shown in the image below, are: <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code>.</p>
+<p><strong>2.</strong> After running yhe Python.org installer, a pop up directory window will appear containing a number of files, as shown in the figure below. Two of these files, <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code> are script files. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal application. To execute the files, double click on the files individually with your mouse.</p>
 <blockquote>
-<div><div class="align-center figure" id="id6">
+<div><div class="align-center figure" id="id7">
 <img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.1.3 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.3 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p><strong>3.</strong> Once Python is installed, you need to extend it by installing a few additional packages. To facilitate this phase of the installation, we created a <strong>nheri_simcenter</strong> python package that automatically installs all other dependencies. Start a Terminal window and type the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install nheri_simcenter --upgrade
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>nheri_simcenter<span class="w"> </span>--upgrade
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<blockquote>
-<div><p>If you are using Python 3.10 or later versions, you can install dependencies via python:</p>
-</div></blockquote>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Python3 -m code pip install nheri_simcenter --upgrade
-</pre></div>
-</div>
 </div>
 <p>Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you forget to invoke the <code class="docutils literal notranslate"><span class="pre">UpdateShellProfile.command.sh</span></code> script at the end of the install, you can always edit the correct shell file later to update the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable to point to the Python application.</p>
+<ol class="arabic simple">
+<li><p>If you forget to invoke the <code class="docutils literal notranslate"><span class="pre">UpdateShellProfile.command.sh</span></code> script at the end of the install, you can always execute the correct shell file later to update the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable to point to the Python application.</p></li>
+</ol>
 <p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
 <p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>Dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
 <p>To find which shell program you are using when you issue commands inside the terminal window, type the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env <span class="p">|</span> grep SHELL
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>SHELL
 </pre></div>
 </div>
 <p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which of these other installers have modified.</p>
+<ol class="arabic simple" start="2">
+<li><p>Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend it’s usage is that there is additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically <strong>python3-intel64</strong>.</p></li>
+</ol>
 </div>
 </div>
 <div class="section" id="download-the-application">
 <h2><span class="section-number">1.2.4. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this headline">¶</a></h2>
 <p>To download the quoFEM app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM">quoFEM Download</a> page which should resemble <a class="reference internal" href="#figdownload-quofem"><span class="std std-numref">Fig. 1.2.4.5</span></a>. The download page contains a list of downloadable files and directories.</p>
-<div class="align-center figure" id="id11">
+<div class="align-center figure" id="id12">
 <span id="figdownload-quofem"></span><img alt="../../../../_images/quoFEMDownload.png" src="../../../../_images/quoFEMDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.4.5 </span><span class="caption-text">quoFEM download page.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.4.5 </span><span class="caption-text">quoFEM download page.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the quoFEM app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download has completed, open the dmg file and copy the quoFEM app application to a location in your filesystem.</p>
 <div class="admonition note">
@@ -321,25 +295,33 @@ To run x86 version of Python, instead of python3, you need to type python3-intel
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right clicking on it and selecting open.</p>
-<p>If the app still fails to open. You need to go to System Settings-&gt;Privacy and Security. Under the Security section you need to at least temprarily select the option to allow applications downloaded from the <strong>App Store and Identified Developers</strong>. With this schecked try again. If it fails again, go back to System Settings-&gt;Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to <a href="#id2"><span class="problematic" id="id3">**</span></a>Open Anayway” , as shown in figure below. Click on the button and the app should start.</p>
+<p>If the app still fails to open. You need to go to System Settings-&gt;Privacy and Security. Under the Security section you need to at least temprarily select the option to allow applications downloaded from the <strong>App Store and Identified Developers</strong>. With this schecked try again. If it fails again, go back to System Settings-&gt;Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to <a href="#id3"><span class="problematic" id="id4">**</span></a>Open Anayway” , as shown in figure below. Click on the button and the app should start.</p>
 <div class="align-center figure">
 <img alt="../../../../_images/AppleSecurity.png" src="../../../../_images/AppleSecurity.png" />
 </div>
 </div>
 <p>Once the application started, you should see the user interface shown in <a class="reference internal" href="#figui-quofem"><span class="std std-numref">Fig. 1.2.5.5</span></a>. We recommend running the example problem <a class="reference internal" href="../../examples/desktop/qfem-0001/README.html#qfem-0001"><span class="std std-ref">Two-Dimensional Truss: Sampling, Reliability and Sensitivity</span></a> to test the application.</p>
-<div class="align-center figure" id="id17">
+<div class="align-center figure" id="id18">
 <span id="figui-quofem"></span><img alt="../../../../_images/quoFEM1.png" src="../../../../_images/quoFEM1.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.5.5 </span><span class="caption-text">quoFEM application on startup.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.5.5 </span><span class="caption-text">quoFEM application on startup.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When the quoFEM app is running, open the app/preferences or File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>, as shown in the figure below when you are using a <strong>X86</strong> (e.g., intel-only on M chip lineup). If you are using Python 3.10 and later versions which have single installer, make sure that you edit <strong>python3</strong> to <strong>python3-intel64</strong> to specify that <strong>X86</strong> based python is used rather than the default arm64 version. If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal application and executing the <strong>which python3</strong> command. Enter the path shown as a response to the Preferences panel under Python and then press the <strong>Save</strong> button.</p>
+<p>When the quoFEM app is running, open the app/preferences or File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal application and executing the <strong>which python3</strong> command. Enter the path shown as a response to the Preferences panel under Python and then press the <strong>Save</strong> button.</p>
 <blockquote>
 <div><blockquote>
-<div><div class="align-center figure">
+<div><div class="figure align-default">
 <img alt="../../../../_images/pythonPreferences.png" src="../../../../_images/pythonPreferences.png" />
 </div>
 </div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">align</dt>
+<dd class="field-odd"><p>center</p>
+</dd>
+<dt class="field-even">figclass</dt>
+<dd class="field-even"><p>align-center</p>
+</dd>
+</dl>
 <p>Set Python Preferences.</p>
 </div></blockquote>
 </div>

@@ -130,6 +130,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -292,11 +298,11 @@ it could represent the average distances from dwellings to fire stations or from
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># note: the variables x1, y1, x2, y2 will be provided when runs in workflow</span>
 <span class="c"># as long as they are defined as random variables</span>
 
-<span class="k">set</span> D <span class="k">[expr</span> sqrt<span class="k">((</span><span class="nv">$x2-$x1</span><span class="k">)</span><span class="o">*</span><span class="k">(</span><span class="nv">$x2-$x1</span><span class="k">)</span><span class="o">+</span><span class="k">(</span><span class="nv">$y2-$y1</span><span class="k">)</span><span class="o">*</span><span class="k">(</span><span class="nv">$y2-$y1</span><span class="k">))]</span>
+<span class="k">set</span><span class="w"> </span>D<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>sqrt<span class="k">((</span><span class="nv">$x2-$x1</span><span class="k">)</span><span class="o">*</span><span class="k">(</span><span class="nv">$x2-$x1</span><span class="k">)</span><span class="o">+</span><span class="k">(</span><span class="nv">$y2-$y1</span><span class="k">)</span><span class="o">*</span><span class="k">(</span><span class="nv">$y2-$y1</span><span class="k">))]</span>
 
-<span class="k">set</span> f <span class="k">[</span><span class="nb">open</span> <span class="s2">&quot;results.out&quot;</span> <span class="s2">&quot;w&quot;</span><span class="k">]</span>
-<span class="nb">puts</span> <span class="nv">$f</span> <span class="nv">$D</span>
-<span class="nb">close</span> <span class="nv">$f</span>
+<span class="k">set</span><span class="w"> </span>f<span class="w"> </span><span class="k">[</span><span class="nb">open</span><span class="w"> </span><span class="s2">&quot;results.out&quot;</span><span class="w"> </span><span class="s2">&quot;w&quot;</span><span class="k">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nv">$f</span><span class="w"> </span><span class="nv">$D</span>
+<span class="nb">close</span><span class="w"> </span><span class="nv">$f</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">

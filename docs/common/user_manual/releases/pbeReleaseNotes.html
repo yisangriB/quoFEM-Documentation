@@ -127,6 +127,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -208,16 +214,82 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release-pbe"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="version-3-0">
-<h2>Version 3.0<a class="headerlink" href="#version-3-0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-3">
+<h2>Version 3<a class="headerlink" href="#version-3" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is a major release and it breaks compatibility. Input files used for PBE 2.x will need to be converted to work with the new version.</p>
-</div>
-<details class="sphinx-bs dropdown card mb-3" open="open">
+<div><details class="sphinx-bs dropdown card mb-3" open="open">
 <summary class="summary-title card-header">
-Version 3.0.0 (<span class="blue">Current</span>)<div class="summary-down docutils">
+Version 3.2 (<span class="blue">Current</span>)<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Release date:</strong> Sept 2023</p>
+<p class="card-text"><strong>Major updates:</strong></p>
+<ul>
+<li><p class="card-text">Post-disaster Performance and Recovery Simulation</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="card-text">Extended the PBE simulation workflow with a Performance (PRF) step. Applications in this step use the Damage and Loss (DL) results in models that estimate the post-disaster performance and recovery of an asset</p></li>
+<li><p class="card-text">Integrated the <a class="reference external" href="https://sgavrilovicarup.github.io/REDi-docs/#">ARUP REDi Seismic Downtime Model</a> using the open-source <a class="reference external" href="https://github.com/arup-group/REDi">PyREDI package</a> as the first tool in the PBE App to support functional recovery calculations.</p></li>
+<li><p class="card-text">Example 3 is added to illustrate this new functionality.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="card-text">All features of EE-UQ up to v3.4, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="card-text">Multi Fidelity Monte Carlo (MFMC) method for modeling building response</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Version 3.1<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Release date:</strong> May 2023</p>
+<p class="card-text"><strong>Major updates:</strong></p>
+<ul>
+<li><p class="card-text">Damage and Loss Database (DBDL)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="card-text">A collection of parameters and metadata for damage and loss models for performance based engineering. The DBDL is available and updated regularly in the <a class="reference external" href="https://github.com/NHERI-SimCenter/DB_DamageAndLoss">DB_DamageAndLoss</a> GitHub Repository.</p></li>
+<li><dl class="simple">
+<dt>The initial release of the database includes the damage and repair consequence models from the following publications:</dt><dd><ul>
+<li><p class="card-text">FEMA P-58 Second Edition</p></li>
+<li><p class="card-text">Hazus Earthquake Model for Buildings</p></li>
+<li><p class="card-text">Hazus Earthquake Model for Transportation Assets</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="card-text">This and future releases of the PBE tool have the latest version of DBDL at the time of their release bundled with them.</p></li>
+<li><p class="card-text">Included in documentation</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="card-text">Environmental Impacts as per FEMA P-58 included in DBDL and available in the new release.</p></li>
+<li><p class="card-text">New Outputs tab allows users to select the outputs they need (across asset, demand, damage, and loss information) and if they prefer them in CSV or JSON format.</p></li>
+<li><p class="card-text">Support automatic combination of built-in and user-defined databases for damage and loss models.</p></li>
+<li><p class="card-text">Support running calculations for only a subset of available consequence types.</p></li>
+<li><p class="card-text">All features of EE-UQ up to v3.3, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="card-text">Multi-model uncertainty propagation options that allow multiple candidates for structural models and simulation settings.</p></li>
+<li><p class="card-text">Program Output Window provides detailed information about calculations and helps find errors.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Version 3.0<div class="summary-down docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -231,16 +303,6 @@ Version 3.0.0 (<span class="blue">Current</span>)<div class="summary-down docuti
 <li><p class="card-text">Redesigned and generalized UQ architecture</p></li>
 <li><p class="card-text">Generalized workflow managers support non-building assets</p></li>
 <li><p class="card-text">Surrogate modeling capabilities for characterizing events and earthquake response</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="card-text">All features of EE-UQ up to v3.2.0, including:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p class="card-text">Advanced options for PEER NGA Event selection</p></li>
-<li><p class="card-text">Site-specific seismic disaggregation</p></li>
-<li><p class="card-text">Steel and concrete building model generators</p></li>
-<li><p class="card-text">MDOF-LU approximate shear column model generator</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -258,18 +320,28 @@ Version 3.0.0 (<span class="blue">Current</span>)<div class="summary-down docuti
 </ul>
 </div></blockquote>
 </li>
+<li><p class="card-text">All features of EE-UQ up to v3.2.0, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="card-text">Advanced options for PEER NGA Event selection</p></li>
+<li><p class="card-text">Site-specific seismic disaggregation</p></li>
+<li><p class="card-text">Steel and concrete building model generators</p></li>
+<li><p class="card-text">MDOF-LU approximate shear column model generator</p></li>
+</ul>
+</div></blockquote>
+</li>
 </ul>
 </div>
-</details></div></blockquote>
-</div>
-<div class="section" id="version-2-0">
-<h2>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><div class="admonition warning">
+</details><div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is a major release and it breaks compatibility. Input files used for PBE 2.x will need to be converted to work with the new version.</p>
+<p>Major releases break compatibility. Input files used for PBE 2.x will need to be converted to work with the PBE 3.x versions.</p>
 </div>
-<details class="sphinx-bs dropdown card mb-3" open="open">
+</div></blockquote>
+</div>
+<div class="section" id="version-2">
+<h2>Version 2<a class="headerlink" href="#version-2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
 Version 2.0.0<div class="summary-down docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -279,7 +351,6 @@ Version 2.0.0<div class="summary-down docutils">
 <p class="card-text"><strong>Release date:</strong> October 2019</p>
 <p class="card-text">Major updates:</p>
 <ul>
-<li><p class="card-text">All updates in EE-UQ from version v1.2.0 to v2.0.1 changes</p></li>
 <li><p class="card-text">Update DL interface:</p>
 <blockquote>
 <div><ul class="simple">
@@ -293,7 +364,81 @@ Version 2.0.0<div class="summary-down docutils">
 <li><p class="card-text">Support for loading external EDP files using standard csv files. This enables the user to run a loss assessment without running the response estimation inside PBE.</p></li>
 <li><p class="card-text">Added damage and loss data from FEMA P58 second edition to the database.</p></li>
 <li><p class="card-text">Migrated to a new, more readable and flexible damage and loss model description in saved json files - not compatible with earlier versions.</p></li>
+<li><p class="card-text">All updates in EE-UQ up to v2.0, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="card-text">Record selection from PEER NGA ground motion database</p></li>
+<li><p class="card-text">Nonlinear soil models in site response</p></li>
+<li><p class="card-text">Additional stochastic ground motion model</p></li>
 </ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</details><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Major releases break compatibility. Input files used for PBE 1.x will need to be converted to work with the PBE 2.x versions.</p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="version-1">
+<h2>Version 1<a class="headerlink" href="#version-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Version 1.2<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Release date:</strong> June 2019</p>
+<p class="card-text">Major updates:</p>
+<ul>
+<li><p class="card-text">Updates to user interface for Damage and Loss assessment</p></li>
+<li><p class="card-text">All updates in EE-UQ up to v1.2, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="card-text">2D motions for site response</p></li>
+<li><p class="card-text">Improvements in connections to DesignSafe</p></li>
+<li><p class="card-text">Preferences window provides convenient access to settings</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Version 1.1<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Release date:</strong> April 2019</p>
+<p class="card-text">Major updates:</p>
+<ul>
+<li><p class="card-text">Damage and loss estimation using the Hazus Earthquake Model</p></li>
+<li><p class="card-text">All updates in EE-UQ up to v1.1, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="card-text">Idealized Multiple Degrees of Freedom model for structural analysis</p></li>
+<li><p class="card-text">Stochastic Ground Motions</p></li>
+<li><p class="card-text">Site Response Analysis</p></li>
+<li><p class="card-text">User-defined EDPs in structural analyses</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Version 1.0<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Release date:</strong> October 2018</p>
+<p class="card-text">Initial release with FEMA P-58 damage and loss assessment functionality.</p>
+<p class="card-text">All features of EE-UQ v1.0 are available for structural response estimation.</p>
 </div>
 </details></div></blockquote>
 <p>Users are welcome to contact us on the <a class="reference external" href="http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0">Message Board</a> for new feature requests.</p>

@@ -1,0 +1,14 @@
+.. _lbl-dldb_damage:
+
+*************
+Damage Models
+*************
+
+The following collections are available in our Damage and Loss DataBase:
+
+.. toctree::
+   :maxdepth: 1
+
+   FEMA_P58_2nd/index
+   Hazus_EQ_bldg/index
+   Hazus_EQ_trnsp/index

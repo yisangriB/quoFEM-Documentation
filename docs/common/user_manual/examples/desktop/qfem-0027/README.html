@@ -150,6 +150,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -250,11 +256,11 @@
 <p>The structure is modeled as having flexible columns and stiff elastic beams. The structure is subjected to an earthquake excitation at the base which is strong enough to result in nonlinear response.</p>
 <p>Model 1 uses Steel01 material to represent the behavior of the columns while model 2 uses Steel02. There are three random variables in each model which correspond to three parameters in the uniaxial material models Steel01 and Steel02: the initial elastic stiffness of the columns (k), the yield strength of the columns (Fy), and the strain hardening ratio of the columns (alp), i.e., the ratio between the post-yield stiffness and the initial elastic stiffness. For Steel02, R0 is set to 15, and cR1 and cR2 are set to their recommended values of 0.925 and 0.15, respectively.</p>
 <p>Material used in Model 1:</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> Steel01  <span class="mi">1</span> <span class="nv">$Fy</span>   <span class="nv">$k</span> <span class="nv">$alp</span> 
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span><span class="w"> </span>Steel01<span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="nv">$Fy</span><span class="w">   </span><span class="nv">$k</span><span class="w"> </span><span class="nv">$alp</span><span class="w"> </span>
 </pre></div>
 </div>
 <p>Material used in Model 2:</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> Steel02  <span class="mi">1</span> <span class="nv">$Fy</span> <span class="nv">$k</span> <span class="nv">$alp</span> <span class="mi">15</span> <span class="mf">0.925</span> <span class="mf">0.15</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span><span class="w"> </span>Steel02<span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="nv">$Fy</span><span class="w"> </span><span class="nv">$k</span><span class="w"> </span><span class="nv">$alp</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="mf">0.925</span><span class="w"> </span><span class="mf">0.15</span>
 </pre></div>
 </div>
 <p>The output quantity of interest (QoI) is the amplitude of the maximum base shear.</p>
@@ -288,7 +294,7 @@
 <li><p>Next in the <strong>FEM</strong> panel , select <strong>Multi Model</strong> FEM engine. Use the <strong>Add</strong> or <strong>Remove</strong> option as needed to have two tabs, one for each of the two models being used in this example, and enter the values shown in the following figures:</p></li>
 </ol>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/FEM11.png"><img alt="../../../../../_images/FEM11.png" src="../../../../../_images/FEM11.png" style="width: 1200px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/FEM1.png"><img alt="../../../../../_images/FEM1.png" src="../../../../../_images/FEM1.png" style="width: 1200px;" /></a>
 </div>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/FEM2.png"><img alt="../../../../../_images/FEM2.png" src="../../../../../_images/FEM2.png" style="width: 1200px;" /></a>
