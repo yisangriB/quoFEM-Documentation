@@ -154,11 +154,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/usage_video.html">9. Video Overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_inputs_documentation/User_Input_Documentation_Tables.html">10. User Inputs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -244,7 +240,7 @@
             
   <div class="section" id="forward-propagation">
 <span id="lbldakotaforward"></span><h1><span class="section-number">3.1.2.1. </span>Forward Propagation<a class="headerlink" href="#forward-propagation" title="Permalink to this headline">¶</a></h1>
-<p>The forward propagation analysis provides probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis) of the quantities of interest. Currently four sampling methods are available:</p>
+<p>The forward propagation analysis provides a probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis) of the quantities of interest. Currently, four sampling methods are available:</p>
 <ol class="arabic simple">
 <li><p><strong>Monte Carlo Sampling (MCS)</strong></p></li>
 <li><p><strong>Latin Hypercube Sampling (LHS)</strong></p></li>
@@ -266,7 +262,7 @@
 </div>
 <div class="section" id="latin-hypercube-sampling-lhs">
 <h2>Latin Hypercube Sampling (LHS)<a class="headerlink" href="#latin-hypercube-sampling-lhs" title="Permalink to this headline">¶</a></h2>
-<p>Conventional Monte Carlo method generates each sample independently, which may produce undesired clusters and gaps between the samples arising from the sampling variability. On the other hand, Latin hypercube sampling (LHS) aims to prevent those gaps and clusters by ‘evenly’ spreading out the samples throughout the whole input domain. This can significantly reduce the sampling variability and facilitate faster convergence of the probabilistic statistics. In particular, LHS divides the input domain of each variable into N intervals with equal probability and locates the samples such that only one sample lies on each interval. This strategy enforces the samples to be more uniformly spread across the domain. In general, LHS encouraged over MCS as it provides unbiased estimation with smaller standard error. For example, <a class="reference external" href="https://old.analytica.com/blog/latin-hypercube-vs.-monte-carlo-sampling">this article</a> suggests that the convergence rate of a sample mean is about quadratically faster with LHS than with Monte Carlo simulation. However, it is noted that one drawback of LHS is that there is no closed-form expression to quantify the error level of the estimators. This means that the user may need to perform the multiple batch samplings to quantify the error from the sample variability</p>
+<p>Conventional Monte Carlo method generates each sample independently, which may produce undesired clusters and gaps between the samples arising from the sampling variability. On the other hand, Latin hypercube sampling (LHS) aims to prevent those gaps and clusters by ‘evenly’ spreading out the samples throughout the whole input domain. This can significantly reduce the sampling variability and facilitate faster convergence of the probabilistic statistics. In particular, LHS divides the input domain of each variable into N intervals with equal probability and locates the samples such that only one sample lies on each interval. This strategy forces the samples to be more uniformly spread across the domain. In general, LHS is encouraged over MCS as it provides unbiased estimation with a smaller standard error. For example, <a class="reference external" href="https://old.analytica.com/blog/latin-hypercube-vs.-monte-carlo-sampling">this article</a> suggests that the convergence rate of a sample mean is about quadratically faster with LHS than with Monte Carlo simulation. However, it is noted that one drawback of LHS is that there is no closed-form expression to quantify the error level of the estimators. This means that the user may need to perform multiple batch samplings to quantify the error from the sample variability</p>
 <div class="align-center figure" id="id2">
 <span id="figlhs1"></span><a class="reference internal image-reference" href="../../../../_images/Sampling_LHS1.png"><img alt="../../../../_images/Sampling_LHS1.png" src="../../../../_images/Sampling_LHS1.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.2.1.2 </span><span class="caption-text">Monte Carlo sampling vs. Latin hypercube sampling</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -279,14 +275,14 @@
 </div>
 <div class="section" id="gaussian-process-regression-gpr">
 <h2>Gaussian Process Regression (GPR)<a class="headerlink" href="#gaussian-process-regression-gpr" title="Permalink to this headline">¶</a></h2>
-<p>For the problems in which computationally expensive models are involved, conventional sampling schemes such as LHS and MCS can be extremely time-consuming. In such case, a surrogate model can be constructed based on a smaller number of simulation runs, and then the surrogate model can be used to efficiently generate a larger number of samples replacing the expensive simulations.</p>
+<p>For the problems in which computationally expensive models are involved, conventional sampling schemes such as LHS and MCS can be extremely time-consuming. In this case, a surrogate model can be constructed based on a smaller number of simulation runs, and then the surrogate model can be used to efficiently generate a larger number of samples replacing the expensive simulations.</p>
 <p>Gaussian Process Regression (GPR), also known as Kriging is one of the well-established surrogate techniques, which constructs an approximated response surface based on Gaussian process modeling and covariance matrix optimizations. <a class="reference internal" href="#figgpr"><span class="std std-numref">Fig. 3.1.2.1.4</span></a> shows the input panel for the GPR model that consists of training and sampling panels.</p>
 <div class="align-center figure" id="id4">
 <span id="figgpr"></span><img alt="../../../../_images/fwGP.png" src="../../../../_images/fwGP.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1.2.1.4 </span><span class="caption-text">GPR forward propagation input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>In the <strong>Surrogate Training Data</strong> panel, the users specify the number of samples of the output of the computationally expensive model to be  select either Monte Carlo Sampling or Latin Hypercube Sampling to generate sample output values from the computationally expensive model, which, along with the corresponding input values are used to train the surrogate models.</p>
-<p>Other surrogate models, different from Gaussian process regression are also available in the drop-down menu titled <strong>Surface Fitting Method</strong>. All thse surrogate models utilize either Monte Carlo Sampling or Latin Hypercube Sampling to generate sample output values, which, along with the corresponding input values are used to train the surrogate models.</p>
+<p>In the <strong>Surrogate Training Data</strong> panel, the users specify the number of samples of the output of the computationally expensive model to be either Monte Carlo Sampling or Latin Hypercube Sampling to generate sample output values from the computationally expensive model, which, along with the corresponding input values are used to train the surrogate models.</p>
+<p>Other surrogate models, different from Gaussian process regression are also available in the drop-down menu titled <strong>Surface Fitting Method</strong>. All these surrogate models utilize either Monte Carlo Sampling or Latin Hypercube Sampling to generate sample output values, which, along with the corresponding input values are used to train the surrogate models.</p>
 </div>
 <div class="section" id="polynomial-chaos-expansion-pce">
 <h2>Polynomial Chaos Expansion (PCE)<a class="headerlink" href="#polynomial-chaos-expansion-pce" title="Permalink to this headline">¶</a></h2>
@@ -309,7 +305,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2023, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

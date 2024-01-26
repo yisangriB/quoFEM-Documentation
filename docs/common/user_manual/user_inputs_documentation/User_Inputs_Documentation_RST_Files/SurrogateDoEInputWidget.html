@@ -1,0 +1,522 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>10.44. SurrogateDoEInputWidget &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="10.45. SurrogateEDP" href="SurrogateEDP.html" />
+    <link rel="prev" title="10.43. SteelBuildingModel" href="SteelBuildingModel.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../index.html">
+
+
+
+  
+  <img src="../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/quoCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/quoReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/quoPlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../User_Input_Documentation_Tables.html">10. User Inputs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ConcreteBuildingModel.html">10.1. ConcreteBuildingModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CustomPy.html">10.2. CustomPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CustomPySimulation.html">10.3. CustomPySimulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DakotaInputBayesianCalibration.html">10.4. DakotaInputBayesianCalibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DakotaInputCalibration.html">10.5. DakotaInputCalibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DakotaInputOptimization.html">10.6. DakotaInputOptimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DakotaInputReliability.html">10.7. DakotaInputReliability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DakotaInputSampling.html">10.8. DakotaInputSampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DakotaInputSensitivity.html">10.9. DakotaInputSensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EDP.html">10.10. EDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EDP_EarthquakeSelection.html">10.11. EDP_EarthquakeSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExampleWidget.html">10.12. ExampleWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExistingSimCenterEvents.html">10.13. ExistingSimCenterEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GaussianProcessInputWidget.html">10.14. GaussianProcessInputWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GlobalReliabilityWidget.html">10.15. GlobalReliabilityWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImportanceSamplingInputWidget.html">10.16. ImportanceSamplingInputWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImportSamplesWidget.html">10.17. ImportSamplesWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputWidgetBIM.html">10.18. InputWidgetBIM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputWidgetExistingEvent.html">10.19. InputWidgetExistingEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputWidgetOpenSeesAnalysis.html">10.20. InputWidgetOpenSeesAnalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LatinHypercubeInputWidget.html">10.21. LatinHypercubeInputWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LocalReliabilityWidget.html">10.22. LocalReliabilityWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MDOF_BuildingModel.html">10.23. MDOF_BuildingModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MDOF_LU.html">10.24. MDOF_LU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MonteCarloInputSimWidget.html">10.25. MonteCarloInputSimWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MonteCarloInputWidget.html">10.26. MonteCarloInputWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MultiFidelityMonteCarlo.html">10.27. MultiFidelityMonteCarlo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MultiFidelitySimWidget.html">10.28. MultiFidelitySimWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NoneEngine.html">10.29. NoneEngine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSeesBuildingModel.html">10.30. OpenSeesBuildingModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PCEInputWidget.html">10.31. PCEInputWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLoMInputWidget.html">10.32. PLoMInputWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLoMSimuWidget.html">10.33. PLoMSimuWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterIntensityMeasureCombo.html">10.34. SimCenterIntensityMeasureCombo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterIntensityMeasureWidget.html">10.35. SimCenterIntensityMeasureWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterUnitsCombo.html">10.36. SimCenterUnitsCombo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterUQInputPLoM.html">10.37. SimCenterUQInputPLoM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterUQInputSampling.html">10.38. SimCenterUQInputSampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterUQInputSensitivity.html">10.39. SimCenterUQInputSensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterUQInputSurrogate.html">10.40. SimCenterUQInputSurrogate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StandardEarthquakeEDP.html">10.41. StandardEarthquakeEDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StandardEDP.html">10.42. StandardEDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SteelBuildingModel.html">10.43. SteelBuildingModel</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.44. SurrogateDoEInputWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SurrogateEDP.html">10.45. SurrogateEDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SurrogateGP.html">10.46. SurrogateGP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SurrogateMFInputWidget.html">10.47. SurrogateMFInputWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SurrogateNoDoEInputWidget.html">10.48. SurrogateNoDoEInputWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SurrogateSimulation.html">10.49. SurrogateSimulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UCSD_InputBayesianCalibration.html">10.50. UCSD_InputBayesianCalibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UCSD_InputHierarchicalBayesian.html">10.51. UCSD_InputHierarchicalBayesian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UCSD_InputTMCMC.html">10.52. UCSD_InputTMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UQpyStretch.html">10.53. UQpyStretch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UQpySubsetSimulation.html">10.54. UQpySubsetSimulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UserDefinedEDP.html">10.55. UserDefinedEDP</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Quantified Uncertainty with Optimization for the FEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../User_Input_Documentation_Tables.html"><span class="section-number">10. </span>User Inputs</a> &raquo;</li>
+        
+      <li><span class="section-number">10.44. </span>SurrogateDoEInputWidget</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/common/user_manual/user_inputs_documentation/User_Inputs_Documentation_RST_Files/SurrogateDoEInputWidget.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="surrogatedoeinputwidget">
+<span id="surrogatedoeinputwidget-user-inputs"></span><h1><span class="section-number">10.44. </span>SurrogateDoEInputWidget<a class="headerlink" href="#surrogatedoeinputwidget" title="Permalink to this headline">¶</a></h1>
+<dl id="surrogatedoeinputwidget-number-of-samples">
+<dt>Number of Samples</dt><dd><p>When the number of simulation runs reaches the limit, the analysis will be terminated.</p>
+<p>Default: 150</p>
+<p>Key in JSON file: samples</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-max-computation-time-minutes">
+<dt>Max Computation Time (minutes)</dt><dd><p>When the tolerance limit of the computation time is reached, the analysis will be terminated. There will be a few minutes of error.</p>
+<p>Default: 60</p>
+<p>Key in JSON file: timeLimit</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-target-accuracy-normalized-err">
+<dt>Target Accuracy (normalized err)</dt><dd><p>The target accuracy is defined in terms of normalized root-mean-squared error (NRMSE) estimated by leave-out-one cross-validation (LOOCV).</p>
+<p>Default: 0.02</p>
+<p>Key in JSON file: accuracyLimit</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-random-seed">
+<dt>Random Seed</dt><dd><p>Seed of the random number generator</p>
+<p>Default: a random integer</p>
+<p>Key in JSON file: seed</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-parallel-execution">
+<dt>Parallel Execution</dt><dd><p>This engine implemented multiprocessing (local) or mpi4py (remote) python packages to run parallel execution.</p>
+<p>Default: checked</p>
+<p>Key in JSON file: parallelExecution</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-advanced-options-for-gaussian-process-model">
+<dt>Advanced Options for Gaussian Process Model</dt><dd><p>If unchecked, default values will be used</p>
+<p>Default: unchecked</p>
+<p>Key in JSON file: advancedOpt</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-kernel-function">
+<dt>Kernel Function</dt><dd><p>Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions (exponent) are additionally supported.</p>
+<p>Default: Matern5/2</p>
+<p>Key in JSON file: kernel</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-add-linear-trend-function">
+<dt>Add Linear Trend Function</dt><dd><p>When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced.</p>
+<p>Default: unchecked</p>
+<p>Key in JSON file: linear</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-log-space-transform-of-qoi">
+<dt>Log-space Transform of QoI</dt><dd><p>When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI.</p>
+<p>Default: unchecked</p>
+<p>Key in JSON file: logTransform</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-doe-options">
+<dt>DoE Options</dt><dd><p>Design of Experiment method</p>
+<p>Default: none</p>
+<p>Key in JSON file: DoEmethod</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-initial-doe">
+<dt>Initial DoE #</dt><dd><p>The number of the initial DoE</p>
+<p>Default: 4 x #RV</p>
+<p>Key in JSON file: initialDoE</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-nugget-variances">
+<dt>Nugget Variances</dt><dd><p>User may define nugget variances or bounds of the nugget variances if needed.</p>
+<p>Default: Optimize</p>
+<p>Key in JSON file: nuggetOpt</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-nugget-values-bounds">
+<dt>Nugget Values/Bounds</dt><dd><p>User-defined nugget variances or bounds</p>
+<p>Key in JSON file: nuggetString</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-samples-to-be-replicated-a">
+<dt># samples to be replicated (A)</dt><dd><p>From the number of unique samples specified in the ‘Number of Samples’ field, decide how many of them will have replications.</p>
+<p>Default: 8 x #RV</p>
+<p>Key in JSON file: numSampToBeRepl</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-replications-per-sample-b">
+<dt># replications per sample (B)</dt><dd><p>Specify how many replications will be generated for the number of samples specified in A.</p>
+<p>Default: 10</p>
+<p>Key in JSON file: numRepl</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-start-with-existing-dataset">
+<dt>Start with Existing Dataset</dt><dd><p>If unchecked, no existing dataset is utilized</p>
+<p>Default: checked</p>
+<p>Key in JSON file: existingDoE</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-training-points-input-rv">
+<dt>Training Points (Input RV)</dt><dd><p>Full path to the file containing training points (samples of RV)</p>
+<p>Key in JSON file: inpFile</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html">Training Points File Format</a></p>
+</div>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-system-responses-output-qoi">
+<dt>System Responses (Output QoI)</dt><dd><p>Full path to the file containing system responses (samples of QoI) corresponding to the specified training points</p>
+<p>Key in JSON file: outFile</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html">System Responses File Format</a></p>
+</div>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-advanced-options-earthquake-specific">
+<dt>Advanced Options (Earthquake specific)</dt><dd><p>If unchecked, default values will be used</p>
+<p>Default: unchecked</p>
+<p>Key in JSON file: none</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-input-postprocess">
+<dt>Input postprocess</dt><dd><p>Ground motion pre-processing for surrogate model training</p>
+<p>Default: Ground Motion Intensity</p>
+<p>Key in JSON file: none</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-im">
+<dt>IM</dt><dd><p>The user can select intensity measures (IMs) that will be used as auxiliary inputs of the surrogate model, in addition to those specified in the RV tab.</p>
+<p>Default: Pseudo Spectral Velocity (in/sec)</p>
+<p>Key in JSON file: IntensityMeasure</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-periods">
+<dt>Periods</dt><dd><p>Specify period(s) corresponding to IM</p>
+<p>Default: 0.5 or 0.1,1.0,1.5</p>
+<p>Key in JSON file: Periods</p>
+</dd>
+</dl>
+<dl id="surrogatedoeinputwidget-geometric-mean">
+<dt>Geometric mean</dt><dd><p>If ground motions have more than one directional component, either each component’s IM can be added as a separate surrogate input parameter, or they can be aggregated by using their geometric mean.</p>
+<p>Default: checked</p>
+<p>Key in JSON file: useGeoMean</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018-2024, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-4', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

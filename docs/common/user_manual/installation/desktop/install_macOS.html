@@ -139,11 +139,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_inputs_documentation/User_Input_Documentation_Tables.html">10. User Inputs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -230,14 +226,14 @@
 <div class="section" id="install-python-3-9">
 <h2><span class="section-number">1.2.1. </span>Install Python 3.9<a class="headerlink" href="#install-python-3-9" title="Permalink to this headline">¶</a></h2>
 <p>SimCenter tools require an x86-based version of Python 3.9 to run properly. If you have a different version of Python installed, you will need to add a Python 3.9 x86 version to your system. Below, we will demonstrate the process for installing Python 3.9 using the official distributor of Python, <strong>python.org</strong>.</p>
-<p>To see if you have python installed and whether it is compatable with SimCenter tools, issue the following in a terminal window.</p>
+<p>To see if you have python installed and whether it is compatible with SimCenter tools, issue the following in a terminal window.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span>
 <span class="kn">import</span> <span class="nn">platform</span>
 <span class="n">platform</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span>
 <span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>As shown in screenshot below, you should see a Python 3.9 version after issuing the python3 command and the machine=’x86_64’ in the last line of output from the platform.uname() command. If you see another Python version or machine=’arm64’, you will need to install an x86 Python 3.9 on your computer.</p>
+<p>As shown in the screenshot below, you should see a Python 3.9 version after issuing the python3 command and the machine=’x86_64’ in the last line of output from the platform.uname() command. If you see another Python version or machine=’arm64’, you will need to install an x86 Python 3.9 on your computer.</p>
 <div class="align-center figure" id="id5">
 <img alt="../../../../_images/pythonKernel.png" src="../../../../_images/pythonKernel.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
@@ -247,7 +243,7 @@
 <img alt="../../../../_images/pythonDownload.png" src="../../../../_images/pythonDownload.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: python.org MacOS Download Page</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>2.</strong> After running yhe Python.org installer, a pop up directory window will appear containing a number of files, as shown in the figure below. Two of these files, <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code> are script files. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal application. To execute the files, double click on the files individually with your mouse.</p>
+<p><strong>2.</strong> After running the Python.org installer, a pop-up directory window will appear containing several files, as shown in the figure below. Two of these files, <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code> are script files. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal application. To execute the files, double-click on the files individually with your mouse.</p>
 <blockquote>
 <div><div class="align-center figure" id="id7">
 <img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" />
@@ -264,15 +260,15 @@
 <ol class="arabic simple">
 <li><p>If you forget to invoke the <code class="docutils literal notranslate"><span class="pre">UpdateShellProfile.command.sh</span></code> script at the end of the install, you can always execute the correct shell file later to update the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable to point to the Python application.</p></li>
 </ol>
-<p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
-<p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>Dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
+<p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, and the up-and-coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default, the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the user’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from every time the program is started.</p>
+<p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>Dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short, you have to edit the file appropriate to the shell you are using.</p>
 <p>To find which shell program you are using when you issue commands inside the terminal window, type the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>SHELL
 </pre></div>
 </div>
 <p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which of these other installers have modified.</p>
 <ol class="arabic simple" start="2">
-<li><p>Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend it’s usage is that there is additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically <strong>python3-intel64</strong>.</p></li>
+<li><p>Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend its usage is that there are additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically <strong>python3-intel64</strong>.</p></li>
 </ol>
 </div>
 </div>
@@ -283,7 +279,7 @@
 <span id="figdownload-quofem"></span><img alt="../../../../_images/quoFEMDownload.png" src="../../../../_images/quoFEMDownload.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.4.5 </span><span class="caption-text">quoFEM download page.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
-<p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the quoFEM app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download has completed, open the dmg file and copy the quoFEM app application to a location in your filesystem.</p>
+<p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the quoFEM app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download is completed, open the dmg file and copy the quoFEM app application to a location in your filesystem.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We suggest copying the application to your Desktop. After copying the application, you can move the dmg file to the trash or eject it.</p>
@@ -294,13 +290,13 @@
 <p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the quoFEM.exe executable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right clicking on it and selecting open.</p>
-<p>If the app still fails to open. You need to go to System Settings-&gt;Privacy and Security. Under the Security section you need to at least temprarily select the option to allow applications downloaded from the <strong>App Store and Identified Developers</strong>. With this schecked try again. If it fails again, go back to System Settings-&gt;Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to <a href="#id3"><span class="problematic" id="id4">**</span></a>Open Anayway” , as shown in figure below. Click on the button and the app should start.</p>
+<p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right-clicking on it and selecting open.</p>
+<p>If the app still fails to open. You need to go to System Settings-&gt;Privacy and Security. Under the Security section you need to at least temporarily select the option to allow applications downloaded from the <strong>App Store and Identified Developers</strong>. With this checked try again. If it fails again, go back to System Settings-&gt;Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to <a href="#id3"><span class="problematic" id="id4">**</span></a>Open Anayway” , as shown in figure below. Click on the button and the app should start.</p>
 <div class="align-center figure">
 <img alt="../../../../_images/AppleSecurity.png" src="../../../../_images/AppleSecurity.png" />
 </div>
 </div>
-<p>Once the application started, you should see the user interface shown in <a class="reference internal" href="#figui-quofem"><span class="std std-numref">Fig. 1.2.5.5</span></a>. We recommend running the example problem <a class="reference internal" href="../../examples/desktop/qfem-0001/README.html#qfem-0001"><span class="std std-ref">Two-Dimensional Truss: Sampling, Reliability and Sensitivity</span></a> to test the application.</p>
+<p>Once the application starts, you should see the user interface shown in <a class="reference internal" href="#figui-quofem"><span class="std std-numref">Fig. 1.2.5.5</span></a>. We recommend running the example problem <a class="reference internal" href="../../examples/desktop/qfem-0001/README.html#qfem-0001"><span class="std std-ref">Two-Dimensional Truss: Sampling, Reliability and Sensitivity</span></a> to test the application.</p>
 <div class="align-center figure" id="id18">
 <span id="figui-quofem"></span><img alt="../../../../_images/quoFEM1.png" src="../../../../_images/quoFEM1.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.5.5 </span><span class="caption-text">quoFEM application on startup.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
@@ -308,22 +304,10 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When the quoFEM app is running, open the app/preferences or File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal application and executing the <strong>which python3</strong> command. Enter the path shown as a response to the Preferences panel under Python and then press the <strong>Save</strong> button.</p>
-<blockquote>
-<div><blockquote>
-<div><div class="figure align-default">
-<img alt="../../../../_images/pythonPreferences.png" src="../../../../_images/pythonPreferences.png" />
+<div class="align-center figure" id="id20">
+<span id="figui-preferences"></span><img alt="../../../../_images/pythonPreferences.png" src="../../../../_images/pythonPreferences.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.5.7 </span><span class="caption-text">Set Python Preferences.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">align</dt>
-<dd class="field-odd"><p>center</p>
-</dd>
-<dt class="field-even">figclass</dt>
-<dd class="field-even"><p>align-center</p>
-</dd>
-</dl>
-<p>Set Python Preferences.</p>
-</div></blockquote>
 </div>
 </div>
 </div>
@@ -338,7 +322,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2023, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

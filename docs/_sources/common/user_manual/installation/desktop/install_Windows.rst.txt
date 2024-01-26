@@ -11,8 +11,8 @@ Install on Windows 10
    .. note::
       Java is needed to use OpenSHA to characterize the regional seismic hazard (see :ref:`ground_motion_tool`). If you do not plan to use that feature, you can skip this step of the installation.
 
-   If you have not yet installed Java, please download the latest installer from `java.com <https://java.com/en/download/>`_ , run it, and follow the on-screen instructions to install Java.
-
+   If you have not yet installed Java, please download the installer from java website. The version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ has been tested to be working with the latest |app|. Follow the on-screen instructions to install Java. If you run into a JVM error that suggests setting JAVA_HOME environment variable, you can do so per this `link <https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/index.html>`_
+ 
    .. note::
       The Java website should automatically detect your operating system and offer the corresponding installer for you to download. Make sure you see "64-bit Java for Windows" at the top of the page before downloading the installer.
 
@@ -34,15 +34,15 @@ Install on Windows 10
    
    #. Open WSL from the start menu and run the following commands on the opened terminal window.  
 
-.. code:: bash
+   .. code:: bash
 
-   sudo sh -c "wget -O - http://dl.openfoam.org/gpg.key | apt-key add -"
-   sudo add-apt-repository http://dl.openfoam.org/ubuntu
-   sudo apt-get update
-   sudo apt-get install openfoam10
+      sudo sh -c "wget -O - http://dl.openfoam.org/gpg.key | apt-key add -"
+      sudo add-apt-repository http://dl.openfoam.org/ubuntu
+      sudo apt-get update
+      sudo apt-get install openfoam10
 
 
-Further instructions can be found in `OpenFOAM.org <https://openfoam.org/download/windows/>`_.
+   Further instructions can be found in `OpenFOAM.org <https://openfoam.org/download/windows/>`_.
 
 
 Download the Application
@@ -117,7 +117,7 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
 Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner.
 
-After the download is completed, extract the zip archive to a location in your filesystem. We suggest extracting to the **C:/SimCenter/** folder. You can create a shortcut that points to the |short tool id|.exe executable of the application and move this shortcut to your Desktop for easy access.
+After the download is completed, extract the zip archive to a location in your filesystem. We suggest extracting it to the **C:/SimCenter/** folder. You can create a shortcut that points to the |short tool id|.exe executable of the application and move this shortcut to your Desktop for easy access.
 
 .. tip:: Using an external compressor program, such as `7-Zip <https://www.7-zip.org/>`_, can significantly reduce the zip archive extraction time compared to the Windows default extraction function.
 

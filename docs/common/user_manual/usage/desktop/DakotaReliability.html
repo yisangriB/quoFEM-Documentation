@@ -154,11 +154,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/usage_video.html">9. Video Overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_inputs_documentation/User_Input_Documentation_Tables.html">10. User Inputs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -245,7 +241,7 @@
   <div class="section" id="reliability-analysis">
 <span id="lbldakotareliability"></span><h1><span class="section-number">3.1.2.3. </span>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline">¶</a></h1>
 <p>Reliability methods are another class of probabilistic algorithms used for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike forward propagation analysis, provide the probability of response exceeding the user-provided threshold levels, i.e. given a set of uncertain input variables, it estimates the probability of system ‘failure’ defined as an excessive response. For reliability analysis, it is often more efficient to concentrate samples around the tail region of the response distributions, i.e. generating more events having low occurrence probability but high consequence, since often the number of samples required by naive sampling approach to resolve a low probability can be prohibitive.</p>
-<p>Reliability methods can be split into local and global reliability methods and importance sampling-based method, as elaborated in the following sections.</p>
+<p>Reliability methods can be split into local and global reliability methods and importance sampling-based methods, as elaborated in the following sections.</p>
 <div class="section" id="problem-formulation">
 <h2>Problem Formulation<a class="headerlink" href="#problem-formulation" title="Permalink to this headline">¶</a></h2>
 <p>The probability of failure <span class="math notranslate nohighlight">\(P_f\)</span> is computed by the following integration:</p>
@@ -270,14 +266,14 @@
 </div>
 <div class="section" id="local-reliability-methods">
 <h2>Local Reliability Methods<a class="headerlink" href="#local-reliability-methods" title="Permalink to this headline">¶</a></h2>
-<p>Local reliability methods introduces first/second-order local approximation of the response or <span class="math notranslate nohighlight">\(g(\mathbf{x})\)</span> around either “Mean Value” or “Design point (also known as the most probable point, MPP)”. Each of these methods involves gradient-based local optimization. The local reliability methods can also be used for “inverse reliability problems” which aims to idenitify the unknown parameter (random variables) combination that produces prescribed probability levels. The user selects the local method using the pull down menu.</p>
+<p>Local reliability methods introduce a first/second-order local approximation of the response or <span class="math notranslate nohighlight">\(g(\mathbf{x})\)</span> around either “Mean Value” or “Design point (also known as the most probable point, MPP)”. Each of these methods involves gradient-based local optimization. The local reliability methods can also be used for “inverse reliability problems” which aim to identify the unknown parameter (random variables) combination that produces prescribed probability levels. The user selects the local method using the pull-down menu.</p>
 <p>The default local reliability method is inverse reliability using the first-order reliability approximation (FORM) method. For the FORM method the user provides the following inputs:</p>
 <div class="align-center figure" id="id1">
 <span id="figlocalmpp"></span><img alt="../../../../_images/localReliabilityMPP.png" src="../../../../_images/localReliabilityMPP.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1.2.3.1 </span><span class="caption-text">Local reliability analysis using the MPP option.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
-<li><p>The first input involves selection of the MPP search method from the following options:</p></li>
+<li><p>The first input involves a selection of the MPP search method from the following options:</p></li>
 </ol>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">no_approx</span></code>: the MPP search on the original response functions without the use of any approximations. Combining this option with first-order and second-order integration approaches (see next section) results in the traditional first-order and second-order reliability methods (FORM and SORM).</p></li>
@@ -288,13 +284,13 @@
 </ul>
 <ol class="arabic simple" start="2">
 <li><p>The second input involves the user selecting the integration approach for computing probabilities at the MPP. These can be selected to be first-order or second-order integration.</p></li>
-<li><p>Finally the user selects either response levels (for forward reliability analysis) or probability level (for inverse reliability analysis) from a drop down menu. The user then provides these levels in the line edit to the right of the pull down menu.</p></li>
+<li><p>Finally the user selects either response levels (for forward reliability analysis) or probability level (for inverse reliability analysis) from a drop-down menu. The user then provides these levels in the line edit to the right of the pull-down menu.</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Only a single quantity of interest (QoI) is allowed to be specified when using most probable point searching. Mean Value search method works for multiple QoIs.</p>
+<p>Only a single quantity of interest (QoI) is allowed to be specified when using most probable point searching. The Mean Value search method works for multiple QoIs.</p>
 </div>
-<p>The second local reliability method available is the Mean Value method (also known as MVFOSM). It is the simplest and least-expensive reliability method because it estimates the response means, response standard deviations, and all response-probability levels from a single evaluation of the response functions and their gradients at the uncertain variable means. This approximation can have acceptable accuracy when the response functions are nearly linear and their distributions are approximately Gaussian, but <strong>can have poor accuracy in other situations</strong>.</p>
+<p>The second local reliability method available is the Mean Value method (also known as MVFOSM). It is the simplest and least-expensive reliability method because it estimates the response means, response standard deviations, and all response probability levels from a single evaluation of the response functions and their gradients at the uncertain variable means. This approximation can have acceptable accuracy when the response functions are nearly linear and their distributions are approximately Gaussian, but <strong>can have poor accuracy in other situations</strong>.</p>
 <p>As shown in the figure below the user selects either to use response levels or probability levels. The user then inputs the levels.</p>
 <div class="align-center figure" id="id2">
 <span id="figlocalmv"></span><img alt="../../../../_images/localReliabilityMVFOSM.png" src="../../../../_images/localReliabilityMVFOSM.png" />
@@ -319,7 +315,7 @@
 <p>For problems where one is interested in the rare events rather than the whole distribution of output, such as earthquake or storm surge events, conventional sampling methods may require an excessively large number of simulations to obtain an accurate estimation of tail distribution. For such problems, importance sampling (IS) provides a bypass to conventional sampling methods (MCS or LHS), whereby an alternative sampling distribution is introduced around the tail part of the original distribution so that the generated samples have a better resolution at the domain of interest.</p>
 <p><a class="reference internal" href="#figis"><span class="std std-numref">Fig. 3.1.2.3.4</span></a> shows the input panel for IS scheme. Similar to MCS and LHS, IS requires both the number of samples to be executed and the corresponding seed for generating such random samples. In addition, IS algorithm can be performed via three different approaches, as specified by the third input method:</p>
 <ol class="arabic simple">
-<li><p><strong>Basic Sampling</strong>: A sampling density is constructed in the failure region based on an initial LHS sampling, followed by generation of importance samples and weights and evaluation of the Cumulative Distribution Function.</p></li>
+<li><p><strong>Basic Sampling</strong>: A sampling density is constructed in the failure region based on an initial LHS sampling, followed by the generation of importance samples and weights and evaluation of the Cumulative Distribution Function.</p></li>
 <li><p><strong>Adaptive Sampling</strong>: The basic sampling procedure is repeated iteratively until a convergence in failure probability is achieved.</p></li>
 <li><p><strong>Multimodal Adaptive Sampling</strong>: A multimodal sampling density is constructed based on samples in the failure and the adaptive sampling procedure is used.</p></li>
 </ol>
@@ -345,7 +341,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2023, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

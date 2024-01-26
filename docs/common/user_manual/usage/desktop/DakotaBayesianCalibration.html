@@ -153,11 +153,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/usage_video.html">9. Video Overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_inputs_documentation/User_Input_Documentation_Tables.html">10. User Inputs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -243,7 +239,7 @@
             
   <div class="section" id="bayesian-calibration">
 <span id="lbldakotabayesiancalibration"></span><h1><span class="section-number">3.1.2.5. </span>Bayesian Calibration<a class="headerlink" href="#bayesian-calibration" title="Permalink to this headline">¶</a></h1>
-<p>The methods in the Bayesian calibration category are concerned with estimation of the probability distribution of the parameter values given observational measurements. Unlike deterministic parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using the methods in this category, the user has some idea about the probability distribution of the parameter values. This information is provided in the form of the prior distributions in the <strong>RV</strong> panel. The Bayesian calibration methods take this prior information and combine it with information from the observed data provided in the <strong>UQ</strong> panel, to infer posterior distributions of the parameter values. A Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. The likelihood function  specifies the likelihood that a particular parameter value of the model produced the observed data. Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to characterize the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) methods. Currently, quoFEM app provides access to the DREAM algorithm implemented in Dakota.</p>
+<p>The methods in the Bayesian calibration category are concerned with the estimation of the probability distribution of the parameter values given observational measurements. Unlike deterministic parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using the methods in this category, the user has some idea about the probability distribution of the parameter values. This information is provided in the form of the prior distributions in the <strong>RV</strong> panel. The Bayesian calibration methods take this prior information and combine it with information from the observed data provided in the <strong>UQ</strong> panel, to infer posterior distributions of the parameter values. A Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. The likelihood function specifies the likelihood that a particular parameter value of the model produced the observed data. Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to characterize the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) methods. Currently, quoFEM app provides access to the DREAM algorithm implemented in Dakota.</p>
 <div class="section" id="dream">
 <h2>DREAM<a class="headerlink" href="#dream" title="Permalink to this headline">¶</a></h2>
 <p>The Differential Evolution Adaptive Metropolis (<a class="reference internal" href="#id2" id="id1"><span>[DREAM]</span></a>) method runs multiple Markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. <a class="reference internal" href="#figdream"><span class="std std-numref">Fig. 3.1.2.5.1</span></a> shows the input panel corresponding to the DREAM method. The required inputs for this method are:</p>
@@ -292,7 +288,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2023, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

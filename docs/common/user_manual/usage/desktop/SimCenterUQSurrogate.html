@@ -152,11 +152,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/usage_video.html">9. Video Overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_inputs_documentation/User_Input_Documentation_Tables.html">10. User Inputs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -245,6 +241,29 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Surrogate modeling functionality of quoFEM is built upon <a class="reference external" href="https://sheffieldml.github.io/GPy/">GPy</a> library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Update: 01.04.2024</p>
+<p><strong>Only on Mac</strong>, the GPy module (v.1.12 or lower) has a dependency version compatibility issue with other python packages SimCenter uses.
+To run GPy on SimCenter tools, one needs to install the latest developer release of GPy. Below is the error message you get.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Surrogate modeling module uses GPy python package which is facing a version compatibility issue at this moment (01.05.2024).</span>
+<span class="go">To use the surrogate module, one needs to update manually the GPy version to 1.13. The instructions can be found in the documentation:</span>
+<span class="gp">https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html#</span>lblsimsurrogate
+</pre></div>
+</div>
+<p>Until the GPy version v1.13 is available on pip, one can install the <a class="reference external" href="https://github.com/SheffieldML/GPy">developer release of GPy v1.13</a> by typing the following commands one by one in the terminal</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/SheffieldML/GPy.git</span>
+<span class="go">cd GPy</span>
+<span class="go">{$PathToPythonExe} -m pip uninstall GPy</span>
+<span class="go">{$PathToPythonExe} setup.py install</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">{$PathToPythonExe}</span></code> should be replaced with the python path found in the File-Preference window. After the third line, they will ask for the confirmation (type Y and enter). Check the installation status by typing</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{$PathToPythonExe} -m pip show GPy</span>
+</pre></div>
+</div>
+<p>and confirming that the version appears as 1.13.x. For any questions and bug reports, please contact us through <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php">user forum</a>.</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">GP</span> <span class="pre">Surrogate</span> <span class="pre">Model</span></code> module is used to construct a Gaussian process (GP) based <strong>surrogate model</strong> that substitutes expensive computational <strong>simulation models</strong> or physical experiments. Consider a simulation model, with input random variables (or parameters) <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> and output quantity of interests, denoted as <span class="math notranslate nohighlight">\(\boldsymbol{y}=f(\boldsymbol{x})\)</span>. A surrogate model for the corresponding simulation model can be built by different user-provided information types (RV-random variables, QoI-quantities of interest):</p>
 <table class="colwidths-given docutils align-default" id="id7">
@@ -639,7 +658,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2023, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

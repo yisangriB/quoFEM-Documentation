@@ -131,11 +131,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/user_inputs_documentation/User_Input_Documentation_Tables.html">10. User Inputs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
@@ -143,7 +139,12 @@
 <li class="toctree-l2"><a class="reference internal" href="uqTechnical.html">1.1. Dakota Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SimCenterUQTechnical.html">1.2. Methods in SimCenterUQ Engine</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1.3. Methods in UCSD UQ Engine</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#transtitional-markov-chain-monte-carlo">Transtitional Markov chain Monte Carlo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transitional-markov-chain-monte-carlo">Transitional Markov chain Monte Carlo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bayesian-inference-of-hierarchical-models">Bayesian Inference of Hierarchical Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#special-case-normal-population-distribution">Special Case: Normal Population Distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sampling-the-posterior-probability-distribution-of-the-parameters-of-the-hierarchical-model">Sampling the Posterior Probability Distribution of the Parameters of the Hierarchical Model</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -227,8 +228,8 @@
             
   <div class="section" id="methods-in-ucsd-uq-engine">
 <span id="lbluqucsdsimtechnical"></span><h1><span class="section-number">1.3. </span>Methods in UCSD UQ Engine<a class="headerlink" href="#methods-in-ucsd-uq-engine" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="transtitional-markov-chain-monte-carlo">
-<h2>Transtitional Markov chain Monte Carlo<a class="headerlink" href="#transtitional-markov-chain-monte-carlo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="transitional-markov-chain-monte-carlo">
+<span id="lbluqucsd-tmcmc"></span><h2>Transitional Markov chain Monte Carlo<a class="headerlink" href="#transitional-markov-chain-monte-carlo" title="Permalink to this headline">¶</a></h2>
 <p>TMCMC is a numerical method used to obtain samples of the target posterior PDF. This algorithm is flexible, applicable in general settings, and parallelizable. Thus, it can be used to effectively sample the posterior PDF, when the likelihood function involves a computationally expensive FE model evaluation, using high-performance computing (HPC) resources.</p>
 <p>In Bayesian inference, the posterior probability distribution of the unknown quantities, represented by the vector <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span>, is obtained by applying Bayes’ rule as follows:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-0">
@@ -238,7 +239,7 @@ but to sample from a series of simpler intermediate probability distributions th
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-1">
 <span class="eqno">(1.3.2)<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-1" title="Permalink to this equation">¶</a></span>\[p(\theta|y)_j \propto p(y | \theta)^{\beta_j} \times p(\theta); \quad j = 0, 1, \ldots, m; \quad 0 = \beta_0 &lt; \beta_1 &lt; \ldots &lt; \beta_m = 1\]</div>
 <p>Index <span class="math notranslate nohighlight">\(j\)</span> denotes the stage number, <span class="math notranslate nohighlight">\(m\)</span> denotes the total number of stages, and <span class="math notranslate nohighlight">\(p (\mathbf{\theta \ | \ y})_j\)</span> is the tempered posterior PDF at stage <span class="math notranslate nohighlight">\(j\)</span> controlled by the parameter <span class="math notranslate nohighlight">\(\beta_j\)</span>. At the initial stage <span class="math notranslate nohighlight">\((j = 0)\)</span>, parameter <span class="math notranslate nohighlight">\(\beta_0 = 0\)</span>, the tempered distribution <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_{j=0}\)</span> is just the
-prior joint PDF <span class="math notranslate nohighlight">\(p(\theta)\)</span>. The TMCMC sampler progresses by monotonically increasing the value of <span class="math notranslate nohighlight">\(\beta_j\)</span> , at each stage <span class="math notranslate nohighlight">\(j\)</span>, until it reaches the value of 1. At the final stage <span class="math notranslate nohighlight">\((j = m)\)</span>, parameter <span class="math notranslate nohighlight">\(\beta_m = 1\)</span>, the tempered distribution <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_{j = m}\)</span> is the target posterior joint PDF <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})\)</span>.</p>
+prior joint PDF <span class="math notranslate nohighlight">\(p(\theta)\)</span>. The TMCMC sampler progresses by monotonically increasing the value of <span class="math notranslate nohighlight">\(\beta_j\)</span>, at each stage <span class="math notranslate nohighlight">\(j\)</span>, until it reaches the value of 1. At the final stage <span class="math notranslate nohighlight">\((j = m)\)</span>, parameter <span class="math notranslate nohighlight">\(\beta_m = 1\)</span>, the tempered distribution <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_{j = m}\)</span> is the target posterior joint PDF <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})\)</span>.</p>
 <p>TMCMC represents the tempered posterior PDF at every stage by a set of weighted samples (known as particles). TMCMC approximates the <span class="math notranslate nohighlight">\(j^{th}\)</span> stage tempered posterior PDF <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_j\)</span>  by weighing, resampling, and perturbing the particles of the <span class="math notranslate nohighlight">\(j-1^{th}\)</span> stage intermediate joint PDF <span class="math notranslate nohighlight">\(p(\mathbf{\theta \ | \ y})_{j-1}\)</span> . For details about the TMCMC algorithm, the interested reader is referred to Ching and Chen <a class="reference internal" href="#ching2007" id="id1"><span>[Ching2007]</span></a>, Minson et. al. <a class="reference internal" href="#minson2013" id="id2"><span>[Minson2013]</span></a>.</p>
 <dl class="citation">
 <dt class="label" id="ching2007"><span class="brackets"><a class="fn-backref" href="#id1">Ching2007</a></span></dt>
@@ -256,6 +257,120 @@ prior joint PDF <span class="math notranslate nohighlight">\(p(\theta)\)</span>.
 </dd>
 </dl>
 </div>
+<div class="section" id="bayesian-inference-of-hierarchical-models">
+<span id="lbluqucsd-hierarchical"></span><h2>Bayesian Inference of Hierarchical Models<a class="headerlink" href="#bayesian-inference-of-hierarchical-models" title="Permalink to this headline">¶</a></h2>
+<p>Consider for model calibration a dataset consisting of experimental results on test specimens of the same kind. Let <span class="math notranslate nohighlight">\(\mathbf{y}_i\)</span>  denote the measured output response of the <span class="math notranslate nohighlight">\(i^{th}\)</span> specimen in the dataset <span class="math notranslate nohighlight">\(\mathbf{Y} = \{\mathbf{y}_1, \mathbf{y}_2, ..., \mathbf{y}_{N_s}\}\)</span> where <span class="math notranslate nohighlight">\(N_s\)</span> designates the number of specimens. Let <span class="math notranslate nohighlight">\(\theta_i\)</span> be the model parameter vector corresponding to the <span class="math notranslate nohighlight">\(i^{th}\)</span> specimen, where <span class="math notranslate nohighlight">\(n_\theta\)</span> denotes the number of model parameters. For the <span class="math notranslate nohighlight">\(i^{th}\)</span> specimen, the output response <span class="math notranslate nohighlight">\(\mathbf{y}_i\)</span>  can be viewed as a function of <span class="math notranslate nohighlight">\(\theta_i\)</span>  through the model <span class="math notranslate nohighlight">\(\mathbf{h}\)</span>  and the following measurement equation:</p>
+<div class="math notranslate nohighlight" id="equation-measurement-equation">
+<span class="eqno">(1.3.3)<a class="headerlink" href="#equation-measurement-equation" title="Permalink to this equation">¶</a></span>\[\mathbf{y}_i = \mathbf{h}(\theta_i)  + \mathbf{w}_i\]</div>
+<p>where  <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span> denotes the discrepancy between the response predicted by the model parameterized with <span class="math notranslate nohighlight">\(\theta_i\)</span>, i.e., <span class="math notranslate nohighlight">\(\mathbf{h}(\theta_i)\)</span>, and the experimental output response <span class="math notranslate nohighlight">\(\mathbf{y}_i\)</span>; <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span> is termed the prediction error. With the measurement equation in <a class="reference internal" href="#equation-measurement-equation">(1.3.3)</a>, the sources of real-world uncertainties such as the measurement noise during data collection and model form error are lumped and accounted for in the prediction error (also called noise) term <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span>  (i.e., <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span> is also a proxy for model form error). In quoFEM, it is assumed that the prediction error is a zero-mean Gaussian white noise, thus,</p>
+<div class="math notranslate nohighlight" id="equation-gaussian-white-noise-prediction-error">
+<span class="eqno">(1.3.4)<a class="headerlink" href="#equation-gaussian-white-noise-prediction-error" title="Permalink to this equation">¶</a></span>\[\mathbf{w}_i \sim N(0, (\sigma_i^w)^2 \times I_{n_{\mathbf{y}_i} \times n_{\mathbf{y}_i}})\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma_i^2\)</span> denotes the variance of the prediction error <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span>.</p>
+<p>With the assumptions made in <a class="reference internal" href="#equation-measurement-equation">(1.3.3)</a> and <a class="reference internal" href="#equation-gaussian-white-noise-prediction-error">(1.3.4)</a>, <span class="math notranslate nohighlight">\(\mathbf{y}_i\)</span> is Gaussian and centered at the model response <span class="math notranslate nohighlight">\(\mathbf{h}(\theta_i)\)</span>, with a diagonal covariance matrix equal to <span class="math notranslate nohighlight">\(\sigma_i^2 \times \mathbf{I}_{n_{\mathbf{y}_i} \times n_{\mathbf{y}_i}}\)</span> i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-likelihood-for-one-dataset">
+<span class="eqno">(1.3.5)<a class="headerlink" href="#equation-likelihood-for-one-dataset" title="Permalink to this equation">¶</a></span>\[p(\mathbf{y}_i | \theta_i, \sigma_i^2) = N(h(\theta_i), \sigma_i^2 \times \mathbf{I}_{n_{\mathbf{y}_i} \times n_{\mathbf{y}_i}})\]</div>
+<p>In the UCSD_UQ engine, hierarchical Bayesian modeling is used to account for specimen-to-specimen variability in the parameter estimates. In the hierarchical Bayesian modeling realm, the parameter vectors <span class="math notranslate nohighlight">\(\theta_1, \theta_2, \ldots, \theta_{N_s}\)</span>  are considered as mutually statistically independent and identically distributed (s.i.i.d) random variables following a PDF <span class="math notranslate nohighlight">\(p(\theta | \eta)\)</span>. This is the PDF of the parent distribution, which represents the aleatory specimen-to-specimen variability.</p>
+<p>The objective of hierarchical Bayesian inference is to jointly estimate the model parameters <span class="math notranslate nohighlight">\(\theta_i\)</span> for each specimen i (along with its prediction error variance <span class="math notranslate nohighlight">\(\sigma_i^2\)</span>) as well as the hyperparameters <span class="math notranslate nohighlight">\(\eta\)</span>  of the parent distribution of the set <span class="math notranslate nohighlight">\(\theta_i (i = 1, \ldots, N_s)\)</span>.</p>
+<p>Making use of the experimental results for a single specimen, <span class="math notranslate nohighlight">\(\mathbf{y}_i\)</span>,  Bayes’ theorem for all parameters to be inferred from this specimen can be written as</p>
+<div class="math notranslate nohighlight" id="equation-bayes-rule-for-one-coupon">
+<span class="eqno">(1.3.6)<a class="headerlink" href="#equation-bayes-rule-for-one-coupon" title="Permalink to this equation">¶</a></span>\[p(\theta_i, \sigma_i^2, \eta | \mathbf{y}_i) \propto p(\mathbf{y}_i | \theta_i, \sigma_i^2, \eta)  p(\theta_i, \sigma_i^2, \eta)\]</div>
+<p>The specimen response  <span class="math notranslate nohighlight">\(\mathbf{y}_i\)</span> depends solely on the model parameters <span class="math notranslate nohighlight">\(\theta_i\)</span>  and the prediction error variance for that specimen,  <span class="math notranslate nohighlight">\(\sigma_i^2\)</span>, and is independent of the hyperparameters <span class="math notranslate nohighlight">\(\eta\)</span>. Consequently, the conditional PDF <span class="math notranslate nohighlight">\(p(\mathbf{y}_i | \theta_i, \sigma_i^2, \eta)\)</span>  reduces to  <span class="math notranslate nohighlight">\(p(\mathbf{y}_i | \theta_i, \sigma_i^2)\)</span>.</p>
+<p>Assuming <span class="math notranslate nohighlight">\(\sigma_i^2\)</span>  to be statistically independent of <span class="math notranslate nohighlight">\(\theta_i\)</span> and <span class="math notranslate nohighlight">\(\eta\)</span> in the joint prior PDF of <span class="math notranslate nohighlight">\(\theta_i\)</span>, <span class="math notranslate nohighlight">\(\sigma_i^2\)</span>, and <span class="math notranslate nohighlight">\(\eta\)</span>, <a class="reference internal" href="#equation-bayes-rule-for-one-coupon">(1.3.6)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-bayes-rule-for-one-coupon-after-assumptions">
+<span class="eqno">(1.3.7)<a class="headerlink" href="#equation-bayes-rule-for-one-coupon-after-assumptions" title="Permalink to this equation">¶</a></span>\[p(\theta_i, \sigma_i^2, \eta | \mathbf{y}_i) \propto p(\mathbf{y}_i | \theta_i, \sigma_i^2)  p(\sigma_i^2) p(\theta_i | \eta) p(\eta)\]</div>
+<p>In the context of hierarchical Bayesian modeling, the entire experimental dataset from multiple specimens of the same kind, <span class="math notranslate nohighlight">\(\mathbf{Y} = \{\mathbf{y}_1, \mathbf{y}_2, ..., \mathbf{y}_{N_s}\}\)</span>, is considered. The model parameters and the prediction error variances for all specimens are assumed to be mutually statistically independent, while the set of the model parameter estimates are assumed to be samples from a parent distribution. The figure <a class="reference internal" href="#fighierarchicalmodel"><span class="std std-numref">Fig. 1.3.1</span></a> shows the structure of the hierarchical model.</p>
+<div class="align-center figure" id="id3">
+<span id="fighierarchicalmodel"></span><img alt="../../../_images/ProbabilisticGraphicalModel.png" src="../../../_images/ProbabilisticGraphicalModel.png" />
+<p class="caption"><span class="caption-number">Fig. 1.3.1 </span><span class="caption-text">Structure of the hierarchical model</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Under these assumptions, the equation for Bayesian updating of all unknown quantities in the hierarchical model, including the model parameters <span class="math notranslate nohighlight">\(\Theta = \{\theta_1, \theta_2, \ldots, \theta_{N_s}\}\)</span>, measurement noise variances  <span class="math notranslate nohighlight">\(\mathbf{s} = \{\sigma_1^2, \sigma_2^2, \ldots, \sigma_{N_s}^2\}\)</span>, and hyperparameters <span class="math notranslate nohighlight">\(\eta\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-bayes-rule-for-hierarchical-model">
+<span class="eqno">(1.3.8)<a class="headerlink" href="#equation-bayes-rule-for-hierarchical-model" title="Permalink to this equation">¶</a></span>\[p(\Theta, \mathbf{s}, \eta | \mathbf{Y}) \propto p(\eta) \prod_{i=1}^{N_s}[p(\mathbf{y}_i | \theta_i, \sigma_i^2)  p( \sigma_i^2) p(\theta_i | \eta) ]\]</div>
+<p>The marginal posterior distribution of the hyperparameters, <span class="math notranslate nohighlight">\(p(\eta | \mathbf{Y})\)</span> , is obtained by marginalizing out <span class="math notranslate nohighlight">\(\mathbf{\Theta}\)</span>  and <span class="math notranslate nohighlight">\(\mathbf{s}\)</span>  from  <span class="math notranslate nohighlight">\(p(\Theta, \mathbf{s}, \eta | \mathbf{Y})\)</span> as</p>
+<div class="math notranslate nohighlight" id="equation-marginal-posterior-of-hyperparameters">
+<span class="eqno">(1.3.9)<a class="headerlink" href="#equation-marginal-posterior-of-hyperparameters" title="Permalink to this equation">¶</a></span>\[p(\eta | \mathbf{Y}) = \int_{\Theta, \mathbf{s}} p(\Theta, \mathbf{s}, \eta | \mathbf{Y}) d\Theta d\mathbf{s}\]</div>
+<p>The distribution <span class="math notranslate nohighlight">\(p(\eta | \mathbf{Y})\)</span> describes the epistemic uncertainty in the value of the hyperparameters  <span class="math notranslate nohighlight">\(\eta\)</span> due to the finite number of specimens <span class="math notranslate nohighlight">\(N_s\)</span> in the experimental dataset.</p>
+<p>In the hierarchical approach, the probability distribution of the model parameters conditioned on the entire measurement dataset, <span class="math notranslate nohighlight">\(p(\theta | \mathbf{Y})\)</span>, is given by</p>
+<div class="math notranslate nohighlight" id="equation-posterior-predictive-distribution-of-theta">
+<span class="eqno">(1.3.10)<a class="headerlink" href="#equation-posterior-predictive-distribution-of-theta" title="Permalink to this equation">¶</a></span>\[p(\theta | \mathbf{Y}) = \int_\eta p(\theta | \eta) p(\eta | \mathbf{Y}) d\eta\]</div>
+<p>The conditional distribution <span class="math notranslate nohighlight">\(p(\theta | \eta)\)</span>  models the aleatory specimen-to-specimen variability. Therefore, the probability distribution  <span class="math notranslate nohighlight">\(p(\theta | \mathbf{Y})\)</span>, referred to as the posterior predictive distribution of the model parameters <span class="math notranslate nohighlight">\(\theta\)</span>, encompasses both the aleatory specimen-to-specimen uncertainty and the epistemic estimation uncertainty (due to the finite number of specimens <span class="math notranslate nohighlight">\(N_s\)</span>  in the experimental dataset and the finite length of the experimental data corresponding to each specimen). It can be utilized for uncertainty quantification and propagation in reliability and risk analyses.</p>
+<div class="section" id="special-case-normal-population-distribution">
+<span id="lbluqucsd-hierarchical-normal"></span><h3>Special Case: Normal Population Distribution<a class="headerlink" href="#special-case-normal-population-distribution" title="Permalink to this headline">¶</a></h3>
+<p>The hierarchical modeling approach discussed above captures the specimen-to-specimen aleatory variability by modeling the model parameters corresponding to each experiment as a realization from a population distribution. In the UCSD_UQ engine, a multivariate normal distribution <span class="math notranslate nohighlight">\(\theta | \eta \sim N (\mu_\theta, \Sigma_\theta)\)</span> is adopted (i.e., <span class="math notranslate nohighlight">\(\eta = (\mu_\theta, \Sigma_\theta)\)</span>) as:</p>
+<div class="math notranslate nohighlight" id="equation-normal-population-distribution">
+<span class="eqno">(1.3.11)<a class="headerlink" href="#equation-normal-population-distribution" title="Permalink to this equation">¶</a></span>\[\begin{split}\theta_i &amp; \stackrel{s.i.i.d}{\sim} N (\mu_\theta, \Sigma_\theta), \quad i = 1, \ldots, N_s \\
+\mu_\theta = \begin{bmatrix} \mu_{\theta_1} \\ \mu_{\theta_2} \\ \vdots \\ \mu_{\theta_{n_\theta}}\end{bmatrix}; \quad \Sigma_\theta &amp;= \begin{bmatrix}    \sigma_{\theta_1}^2 &amp; cov(\theta_1, \theta_2) &amp; \cdots &amp; cov(\theta_1, \theta_{n_\theta}) \\
+cov(\theta_2, \theta_1) &amp; \sigma_{\theta_2}^2 &amp; \cdots &amp; cov(\theta_2, \theta_{n_\theta}) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+cov(\theta_{n_\theta}, \theta_1) &amp; cov(\theta_{n_\theta}, \theta_2) &amp; \cdots &amp;  \sigma_{n_\theta}^2 \end{bmatrix}\end{split}\]</div>
+<p>In the Bayesian inference process, the hyperparameters characterizing the population probability distribution, the hypermean vector <span class="math notranslate nohighlight">\(\mu_\theta\)</span> and the hypercovariance matrix <span class="math notranslate nohighlight">\(\Sigma_\theta\)</span> are jointly estimated with all the <span class="math notranslate nohighlight">\(\theta_i\)</span> s and <span class="math notranslate nohighlight">\(\sigma_i^2\)</span> s.</p>
+<p>So, for this special case, <a class="reference internal" href="#equation-bayes-rule-for-hierarchical-model">(1.3.8)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-bayes-rule-for-hierarchical-model-with-normal-population">
+<span class="eqno">(1.3.12)<a class="headerlink" href="#equation-bayes-rule-for-hierarchical-model-with-normal-population" title="Permalink to this equation">¶</a></span>\[p(\Theta, \mathbf{s}, \mu_\theta, \Sigma_\theta | \mathbf{Y}) \propto p(\mu_\theta, \Sigma_\theta) \prod_{i=1}^{N_s}[p(\mathbf{y}_i | \theta_i, \sigma_i^2)  p(\sigma_i^2) p(\theta_i | \mu_\theta, \Sigma_\theta) ]\]</div>
+<p>with <span class="math notranslate nohighlight">\(\Theta\)</span>, <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> as defined above.</p>
+<p>In the UCSD_UQ engine, the sampling algorithm operates in the standard normal space i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-standard-normal-population-distribution">
+<span class="eqno">(1.3.13)<a class="headerlink" href="#equation-standard-normal-population-distribution" title="Permalink to this equation">¶</a></span>\[\begin{split}\theta_i  &amp; \stackrel{s.i.i.d}{\sim} N (\mu_\theta, \Sigma_\theta), \quad i = 1, \ldots, N_s \\
+\mu_\theta &amp; = \begin{bmatrix} 0 \\ 0 \\ \vdots \\ 0\end{bmatrix}; \quad \Sigma_\theta = \begin{bmatrix}   1 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; 1 &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp;  1 \end{bmatrix}\end{split}\]</div>
+<p>and the <a class="reference internal" href="SimCenterUQTechnical.html#lbluqsimtechnical-nataf"><span class="std std-ref">Nataf transform</span></a> is utilized to map the values provided by the sampling algorithm to the physical space of the model parameters before the model is evaluated.</p>
+</div>
+<div class="section" id="sampling-the-posterior-probability-distribution-of-the-parameters-of-the-hierarchical-model">
+<span id="lbluqucsd-hierarchical-sampling-algorithm"></span><h3>Sampling the Posterior Probability Distribution of the Parameters of the Hierarchical Model<a class="headerlink" href="#sampling-the-posterior-probability-distribution-of-the-parameters-of-the-hierarchical-model" title="Permalink to this headline">¶</a></h3>
+<p>Due to the high dimensionality (<span class="math notranslate nohighlight">\(n_\theta \times n_s + n_s + n_\theta + n_\theta \times \frac{(n_\theta+1)}{2}\)</span>, corresponding to the dimensions of the <span class="math notranslate nohighlight">\(\theta_i\)</span> of each dataset, <span class="math notranslate nohighlight">\(\sigma_i^2\)</span> for each dataset, <span class="math notranslate nohighlight">\(\mu_\theta\)</span> and <span class="math notranslate nohighlight">\(\Sigma_\theta\)</span>, respectively) of the posterior joint PDF shown in <a class="reference internal" href="#equation-bayes-rule-for-hierarchical-model-with-normal-population">(1.3.12)</a>, the Metropolis within Gibbs algorithm is used to generate samples from the posterior probability distribution. To do this, conditional posterior distributions are derived for blocks of parameters from the joint posterior distribution <a class="reference internal" href="#equation-bayes-rule-for-hierarchical-model-with-normal-population">(1.3.12)</a> of all the parameters of the hierarchical model. The Gibbs sampler generates values from these conditional posterior distributions iteratively. The conditional posterior distributions are lower dimensional than the joint distribution. The assumptions made next result in a few of the conditional posterior distributions being of a form that can be easily sampled from, thereby making it feasible to draw samples from the high-dimensional joint posterior PDF of the hierarchical model.</p>
+<p>The prior distributions for each <span class="math notranslate nohighlight">\(\sigma_i^2\)</span> are selected as the inverse gamma (IG) distribution:</p>
+<div class="math notranslate nohighlight" id="equation-conjugate-prior-pdf-for-sigma-i">
+<span class="eqno">(1.3.14)<a class="headerlink" href="#equation-conjugate-prior-pdf-for-sigma-i" title="Permalink to this equation">¶</a></span>\[p(\sigma_i^2) = IG(\alpha_0, \beta_0)\]</div>
+<p>The prior probability distribution for <span class="math notranslate nohighlight">\((\mu_\theta, \Sigma_\theta)\)</span> is chosen to be the normal-inverse-Wishart (NIW) distribution:</p>
+<div class="math notranslate nohighlight" id="equation-conjugate-prior-pdf-for-hyperparameters">
+<span class="eqno">(1.3.15)<a class="headerlink" href="#equation-conjugate-prior-pdf-for-hyperparameters" title="Permalink to this equation">¶</a></span>\[p(\mu_\theta, \Sigma_\theta) = N(\mu_\theta | \mu_0, \frac{\Sigma_\theta}{\nu_0}) IW(\Sigma_\theta | \Sigma_0, m_0)\]</div>
+<p>With these assumptions, the conditional posterior distributions are the following:</p>
+<div class="math notranslate nohighlight" id="equation-conditional-posterior-distributions">
+<span class="eqno">(1.3.16)<a class="headerlink" href="#equation-conditional-posterior-distributions" title="Permalink to this equation">¶</a></span>\[\begin{split}p(\Sigma_\theta &amp;| \mathbf{Y},  \Theta, \mathbf{s}, \mu_\theta) \propto IW(\Sigma_\theta | \Sigma_n, m_n) \\
+p(\mu_\theta &amp;| \mathbf{Y},  \Theta, \mathbf{s}, \Sigma_\theta) \propto N(\mu_\theta | \mu_n, \frac{\Sigma_\theta}{\nu_n}) \\
+p(\sigma_i^2 &amp;| \mathbf{Y}, \Theta, \mu_\theta, \Sigma_\theta) \propto IG(\alpha_{n_i}, \beta_{n_i})\\
+p(\theta_i &amp;| \mathbf{Y}, \mathbf{s}, \mu_\theta, \Sigma_\theta ) \propto p(\mathbf{y}_i | \theta_i, \sigma_i^2)   p(\theta_i | \mu_\theta, \Sigma_\theta)\end{split}\]</div>
+<p>where:</p>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-2">
+<span class="eqno">(1.3.17)<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\nu_n &amp;= \nu_0 + N_s \\
+\mu_n &amp;= \frac{(\mu_0 * \lambda_0 + N_s * \bar{\theta})}{\nu_n} \\
+\Sigma_n &amp;= \Sigma_0 + S + \frac{\nu_0 * N_s}{\nu_n} \times ((\bar{\theta} - \mu_0)(\bar{\theta} - \mu_0)^T) \\
+m_n &amp;= m_0 + N_s \\
+\alpha_{n_i} &amp;= \alpha_0 + \frac{n_{\mathbf{y}_i}}{2}\\
+\beta_{n_i} &amp;= \beta_0 + \frac{{sse}_i}{2}\end{split}\]</div>
+<p>and,</p>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-3">
+<span class="eqno">(1.3.18)<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-3" title="Permalink to this equation">¶</a></span>\[\begin{split}\bar{\theta} &amp;= \frac{1}{N_s}\sum_{i=1}^{N_s} \theta_i \\
+S &amp;= \sum_{i=1}^{N_s} {(\bar{\theta} - \mu_0)(\bar{\theta} - \mu_0)^T} \\
+{sse}_i &amp;= \sum_{k=1}^{n_{\mathbf{y}_i}}(\mathbf{y}_i^{(k)} - \mathbf{h}(\theta_i)^{(k)})^2\end{split}\]</div>
+<p>The Metropolis within Gibbs sampler generates values from the posterior joint PDF shown in <a class="reference internal" href="#equation-bayes-rule-for-hierarchical-model-with-normal-population">(1.3.12)</a> using the posterior conditional distributions <a class="reference internal" href="#equation-conditional-posterior-distributions">(1.3.16)</a> through the following steps:</p>
+<ol class="arabic">
+<li><p>Select appropriate initial values for each of the <span class="math notranslate nohighlight">\(\theta_i\)</span>.</p></li>
+<li><p>Based on the <span class="math notranslate nohighlight">\(k^{th}\)</span> sample value, the <span class="math notranslate nohighlight">\((k+1)^{th}\)</span> sample value is obtained using the following steps:</p>
+<ol class="arabic">
+<li><p>Generate a sample value of <span class="math notranslate nohighlight">\(\Sigma_{\theta}^{(k+1)}\)</span> from the conditional posterior distribution <span class="math notranslate nohighlight">\(IW(\Sigma_n, m_n)\)</span></p></li>
+<li><p>Generate a sample value of <span class="math notranslate nohighlight">\(\mu_\theta^{(k+1)}\)</span> from the conditional posterior distribution <span class="math notranslate nohighlight">\(N(\mu_n, \frac{\Sigma_\theta}{\nu_n})\)</span></p></li>
+<li><p>For each dataset, generate independently a sample value of <span class="math notranslate nohighlight">\(\sigma_i^{2(k+1)}\)</span> from the conditional posterior distribution of each <span class="math notranslate nohighlight">\(\sigma_i^2\)</span>: <span class="math notranslate nohighlight">\(IG(\alpha_n, \beta_n)\)</span></p></li>
+<li><p>For each dataset, generate a sample value of the model parameters <span class="math notranslate nohighlight">\(\theta_i\)</span> from the conditional posterior  <span class="math notranslate nohighlight">\(p(\mathbf{y}_i | \theta_i, \sigma_i^2)   p(\theta_i | \mu_\theta, \Sigma_\theta)\)</span> with a Metropolis-Hastings step as follows:</p>
+<ol class="loweralpha simple">
+<li><p>Generate a candidate sample <span class="math notranslate nohighlight">\(\theta_{i(c)}\)</span> from a local random walk proposal density <span class="math notranslate nohighlight">\(\theta_{i(c)} \sim N(\theta_i^{(k)}, \Sigma_i^{(k)})\)</span> where <span class="math notranslate nohighlight">\(\Sigma_i^{(k)}\)</span> is the proposal covariance matrix of the random walk.</p></li>
+<li><p>Calculate the acceptance ratio</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-4">
+<span class="eqno">(1.3.19)<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-4" title="Permalink to this equation">¶</a></span>\[a_c = \frac{p(\mathbf{y}_i | \theta_{i(c)}, \sigma_i^{2(k+1)}) p(\theta_{i(c)} | \mu_\theta^{(k+1)}, \Sigma_{\theta}^{(k+1)})}{p(\mathbf{y}_i | \theta_i^{(k)}, \sigma_i^{2(k+1)})   p(\theta_i^{(k)}| \mu_\theta^{(k+1)}, \Sigma_{\theta}^{(k+1)})}\]</div>
+<ol class="loweralpha simple" start="3">
+<li><p>Generate a random value <span class="math notranslate nohighlight">\(u\)</span> from a uniform distribution on [0, 1] and set</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-metropolis-hastings-criteria">
+<span class="eqno">(1.3.20)<a class="headerlink" href="#equation-metropolis-hastings-criteria" title="Permalink to this equation">¶</a></span>\[\begin{split}\theta_i^{(k+1)} = \quad &amp;\theta_{i(c)} \quad \text{if} \quad u &lt; a_c \\
+&amp;\theta_i^{(k)} \quad \text{otherwise}\end{split}\]</div>
+</li>
+</ol>
+</li>
+</ol>
+<p>After an initial burn-in period, the sample values generated by this algorithm converge to the target density. The proposal covariance matrix of the random walk <span class="math notranslate nohighlight">\(\Sigma_i^{(k)}\)</span> is selected to facilitate proper mixing of the random walks used to generate sample values of the <span class="math notranslate nohighlight">\(\theta_i\)</span>. Within the adaptation duration, a scaled version of the covariance matrix of the sample values of the last <span class="math notranslate nohighlight">\(N_{cov}\)</span> samples (defined as the adaptation frequency in the UCSD_UQ engine) is used, to keep the acceptance rate in the range of 0.2 to 0.5.</p>
+</div>
+</div>
 </div>
 
 
@@ -268,7 +383,7 @@ prior joint PDF <span class="math notranslate nohighlight">\(p(\theta)\)</span>.
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2023, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

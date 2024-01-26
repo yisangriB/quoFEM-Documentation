@@ -128,11 +128,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/user_inputs_documentation/User_Input_Documentation_Tables.html">10. User Inputs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -246,7 +242,7 @@
 <img alt="../../../../../_images/DS_jupyter.png" src="../../../../../_images/DS_jupyter.png" />
 </div>
 <ol class="arabic simple" start="6">
-<li><p>Specify settings for running the job on Stampede2. Submit the job by running all cells in the Jupyter Notebook (Cell &gt; Run All).</p></li>
+<li><p>Specify settings for running the job on Frontera. Submit the job by running all cells in the Jupyter Notebook (Cell &gt; Run All).</p></li>
 </ol>
 <ol class="arabic simple" start="7">
 <li><p>To view the status of the job, navigate to the <strong>Workspace</strong> on DesignSafe. The right bar will list all jobs that have been submitted in order of newest to oldest. Job outputs can be accessed by clicking on “More Info” on the job.</p></li>
@@ -346,7 +342,7 @@ tacc.prod password for taccuser:
 <div><p><code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">job.json</span></code></p>
 </div></blockquote>
 </li>
-<li><p>Edit the job.json file to specify settings for running the job on Stampede2. To make edits in the VIM Editor, type <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code>. To exit out of the editor, type <code class="docutils literal notranslate"><span class="pre">:wq</span></code>.</p></li>
+<li><p>Edit the job.json file to specify settings for running the job on Frontera. To make edits in the VIM Editor, type <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code>. To exit out of the editor, type <code class="docutils literal notranslate"><span class="pre">:wq</span></code>.</p></li>
 <li><p>Once the job.json file is prepared, submit the job by running the command:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">tapis</span> <span class="pre">jobs</span> <span class="pre">submit</span> <span class="pre">-F</span> <span class="pre">job.json</span></code></p>
@@ -385,7 +381,7 @@ used to track progress and download results.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2023, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

@@ -130,11 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/user_inputs_documentation/User_Input_Documentation_Tables.html">10. User Inputs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -234,12 +230,21 @@
 <div class="section" id="install-dependencies">
 <h2><span class="section-number">1.1. </span>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>First, ensure the following dependencies are installed:</p>
-<ul class="simple">
+<ul>
 <li><p><strong>C++17 compliant compiler</strong>: many of the workflow applications included use C++17 features; consequently, they may need a newer C++17 compliant compiler. For Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/older-downloads/InstallDependencies">Visual Studio 2019 (Community Edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.</p></li>
 <li><p><strong>OpenSees</strong>: The workflow applications require an installation of <a class="reference external" href="http://opensees.berkeley.edu/">OpenSees</a> to carry out a structural analysis using the finite element method.</p></li>
 <li><p><strong>DAKOTA</strong>: The workflow applications require an installation of <a class="reference external" href="https://dakota.sandia.gov/">DAKOTA</a> to handle and propagate the uncertainties defined in the input files for the workflow applications.</p></li>
 <li><p><strong>Python</strong>: The workflow requires at least Python 3.7.</p></li>
-<li><p><strong>Conan</strong>: This repository uses <a class="reference external" href="https://conan.io/">Conan</a> for dependency management. Conan is a python library and can be installed using the following <a class="reference external" href="https://docs.conan.io/en/latest/installation.html">instructions</a>. Version 1.25 or later is recommended.</p></li>
+<li><p><strong>Conan</strong>: This repository uses <a class="reference external" href="https://conan.io/">Conan</a>, a python library, for dependency management. <strong>Install conan version 1.60.2</strong>, for example, through</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install conan==1.60.2</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">See the <a class="reference external" href="https://docs.conan.io/en/latest/installation.html">instructions</a> if alternative installation methods are needed</div>
+</div>
+</div></blockquote>
+</li>
 <li><p><strong>CMake</strong>: This repository uses <a class="reference external" href="https://cmake.org/download/">CMake</a> for managing the build process. Version 3.15 or later is recommended.</p></li>
 <li><p><strong>Qt</strong>: <a class="reference external" href="https://www.qt.io/download">Qt</a> is free for open source developers. Version 5.15 or later is required. Make sure to include Qt Creator in the installer.</p></li>
 </ul>
@@ -418,7 +423,7 @@ make</pre>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2023, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

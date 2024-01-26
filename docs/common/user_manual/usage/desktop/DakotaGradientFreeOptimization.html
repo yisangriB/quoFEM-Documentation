@@ -153,11 +153,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/usage_video.html">9. Video Overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_inputs_documentation/User_Input_Documentation_Tables.html">10. User Inputs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -244,9 +240,9 @@
   <div class="section" id="gradient-free-parameter-estimation">
 <span id="lbldakotagradientfreeestimation"></span><h1><span class="section-number">3.1.2.6. </span>Gradient-free Parameter Estimation<a class="headerlink" href="#gradient-free-parameter-estimation" title="Permalink to this headline">¶</a></h1>
 <p>It is not uncommon for engineering problems that the gradient of a computational model with respect to the model parameters is not reliably estimated. Sometimes, the objective function for deterministic calibration is not differentiable. In such situations, a gradient-based local search algorithm might fail to locate the optimum parameter values that provide the best fit of the model predictions to the data. A gradient-free local search method can be employed for deterministic calibration instead of a gradient-based algorithm in such scenarios.</p>
-<p>Gradient-free optimization methods are used to minimize an objective function based solely on evaluation of the objective function values without the use of any derivative information or any approximation of the derivatives. When concerned with parameter estimation, the objective function is typically the sum of the squared differences between the predictions from a model and the calibration data. However, any objective function that the user desires can be employed. When performing grdient-free parameter estimation, the model (or the post-processing script, if any), should be defined in a way that returns the  objective function value (a single scalar quantity) in a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code>.</p>
+<p>Gradient-free optimization methods are used to minimize an objective function based solely on an evaluation of the objective function values without the use of any derivative information or any approximation of the derivatives. When concerned with parameter estimation, the objective function is typically the sum of the squared differences between the predictions from a model and the calibration data. However, any objective function that the user desires can be employed. When performing gradient-free parameter estimation, the model (or the post-processing script, if any), should be defined in a way that returns the objective function value (a single scalar quantity) in a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code>.</p>
 <p>The parameters of the model (which is defined in the <strong>FEM</strong> panel) are defined in the <strong>RV</strong> panel. The bounds of the domain within which the optimal values of the parameters need to be searched for are also specified in the <strong>RV</strong> panel, along with the initial point at which the search will start. No prior specification of the distribution associated with the random variables is necessary.</p>
-<p>The output from the model is the objective function value, and this can be given a name which is defined in the <strong>EDP</strong> panel. The length must be set equal to 1.</p>
+<p>The output from the model is the objective function value, and this can be given a name that is defined in the <strong>EDP</strong> panel. The length must be set equal to 1.</p>
 <p>The algorithms employed will find a set of parameter values that <strong>minimizes</strong> the objective function.</p>
 <p>The panel that is presented to the user when this Dakota Category is chosen, is as shown in <a class="reference internal" href="#figgradientfreeparameterestimation"><span class="std std-numref">Fig. 3.1.2.6.1</span></a>.</p>
 <div class="align-center figure" id="id1">
@@ -259,15 +255,15 @@
 <ol class="arabic simple">
 <li><p>Initial step size: this defines the initial size of the offsets used in the pattern search algorithm</p></li>
 <li><p>Contraction factor: this specifies the ratio of the reduction in the offset size used in the pattern search algorithm</p></li>
-<li><p>Max # model evals: This is a termination criterion. This specifies the maximum number of model evaluations allowed during the search for the optimum parameter values. This sets the total compuational budget for the pattern search algorithm.</p></li>
+<li><p>Max # model evals: This is a termination criterion. This specifies the maximum number of model evaluations allowed during the search for the optimum parameter values. This sets the total computational budget for the pattern search algorithm.</p></li>
 <li><p>Max # iterations: This is a termination criterion. This specifies the maximum number of iterations allowed in the optimization algorithm. During each iteration of the algorithm, several model evaluations occur in parallel.</p></li>
-<li><p>Variable tolerance: This is a terminiation criterion. This specifies the maximum permitted change in the value of the parameters being estimated from one iteration to the next.</p></li>
-<li><p>Convergence tolerance: This is a termination criterion. This soecifies the maximum permitted change in the value of the objective function from one iteration to the next.</p></li>
+<li><p>Variable tolerance: This is a termination criterion. This specifies the maximum permitted change in the value of the parameters being estimated from one iteration to the next.</p></li>
+<li><p>Convergence tolerance: This is a termination criterion. This specifies the maximum permitted change in the value of the objective function from one iteration to the next.</p></li>
 </ol>
 <p>The search for the optimum parameter value will terminate once any of the four available termination criteria are met.</p>
 <dl class="citation">
 <dt class="label" id="torczon"><span class="brackets">Torczon</span></dt>
-<dd><p>Virginia Torczon. On the convergence of pattern search algortihms. SIAM J. Optim. Vol. 7, No. 1, pp. 1–25, February 1997.</p>
+<dd><p>Virginia Torczon. On the convergence of pattern search algorithms. SIAM J. Optim. Vol. 7, No. 1, pp. 1–25, February 1997.</p>
 </dd>
 </dl>
 </div>
@@ -283,7 +279,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2023, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

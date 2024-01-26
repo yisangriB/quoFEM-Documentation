@@ -154,11 +154,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quoFEM/usage_video.html">9. Video Overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_inputs_documentation/User_Input_Documentation_Tables.html">10. User Inputs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -244,16 +240,16 @@
             
   <div class="section" id="deterministic-calibration">
 <span id="lbldakotadeterministiccalibration"></span><h1><span class="section-number">3.1.2.4. </span>Deterministic Calibration<a class="headerlink" href="#deterministic-calibration" title="Permalink to this headline">¶</a></h1>
-<p>Deterministic calibration methods (also known as non-linear least squares methods or deterministic parameter estimation methods) are  used to fit a set of m observations (provided in the calibration data file defined in the <strong>UQ</strong> panel) with a model (defined in the <strong>FEM</strong> panel) that is non-linear with n unknown parameters. The unknown parameters of this model are defined in the <strong>RV</strong> panel. The bounds of the domain within which the optimal values of the parameters need to be searched for are also specified in the <strong>RV</strong> panel, along with the initial point at which the search will begin. No prior specification of the distribution associated with the random variables is necessary. The output quantities from the model are defined in the <strong>QOI</strong> panel. For each evaluation of the computational model, the processing scripts should write the values of the simulated response quantities of interest in a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code>. The algorithms employed will find a set of parameter values that <strong>minimizes</strong> the sum of the squared differences between the measured values of the QoIs and the predicted values of the QoIs from the computational model. The algorithms themselves are general functional minimization algorithms seeking to minimize:</p>
+<p>Deterministic calibration methods (also known as non-linear least squares methods or deterministic parameter estimation methods) are used to fit a set of m observations (provided in the calibration data file defined in the <strong>UQ</strong> panel) with a model (defined in the <strong>FEM</strong> panel) that is non-linear with n unknown parameters. The unknown parameters of this model are defined in the <strong>RV</strong> panel. The bounds of the domain within which the optimal values of the parameters need to be searched for are also specified in the <strong>RV</strong> panel, along with the initial point at which the search will begin. No prior specification of the distribution associated with the random variables is necessary. The output quantities from the model are defined in the <strong>QOI</strong> panel. For each evaluation of the computational model, the processing scripts should write the values of the simulated response quantities of interest in a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code>. The algorithms employed will find a set of parameter values that <strong>minimizes</strong> the sum of the squared differences between the measured values of the QoIs and the predicted values of the QoIs from the computational model. The algorithms themselves are general functional minimization algorithms seeking to minimize:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-dakotadeterministiccalibration-0">
 <span class="eqno">(3.1.2.4.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-dakotadeterministiccalibration-0" title="Permalink to this equation">¶</a></span>\[f(\theta) = \sum_{i=1}^{m} R_i(\theta)^2 = \sum_{i=1}^{m} \left ( y_i(\theta)^{predicted} - y_i^{measured} \right)^2\]</div>
 <p>where <span class="math notranslate nohighlight">\(R_i(\theta)\)</span>, typically called the residuals, are the differences between the measured data <span class="math notranslate nohighlight">\(y_i^{measured}\)</span> provided in the calibration data file, and predictions from the model <span class="math notranslate nohighlight">\(y_i(\theta)^{predicted}\)</span> of the corresponding response quantity, and <span class="math notranslate nohighlight">\(\theta \in \mathbb{R}^n\)</span> the <span class="math notranslate nohighlight">\(n\)</span> model parameters whose values are not precisely known and are being calibrated to match available data.</p>
 <p>The panel that is presented to the user when this Dakota Category is chosen, is as shown in <a class="reference internal" href="#figparameterestimation"><span class="std std-numref">Fig. 3.1.2.4.1</span></a>.</p>
 <div class="align-center figure" id="id4">
 <span id="figparameterestimation"></span><img alt="../../../../_images/DeterministicCalibration.png" src="../../../../_images/DeterministicCalibration.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.2.4.1 </span><span class="caption-text">Dakota determinstic calibration input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.2.4.1 </span><span class="caption-text">Dakota deterministic calibration input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>For determinstic calibration two different optimization algorithms are currently provided under the Method drop down menu, namely OPT++GaussNewton and NL2SOL. For both methods three input parameters need to be specified as shown in the figure:</p>
+<p>For deterministic calibration two different optimization algorithms are currently provided under the Method drop-down menu, namely OPT++GaussNewton and NL2SOL. For both methods three input parameters need to be specified as shown in the figure:</p>
 <ol class="arabic simple">
 <li><p>the maximum number of iterations for the optimization algorithm</p></li>
 <li><p>the convergence tolerance</p></li>
@@ -265,7 +261,7 @@
 </div>
 <div class="section" id="nl2sol">
 <h2>NL2SOL<a class="headerlink" href="#nl2sol" title="Permalink to this headline">¶</a></h2>
-<p>The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues (<a class="reference internal" href="#dennis81a" id="id2"><span>[Dennis81a]</span></a>, <a class="reference internal" href="#dennis81b" id="id3"><span>[Dennis81b]</span></a>). NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This latter approximation being useful when the starting guess is far from solution. For problems with large residuals, this algorithm is known to be more reliable than Gauss-Newton.</p>
+<p>The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues (<a class="reference internal" href="#dennis81a" id="id2"><span>[Dennis81a]</span></a>, <a class="reference internal" href="#dennis81b" id="id3"><span>[Dennis81b]</span></a>). NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This latter approximation is useful when the starting guess is far from the solution. For problems with large residuals, this algorithm is known to be more reliable than Gauss-Newton.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The data are provided in the calibration data file, which must fulfill the following requirements:</p>
@@ -315,7 +311,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2023, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>
