@@ -222,7 +222,7 @@
 <div><ul class="simple">
 <li><p>access to high-performance computing resources, available on the cloud through <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>, to enable parallel workflows for non-trivial large-scale NHE problems;</p></li>
 <li><p>uncertainty quantification capabilities using <a class="reference external" href="https://dakota.sandia.gov/">Dakota</a>, which allows users to introduce input uncertainties that are propagated through the workflow with random variables;</p></li>
-<li><p>streamlined interfaces between existing software applications and datasets that are widely used by the NHE community, such as <a class="reference external" href="https://openfoam.org/">OpenFOAM</a>, <a class="reference external" href="https://opensees.berkeley.edu/">OpenSees</a>, <a class="reference external" href="http://adcirc.org/">ADCIRC</a>, and <a class="reference external" href="https://peer.berkeley.edu/peer-strong-ground-motion-databases">PEER Strong Ground Motion Databases</a>. To do this, the SimCenter develops pre- and post-processors for these existing applications and utilizes web technologies for accessing online services;</p></li>
+<li><p>streamlined interfaces between existing software applications and datasets that are widely used by the NHE community, such as <a class="reference external" href="https://openfoam.org/">OpenFOAM</a>, <a class="reference external" href="https://opensees.berkeley.edu">OpenSees</a>, <a class="reference external" href="http://adcirc.org/">ADCIRC</a>, and <a class="reference external" href="https://peer.berkeley.edu/peer-strong-ground-motion-databases">PEER Strong Ground Motion Databases</a>. To do this, the SimCenter develops pre- and post-processors for these existing applications and utilizes web technologies for accessing online services;</p></li>
 <li><p>additional custom software applications produced by the SimCenter. Among these are applications that automate the acquisition of building inventory data (<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/">BRAILS</a>), applications that simulate hazard events and generate corresponding input files for passing through the workflow system (RegionalEvent Applications), applications for damage and loss assessment (<a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">pelicun</a>), and more.</p></li>
 <li><p>a modular framework that allows developers to incorporate their own software applications as components to the workflow system, so long as it meets the input-output structure at component interfaces.</p></li>
 </ul>
@@ -243,9 +243,9 @@
 <blockquote>
 <div><p>Within the natural hazards engineering community, there exist several widely used open-source applications, e.g., OpenFOAM, and online datasets, e.g., PEER NGA, that researchers are currently using. Consequently, and to avoid duplication, SimCenter applications incorporate many widely used applications, e.g., OpenFOAM. To do this, SimCenter develops pre- and post-processors for these existing applications and utilizes web technologies for accessing online services.</p>
 </div></blockquote>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id2">
 <span id="figframework"></span><a class="reference internal image-reference" href="../../../../_images/SimCenterFramework.png"><img alt="../../../../_images/SimCenterFramework.png" src="../../../../_images/SimCenterFramework.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">SimCenter Software Framework</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">SimCenter Software Framework</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The SimCenter scientific workflow systems aim to facilitate the use, reuse, and extension of common workflows encountered in NHE by a broad range of natural hazards engineering researchers with varying software skills. This chapter presents the software architecture for the SimCenter framework and quoFEM app using the <a class="reference external" href="https://c4model.com">C4 model</a> to encourage this use and adoption. The <strong>C4</strong> model is a graphical approach for documenting software architecture through diagrams describing and communicating the software architecture at various levels of abstraction. It is a top-down approach that starts at a high level (level 1), showing how a user would interact with the software, and drills down through three more levels, with level 4 containing the typical UML diagrams. The <strong>C4</strong> model was chosen to provide NHE researchers with a diverse range of software architecture knowledge to understand the software architecture behind SimCenter applications that fit their skill level. The four levels:</p>
 <ul class="simple">
@@ -270,27 +270,27 @@
 <h2><span class="section-number">2.3. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>A Level 1 diagram showing the system context for the SimCenter applications, i.e., how it fits in the world,
 is shown in <a class="reference internal" href="#architecture-figcontext"><span class="std std-numref">Fig. 2.3.1</span></a>. It shows SimCenter applications (EE-UQ, WE-UQ, HydroUQ, PBE, R2D) as a box in the center surrounded by the user and the user’s systems. The SimCenter applications allow a user to create and run scientific workflow applications; the data for the applications may be obtained from the web or DataDepot. The workflow applications are run on either the local desktop or on some HPC at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>.</p>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id3">
 <span id="architecture-figcontext"></span><a class="reference internal image-reference" href="../../../../_images/context.png"><img alt="../../../../_images/context.png" src="../../../../_images/context.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.1 </span><span class="caption-text">System context diagram for SimCenter applications.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1 </span><span class="caption-text">System context diagram for SimCenter applications.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Given how SimCenter applications fit in with the environment, a level 2 diagram demonstrates how the
 SimCenter applications are broken into high-level components. The SimCenter applications are, as shown in
 <a class="reference internal" href="#architecture-figcontainer"><span class="std std-numref">Fig. 2.3.2</span></a>, split into two components: A front-end UI and a back-end application that runs the workflow. The front-end applications are desktop applications written using the cross-platform <a class="reference external" href="https://www.qt.io/product/framework">Qt framework</a>. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow, and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications where possible and run on either the local desktop machine or on an HPC utilizing resources made available to the NHE community through DesignSafe.</p>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id4">
 <span id="architecture-figcontainer"></span><a class="reference internal image-reference" href="../../../../_images/container.png"><img alt="../../../../_images/container.png" src="../../../../_images/container.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.2 </span><span class="caption-text">System container diagram for SimCenter applications.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2 </span><span class="caption-text">System container diagram for SimCenter applications.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Two level 3 diagrams are now presented, which break up the two containers into the major building blocks or
 components in C4 terminology. In <a class="reference internal" href="#architecture-figcomponentfront"><span class="std std-numref">Fig. 2.3.3</span></a>, the component diagram for the front-end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the jigsaw puzzle analogy, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece. For the chosen application, they provide the inputs. When the inputs are all provided, the user can choose to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen, the widgets may subsequently interact with web services through HTTPS requests or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.</p>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id5">
 <span id="architecture-figcomponentfront"></span><a class="reference internal image-reference" href="../../../../_images/componentFront.png"><img alt="../../../../_images/componentFront.png" src="../../../../_images/componentFront.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.3 </span><span class="caption-text">Component diagram for front-end UI.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.3 </span><span class="caption-text">Component diagram for front-end UI.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>The component diagram for the back-end application shown in <a class="reference internal" href="#architecture-figcomponentback"><span class="std std-numref">Fig. 2.3.4</span></a>, shows that the back-end comprises several component applications. The application <code class="docutils literal notranslate"><span class="pre">femUQ.py</span></code> is the application that parses the input from the front end, sets up the workflow by creating a <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> script and then launches the UQ engine. The choice of UQ Engine and applications to run in the workflow is determined from the data passed from the UI and information contained in a file, <code class="docutils literal notranslate"><span class="pre">WorkflowApplication.json</span></code>. The <code class="docutils literal notranslate"><span class="pre">WorkflowApplication.json</span></code> file is a file that maps the applications specified in the output from the UI with a specific application contained on the users’ local machine or at the remote HPC resource, as such it allows the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Once the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> file is created, control is passed to a UQ engine, which repeatedly runs the <code class="docutils literal notranslate"><span class="pre">workflow_driver</span></code> to generate the results. In running the workflow, some of the applications will invoke applications not developed to meet the API. For such applications, pre- and post-processors are provided. The figure shows the back-end application running locally or remotely on an HPC at DesignSafe.</p>
-<div class="align-center figure" id="id7">
+<div class="align-center figure" id="id6">
 <span id="architecture-figcomponentback"></span><a class="reference internal image-reference" href="../../../../_images/componentBack.png"><img alt="../../../../_images/componentBack.png" src="../../../../_images/componentBack.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.4 </span><span class="caption-text">Component diagram for Backend Application.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.4 </span><span class="caption-text">Component diagram for Backend Application.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -316,18 +316,18 @@ components in C4 terminology. In <a class="reference internal" href="#architectu
 <li><p>The femUQ application will notify the UI that it is done.</p></li>
 <li><p>The UI will read the results and present them to the user.</p></li>
 </ol>
-<div class="align-center figure" id="id8">
+<div class="align-center figure" id="id7">
 <span id="architecture-figsequencelocal"></span><a class="reference internal image-reference" href="../../../../_images/sequenceLocal.png"><img alt="../../../../_images/sequenceLocal.png" src="../../../../_images/sequenceLocal.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.5 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Locally</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.5 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Locally</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>That is for the case where the computations are performed on the local computer. When the computations are
 performed remotely, the steps are different. The first 8 steps are the same. But now, the UQwrapper will not
 start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (11)
 Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in
 <a class="reference internal" href="#architecture-figsequenceremote"><span class="std std-numref">Fig. 2.3.6</span></a>. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service. The <a class="reference external" href="https://tapis-project.org/">TACC tapis</a> interface is used to provide SimCenter users with access to the TACC HPC resources through the DesignSafe portal.</p>
-<div class="align-center figure" id="id9">
+<div class="align-center figure" id="id8">
 <span id="architecture-figsequenceremote"></span><a class="reference internal image-reference" href="../../../../_images/sequenceRemote.png"><img alt="../../../../_images/sequenceRemote.png" src="../../../../_images/sequenceRemote.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.6 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Remotely</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.6 </span><span class="caption-text">Sequence diagram showing what happens when a Workflow runs Remotely</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

@@ -219,7 +219,7 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-quofem"></span><h1><span class="section-number">5. </span>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
-<p>Version 3.4 of the quoFEM app was released on <strong>October 2, 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p>Version 3.5 of the quoFEM app was released on <strong>December 29, 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="uq-uncertainty-quantification-and-optimization-options">
 <h2><span class="section-number">5.1. </span>UQ (Uncertainty Quantification and Optimization Options)<a class="headerlink" href="#uq-uncertainty-quantification-and-optimization-options" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
@@ -241,7 +241,7 @@
 <li><p>Resample from the existing correlated dataset of samples</p></li>
 </ol>
 </li>
-<li><p><span class="blue">Multi-fidelity Monte Calro</span></p></li>
+<li><p>Multi-fidelity Monte Carlo</p></li>
 </ol>
 </li>
 </ol>
@@ -288,13 +288,13 @@
 </li>
 <li><p>Bayesian Calibration</p>
 <blockquote>
-<div><ol class="upperalpha simple">
+<div><ol class="upperalpha">
 <li><p><a class="reference internal" href="../usage/desktop/DakotaBayesianCalibration.html#lbldakotabayesiancalibration"><span class="std std-ref">Dakota</span></a></p>
 <ol class="arabic simple">
 <li><p>DREAM</p></li>
 </ol>
 </li>
-<li><p><a class="reference internal" href="../usage/desktop/UCSD_UQ_TMCMC.html#lblucsdtmcmc"><span class="std std-ref">UCSD_UQ</span></a></p>
+<li><p><a class="reference internal" href="../usage/desktop/UCSD_UQ_TMCMC.html#lblucsdtmcmc"><span class="std std-ref">TMCMC</span></a></p>
 <ol class="arabic simple">
 <li><p>Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation</p>
 <ol class="loweralpha simple">
@@ -302,6 +302,17 @@
 <li><p>Override default error covariance structure</p></li>
 <li><p>Calibrate multipliers on error covariance structure</p></li>
 </ol>
+</li>
+</ol>
+</li>
+<li><p><a class="reference internal" href="../usage/desktop/UCSD_UQ_Hierarchical.html#lblucsdhierarchical"><span class="std std-ref">Hierarchical Models</span></a></p>
+<ol class="arabic">
+<li><p><span class="blue">Bayesian updating of parameters of a hierarchical model</span></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Quantify aleatory uncertainty in the parameter values of a computational model</p></li>
+</ol>
+</div></blockquote>
 </li>
 </ol>
 </li>
@@ -350,7 +361,7 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Support for the running computation to be preformed on TACC’s high performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star (*).</p>
+<p>Support for the running computation to be performed on TACC’s high-performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star (*).</p>
 </div>
 </div>
 <div class="section" id="fem-computational-model-specification">
@@ -390,7 +401,7 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><sup>1</sup>: For SimCentreUQ and UCSD algorithms only, the RVs can be defined by any of parameters, moments, or a dataset.
+<p><sup>1</sup>: For SimCenterUQ and UCSD algorithms only, the RVs can be defined through any of these options - parameters, moments, or a dataset.
 <sup>2</sup>: Available for Optimization routines in Dakota only.
 <sup>3</sup>: Available in SimCenterUQ and UCSD only.</p>
 </div>
@@ -413,7 +424,7 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p>All output values presented in spreadsheet</p>
+<li><p>All output values presented in the spreadsheet</p>
 <blockquote>
 <div><ol class="upperalpha simple">
 <li><p>Update the chart by clicking on spreadsheet columns</p></li>
