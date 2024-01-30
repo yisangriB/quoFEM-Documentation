@@ -257,17 +257,17 @@
 </div>
 <div class="section" id="data">
 <h2><span class="section-number">4.15.2. </span>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
-<p>The dataset used for the inference presented in this example originates from experimental tests conducted on reinforcing steel specimens, commonly referred to as coupons, at the University of California, San Diego, in 2013. Refer [Carreño et al.]_ for details.</p>
+<p>The dataset used for the inference presented in this example originates from experimental tests conducted on reinforcing steel specimens, commonly referred to as coupons, at the University of California, San Diego, in 2013. Refer Carreño et al. <a class="reference internal" href="#carreno2020" id="id1"><span>[Carreño2020]</span></a> for details.</p>
 <p>This dataset comprises cyclic stress-strain tests performed on thirty-six coupons. These coupons were sourced from three distinct steel manufacturing mills and adhered to two different manufacturing standards of Grade 60 steel. Specifically, each mill provided two straight #4 bars, each measuring 4.6 meters in length. One bar from each mill complied with Grade 60 A615 manufacturing standards, while the other adhered to Grade 60 A706 standards. From each bar, six coupons were extracted, and each coupon underwent cyclic strain tests with varying input strain histories.</p>
 <p>Consequently, a total of 36 coupons were tested, derived from the combination of 3 mills, 2 bars per mill, and 6 coupons per bar. To ensure uniformity in specimen cross-sections, each coupon underwent machining, as illustrated in <a class="reference internal" href="#figcoupon"><span class="std std-numref">Fig. 4.15.2.1</span></a>. Machining was employed to maintain a length-to-diameter ratio of 2 in the machined portion of the bars, thereby minimizing the effects of nonlinear geometry, such as partial buckling, in the stress-strain response.</p>
-<div class="align-center figure" id="id1">
+<div class="align-center figure" id="id2">
 <span id="figcoupon"></span><img alt="../../../../../_images/Coupon.png" src="../../../../../_images/Coupon.png" />
-<p class="caption"><span class="caption-number">Fig. 4.15.2.1 </span><span class="caption-text">Test coupon</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.2.1 </span><span class="caption-text">Test coupon</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The experiments involved six distinct random cyclic strain histories, as depicted in <a class="reference internal" href="#figstrainhistories"><span class="std std-numref">Fig. 4.15.2.2</span></a>. These strain histories include strain reversals of various amplitudes, along with overall drifts towards positive or negative strains. Notably, the amplitude of these drifts was constrained within <span class="math notranslate nohighlight">\(\pm 5\%\)</span>, a limit representative of the strain range typically experienced by reinforcing bars during seismic events.</p>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id3">
 <span id="figstrainhistories"></span><img alt="../../../../../_images/StrainHistories.png" src="../../../../../_images/StrainHistories.png" />
-<p class="caption"><span class="caption-number">Fig. 4.15.2.2 </span><span class="caption-text">Strain histories</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.2.2 </span><span class="caption-text">Strain histories</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="model">
@@ -293,29 +293,29 @@
 </div>
 <p>As depicted in Figure <a class="reference internal" href="#figdataandmodel"><span class="std std-numref">Fig. 4.15.5.1</span></a>, the required files for executing this example are organized in two distinct directories.</p>
 <p>The first directory contains the model scripts, which remain consistent across various experiments. The second directory contains the data files. These data files vary from one experiment to another and are further organized into subdirectories corresponding to each experiment, as elaborated below.</p>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id4">
 <span id="figdataandmodel"></span><a class="reference internal image-reference" href="../../../../../_images/ModelAndData.png"><img alt="../../../../../_images/ModelAndData.png" src="../../../../../_images/ModelAndData.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.5.1 </span><span class="caption-text">Model files directory and data files directory</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.5.1 </span><span class="caption-text">Model files directory and data files directory</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>In this example, a total of 36 datasets comprising cyclic stress-strain measurements are utilized. Each dataset consists of two files. These datasets are organized within subdirectories under the directory named <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0028/src/CouponCyclicTestData_every_20th_point">CouponCyclicTestData_every_20th_point</a>.</p></li>
 </ol>
 <p>When using the hierarchical Bayesian calibration approach, each dataset must be placed in its own dedicated subdirectory. The layout of the data files used in this example is illustrated in Figures <a class="reference internal" href="#figdatadirectory"><span class="std std-numref">Fig. 4.15.5.2</span></a> and <a class="reference internal" href="#figdatasetsubdirectories"><span class="std std-numref">Fig. 4.15.5.3</span></a>.</p>
 <p>Within each experiment’s subdirectory, the strain values measured are stored in files named <code class="docutils literal notranslate"><span class="pre">input_data.txt</span></code>, while the corresponding stress measurements are found in files named <code class="docutils literal notranslate"><span class="pre">output_data.txt</span></code>.</p>
-<div class="align-center figure" id="id4">
-<span id="figdatadirectory"></span><a class="reference internal image-reference" href="../../../../../_images/DataDirectory.png"><img alt="../../../../../_images/DataDirectory.png" src="../../../../../_images/DataDirectory.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.5.2 </span><span class="caption-text">Directory with calibration datasets in subdirectories</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
 <div class="align-center figure" id="id5">
+<span id="figdatadirectory"></span><a class="reference internal image-reference" href="../../../../../_images/DataDirectory.png"><img alt="../../../../../_images/DataDirectory.png" src="../../../../../_images/DataDirectory.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.15.5.2 </span><span class="caption-text">Directory with calibration datasets in subdirectories</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id6">
 <span id="figdatasetsubdirectories"></span><a class="reference internal image-reference" href="../../../../../_images/DatasetSubdirectory.png"><img alt="../../../../../_images/DatasetSubdirectory.png" src="../../../../../_images/DatasetSubdirectory.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.5.3 </span><span class="caption-text">Subdirectory containing data from one experiment</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.5.3 </span><span class="caption-text">Subdirectory containing data from one experiment</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="2">
 <li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0028/src/model/matTestAllParamsReadStrain.tcl">matTestAllParamsReadStrain.tcl</a>: This tcl script is designed to read the strain history from a file labeled input_data.txt, conduct a stress-strain simulation, and subsequently generate predicted stress values using the Steel02 model. These predicted stress values are then written into a file named <code class="docutils literal notranslate"><span class="pre">results.out</span></code>.</p></li>
 </ol>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id7">
 <span id="figmodelfiles"></span><a class="reference internal image-reference" href="../../../../../_images/ModelFiles.png"><img alt="../../../../../_images/ModelFiles.png" src="../../../../../_images/ModelFiles.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.5.4 </span><span class="caption-text">Model files</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.5.4 </span><span class="caption-text">Model files</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="3">
 <li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0028/src/model/restart_file.json">restart_file.json</a>: This JSON file contains an example of the data needed to restart an analysis from a previous result obtained using quoFEM. Restart files from a previous run can be found as explained <a class="reference internal" href="#lblhbmrestart"><span class="std std-ref">later in this example</span></a>.</p></li>
@@ -328,16 +328,16 @@
 <ol class="arabic simple">
 <li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Method</strong> drop-down menu, select the <strong>Bayesian Calibration</strong> option. In the <strong>UQ Engine</strong> dropdown menu select <strong>UCSD-UQ</strong> option. In the <strong>Model</strong> dropdown, select the <strong>Hierarchical</strong> option. Enter the values in this panel as shown in the figure below. A brief explanation of the different user input fields can be found in the <a class="reference internal" href="../../../usage/desktop/UCSD_UQ_Hierarchical.html#lblucsdhierarchical"><span class="std std-ref">User Manual</span></a>.</p></li>
 </ol>
-<div class="align-center figure" id="id7">
+<div class="align-center figure" id="id8">
 <span id="fighbmuq"></span><a class="reference internal image-reference" href="../../../../../_images/UQ2.png"><img alt="../../../../../_images/UQ2.png" src="../../../../../_images/UQ2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.6.1 </span><span class="caption-text">Inputs in the UQ panel</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.6.1 </span><span class="caption-text">Inputs in the UQ panel</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Next in the <strong>FEM</strong> panel , select <strong>OpenSees</strong> and populate the <strong>Input Script</strong> field by choosing the path to the model file.</p></li>
 </ol>
-<div class="align-center figure" id="id8">
+<div class="align-center figure" id="id9">
 <span id="fighbmfem"></span><a class="reference internal image-reference" href="../../../../../_images/FEM4.png"><img alt="../../../../../_images/FEM4.png" src="../../../../../_images/FEM4.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.6.2 </span><span class="caption-text">Inputs in the FEM panel</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.6.2 </span><span class="caption-text">Inputs in the FEM panel</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Select the <strong>RV</strong> tab from the input panel. This panel should be pre-populated with the names of the variables that were defined in the model scripts. If not, press the <strong>Add</strong> button to create a new field to define the input random variable. Enter the same variable name, as required in the model script. For this example, choose the Normal probability distribution for all the random variables and enter the parameter values for each distribution as shown in the figures below:</p></li>
@@ -345,9 +345,9 @@
 <div class="align-center figure" id="fighbmrv1">
 <a class="reference internal image-reference" href="../../../../../_images/RV11.png"><img alt="../../../../../_images/RV11.png" src="../../../../../_images/RV11.png" style="width: 600px;" /></a>
 </div>
-<div class="align-center figure" id="id9">
+<div class="align-center figure" id="id10">
 <span id="fighbmrv2"></span><a class="reference internal image-reference" href="../../../../../_images/RV2.png"><img alt="../../../../../_images/RV2.png" src="../../../../../_images/RV2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.6.3 </span><span class="caption-text">Inputs in the RV panel</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.6.3 </span><span class="caption-text">Inputs in the RV panel</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="4">
 <li><p>In the <strong>EDP</strong> panel create the output quantities corresponding to each of the 36 experiments with a descriptive name, as shown in the figures below:</p></li>
@@ -355,9 +355,9 @@
 <div class="align-center figure" id="fighbmedp1">
 <a class="reference internal image-reference" href="../../../../../_images/EDP11.png"><img alt="../../../../../_images/EDP11.png" src="../../../../../_images/EDP11.png" style="width: 600px;" /></a>
 </div>
-<div class="align-center figure" id="id10">
+<div class="align-center figure" id="id11">
 <span id="fighbmedp2"></span><a class="reference internal image-reference" href="../../../../../_images/EDP2.png"><img alt="../../../../../_images/EDP2.png" src="../../../../../_images/EDP2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.6.4 </span><span class="caption-text">Inputs in the EDP panel</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.6.4 </span><span class="caption-text">Inputs in the EDP panel</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="5">
 <li><p>Click on the <strong>Run</strong> button. This will create the necessary input files to perform a Bayesian calibration of the hierarchical model, run the analysis, and display the results when the analysis is completed. The results produced are sample values drawn from the distribution that represents the aleatory uncertainty in the estimated material parameters from each of the datasets.</p></li>
@@ -366,17 +366,17 @@
 <div class="align-center figure" id="fighbmres1">
 <a class="reference internal image-reference" href="../../../../../_images/RES12.png"><img alt="../../../../../_images/RES12.png" src="../../../../../_images/RES12.png" style="width: 600px;" /></a>
 </div>
-<div class="align-center figure" id="id11">
+<div class="align-center figure" id="id12">
 <span id="fighbmres2"></span><a class="reference internal image-reference" href="../../../../../_images/RES22.png"><img alt="../../../../../_images/RES22.png" src="../../../../../_images/RES22.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.6.5 </span><span class="caption-text">Results in the RES panel summary tab</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.6.5 </span><span class="caption-text">Results in the RES panel summary tab</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the <strong>Data Values</strong> tab of the <strong>RES</strong> panel, a chart and a table with all the sample values are shown. By clicking on the data inside the columns of the chart with the left or right mouse button, different chart types are created and shown in the chart area on the left.</p>
 <div class="align-center figure" id="fighbmres3">
 <a class="reference internal image-reference" href="../../../../../_images/RES32.png"><img alt="../../../../../_images/RES32.png" src="../../../../../_images/RES32.png" style="width: 600px;" /></a>
 </div>
-<div class="align-center figure" id="id12">
+<div class="align-center figure" id="id13">
 <span id="fighbmres4"></span><a class="reference internal image-reference" href="../../../../../_images/RES42.png"><img alt="../../../../../_images/RES42.png" src="../../../../../_images/RES42.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.6.6 </span><span class="caption-text">Data values tab in the RES panel</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.6.6 </span><span class="caption-text">Data values tab in the RES panel</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="files-for-restarting-the-analysis">
@@ -386,17 +386,24 @@
 <p class="admonition-title">Warning</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> directory is cleared every time the <code class="docutils literal notranslate"><span class="pre">RUN</span></code> button is clicked in quoFEM. So, if you want to restart the analysis using one of the sampling results files outlined above, make sure to copy the results file to a location outside the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> directory at the end of the analysis.</p>
 </div>
-<div class="align-center figure" id="id13">
+<div class="align-center figure" id="id14">
 <span id="fighbmpreferences"></span><a class="reference internal image-reference" href="../../../../../_images/Preferences1.png"><img alt="../../../../../_images/Preferences1.png" src="../../../../../_images/Preferences1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.7.1 </span><span class="caption-text">Jobs directory in the Preferences panel</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.7.1 </span><span class="caption-text">Jobs directory in the Preferences panel</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="fighbmres5">
 <a class="reference internal image-reference" href="../../../../../_images/RES51.png"><img alt="../../../../../_images/RES51.png" src="../../../../../_images/RES51.png" style="width: 600px;" /></a>
 </div>
-<div class="align-center figure" id="id14">
+<div class="align-center figure" id="id15">
 <span id="fighbmres6"></span><a class="reference internal image-reference" href="../../../../../_images/RES61.png"><img alt="../../../../../_images/RES61.png" src="../../../../../_images/RES61.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15.7.2 </span><span class="caption-text">Sampling results files that can be used to restart the analysis</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15.7.2 </span><span class="caption-text">Sampling results files that can be used to restart the analysis</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
+<dl class="citation">
+<dt class="label" id="carreno2020"><span class="brackets"><a class="fn-backref" href="#id1">Carreño2020</a></span></dt>
+<dd><ol class="upperalpha simple" start="18">
+<li><p>Carreño, K.H. Lotfizadeh, J.P. Conte, J.I. Restrepo, Material Model Parameters for the Giuffrè-Menegotto-Pinto Uniaxial Steel Stress-Strain Model, <em>J. Struct. Eng.</em> 146 (2020) 04019205. <a class="reference external" href="https://doi.org/10.1061/(ASCE)ST.1943-541X.0002505">https://doi.org/10.1061/(ASCE)ST.1943-541X.0002505</a>.</p></li>
+</ol>
+</dd>
+</dl>
 </div>
 </div>
 
