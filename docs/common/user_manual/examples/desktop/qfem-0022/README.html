@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -235,21 +236,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="two-dimensional-truss-plom-modeling-and-simulation">
-<span id="qfem-0022"></span><h1><span class="section-number">4.11. </span>Two-Dimensional Truss: PLoM Modeling and Simulation<a class="headerlink" href="#two-dimensional-truss-plom-modeling-and-simulation" title="Permalink to this headline">¶</a></h1>
+<span id="qfem-0022"></span><h1><span class="section-number">4.11. </span>Two-Dimensional Truss: PLoM Modeling and Simulation<a class="headerlink" href="#two-dimensional-truss-plom-modeling-and-simulation" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="about-plom">
-<h2><span class="section-number">4.11.1. </span>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.11.1. </span>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this heading">¶</a></h2>
 <p><strong>PLoM</strong> is an open source python package that implements the algorithm of <strong>Probabilistic
-Learning on Manifolds</strong> with and without constraints (<a class="reference internal" href="#soizeghanem2016" id="id1"><span>[SoizeGhanem2016]</span></a>, <a class="reference internal" href="#soizeghanem2020" id="id2"><span>[SoizeGhanem2020]</span></a>)
+Learning on Manifolds</strong> with and without constraints (<a class="reference internal" href="../../../usage/desktop/SimCenterUQPLoM.html#soizeghanem2016" id="id1"><span>[SoizeGhanem2016]</span></a>, <a class="reference internal" href="../../../usage/desktop/SimCenterUQPLoM.html#soizeghanem2020" id="id2"><span>[SoizeGhanem2020]</span></a>)
 for <em>generating realizations of a random vector in a finite Euclidean space that are
 statistically consistent with a given dataset of that vector</em>.</p>
 <p>PLoM functionality in SimCenter tools is built upon <a class="reference external" href="https://github.com/sanjayg0/PLoM">PLoM</a>
 package (available under MIT license), an opensource python package for Probabilistic
-Learning on Manifolds <a class="reference internal" href="#zhonggualgovindjee2021" id="id3"><span>[ZhongGualGovindjee2021]</span></a>. The package mainly consists of python
+Learning on Manifolds <a class="reference internal" href="../../../usage/desktop/SimCenterUQPLoM.html#zhonggualgovindjee2021" id="id3"><span>[ZhongGualGovindjee2021]</span></a>. The package mainly consists of python
 modules and invokes a dynamic library for more efficiently computing the gradient of
 the potential, and can be imported and run on Linux, macOS, and Windows platform.</p>
 </div>
 <div class="section" id="problem-statement">
-<h2><span class="section-number">4.11.2. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.11.2. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this heading">¶</a></h2>
 <p>Consider the problem simulating response of a two-dimensional truss structure with uncertain material properties shown in the following figure.
 The goal of the exercise is to demonstrate the use of <code class="docutils literal notranslate"><span class="pre">PLoM</span> <span class="pre">model</span></code> method under <code class="docutils literal notranslate"><span class="pre">SimCenterUQ</span></code>.</p>
 <div class="figure align-center">
@@ -373,7 +374,7 @@ The goal of the exercise is to demonstrate the use of <code class="docutils lite
 </div>
 </div>
 <div class="section" id="plom-modeling">
-<h2><span class="section-number">4.11.3. </span>PLoM Modeling<a class="headerlink" href="#plom-modeling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.11.3. </span>PLoM Modeling<a class="headerlink" href="#plom-modeling" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, select <code class="docutils literal notranslate"><span class="pre">SimCenterUQ</span></code> as the UQ engine.
 Select <code class="docutils literal notranslate"><span class="pre">PLoM</span> <span class="pre">Model</span></code> for the UQ method, and use <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code> as the Training Dataset.

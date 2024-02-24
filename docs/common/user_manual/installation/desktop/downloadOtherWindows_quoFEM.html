@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -208,9 +209,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="windows-users">
-<span id="lbldownloadotherwindows"></span><h1>Windows Users<a class="headerlink" href="#windows-users" title="Permalink to this headline">¶</a></h1>
+<span id="lbldownloadotherwindows"></span><h1>Windows Users<a class="headerlink" href="#windows-users" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="install-location">
-<h2>Install Location<a class="headerlink" href="#install-location" title="Permalink to this headline">¶</a></h2>
+<h2>Install Location<a class="headerlink" href="#install-location" title="Permalink to this heading">¶</a></h2>
 <p>The following set of instructions assumes all files will be placed in a <strong>C:\SimCenter</strong> folder. You can of course place them anywhere you want, you just need to make appropriate changes to the <strong>env PATH</strong> settings. If you wish to follow our placement strategy, inside the <strong>C:\SimCenter</strong> folder create <strong>3</strong> additional folders named <strong>dakota</strong>, <strong>OpenSees</strong> and <strong>FEAPpv</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -218,7 +219,7 @@
 </div>
 </div>
 <div class="section" id="python">
-<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this heading">¶</a></h2>
 <p>If you have not yet installed Python 3.7, we recommend installing Python 3.7 from
 <a class="reference external" href="https://www.python.org/downloads/windows">Python.org</a>. We recommend installing using the
 <strong>Windowsx86 64-bit executable installer</strong>.</p>
@@ -247,7 +248,7 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h2>Dakota<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Dakota<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://dakota.sandia.gov/">Dakota</a> is the default UQ engine used by the quoFEM app that is publicly available from the <a class="reference external" href="https://dakota.sandia.gov/download.html">Dakota Download</a> page. The download page offers an extensive list of downloadable files. You can narrow this down to the file to be selected by selecting <strong>Windows</strong> in the <cite>Platform</cite>, <strong>6.10</strong> (<strong>6.10</strong> was the latest at the time of writing, select newer of course if available) in the <cite>Release</cite>, and <strong>Command Line Only</strong> for the <cite>interface type</cite>. In the <cite>Public</cite> area you should now only have a single option, click on the link to download <strong>Dakota</strong>. When you extract the files that you download, they will all be contained in a single folder, we suggest renaming it <strong>dakota-6.10.0</strong> (the last <strong>.0</strong> was the number in the download, sometimes developers issue minor updates and identify them through the last number). When you have renamed the folder move that folder to the <strong>C:\SimCenter\dakota\</strong> folder.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -255,15 +256,15 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2>OpenSees<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>OpenSees<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://opensees.berkeley.edu">OpenSees</a> is the default FEM engine used by the quoFEM app that is publicly available from the <a class="reference external" href="https://opensees.berkeley.edu/OpenSees/user/download.php">OpenSees Download</a> page. To download the <strong>OpenSees</strong> you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by the time you read this). At the bottom of the page, under section <strong>Windows Version</strong> is the download link for the current executable, currently <strong>3.2.0</strong> Follow the link to download the application. It is in the form of a <strong>.zip</strong> file. The zip file contains a folder and in the bin directory is the <strong>OpenSees.exe</strong> application. The other files and folders are needed by the application and must be kept. Rename the folder to <strong>OpenSees-3.2.0</strong> and move the folder to the <strong>C:\SimCenter\OpenSees</strong> folder.</p>
 </div>
 <div class="section" id="id4">
-<h2>FEAPpv<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>FEAPpv<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p><strong>FEAPpv</strong> is another FEM engine used by the quoFEM app that is publicly available from the <a class="reference external" href="http://projects.ce.berkeley.edu/feap/feappv/">FEAPpv</a> page. FEAPpv is a general-purpose finite element analysis program that is designed for research and educational use. To install <strong>FEAPpv</strong> you must download the source code and follow the build instructions on the <strong>Source Code Download and Compile Instructions</strong> section of the <a class="reference external" href="http://projects.ce.berkeley.edu/feap/feappv/">FEAPpv</a> page.</p>
 </div>
 <div class="section" id="openseespy">
-<h2>OpenSeesPy<a class="headerlink" href="#openseespy" title="Permalink to this headline">¶</a></h2>
+<h2>OpenSeesPy<a class="headerlink" href="#openseespy" title="Permalink to this heading">¶</a></h2>
 <p><strong>OpenSeesPy</strong> is another FEM engine used by the quoFEM app that is publicly available using pip.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">OpenSeesPy</span>
 </pre></div>
@@ -277,7 +278,7 @@
 </div>
 </div>
 <div class="section" id="modify-the-environment-variables">
-<h2>Modify the Environment Variables<a class="headerlink" href="#modify-the-environment-variables" title="Permalink to this headline">¶</a></h2>
+<h2>Modify the Environment Variables<a class="headerlink" href="#modify-the-environment-variables" title="Permalink to this heading">¶</a></h2>
 <p>You now need to make some changes to your environment variables as neither OpenSees or Dakota includes an installer that typically performs this task.</p>
 <ol class="arabic simple">
 <li><p>Open the Start Search, type in “env”, and choose “Edit the system environment variables”</p></li>
@@ -297,7 +298,7 @@
 </ol>
 </div>
 <div class="section" id="test-the-install-of-python-opensees-dakota">
-<h2>Test the Install of Python, OpenSees &amp; Dakota<a class="headerlink" href="#test-the-install-of-python-opensees-dakota" title="Permalink to this headline">¶</a></h2>
+<h2>Test the Install of Python, OpenSees &amp; Dakota<a class="headerlink" href="#test-the-install-of-python-opensees-dakota" title="Permalink to this heading">¶</a></h2>
 <dl>
 <dt>Steps to Test:</dt><dd><ol class="arabic simple">
 <li><p>Open a command window window(type <cite>cmd</cite> in search)</p></li>

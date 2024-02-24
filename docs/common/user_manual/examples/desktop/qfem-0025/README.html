@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -236,7 +237,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="heteroscedastic-gaussian-process-modeling">
-<span id="qfem-0025"></span><h1><span class="section-number">4.13. </span>Heteroscedastic Gaussian Process modeling<a class="headerlink" href="#heteroscedastic-gaussian-process-modeling" title="Permalink to this headline">¶</a></h1>
+<span id="qfem-0025"></span><h1><span class="section-number">4.13. </span>Heteroscedastic Gaussian Process modeling<a class="headerlink" href="#heteroscedastic-gaussian-process-modeling" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -249,11 +250,11 @@
 </tbody>
 </table>
 <div class="section" id="outline">
-<h2><span class="section-number">4.13.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.13.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
 <p>In this example, demonstrates the heteroscedastic Gaussian process model for surrogating noisy response.</p>
 </div>
 <div class="section" id="problem-description">
-<h2><span class="section-number">4.13.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.13.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
 <p>Let us consider the basic python model in <span class="xref std std-ref">this example</span> with fixed <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-examples-desktop-qfem-0025-readme-0">
 <span class="eqno">(4.13.2.1)<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0025-readme-0" title="Permalink to this equation">¶</a></span>\[g(x)=(a-x)^{2}+bx^{4}+\varepsilon\]</div>
@@ -265,7 +266,7 @@
 <p>We would like to create a surrogate model of this function for the input range of <span class="math notranslate nohighlight">\(x\in[-2,2]\)</span></p>
 </div>
 <div class="section" id="files-required">
-<h2><span class="section-number">4.13.3. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.13.3. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h2>
 <p>The exercise requires one main script file and one supplementary file. The user should download these files and place them in a <strong>NEW</strong> folder.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -321,7 +322,7 @@
 </div>
 </div>
 <div class="section" id="uq-workflow">
-<h2><span class="section-number">4.13.4. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.13.4. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
 <p>The steps involved are as follows:</p>
 <ol class="arabic simple">
 <li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Engine</strong> drop down menu, select the <strong>SimCenterUQ</strong> engine. In the <strong>Method</strong> select <strong>Train GP Surrogate</strong> option. Enter the values in this panel as shown in the figure below.</p></li>

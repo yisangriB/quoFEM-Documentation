@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -230,11 +231,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fem-finite-element-method">
-<span id="lblfem"></span><h1><span class="section-number">3.2. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
+<span id="lblfem"></span><h1><span class="section-number">3.2. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>FEM</strong> tab will present users with a selection of FEM
 applications. Currently, there are six options: OpenSees, Python, FEAPpv, SurrogateGP (using a surrogate model trained in quoFEM in place of a numerical simulation model), Custom (user-specified application), Multi Model (using more than one model in an analysis), along with the option of specifying no simulation model.</p>
 <div class="align-center figure" id="figfem">
-<a class="reference internal image-reference" href="../../../../../_images/FEM3.png"><img alt="../../../../../_images/FEM3.png" src="../../../../../_images/FEM3.png" style="width: 1200px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/FEM4.png"><img alt="../../../../../_images/FEM4.png" src="../../../../../_images/FEM4.png" style="width: 1200px;" /></a>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -244,7 +245,7 @@ applications. Currently, there are six options: OpenSees, Python, FEAPpv, Surrog
 </div>
 </div>
 <div class="section" id="id1">
-<h2><span class="section-number">3.2.1. </span>OpenSees<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.1. </span>OpenSees<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>When the choice of FEM application is OpenSees (the default application), the user is presented with the input panel shown in figure above and there are two entry fields for filenames:</p>
 <ol class="arabic simple">
 <li><p><strong>Input Script</strong>: The user must specify a main input script. When entered the application will parse this file looking for variables set with the <code class="docutils literal notranslate"><span class="pre">pset</span></code> option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with <code class="docutils literal notranslate"><span class="pre">pset</span></code>, the program will auto populate the variable in the <strong>RV</strong> tab.</p></li>
@@ -331,7 +332,7 @@ applications. Currently, there are six options: OpenSees, Python, FEAPpv, Surrog
 </div>
 </div>
 <div class="section" id="python">
-<h2><span class="section-number">3.2.2. </span>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.2. </span>Python<a class="headerlink" href="#python" title="Permalink to this heading">¶</a></h2>
 <p>The user provides a main script and has the option to provide 2 other scripts:</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/openseespyFEM.png"><img alt="../../../../../_images/openseespyFEM.png" src="../../../../../_images/openseespyFEM.png" style="width: 1200px;" /></a>
@@ -381,7 +382,7 @@ applications. Currently, there are six options: OpenSees, Python, FEAPpv, Surrog
 </div>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">3.2.3. </span>FEAPpv<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.3. </span>FEAPpv<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p><strong>FEAPpv</strong> is another FEM engine used by the quoFEM app that is publicly available from the <a class="reference external" href="http://projects.ce.berkeley.edu/feap/feappv/">FEAPpv</a> page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install <strong>FEAPpv</strong> you must download the source code and follow the build instructions on the <strong>Source Code Download and Compile Instructions</strong> section of the <a class="reference external" href="http://projects.ce.berkeley.edu/feap/feappv/">FEAPpv</a> page.</p>
 <p>Similar to the OpenSees application, when the user selects FEAPpv the user is requested to provide two files.</p>
 <div class="align-center figure">
@@ -395,7 +396,7 @@ applications. Currently, there are six options: OpenSees, Python, FEAPpv, Surrog
 </ol>
 </div>
 <div class="section" id="custom">
-<h2><span class="section-number">3.2.4. </span>Custom<a class="headerlink" href="#custom" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.4. </span>Custom<a class="headerlink" href="#custom" title="Permalink to this heading">¶</a></h2>
 <p>This option allows users to specify custom simulation applications which do not
 necessarily need to be limited to only Finite Element Method software. With this
 option all users need to do is provide a driver script that takes the input file
@@ -434,7 +435,7 @@ the need to explicitly input each one of these files.</p>
 </div>
 </div>
 <div class="section" id="surrogategp">
-<h2><span class="section-number">3.2.5. </span>SurrogateGP<a class="headerlink" href="#surrogategp" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.5. </span>SurrogateGP<a class="headerlink" href="#surrogategp" title="Permalink to this heading">¶</a></h2>
 <p>In place of the physical simulation models, the Gaussian process surrogate model trained in quoFEM can be imported for UQ/Optimization analyses.</p>
 <div class="align-center figure" id="id6">
 <span id="surrogatefem1"></span><a class="reference internal image-reference" href="../../../../../_images/SurrogateFEM1.png"><img alt="../../../../../_images/SurrogateFEM1.png" src="../../../../../_images/SurrogateFEM1.png" style="width: 1200px;" /></a>
@@ -473,7 +474,7 @@ the need to explicitly input each one of these files.</p>
 </div>
 </div>
 <div class="section" id="multi-model">
-<h2><span class="section-number">3.2.6. </span>Multi Model<a class="headerlink" href="#multi-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.6. </span>Multi Model<a class="headerlink" href="#multi-model" title="Permalink to this heading">¶</a></h2>
 <p>By selecting this option, users can define multiple numerical simulation models for use in their UQ analysis. The Add and Remove buttons allow users to control the number of models they want to use in the analysis.</p>
 <div class="align-center figure" id="id8">
 <a class="reference internal image-reference" href="../../../../../_images/multiModel1.png"><img alt="../../../../../_images/multiModel1.png" src="../../../../../_images/multiModel1.png" style="width: 800px;" /></a>
@@ -489,7 +490,7 @@ the need to explicitly input each one of these files.</p>
 <p>If a Multi Model application is selected, at least 2 models must be defined.</p>
 </div>
 <div class="section" id="video-resources">
-<h3><span class="section-number">3.2.6.1. </span>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.6.1. </span>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this heading">¶</a></h3>
 <p>Recorded in tool training, 2022.</p>
 <div style="text-align: center;">
    <video controls src="../../../../../_static/videos/quoFEM/youtube_FEM_Day1_TestClip.mp4" width="560" height="315"> </video>

@@ -40,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -209,7 +210,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hazard-occurrence">
-<span id="lblhazardoccurrence"></span><h1>Hazard Occurrence<a class="headerlink" href="#hazard-occurrence" title="Permalink to this headline">¶</a></h1>
+<span id="lblhazardoccurrence"></span><h1>Hazard Occurrence<a class="headerlink" href="#hazard-occurrence" title="Permalink to this heading">¶</a></h1>
 <p>A regional seismic risk ananlysis consists pf three elements: (1) an exposure time over which the risk is evaluated,
 (2) a loss or quantification to be evaluated, and (3) a specification of the probability of incurring the loss during the specified
 exposure time. These three elements can be formulated into different workflows and one of the possible workflows can include:
@@ -242,7 +243,7 @@ are included in the optimization to improve the accuracy of regional seismic ris
 <p>Currently, the hazard occurrence sampling method developed by <a class="reference internal" href="#han12" id="id10"><span>[Han12]</span></a> and <a class="reference internal" href="#manzour16" id="id11"><span>[Manzour16]</span></a> is implemented in R2D. The following section
 provides a brief overview of its framework and major steps.</p>
 <div class="section" id="manzour-and-davidson-2016">
-<h2>Manzour and Davidson (2016)<a class="headerlink" href="#manzour-and-davidson-2016" title="Permalink to this headline">¶</a></h2>
+<h2>Manzour and Davidson (2016)<a class="headerlink" href="#manzour-and-davidson-2016" title="Permalink to this heading">¶</a></h2>
 <p>Han and Davidson (<a class="reference internal" href="#han12" id="id12"><span>[Han12]</span></a>) proposed an <em>Optimization-based probabilistic scenario method</em> (OPS) to select a subset of earthquakes from the entire candidate set along with
 new optimized occurrence rates. The method adapts the <a class="reference external" href="https://www.sciencedirect.com/topics/engineering/mixed-integer-linear-programming">mixed-integer linear programming</a>
 to minimize the different between the recovered hazard curve (using the new occurrence rates) and the “true” (reference) hazard curve with the constraint on the total number

@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -208,10 +209,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="run-remotely-on-designsafe">
-<span id="lblrunremote"></span><h1>Run Remotely on DesignSafe<a class="headerlink" href="#run-remotely-on-designsafe" title="Permalink to this headline">¶</a></h1>
+<span id="lblrunremote"></span><h1>Run Remotely on DesignSafe<a class="headerlink" href="#run-remotely-on-designsafe" title="Permalink to this heading">¶</a></h1>
 <p>There are two ways to run the applications remotely on DesignSafe: one is through the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/">Data Depot</a> user interface on DesignSafe, where job details are submitted through a Jupyter notebook. The other is by calling on Tapis CLI directly through Ubuntu.</p>
 <div class="section" id="prepare-input-files">
-<h2>Prepare Input Files<a class="headerlink" href="#prepare-input-files" title="Permalink to this headline">¶</a></h2>
+<h2>Prepare Input Files<a class="headerlink" href="#prepare-input-files" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Prepare the input files in a folder called <code class="docutils literal notranslate"><span class="pre">input_data</span></code>, then zip the folder. You may use this example input file set (<code class="xref download docutils literal notranslate"><span class="pre">input_data_eq.zip</span></code>) as a template.</p></li>
 <li><p>Prepare workflow settings in the configuration file. You may use the example configuration file (<code class="xref download docutils literal notranslate"><span class="pre">rWHALE_config_remote.json</span></code>) as a template.</p>
@@ -232,7 +233,7 @@
 </div>
 </div>
 <div class="section" id="run-job-through-jupyter">
-<h2>Run Job Through Jupyter<a class="headerlink" href="#run-job-through-jupyter" title="Permalink to this headline">¶</a></h2>
+<h2>Run Job Through Jupyter<a class="headerlink" href="#run-job-through-jupyter" title="Permalink to this heading">¶</a></h2>
 <p>This method uses Jupyter Notebook to run the job, accessing Tapis CLI in the backend.</p>
 <ol class="arabic simple" start="5">
 <li><p>Click on the <code class="docutils literal notranslate"><span class="pre">run_rWHALE.ipynb</span></code> notebook, then click <strong>Open in Jupyter</strong>. You will be taken to a new page for editing the Jupyter Notebook.</p></li>
@@ -265,7 +266,7 @@
 </div>
 </div>
 <div class="section" id="submit-job-through-tapis">
-<h2>Submit Job Through Tapis<a class="headerlink" href="#submit-job-through-tapis" title="Permalink to this headline">¶</a></h2>
+<h2>Submit Job Through Tapis<a class="headerlink" href="#submit-job-through-tapis" title="Permalink to this heading">¶</a></h2>
 <p>This method submits the job using Tapis CLI directly. If using Windows,  this is executed in the Ubuntu subsystem. Please refer to Chapter 9 of the <a class="reference external" href="https://www.designsafe-ci.org/media/filer_public/90/d5/90d5ff98-3ca1-40a5-a2cb-2ead8f51ecb9/tapis-cli-how-to-guide-readthedocs-io-en-latest.pdf">Tapis How-To Guide</a>  for more details.</p>
 <ol class="arabic" start="5">
 <li><p>First, ensure that Tapis CLI is installed on your computer. Open a Ubuntu window and install Tapis CLI using <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>

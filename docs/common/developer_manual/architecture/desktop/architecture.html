@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -215,7 +216,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="software-architecture">
-<span id="lblarchitecture"></span><h1><span class="section-number">2. </span>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h1>
+<span id="lblarchitecture"></span><h1><span class="section-number">2. </span>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this heading">¶</a></h1>
 <p>The quoFEM app is one of the SimCenter’s computational applications, which are <a class="reference external" href="https://en.wikipedia.org/wiki/Scientific_workflow_system">scientific workflow systems</a> that execute a sequence of computational tasks specialized for natural hazard engineering (NHE) problems. In contrast to more general-purpose scientific workflow systems (such as <a class="reference external" href="https://taverna.incubator.apache.org/">Taverna</a>, <a class="reference external" href="https://kepler-project.org/">Kepler</a>, and <a class="reference external" href="https://pegasus.isi.edu/">Pegasus</a>), SimCenter workflow systems include the following features:</p>
 <blockquote>
 <div><ul class="simple">
@@ -266,7 +267,7 @@
 </ol>
 </div>
 <div class="section" id="overview">
-<h2><span class="section-number">2.3. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>A Level 1 diagram showing the system context for the SimCenter applications, i.e., how it fits in the world,
 is shown in <a class="reference internal" href="#architecture-figcontext"><span class="std std-numref">Fig. 2.3.1</span></a>. It shows SimCenter applications (EE-UQ, WE-UQ, HydroUQ, PBE, R2D) as a box in the center surrounded by the user and the user’s systems. The SimCenter applications allow a user to create and run scientific workflow applications; the data for the applications may be obtained from the web or DataDepot. The workflow applications are run on either the local desktop or on some HPC at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>.</p>
 <div class="align-center figure" id="id3">

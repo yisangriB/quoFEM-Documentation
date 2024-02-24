@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -125,7 +126,7 @@
 <li class="toctree-l2"><a class="reference internal" href="install_Windows.html">1.1. Install on Windows 10</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1.2. Install on macOS 10</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-python-3-9">1.2.1. Install Python 3.9</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#download-the-application">1.2.4. Download the Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-the-application-move-it-from-the-dmg-image">1.2.4. Download the Application &amp; Move it from the DMG image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-the-installation">1.2.5. Test the Installation</a></li>
 </ul>
 </li>
@@ -221,9 +222,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="install-on-macos-10">
-<span id="lblinstallmac"></span><h1><span class="section-number">1.2. </span>Install on macOS 10<a class="headerlink" href="#install-on-macos-10" title="Permalink to this headline">¶</a></h1>
+<span id="lblinstallmac"></span><h1><span class="section-number">1.2. </span>Install on macOS 10<a class="headerlink" href="#install-on-macos-10" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="install-python-3-9">
-<h2><span class="section-number">1.2.1. </span>Install Python 3.9<a class="headerlink" href="#install-python-3-9" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2.1. </span>Install Python 3.9<a class="headerlink" href="#install-python-3-9" title="Permalink to this heading">¶</a></h2>
 <p>SimCenter tools require an x86-based version of Python 3.9 to run properly. If you have a different version of Python installed, you will need to add a Python 3.9 x86 version to your system. Below, we will demonstrate the process for installing Python 3.9 using the official distributor of Python, <strong>python.org</strong>.</p>
 <p>To see if you have python installed and whether it is compatible with SimCenter tools, issue the following in a terminal window.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span>
@@ -271,21 +272,21 @@
 </ol>
 </div>
 </div>
-<div class="section" id="download-the-application">
-<h2><span class="section-number">1.2.4. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-the-application-move-it-from-the-dmg-image">
+<h2><span class="section-number">1.2.4. </span>Download the Application &amp; Move it from the DMG image<a class="headerlink" href="#download-the-application-move-it-from-the-dmg-image" title="Permalink to this heading">¶</a></h2>
 <p>To download the quoFEM app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM">quoFEM Download</a> page which should resemble <a class="reference internal" href="#figdownload-quofem"><span class="std std-numref">Fig. 1.2.4.5</span></a>. The download page contains a list of downloadable files and directories.</p>
 <div class="align-center figure" id="id12">
 <span id="figdownload-quofem"></span><img alt="../../../../_images/quoFEMDownload.png" src="../../../../_images/quoFEMDownload.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.4.5 </span><span class="caption-text">quoFEM download page.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
-<p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the quoFEM app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download is completed, open the dmg file and copy the quoFEM app application to a location in your filesystem.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We suggest copying the application to your Desktop. After copying the application, you can move the dmg file to the trash or eject it.</p>
+<p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the quoFEM app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download is completed, open the dmg file and <strong>MOVE</strong> the quoFEM app application by dragging on it to a location in your filesystem. After the application has been copied to a location outside the dmg, the dmg can be deleted and the application run.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The application must be copied to a location on your filesystem outside of the DMG image. If you run the quoFEM app from within the dmg, i.e. if you open the dmg and then start the application from the window that pops up, it will <strong>FAIL</strong> when you try to run any workflow.</p>
 </div>
 </div>
 <div class="section" id="test-the-installation">
-<h2><span class="section-number">1.2.5. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2.5. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this heading">¶</a></h2>
 <p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the quoFEM.exe executable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

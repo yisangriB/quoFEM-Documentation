@@ -40,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -244,9 +245,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="methods-in-simcenteruq-engine">
-<span id="lbluqsimtechnical"></span><h1><span class="section-number">1.2. </span>Methods in SimCenterUQ Engine<a class="headerlink" href="#methods-in-simcenteruq-engine" title="Permalink to this headline">¶</a></h1>
+<span id="lbluqsimtechnical"></span><h1><span class="section-number">1.2. </span>Methods in SimCenterUQ Engine<a class="headerlink" href="#methods-in-simcenteruq-engine" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="nataf-transformation">
-<span id="lbluqsimtechnical-nataf"></span><h2>Nataf transformation<a class="headerlink" href="#nataf-transformation" title="Permalink to this headline">¶</a></h2>
+<span id="lbluqsimtechnical-nataf"></span><h2>Nataf transformation<a class="headerlink" href="#nataf-transformation" title="Permalink to this heading">¶</a></h2>
 <p>Nataf transformation is introduced to standardize the interface between UQ methods and Simulation models. Nataf converts the samples in the physical space (X-space) into the standard normal samples (U-space), <span class="math notranslate nohighlight">\(T:\rm{X} \rightarrow \rm{U}\)</span>, and vice versa, during UQ computations <a class="reference internal" href="#liu1986" id="id1"><span>[Liu1986]</span></a>. Specifically, the latter transformation, called inverse Nataf <span class="math notranslate nohighlight">\(T^{-1}\)</span>, is performed each time when UQ engine generates sample points and calls external workflow applications, so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits <strong>marginal distributions</strong> of each physical variables and their <strong>correlation coefficients</strong>.</p>
 <div class="align-center figure" id="id25">
 <span id="fignataf1"></span><a class="reference internal image-reference" href="../../../_images/SimCenterNataf1.png"><img alt="../../../_images/SimCenterNataf1.png" src="../../../_images/SimCenterNataf1.png" style="width: 600px;" /></a>
@@ -264,15 +265,15 @@
 </dl>
 </div>
 <div class="section" id="global-sensitivity-analysis">
-<span id="lbluqsimtechnical-sensitivity"></span><h2>Global sensitivity analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
+<span id="lbluqsimtechnical-sensitivity"></span><h2>Global sensitivity analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="video-resources">
-<h3>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">¶</a></h3>
+<h3>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this heading">¶</a></h3>
 <p>Global Sensitivity Analysis: why, what, and how.</p>
 <div style="text-align: center;">
    <iframe src="https://www.youtube.com/embed/JC8xN5LAo84?start=134" width="560" height="315" frameborder="5" allowfullscreen="allowfullscreen"></iframe>
 </div><p><br>Click to replay the video from <a href="javascript:window.location.reload(true);">2:14</a>. </p></div>
 <div class="section" id="variance-based-global-sensitivity-indices">
-<h3>Variance-based global sensitivity indices<a class="headerlink" href="#variance-based-global-sensitivity-indices" title="Permalink to this headline">¶</a></h3>
+<h3>Variance-based global sensitivity indices<a class="headerlink" href="#variance-based-global-sensitivity-indices" title="Permalink to this heading">¶</a></h3>
 <p>Global sensitivity analysis (GSA) is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. GSA helps users to understand the overall impact of different sources of uncertainties, as well as accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.</p>
 <div class="align-center figure" id="id26">
 <span id="figsensitivity1"></span><a class="reference internal image-reference" href="../../../_images/SimCenterSensitivity1.png"><img alt="../../../_images/SimCenterSensitivity1.png" src="../../../_images/SimCenterSensitivity1.png" style="width: 600px;" /></a>
@@ -299,7 +300,7 @@
 </div>
 </div>
 <div class="section" id="estimation-of-sobol-indices-using-probabilistic-model-based-global-sensitivity-analysis-pm-gsa">
-<h3>Estimation of Sobol indices using Probabilistic model-based global sensitivity analysis (PM-GSA)<a class="headerlink" href="#estimation-of-sobol-indices-using-probabilistic-model-based-global-sensitivity-analysis-pm-gsa" title="Permalink to this headline">¶</a></h3>
+<h3>Estimation of Sobol indices using Probabilistic model-based global sensitivity analysis (PM-GSA)<a class="headerlink" href="#estimation-of-sobol-indices-using-probabilistic-model-based-global-sensitivity-analysis-pm-gsa" title="Permalink to this heading">¶</a></h3>
 <p>GSA is typically computationally expensive. High computation cost attributes to the multiple integrations (<span class="math notranslate nohighlight">\(d\)</span>-dimensional) associated with the variance and expectation operations shown in Eqs. <a class="reference internal" href="#equation-si">(1.2.1)</a> and <a class="reference internal" href="#equation-sit">(1.2.2)</a>. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta-model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based GSA (PM-GSA) framework developed by <a class="reference internal" href="#hu2019" id="id3"><span>[Hu2019]</span></a>.</p>
 <p>The framework first conducts ordinary MCS to obtain input-output data pairs. Then by extracting only a subset dimension of the dataset, the probability distribution of a reduced dimension can be approximated and used for estimating the Sobol index. Among different probability distribution models introduced in <a class="reference internal" href="#hu2019" id="id4"><span>[Hu2019]</span></a>  the Gaussian mixture model is implemented in this engine to approximate this lower dimension distribution. For example, to identify 1st order main Sobol index for a variable <span class="math notranslate nohighlight">\(x_i\)</span>, a bivariate Gaussian mixture model is fitted for the joint probability distribution of <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, i.e.</p>
 <div class="math notranslate nohighlight" id="equation-gm">
@@ -316,7 +317,7 @@
 </dl>
 </div>
 <div class="section" id="dealing-with-high-dimensional-responses-with-pca-psa">
-<h3>Dealing with high-dimensional responses with PCA-PSA<a class="headerlink" href="#dealing-with-high-dimensional-responses-with-pca-psa" title="Permalink to this headline">¶</a></h3>
+<h3>Dealing with high-dimensional responses with PCA-PSA<a class="headerlink" href="#dealing-with-high-dimensional-responses-with-pca-psa" title="Permalink to this heading">¶</a></h3>
 <p>When the number of the quantities of interest (QoI) is very large, it is computationally cumbersome to perform above Gaussian fitting independently for each QoI. To promote efficient global sensitivity analysis for such cases, SimCenterUQ provides the ‘principal component analysis-based PM-GSA’ module, which is referred to as PCA-PSA <a class="reference internal" href="#id8" id="id6"><span>[Jung2022]</span></a>. In this method, the dimension of QoI is first reduced by principal component analysis (PCA), and the conditional variance required to calculate the Sobol indices (the numerators in <a class="reference internal" href="#equation-si">(1.2.1)</a> and <a class="reference internal" href="#equation-sit">(1.2.2)</a>) is approximately reconstructed from those of the conditional variance/covariance information of the reduced dimension variables. If the high-dimensional QoI has a linear data structure that be reconstructed with a small number of principal components, the computational gain of this approach can be significant. For example, suppose QoI can be reconstructed using 10 principal components. In that case, the Gaussian mixture fitting, which is the most time-consuming step of PM-GSA apart from FEM analysis, needs to be repeated only 10 times per random variable or group of random variables regardless of the actual dimension of QoI. <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0023/README.html#qfem-0023"><span class="std std-ref">This example</span></a> shows how PCA-PSA can facilitate efficient global sensitivity analysis for a field (time series) QoI.</p>
 <dl class="citation">
 <dt class="label" id="jung2022"><span class="brackets">Jung2022</span></dt>
@@ -325,7 +326,7 @@
 </dl>
 </div>
 <div class="section" id="aggregated-sensitivity-index">
-<h3>Aggregated sensitivity index<a class="headerlink" href="#aggregated-sensitivity-index" title="Permalink to this headline">¶</a></h3>
+<h3>Aggregated sensitivity index<a class="headerlink" href="#aggregated-sensitivity-index" title="Permalink to this heading">¶</a></h3>
 <p>When the quantities of interest (QoI) are given as a vector or field variable, an aggregated sensitivity index can provide insight into the system’s overall sensitivity characteristics. The aggregated sensitivity index achieves this by calculating the weighted average of the sensitivity indices of each QoI component, where the weights are proportional to the variances of the components <a class="reference internal" href="#id8" id="id7"><span>[Jung2022]</span></a>. Component sensitivity indices are useful for visualization, while the aggregated sensitivity index gives instant intuition on how much each variable influences the system response overall. See <a class="reference internal" href="../../user_manual/examples/desktop/qfem-0023/README.html#qfem-0023"><span class="std std-ref">this example</span></a>.</p>
 <dl class="citation">
 <dt class="label" id="id8"><span class="brackets">Jung2022</span></dt>
@@ -335,9 +336,9 @@
 </div>
 </div>
 <div class="section" id="global-surrogate-modeling">
-<span id="lbluqsimtechnical-surrogate"></span><h2>Global surrogate modeling<a class="headerlink" href="#global-surrogate-modeling" title="Permalink to this headline">¶</a></h2>
+<span id="lbluqsimtechnical-surrogate"></span><h2>Global surrogate modeling<a class="headerlink" href="#global-surrogate-modeling" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="introduction-to-gaussian-process-regression-kriging">
-<h3>Introduction to Gaussian process regression (Kriging)<a class="headerlink" href="#introduction-to-gaussian-process-regression-kriging" title="Permalink to this headline">¶</a></h3>
+<h3>Introduction to Gaussian process regression (Kriging)<a class="headerlink" href="#introduction-to-gaussian-process-regression-kriging" title="Permalink to this heading">¶</a></h3>
 <p>Global surrogate modeling aims to build a regression model that reproduces the outcomes of computationally expensive high fidelity simulations.</p>
 <div class="math notranslate nohighlight" id="equation-gp">
 <span class="eqno">(1.2.9)<a class="headerlink" href="#equation-gp" title="Permalink to this equation">¶</a></span>\[\boldsymbol{y}=g^{\rm{ex}} (\boldsymbol{x}) \simeq g^{\rm{sur}} (\boldsymbol{x})\]</div>
@@ -355,7 +356,7 @@
 </div>
 </div>
 <div class="section" id="dealing-with-noisy-measurements">
-<h3>Dealing with noisy measurements<a class="headerlink" href="#dealing-with-noisy-measurements" title="Permalink to this headline">¶</a></h3>
+<h3>Dealing with noisy measurements<a class="headerlink" href="#dealing-with-noisy-measurements" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">In natural hazard applications, often the exact observations of <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> are not available and only the noisy observations <span class="math notranslate nohighlight">\(\boldsymbol{y^{obs}}\)</span> are available:</div>
@@ -394,9 +395,9 @@
 </ul>
 </div>
 <div class="section" id="construction-of-surrogate-model">
-<h3>Construction of surrogate model<a class="headerlink" href="#construction-of-surrogate-model" title="Permalink to this headline">¶</a></h3>
+<h3>Construction of surrogate model<a class="headerlink" href="#construction-of-surrogate-model" title="Permalink to this heading">¶</a></h3>
 <div class="section" id="input-output-settings">
-<h4>Input-Output settings<a class="headerlink" href="#input-output-settings" title="Permalink to this headline">¶</a></h4>
+<h4>Input-Output settings<a class="headerlink" href="#input-output-settings" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -445,7 +446,7 @@
 </ul>
 </div>
 <div class="section" id="kernel-and-basis-functions">
-<h4>Kernel and basis functions<a class="headerlink" href="#kernel-and-basis-functions" title="Permalink to this headline">¶</a></h4>
+<h4>Kernel and basis functions<a class="headerlink" href="#kernel-and-basis-functions" title="Permalink to this heading">¶</a></h4>
 <p>The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical form of the kernel is first assumed, and its parameters are calibrated based on the observation data. Following are some of the popular stationary covariance kernels.</p>
 <ul>
 <li><p><strong>Radial-basis function (RBF)</strong></p>
@@ -500,7 +501,7 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 </div>
 </div>
 <div class="section" id="adaptive-design-of-experiments-doe">
-<h3>Adaptive Design of Experiments (DoE)<a class="headerlink" href="#adaptive-design-of-experiments-doe" title="Permalink to this headline">¶</a></h3>
+<h3>Adaptive Design of Experiments (DoE)<a class="headerlink" href="#adaptive-design-of-experiments-doe" title="Permalink to this heading">¶</a></h3>
 <p>In the case where bounds of input variables and a simulator model are provided (Case 1), model evaluation points can be selected by space-filling methods, e.g. Latin hypercube sampling (LHS). This is a non-adaptive Design of Experiments (DoE) in the sense that the whole samples can be located before running any simulations. On the other hand, the number of model evaluations can be reduced by selecting evaluation points <em>adaptively</em> after each run to get the best model improvements.</p>
 <div class="align-center figure" id="id32">
 <span id="figgp-doe1"></span><a class="reference internal image-reference" href="../../../_images/GPtmp1.png"><img alt="../../../_images/GPtmp1.png" src="../../../_images/GPtmp1.png" style="width: 600px;" /></a>
@@ -536,7 +537,7 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 </div></blockquote>
 </div>
 <div class="section" id="verification-of-surrogate-model">
-<h3>Verification of surrogate model<a class="headerlink" href="#verification-of-surrogate-model" title="Permalink to this headline">¶</a></h3>
+<h3>Verification of surrogate model<a class="headerlink" href="#verification-of-surrogate-model" title="Permalink to this heading">¶</a></h3>
 <p>Once the training is completed, the following three verification measures are presented based on leave-one-out cross-validation (LOOCV) error estimation.</p>
 <ul>
 <li><p><strong>Leave-one-out cross-validation (LOOCV)</strong></p>
@@ -641,9 +642,9 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 </div>
 </div>
 <div class="section" id="multi-fidelity-monte-carlo-mfmc">
-<span id="lbluqsimtechnical-mfmc"></span><h2>Multi-fidelity Monte Carlo (MFMC)<a class="headerlink" href="#multi-fidelity-monte-carlo-mfmc" title="Permalink to this headline">¶</a></h2>
+<span id="lbluqsimtechnical-mfmc"></span><h2>Multi-fidelity Monte Carlo (MFMC)<a class="headerlink" href="#multi-fidelity-monte-carlo-mfmc" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="models-with-different-infidelities">
-<h3>Models with different infidelities<a class="headerlink" href="#models-with-different-infidelities" title="Permalink to this headline">¶</a></h3>
+<h3>Models with different infidelities<a class="headerlink" href="#models-with-different-infidelities" title="Permalink to this heading">¶</a></h3>
 <p>When one has multiple models of a target system with different fidelities, they can introduce multi-fidelity Monte Carlo (MFMC) methods. MFMC helps us to reduce the high-fidelity simulation runs by leveraging a large number of low-fidelity simulations. The high-fidelity and low-fidelity models are defined as the following.</p>
 <blockquote>
 <div><ul class="simple">
@@ -671,7 +672,7 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 </div>
 </div>
 <div class="section" id="pre-execution-checklist-for-mfmc">
-<h3>Pre-execution checklist for MFMC<a class="headerlink" href="#pre-execution-checklist-for-mfmc" title="Permalink to this headline">¶</a></h3>
+<h3>Pre-execution checklist for MFMC<a class="headerlink" href="#pre-execution-checklist-for-mfmc" title="Permalink to this heading">¶</a></h3>
 <p>Before running the MFMC simulation model, the users are advised to check the validity and effectiveness of MFMC for their problem. Only when the below conditions are satisfied, the users are expected to gain meaningful benefit by using MFMC compared to only HF simulations:</p>
 <ul class="simple">
 <li><p><strong>The models should take the same input random variables and produces the same output quantities of interest.</strong> For example, if target system is a structure, if one model takes stiffness as random variable and the other does not, the model violates the problem definition. Similarly, if <span class="math notranslate nohighlight">\(j\)</span>-th output of the HF model is the 1st floor inter-story drift, <span class="math notranslate nohighlight">\(j\)</span>-th output of the LF model should also be 1st floor inter-story drift.</p></li>
@@ -685,7 +686,7 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 </div>
 </div>
 <div class="section" id="algorithm-details">
-<h3>Algorithm details<a class="headerlink" href="#algorithm-details" title="Permalink to this headline">¶</a></h3>
+<h3>Algorithm details<a class="headerlink" href="#algorithm-details" title="Permalink to this heading">¶</a></h3>
 <p>The implementation of MFMC in quoFEM follows that of <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id19"><span>[Patsialis2021]</span></a> which is based on the original work of <a class="reference internal" href="#peherstorfer2016" id="id20"><span>[Peherstorfer2016]</span></a>. Let us denote the HF and LF output for a given input <span class="math notranslate nohighlight">\(x\)</span> as</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-simcenteruqtechnical-0">
@@ -756,7 +757,7 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 </div></blockquote>
 </div>
 <div class="section" id="speed-up">
-<h3>Speed-up<a class="headerlink" href="#speed-up" title="Permalink to this headline">¶</a></h3>
+<h3>Speed-up<a class="headerlink" href="#speed-up" title="Permalink to this heading">¶</a></h3>
 <p>The speed-up is an efficiency metric that represents the computational time you save by using MFMC compared to only HF simulations to reach the same level of accuracy (same variance).</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-simcenteruqtechnical-11">

@@ -17,6 +17,9 @@ Common causes of failure include incorrect setup, non-functioning or poorly func
 
 The following is a list of issues we have observed when the user interface informs the user of a failure and steps you can take to fix them:
 
+#. ** RUNNING DAKOTA ERROR: dakota command not found**. If you are on a Mac computer you need to make sure you are not running the application from inside the dmg file. It needs to be copied to a seperate location and the dmg file deleted. We ask you to delete the dmg file to ensure you do not run from inside it. If it still fails to run a Workflow check Prefernces and the path to the dakota executane, if it has /Volumes in the start of the path, hit the **Reset** button.
+
+   
 #.  **Could not create working dir**: The user does not have permission to create the ``tmp.SimCenter`` folder in the working directory. Change the **Local Jobs Directory** and the **Remote Jobs Directory** in the application's **Preferences** menu option.
 
 #. **No Script File**: The application cannot find the main Python scripts (rWHALE.py, sWHALE.py, or qWHALE.py) that run the workflow using our backend engine. You might have changed the Local Applications directory location in Preferences, or modified the applications folder that accompanies the installation. Make sure the Local Applications points to the correct directory location. If that does not help, re-install the tool to fix a corrupted applications folder.

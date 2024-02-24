@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -236,7 +237,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gaussian-process-gp-surrogate-modeling">
-<span id="lblsimsurrogate"></span><h1><span class="section-number">3.1.3.3. </span>Gaussian Process (GP) Surrogate Modeling<a class="headerlink" href="#gaussian-process-gp-surrogate-modeling" title="Permalink to this headline">¶</a></h1>
+<span id="lblsimsurrogate"></span><h1><span class="section-number">3.1.3.3. </span>Gaussian Process (GP) Surrogate Modeling<a class="headerlink" href="#gaussian-process-gp-surrogate-modeling" title="Permalink to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Surrogate modeling functionality of quoFEM is built upon <a class="reference external" href="https://sheffieldml.github.io/GPy/">GPy</a> library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group.</p>
@@ -350,9 +351,9 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </dd>
 </dl>
 <div class="section" id="input-description">
-<h2>Input description<a class="headerlink" href="#input-description" title="Permalink to this headline">¶</a></h2>
+<h2>Input description<a class="headerlink" href="#input-description" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="case-1-sampling-and-simulation">
-<h3>Case 1: Sampling and Simulation<a class="headerlink" href="#case-1-sampling-and-simulation" title="Permalink to this headline">¶</a></h3>
+<h3>Case 1: Sampling and Simulation<a class="headerlink" href="#case-1-sampling-and-simulation" title="Permalink to this heading">¶</a></h3>
 <p>When the <strong>Training Dataset</strong> option is set to the <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code>, a simulation model should be presented in the later tabs. The training points are sampled adaptively by the design of experiments.</p>
 <div class="align-center figure" id="id10">
 <span id="figsim1"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate1_SimUQ.png"><img alt="../../../../_images/Surrogate1_SimUQ.png" src="../../../../_images/Surrogate1_SimUQ.png" style="width: 900px;" /></a>
@@ -427,7 +428,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </div>
 </div>
 <div class="section" id="case-2-import-rv-dataset-and-run-simulation">
-<h3>Case 2: Import RV Dataset and run Simulation<a class="headerlink" href="#case-2-import-rv-dataset-and-run-simulation" title="Permalink to this headline">¶</a></h3>
+<h3>Case 2: Import RV Dataset and run Simulation<a class="headerlink" href="#case-2-import-rv-dataset-and-run-simulation" title="Permalink to this heading">¶</a></h3>
 <p>When the <strong>Training Dataset</strong> option is set to <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Data</span> <span class="pre">File</span></code> AND <strong>Get results from datafile</strong> check box is unchecked, quoFEM will run simulations to get result (QoI) values for imported RV locations and build a surrogate model.</p>
 <div class="align-center figure" id="id15">
 <span id="figsim5"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate5_SimUQ.png"><img alt="../../../../_images/Surrogate5_SimUQ.png" src="../../../../_images/Surrogate5_SimUQ.png" style="width: 900px;" /></a>
@@ -446,7 +447,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </ul>
 </div>
 <div class="section" id="case-3-import-both-rv-and-qoi-dataset">
-<h3>Case 3: Import both RV and QoI Dataset<a class="headerlink" href="#case-3-import-both-rv-and-qoi-dataset" title="Permalink to this headline">¶</a></h3>
+<h3>Case 3: Import both RV and QoI Dataset<a class="headerlink" href="#case-3-import-both-rv-and-qoi-dataset" title="Permalink to this heading">¶</a></h3>
 <p>When the <strong>Training Dataset</strong> option is set to <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Data</span> <span class="pre">File</span></code> AND <strong>Get results from datafile</strong> check box is unchecked, quoFEM will not run any simulations and build a surrogate model purely based on the user-provided dataset.</p>
 <div class="align-center figure" id="id16">
 <span id="figsim6"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate6_SimUQ.png"><img alt="../../../../_images/Surrogate6_SimUQ.png" src="../../../../_images/Surrogate6_SimUQ.png" style="width: 900px;" /></a>
@@ -474,7 +475,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </div>
 </div>
 <div class="section" id="multi-fidelity-modeling">
-<h3>Multi-Fidelity Modeling<a class="headerlink" href="#multi-fidelity-modeling" title="Permalink to this headline">¶</a></h3>
+<h3>Multi-Fidelity Modeling<a class="headerlink" href="#multi-fidelity-modeling" title="Permalink to this heading">¶</a></h3>
 <p>When a user provides two different models, i.e. high and low fidelity models, the surrogate model for the high fidelity can be constructed with better performance assisted by the low fidelity simulation results. The two models should share the same input RVs and output QoIs pools. Ideally, the combined model should have the best prediction better than each individual one, however, the benefit from the low fidelity model differs depending on the correlation between the two model outputs <a class="reference internal" href="#patsialis2021" id="id6"><span>[Patsialis2021]</span></a>. Currently, the adaptive design of experiments capacity of the multi-fidelity surrogate modeling is NOT supported.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -495,7 +496,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </div>
 </div>
 <div class="section" id="heteroscedastic-gaussian-process">
-<h3>Heteroscedastic Gaussian Process<a class="headerlink" href="#heteroscedastic-gaussian-process" title="Permalink to this headline">¶</a></h3>
+<h3>Heteroscedastic Gaussian Process<a class="headerlink" href="#heteroscedastic-gaussian-process" title="Permalink to this heading">¶</a></h3>
 <p>When the noise in the response surface is expected to vary across the domains, a heteroscedastic measurement noise model should be introduced. See the <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical"><span class="std std-ref">theory manual</span></a> for more.</p>
 <div class="align-center figure" id="id20">
 <span id="figsimstoch1"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate_Hetero.png"><img alt="../../../../_images/Surrogate_Hetero.png" src="../../../../_images/Surrogate_Hetero.png" style="width: 900px;" /></a>
@@ -509,7 +510,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </ul>
 </div>
 <div class="section" id="rv-random-variables-tab">
-<h3>RV (Random Variables) Tab<a class="headerlink" href="#rv-random-variables-tab" title="Permalink to this headline">¶</a></h3>
+<h3>RV (Random Variables) Tab<a class="headerlink" href="#rv-random-variables-tab" title="Permalink to this heading">¶</a></h3>
 <p><strong>Case 1 and 2</strong>:</p>
 <p>The bounds of RVs need to cover the domain of interest in future applications, while it should not be unnecessarily stretched. <strong>Input type</strong> and <strong>Distribution</strong> should be set to <strong>Parameters</strong> and <strong>Uniform</strong>. When a dataset is provided, make sure to match the order of RVs in the <strong>RV tab</strong> to the order of data columns. Any correlation values will be ignored.</p>
 <div class="align-center figure" id="id21">
@@ -520,9 +521,9 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </div>
 </div>
 <div class="section" id="output-description">
-<h2>Output description<a class="headerlink" href="#output-description" title="Permalink to this headline">¶</a></h2>
+<h2>Output description<a class="headerlink" href="#output-description" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="goodness-of-fit">
-<h3>Goodness-of-Fit<a class="headerlink" href="#goodness-of-fit" title="Permalink to this headline">¶</a></h3>
+<h3>Goodness-of-Fit<a class="headerlink" href="#goodness-of-fit" title="Permalink to this heading">¶</a></h3>
 <p>Once the training is completed, the following three verification measures are presented based on leave-one-out cross-validation (LOOCV) error estimation.</p>
 <ul>
 <li><p><strong>Leave-one-out cross-validation (LOOCV)</strong></p>
@@ -610,7 +611,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </div>
 </div>
 <div class="section" id="saving-options">
-<h3>Saving Options<a class="headerlink" href="#saving-options" title="Permalink to this headline">¶</a></h3>
+<h3>Saving Options<a class="headerlink" href="#saving-options" title="Permalink to this heading">¶</a></h3>
 <ul>
 <li><p><strong>Save GP Model</strong>: The constructed surrogate model is saved. One main file and one auxiliary folder will be saved.</p>
 <blockquote>

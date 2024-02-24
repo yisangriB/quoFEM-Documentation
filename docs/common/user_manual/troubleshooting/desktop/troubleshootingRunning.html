@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -216,7 +217,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="issues-while-running">
-<span id="troubleshootingrunning"></span><h1><span class="section-number">5.2. </span>Issues While Running<a class="headerlink" href="#issues-while-running" title="Permalink to this headline">¶</a></h1>
+<span id="troubleshootingrunning"></span><h1><span class="section-number">5.2. </span>Issues While Running<a class="headerlink" href="#issues-while-running" title="Permalink to this heading">¶</a></h1>
 <p>Common causes of failure include incorrect setup, non-functioning or poorly functioning websites, user error, and possible bugs in the software. To discover the errors, it is useful to understand how the user interface (UI) and the backend work when the user submits to run a job. A number of things occur when the Submit button is clicked:</p>
 <ol class="arabic simple">
 <li><p>The UI creates a <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder in the working directory and later creates a <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> within tmp.SimCenter.</p></li>
@@ -230,6 +231,7 @@
 #. These result files are then processed by the front-end and presented to the user in the <strong>RES</strong> tab of the desktop application.</p>
 <p>The following is a list of issues we have observed when the user interface informs the user of a failure and steps you can take to fix them:</p>
 <ol class="arabic simple">
+<li><p>** RUNNING DAKOTA ERROR: dakota command not found**. If you are on a Mac computer you need to make sure you are not running the application from inside the dmg file. It needs to be copied to a seperate location and the dmg file deleted. We ask you to delete the dmg file to ensure you do not run from inside it. If it still fails to run a Workflow check Prefernces and the path to the dakota executane, if it has /Volumes in the start of the path, hit the <strong>Reset</strong> button.</p></li>
 <li><p><strong>Could not create working dir</strong>: The user does not have permission to create the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder in the working directory. Change the <strong>Local Jobs Directory</strong> and the <strong>Remote Jobs Directory</strong> in the application’s <strong>Preferences</strong> menu option.</p></li>
 <li><p><strong>No Script File</strong>: The application cannot find the main Python scripts (rWHALE.py, sWHALE.py, or qWHALE.py) that run the workflow using our backend engine. You might have changed the Local Applications directory location in Preferences, or modified the applications folder that accompanies the installation. Make sure the Local Applications points to the correct directory location. If that does not help, re-install the tool to fix a corrupted applications folder.</p></li>
 <li><p><strong>Dakota failed to finish</strong>: The simulation requested from the UQ Engine terminated before completion. This can occur for a number of reasons. Go to the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder and look for the <code class="docutils literal notranslate"><span class="pre">dakota.err</span></code> file. If no file exists then the UQ Engine did not even start. If the file exists look at its contents to learn more about the errors.</p>

@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -208,7 +209,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hurricane-assessment">
-<span id="lblhurricaneassessment-2"></span><h1>Hurricane Assessment<a class="headerlink" href="#hurricane-assessment" title="Permalink to this headline">¶</a></h1>
+<span id="lblhurricaneassessment-2"></span><h1>Hurricane Assessment<a class="headerlink" href="#hurricane-assessment" title="Permalink to this heading">¶</a></h1>
 <p>This example is a small-scale regional hurricane risk assessment which performs damage/loss estimation for a group of 20 wood buildings in Atlantic City under the Sandy Storm. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; rather, an <strong>IMasEDP</strong> application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage.
 The distribution of the buildings’ structural types and stories are illustrated below.</p>
 <div class="align-center figure" id="id1">
@@ -216,7 +217,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <p class="caption"><span class="caption-text">Peak wind speed and floor water depth maps of the Sandy Storm</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="inputs">
-<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
 <p>The example input files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/1186f68647c09afb8cc26b551a16a31e/example_hu.zip"><code class="xref download docutils literal notranslate"><span class="pre">example_hu.zip</span></code></a>. For more information about required input files, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">Inputs</span></a>.</p>
 <ol class="arabic simple">
 <li><p><strong>Configuration file</strong>: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.</p></li>
@@ -6039,7 +6040,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 </ol>
 </div>
 <div class="section" id="run-workflow">
-<h2>Run Workflow<a class="headerlink" href="#run-workflow" title="Permalink to this headline">¶</a></h2>
+<h2>Run Workflow<a class="headerlink" href="#run-workflow" title="Permalink to this heading">¶</a></h2>
 <p>The workflow can be executed by uploading the appropriate files to <a class="reference internal" href="../../architecture/desktop/run-manually/runRemote.html#lblrunremote"><span class="std std-ref">DesignSafe</span></a>, or by running the example on your <a class="reference internal" href="../../architecture/desktop/run-manually/runLocal.html#lblrunlocal"><span class="std std-ref">local desktop</span></a>, using the following <em>initialization command</em> in the terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/R2D_workflow.py&quot;</span> <span class="s2">&quot;C:/rWHALE/hurricane_example/rWHALE_config_hu.json&quot;</span> <span class="o">--</span><span class="n">registry</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/WorkflowApplications.json&quot;</span> <span class="o">--</span><span class="n">referenceDir</span> <span class="s2">&quot;C:/rWHALE/hurricane_example/input_data/&quot;</span> <span class="o">-</span><span class="n">w</span> <span class="s2">&quot;C:/rWHALE/hurricane_example/results&quot;</span>
 </pre></div>
@@ -6062,7 +6063,7 @@ hurricane_example
 </div>
 </div>
 <div class="section" id="outputs">
-<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h2>
 <p>The example output files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/ba9ae435959aec743e510d2129ac3bf0/output_data_hu.zip"><code class="xref download docutils literal notranslate"><span class="pre">output_data_hu.zip</span></code></a>. For more information about the output files produced, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Outputs.html#lbloutputs"><span class="std std-ref">Outputs</span></a>.</p>
 <ol class="arabic simple">
 <li><p><strong>EDP_1-20.csv</strong>: reports statistics on EDP results, where the hazard IM is used as the EDP. As in HAZUS, the statistics reported are the median and lognormal standard deviation of peak wind speed (PWS) and flood water depth (FWD).</p></li>

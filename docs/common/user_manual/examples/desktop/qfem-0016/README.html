@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -237,7 +238,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="surrogate-modeling-to-predict-mean-and-variance-of-earthquake-response">
-<span id="qfem-0016"></span><h1><span class="section-number">4.8. </span>Surrogate Modeling to Predict Mean and Variance of Earthquake Response<a class="headerlink" href="#surrogate-modeling-to-predict-mean-and-variance-of-earthquake-response" title="Permalink to this headline">¶</a></h1>
+<span id="qfem-0016"></span><h1><span class="section-number">4.8. </span>Surrogate Modeling to Predict Mean and Variance of Earthquake Response<a class="headerlink" href="#surrogate-modeling-to-predict-mean-and-variance-of-earthquake-response" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 28%" />
@@ -250,11 +251,11 @@
 </tbody>
 </table>
 <div class="section" id="outline">
-<h2><span class="section-number">4.8.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
 <p>This example constructs a Gaussian process-based surrogate model for mean and standard deviation of a building structure given ten ground motion set.</p>
 </div>
 <div class="section" id="problem-description">
-<h2><span class="section-number">4.8.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
 <p>The structure (<a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/blob/master/Examples/qfem-0016/src/ShearBuilding_NL.tcl">three story nonlinear building stick model</a>) has the following uncertain properties:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -297,13 +298,13 @@
 </div>
 </div>
 <div class="section" id="video-resources">
-<h2><span class="section-number">4.8.3. </span>Video resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.3. </span>Video resources<a class="headerlink" href="#video-resources" title="Permalink to this heading">¶</a></h2>
 <p>Note that even though we use the exact same structure, the parameters, their distributions and the quantity of interest (QoI) in the video is different from those in this example. The files for the corresponding example can be found at <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/qfem-0016/LET">Github</a>.</p>
 <div style="text-align: center;">
    <iframe src="https://www.youtube.com/embed/Ze_K61TTuvg?start=1602" width="560" height="315" frameborder="5" allowfullscreen="allowfullscreen"></iframe>
 </div><p><br>Click to replay the video from <a href="javascript:window.location.reload(true);">26:42</a>. Please note there were minor changes in the user interface since it is recorded.</p></div>
 <div class="section" id="input-files">
-<h2><span class="section-number">4.8.4. </span>Input files<a class="headerlink" href="#input-files" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.4. </span>Input files<a class="headerlink" href="#input-files" title="Permalink to this heading">¶</a></h2>
 <p>Once the user selects OpenSeesPy as FEM applications, the below two fields are requested.</p>
 <ol class="arabic simple">
 <li><p>Input Script - <code class="docutils literal notranslate"><span class="pre">ShearBuilding_NL.tcl</span></code>: This file is the main OpenSees input script that implements builds the model, reads ground motion time histories, and runs the analysis repeatedly. It is supplied to the Input Script field of the FEM tab.</p></li>
@@ -312,7 +313,7 @@
 <p><strong>The other subsidiary scripts (including ground motion time histories) are stored in the same directory of the main input script.</strong></p>
 </div>
 <div class="section" id="uq-workflow">
-<h2><span class="section-number">4.8.5. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.5. </span>UQ Workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Since the model is provided, Training Dataset can be obtained by <strong>Sampling and Simulation</strong>. Since it is known that the mean and variance of peak drift are always positive, log-transform is introduced. Since a trend is expected, a linear trend function is introduced.</p></li>
 </ol>
@@ -359,7 +360,7 @@
 </ol>
 </div>
 <div class="section" id="sensitivity-analysis-using-the-surrogate-model">
-<h2><span class="section-number">4.8.6. </span>Sensitivity analysis using the Surrogate model<a class="headerlink" href="#sensitivity-analysis-using-the-surrogate-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.6. </span>Sensitivity analysis using the Surrogate model<a class="headerlink" href="#sensitivity-analysis-using-the-surrogate-model" title="Permalink to this heading">¶</a></h2>
 <p>Once the surrogate model is trained, it can be used for various UQ/optimization applications. Here we perform a sensitivity analysis and compare it with the results from simulation model.</p>
 <ol class="arabic simple">
 <li><p>The constructed surrogate model can be saved by <strong>Save GP Model</strong> button. Two files and a folder will be saved which are <strong>SurroateGP Info File</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code>), <strong>SurroateGP model file</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code>) and <strong>Simulation template directory</strong> which contains the simulation model information (<code class="docutils literal notranslate"><span class="pre">templatedir_SIM</span></code>).</p></li>

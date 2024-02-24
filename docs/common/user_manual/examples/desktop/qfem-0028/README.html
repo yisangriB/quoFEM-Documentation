@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -239,7 +240,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="bayesian-calibration-of-hierarchical-models">
-<span id="qfem-0028"></span><h1><span class="section-number">4.15. </span>Bayesian calibration of hierarchical models<a class="headerlink" href="#bayesian-calibration-of-hierarchical-models" title="Permalink to this headline">¶</a></h1>
+<span id="qfem-0028"></span><h1><span class="section-number">4.15. </span>Bayesian calibration of hierarchical models<a class="headerlink" href="#bayesian-calibration-of-hierarchical-models" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -252,11 +253,11 @@
 </tbody>
 </table>
 <div class="section" id="outline">
-<h2><span class="section-number">4.15.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.15.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
 <p>In this example, the focus is on employing the UCSD_UQ engine to calibrate a hierarchical model. This model is designed to capture the inherent variability, known as aleatory uncertainty, in the parameters of a numerical model, in this case, the Steel02 material model in OpenSees. The calibration process involves fitting the Steel02 model to each of several datasets containing cyclic stress-strain data from multiple experiments on coupons of Grade 60 steel, and simultaneously estimating the parameters of the distribution of the estimated parameters of the Steel02 model.</p>
 </div>
 <div class="section" id="data">
-<h2><span class="section-number">4.15.2. </span>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.15.2. </span>Data<a class="headerlink" href="#data" title="Permalink to this heading">¶</a></h2>
 <p>The dataset used for the inference presented in this example originates from experimental tests conducted on reinforcing steel specimens, commonly referred to as coupons, at the University of California, San Diego, in 2013. Refer Carreño et al. <a class="reference internal" href="#carreno2020" id="id1"><span>[Carreño2020]</span></a> for details.</p>
 <p>This dataset comprises cyclic stress-strain tests performed on thirty-six coupons. These coupons were sourced from three distinct steel manufacturing mills and adhered to two different manufacturing standards of Grade 60 steel. Specifically, each mill provided two straight #4 bars, each measuring 4.6 meters in length. One bar from each mill complied with Grade 60 A615 manufacturing standards, while the other adhered to Grade 60 A706 standards. From each bar, six coupons were extracted, and each coupon underwent cyclic strain tests with varying input strain histories.</p>
 <p>Consequently, a total of 36 coupons were tested, derived from the combination of 3 mills, 2 bars per mill, and 6 coupons per bar. To ensure uniformity in specimen cross-sections, each coupon underwent machining, as illustrated in <a class="reference internal" href="#figcoupon"><span class="std std-numref">Fig. 4.15.2.1</span></a>. Machining was employed to maintain a length-to-diameter ratio of 2 in the machined portion of the bars, thereby minimizing the effects of nonlinear geometry, such as partial buckling, in the stress-strain response.</p>
@@ -271,7 +272,7 @@
 </div>
 </div>
 <div class="section" id="model">
-<h2><span class="section-number">4.15.3. </span>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.15.3. </span>Model<a class="headerlink" href="#model" title="Permalink to this heading">¶</a></h2>
 <p>The Giuffré-Menegotto-Pinto (GMP) material model is a widely adopted uniaxial material model applicable to both reinforcing and structural steel. It is based on the original formulation of Menegotto and Pinto, later extended by Filippou et al. to incorporate isotropic strain hardening and implemented in OpenSees as the Steel02 material model. This model predicts the evolution of stress as a function of an input strain history.</p>
 <p>This model is characterized by ten parameters:
 - Young’s modulus <span class="math notranslate nohighlight">\(E_0\)</span> for plastic behavior,
@@ -280,13 +281,13 @@
 <p>Out of these 10 parameters, in this example, the value of <span class="math notranslate nohighlight">\(R_0\)</span> is set to 20, the value most commonly recommended for this parameter, and the value of <span class="math notranslate nohighlight">\(a_2\)</span> and <span class="math notranslate nohighlight">\(a_4\)</span> are set to 1. Thus, the 7 parameters of the Steel02 material model that are inferred in this example are: <span class="math notranslate nohighlight">\(\theta = \{f_y, E, b, cR_1, cR_2, a_1, a_3\}\)</span>.</p>
 </div>
 <div class="section" id="hierarchical-bayesian-inference">
-<h2><span class="section-number">4.15.4. </span>Hierarchical Bayesian Inference<a class="headerlink" href="#hierarchical-bayesian-inference" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.15.4. </span>Hierarchical Bayesian Inference<a class="headerlink" href="#hierarchical-bayesian-inference" title="Permalink to this heading">¶</a></h2>
 <p>Based on the provided dataset and the described material model, the inference process aims to estimate the material model parameters <span class="math notranslate nohighlight">\(\theta_i\)</span> for each dataset, the variance of the prediction error <span class="math notranslate nohighlight">\(\sigma_i^2\)</span> for each dataset, as well as the mean <span class="math notranslate nohighlight">\(\mu_{\theta}\)</span> and covariance <span class="math notranslate nohighlight">\(\Sigma_{\theta}\)</span> of the distribution of the material model parameter estimates.</p>
 <p>The hierarchical model utilized for this inference process is outlined in the <a class="reference internal" href="../../../../technical_manual/desktop/UCSDUQTechnical.html#lbluqucsd-hierarchical"><span class="std std-ref">Technical Manual</span></a>. This model is designed to handle uncertainties in the parameter estimates effectively. The inputs required from the user in quoFEM are kept to a minimum, simplifying the inference process.</p>
 <p>For more detailed information on the hierarchical model and the inference procedure, please refer to the <a class="reference internal" href="../../../../technical_manual/desktop/UCSDUQTechnical.html#lbluqucsd-hierarchical"><span class="std std-ref">Technical Manual</span></a>.</p>
 </div>
 <div class="section" id="files-required">
-<h2><span class="section-number">4.15.5. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.15.5. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do NOT place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contain a lot of files.</p>
@@ -322,7 +323,7 @@
 </ol>
 </div>
 <div class="section" id="uq-workflow">
-<h2><span class="section-number">4.15.6. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.15.6. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
 <p>The inputs needed to run this example can be loaded into the quoFEM user interface by selecting the <code class="docutils literal notranslate"><span class="pre">Bayesian</span> <span class="pre">Calibration</span> <span class="pre">of</span> <span class="pre">Hierarchical</span> <span class="pre">Model</span></code> example from the <code class="docutils literal notranslate"><span class="pre">Examples</span></code> menu of quoFEM.</p>
 <p>The inputs can also be set up manually through the following steps:</p>
 <ol class="arabic simple">
@@ -336,7 +337,7 @@
 <li><p>Next in the <strong>FEM</strong> panel , select <strong>OpenSees</strong> and populate the <strong>Input Script</strong> field by choosing the path to the model file.</p></li>
 </ol>
 <div class="align-center figure" id="id9">
-<span id="fighbmfem"></span><a class="reference internal image-reference" href="../../../../../_images/FEM4.png"><img alt="../../../../../_images/FEM4.png" src="../../../../../_images/FEM4.png" style="width: 600px;" /></a>
+<span id="fighbmfem"></span><a class="reference internal image-reference" href="../../../../../_images/FEM3.png"><img alt="../../../../../_images/FEM3.png" src="../../../../../_images/FEM3.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.15.6.2 </span><span class="caption-text">Inputs in the FEM panel</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="3">
@@ -380,7 +381,7 @@
 </div>
 </div>
 <div class="section" id="files-for-restarting-the-analysis">
-<span id="lblhbmrestart"></span><h2><span class="section-number">4.15.7. </span>Files for restarting the analysis<a class="headerlink" href="#files-for-restarting-the-analysis" title="Permalink to this headline">¶</a></h2>
+<span id="lblhbmrestart"></span><h2><span class="section-number">4.15.7. </span>Files for restarting the analysis<a class="headerlink" href="#files-for-restarting-the-analysis" title="Permalink to this heading">¶</a></h2>
 <p>In addition to the results displayed in the RES panel in quoFEM, JSON files with the state of the chain at every step of the sampling algorithm are saved in a directory called <code class="docutils literal notranslate"><span class="pre">sampling_results</span></code> within the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> directory inside the jobs directory specified in the quoFEM Preferences menu. Any of these files can be used to resume the sampling, by copying the file to the directory containing the model files and specifying its name in the Restart File Name field in the UQ panel.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>

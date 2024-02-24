@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -236,10 +237,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="forward-propagation">
-<span id="lblsimforward"></span><h1><span class="section-number">3.1.3.1. </span>Forward Propagation<a class="headerlink" href="#forward-propagation" title="Permalink to this headline">¶</a></h1>
+<span id="lblsimforward"></span><h1><span class="section-number">3.1.3.1. </span>Forward Propagation<a class="headerlink" href="#forward-propagation" title="Permalink to this heading">¶</a></h1>
 <p>The forward propagation provides a probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis). Currently, only the Monte Carlo Sampling (MCS) method is available in the SimCenterUQ engine and the other sampling methods (Latin hypercube sampling, Surrogate model-based efficient sampling) are available in the Dakota engine.</p>
 <div class="section" id="sampling-from-dataset">
-<h2>Sampling from dataset<a class="headerlink" href="#sampling-from-dataset" title="Permalink to this headline">¶</a></h2>
+<h2>Sampling from dataset<a class="headerlink" href="#sampling-from-dataset" title="Permalink to this heading">¶</a></h2>
 <p>SimCenterUQ uniquely provides an option to define the distribution of random variables (RVs) directly from the samples of the RVs (See <a class="reference internal" href="RV.html#rv"><span class="std std-ref">RV: Random Variables</span></a>). This feature is useful when the user does not know the actual distribution of an RV but has sample realizations. When a dataset is provided, quoFEM either treats the data as a discrete distribution (when <code class="docutils literal notranslate"><span class="pre">Discrete</span></code> distribution option is selected) or fits a parametric distribution to the data (when another distribution option is selected). For the former case, quoFEM uniformly samples the discrete index of the dataset provided by the user and uses the value corresponding to the index for the forward propagation analysis. The index is sampled either <strong>with</strong> replacement if the data size is smaller than the number of samples to draw or <strong>without</strong> replacement if the data size is larger than the number of samples to draw. Further, when the user provides coupled samples of <em>correlated</em> RVs, vector-wise resampling can be performed instead of independent resampling. In particular, a single index is sampled and shared in multiple variables for each realization.</p>
 <div class="align-center figure" id="figsimsamp3">
 <a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling3.png"><img alt="../../../../_images/SimUQ_sampling3.png" src="../../../../_images/SimUQ_sampling3.png" style="width: 1200px;" /></a>
@@ -282,7 +283,7 @@
 </ul>
 </div>
 <div class="section" id="multi-fidelity-monte-carlo">
-<span id="lblsimforwardmf"></span><h3>Multi-fidelity Monte Carlo<a class="headerlink" href="#multi-fidelity-monte-carlo" title="Permalink to this headline">¶</a></h3>
+<span id="lblsimforwardmf"></span><h3>Multi-fidelity Monte Carlo<a class="headerlink" href="#multi-fidelity-monte-carlo" title="Permalink to this heading">¶</a></h3>
 <p>SimCenter UQ supports a multi-fidelity Monte Carlo option, where the user can import both high-fidelity and low-fidelity simulation models to estimate the statistics of high-fidelity models. See more information in the technical manual.</p>
 <div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../_images/Sampling_MF1.png"><img alt="../../../../_images/Sampling_MF1.png" src="../../../../_images/Sampling_MF1.png" style="width: 900px;" /></a>

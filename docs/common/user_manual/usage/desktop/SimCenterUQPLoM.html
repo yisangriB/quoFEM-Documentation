@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -235,9 +236,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="probabilistic-learning-on-manifolds-plom">
-<span id="lblsimcenteruqplom"></span><h1><span class="section-number">3.1.3.4. </span>Probabilistic Learning on Manifolds (PLoM)<a class="headerlink" href="#probabilistic-learning-on-manifolds-plom" title="Permalink to this headline">¶</a></h1>
+<span id="lblsimcenteruqplom"></span><h1><span class="section-number">3.1.3.4. </span>Probabilistic Learning on Manifolds (PLoM)<a class="headerlink" href="#probabilistic-learning-on-manifolds-plom" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="about-plom">
-<h2>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this headline">¶</a></h2>
+<h2>About PLoM<a class="headerlink" href="#about-plom" title="Permalink to this heading">¶</a></h2>
 <p><strong>PLoM</strong> is an open source python package that implements the algorithm of <strong>Probabilistic
 Learning on Manifolds</strong> with and without constraints (<a class="reference internal" href="#soizeghanem2016" id="id1"><span>[SoizeGhanem2016]</span></a>, <a class="reference internal" href="#soizeghanem2020" id="id2"><span>[SoizeGhanem2020]</span></a>)
 for <em>generating realizations of a random vector in a finite Euclidean space that are
@@ -249,7 +250,7 @@ modules and invokes a dynamic library for more efficiently computing the gradien
 the potential, and can be imported and run on Linux, macOS, and Windows platform.</p>
 </div>
 <div class="section" id="basic-model">
-<h2>Basic Model<a class="headerlink" href="#basic-model" title="Permalink to this headline">¶</a></h2>
+<h2>Basic Model<a class="headerlink" href="#basic-model" title="Permalink to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">PLoM</span> <span class="pre">Model</span></code> is a SimCenterUQ method to learn data structure and generate new
 realizations from a training dataset. It can be used for data sampling, dimension reduction,
 and surrogate modeling. Currently, there are two training data options: <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Data</span> <span class="pre">File</span></code>
@@ -259,7 +260,7 @@ and <code class="docutils literal notranslate"><span class="pre">Sampling</span>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.4.1 </span><span class="caption-text">SimCenterUQ method: PLoM Model</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="option-1-import-data-file">
-<h3>Option 1: Import Data File<a class="headerlink" href="#option-1-import-data-file" title="Permalink to this headline">¶</a></h3>
+<h3>Option 1: Import Data File<a class="headerlink" href="#option-1-import-data-file" title="Permalink to this heading">¶</a></h3>
 <p>Under <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Data</span> <span class="pre">File</span></code> option, UQ Engine expects users to directly provide the
 training data matrices. For instance, users can upload tabulated data files for input variables
 and corresponding output responses, by using the <code class="docutils literal notranslate"><span class="pre">Raw</span> <span class="pre">Data</span></code> mode. Example input and output variables
@@ -287,7 +288,7 @@ the saved pre-trained model.</p>
 </div>
 </div>
 <div class="section" id="option-2-sampling-and-simulation">
-<h3>Option 2: Sampling and Simulation<a class="headerlink" href="#option-2-sampling-and-simulation" title="Permalink to this headline">¶</a></h3>
+<h3>Option 2: Sampling and Simulation<a class="headerlink" href="#option-2-sampling-and-simulation" title="Permalink to this heading">¶</a></h3>
 <p>Under <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code> option, UQ Engine will first invokes <strong>FEM</strong> applications
 (e.g., OpenSees) to run numerical simulations and generate the needed training dataset. So,
 instead of directly providing the training data, users are responsible for configuring the
@@ -299,11 +300,11 @@ simulation model and anlaysis.</p>
 </div>
 </div>
 <div class="section" id="advanced-options">
-<h2>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this headline">¶</a></h2>
+<h2>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this heading">¶</a></h2>
 <p>Advanced users are able to configure more modeling parameters by checking
 <code class="docutils literal notranslate"><span class="pre">Advanced</span> <span class="pre">Options</span></code> checkbox.</p>
 <div class="section" id="general">
-<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
+<h3>General<a class="headerlink" href="#general" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Log-space Transform</strong>: apply logrithmic transformation to the data metrix</p></li>
 <li><p><strong>Random Seed</strong>: enable replicating analysis</p></li>
@@ -315,7 +316,7 @@ simulation model and anlaysis.</p>
 </div>
 </div>
 <div class="section" id="kernel-density-estimation">
-<h3>Kernel Density Estimation<a class="headerlink" href="#kernel-density-estimation" title="Permalink to this headline">¶</a></h3>
+<h3>Kernel Density Estimation<a class="headerlink" href="#kernel-density-estimation" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>KDE Smooth Factor</strong>: smooth factor in kernel density base function</p></li>
 <li><p><strong>Diffusion Maps</strong>: whether invokes diffusion maps</p></li>
@@ -327,7 +328,7 @@ simulation model and anlaysis.</p>
 </div>
 </div>
 <div class="section" id="constraints">
-<h3>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h3>
+<h3>Constraints<a class="headerlink" href="#constraints" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Add constraints</strong>: whether applies constraints to the model</p></li>
 <li><p><strong>Constraints file (.py)</strong>: constraint file path</p></li>
@@ -340,7 +341,7 @@ simulation model and anlaysis.</p>
 </div>
 </div>
 <div class="section" id="user-defined-variables">
-<h3>User-Defined Variables<a class="headerlink" href="#user-defined-variables" title="Permalink to this headline">¶</a></h3>
+<h3>User-Defined Variables<a class="headerlink" href="#user-defined-variables" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>None</strong>: no extra variables except for those defined in <strong>RV</strong> and <strong>EDP</strong> panel to be considered</p></li>
 <li><p><strong>User-Defined</strong>: users can upload a script for computing the extra variables in the analysis</p></li>
@@ -357,7 +358,7 @@ simulation model and anlaysis.</p>
 </div>
 </div>
 <div class="section" id="results-and-postprocess">
-<h2>Results and Postprocess<a class="headerlink" href="#results-and-postprocess" title="Permalink to this headline">¶</a></h2>
+<h2>Results and Postprocess<a class="headerlink" href="#results-and-postprocess" title="Permalink to this heading">¶</a></h2>
 <p>Once the training completed, two plots will be generated in <strong>RES</strong> panel for the PLoM training results:</p>
 <ul class="simple">
 <li><p><strong>PCA</strong>: plots the curve of PCA representation error versus the PCA eigenvalues overlapped by the truncating PCA eigenvalue used in training.</p></li>

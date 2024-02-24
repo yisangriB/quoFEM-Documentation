@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -244,7 +245,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="steel-frame-bayesian-calibration-using-tmcmc">
-<span id="qfem-0014"></span><h1><span class="section-number">4.6. </span>Steel Frame: Bayesian Calibration using TMCMC<a class="headerlink" href="#steel-frame-bayesian-calibration-using-tmcmc" title="Permalink to this headline">¶</a></h1>
+<span id="qfem-0014"></span><h1><span class="section-number">4.6. </span>Steel Frame: Bayesian Calibration using TMCMC<a class="headerlink" href="#steel-frame-bayesian-calibration-using-tmcmc" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 41%" />
@@ -257,7 +258,7 @@
 </tbody>
 </table>
 <div class="section" id="outline">
-<h2><span class="section-number">4.6.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.6.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
 <p>In this example, Bayesian estimation is used to estimate the lateral story
 stiffnesses of the two stories of a simple steel frame, given data about
 its mode shapes and frequencies. The transitional Markov chain Monte Carlo
@@ -265,10 +266,10 @@ algorithm is used to obtain samples from the posterior probability distribution
 of the lateral story stiffnesses.</p>
 </div>
 <div class="section" id="problem-description">
-<h2><span class="section-number">4.6.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.6.2. </span>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
 <p>This example is provided by Professor Joel Conte and his doctoral students Maitreya Kurumbhati and Mukesh Ramancha from UC San Diego.</p>
 <div class="section" id="structural-system">
-<h3><span class="section-number">4.6.2.1. </span>Structural system<a class="headerlink" href="#structural-system" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.6.2.1. </span>Structural system<a class="headerlink" href="#structural-system" title="Permalink to this heading">¶</a></h3>
 <p>Consider the two-story building structure shown in <a class="reference internal" href="#figsteelstructuralsystembayes"><span class="std std-numref">Fig. 4.6.2.1.1</span></a>. Each floor slab is made of a composite metal deck and is supported on the steel columns. These four columns are fixed at the base. The story height is <span class="math notranslate nohighlight">\(h = 10'\)</span>, length of each slab is <span class="math notranslate nohighlight">\(33'4''\)</span> and <span class="math notranslate nohighlight">\(30'\)</span> along the X and Y direction, respectively. <span class="math notranslate nohighlight">\(m_1 = 0.52 \ \ kips-s^2/in\)</span> and <span class="math notranslate nohighlight">\(m_2 = 0.26 \ \ kips-s^2/in\)</span> are the total mass of floor 1 and floor 2, respectively. For the steel columns, Young’s modulus is <span class="math notranslate nohighlight">\(E_s^{col} = 29000 \ \ ksi\)</span> and the moment of inertia <span class="math notranslate nohighlight">\(I_{yy}^{col} = 1190 \ \ in^4\)</span>.</p>
 <div class="align-center figure" id="id1">
 <span id="figsteelstructuralsystembayes"></span><a class="reference internal image-reference" href="../../../../../_images/qfem-0014-SteelStructuralSystem.png"><img alt="../../../../../_images/qfem-0014-SteelStructuralSystem.png" src="../../../../../_images/qfem-0014-SteelStructuralSystem.png" style="width: 400px;" /></a>
@@ -276,7 +277,7 @@ of the lateral story stiffnesses.</p>
 </div>
 </div>
 <div class="section" id="finite-element-model">
-<h3><span class="section-number">4.6.2.2. </span>Finite element model<a class="headerlink" href="#finite-element-model" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.6.2.2. </span>Finite element model<a class="headerlink" href="#finite-element-model" title="Permalink to this heading">¶</a></h3>
 <p>In this example, only the response of the system along the X direction is considered. For modeling purposes, the floor diaphragms are assumed rigid both in plane and in flexure, and the columns are assumed axially rigid. The structure is modeled as a two-story 2D shear building model as shown in <a class="reference internal" href="#figsteelframemodelbayes"><span class="std std-numref">Fig. 4.6.2.2.1</span></a>. The finite element (FE) software framework <strong>OpenSees</strong> is utilized for modeling and analysis of the considered structural system. The developed FE model consists of 6 nodes and 6 elastic beam-column elements. To simulate the flexural rigidity of the floors, the moment of inertia <span class="math notranslate nohighlight">\(I_{yy}\)</span> of the horizontal elements is set to a very large number. The horizontal degrees of freedom of node 3 and node 4 are constrained to be equal throughout the analysis to mimic the axial rigidity of floor 1. Similar modeling is performed for floor 2. The vertical displacements of nodes 3, 4, 5, and 6 are constrained to be zero to model the axial rigidity of the columns (see roller supports in <a class="reference internal" href="#figsteelframemodelbayes"><span class="std std-numref">Fig. 4.6.2.2.1</span></a>). After making these modeling assumptions, the only active degrees of freedom of the FE model are the horizontal displacements (translations) of floors 1 and 2, <span class="math notranslate nohighlight">\(u_1\)</span> and <span class="math notranslate nohighlight">\(u_2\)</span>, respectively, as shown in <a class="reference internal" href="#figsteelframemodelbayes"><span class="std std-numref">Fig. 4.6.2.2.1</span></a>.</p>
 <p>A translational mass <span class="math notranslate nohighlight">\(m_1/2\)</span> and <span class="math notranslate nohighlight">\(m_2/2\)</span> is lumped at the nodes of floor 1 and 2, respectively, along the X direction. The lateral story stiffnesses <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span> of story 1 and 2, respectively, are equal to <span class="math notranslate nohighlight">\(48 E_s^{col} I_{yy}^{col}/{h^3}\)</span>. Hence, <strong>the story stiffnesses</strong>
 <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span> <strong>are both equal to 958.61 kips/in</strong>.</p>
@@ -286,7 +287,7 @@ of the lateral story stiffnesses.</p>
 </div>
 </div>
 <div class="section" id="natural-vibration-frequencies-and-mode-shapes">
-<h3><span class="section-number">4.6.2.3. </span>Natural vibration frequencies and mode shapes<a class="headerlink" href="#natural-vibration-frequencies-and-mode-shapes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.6.2.3. </span>Natural vibration frequencies and mode shapes<a class="headerlink" href="#natural-vibration-frequencies-and-mode-shapes" title="Permalink to this heading">¶</a></h3>
 <p>Since the shear building model shown in <a class="reference internal" href="#figsteelframemodelbayes"><span class="std std-numref">Fig. 4.6.2.2.1</span></a> has only two degrees of freedom, it has two natural modes of vibration. Let <span class="math notranslate nohighlight">\(\lambda_i\)</span> and <span class="math notranslate nohighlight">\(\phi_i\)</span> be the <span class="math notranslate nohighlight">\(i^{th}\)</span> eigenvalue and its corresponding eigenvector, respectively. The two eigenvalues and eigenvectors are obtained by solving the generalized eigenvalue problem of the considered system in OpenSees. The following two eigenvalues are obtained:</p>
 <div class="math notranslate nohighlight" id="equation-eqneigenvaluesbayes">
 <span class="eqno">(4.6.2.3.1)<a class="headerlink" href="#equation-eqneigenvaluesbayes" title="Permalink to this equation">¶</a></span>\[\begin{array}{l}
@@ -302,11 +303,11 @@ of the lateral story stiffnesses.</p>
 </div>
 </div>
 <div class="section" id="parameters-to-be-estimated">
-<h3><span class="section-number">4.6.2.4. </span>Parameters to be estimated<a class="headerlink" href="#parameters-to-be-estimated" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.6.2.4. </span>Parameters to be estimated<a class="headerlink" href="#parameters-to-be-estimated" title="Permalink to this heading">¶</a></h3>
 <p>The FE model of a real structural system often consists of parameters that are unknown to some degree. For example, the parameters related to the mass or stiffness or damping of the system might be unknown. The goal of parameter estimation is to estimate such unknown parameters using some measurement data. The measurement data is obtained by using sensors deployed on the real system. To demonstrate the parameter estimation concept/framework on the considered two-story building system, the first and second story story stiffnesses, <span class="math notranslate nohighlight">\(k_{1}\)</span> and <span class="math notranslate nohighlight">\(k_{2}\)</span>, are assumed to be unknown while the mass parameters are assumed to be known. In this illustration example, the unknown parameter vector <span class="math notranslate nohighlight">\(\mathbf{\theta}=(k_{1}, k_{2})^T\)</span> is estimated using the first eigenvalue and the first eigenvector data.</p>
 </div>
 <div class="section" id="synthetic-data-generation">
-<h3><span class="section-number">4.6.2.5. </span>Synthetic data generation<a class="headerlink" href="#synthetic-data-generation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.6.2.5. </span>Synthetic data generation<a class="headerlink" href="#synthetic-data-generation" title="Permalink to this heading">¶</a></h3>
 <p>In a real-world application, data on the first eigenvalue and the first eigenvector would consist of system identification results obtained from sensor measurement data. Note that the considered two-story building structure (see <a class="reference internal" href="#figsteelstructuralsystembayes"><span class="std std-numref">Fig. 4.6.2.1.1</span></a>) is used here as a conceptual/pedagogical example and does not exist in the real world. Therefore, sensor measurement data cannot be collected from the system. As a substitute, measurement data (in the form of estimated first eigenvalue and first eigenvector) are artificially simulated for the purpose of this example, i.e., system identification results for <span class="math notranslate nohighlight">\(\lambda_i\)</span> and <span class="math notranslate nohighlight">\(\phi_i\)</span> from multiple ambient vibration datasets are simulated. To simulate these system identification results (i.e., measurement data), an eigenvalue analysis of the system is performed assuming the following true principal moment of inertia of the columns:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-examples-desktop-qfem-0014-readme-0">
 <span class="eqno">(4.6.2.5.1)<a class="headerlink" href="#equation-common-user-manual-examples-desktop-qfem-0014-readme-0" title="Permalink to this equation">¶</a></span>\[\mathbf{\theta}^{true} = \left(k_{1}^{true}, k_{2}^{true}\right)^T; \quad k_{1}^{true} = k_{2}^{true} = 958.61 \ \ kips/in.\]</div>
@@ -324,7 +325,7 @@ of the lateral story stiffnesses.</p>
 \end{array}\end{split}\]</div>
 </div>
 <div class="section" id="parameter-estimation-setup">
-<h3><span class="section-number">4.6.2.6. </span>Parameter estimation setup<a class="headerlink" href="#parameter-estimation-setup" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.6.2.6. </span>Parameter estimation setup<a class="headerlink" href="#parameter-estimation-setup" title="Permalink to this heading">¶</a></h3>
 <p>In this example, it is assumed that the story stiffnesses for the first and second story (<span class="math notranslate nohighlight">\(k_{1}\)</span> and <span class="math notranslate nohighlight">\(k_{2}\)</span> respectively) are unknown. The goal is to use the simulated data of eigenvalue and eigenvector measurements to obtain the posterior probability distribution of the story stiffnesses by Bayesian calibration. We will employ the Transitional Markov Chain Monte Carlo (TMCMC) algorithm, to sample from the posterior joint probability distribution of <span class="math notranslate nohighlight">\(k_{1}\)</span> and <span class="math notranslate nohighlight">\(k_{2}\)</span>.</p>
 <p>We define the following prior probability distributions for the unknown quantities of interest:</p>
 <ol class="arabic simple">
@@ -338,7 +339,7 @@ of <span class="math notranslate nohighlight">\(1150.33 \ \mathrm{kips/in}\)</sp
 <p>A Gaussian (a.k.a. Normal) likelihood model is employed by default in quoFEM. This is done by assuming that the errors (i.e. the differences between the finite element prediction of the modal properties and the simulated measurement data) follow a zero-mean Gaussian distribution. The components of the error vector are assumed to be statistically independent. The errors in the prediction of a particular response quantity are assumed to be identically distributed across experiments. Under these assumptions, the standard deviations of the error for each response quantity are the only unknown parameters of the Gaussian distribution employed in the likelihood model, and their values are also estimated from the data. Therefore, in this problem, there are two additional parameters <span class="math notranslate nohighlight">\(\sigma_{\lambda_{1}}\)</span> and <span class="math notranslate nohighlight">\(\sigma_{\phi_{12}}\)</span>, which are also estimated. The prior probability distributions for these additional parameters are automatically set by quoFEM.</p>
 </div>
 <div class="section" id="files-required">
-<h3><span class="section-number">4.6.2.7. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.6.2.7. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h3>
 <p>The exercise requires two script files. The user should download these files and place them in a <strong>new</strong> folder.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -362,7 +363,7 @@ of <span class="math notranslate nohighlight">\(1150.33 \ \mathrm{kips/in}\)</sp
 </div>
 </div>
 <div class="section" id="uq-workflow">
-<h2><span class="section-number">4.6.3. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.6.3. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Selecting the <code class="docutils literal notranslate"><span class="pre">Steel</span> <span class="pre">Frame:</span> <span class="pre">Bayesian</span> <span class="pre">Calibration</span> <span class="pre">using</span> <span class="pre">TMCMC</span></code> example in the quoFEM Examples menu will autopopulate all the input fields required to run this example.

@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -232,7 +233,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="configuring-customuq-engine">
-<span id="lblcustomuq"></span><h1><span class="section-number">3.1.5.1. </span>Configuring CustomUQ Engine<a class="headerlink" href="#configuring-customuq-engine" title="Permalink to this headline">¶</a></h1>
+<span id="lblcustomuq"></span><h1><span class="section-number">3.1.5.1. </span>Configuring CustomUQ Engine<a class="headerlink" href="#configuring-customuq-engine" title="Permalink to this heading">¶</a></h1>
 <p>In order to use the <strong>CustomUQ</strong> engine option, the following two tasks need to be performed:</p>
 <ul class="simple">
 <li><p>Configure UQ tab to accept the required inputs</p></li>
@@ -240,7 +241,7 @@
 </ul>
 <p>These two steps are explained in more detail next.</p>
 <div class="section" id="configuring-uq-tab">
-<h2>Configuring UQ tab<a class="headerlink" href="#configuring-uq-tab" title="Permalink to this headline">¶</a></h2>
+<h2>Configuring UQ tab<a class="headerlink" href="#configuring-uq-tab" title="Permalink to this heading">¶</a></h2>
 <p>The quoFEM interface can be customized to accept the required inputs for user-specified UQ engines. The “CustomUQ” option should be selected, as shown in <a class="reference internal" href="#figcustomuqoption"><span class="std std-numref">Fig. 3.1.5.1.1</span></a>. This will direct quoFEM to invoke the customized UQ backend where users can plug in their own functionality.</p>
 <div class="align-center figure" id="id2">
 <span id="figcustomuqoption"></span><img alt="../../../../_images/customUQ.png" src="../../../../_images/customUQ.png" />
@@ -292,7 +293,7 @@ customized UQ backend to the correct UQ driver. The driver name must correspond
 the name provided in the customized backend, as described below.</p>
 </div>
 <div class="section" id="adding-uq-engine-to-customized-backend">
-<h2>Adding UQ Engine to Customized Backend<a class="headerlink" href="#adding-uq-engine-to-customized-backend" title="Permalink to this headline">¶</a></h2>
+<h2>Adding UQ Engine to Customized Backend<a class="headerlink" href="#adding-uq-engine-to-customized-backend" title="Permalink to this heading">¶</a></h2>
 <p>In addition to configuring the user interface to accept the required inputs, it is necessary
 to make the custom UQ engine accessible to the customized UQ backend in quoFEM. This is achieved
 by providing a UQ runner class in Python that follows the defined interface. Users must create

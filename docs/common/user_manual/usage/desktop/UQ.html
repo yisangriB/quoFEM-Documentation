@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -248,11 +249,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="uq-uncertainty-quantification">
-<span id="lbluq"></span><h1><span class="section-number">3.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
+<span id="lbluq"></span><h1><span class="section-number">3.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this heading">¶</a></h1>
 <p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel that the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. The <strong>UQ Engine</strong> provides algorithms for solving various types of uncertainty analysis and optimization problems.</p>
 <p>The <strong>UQ Engine</strong> options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM app to use their own UQ methods and algorithms in the quoFEM app workflow by selecting the CustomUQ option.</p>
 <div class="section" id="uq-features-at-a-glance">
-<h2><span class="section-number">3.1.1. </span>UQ Features At-a-Glance<a class="headerlink" href="#uq-features-at-a-glance" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.1. </span>UQ Features At-a-Glance<a class="headerlink" href="#uq-features-at-a-glance" title="Permalink to this heading">¶</a></h2>
 <div class="sphinx-bs container-lg pb-3 docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
@@ -276,7 +277,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-89fed7a7-1d82-4ab5-a5fd-f3fe1872ef90"
+               data-lightbox="group-7064cf7e-3ac2-463b-ab78-8ec258cdd5b8"
                href="../../../../_images/method_forward1.png"
                title=""
                data-title=""
@@ -311,7 +312,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-ff22dd54-3a1f-4461-9fbf-60c0bcd122b4"
+               data-lightbox="group-5a6beada-7546-4682-8264-f7097608abd5"
                href="../../../../_images/method_sensitivity1.png"
                title=""
                data-title=""
@@ -345,7 +346,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-ce0cc560-8c07-4e20-a705-2d3a6b496ce2"
+               data-lightbox="group-8ba80332-98df-4749-8abd-408b4ffb357e"
                href="../../../../_images/method_reliability1.png"
                title=""
                data-title=""
@@ -380,7 +381,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-8f156456-f705-4641-b919-446fe541d45a"
+               data-lightbox="group-77a402bf-b5dc-46ca-9b3d-0f7712b5bfca"
                href="../../../../_images/method_Bayesian1.png"
                title=""
                data-title=""
@@ -415,7 +416,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-a513ceef-100e-4067-9b6b-628141cf0a67"
+               data-lightbox="group-ea9cf977-c829-4059-bd14-644fe439a7d5"
                href="../../../../_images/method_deterministic1.png"
                title=""
                data-title=""
@@ -450,7 +451,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-59c234a2-97f0-4019-af28-0af72bab580c"
+               data-lightbox="group-5e7a9c38-1a81-4f25-84c6-9c0f9c909eb0"
                href="../../../../_images/method_surrogate1.png"
                title=""
                data-title=""
@@ -484,7 +485,7 @@
 </div>
 <div class="rightside docutils container">
 <a class=""
-               data-lightbox="group-f19fbe0c-a4fd-4335-abbf-404d7e4618a0"
+               data-lightbox="group-ded2ce78-aa14-4840-8e03-6cacb22494bd"
                href="../../../../_images/method_custom1.png"
                title=""
                data-title=""
@@ -503,7 +504,7 @@
 </div>
 </div>
 <div class="section" id="dakota-uq-engine">
-<h2><span class="section-number">3.1.2. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.2. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this heading">¶</a></h2>
 <p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of methods for different kinds of analyses. For this reason, we have divided the methods into categories through a pull-down menu, as shown below. Once the category has been selected, a number of different methods are made available to the user.</p>
 <ul class="simple">
 <li><p>By checking the <code class="docutils literal notranslate"><span class="pre">Parallel</span> <span class="pre">Execution</span></code>, the UQ analysis will be performed in parallel. It will try to use all the processors available on the machine.</p></li>
@@ -526,7 +527,7 @@
 </div>
 </div>
 <div class="section" id="simcenter-uq-engine">
-<h2><span class="section-number">3.1.3. </span>SimCenter UQ Engine<a class="headerlink" href="#simcenter-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.3. </span>SimCenter UQ Engine<a class="headerlink" href="#simcenter-uq-engine" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>SimCenterUQ</strong> engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:</p>
 <div class="align-center figure" id="id2">
 <span id="figsimcenteruq"></span><a class="reference internal image-reference" href="../../../../_images/SimCenterUQ.png"><img alt="../../../../_images/SimCenterUQ.png" src="../../../../_images/SimCenterUQ.png" style="width: 1200px;" /></a>
@@ -543,7 +544,7 @@
 </div>
 </div>
 <div class="section" id="ucsd-uq-engine">
-<h2><span class="section-number">3.1.4. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.4. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>UCSD-UQ</strong> engine is a module developed at the SimCenter in collaboration with UCSD. It provides algorithms for Bayesian estimation, which can be accessed through a pull-down menu, as shown in <a class="reference internal" href="#figucsduq"><span class="std std-numref">Fig. 3.1.4.1</span></a>.</p>
 <div class="align-center figure" id="id3">
 <span id="figucsduq"></span><a class="reference internal image-reference" href="../../../../_images/UCSDUQ.png"><img alt="../../../../_images/UCSDUQ.png" src="../../../../_images/UCSDUQ.png" style="width: 1200px;" /></a>
@@ -558,7 +559,7 @@
 </div>
 </div>
 <div class="section" id="custom-uq-engine">
-<h2><span class="section-number">3.1.5. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>CustomUQ</strong> option enables users to switch out the UQ engine in the quoFEM app workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:</p>
 <div class="align-center figure" id="id4">
 <span id="figcustomuq"></span><a class="reference internal image-reference" href="../../../../_images/customUQ.png"><img alt="../../../../_images/customUQ.png" src="../../../../_images/customUQ.png" style="width: 1200px;" /></a>
@@ -577,7 +578,7 @@
 </div>
 </div>
 <div class="section" id="video-resources">
-<h2><span class="section-number">3.1.6. </span>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.6. </span>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this heading">¶</a></h2>
 <p>Recorded in tool training, 2022.</p>
 <div style="text-align: center;">
    <video controls src="../../../../_static/videos/quoFEM/youtube_UQ_Day1_TestClip.mp4" width="560" height="315"> </video>

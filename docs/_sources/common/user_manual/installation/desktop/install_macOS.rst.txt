@@ -105,8 +105,8 @@ Make sure you see a message that confirms the successful installation of the nhe
    To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_ .
 
 
-Download the Application
-^^^^^^^^^^^^^^^^^^^^^^^^
+Download the Application & Move it from the DMG image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To download the |app|, navigate to the |appLink| page which should resemble |figDownload|. The download page contains a list of downloadable files and directories.
 
@@ -173,11 +173,12 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
       HydroUQ tool download page.
 
-Click on the file with a name ending with **Mac_Download.dmg** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download is completed, open the dmg file and copy the |short tool name| application to a location in your filesystem.
+Click on the file with a name ending with **Mac_Download.dmg** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download is completed, open the dmg file and **MOVE** the |short tool name| application by dragging on it to a location in your filesystem. After the application has been copied to a location outside the dmg, the dmg can be deleted and the application run.
 
-.. note::
+.. warning::
 
-   We suggest copying the application to your Desktop. After copying the application, you can move the dmg file to the trash or eject it.
+   The application must be copied to a location on your filesystem outside of the DMG image. If you run the |short tool name| from within the dmg, i.e. if you open the dmg and then start the application from the window that pops up, it will **FAIL** when you try to run any workflow. 
+   
 
 Test the Installation
 ^^^^^^^^^^^^^^^^^^^^^

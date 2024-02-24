@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -208,9 +209,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="regional-site-response-assessment">
-<span id="lbl-example-rdt-srt"></span><h1>Regional Site Response Assessment<a class="headerlink" href="#regional-site-response-assessment" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-example-rdt-srt"></span><h1>Regional Site Response Assessment<a class="headerlink" href="#regional-site-response-assessment" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="problem-statement">
-<h2>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
+<h2>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this heading">¶</a></h2>
 <p>Site response analysis is commonly performed to analyze the propagation of seismic wave through soil. As shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig_siteResponse</span></code>,
 one-dimensional response analyses, as a simplified method, assume that all boundaries are horizontal and that the response of a soil deposit is
 predominately caused by SH-waves propagating vertically from the underlying bedrock. Ground surface response is usually the major output from
@@ -229,7 +230,7 @@ located in the San Francisco Bay area. The sites are distributed in space in a 4
 </div>
 </div>
 <div class="section" id="methodology">
-<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this heading">¶</a></h2>
 <p>In this example, the coordinates of a list of sites are known and peak ground accelerations at these sites are of interest. A summary of the RDT
 procedure for the site response analysis is summarized here:</p>
 <ol class="arabic simple">
@@ -266,7 +267,7 @@ procedure for the site response analysis is summarized here:</p>
 </pre></div>
 </div>
 <div class="section" id="obtaining-vs30-data">
-<h3>Obtaining Vs30 Data<a class="headerlink" href="#obtaining-vs30-data" title="Permalink to this headline">¶</a></h3>
+<h3>Obtaining Vs30 Data<a class="headerlink" href="#obtaining-vs30-data" title="Permalink to this heading">¶</a></h3>
 <p>Vs30 data can be obtained using <strong>EQHazard</strong> tool. EQHazard is a console application developed by the SimCenter to facilitate performing seismic hazard analysis(SHA) for regional earthquake simulations.
 The application makes use of OpenSHA to perform deterministic SHA. This application is developed using Java to facilitate the use of OpenSHA Java library. It is worth noting that this tool is most suitable
 for research applications where SHA needs to be performed for many sites given a single earthquake scenario, such as using a grid of sites for regional simulations. Several site data sources have been included in EQHazard, such as CGS/Wills VS30 Map (2015),
@@ -622,7 +623,7 @@ a template scenario file, <em>Scenario.json</em>, to obtain Vs30 data. An update
 </table>
 </div>
 <div class="section" id="obtaining-depth-to-bedrock">
-<h3>Obtaining Depth to Bedrock<a class="headerlink" href="#obtaining-depth-to-bedrock" title="Permalink to this headline">¶</a></h3>
+<h3>Obtaining Depth to Bedrock<a class="headerlink" href="#obtaining-depth-to-bedrock" title="Permalink to this heading">¶</a></h3>
 <p>The depth to bedrock can be obtained using several datasets. For example, SoilGrid250 map provides absolute depth to bedrock (in cm) predicted using the global compilation of soil ground observations.
 Accuracy assessment of the maps is available in Hengl <span id="id1">[]</span> and can be downloaded <a class="reference download external" download="" href="https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/f36117ea-9be5-4afd-bb7d-7a3e77bf392a"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.
 In this dataset, the depth to bedrock is considered as “depth (in cm) from the ground surface to the contact with coherent (continuous) bedrock.”
@@ -651,7 +652,7 @@ different shear wave velocity and it might vary dramatically, e.g., western U.S.
 </div>
 </div>
 <div class="section" id="generating-soil-profile-using-svm">
-<h3>Generating Soil Profile Using SVM<a class="headerlink" href="#generating-soil-profile-using-svm" title="Permalink to this headline">¶</a></h3>
+<h3>Generating Soil Profile Using SVM<a class="headerlink" href="#generating-soil-profile-using-svm" title="Permalink to this heading">¶</a></h3>
 <p>Once the depth to rock is obtained, the next step is to generate soil profile based on Vs30. Amplitude, frequency content and duration of ground shaking are important parameters in ground motion modeling and are
 heavily dependent on crustal material properties. The Sediment Velocity Model (SVM) “translates VS30 and a proxy which describes stiffness of the near surface sediments into a 1D velocity profile” (Shi and Asimaki, 2018, <span id="id2">[]</span>).</p>
 <p>Datasets of soil parameters only exist for specific locations and there is no way to collect adequate data on all regions. For this reason, there is a need for a method which can determine these crustal
@@ -668,7 +669,7 @@ a constraint for a minimum number of points needed to fully describe a soil colu
 </div>
 </div>
 <div class="section" id="including-soil-nonlinearity">
-<h3>Including Soil Nonlinearity<a class="headerlink" href="#including-soil-nonlinearity" title="Permalink to this headline">¶</a></h3>
+<h3>Including Soil Nonlinearity<a class="headerlink" href="#including-soil-nonlinearity" title="Permalink to this heading">¶</a></h3>
 <p>By default, <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Elastic_Isotropic_Material">elastic isotropic material</a> is assigned to the soil column due to limited available information. However, Nonlinearity can be incorporated into workflow by switching the constitutive model to other nonlinear model, for example,
 the multiaxial cyclic plasticity model proposed by Borja and Amies <span id="id4">[]</span>. This simple total stress-based bounding surface plasticity model for clays was developed to accommodate multiaxial stress reversals. The model was constructed based on the idea
 of a vanishing elastic region undergoing pure translation inside a bounding surface, and an interpolation function for hardening modulus which varies with stress distance of the elastic region from the unloading point.
@@ -752,7 +753,7 @@ The model can be applied to cohesive soils undergoing undrained stress reversals
 <p>where <code class="docutils literal notranslate"><span class="pre">Su_rat</span></code> is the ratio between undrain shear strength and initial vertical stress.</p>
 </div>
 <div class="section" id="adding-surface-structural-model">
-<h3>Adding Surface Structural Model<a class="headerlink" href="#adding-surface-structural-model" title="Permalink to this headline">¶</a></h3>
+<h3>Adding Surface Structural Model<a class="headerlink" href="#adding-surface-structural-model" title="Permalink to this heading">¶</a></h3>
 <p>A structure model can also be added to the workflow. In this case, the structure model uses the <a class="reference internal" href="../../../architecture/desktop/applications/modelingApps.html#lblmodelingapp"><span class="std std-ref">OpenSeesPyInput</span></a> modeling application as discussed in <a class="reference internal" href="../eqAssessment.html#lbleqassessment"><span class="std std-ref">Earthquake Assessment</span></a>.
 The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>.
 Functions are included which record the peak response as EDPs for each of the EDP types specified in the EDP_specs.json file.</p>
@@ -770,7 +771,7 @@ Functions are included which record the peak response as EDPs for each of the ED
 </div>
 </div>
 <div class="section" id="performing-analysis">
-<h3>Performing Analysis<a class="headerlink" href="#performing-analysis" title="Permalink to this headline">¶</a></h3>
+<h3>Performing Analysis<a class="headerlink" href="#performing-analysis" title="Permalink to this heading">¶</a></h3>
 <p>Configurations for RDT workflow are defined in <strong>rWHALE_config_SRT.json</strong>. In this example, the application for Modeling and Simulation is OpenSeesInputSRT and OpenSees-Simulation-SRT, respectively.</p>
 <p>For each site, two additional input files for OpenSees are created during analysis: <strong>freefield_config.tcl</strong> and <strong>freefield_material.tcl</strong>. <strong>freefield_config.tcl</strong> defines the discretization of the profile and applied input motion(s).</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c"># site response configuration file</span>
@@ -1017,7 +1018,7 @@ The statistics reported are the median and lognormal standard deviation of peak 
 </div>
 </div>
 <div class="section" id="appendix">
-<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
+<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">¶</a></h2>
 <p>Configurations for RDT workflow:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w">  </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rWHALE_&quot;</span><span class="p">,</span>

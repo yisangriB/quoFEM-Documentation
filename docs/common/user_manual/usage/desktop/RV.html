@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -231,16 +232,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="rv-random-variables">
-<span id="rv"></span><h1><span class="section-number">3.3. </span>RV: Random Variables<a class="headerlink" href="#rv-random-variables" title="Permalink to this headline">¶</a></h1>
+<span id="rv"></span><h1><span class="section-number">3.3. </span>RV: Random Variables<a class="headerlink" href="#rv-random-variables" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>RV</strong> tab allows the user to specify the probabilistic distribution for the random problem at hand. The following probabilistic distributions for the random variables are currently supported:</p>
 <div class="section" id="probability-distribution">
-<h2><span class="section-number">3.3.1. </span>Probability distribution<a class="headerlink" href="#probability-distribution" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.1. </span>Probability distribution<a class="headerlink" href="#probability-distribution" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To add a new random variable the user presses the <strong>Add</strong> button. To remove a random variable, the user must first select it by checking the small circle before the random variable, and then pressing the <strong>Remove</strong> button.</p>
 </div>
 <div class="section" id="dakota-engine">
-<h3><span class="section-number">3.3.1.1. </span>Dakota Engine<a class="headerlink" href="#dakota-engine" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.1.1. </span>Dakota Engine<a class="headerlink" href="#dakota-engine" title="Permalink to this heading">¶</a></h3>
 <p>The following six distribution classes are supported for Dakota engine.</p>
 <ol class="arabic">
 <li><p><a class="reference external" href="https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-normal_uncertain.html">Normal (Gaussian)</a></p>
@@ -312,7 +313,7 @@
 </div>
 </div>
 <div class="section" id="simcenteruq-engine">
-<h3><span class="section-number">3.3.1.2. </span>SimCenterUQ Engine<a class="headerlink" href="#simcenteruq-engine" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.1.2. </span>SimCenterUQ Engine<a class="headerlink" href="#simcenteruq-engine" title="Permalink to this heading">¶</a></h3>
 <p>Five additional distributions are supported in the SimCenter UQ engine. The users can define distributions either by <strong>Parameters</strong>, <strong>Moments</strong> or <strong>Dataset</strong>. (<strong>Note</strong>: Nataf transform module developed by <a class="reference internal" href="#era19" id="id1"><span>[ERA19]</span></a> is adopted)</p>
 <ol class="arabic">
 <li><p>Exponential</p>
@@ -382,11 +383,11 @@
 </dl>
 </div>
 <div class="section" id="ucsd-uq-engine">
-<h3><span class="section-number">3.3.1.3. </span>UCSD-UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.1.3. </span>UCSD-UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this heading">¶</a></h3>
 <p>The same set of distributions that are supported by the SimCenterUQ engine are supported in the UCSD-UQ engine. Currently, the distributions can only be defined through their <strong>Parameters</strong>. Correlation between the random variables is not supported in the UCSD-UQ engine.</p>
 </div>
 <div class="section" id="customuq-engine">
-<h3><span class="section-number">3.3.1.4. </span>CustomUQ Engine<a class="headerlink" href="#customuq-engine" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.1.4. </span>CustomUQ Engine<a class="headerlink" href="#customuq-engine" title="Permalink to this heading">¶</a></h3>
 <p>The same set of distributions and correlation options as that supported by the SimCenterUQ engine can also be selected when the CustomUQ engine is used. Additionally, two options - <strong>User defined</strong> and <strong>User defined vector</strong> are also available.</p>
 <p>When the <strong>User defined</strong> option is chosen, the user must provide the path to a script file that makes the desired functionality for the CustomUQ engine available, such as methods to draw samples from the user-defined distribution, or to evaluate the probability density of the user-defined distribution at specified sample points, etc.</p>
 <p>When the <strong>User defined vector</strong> option is chosen, in addition to the path to the script file, the user must also enter the number of components in the random vector.</p>
@@ -397,7 +398,7 @@
 </div>
 </div>
 <div class="section" id="correlation-matrix">
-<h2><span class="section-number">3.3.2. </span>Correlation matrix<a class="headerlink" href="#correlation-matrix" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.2. </span>Correlation matrix<a class="headerlink" href="#correlation-matrix" title="Permalink to this heading">¶</a></h2>
 <p>Correlation coefficients between each variable can be defined by clicking the <code class="docutils literal notranslate"><span class="pre">Correlation</span> <span class="pre">Matrix</span></code> button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified.</p>
 <div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../_images/rv4.png"><img alt="../../../../_images/rv4.png" src="../../../../_images/rv4.png" style="width: 800px;" /></a>
@@ -417,7 +418,7 @@
 </div>
 </div>
 <div class="section" id="video-resources">
-<h2><span class="section-number">3.3.3. </span>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.3. </span>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this heading">¶</a></h2>
 <p>Recorded in tool training, 2022.</p>
 <div style="text-align: center;">
    <video controls src="../../../../_static/videos/quoFEM/youtube_RV_Day1_TestClip.mp4" width="560" height="315"> </video>

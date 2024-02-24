@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -238,7 +239,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="deterministic-calibration">
-<span id="lbldakotadeterministiccalibration"></span><h1><span class="section-number">3.1.2.4. </span>Deterministic Calibration<a class="headerlink" href="#deterministic-calibration" title="Permalink to this headline">¶</a></h1>
+<span id="lbldakotadeterministiccalibration"></span><h1><span class="section-number">3.1.2.4. </span>Deterministic Calibration<a class="headerlink" href="#deterministic-calibration" title="Permalink to this heading">¶</a></h1>
 <p>Deterministic calibration methods (also known as non-linear least squares methods or deterministic parameter estimation methods) are used to fit a set of m observations (provided in the calibration data file defined in the <strong>UQ</strong> panel) with a model (defined in the <strong>FEM</strong> panel) that is non-linear with n unknown parameters. The unknown parameters of this model are defined in the <strong>RV</strong> panel. The bounds of the domain within which the optimal values of the parameters need to be searched for are also specified in the <strong>RV</strong> panel, along with the initial point at which the search will begin. No prior specification of the distribution associated with the random variables is necessary. The output quantities from the model are defined in the <strong>QOI</strong> panel. For each evaluation of the computational model, the processing scripts should write the values of the simulated response quantities of interest in a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code>. The algorithms employed will find a set of parameter values that <strong>minimizes</strong> the sum of the squared differences between the measured values of the QoIs and the predicted values of the QoIs from the computational model. The algorithms themselves are general functional minimization algorithms seeking to minimize:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-dakotadeterministiccalibration-0">
 <span class="eqno">(3.1.2.4.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-dakotadeterministiccalibration-0" title="Permalink to this equation">¶</a></span>\[f(\theta) = \sum_{i=1}^{m} R_i(\theta)^2 = \sum_{i=1}^{m} \left ( y_i(\theta)^{predicted} - y_i^{measured} \right)^2\]</div>
@@ -255,11 +256,11 @@
 <li><p>the path to the file containing the calibration data</p></li>
 </ol>
 <div class="section" id="opt-gaussnewton">
-<h2>OPT++GaussNewton<a class="headerlink" href="#opt-gaussnewton" title="Permalink to this headline">¶</a></h2>
+<h2>OPT++GaussNewton<a class="headerlink" href="#opt-gaussnewton" title="Permalink to this heading">¶</a></h2>
 <p>OPT++ provides a Gauss-Newton least squares capability which, on zero-residual test problems, can exhibit quadratic convergence rates near the solution. As a consequence, good starting point values for the parameters should be provided. The Hessian is constructed with a Gauss-Newton approximation and the OPT++ Optimization routines are used. (<a class="reference internal" href="#opt" id="id1"><span>[OPT]</span></a>).</p>
 </div>
 <div class="section" id="nl2sol">
-<h2>NL2SOL<a class="headerlink" href="#nl2sol" title="Permalink to this headline">¶</a></h2>
+<h2>NL2SOL<a class="headerlink" href="#nl2sol" title="Permalink to this heading">¶</a></h2>
 <p>The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues (<a class="reference internal" href="#dennis81a" id="id2"><span>[Dennis81a]</span></a>, <a class="reference internal" href="#dennis81b" id="id3"><span>[Dennis81b]</span></a>). NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This latter approximation is useful when the starting guess is far from the solution. For problems with large residuals, this algorithm is known to be more reliable than Gauss-Newton.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

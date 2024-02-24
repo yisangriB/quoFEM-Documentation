@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -237,7 +238,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gradient-free-parameter-estimation">
-<span id="lbldakotagradientfreeestimation"></span><h1><span class="section-number">3.1.2.6. </span>Gradient-free Parameter Estimation<a class="headerlink" href="#gradient-free-parameter-estimation" title="Permalink to this headline">¶</a></h1>
+<span id="lbldakotagradientfreeestimation"></span><h1><span class="section-number">3.1.2.6. </span>Gradient-free Parameter Estimation<a class="headerlink" href="#gradient-free-parameter-estimation" title="Permalink to this heading">¶</a></h1>
 <p>It is not uncommon for engineering problems that the gradient of a computational model with respect to the model parameters is not reliably estimated. Sometimes, the objective function for deterministic calibration is not differentiable. In such situations, a gradient-based local search algorithm might fail to locate the optimum parameter values that provide the best fit of the model predictions to the data. A gradient-free local search method can be employed for deterministic calibration instead of a gradient-based algorithm in such scenarios.</p>
 <p>Gradient-free optimization methods are used to minimize an objective function based solely on an evaluation of the objective function values without the use of any derivative information or any approximation of the derivatives. When concerned with parameter estimation, the objective function is typically the sum of the squared differences between the predictions from a model and the calibration data. However, any objective function that the user desires can be employed. When performing gradient-free parameter estimation, the model (or the post-processing script, if any), should be defined in a way that returns the objective function value (a single scalar quantity) in a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code>.</p>
 <p>The parameters of the model (which is defined in the <strong>FEM</strong> panel) are defined in the <strong>RV</strong> panel. The bounds of the domain within which the optimal values of the parameters need to be searched for are also specified in the <strong>RV</strong> panel, along with the initial point at which the search will start. No prior specification of the distribution associated with the random variables is necessary.</p>
@@ -249,7 +250,7 @@
 <p class="caption"><span class="caption-number">Fig. 3.1.2.6.1 </span><span class="caption-text">Input panel for gradient-free parameter estimation using Dakota.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="pattern-search">
-<h2>Pattern Search<a class="headerlink" href="#pattern-search" title="Permalink to this headline">¶</a></h2>
+<h2>Pattern Search<a class="headerlink" href="#pattern-search" title="Permalink to this heading">¶</a></h2>
 <p>Gradient-free parameter estimation uses the pattern search algorithm that is available in Dakota, called <em>coliny_pattern_search</em>. Please refer to the Dakota user manual for more details about the algorithm. The inputs that are required for this algorithm are:</p>
 <ol class="arabic simple">
 <li><p>Initial step size: this defines the initial size of the offsets used in the pattern search algorithm</p></li>
