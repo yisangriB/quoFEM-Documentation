@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -172,9 +171,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
             
@@ -675,11 +673,11 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 <h3>Pre-execution checklist for MFMC<a class="headerlink" href="#pre-execution-checklist-for-mfmc" title="Permalink to this heading">¶</a></h3>
 <p>Before running the MFMC simulation model, the users are advised to check the validity and effectiveness of MFMC for their problem. Only when the below conditions are satisfied, the users are expected to gain meaningful benefit by using MFMC compared to only HF simulations:</p>
 <ul class="simple">
-<li><p><strong>The models should take the same input random variables and produces the same output quantities of interest.</strong> For example, if target system is a structure, if one model takes stiffness as random variable and the other does not, the model violates the problem definition. Similarly, if <span class="math notranslate nohighlight">\(j\)</span>-th output of the HF model is the 1st floor inter-story drift, <span class="math notranslate nohighlight">\(j\)</span>-th output of the LF model should also be 1st floor inter-story drift.</p></li>
-<li><p><strong>The models should have clear hierarchy in terms of accuracy and time.</strong> When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if a LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.</p></li>
-<li><p><strong>The response of different models should have high correlation</strong>. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations.</p></li>
+<li><p><strong>The models should take the same input random variables and produce the same output quantities of interest.</strong> For example, if target system is a structure, if one model takes stiffness as random variable and the other does not, the model violates the problem definition. Similarly, if <span class="math notranslate nohighlight">\(j\)</span>-th output of the HF model is the 1st floor inter-story drift, <span class="math notranslate nohighlight">\(j\)</span>-th output of the LF model should also be 1st floor inter-story drift.</p></li>
+<li><p><strong>The models should have a clear hierarchy in terms of accuracy and time.</strong> When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if a LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.</p></li>
+<li><p><strong>The response of different models should have a high correlation</strong>. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations.</p></li>
 </ul>
-<p>Efficiency of MFMC can be evaluated using the speed-up ratio, defined as the reduction of computational effort you need to get the same Monte Carlo statistical accuracy by the MFMC and direct Monte Carlo method. <a class="reference internal" href="#fig-mf-sp"><span class="std std-numref">Fig. 1.2.11</span></a> shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id18"><span>[Patsialis2021]</span></a>. The formulation used to estimate the speed-up ratio can found at the end of this section.</p>
+<p>The efficiency of MFMC can be evaluated using the speed-up ratio, defined as the reduction of computational effort you need to get the same Monte Carlo statistical accuracy by the MFMC and direct Monte Carlo method. <a class="reference internal" href="#fig-mf-sp"><span class="std std-numref">Fig. 1.2.11</span></a> shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id18"><span>[Patsialis2021]</span></a>. The formulation used to estimate the speed-up ratio can found at the end of this section.</p>
 <div class="align-center figure" id="id35">
 <span id="fig-mf-sp"></span><a class="reference internal image-reference" href="../../../_images/SimCenterMF4.png"><img alt="../../../_images/SimCenterMF4.png" src="../../../_images/SimCenterMF4.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1.2.11 </span><span class="caption-text">Speed-up offered by the MFMC estimation (<span class="math notranslate nohighlight">\(c_{HF}\)</span>: HF model evaluation time, <span class="math notranslate nohighlight">\(c_{LF}\)</span>: LF model evaluation time, <span class="math notranslate nohighlight">\(\rho_{LF,HF}\)</span>: correlation between HF and LF responses)</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>

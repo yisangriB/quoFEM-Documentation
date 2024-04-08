@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,8 +40,10 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -138,9 +138,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
             
@@ -209,11 +208,93 @@
            <div itemprop="articleBody">
             
   <div class="section" id="coupled-digital-twin-example">
-<span id="hydro-0001"></span><h1>Coupled Digital Twin Example<a class="headerlink" href="#coupled-digital-twin-example" title="Permalink to this heading">¶</a></h1>
-<p>Example to demonstrate how to run a coupled OpenSees-OpenFOAM simulation to determine floor loads on a building and then perform
-an OpenSees simulation of the building assuming uncertainties in the building properties.</p>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/coupled.png"><img alt="../../../../../_images/coupled.png" src="../../../../../_images/coupled.png" style="width: 400px;" /></a>
+<span id="hdro-0001"></span><h1>Coupled Digital Twin Example<a class="headerlink" href="#coupled-digital-twin-example" title="Permalink to this heading">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Problem files</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/hdro-0001/">Github</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
+<p>This example uses a NHERI wave-flume digital twin, the OSU LWF, to simulate a scaled structure during wave loading in HydroUQ. Two-way coupled OpenFOAM-OpenSees is configured to simulate the scenario.</p>
+<p>You will define a Waterborne Event (EVT) to determine the engineering demand parameters (EDP) on a specified structure, i.e. EVT –&gt; EDP,  with the following steps:</p>
+<ol class="arabic simple">
+<li><p>Configure a FOAMySees simulation. This is a two-way coupling of OpenFOAM Finite Volume Method (FVM) for Computational Fluid Dynamics (CFD) and OpenSees Finite Element Analaysis (FEA) for Computational Structural Dynamics (CSD).</p></li>
+<li><p>Next, the coupled model will determine floor loads on the building, also known as intensity measures (IM) in performance based engineering (PBE).</p></li>
+<li><p>Then, perform an OpenSees finite element analysis (FEA) simulation of the building by taking IMs as inputs.</p></li>
+<li><p>Finally, recieve engineering demand parameters (EDP) of the structural response. Though beyond this example, you can use these EDPs to perform a fragility analysis of the structure.</p></li>
+</ol>
+</div>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">¶</a></h2>
+<p>The dataset used presented in this example originates from experimental tests conducted in the Hinsdale Wave Research Laboratory’s Large Wave Flume at Oregon State University (OSU LWF), Corvallis, in 2020. Refer to Lewis 2023 <a class="reference internal" href="#lewis2023" id="id1"><span>[Lewis2023]</span></a> and Bonus 2023 <a class="reference internal" href="#bonus2023" id="id2"><span>[Bonus2023]</span></a> for details.</p>
+<div class="align-center figure" id="id3">
+<span id="figcoupled"></span><a class="reference internal image-reference" href="../../../../../_images/Coupled.png"><img alt="../../../../../_images/Coupled.png" src="../../../../../_images/Coupled.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Coupled Digital Twin Illustration</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="model">
+<h2>Model<a class="headerlink" href="#model" title="Permalink to this heading">¶</a></h2>
+<p>This model is characterized by the parameters:
+- Youngs modulus <span class="math notranslate nohighlight">\(E_0\)</span> for plastic behavior,</p>
+</div>
+<div class="section" id="files-required">
+<h2>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do NOT place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contain a lot of files.</p>
+</div>
+</div>
+<div class="section" id="uq-workflow">
+<h2>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
+<p>The inputs needed to run this example can be loaded into the HydroUQ user interface by selecting the <code class="docutils literal notranslate"><span class="pre">Coupled</span> <span class="pre">Digital</span> <span class="pre">Twin</span></code> example from the <code class="docutils literal notranslate"><span class="pre">Examples</span></code> menu.</p>
+<p>The inputs can also be set up manually through the following steps:</p>
+<ol class="arabic simple">
+<li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Method</strong> drop-down menu, select the <strong>Bayesian Calibration</strong> option. In the <strong>UQ Engine</strong> dropdown menu select <strong>UCSD-UQ</strong> option. In the <strong>Model</strong> dropdown, select the <strong>Hierarchical</strong> option. Enter the values in this panel as shown in the figure below. A brief explanation of the different user input fields can be found in the <a class="reference internal" href="../../../usage/desktop/UCSD_UQ_Hierarchical.html#lblucsdhierarchical"><span class="std std-ref">User Manual</span></a>.</p></li>
+</ol>
+<div class="align-center figure" id="id4">
+<span id="fighbmuq"></span><a class="reference internal image-reference" href="../../../../../_images/UQ3.png"><img alt="../../../../../_images/UQ3.png" src="../../../../../_images/UQ3.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Inputs in the UQ panel</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Next in the <strong>FEM</strong> panel , select <strong>OpenSees</strong> and populate the <strong>Input Script</strong> field by choosing the path to the model file.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Select the <strong>RV</strong> tab from the input panel. This panel should be pre-populated with the names of the variables that were defined in the model scripts. If not, press the <strong>Add</strong> button to create a new field to define the input random variable. Enter the same variable name, as required in the model script. For this example, choose the Normal probability distribution for all the random variables and enter the parameter values for each distribution as shown in the figures below:</p></li>
+</ol>
+<div class="align-center figure" id="fighbmrv">
+<a class="reference internal image-reference" href="../../../../../_images/RV3.png"><img alt="../../../../../_images/RV3.png" src="../../../../../_images/RV3.png" style="width: 600px;" /></a>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>In the <strong>EDP</strong> panel create the output quantities corresponding to each of the experiments with a descriptive name, as shown in the figures below:</p></li>
+</ol>
+<ol class="arabic simple" start="5">
+<li><p>Click on the <strong>Run</strong> button. This will create the necessary input files to perform a Bayesian calibration of the hierarchical model, run the analysis, and display the results when the analysis is completed. The results produced are sample values drawn from the distribution that represents the aleatory uncertainty in the estimated material parameters from each of the datasets.</p></li>
+</ol>
+<p>The <strong>Summary</strong> tab shows the mean, standard deviation, and coefficient of variation of each of the seven parameters of the material model that were inferred in this example.</p>
+<p>In the <strong>Data Values</strong> tab of the <strong>RES</strong> panel, a chart and a table with all the sample values are shown. By clicking on the data inside the columns of the chart with the left or right mouse button, different chart types are created and shown in the chart area on the left.</p>
+</div>
+<div class="section" id="files-for-restarting-the-analysis">
+<span id="lblhbmrestart"></span><h2>Files for restarting the analysis<a class="headerlink" href="#files-for-restarting-the-analysis" title="Permalink to this heading">¶</a></h2>
+<p>In addition to the results displayed in the RES panel in HydroUQ, JSON files with the state of the chain at every step of the sampling algorithm are saved in a directory called <code class="docutils literal notranslate"><span class="pre">sampling_results</span></code> within the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> directory inside the jobs directory specified in the HydroUQ Preferences menu. Any of these files can be used to resume the sampling, by copying the file to the directory containing the model files and specifying its name in the Restart File Name field in the UQ panel.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> directory is cleared every time the <code class="docutils literal notranslate"><span class="pre">RUN</span></code> button is clicked in HydroUQ. So, if you want to restart the analysis using one of the sampling results files outlined above, make sure to copy the results file to a location outside the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> directory at the end of the analysis.</p>
+</div>
+<dl class="citation">
+<dt class="label" id="lewis2023"><span class="brackets"><a class="fn-backref" href="#id1">Lewis2023</a></span></dt>
+<dd><p>Lewis, N. (2023). Development of An Open-Source Methodology for Simulation of Civil Engineering Structures Subject to Multi-Hazards. <em>PhD thesis</em>, University of Washington, Seattle, WA. ISBN: 979-8-381408-69-0.</p>
+</dd>
+<dt class="label" id="bonus2023"><span class="brackets"><a class="fn-backref" href="#id2">Bonus2023</a></span></dt>
+<dd><p>Bonus, J. (2023). Evaluation of Fluid-Driven Debris Impacts in a High-Performance Multi-GPU Material Point Method [University of Washington]. In ProQuest Dissertations and Theses. ISBN: 979-8-381406-66-5. <a class="reference external" href="https://www.proquest.com/dissertations-theses/evaluation-fluid-driven-debris-impacts-high/docview/2915819774/se-2?accountid=14784">https://www.proquest.com/dissertations-theses/evaluation-fluid-driven-debris-impacts-high/docview/2915819774/se-2?accountid=14784</a></p>
+</dd>
+</dl>
 </div>
 </div>
 

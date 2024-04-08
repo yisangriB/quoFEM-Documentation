@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -43,6 +41,7 @@
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/tabs.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -146,9 +145,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
             
@@ -217,7 +215,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="getting-started-tutorial">
-<span id="lbltutorialquofem"></span><h1><span class="section-number">2. </span>Getting Started Tutorial<a class="headerlink" href="#getting-started-tutorial" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">2. </span>Getting Started Tutorial<a class="headerlink" href="#getting-started-tutorial" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="before-we-start">
 <h2><span class="section-number">2.1. </span>Before We Start<a class="headerlink" href="#before-we-start" title="Permalink to this heading">¶</a></h2>
 <p>If you have not yet installed quoFEM, please see</p>
@@ -235,23 +233,26 @@
 <div class="section" id="quofem-for-a-python-model-interface">
 <h2><span class="section-number">2.2. </span>quoFEM for a Python Model Interface<a class="headerlink" href="#quofem-for-a-python-model-interface" title="Permalink to this heading">¶</a></h2>
 <p>This tutorial will show how a <strong>deterministic</strong> model written/interfaced in a Python script can be used for <strong>Uncertainty Quantification</strong> analysis, using an example of global sensitivity analysis.</p>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li><p><strong>Step 0</strong>. Prepare a Python Model</p></li>
 <li><p><strong>Step 1</strong>. Modify the Model Script to Define Random Variables and Quantities of Interest</p></li>
 <li><p><strong>Step 2</strong>. Run quoFEM</p></li>
 <li><p><strong>Step 3</strong>. Run quoFEM at DesignSafe</p></li>
 </ul>
-<div class="tabbed-set docutils">
-<input checked="checked" id="a74ed3d9-a2fd-48d8-a7ed-6d591f26eb2b" name="df428bca-a0c3-4bab-92c9-422593179700" type="radio">
-</input><label class="tabbed-label" for="a74ed3d9-a2fd-48d8-a7ed-6d591f26eb2b">
-Step 0</label><div class="tabbed-content docutils">
+</div></blockquote>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Step 0</label><div class="sd-tab-content docutils">
 <p><span class="uqblue">Step 0. Prepare a Python Model</span></p>
 <blockquote>
-<div><div class="sphinx-bs container pb-4 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
+<div><blockquote>
+<div><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../_images/step0_main.png"><img alt="../../../../_images/step0_main.png" src="../../../../_images/step0_main.png" style="width: 1200px;" /></a>
 </div>
@@ -260,14 +261,14 @@ Step 0</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
+</div></blockquote>
 <p>Let us grab <strong>a python script</strong> from <a href="https://openseespydoc.readthedocs.io/en/latest/src/examples.html" target="_blank">OpenSeesPy example manual</a> for this tutorial. Please follow the steps:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>In <a href="https://openseespydoc.readthedocs.io/en/latest/src/examples.html" target="_blank">OpenSeesPy example manual</a>, navigate to <strong>Structural Example - Elastic Truss Analysis</strong></p></li>
 <li><p>In the <a href="https://openseespydoc.readthedocs.io/en/latest/src/truss.html" target="_blank">Elastic Truss Analysis</a> page, click the download button. Create a <strong>new folder</strong> named <code class="docutils literal notranslate"><span class="pre">TrussExample</span></code> and save <code class="docutils literal notranslate"><span class="pre">ElasticTruss.py</span></code> in the folder.</p></li>
 </ol>
-<blockquote>
-<div><div class="align-center figure" id="id3">
+<div class="align-center figure" id="id3">
 <a class="reference internal image-reference" href="../../../../_images/step2_openseesPy.svg"><img alt="../../../../_images/step2_openseesPy.svg" src="../../../../_images/step2_openseesPy.svg" width="1200" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.1 </span><span class="caption-text">Download OpenSeesPy Elastic Truss Analysis</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
@@ -275,11 +276,9 @@ Step 0</label><div class="tabbed-content docutils">
 <p class="admonition-title">Important</p>
 <p>It is important to save the model in a <strong>new folder</strong> instead of root, desktop or downloads</p>
 </div>
-</div></blockquote>
-<p>3. <span class="sphinx-bs badge badge-primary">Test Your Model</span> Test if the input
-script <code class="docutils literal notranslate"><span class="pre">ElasticTruss.py</span></code> runs successfully using the
-command prompt (Windows) or terminal (Mac). To do this,
-navigate into <code class="docutils literal notranslate"><span class="pre">TrussExample</span></code> folder using <code class="code docutils literal notranslate"><span class="pre">cd</span></code> command and type the following.</p>
+<ol class="arabic simple" start="3">
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Test Your Model</span> Test if the input script <code class="docutils literal notranslate"><span class="pre">ElasticTruss.py</span></code> runs successfully using the command prompt (Windows) or terminal (Mac). To do this, navigate into <code class="docutils literal notranslate"><span class="pre">TrussExample</span></code> folder using <code class="code docutils literal notranslate"><span class="pre">cd</span></code> command and type the following.</p></li>
+</ol>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{$PathToPythonExe} ElasticTruss.py</span>
 </pre></div>
@@ -295,6 +294,7 @@ navigate into <code class="docutils literal notranslate"><span class="pre">Truss
 <p class="caption"><span class="caption-number">Fig. 2.2.3 </span><span class="caption-text">Testing <code class="docutils literal notranslate"><span class="pre">ElasticTruss.py</span></code></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Now we are ready to run a probabilistic analysis using this model.</p>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>openseespy, numpy and matplotlib libraries are readily available in quoFEM because:</p>
@@ -314,18 +314,18 @@ navigate into <code class="docutils literal notranslate"><span class="pre">Truss
 </div>
 </div></blockquote>
 </div></blockquote>
-</div></blockquote>
 </div>
-<input id="9e78c67e-7420-47cd-af03-718212389577" name="df428bca-a0c3-4bab-92c9-422593179700" type="radio">
-</input><label class="tabbed-label" for="9e78c67e-7420-47cd-af03-718212389577">
-Step 1</label><div class="tabbed-content docutils">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Step 1</label><div class="sd-tab-content docutils">
 <p><span class="uqblue">Step 1. Modify the Model Script to Define Random Variables and Quantities of Interest</span></p>
 <blockquote>
-<div><div class="sphinx-bs container pb-4 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
+<div><blockquote>
+<div><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../_images/step1_main.png"><img alt="../../../../_images/step1_main.png" src="../../../../_images/step1_main.png" style="width: 1200px;" /></a>
 </div>
@@ -334,13 +334,12 @@ Step 1</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
+</div></blockquote>
 <p>We now need to indicate quoFEM what are the input <strong>random variables (RVs)</strong> and output <strong>Quantities of Interest (QoIs)</strong>. Let us consider the following setup:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><strong>Four RVs</strong>: height (<span class="math notranslate nohighlight">\(H\)</span>), elastic modulus (<span class="math notranslate nohighlight">\(E\)</span>), horizontal load (<span class="math notranslate nohighlight">\(P_x\)</span>), vertical load (<span class="math notranslate nohighlight">\(P_y\)</span>)</p></li>
 <li><p><strong>Two QoIs</strong>: horizontal and vertical displacements of node 4 (<span class="math notranslate nohighlight">\(u_x\)</span> and <span class="math notranslate nohighlight">\(u_y\)</span>)</p></li>
 </ul>
-</div></blockquote>
 <p>To convey this information to quoFEM, the following steps are needed.</p>
 <ol class="arabic simple">
 <li><p>Create a parameter file, <a class="reference download internal" download="" href="../../../../_downloads/d7b55b0631abf90dda4d308af9588fac/params.py"><code class="xref download docutils literal notranslate"><span class="pre">params.py</span></code></a>, that contains the below four lines, in the folder <code class="docutils literal notranslate"><span class="pre">TrussExample</span></code>:</p></li>
@@ -358,13 +357,15 @@ Step 1</label><div class="tabbed-content docutils">
 <p>The specified values are not actually used in the quoFEM analysis, because they will be overwritten according to the probability distribution specified in Step 2.</p>
 </div>
 </div></blockquote>
-<ol class="arabic simple" start="2">
+<ol class="arabic" start="2">
 <li><p>Modify the main script <a class="reference download internal" download="" href="../../../../_downloads/1a2a9c1e565a44c90d1aa3ab0bb37acf/ElasticTruss_quo.py"><code class="xref download docutils literal notranslate"><span class="pre">ElasticTruss.py</span></code></a> as follows (the modified parts are highlighted in the code)</p>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li><p>Import <code class="docutils literal notranslate"><span class="pre">params.py</span></code> on top of the main script</p></li>
 <li><p>Replace the hard-coded values of RVs with the variables <code class="docutils literal notranslate"><span class="pre">H</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">Px</span></code>, and <code class="docutils literal notranslate"><span class="pre">Py</span></code></p></li>
 <li><p>Write QoI values (<code class="docutils literal notranslate"><span class="pre">ux</span></code> and <code class="docutils literal notranslate"><span class="pre">uy</span></code>) to <code class="docutils literal notranslate"><span class="pre">results.out</span></code></p></li>
 </ul>
+</div></blockquote>
 </li>
 </ol>
 <blockquote>
@@ -530,34 +531,41 @@ Step 1</label><div class="tabbed-content docutils">
 </div></div>
 </div></blockquote>
 <ol class="arabic" start="3">
-<li><p><span class="sphinx-bs badge badge-primary">Test Your Model</span> Test your new Python script using the same command used in Step 0.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{$PathToPythonExe} ElasticTruss.py</span>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Test Your Model</span> Test your new Python script using the same command used in Step 0.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{$PathToPythonExe} ElasticTruss.py</span>
 </pre></div>
 </div>
-<p>This time, <code class="docutils literal notranslate"><span class="pre">results.out</span></code> should be created in the folder <code class="docutils literal notranslate"><span class="pre">TrussExample</span></code>, which contains the following two values.</p>
-<div class="align-center figure" id="id6">
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><p>This time, <code class="docutils literal notranslate"><span class="pre">results.out</span></code> should be created in the folder <code class="docutils literal notranslate"><span class="pre">TrussExample</span></code>, which contains the following two values.</p>
+<blockquote>
+<div><div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../_images/step1_results.svg"><img alt="../../../../_images/step1_results.svg" src="../../../../_images/step1_results.svg" width="500" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.4 </span><span class="caption-text">Created results.out</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-</li>
-</ol>
+</div></blockquote>
 <p><strong>If the test was successful, remove all the files except</strong> <code class="docutils literal notranslate"><span class="pre">ElasticTruss.py</span></code> and <code class="docutils literal notranslate"><span class="pre">params.py</span></code>. This model can now be readily imported into quoFEM.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>It is important to remove <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file after testing.</p>
 </div>
 </div></blockquote>
+</div></blockquote>
 </div>
-<input id="08997ce0-f24f-4815-bee8-651f3776fd57" name="df428bca-a0c3-4bab-92c9-422593179700" type="radio">
-</input><label class="tabbed-label" for="08997ce0-f24f-4815-bee8-651f3776fd57">
-Step 2</label><div class="tabbed-content docutils">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Step 2</label><div class="sd-tab-content docutils">
 <p><span class="uqblue">Step 2. Run quoFEM</span></p>
 <blockquote>
-<div><div class="sphinx-bs container pb-4 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
+<div><blockquote>
+<div><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../_images/step2_main.png"><img alt="../../../../_images/step2_main.png" src="../../../../_images/step2_main.png" style="width: 1200px;" /></a>
 </div>
@@ -566,10 +574,12 @@ Step 2</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
+</div></blockquote>
 <p>quoFEM has four input taps - UQ, FEM, RV, EDP(QoI)- that guide users to provide the required inputs for the UQ analysis</p>
 <ol class="arabic">
 <li><p><strong>UQ (Uncertainty Quantification)</strong></p>
-<p>We will use <code class="docutils literal notranslate"><span class="pre">dakota</span></code>-<code class="docutils literal notranslate"><span class="pre">Sensitivity</span> <span class="pre">Analysis</span></code> for this example.</p>
+<blockquote>
+<div><p>We will use <code class="docutils literal notranslate"><span class="pre">dakota</span></code>-<code class="docutils literal notranslate"><span class="pre">Sensitivity</span> <span class="pre">Analysis</span></code> for this example.</p>
 <div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../_images/step2_UQ.PNG"><img alt="../../../../_images/step2_UQ.PNG" src="../../../../_images/step2_UQ.PNG" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.5 </span><span class="caption-text">UQ Panel</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
@@ -578,17 +588,21 @@ Step 2</label><div class="tabbed-content docutils">
 <p class="admonition-title">Tip</p>
 <p>Once the user prepares the input script according to Step 1, they can use it for any <a class="reference internal" href="../../usage/desktop/UQ.html#lbluq"><span class="std std-ref">UQ analysis supported in quoFEM</span></a> without additional modifications.</p>
 </div>
+</div></blockquote>
 </li>
 <li><p><strong>FEM (Finite Element Model or any simulation model)</strong></p>
-<p>Import the two model scripts prepared in Step 1 here.</p>
+<blockquote>
+<div><p>Import the two model scripts prepared in Step 1 here.</p>
 <div class="align-center figure" id="id8">
 <a class="reference internal image-reference" href="../../../../_images/step2_FEM.PNG"><img alt="../../../../_images/step2_FEM.PNG" src="../../../../_images/step2_FEM.PNG" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.6 </span><span class="caption-text">FEM Panel</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The post-processing script is not needed in this example because the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> is already printed in the main script. See <a class="reference internal" href="../../usage/desktop/quoFEM/FEM.html#lblfem"><span class="std std-ref">here</span></a> for more about the post-processing script</p>
+</div></blockquote>
 </li>
 <li><p><strong>RV (Random Variables)</strong></p>
-<p>Reading <code class="docutils literal notranslate"><span class="pre">params.py</span></code>, quoFEM auto-populates the RVs as follows.</p>
+<blockquote>
+<div><p>Reading <code class="docutils literal notranslate"><span class="pre">params.py</span></code>, quoFEM auto-populates the RVs as follows.</p>
 <div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../_images/step2_RV.PNG"><img alt="../../../../_images/step2_RV.PNG" src="../../../../_images/step2_RV.PNG" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.7 </span><span class="caption-text">RV Panel</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
@@ -598,14 +612,17 @@ Step 2</label><div class="tabbed-content docutils">
 <a class="reference internal image-reference" href="../../../../_images/step2_RV_corr.PNG"><img alt="../../../../_images/step2_RV_corr.PNG" src="../../../../_images/step2_RV_corr.PNG" style="width: 300px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.8 </span><span class="caption-text">Correlation Window</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
+</div></blockquote>
 </li>
 <li><p><strong>EDP (Engineering Demand Parameters) or QoI (Quantities of Interest)</strong></p>
-<p>Because our Python script will write two values in <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file, we will specify two QoI as follows.</p>
+<blockquote>
+<div><p>Because our Python script will write two values in <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file, we will specify two QoI as follows.</p>
 <div class="align-center figure" id="id11">
 <a class="reference internal image-reference" href="../../../../_images/step2_QoI.PNG"><img alt="../../../../_images/step2_QoI.PNG" src="../../../../_images/step2_QoI.PNG" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.9 </span><span class="caption-text">EDP Panel</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>The order should match that written in the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file, and the specified name of QoIs is used only for the display in this example. Please see <a class="reference internal" href="../../usage/desktop/quoFEM/QuantitiesOfInterest.html#lblquo-qoi"><span class="std std-ref">here</span></a> to learn about vector QoIs that have a length greater than 1</p>
+</div></blockquote>
 </li>
 </ol>
 <p>When all the fields are filled in, click the <strong>Run</strong> button, and the analysis will be performed. <strong>Do not press the Run button twice</strong> - it will give you an error. You can check the progress status in your <strong>Local Working directory</strong> which can be found in the preference window. The number attached to ‘workdir’. indicates the simulation index, and each folder contains the details for each simulation run.</p>
@@ -637,16 +654,17 @@ Step 2</label><div class="tabbed-content docutils">
 </div></blockquote>
 </div></blockquote>
 </div>
-<input id="beb8fdd3-4dc2-4a52-a9ea-8e996387eed9" name="df428bca-a0c3-4bab-92c9-422593179700" type="radio">
-</input><label class="tabbed-label" for="beb8fdd3-4dc2-4a52-a9ea-8e996387eed9">
-Step 3</label><div class="tabbed-content docutils">
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Step 3</label><div class="sd-tab-content docutils">
 <p><span class="uqblue">Step 3. Run quoFEM at DesignSafe</span></p>
 <blockquote>
-<div><div class="sphinx-bs container pb-4 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
+<div><blockquote>
+<div><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../_images/step3_main.png"><img alt="../../../../_images/step3_main.png" src="../../../../_images/step3_main.png" style="width: 1200px;" /></a>
 </div>
@@ -655,14 +673,15 @@ Step 3</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<p>Users can run the same analysis using the high-performance computer at <a href="https://www.designsafe-ci.org/" target="_blank">DesignSafe</a> at <a href="https://www.tacc.utexas.edu/" target="_blank">Texas Super Computing Center (TACC)</a>. For this, login to DesignSafe by clicking <strong>Login</strong> on the right upper corner of quoFEM, or by clicking <strong>RUN at DesignSafe</strong> Button</p>
+</div></blockquote>
+<p>Users can run the same analysis using the high-performance computer at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a> at <a href="https://www.tacc.utexas.edu/" target="_blank">Texas Super Computing Center (TACC)</a>. For this, login to DesignSafe by clicking <strong>Login</strong> on the right upper corner of quoFEM, or by clicking <strong>RUN at DesignSafe</strong> Button</p>
 <blockquote>
 <div><div class="align-center figure" id="id15">
 <a class="reference internal image-reference" href="../../../../_images/step3_Login.PNG"><img alt="../../../../_images/step3_Login.PNG" src="../../../../_images/step3_Login.PNG" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.13 </span><span class="caption-text">Login window</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
-<p>If you don’t have a DesignSafe account, you can easily sign up at <a href="https://www.designsafe-ci.org/" target="_blank">DesignSafe</a>.</p>
+<p>If you don’t have a DesignSafe account, you can easily sign up at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>.</p>
 <p>Then by clicking <strong>RUN at DesignSafe</strong>, one can specify the job details. Please see <a class="reference internal" href="../../usage/desktop/usage.html#lbl-usage"><span class="std std-ref">here</span></a> for more details on the number of nodes and processors.</p>
 <blockquote>
 <div><div class="align-center figure" id="id16">
@@ -684,7 +703,7 @@ Step 3</label><div class="tabbed-content docutils">
 <p class="caption"><span class="caption-number">Fig. 2.2.16 </span><span class="caption-text">Sensitivity Analysis Results from DesignSafe</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
-<p>The created results files can be found in your <strong>Remote working directory</strong> which can be found in the preference window. Furthermore, one can access all the output files and logs created by quoFEM by signing in to <a href="https://www.designsafe-ci.org/" target="_blank">DesignSafe</a> and navigating in the menu bar to <strong>Workspace - Tools &amp; Applications - Jobs Status</strong> (at the right-hand side edge), and clicking <strong>More info</strong> and <strong>View</strong> button (See below figures).</p>
+<p>The created results files can be found in your <strong>Remote working directory</strong> which can be found in the preference window. Furthermore, one can access all the output files and logs created by quoFEM by signing in to <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a> and navigating in the menu bar to <strong>Workspace - Tools &amp; Applications - Jobs Status</strong> (at the right-hand side edge), and clicking <strong>More info</strong> and <strong>View</strong> button (See below figures).</p>
 <blockquote>
 <div><div class="align-center figure" id="id19">
 <a class="reference internal image-reference" href="../../../../_images/step3_DesignSafe1.svg"><img alt="../../../../_images/step3_DesignSafe1.svg" src="../../../../_images/step3_DesignSafe1.svg" width="1200" /></a>
@@ -697,9 +716,9 @@ Step 3</label><div class="tabbed-content docutils">
 </div></blockquote>
 </div></blockquote>
 </div>
-<input id="db9cc899-aa82-4708-adfc-5da80659d053" name="df428bca-a0c3-4bab-92c9-422593179700" type="radio">
-</input><label class="tabbed-label" for="db9cc899-aa82-4708-adfc-5da80659d053">
-Moving forward..</label><div class="tabbed-content docutils">
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Moving forward..</label><div class="sd-tab-content docutils">
 <p><span class="uqblue">Things to Consider</span></p>
 <blockquote>
 <div><ul>

@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/quoCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/quoReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/quoPlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Quantified Uncertainty with Optimization for the FEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/hdro-0004/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tsunami-debris-motion-through-a-scaled-port-setting-wu-twb-digital-twin-mpm">
+<span id="hdro-0004"></span><h1>Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM<a class="headerlink" href="#tsunami-debris-motion-through-a-scaled-port-setting-wu-twb-digital-twin-mpm" title="Permalink to this heading">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Problem files</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/hdro-0004/">Github</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
+<p>Example to demonstrate how to run a MPM simulation to determine floor loads on a building and then perform
+an OpenSees simulation of the building assuming uncertainties in the building properties.</p>
+<p>The flume is 1 meter wide (from Y=-0.5m to Y=0.5 m), 1 meter tall (Z=0.0m to Z=1.0m), and 4 meters long (X=0.0m to X=4.0m).</p>
+<p>The case is initialized with a still water level of 0.25 meters. The velocity at the inlet is given a time history boundary condition (src/VelTime.csv).</p>
+<p>This structure is a simple cylinder, with diameter 0.1 meters, located at X=1.5, Y=0.0, Z=0.0. The interface surface file is ‘src/interface.stl’.</p>
+<p>The cylinder is represented in OpenSees by a cantilevered beam, with an elastic section, modelled with displacement-action controlled beam elements. The bottom of the cantilevered beam is fixed at Z=0.0.</p>
+<p>The constrained node is removed from the coupled solution, by omitting it from the list ‘coupledNodes’ in the OpenSees model file.</p>
+<p>The length of the cylinder is 0.5 meters.</p>
+<p>The flow around the cylinder is calculated for a given period of time.</p>
+<p>Outputs:
+Results for free surface, velocity, and pressure, as well as interface forces and moments and a cut section of the case at a specified interval.</p>
+<p>Simulation of MPM debris impacts on one row of five obstacles</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../_images/TOKYO_BoreFrontImage_Debris3_o5x1_Frame20_29072023.png"><img alt="../../../../../_images/TOKYO_BoreFrontImage_Debris3_o5x1_Frame20_29072023.png" src="../../../../../_images/TOKYO_BoreFrontImage_Debris3_o5x1_Frame20_29072023.png" style="width: 600px;" /></a>
+</div>
+<p>Schematic of the flume and sensor locations</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../_images/B4_Flume_Schematic.png"><img alt="../../../../../_images/B4_Flume_Schematic.png" src="../../../../../_images/B4_Flume_Schematic.png" style="width: 600px;" /></a>
+</div>
+<p>Smart debris used in experiments</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../_images/B4_Debris_Picture.PNG"><img alt="../../../../../_images/B4_Debris_Picture.PNG" src="../../../../../_images/B4_Debris_Picture.PNG" style="width: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="case-run-time">
+<h2>CASE RUN TIME<a class="headerlink" href="#case-run-time" title="Permalink to this heading">¶</a></h2>
+<p>Simulation Time: 6 seconds - Ran on TACC Lonestar6, 56 processors, 3 NVIDIA A100 GPUs, 1 node -&gt; Real Time: 1hr, 20 minutes</p>
+<p>Submitted
+Oct 8, 2023 1:14:37 PM
+Finished
+Oct 8, 2023 2:34:10 PM</p>
+<p>The case can be run for as long as desired, but mind that the longer the case runs, the longer the postprocessing routines will be.</p>
+<p>In order to retrieve results from the analysis, the analysis must complete and postprocess the model output files into a VTK format before the end of the allotted submission time.</p>
+<p>Provide a large amount of time for the ‘Max Run Time’ field in HydroUQ when submitting a job to ensure the model completes before the time allotted runs out!</p>
+<p>Be aware that the smaller the OpenFOAM Outputs and OpenSees Outputs ‘Time Interval’ value is, the longer the post processing of the case will take after analysis has completed, and the larger the results.zip folder will be.</p>
+<p>USE CAUTION WHEN REQUESTING OUTPUT! Only ask for what you need, or you will end up will massive amounts of data.</p>
+</div>
+<div class="section" id="post-processing">
+<h2>Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this heading">¶</a></h2>
+<p>Retrieving the results.zip folder from the Tools and Applications Page of Design Safe..</p>
+<div class="align-center locating the job files on designsafe figure">
+<a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatus2.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatus2.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatus2.PNG" style="width: 600px;" /></a>
+</div>
+<p>Check if the job has finished. If it has, click ‘More info’.</p>
+<div class="align-center once the job is finished output files should be available in directory which analysis results were sent to figure">
+<a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatusFinished2.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatusFinished2.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatusFinished2.PNG" style="width: 600px;" /></a>
+</div>
+<p>Find the files by clicking ‘View’.</p>
+<div class="align-center locating this directory is easy figure">
+<a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles2.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles2.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles2.PNG" style="width: 600px;" /></a>
+</div>
+<p>Move the results.zip to somewhere in My Data/. Use the Extractor tool available on DesignSafe.  Unzip the results.zip folder.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../_images/extractonDS2.PNG"><img alt="../../../../../_images/extractonDS2.PNG" src="../../../../../_images/extractonDS2.PNG" style="width: 600px;" /></a>
+</div>
+<p>OR Download the results.zip folder to your PC and unzip to look at the model results.</p>
+<div class="align-center download the results to look at vtk files of analysis this will include openfoam and opensees field data model geometry figure">
+<a class="reference internal image-reference" href="../../../../../_images/downloadResults2.PNG"><img alt="../../../../../_images/downloadResults2.PNG" src="../../../../../_images/downloadResults2.PNG" style="width: 600px;" /></a>
+</div>
+<p>Extract the Zip folder either on DesignSafe or on your local machine. You will need Paraview to view the model data.</p>
+<div class="align-center locate the zip folder and extract it to somewhere convenient figure">
+<a class="reference internal image-reference" href="../../../../../_images/resultsZip2.png"><img alt="../../../../../_images/resultsZip2.png" src="../../../../../_images/resultsZip2.png" style="width: 600px;" /></a>
+</div>
+<p>The results folder should look something like this.</p>
+<div class="align-center this is the output of model figure">
+<a class="reference internal image-reference" href="../../../../../_images/results2.png"><img alt="../../../../../_images/results2.png" src="../../../../../_images/results2.png" style="width: 600px;" /></a>
+</div>
+<p>Paraview files have a .PVD extension. Open VTK/Fluid.vtm.series to look at OpenFOAM results.
+Open OpenSeesOutput.pvd to look at OpenSees results.</p>
+<div class="align-center this is the model output data as seen from paraview figure">
+<a class="reference internal image-reference" href="../../../../../_images/Paraview2.PNG"><img alt="../../../../../_images/Paraview2.PNG" src="../../../../../_images/Paraview2.PNG" style="width: 600px;" /></a>
+</div>
+<p>OpenSees Displacements And Reactions</p>
+<div class="align-center this is the model output data as seen from paraview figure">
+<a class="reference internal image-reference" href="../../../../../_images/TipDisplacement2.png"><img alt="../../../../../_images/TipDisplacement2.png" src="../../../../../_images/TipDisplacement2.png" style="width: 600px;" /></a>
+</div>
+<div class="align-center this is the model output data as seen from paraview figure">
+<a class="reference internal image-reference" href="../../../../../_images/ReactionForces2.png"><img alt="../../../../../_images/ReactionForces2.png" src="../../../../../_images/ReactionForces2.png" style="width: 600px;" /></a>
+</div>
+<p>OpenFOAM probe and function object output is available in results/postProcessing/.</p>
+<p>OpenFOAM output is messy. An example Matlab script is provided in the /src/ directory to post process the OpenFOAM output for this particular case and output.
+This file can be modified to work for any case. The names of the data folders will need to be changed according to the name of the probe given in HydroUQ.</p>
+<div class="align-center in the src folder hdro-0004 an example matlab script is provided to look at time history data of output probes figure">
+<a class="reference internal image-reference" href="../../../../../_images/MatlabScriptCopyToLocation2.PNG"><img alt="../../../../../_images/MatlabScriptCopyToLocation2.PNG" src="../../../../../_images/MatlabScriptCopyToLocation2.PNG" style="width: 600px;" /></a>
+</div>
+<p>OpenFOAM Calculated Story Forces</p>
+<div class="align-center story forces figure">
+<a class="reference internal image-reference" href="../../../../../_images/storyForces2.png"><img alt="../../../../../_images/storyForces2.png" src="../../../../../_images/storyForces2.png" style="width: 600px;" /></a>
+</div>
+<p>OpenFOAM Calculated Coupled Interface Forces</p>
+<div class="align-center forces figure">
+<a class="reference internal image-reference" href="../../../../../_images/Forces2.png"><img alt="../../../../../_images/Forces2.png" src="../../../../../_images/Forces2.png" style="width: 600px;" /></a>
+</div>
+<p>OpenFOAM Calculated Coupled Interface Moments</p>
+<div class="align-center moments figure">
+<a class="reference internal image-reference" href="../../../../../_images/Moments2.png"><img alt="../../../../../_images/Moments2.png" src="../../../../../_images/Moments2.png" style="width: 600px;" /></a>
+</div>
+<p>OpenFOAM Calculated Pressure Probe Values</p>
+<div class="align-center pressures figure">
+<a class="reference internal image-reference" href="../../../../../_images/Pressures2.png"><img alt="../../../../../_images/Pressures2.png" src="../../../../../_images/Pressures2.png" style="width: 600px;" /></a>
+</div>
+<p>OpenFOAM Calculated Velocity Probe Values</p>
+<div class="align-center velocities figure">
+<a class="reference internal image-reference" href="../../../../../_images/Velocities2.png"><img alt="../../../../../_images/Velocities2.png" src="../../../../../_images/Velocities2.png" style="width: 600px;" /></a>
+</div>
+<p>OpenFOAM Calculated Free Surface Values</p>
+<div class="align-center wave gauges figure">
+<a class="reference internal image-reference" href="../../../../../_images/WaveGauges2.png"><img alt="../../../../../_images/WaveGauges2.png" src="../../../../../_images/WaveGauges2.png" style="width: 600px;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018-2024, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-4', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

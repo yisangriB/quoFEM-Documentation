@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -162,9 +161,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
             
@@ -277,13 +275,14 @@
 <p class="admonition-title">Tip</p>
 <p>Summary of capabilities and limitations</p>
 <ul class="simple">
-<li><p><span class="sphinx-bs badge badge-primary">o</span> Run Monte Carlo simulation for 12 different kinds of probability distributions with correlations.</p></li>
-<li><p><span class="sphinx-bs badge badge-primary">o</span> Use data samples as discrete distribution (especially useful when propagating samples from Bayesian updating)</p></li>
-<li><p><span class="sphinx-bs badge badge-danger">x</span> Run advanced sampling algorithms including Latin hypercube and surrogate-aided sampling. <strong>[Available in Dakota engine]</strong></p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">o</span> Run Monte Carlo simulation for 12 different kinds of probability distributions with correlations.</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">o</span> Use data samples as discrete distribution (especially useful when propagating samples from Bayesian updating)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">x</span> Run advanced sampling algorithms including Latin hypercube and surrogate-aided sampling. <strong>[Available in Dakota engine]</strong></p></li>
 </ul>
 </div>
+</div>
 <div class="section" id="multi-fidelity-monte-carlo">
-<span id="lblsimforwardmf"></span><h3>Multi-fidelity Monte Carlo<a class="headerlink" href="#multi-fidelity-monte-carlo" title="Permalink to this heading">¶</a></h3>
+<span id="lblsimforwardmf"></span><h2>Multi-fidelity Monte Carlo<a class="headerlink" href="#multi-fidelity-monte-carlo" title="Permalink to this heading">¶</a></h2>
 <p>SimCenter UQ supports a multi-fidelity Monte Carlo option, where the user can import both high-fidelity and low-fidelity simulation models to estimate the statistics of high-fidelity models. See more information in the technical manual.</p>
 <div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../_images/Sampling_MF1.png"><img alt="../../../../_images/Sampling_MF1.png" src="../../../../_images/Sampling_MF1.png" style="width: 900px;" /></a>
@@ -304,7 +303,6 @@
 <li><p><strong>Minimum # simulations per model</strong>: The number of pilot samples. The pilot samples are used to estimate the correlations between the high- and low-fidelity models and decide the optimal number of simulations given the time limit. See here for more details. By default, the minimum number of simulations 40.</p></li>
 <li><p><strong>Perform log-transform</strong>: Estimate the mean and variance of the log-transformed value (natural logarithm or <span class="math notranslate nohighlight">\(ln()\)</span> instead of <span class="math notranslate nohighlight">\(log_{10}()\)</span>). In quoFEM, the default is unchecked.</p></li>
 </ul>
-</div>
 </div>
 </div>
 

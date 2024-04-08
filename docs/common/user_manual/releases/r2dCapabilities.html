@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -138,9 +137,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
             
@@ -210,9 +208,9 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-eeuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h1>
-<p><strong>Version</strong> 3.5 of quoFEM app was released <strong>Jan 2024</strong>. The following is the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)
-The major update from Version 3.0 is adding the analysis capability for <span class="blue">regional transportation infrastructure</span>. Note that since version 3.0, most <strong>Haz</strong> options were moved to the <strong>Tool</strong> main menu.</p>
-<p><strong>Release date:</strong> Dec, 2023</p>
+<p><strong>Version</strong> 3.5 of quoFEM app was released <strong>April 2024</strong>. The following is the functionality available in this current version. New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.
+The major update from Version 4.0 is upgrading the <span class="blue">regional earthquake event generation tool</span>, <span class="blue">regional inventory generation tool BRAILS</span>, and :blue:` damage and loss engine Pelicun`.</p>
+<p><strong>Release date:</strong> April, 2024</p>
 <ol class="arabic">
 <li><p><strong>Hazard Types</strong>:</p>
 <blockquote>
@@ -393,7 +391,7 @@ The major update from Version 3.0 is adding the analysis capability for <span cl
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Ground motion prediction equations:</dt><dd><ol class="loweralpha simple">
+<dt>Ground motion models:</dt><dd><ol class="loweralpha simple">
 <li><p>Abrahamson, Silva &amp; Kamai (2014)</p></li>
 <li><p>Boore, Stewart, Seyhan &amp; Atkinson (2014)</p></li>
 <li><p>Campbell &amp; Bozorgnia (2014)</p></li>
@@ -403,15 +401,44 @@ The major update from Version 3.0 is adding the analysis capability for <span cl
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Intensity Measures:</dt><dd><ol class="loweralpha simple">
+<dt>Intensity measures:</dt><dd><ol class="loweralpha simple">
 <li><p>Spectral acceleration (SA)</p></li>
 <li><p>Peak ground acceleraation (PGA)</p></li>
+<li><p>Peak ground velocity (PGV)</p></li>
 </ol>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Vs30 Model:</dt><dd><ol class="loweralpha simple">
+<dt>Ground failure models:</dt><dd><ol class="loweralpha simple">
+<li><dl class="simple">
+<dt>Liquefaction triggering</dt><dd><ol class="arabic simple">
+<li><p>Zhu et al. (2017)</p></li>
+<li><p>Hazus (2020)</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Liquefaction lateral spreading permenant ground deformation (PGD_h)</dt><dd><ol class="arabic simple">
+<li><p>Hazus (2020)</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Liquefaction settlement permenant ground deformation (PGD_v)</dt><dd><ol class="arabic simple">
+<li><p>Hazus (2020)</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Vs30 model:</dt><dd><ol class="loweralpha simple">
 <li><p>CGS/Wills Vs30 (Wills et al., 2015)</p></li>
 <li><p>Thompson California Vs30 (Thompson et al., 2018)</p></li>
 <li><p>Global Vs30 (Heath et al., 2020)</p></li>
@@ -462,7 +489,20 @@ The major update from Version 3.0 is adding the analysis capability for <span cl
 </dl>
 </li>
 <li><p><span class="xref std std-ref">OpenQuake Selection</span></p></li>
-<li><p><span class="xref std std-ref">Census Data &amp; American Community Survey</span></p></li>
+<li><dl class="simple">
+<dt><span class="xref std std-ref">Census Data &amp; American Community Survey</span></dt><dd><ul>
+<li><dl class="simple">
+<dt><a href="#id1"><span class="problematic" id="id2">:ref:`BRAILS &lt;https://nheri-simcenter.github.io/BRAILS-Documentation/&gt;`_</span></a></dt><dd><ul>
+<li><p>Building inventory generation</p></li>
+<li><p>Transportation inventory generation</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 </dl>

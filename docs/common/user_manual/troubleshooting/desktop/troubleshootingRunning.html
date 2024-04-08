@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -144,9 +143,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
             
@@ -231,7 +229,6 @@
 #. These result files are then processed by the front-end and presented to the user in the <strong>RES</strong> tab of the desktop application.</p>
 <p>The following is a list of issues we have observed when the user interface informs the user of a failure and steps you can take to fix them:</p>
 <ol class="arabic simple">
-<li><p>** RUNNING DAKOTA ERROR: dakota command not found**. If you are on a Mac computer you need to make sure you are not running the application from inside the dmg file. It needs to be copied to a seperate location and the dmg file deleted. We ask you to delete the dmg file to ensure you do not run from inside it. If it still fails to run a Workflow check Prefernces and the path to the dakota executane, if it has /Volumes in the start of the path, hit the <strong>Reset</strong> button.</p></li>
 <li><p><strong>Could not create working dir</strong>: The user does not have permission to create the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder in the working directory. Change the <strong>Local Jobs Directory</strong> and the <strong>Remote Jobs Directory</strong> in the application’s <strong>Preferences</strong> menu option.</p></li>
 <li><p><strong>No Script File</strong>: The application cannot find the main Python scripts (rWHALE.py, sWHALE.py, or qWHALE.py) that run the workflow using our backend engine. You might have changed the Local Applications directory location in Preferences, or modified the applications folder that accompanies the installation. Make sure the Local Applications points to the correct directory location. If that does not help, re-install the tool to fix a corrupted applications folder.</p></li>
 <li><p><strong>Dakota failed to finish</strong>: The simulation requested from the UQ Engine terminated before completion. This can occur for a number of reasons. Go to the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder and look for the <code class="docutils literal notranslate"><span class="pre">dakota.err</span></code> file. If no file exists then the UQ Engine did not even start. If the file exists look at its contents to learn more about the errors.</p>

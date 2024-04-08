@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -158,9 +157,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
             
@@ -234,8 +232,9 @@
 <span id="lblfem"></span><h1><span class="section-number">3.2. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>FEM</strong> tab will present users with a selection of FEM
 applications. Currently, there are six options: OpenSees, Python, FEAPpv, SurrogateGP (using a surrogate model trained in quoFEM in place of a numerical simulation model), Custom (user-specified application), Multi Model (using more than one model in an analysis), along with the option of specifying no simulation model.</p>
-<div class="align-center figure" id="figfem">
-<a class="reference internal image-reference" href="../../../../../_images/FEM4.png"><img alt="../../../../../_images/FEM4.png" src="../../../../../_images/FEM4.png" style="width: 1200px;" /></a>
+<div class="align-center figure" id="id3">
+<span id="figfem"></span><a class="reference internal image-reference" href="../../../../../_images/FEM4.png"><img alt="../../../../../_images/FEM4.png" src="../../../../../_images/FEM4.png" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2.1 </span><span class="caption-text">Input for the <strong>FEM</strong> tab.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -355,9 +354,9 @@ applications. Currently, there are six options: OpenSees, Python, FEAPpv, Surrog
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p><strong>Python on Windows.</strong> On Windows, quoFEM is bundled with its own <code class="docutils literal notranslate"><span class="pre">python.exe</span></code>, with the essential packages (including numpy, scipy, openseespy) already installed. By default, this <code class="docutils literal notranslate"><span class="pre">python.exe</span></code> is used to (1) run SimCenter workflow; and (2) run the user-provided python model. Therefore, please make sure to test your model using the “correct” <code class="docutils literal notranslate"><span class="pre">python.exe</span></code> before running in quoFEM.</p>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../../_images/step1_preference_default1.svg"><img alt="../../../../../_images/step1_preference_default1.svg" src="../../../../../_images/step1_preference_default1.svg" width="500" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.2.1 </span><span class="caption-text">Windows Default Python Path found in <code class="docutils literal notranslate"><span class="pre">File</span></code>-<code class="docutils literal notranslate"><span class="pre">Preference</span></code></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.2.1 </span><span class="caption-text">Windows Default Python Path found in <code class="docutils literal notranslate"><span class="pre">File</span></code>-<code class="docutils literal notranslate"><span class="pre">Preference</span></code></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
 <li><p><strong>“Pip install” Python packages</strong></p>
@@ -368,9 +367,9 @@ applications. Currently, there are six options: OpenSees, Python, FEAPpv, Surrog
 <p>where <code class="docutils literal notranslate"><span class="pre">{$PythonExePath}</span></code> is the (default) python path shown in the preference window and <code class="docutils literal notranslate"><span class="pre">{$PackageName}</span></code> is the name of the python package.</p>
 </li>
 <li><p><strong>Use custom Python</strong></p>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../../_images/step1_preference_custom.svg"><img alt="../../../../../_images/step1_preference_custom.svg" src="../../../../../_images/step1_preference_custom.svg" width="500" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.2.2 </span><span class="caption-text">Custom Python Path</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.2.2 </span><span class="caption-text">Custom Python Path</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>If you would like to use other version of python in quoFEM, use the custom option in <code class="docutils literal notranslate"><span class="pre">File</span></code>-<code class="docutils literal notranslate"><span class="pre">Preference</span></code>. Then you will need to <strong>manually install</strong> the packages required to run SimCenter workflow using.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="nv">$NewPythonExePath</span><span class="o">}</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nheri_simcenter<span class="w"> </span>--upgrade
@@ -429,17 +428,17 @@ provided workflow driver script – quoFEM will automatically copy any files in 
 directory. This is particularly helpful if several different applications with
 numerous inputs are all being called by the workflow driver script and avoids
 the need to explicitly input each one of these files.</p>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id6">
 <span id="customfem"></span><a class="reference internal image-reference" href="../../../../../_images/customFEM.png"><img alt="../../../../../_images/customFEM.png" src="../../../../../_images/customFEM.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.4.1 </span><span class="caption-text">Input for Custom Analysis Application</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.4.1 </span><span class="caption-text">Input for Custom Analysis Application</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="surrogategp">
 <h2><span class="section-number">3.2.5. </span>SurrogateGP<a class="headerlink" href="#surrogategp" title="Permalink to this heading">¶</a></h2>
 <p>In place of the physical simulation models, the Gaussian process surrogate model trained in quoFEM can be imported for UQ/Optimization analyses.</p>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id7">
 <span id="surrogatefem1"></span><a class="reference internal image-reference" href="../../../../../_images/SurrogateFEM1.png"><img alt="../../../../../_images/SurrogateFEM1.png" src="../../../../../_images/SurrogateFEM1.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.5.1 </span><span class="caption-text">Input for Surrogate model FEM Application</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.5.1 </span><span class="caption-text">Input for Surrogate model FEM Application</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>When users select the SurrogateGP option, they are requested to provide <strong>Surrogate info file (.json)</strong> that contains the information about the surrogate model. Users can open it with a text editor to see the contents. Once the file is loaded, users may choose the tolerance level of the predictive variance.</p>
 <ul class="simple">
@@ -464,9 +463,9 @@ the need to explicitly input each one of these files.</p>
 </div>
 <p>Additionally, <strong>GP output</strong> can be set as either the <em>median prediction</em> or a <em>random sample</em> generated from the normal distribution (or lognormal distribution if the user used log-transform when training) with the predictive median and variance. <strong>NOTE:</strong> the random generator does not account for the Gaussian process correlation, and each realization of QoI given RVs is independent of each other. Only users familiar with GP modeling and who understand the limitation are recommended to use the <em>random sample</em> option.</p>
 <p>If the user wants to inspect the simulation status or check error/warning messages related to the surrogate model, they can refer to the messages written at: <code class="docutils literal notranslate"><span class="pre">{Local</span> <span class="pre">Jobs</span> <span class="pre">Directory}/tmp.SimCenter/surrogateLog.err</span></code>. (Note: <code class="docutils literal notranslate"><span class="pre">{Local</span> <span class="pre">Jobs</span> <span class="pre">Directory}</span></code> is specified from the file-preference in the menu bar.)</p>
-<div class="align-center figure" id="id7">
+<div class="align-center figure" id="id8">
 <span id="surrogatefem2"></span><a class="reference internal image-reference" href="../../../../../_images/SurrogateFEM2.png"><img alt="../../../../../_images/SurrogateFEM2.png" src="../../../../../_images/SurrogateFEM2.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.5.2 </span><span class="caption-text">Example of surrogateLog.err file</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.5.2 </span><span class="caption-text">Example of surrogateLog.err file</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -476,14 +475,14 @@ the need to explicitly input each one of these files.</p>
 <div class="section" id="multi-model">
 <h2><span class="section-number">3.2.6. </span>Multi Model<a class="headerlink" href="#multi-model" title="Permalink to this heading">¶</a></h2>
 <p>By selecting this option, users can define multiple numerical simulation models for use in their UQ analysis. The Add and Remove buttons allow users to control the number of models they want to use in the analysis.</p>
-<div class="align-center figure" id="id8">
+<div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../../_images/multiModel1.png"><img alt="../../../../../_images/multiModel1.png" src="../../../../../_images/multiModel1.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.6.1 </span><span class="caption-text">Input for Multi Model FEM Application</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.6.1 </span><span class="caption-text">Input for Multi Model FEM Application</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>By adding a model, a new tab is created in the FEM panel where users can choose one of the FEM applications described in the sections above and provide the inputs necessary to define the model. Users also need to specify their belief about the credibility of the model in the tab corresponding to that model. The beliefs are expressed as non-negative numerical values. The belief value for each model is defined relative to the other models, and the beliefs do not need to sum to 1.</p>
-<div class="align-center figure" id="id9">
+<div class="align-center figure" id="id10">
 <a class="reference internal image-reference" href="../../../../../_images/multiModel2.png"><img alt="../../../../../_images/multiModel2.png" src="../../../../../_images/multiModel2.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.6.2 </span><span class="caption-text">Selecting a FEM application within a model tab</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.6.2 </span><span class="caption-text">Selecting a FEM application within a model tab</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

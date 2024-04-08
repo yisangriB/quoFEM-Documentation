@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.1. Interpoint Distances &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>3.1. Interpoint Distances &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -51,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.2. Global Sensitivity Analysis (Dakota)" href="DakotaSensitivity.html" />
-    <link rel="prev" title="4. Verification" href="../verification.html" />
+    <link rel="next" title="3.2. Global Sensitivity Analysis (Dakota)" href="DakotaSensitivity.html" />
+    <link rel="prev" title="3. Verification" href="../verification.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -141,13 +140,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">4. Verification</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Interpoint Distances</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DakotaSensitivity.html">4.2. Global Sensitivity Analysis (Dakota)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">3. Verification</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Interpoint Distances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DakotaSensitivity.html">3.2. Global Sensitivity Analysis (Dakota)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
             
@@ -196,9 +194,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../verification.html"><span class="section-number">4. </span>Verification</a> &raquo;</li>
+          <li><a href="../verification.html"><span class="section-number">3. </span>Verification</a> &raquo;</li>
         
-      <li><span class="section-number">4.1. </span>Interpoint Distances</li>
+      <li><span class="section-number">3.1. </span>Interpoint Distances</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -218,14 +216,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="interpoint-distances">
-<span id="lblinterpointdistveri"></span><h1><span class="section-number">4.1. </span>Interpoint Distances<a class="headerlink" href="#interpoint-distances" title="Permalink to this heading">¶</a></h1>
+<span id="lblinterpointdistveri"></span><h1><span class="section-number">3.1. </span>Interpoint Distances<a class="headerlink" href="#interpoint-distances" title="Permalink to this heading">¶</a></h1>
 <p>This is not a structural example, it is one used in the literature to verify sampling methods as a mathematical formula
 exists for the solution. The example presented is computing the average distance between randomly chosen points
 in a rectangular region. Such average distances come up in many settings. For cell phone companies, the probability that a distributed network is fully connected depends on average distances between communicating nodes. For city planners preparing for disasters,
 it could represent the average distances from dwellings to fire stations or from the dwellings to the epicenter of an earthquake.</p>
 <p>The problem is defined as follows: Suppose two points <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are independent and considered uniformly distributed random points in a finite rectangle of dimension <span class="math notranslate nohighlight">\(L_w\)</span> and <span class="math notranslate nohighlight">\(L_h\)</span>. It has been <a class="reference external" href="http://www.math.utep.edu/Faculty/moschopoulos/Publications/1999-Random_Points_Associated_With_Rectangles.pdf">shown</a> that the expected average distance between these two points <span class="math notranslate nohighlight">\(E(P,Q)\)</span> is given by the formula:</p>
 <div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0">
-<span class="eqno">(4.1.1)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0" title="Permalink to this equation">¶</a></span>\[E(P,Q) = \frac{1}{15} \left( \frac{L_w^3}{L_h^2}+\frac{L_h^3}{L_w^2}+d\left(3-\frac{L_w^2}{L_h^2}-\frac{L_h^2}{L_w^2}\right)
+<span class="eqno">(3.1.1)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-quofem-interpointdistances-0" title="Permalink to this equation">¶</a></span>\[E(P,Q) = \frac{1}{15} \left( \frac{L_w^3}{L_h^2}+\frac{L_h^3}{L_w^2}+d\left(3-\frac{L_w^2}{L_h^2}-\frac{L_h^2}{L_w^2}\right)
 +\frac{5}{2} \left(\frac{L_h^2}{L_w}\log\right(\frac{L_w+d}{L_h}\left)+\frac{L_w^2}{L_h}\log\left(\frac{L_h+d}{L_w}\right)\right)\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(d=\sqrt{L_w^2+L_h^2}\)</span></p>
 <p>Using the above formula one can compute a number of expected distances for rectangles of different sizes, for example:</p>

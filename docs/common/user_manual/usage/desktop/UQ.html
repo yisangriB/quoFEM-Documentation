@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -176,9 +175,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
             
@@ -254,249 +252,284 @@
 <p>The <strong>UQ Engine</strong> options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM app to use their own UQ methods and algorithms in the quoFEM app workflow by selecting the CustomUQ option.</p>
 <div class="section" id="uq-features-at-a-glance">
 <h2><span class="section-number">3.1.1. </span>UQ Features At-a-Glance<a class="headerlink" href="#uq-features-at-a-glance" title="Permalink to this heading">¶</a></h2>
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
-<div class="twocol docutils container">
-<div class="leftside docutils container">
-<dl>
-<dt><span class="uqblue">Forward propagation</span></dt><dd><div class="line-block">
-<div class="line">Forward propagation generates sample realizations of input random variables (RVs) and output quantity of interests (QoIs) to provide statistics such as mean, variance, skewness, and kurtosis. See Dakota user manual for theory details.</div>
-</div>
-<blockquote>
-<div><div class="line-block">
-<div class="line">▪ <a class="reference internal" href="DakotaSampling.html#lbldakotaforward"><span class="std std-ref">Forward Propagation</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0002/README.html"><span>Example2</span></a></div>
-<div class="line">▪ <a class="reference internal" href="SimCenterUQSampling.html#lblsimforward"><span class="std std-ref">Forward Propagation</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0015/README.html"><span>Example</span></a></div>
-<div class="line">▪ <a class="reference internal" href="SimCenterUQMF.html#lblsimforwardmf"><span class="std std-ref">Multi-fidelity Monte Carlo</span></a> in SimCenterUQ</div>
-</div>
-</div></blockquote>
-</dd>
-</dl>
-</div>
-<div class="rightside docutils container">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <a class=""
-               data-lightbox="group-26bbcdc1-66f9-47e5-9cff-17ce452e5f25"
+               data-lightbox="group-a36226d2-672b-47e6-893c-2e4b5f22dc23"
                href="../../../../_images/method_forward1.png"
                title=""
                data-title=""
                
                ><img src="../../../../_images/method_forward1.png"
                      class=""
-                     width="25%"
+                     width="100%"
                      height="auto"
                      alt=""/>
                 </a></div>
 </div>
 </div>
-</div>
-</div>
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
-<div class="twocol docutils container">
-<div class="leftside docutils container">
-<dl>
-<dt><span class="uqblue">Global Sensitivity Analysis</span></dt><dd><div class="line-block">
-<div class="line">Global sensitivity analysis is used to quantify the contribution of each input RV to the uncertainty in an output QoI. Dakota engine provides classical non-parametric estimation based on a smart sampling approach and the SimCenterUQ engine provides a probabilistic model-based approximation. See Dakota user manual and <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical-sensitivity"><span class="std std-ref">here</span></a> for theory details.</div>
+<div class="sd-col sd-d-flex-row sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Forward propagation</div>
+<div class="line-block">
+<div class="line">Forward propagation generates sample realizations of input random variables (RVs) and output quantity of interests (QoIs) to provide statistics such as mean, variance, skewness, and kurtosis. See Dakota user manual for theory details.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">▪ <a class="reference internal" href="DakotaSensitivity.html#lbldakotasensitivity"><span class="std std-ref">Global Sensitivity Analysis</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example</span></a></div>
-<div class="line">▪ <a class="reference internal" href="SimCenterUQSensitivity.html#lblsimsensitivity"><span class="std std-ref">Global Sensitivity Analysis</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0009/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0023/README.html"><span>Example2</span></a></div>
+<div class="line">▪ <a class="reference internal" href="DakotaSampling.html#lbldakotaforward"><span class="std std-ref">Forward Propagation</span></a> in Dakota   <a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example1</span></a> <a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference external" href="../../examples/desktop/qfem-0002/README.html"><span>Example2</span></a></div>
+<div class="line">▪ <a class="reference internal" href="SimCenterUQSampling.html#lblsimforward"><span class="std std-ref">Forward Propagation</span></a> in SimCenterUQ   <a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference external" href="../../examples/desktop/qfem-0015/README.html"><span>Example</span></a></div>
+<div class="line">▪ <a class="reference internal" href="SimCenterUQMF.html#lblsimforwardmf"><span class="std std-ref">Multi-fidelity Monte Carlo</span></a> in SimCenterUQ</div>
 </div>
 </div></blockquote>
-</dd>
-</dl>
+<div class="line-block">
+<div class="line">See Dakota user manual for theory details.</div>
 </div>
-<div class="rightside docutils container">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <a class=""
-               data-lightbox="group-3c2a8278-4742-4c4f-bfdb-27d1d6be7320"
+               data-lightbox="group-645e2d0a-9ef0-453c-bac4-998a2be62d72"
                href="../../../../_images/method_sensitivity1.png"
                title=""
                data-title=""
                
                ><img src="../../../../_images/method_sensitivity1.png"
                      class=""
-                     width="25%"
+                     width="100%"
                      height="auto"
                      alt=""/>
                 </a></div>
 </div>
 </div>
-</div>
-</div>
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
-<div class="twocol docutils container">
-<div class="leftside docutils container">
-<dl>
-<dt><span class="uqblue">Reliability Analysis</span></dt><dd><div class="line-block">
-<div class="line">Reliability Analysis is performed to estimate the probability of failure, i.e. the probability that a system response (QoI) exceeds a certain threshold level. See Dakota user manual for theory details.</div>
+<div class="sd-col sd-d-flex-row sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Global Sensitivity Analysis</div>
+<div class="line-block">
+<div class="line">Global sensitivity analysis is used to quantify the contribution of each input RV to the uncertainty in an output QoI. Dakota engine provides classical non-parametric estimation based on a smart sampling approach and the SimCenterUQ engine provides a probabilistic model-based approximation.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">▪ <a class="reference internal" href="DakotaReliability.html#lbldakotareliability"><span class="std std-ref">Reliability Analysis</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example</span></a></div>
+<div class="line">▪ <a class="reference internal" href="DakotaSensitivity.html#lbldakotasensitivity"><span class="std std-ref">Global Sensitivity Analysis</span></a> in Dakota   <a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference external" href="../../examples/desktop/qfem-0001/README.html"><span>Example</span></a></div>
+<div class="line">▪ <a class="reference internal" href="SimCenterUQSensitivity.html#lblsimsensitivity"><span class="std std-ref">Global Sensitivity Analysis</span></a> in SimCenterUQ   <a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference external" href="../../examples/desktop/qfem-0009/README.html"><span>Example1</span></a> <a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference external" href="../../examples/desktop/qfem-0023/README.html"><span>Example2</span></a></div>
 </div>
 </div></blockquote>
-</dd>
-</dl>
+<div class="line-block">
+<div class="line">See Dakota user manual and <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical-sensitivity"><span class="std std-ref">here</span></a> for theory details.</div>
 </div>
-<div class="rightside docutils container">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <a class=""
-               data-lightbox="group-2c2a1396-c9cb-44d2-98ca-3cd35f79876b"
+               data-lightbox="group-f28d5f2b-d06d-4740-b5fa-c3a7a5ad6c70"
                href="../../../../_images/method_reliability1.png"
                title=""
                data-title=""
                
                ><img src="../../../../_images/method_reliability1.png"
                      class=""
-                     width="25%"
+                     width="100%"
                      height="auto"
                      alt=""/>
                 </a></div>
 </div>
 </div>
-</div>
-</div>
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
-<div class="twocol docutils container">
-<div class="leftside docutils container">
-<dl>
-<dt><span class="uqblue">Bayesian Calibration</span></dt><dd><div class="line-block">
-<div class="line">Bayesian Calibration is used to calibrate model parameters probabilistically based on Bayesian inference. The probability distributions of the input parameters (RVs) are updated by experimental data. Theory details can be found in Dakota user manual and <a class="reference internal" href="../../../technical_manual/desktop/UCSDUQTechnical.html#lbluqucsdsimtechnical"><span class="std std-ref">here</span></a></div>
+<div class="sd-col sd-d-flex-row sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Reliability Analysis</div>
+<div class="line-block">
+<div class="line">Reliability Analysis is performed to estimate the probability of failure, i.e. the probability that a system response (QoI) exceeds a certain threshold level.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">▪ <a class="reference internal" href="DakotaBayesianCalibration.html#lbldakotabayesiancalibration"><span class="std std-ref">Bayesian Calibration</span></a> in Dakota</div>
-<div class="line">▪ <a class="reference internal" href="UCSD_UQ_TMCMC.html#lblucsdtmcmc"><span class="std std-ref">Calibration of Non-hierarchical Model</span></a> in UCSD-UQ   <a class="sphinx-bs badge badge-danger text-white reference external" href="../../examples/desktop/qfem-0014/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-danger text-white reference external" href="../../examples/desktop/qfem-0019/README.html"><span>Example2</span></a></div>
+<div class="line">▪ <a class="reference internal" href="DakotaReliability.html#lbldakotareliability"><span class="std std-ref">Reliability Analysis</span></a> in Dakota   <a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference external" href="../../examples/desktop/qfem-0001/README.html,"><span>Example</span></a></div>
 </div>
 </div></blockquote>
-</dd>
-</dl>
+<div class="line-block">
+<div class="line">See Dakota user manual for theory details.</div>
 </div>
-<div class="rightside docutils container">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <a class=""
-               data-lightbox="group-3d078f0c-fec9-4a0c-8026-d01a78f07b0f"
+               data-lightbox="group-538e0316-0646-4f2e-94a6-584d7d071ab6"
                href="../../../../_images/method_Bayesian1.png"
                title=""
                data-title=""
                
                ><img src="../../../../_images/method_Bayesian1.png"
                      class=""
-                     width="25%"
+                     width="100%"
                      height="auto"
                      alt=""/>
                 </a></div>
 </div>
 </div>
-</div>
-</div>
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
-<div class="twocol docutils container">
-<div class="leftside docutils container">
-<dl>
-<dt><span class="uqblue">Deterministic Calibration</span></dt><dd><div class="line-block">
-<div class="line">Deterministic Calibration estimates the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares, pattern search, etc. See Dakota user manual for theory details.</div>
+<div class="sd-col sd-d-flex-row sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Bayesian Calibration</div>
+<div class="line-block">
+<div class="line">Bayesian Calibration is used to calibrate model parameters probabilistically based on Bayesian inference. The probability distributions of the input parameters (RVs) are updated by experimental data.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">▪ <a class="reference internal" href="DakotaDeterministicCalibration.html#lbldakotadeterministiccalibration"><span class="std std-ref">Deterministic Calibration</span></a> in Dakota   <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0007/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-primary text-white reference external" href="../../examples/desktop/qfem-0019/README.html"><span>Example2</span></a></div>
-<div class="line">▪ <a class="reference internal" href="DakotaGradientFreeOptimization.html#lbldakotagradientfreeestimation"><span class="std std-ref">Gradient-free Parameter Estimation</span></a> in Dakota</div>
+<div class="line">▪ <a class="reference internal" href="DakotaBayesianCalibration.html#lbldakotabayesiancalibration"><span class="std std-ref">Bayesian Calibration</span></a> in Dakota</div>
+<div class="line">▪ <a class="reference internal" href="UCSD_UQ_TMCMC.html#lblucsdtmcmc"><span class="std std-ref">Calibration of Non-hierarchical Model</span></a> in UCSD-UQ   <a class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger reference external" href="../../examples/desktop/qfem-0014/README.html"><span>Example1</span></a> <a class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger reference external" href="../../examples/desktop/qfem-0019/README.html"><span>Example2</span></a></div>
 </div>
 </div></blockquote>
-</dd>
-</dl>
+<div class="line-block">
+<div class="line">Theory details can be found in Dakota user manual and <a class="reference internal" href="../../../technical_manual/desktop/UCSDUQTechnical.html#lbluqucsdsimtechnical"><span class="std std-ref">here</span></a>.</div>
 </div>
-<div class="rightside docutils container">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <a class=""
-               data-lightbox="group-667eff9f-92cf-457e-ad18-2506baf3737c"
+               data-lightbox="group-e5fb450d-4380-4673-9a8c-1c196fb2cdfd"
                href="../../../../_images/method_deterministic1.png"
                title=""
                data-title=""
                
                ><img src="../../../../_images/method_deterministic1.png"
                      class=""
-                     width="25%"
+                     width="100%"
                      height="auto"
                      alt=""/>
                 </a></div>
 </div>
 </div>
-</div>
-</div>
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
-<div class="twocol docutils container">
-<div class="leftside docutils container">
-<p class="card-text"><span class="uqblue">Surrogate Modeling</span></p>
-<blockquote>
-<div><div class="line-block">
-<div class="line">quoFEM app can be used to train a surrogate model that substitutes expensive computational simulation models or physical experiments. Theory details can be found in <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical"><span class="std std-ref">here</span></a>.</div>
+<div class="sd-col sd-d-flex-row sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Deterministic Calibration</div>
+<div class="line-block">
+<div class="line">Deterministic Calibration estimates the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares, pattern search, etc.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">▪ <a class="reference internal" href="SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Gaussian Process (GP) Surrogate Modeling</span></a> in SimCenterUQ   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0015/README.html"><span>Example1</span></a> <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0016/README.html"><span>Example2</span></a></div>
-<div class="line">▪ <a class="reference internal" href="SimCenterUQPLoM.html#lblsimcenteruqplom"><span class="std std-ref">Probabilistic Learning on Manifolds (PLoM)</span></a> in SimCenterUQ</div>
+<div class="line">▪ <a class="reference internal" href="DakotaDeterministicCalibration.html#lbldakotadeterministiccalibration"><span class="std std-ref">Deterministic Calibration</span></a> in Dakota   <a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference external" href="../../examples/desktop/qfem-0007/README.html"><span>Example1</span></a> <a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference external" href="../../examples/desktop/qfem-0019/README.html"><span>Example2</span></a></div>
+<div class="line">▪ <a class="reference internal" href="DakotaGradientFreeOptimization.html#lbldakotagradientfreeestimation"><span class="std std-ref">Gradient-free Parameter Estimation</span></a> in Dakota</div>
 </div>
 </div></blockquote>
-</div></blockquote>
+<div class="line-block">
+<div class="line">See Dakota user manual for theory details.</div>
 </div>
-<div class="rightside docutils container">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <a class=""
-               data-lightbox="group-9bc415f7-1c4c-4ae1-ac3f-faff562a1009"
+               data-lightbox="group-be13647a-90d4-4f04-bf37-22f90f0c75d9"
                href="../../../../_images/method_surrogate1.png"
                title=""
                data-title=""
                
                ><img src="../../../../_images/method_surrogate1.png"
                      class=""
-                     width="25%"
+                     width="100%"
                      height="auto"
                      alt=""/>
                 </a></div>
 </div>
 </div>
-</div>
-</div>
-<div class="d-flex col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
-<div class="twocol docutils container">
-<div class="leftside docutils container">
-<dl>
-<dt><span class="uqblue">Custom UQ</span></dt><dd><div class="line-block">
-<div class="line">Custom UQ helps the user plug in a user-defined UQ algorithm in SimCenter workflow.</div>
+<div class="sd-col sd-d-flex-row sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Surrogate Modeling</div>
+<div class="line-block">
+<div class="line">quoFEM app can be used to train a surrogate model that substitutes expensive computational simulation models or physical experiments.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
-<div class="line">▪ <a class="reference internal" href="Configuring_CustomUQ.html#lblcustomuq"><span class="std std-ref">Configuring CustomUQ Engine</span></a> in CustomUQ engine   <a class="sphinx-bs badge badge-success text-white reference external" href="../../examples/desktop/qfem-0017/README.html"><span>Example</span></a></div>
+<div class="line">▪ <a class="reference internal" href="SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Gaussian Process (GP) Surrogate Modeling</span></a> in SimCenterUQ   <a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference external" href="../../examples/desktop/qfem-0015/README.html"><span>Example1</span></a> <a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference external" href="../../examples/desktop/qfem-0016/README.html"><span>Example2</span></a></div>
+<div class="line">▪ <a class="reference internal" href="SimCenterUQPLoM.html#lblsimcenteruqplom"><span class="std std-ref">Probabilistic Learning on Manifolds (PLoM)</span></a> in SimCenterUQ</div>
 </div>
 </div></blockquote>
-</dd>
-</dl>
+<div class="line-block">
+<div class="line">Theory details can be found in <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical"><span class="std std-ref">here</span></a>.</div>
 </div>
-<div class="rightside docutils container">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <a class=""
-               data-lightbox="group-2eb8fa5d-b982-4095-a998-effb1fb78a5f"
+               data-lightbox="group-a527ec98-689d-4aee-8492-683ef2892caf"
                href="../../../../_images/method_custom1.png"
                title=""
                data-title=""
                
                ><img src="../../../../_images/method_custom1.png"
                      class=""
-                     width="25%"
+                     width="100%"
                      height="auto"
                      alt=""/>
                 </a></div>
 </div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Custom UQ</div>
+<div class="line-block">
+<div class="line">Custom UQ helps the user plug in a user-defined UQ algorithm in SimCenter workflow.</div>
+</div>
+<blockquote>
+<div><div class="line-block">
+<div class="line">▪ <a class="reference internal" href="Configuring_CustomUQ.html#lblcustomuq"><span class="std std-ref">Configuring CustomUQ Engine</span></a> in CustomUQ engine   <a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference external" href="../../examples/desktop/qfem-0017/README.html"><span>Example</span></a></div>
+</div>
+</div></blockquote>
 </div>
 </div>
 </div>
