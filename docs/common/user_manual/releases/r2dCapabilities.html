@@ -137,8 +137,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -208,8 +209,8 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-eeuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h1>
-<p><strong>Version</strong> 3.5 of quoFEM app was released <strong>April 2024</strong>. The following is the functionality available in this current version. New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.
-The major update from Version 4.0 is upgrading the <span class="blue">regional earthquake event generation tool</span>, <span class="blue">regional inventory generation tool BRAILS</span>, and :blue:` damage and loss engine Pelicun`.</p>
+<p><strong>Version</strong> 3.5 of quoFEM app was released in <strong>April 2024</strong>, introducing significant updates and enhancements. This document outlines the functionalities available in the current version, highlighting new features and improvements marked in <span class="blue">blue</span>.</p>
+<p>Major updates from Version 4.0 are adding liquefaction-induced ground deformation estimation in the <span class="blue">regional earthquake event generation tool</span>, refactored <span class="blue">regional inventory generation tool BRAILS</span>, and upgraded <span class="blue">damage and loss engine Pelicun</span>.</p>
 <p><strong>Release date:</strong> April, 2024</p>
 <ol class="arabic">
 <li><p><strong>Hazard Types</strong>:</p>
@@ -217,17 +218,9 @@ The major update from Version 4.0 is upgrading the <span class="blue">regional e
 <div><ul class="simple">
 <li><p><span class="xref std std-ref">User specified earthquakes</span>.</p></li>
 <li><p><span class="xref std std-ref">User specified hurricanes</span>.</p></li>
-<li><dl class="simple">
-<dt><span class="xref std std-ref">ShakeMap Scenarios</span>, which supports importing the following ShakeMap outputs:</dt><dd><ol class="loweralpha simple">
-<li><p>ShakeMap ground motion grid in .xml format.</p></li>
-<li><p>PGA contours in .json format.</p></li>
-<li><p>Fault rupture in .json format.</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><p><span class="xref std std-ref">Raster Defined Hazard</span> for Earthquake, Hurricane, Inundation**.</p></li>
-<li><p><strong>GIS Defined Hazard for Earthquake, Hurricane, Inundation</strong>.</p></li>
+<li><p><span class="xref std std-ref">ShakeMap Scenarios</span> for earthquake events, allowing the import of ShakeMap <a class="reference external" href="https://usgs.github.io/shakemap/manual4_0/ug_products.html#xml-grid">XML grid file</a>, PGA Contours (.json) file, and Fault Rupture (.json) file.</p></li>
+<li><p><span class="xref std std-ref">Raster Defined Hazard</span> for Earthquake, Hurricane, Inundation.</p></li>
+<li><p><strong>GIS Defined Hazard</strong> for Earthquake, Hurricane, Inundation.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -244,8 +237,8 @@ The major update from Version 4.0 is upgrading the <span class="blue">regional e
 </li>
 <li><dl class="simple">
 <dt><span class="xref std std-ref">Transportation infrastructure</span>:</dt><dd><ol class="loweralpha simple">
-<li><p><span class="blue">Load transportation infrastructure database in SimCenter’s</span> <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> <span class="blue">format.</span></p></li>
-<li><p><span class="blue">Load transportation infrastructure database in common</span> <code class="docutils literal notranslate"><span class="pre">.gis</span></code> <span class="blue">format.</span></p></li>
+<li><p>Load transportation infrastructure database in SimCenter’s <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> format.</p></li>
+<li><p>Load transportation infrastructure database in common <code class="docutils literal notranslate"><span class="pre">.gis</span></code> format.</p></li>
 </ol>
 </dd>
 </dl>
@@ -257,17 +250,17 @@ The major update from Version 4.0 is upgrading the <span class="blue">regional e
 <dt><strong>Asset Modeling</strong>:</dt><dd><ul class="simple">
 <li><dl class="simple">
 <dt><span class="xref std std-ref">Buildings</span>:</dt><dd><ol class="loweralpha simple">
-<li><p>MDOF-LU (MDOF shear building model)</p></li>
-<li><p>OpenSeesPy script building generator</p></li>
-<li><p>IMasEDP, i.e., no structural modeling, and the Intensity Measures (IMs) are considered the Engineering Demand Parameters (EDPs)</p></li>
-<li><p>CustomPy</p></li>
+<li><p>MDOF-LU (MDOF shear building model).</p></li>
+<li><p>OpenSeesPy building generator.</p></li>
+<li><p>None (Used for the IMasEDP option in Asset Analysis).</p></li>
+<li><p>CustomPy.</p></li>
 </ol>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt><span class="xref std std-ref">Transportation infrastructure</span>:</dt><dd><ol class="loweralpha simple">
-<li><p>IMasEDP, i.e., no structural modeling, and the Intensity Measures (IMs) are considered the Engineering Demand Parameters (EDPs)</p></li>
+<li><p>None (Used for the IMasEDP option in Asset Analysis).</p></li>
 </ol>
 </dd>
 </dl>
@@ -280,18 +273,18 @@ The major update from Version 4.0 is upgrading the <span class="blue">regional e
 <dt><strong>Asset Analysis</strong>:</dt><dd><ul class="simple">
 <li><dl class="simple">
 <dt><span class="xref std std-ref">Buildings</span>:</dt><dd><ol class="loweralpha simple">
-<li><p>OpenSees</p></li>
-<li><p>OpenSeesPy</p></li>
-<li><p>IMasEDP, i.e., no analysis as the IM is considered the EDP</p></li>
-<li><p>CustomPy for CustomPy in Asset Modeling</p></li>
-<li><p>None for IMasEDP option in Modeling.</p></li>
+<li><p>OpenSees.</p></li>
+<li><p>OpenSeesPy.</p></li>
+<li><p>IMasEDP (simplified analysis using Intensity Measures (IMs) as Engineering Demand Parameters (EDPs)).</p></li>
+<li><p>CustomPy for CustomPy Asset Modeling.</p></li>
+<li><p>Pre-trained surrogate models.</p></li>
 </ol>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt><span class="xref std std-ref">Transportation infrastructure</span>:</dt><dd><ol class="loweralpha simple">
-<li><p>None for IMasEDP option in Modeling.</p></li>
+<li><p>IMasEDP (simplified analysis using Intensity Measures (IMs) as Engineering Demand Parameters (EDPs)).</p></li>
 </ol>
 </dd>
 </dl>
@@ -305,10 +298,11 @@ The major update from Version 4.0 is upgrading the <span class="blue">regional e
 <li><dl class="simple">
 <dt><span class="xref std std-ref">Buildings</span>:</dt><dd><ul>
 <li><dl class="simple">
-<dt>Pelicun</dt><dd><ol class="loweralpha simple">
-<li><p>HAZUS MH EQ</p></li>
+<dt>Pelicun Damage and Loss Methods:</dt><dd><ol class="loweralpha simple">
+<li><p>HAZUS MH EQ Story</p></li>
 <li><p>HAZUS MH EQ IM</p></li>
 <li><p>HAZUS MH HU</p></li>
+<li><p>User-provided Models</p></li>
 </ol>
 </dd>
 </dl>
@@ -318,10 +312,16 @@ The major update from Version 4.0 is upgrading the <span class="blue">regional e
 </dl>
 </li>
 <li><dl class="simple">
-<dt><span class="xref std std-ref">Transportation infrastructure</span></dt><dd><ol class="loweralpha simple">
-<li><p>HAZUS MH EQ</p></li>
+<dt><span class="xref std std-ref">Transportation infrastructure</span></dt><dd><ul>
+<li><dl class="simple">
+<dt>Pelicun Damage and Loss Methods:</dt><dd><ol class="loweralpha simple">
 <li><p>HAZUS MH EQ IM</p></li>
+<li><p>User-provided Models</p></li>
 </ol>
+</dd>
+</dl>
+</li>
+</ul>
 </dd>
 </dl>
 </li>
@@ -344,7 +344,7 @@ The major update from Version 4.0 is upgrading the <span class="blue">regional e
 </dl>
 </li>
 <li><dl class="simple">
-<dt>** Additional Tools To Perform Tasks Generating or Using Data in Workflow**:</dt><dd><ul class="simple">
+<dt><strong>Additional Tools To Perform Tasks Generating or Using Data in Workflow</strong>:</dt><dd><ul class="simple">
 <li><dl class="simple">
 <dt><span class="xref std std-ref">Earthquake Scenario Simulation</span> (ground motion selection)</dt><dd><ul>
 <li><dl class="simple">
@@ -420,14 +420,14 @@ The major update from Version 4.0 is upgrading the <span class="blue">regional e
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Liquefaction lateral spreading permenant ground deformation (PGD_h)</dt><dd><ol class="arabic simple">
+<dt>Liquefaction lateral spreading permanent ground deformation (PGD_h)</dt><dd><ol class="arabic simple">
 <li><p>Hazus (2020)</p></li>
 </ol>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Liquefaction settlement permenant ground deformation (PGD_v)</dt><dd><ol class="arabic simple">
+<dt>Liquefaction settlement permanent ground deformation (PGD_v)</dt><dd><ol class="arabic simple">
 <li><p>Hazus (2020)</p></li>
 </ol>
 </dd>
@@ -489,16 +489,11 @@ The major update from Version 4.0 is upgrading the <span class="blue">regional e
 </dl>
 </li>
 <li><p><span class="xref std std-ref">OpenQuake Selection</span></p></li>
+<li><p><span class="xref std std-ref">Census Data &amp; American Community Survey</span></p></li>
 <li><dl class="simple">
-<dt><span class="xref std std-ref">Census Data &amp; American Community Survey</span></dt><dd><ul>
-<li><dl class="simple">
-<dt><a href="#id1"><span class="problematic" id="id2">:ref:`BRAILS &lt;https://nheri-simcenter.github.io/BRAILS-Documentation/&gt;`_</span></a></dt><dd><ul>
+<dt><a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/">Building and Infrastructure Recognition using AI at Large-Scale (BRAILS)</a></dt><dd><ul>
 <li><p>Building inventory generation</p></li>
 <li><p>Transportation inventory generation</p></li>
-</ul>
-</dd>
-</dl>
-</li>
 </ul>
 </dd>
 </dl>

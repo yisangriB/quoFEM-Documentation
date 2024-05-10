@@ -133,6 +133,7 @@
 <li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">3.1.3.2. Global Sensitivity Analysis</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.3. Gaussian Process (GP) Surrogate Modeling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">3.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQMF.html">3.1.3.5. Multi-fidelity Monte Carlo</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="UQ.html#ucsd-uq-engine">3.1.4. UCSD UQ Engine</a></li>
@@ -161,8 +162,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -238,30 +240,7 @@
 <span id="lblsimsurrogate"></span><h1><span class="section-number">3.1.3.3. </span>Gaussian Process (GP) Surrogate Modeling<a class="headerlink" href="#gaussian-process-gp-surrogate-modeling" title="Permalink to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Surrogate modeling functionality of quoFEM is built upon <a class="reference external" href="https://sheffieldml.github.io/GPy/">GPy</a> library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Update: 01.04.2024</p>
-<p><strong>Only on Mac</strong>, the GPy module (v.1.12 or lower) has a dependency version compatibility issue with other python packages SimCenter uses.
-To run GPy on SimCenter tools, one needs to install the latest developer release of GPy. Below is the error message you get.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Surrogate modeling module uses GPy python package which is facing a version compatibility issue at this moment (01.05.2024).</span>
-<span class="go">To use the surrogate module, one needs to update manually the GPy version to 1.13. The instructions can be found in the documentation:</span>
-<span class="gp">https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html#</span>lblsimsurrogate
-</pre></div>
-</div>
-<p>Until the GPy version v1.13 is available on pip, one can install the <a class="reference external" href="https://github.com/SheffieldML/GPy">developer release of GPy v1.13</a> by typing the following commands one by one in the terminal</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/SheffieldML/GPy.git</span>
-<span class="go">cd GPy</span>
-<span class="go">{$PathToPythonExe} -m pip uninstall GPy</span>
-<span class="go">{$PathToPythonExe} setup.py install</span>
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">{$PathToPythonExe}</span></code> should be replaced with the python path found in the File-Preference window. After the third line, they will ask for the confirmation (type Y and enter). Check the installation status by typing</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{$PathToPythonExe} -m pip show GPy</span>
-</pre></div>
-</div>
-<p>and confirming that the version appears as 1.13.x. For any questions and bug reports, please contact us through <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php">user forum</a>.</p>
+<p>Surrogate modeling functionality of quoFEM is built upon <a class="reference external" href="https://sheffieldml.github.io/GPy/">GPy</a> library (available under BSD 3-clause license), an opensource Python framework for Gaussian process modeling developed in the Sheffield machine learning group.</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">GP</span> <span class="pre">Surrogate</span> <span class="pre">Model</span></code> module is used to construct a Gaussian process (GP) based <strong>surrogate model</strong> that substitutes expensive computational <strong>simulation models</strong> or physical experiments. Consider a simulation model, with input random variables (or parameters) <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> and output quantity of interests, denoted as <span class="math notranslate nohighlight">\(\boldsymbol{y}=f(\boldsymbol{x})\)</span>. A surrogate model for the corresponding simulation model can be built by different user-provided information types (RV-random variables, QoI-quantities of interest):</p>
 <table class="colwidths-given docutils align-default" id="id7">
@@ -293,8 +272,8 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </tbody>
 </table>
 <p><strong>Case 1 (Sampling and Simulation)</strong>: The user provides lower and upper bounds of each random variable (RV) and a simulation model. quoFEM will find the best training points sequentially by the adaptive <strong>design of experiments</strong> (DoE) strategies until the model converges or reaches a user-specified computational tolerance.</p>
-<p><strong>Case 2 (Import RV Dataset and run Simulation)</strong>: The user provides sample population of RVs as a separate text file. quoFEM will run simulations to get QoI values and build a surrogate model.</p>
-<p><strong>Case 3 (Import both RV and QoI Dataset)</strong>: The user provides sample population of RVs and QoIs. quoFEM will not run any simulations and build a surrogate model purely based on the provided dataset.</p>
+<p><strong>Case 2 (Import RV Dataset and run Simulation)</strong>: The user provides a sample population of RVs as a separate text file. quoFEM will run simulations to get QoI values and build a surrogate model.</p>
+<p><strong>Case 3 (Import both RV and QoI Dataset)</strong>: The user provides a sample population of RVs and QoIs. quoFEM will not run any simulations and build a surrogate model purely based on the provided dataset.</p>
 <table class="colwidths-given docutils align-center" id="id8">
 <caption><span class="caption-number">Table 3.1.3.3.2 </span><span class="caption-text">quoFEM workflow (DoE: Design of experiments)</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -336,9 +315,9 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </div>
 <ul class="simple">
 <li><p><strong>Output of surrogate model</strong>: Following the performance-based earthquake engineering practice, the response estimation module in SimCenter workflow concerns only the peak responses (e.g. peak acceleration, peak drift ratio at each floor) rather than the whole time history. Therefore, the surrogate modeling algorithms in this tool are designed to predict the non-time history responses.</p></li>
-<li><p><strong>Input of surrogate model</strong>: To keep the input dimension of the surrogate model to a reasonable scale, the ground motion time history are first parameterized into a number of key features in the algorithm. This can be, for example, the sources properties (e.g. M,R) or time/frequency domain excitation property at the site of interest (e.g. intensity measures) (<a class="reference internal" href="#kyprioti2021" id="id1"><span>[Kyprioti2021]</span></a>, <a class="reference internal" href="#zhong2023" id="id2"><span>[Zhong2023]</span></a>).</p></li>
+<li><p><strong>Input of surrogate model</strong>: To keep the input dimension of the surrogate model to a reasonable scale, the ground motion time history is first parameterized in the algorithm into several key features. This can be, for example, the source properties (e.g. M, R) or time/frequency domain excitation property at the site of interest (e.g. intensity measures) (<a class="reference internal" href="#kyprioti2021" id="id1"><span>[Kyprioti2021]</span></a>, <a class="reference internal" href="#zhong2023" id="id2"><span>[Zhong2023]</span></a>).</p></li>
 </ul>
-<p>The surrogate prediction of EDP given the ground motion parameters typically inherits significant randomness, as the amount of information provided by these parameters are not sufficient to determine the exact model peak response. Therefore, the key task in surrogate modeling is to capture the remaining amount of uncertainty in the EDP predictions, as shown in the above figure.</p>
+<p>The surrogate prediction of EDP given the ground motion parameters typically inherits significant randomness, as the amount of information provided by these parameters is not sufficient to determine the exact model peak response. Therefore, the key task in surrogate modeling is to capture the remaining amount of uncertainty in the EDP predictions, as shown in the above figure.</p>
 <p><strong>The trained surrogate model can be saved in a portable file (.json format) and later imported</strong> in place of the original simulation model for UQ analysis or optimization purposes. See user guide <span class="xref std std-ref">section 2.2.5</span> for how to import the surrogate model in quoFEM.</p>
 <dl class="citation">
 <dt class="label" id="kyprioti2021"><span class="brackets"><a class="fn-backref" href="#id1">Kyprioti2021</a></span></dt>
@@ -371,7 +350,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <div class="line-block">
 <div class="line">where</div>
 <div class="line-block">
-<div class="line"><span class="math notranslate nohighlight">\(y_k\)</span> : exact response from the model simulation</div>
+<div class="line"><span class="math notranslate nohighlight">\(y_k\)</span>: exact response from the model simulation</div>
 <div class="line"><span class="math notranslate nohighlight">\(\hat{y}_k\)</span>: estimated response by LOOCV surrogate model prediction</div>
 <div class="line"><span class="math notranslate nohighlight">\(N\)</span>: number of samples used to train the surrogate model</div>
 </div>
@@ -389,10 +368,10 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </div>
 <ul class="simple">
 <li><p><strong>Kernel function</strong>: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions (exponent <span class="math notranslate nohighlight">\(\gamma=1\)</span>) are additionally supported. (For details, please refer to <a class="reference external" href="http://gaussianprocess.org/gpml/chapters/RW4.pdf">chapter 4</a> of the book Gaussian Processes for Machine Learning)</p></li>
-<li><p><strong>Add Linear Trend Function</strong>: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is unchecked, ie. no trend function.</p></li>
-<li><p><strong>Log-space Transform of QoI</strong>: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is unchecked, ie. original physical coordinate.</p></li>
-<li><p><strong>Design of Experiments options</strong>: User may manually select the design of experiments (DoE) method and the number of the initial DoE. The default is “none” and the default number of DoE is 4 times the number of random variables.</p></li>
-<li><p><strong>Nugget Variances</strong>: User may define nugget variances or bounds of the nugget variances if needed. The default is “optimize”. See subsection titled ‘Heteroscedastic Gaussian Process’ to learn more about this feature.</p></li>
+<li><p><strong>Add Linear Trend Function</strong>: When an increasing or decreasing trend is expected over the variables’ domain, a linear trend function may be introduced. The default is unchecked, i.e. no trend function.</p></li>
+<li><p><strong>Log-space Transform of QoI</strong>: When the user can guarantee that the response quantities are always greater than 0, the user may want to introduce a surrogate model in the log-transformed space of the QoI. The default is unchecked, i.e. the original physical coordinates.</p></li>
+<li><p><strong>Design of Experiments options</strong>: The user may manually select the design of experiments (DoE) method and the number of the initial DoE. The default is “none” and the default number of DoE is 4 times the number of random variables.</p></li>
+<li><p><strong>Nugget Variances</strong>: The user may define nugget variances or bounds of the nugget variances if needed. The default is “optimize”. See the subsection titled ‘Heteroscedastic Gaussian Process’ to learn more about this feature.</p></li>
 </ul>
 <p><span class="blue">Start with Existing Dataset</span></p>
 <div class="align-center figure" id="id12">
@@ -483,7 +462,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <span id="figsimmf1"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF1.png"><img alt="../../../../_images/SimUQ_surrogate_MF1.png" src="../../../../_images/SimUQ_surrogate_MF1.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.3.9 </span><span class="caption-text">Multi-fidelity modeling panel</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
-<p>For each fidelity models, either model, data, or both can be provided for each fidelity level.</p>
+<p>For each of the fidelity levels, either the model, the data, or both can be provided.</p>
 <div class="align-center figure" id="id18">
 <span id="figsimmf2"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF2.png"><img alt="../../../../_images/SimUQ_surrogate_MF2.png" src="../../../../_images/SimUQ_surrogate_MF2.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.3.10 </span><span class="caption-text">Providing a simulation model for the high-fidelity response</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
@@ -500,7 +479,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <span id="figsimstoch1"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate_Hetero.png"><img alt="../../../../_images/Surrogate_Hetero.png" src="../../../../_images/Surrogate_Hetero.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.3.3.12 </span><span class="caption-text">Input fields for heteroscedastic GP</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
-<p>Heteroscedastic Gaussian Process can be trained by selecting ‘Heteroscedastic’ option in the ‘Nugget Variance’ field. The following two parameters are requested:</p>
+<p>A heteroscedastic Gaussian Process can be trained by selecting the ‘Heteroscedastic’ option in the ‘Nugget Variance’ field. The following two parameters are requested:</p>
 <ul class="simple">
 <li><p><strong>Number of samples to be replicated (A)</strong> : From the number of unique samples specified in the ‘Number of Samples’ field, decide how many of them will have replications.</p></li>
 <li><p><strong>Number of replications per sample (B)</strong> : Specify how many replications will be generated for the number of samples specified in A.</p></li>
@@ -526,13 +505,13 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <ul>
 <li><p><strong>Leave-one-out cross-validation (LOOCV)</strong></p>
 <div class="line-block">
-<div class="line">LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> at each sample location <span class="math notranslate nohighlight">\(\boldsymbol{x}_k\)</span> is obatined by the following procedure: A temporary surrogate model <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})\)</span> is constructed using the samples <span class="math notranslate nohighlight">\(\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}\)</span> and the calibrated parameters, and the prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)\)</span> is compared with the exact outcome .</div>
+<div class="line">LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> at each sample location <span class="math notranslate nohighlight">\(\boldsymbol{x}_k\)</span> is obtained by the following procedure: A temporary surrogate model <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})\)</span> is constructed using the samples <span class="math notranslate nohighlight">\(\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}\)</span> and the calibrated parameters, and the prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)\)</span> is compared with the exact outcome.</div>
 </div>
 </li>
 </ul>
 <p>We provide different verification measures for two different cases.</p>
 <ol class="lowerroman">
-<li><p>When nugget variance is low : The LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> is expected to match the exact outcome <span class="math notranslate nohighlight">\(\boldsymbol{y_k}=f(\boldsymbol{x}_k)\)</span> when the surrogate model is well-trained. To quantify the goodness, R2 error, normalized root-mean-squared-error (NRMSE), and correlation coefficient are provided:</p>
+<li><p>When nugget variance is low: The LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> is expected to match the exact outcome <span class="math notranslate nohighlight">\(\boldsymbol{y_k}=f(\boldsymbol{x}_k)\)</span> when the surrogate model is well-trained. To quantify the goodness, R2 error, normalized root-mean-squared-error (NRMSE), and correlation coefficient are provided:</p>
 <ul>
 <li><p><strong>R2 error</strong></p>
 <div class="line-block">
@@ -561,7 +540,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </li>
 <li><p><strong>Correlation coefficient</strong></p>
 <div class="line-block">
-<div class="line">Correlation coefficient is a statistic that measures linear correlation between two variables</div>
+<div class="line">Correlation coefficient is a statistic that measures the linear correlation between two variables</div>
 </div>
 <div class="math notranslate nohighlight" id="equation-corr">
 <span class="eqno">(3.1.3.3.4)<a class="headerlink" href="#equation-corr" title="Permalink to this equation">¶</a></span>\[  \rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}\]</div>
@@ -580,12 +559,12 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </li>
 </ul>
 </li>
-<li><p>When nugget variance is high : The distance between LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> and the exact outcome <span class="math notranslate nohighlight">\(\boldsymbol{y_k}=f(\boldsymbol{x}_k)\)</span> is expected to follow a normal distribution when the surrogate model is well-trained. To quantify the goodness, inter-quartile ratio (IQR) and Cramer-Von Mises statistics can be evaluated:</p></li>
+<li><p>When nugget variance is high: The distance between LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> and the exact outcome <span class="math notranslate nohighlight">\(\boldsymbol{y_k}=f(\boldsymbol{x}_k)\)</span> is expected to follow a normal distribution when the surrogate model is well-trained. To quantify the goodness, inter-quartile ratio (IQR) and Cramer-Von Mises statistics can be evaluated:</p></li>
 </ol>
 <blockquote>
 <div><ul>
 <li><p><strong>Inter-quartile ratio (IQR)</strong>: IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.</p></li>
-<li><p><strong>Cramer-Von Mises statistics</strong>: Cramer-Von Mises statistics calculate the normality score. The assumption of a GP is that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction <span class="math notranslate nohighlight">\(\hat{y}_k\)</span> and the sample observation  <span class="math notranslate nohighlight">\(y_k\)</span> value is divided by the standard deviation prediction from surrogate <span class="math notranslate nohighlight">\(\hat{\sigma}_{y,k}\)</span>:</p>
+<li><p><strong>Cramer-Von Mises statistics</strong>: Cramer-Von Mises statistics calculate the normality score. A GP assumes that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction <span class="math notranslate nohighlight">\(\hat{y}_k\)</span> and the sample observation  <span class="math notranslate nohighlight">\(y_k\)</span> value is divided by the standard deviation prediction from surrogate <span class="math notranslate nohighlight">\(\hat{\sigma}_{y,k}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-normed">
 <span class="eqno">(3.1.3.3.5)<a class="headerlink" href="#equation-normed" title="Permalink to this equation">¶</a></span>\[  u_k = \frac{y_k-\hat{y}_k} {\hat{\sigma}_{y,k}}\]</div>
 </li>
@@ -605,7 +584,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Note that GP-based surrogate models can be used to fit only smooth, continuous functions. When the surrogate model is poorly trained, a parametric study is highly recommended to check any possible discontinuity presented in the simulation model.</p>
+<p>Note that GP-based surrogate models can be used to fit only smooth, continuous functions. When the surrogate model is poorly trained, a parametric study is highly recommended to check for any possible discontinuity presented in the simulation model.</p>
 </div>
 </div>
 <div class="section" id="saving-options">
@@ -614,8 +593,8 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <li><p><strong>Save GP Model</strong>: The constructed surrogate model is saved. One main file and one auxiliary folder will be saved.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><strong>SurroateGP Info File</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code>) : This file contains information required to quickly reconstruct the surrogate model and predict the response for different input realizations. This can be later imported in EEUQ.</p></li>
-<li><p><strong>Simulation template directory</strong> (default name: <code class="docutils literal notranslate"><span class="pre">tmplatedir_SIM</span></code>) : This folder contains all the scripts and commands to run the original dynamic time history analysis. This folder can later be imported into EEUQ along with the surrogate model to alternate between original simulations and surrogate predictions or compare the surrogate predictions to the response of the original model.</p></li>
+<li><p><strong>SurroateGP Info File</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code>): This file contains information required to quickly reconstruct the surrogate model and predict the response for different input realizations. This can be later imported into EEUQ.</p></li>
+<li><p><strong>Simulation template directory</strong> (default name: <code class="docutils literal notranslate"><span class="pre">tmplatedir_SIM</span></code>): This folder contains all the scripts and commands to run the original dynamic time history analysis. This folder can later be imported into EEUQ along with the surrogate model to alternate between original simulations and surrogate predictions or compare the surrogate predictions to the response of the original model.</p></li>
 <li><p>Only for the multi-fidelity case in quoFEM, additional <strong>SurroateGP model file</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code>) will be written along with the above two.</p></li>
 </ul>
 </div></blockquote>
@@ -623,7 +602,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not place above surrogate model files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
+<p>Do not place the above surrogate model files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads, or Documents folders contain an awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
 </div>
 <ul class="simple">
 <li><p><strong>Save GP Info</strong>: This is a report generated for user reference. It contains the GP model parameter and other information. The default file name is <code class="docutils literal notranslate"><span class="pre">GPresults.out</span></code>.</p></li>

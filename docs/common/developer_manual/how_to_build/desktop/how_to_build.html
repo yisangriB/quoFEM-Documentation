@@ -153,8 +153,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -224,16 +225,16 @@
             
   <div class="section" id="how-to-build">
 <span id="lblhowtobuild"></span><h1><span class="section-number">1. </span>How to Build<a class="headerlink" href="#how-to-build" title="Permalink to this heading">¶</a></h1>
-<p>SimCenter tools all comprise a frontend UI and some backend applications. They are kept in separate GitHub repositories and are also built separately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.</p>
+<p>SimCenter tools all comprise a frontend user interface (UI) and backend applications. They are kept in separate GitHub repositories and are also built separately. The following sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As part of our continuous integration process, quoFEM app is built evrey time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is <a class="reference external" href="https://www.appveyor.com/">appveyor</a>. As a consequence in the quoFEM app repo that you will clone as part of this build process there is a file <strong>appveyor.yml</strong>. This file contains shell commands that are issued to set-up the operating system, download the software and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently beeing called as these may be more up to date than what is presented below.</p>
+<p>As part of our continuous integration process, quoFEM app is built every time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is <a class="reference external" href="https://www.appveyor.com/">appveyor</a>. As a consequence in the quoFEM app repo that you will clone as part of this build process there is a file <strong>appveyor.yml</strong>. This file contains shell commands that are issued to set up the operating system, download the software, and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently being called as these may be more up-to-date than what is presented below.</p>
 </div>
 <div class="section" id="install-dependencies">
 <h2><span class="section-number">1.1. </span>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this heading">¶</a></h2>
 <p>First, ensure the following dependencies are installed:</p>
 <ul>
-<li><p><strong>C++17 compliant compiler</strong>: many of the workflow applications included use C++17 features; consequently, they may need a newer C++17 compliant compiler. For Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/older-downloads/InstallDependencies">Visual Studio 2019 (Community Edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.</p></li>
+<li><p><strong>C++17 compliant compiler</strong>: many of the workflow applications included use C++17 features; consequently, they may need a newer C++17 compliant compiler. For Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/older-downloads">Visual Studio 2019 (Community Edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for Windows. Then click Modify.</p></li>
 <li><p><strong>OpenSees</strong>: The workflow applications require an installation of <a class="reference external" href="http://opensees.berkeley.edu/">OpenSees</a> to carry out a structural analysis using the finite element method.</p></li>
 <li><p><strong>DAKOTA</strong>: The workflow applications require an installation of <a class="reference external" href="https://dakota.sandia.gov/">DAKOTA</a> to handle and propagate the uncertainties defined in the input files for the workflow applications.</p></li>
 <li><p><strong>Python</strong>: The workflow requires at least Python 3.7.</p></li>
@@ -257,7 +258,7 @@
 </div>
 <div class="section" id="build-the-backend-applications">
 <h2><span class="section-number">1.2. </span>Build the Backend Applications<a class="headerlink" href="#build-the-backend-applications" title="Permalink to this heading">¶</a></h2>
-<p>Instructions to build the backend workflow applications on your local desktop depend on your operating system, but is a 2 step process involving some initial setup and finally the build.</p>
+<p>Instructions to build the backend workflow applications on your local desktop depend on your operating system. This is a 2-step process involving some initial setup and finally the build.</p>
 <div class="section" id="setup-the-development-environment-with-conan">
 <h3><span class="section-number">1.2.1. </span>Setup the development environment with Conan<a class="headerlink" href="#setup-the-development-environment-with-conan" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
@@ -302,9 +303,9 @@
 </div>
 </div></blockquote>
 </li>
-<li><p>To build the applications you need to now navigate to the <strong>SimCenterBackendApplications</strong> folder that was created with the <strong>git clone</strong> command. Once there you will issue the following set of commands to create a <strong>build</strong> folder, change director to that folder, install needed software using conan, and finally use <strong>cmake</strong> to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).</p>
+<li><p>To build the applications you need to now navigate to the <strong>SimCenterBackendApplications</strong> folder that was created with the <strong>git clone</strong> command. Once there you will issue the following set of commands to create a <strong>build</strong> folder, change directory to that folder, install needed software using conan, and finally use <strong>cmake</strong> to build and install the applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).</p>
 <blockquote>
-<div><p>For those developers using the Windows operating system, in a terminal or powershell window you need to type the following:</p>
+<div><p>For those developers using the Windows operating system, in a terminal or power-shell window you need to type the following:</p>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir build</span>
 <span class="go">cd build</span>
@@ -348,33 +349,33 @@
 </div></blockquote>
 </li>
 </ol>
-<p>If building and installation were successful, you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it.   The name of this folder should not be changed.</p>
+<p>If building and installation were successful, you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it. The name of this folder should not be changed.</p>
 </div>
 </div>
 <div class="section" id="build-the-user-interface">
 <h2><span class="section-number">1.3. </span>Build the User Interface<a class="headerlink" href="#build-the-user-interface" title="Permalink to this heading">¶</a></h2>
-<p>To build the interface, you first need to download the repo and a companion repo(SimCenterCommon) from Github using our <a class="reference external" href="https://github.com/NHERI-SimCenter">github repos</a>. In a folder in which you wish to build the application, issue the following two commands.</p>
+<p>To build the interface, you first need to download the repo and a companion repo(SimCenterCommon) from GitHub using our <a class="reference external" href="https://github.com/NHERI-SimCenter">GitHub repos</a>. In a folder in which you wish to build the application, issue the following two commands.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">SimCenterCommon</span><span class="o">.</span><span class="n">git</span>
 <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">quoFEM</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo’s, you should fork that repo and then clone your forked repo. Forking a repo at <strong>github</strong> is done through your browser as shown on the following <a class="reference external" href="https://guides.github.com/activities/forking/">github guides page</a></p>
+<p>Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repos, you should fork that repo and then clone your forked repo. Forking a repo at <strong>GitHub</strong> is done through your browser as shown on the following <a class="reference external" href="https://guides.github.com/activities/forking/">GitHub guides page</a></p>
 </div>
-<p>You now have two ways to build the application: (1) using the <strong>Qt Creator</strong> desktop application provided by <strong>Qt</strong> and (2) from terminal application.</p>
+<p>You now have two ways to build the application: (1) using the <strong>Qt Creator</strong> desktop application provided by <strong>Qt</strong> and (2) from the terminal application.</p>
 <div class="section" id="build-using-qt-creator">
 <h3><span class="section-number">1.3.1. </span>Build using Qt Creator<a class="headerlink" href="#build-using-qt-creator" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Start Qt Creator, then open the quoFEM.pro file located in the quoFEM directory that was downloaded in the previous step.</p></li>
-<li><p>Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler, and configuration and following the onscreen dialog.</p></li>
+<li><p>Set up the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler, and configuration and following the onscreen dialog.</p></li>
 <li><p>Build the application and run it in Qt Creator IDE using the <strong>Run</strong> button. This can be done using the keyboard shortcut <code class="docutils literal notranslate"><span class="pre">F5</span></code> to build and start the tool.</p></li>
 </ol>
 </div>
 <div class="section" id="build-from-the-terminal">
 <h3><span class="section-number">1.3.2. </span>Build from the Terminal<a class="headerlink" href="#build-from-the-terminal" title="Permalink to this heading">¶</a></h3>
 <p>The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run <strong>qmake</strong>, and finally make (or on Windows nmake) to create the application.</p>
-<p>Windows developers will type the following in a terminal or a powershell window:</p>
+<p>Windows developers will type the following in a terminal or a power-shell window:</p>
 <blockquote>
 <div><pre class="literal-block">mkdir build
 cd build
@@ -408,7 +409,7 @@ make</pre>
 <p>Once built, the tool <strong>Preferences</strong> needs to be modified. To do this, open the quoFEM tool, then click on File -&gt; Preferences in the main menu if on Windows or quoFEM -&gt; Preferences if on a Mac. This will bring up a dialog window shown below. You need to modify specific values:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Python: provide the full path to the python interpreter.</p></li>
+<li><p>Python: provide the full path to the Python interpreter.</p></li>
 <li><p>OpenSees: provide the full path to the OpenSees executable</p></li>
 <li><p>Dakota: provide the full path to the Dakota executable.</p></li>
 <li><p>Custom Local Application: Here, select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder <strong>applications</strong>, which you created when building the backend applications, exists.</p></li>

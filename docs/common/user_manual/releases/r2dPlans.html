@@ -137,8 +137,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -208,45 +209,42 @@
             
   <div class="section" id="release-plans">
 <span id="lbl-future-r2d"></span><h1>Release Plans<a class="headerlink" href="#release-plans" title="Permalink to this heading">¶</a></h1>
-<p>The following features are planned to be developed for upcoming releases of quoFEM app. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.</p>
+<p>The following features are planned to be developed for upcoming releases of quoFEM app. Development priorities may change depending on feedback from the community and our users. For suggestions or to contribute, we encourage you to reach out via the <a class="reference external" href="http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0&amp;_gl=1*1mybwj*_ga*NzI5NDMzMDUzLjE2ODU0ODE2MzQ.*_ga_D96RT1T24K*MTcxNDc3MzkxMy4zMTEuMC4xNzE0NzczOTEzLjAuMC4w">SimCenter Forum</a>.</p>
 <div class="section" id="june-2024">
 <h2>June 2024<a class="headerlink" href="#june-2024" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Water Distribution Network, buried pipelines.(1.3.4.3)</p></li>
-<li><p>Efficient forward propagation using Multi-Fidelity Monte-Carlo (1.2.3.1) - Use a few realizations of the output calculated with expensive, high-fidelity models to evaluate and correct the bias in efficient, approximate models, such as surrogates. With little extra computational demands, this method provides a substantial improvement in surrogate model performance if you have the high-fidelity models available that were used to train the surrogates.</p></li>
-<li><p>Add datasets to simulate subassembly damage and losses under wind demands (1.3.5.1) - Data from recent publications in the Performance-Based Wind Engineering literature is collected to enable high-resolution performance assessment under wind hazard, add data to DB-DamegeAndLoss.</p></li>
-<li><p>Probabilistic asset inventories (1.3.6.2) - Calibrate, store, and propagate uncertainties in building features at the regional scale. For example, we have some but not all information for all buildings in an area, fill in the gaps using information we do know.</p></li>
+<li><p><strong>Water Distribution Network, Buried Pipelines</strong> (1.3.4.3): Add modeling capabilities for buried water pipelines and other water distribution infrastructure.</p></li>
+<li><p><strong>Efficient Forward Propagation using Multi-Fidelity Monte-Carlo</strong> (1.2.3.1): This feature leverages a small number of high-fidelity model outputs to improve the accuracy of efficient, approximate models, such as surrogates, enhancing performance with minimal computational overhead.</p></li>
+<li><p><strong>Add Datasets to Simulate Subassembly Damage and Losses Under Wind Demands</strong> (1.3.5.1): Incorporation of damage and loss data published in recent Performance-Based Wind Engineering research to facilitate high-resolution wind hazard performance assessments. The data is added to the <a class="reference external" href="https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary">SimCenter Damage and Loss Model Library</a>.</p></li>
+<li><p><strong>Probabilistic Asset Inventories</strong> (1.3.6.2): Calibrate, store, and propagate uncertainties in building features at the regional scale. Probabilistically fill in missing building features using the known information.</p></li>
 </ol>
 </div>
 <div class="section" id="sep-2024">
 <h2>Sep 2024<a class="headerlink" href="#sep-2024" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Automatic access to physics-based ground motion simulation results (1.1.1.3)</p></li>
-<li><p>Add datasets to simulate subassembly damage and losses under water demands (1.3.5.2)</p></li>
-<li><p>Add datasets to simulate high-resolution damages and losses in buried pipeline networks (1.3.5.4)</p></li>
+<li><p><strong>Access to Physics-Based Ground Motion Simulation Results</strong> (1.1.1.3): Integration of physics-based ground motion simulation data into hazard assessments.</p></li>
+<li><p><strong>Add Datasets to Simulate Subassembly Damage and Losses Under Water Hazard Demands</strong> (1.3.5.2): Expansion of the <a class="reference external" href="https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary">SimCenter Damage and Loss Model Library</a> to include water hazard-specific damage and loss models.</p></li>
+<li><p><strong>Add Datasets to Simulate High-Resolution Damages and Losses in Buried Pipeline Networks</strong> (1.3.5.4): Expansion of the <a class="reference external" href="https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary">SimCenter Damage and Loss Model Library</a> to include detailed water pipeline damage and loss models.</p></li>
 </ol>
 </div>
 <div class="section" id="dec-2024">
 <h2>Dec 2024<a class="headerlink" href="#dec-2024" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Develop methods to model interdependencies between physical components, housing, socio-economic functions, and lifelines (1.3.4.6)</p></li>
-<li><p>Add datasets to simulate high-resolution damages and losses in transportation networks (1.3.5.3)</p></li>
-<li><p>Develop and implement metrics and their visualization to inform recovery and community resilience (1.4.3.2)</p></li>
-<li><p>Look at aspects related to recovery. Housholds (1.4.3.2), Infrastructure (1.4.2.4), Business operations (1.4.2.5)</p></li>
+<li><p><strong>Model Interdependencies Between Physical Components, Housing, Socio-economic Functions, and Lifelines</strong> (1.3.4.6): Incorporation models and simulation programs to capture the interdependencies between physical and socio-economical components.</p></li>
+<li><p><strong>Add Datasets to Simulate High-Resolution Damages and losses in Transportation Networks</strong> (1.3.5.3): Expansion of the <a class="reference external" href="https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary">SimCenter Damage and Loss Model Library</a> to detailed transportation infrastructure damage and loss models.</p></li>
+<li><p><strong>Develop and implement metrics and their visualization to inform recovery and community resilience</strong> (1.4.3.2): Development of new metrics and visualization tools to support recovery planning and community resilience assessment.</p></li>
 </ol>
 </div>
 <div class="section" id="sept-2025">
 <h2>Sept 2025<a class="headerlink" href="#sept-2025" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Multi-fidelity models in regional simulations (1.3.3.1)</p></li>
-<li><p>Multi-scale models for wind and water (1.3.3.2)</p></li>
+<li><p><strong>Multi-Fidelity Models in Regional Simulations</strong> (1.3.3.1): Introduction of multi-fidelity modeling approaches for enhanced regional simulation capability.</p></li>
+<li><p><strong>Multi-Scale Models for Wind and Water</strong> (1.3.3.2): Development of multi-scale modeling capabilities for wind and water hazard assessment.</p></li>
 </ol>
-<blockquote>
-<div><div class="admonition note">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The numbers in parentheses are for internal tracking purposes.</p>
+<p>The numbers in parentheses are internal tracking identifiers.</p>
 </div>
-</div></blockquote>
 </div>
 </div>
 

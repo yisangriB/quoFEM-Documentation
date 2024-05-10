@@ -158,8 +158,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -240,15 +241,15 @@
 </div>
 <div class="section" id="dakota-engine">
 <h3><span class="section-number">3.3.1.1. </span>Dakota Engine<a class="headerlink" href="#dakota-engine" title="Permalink to this heading">¶</a></h3>
-<p>The following six distribution classes are supported for Dakota engine.</p>
+<p>The following six distribution classes are supported for the Dakota UQ engine.</p>
 <ol class="arabic">
 <li><p><a class="reference external" href="https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-normal_uncertain.html">Normal (Gaussian)</a></p>
-<p>User provides the mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) of the normal distribution. The density function of the normal distribution, as a function of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is:</p>
+<p>The user provides the mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) of the normal distribution. The density function of the normal distribution, as a function of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-0">
 <span class="eqno">(3.3.1.1.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-0" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{1}{\sqrt{2 \pi} \sigma} \exp \left( -{\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2} \right)\]</div>
 </li>
 <li><p><a class="reference external" href="https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-lognormal_uncertain.html">Lognormal</a></p>
-<p>User provides the mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) of the lognormal distribution. The density function of the lognormal distribution, as a function of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is:</p>
+<p>The user provides the mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) of the lognormal distribution. The density function of the lognormal distribution, as a function of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-1">
 <span class="eqno">(3.3.1.1.2)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-1" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} \exp \left( -{\frac{1}{2} \left( \frac{\ln x - \lambda}{\zeta} \right)^2} \right)\]</div>
 </li>
@@ -258,30 +259,30 @@
 </div></blockquote>
 <ol class="arabic" start="3">
 <li><p><a class="reference external" href="https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-beta_uncertain.html">Beta</a></p>
-<p>User provides <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, lower bound (<span class="math notranslate nohighlight">\(L_B\)</span>), and an upper bound (<span class="math notranslate nohighlight">\(U_B\)</span>) for the beta distribution. The density function of the normal distribution, as a function of these quantities is:</p>
+<p>The user provides <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, lower bound (<span class="math notranslate nohighlight">\(L_B\)</span>), and an upper bound (<span class="math notranslate nohighlight">\(U_B\)</span>) for the beta distribution. The density function of the normal distribution, as a function of these quantities, is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-2">
 <span class="eqno">(3.3.1.1.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-2" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \frac{(x - L_B)^{\alpha-1}(U_B-x)^{\beta-1}}{(U_B - L_B)^{\alpha + \beta - 1}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma(\alpha)\)</span> is the <a class="reference external" href="http://mathworld.wolfram.com/GammaFunction.html">Gamma function</a>.</p>
 </li>
 <li><p><a class="reference external" href="https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-uniform_uncertain.html">Uniform</a></p>
-<p>User provides the lower bound (<span class="math notranslate nohighlight">\(L_B\)</span>), and an upper bound (<span class="math notranslate nohighlight">\(U_B\)</span>) for the uniform distribution. The density function of the normal distribution, as a function of these quantities is:</p>
+<p>The user provides the lower bound (<span class="math notranslate nohighlight">\(L_B\)</span>), and an upper bound (<span class="math notranslate nohighlight">\(U_B\)</span>) for the uniform distribution. The density function of the normal distribution, as a function of these quantities, is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-3">
 <span class="eqno">(3.3.1.1.4)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-3" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{1.0}{(U_B - L_B)}\]</div>
 <p>The mean of the distribution is <span class="math notranslate nohighlight">\(\frac{(U_B + L_B)}{2.0}\)</span></p>
 </li>
 <li><p><a class="reference external" href="https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-weibull_uncertain.html?highlight=weibull">Weibull</a></p>
-<p>User provides shape parameter (<span class="math notranslate nohighlight">\(k\)</span>) and scale parameter (<span class="math notranslate nohighlight">\(a_n\)</span>)  for the Weibull distribution. The density function of the Weibull distribution, as a function of these quantities is:</p>
+<p>The user provides the shape parameter (<span class="math notranslate nohighlight">\(k\)</span>) and scale parameter (<span class="math notranslate nohighlight">\(a_n\)</span>) for the Weibull distribution. The density function of the Weibull distribution, as a function of these quantities, is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-4">
 <span class="eqno">(3.3.1.1.5)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-4" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{k}{a_n}\left(\frac{x}{a_n}\right)^{k-1} \exp \left( -(x/a_n)^{k} \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(k,a_n &gt; 0\)</span> and <span class="math notranslate nohighlight">\(x \geq 0\)</span>. For <span class="math notranslate nohighlight">\(x&lt;0\)</span>, <span class="math notranslate nohighlight">\(f(x) = 0\)</span>.</p>
 </li>
 <li><p><a class="reference external" href="https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-gumbel_uncertain.html">Gumbel</a></p>
-<p>User provides <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> for the Gumbel distribution, where <span class="math notranslate nohighlight">\(\beta\)</span> is known as the <strong>location parameter</strong> and <span class="math notranslate nohighlight">\(\frac{1}{\alpha}\)</span> the <strong>scale parameter</strong>. The density function of the Gumbel distribution, as a function of these quantities is:</p>
+<p>The user provides <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> for the Gumbel distribution, where <span class="math notranslate nohighlight">\(\beta\)</span> is known as the <strong>location parameter</strong> and <span class="math notranslate nohighlight">\(\frac{1}{\alpha}\)</span> the <strong>scale parameter</strong>. The density function of the Gumbel distribution, as a function of these quantities, is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-5">
 <span class="eqno">(3.3.1.1.6)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-5" title="Permalink to this equation">¶</a></span>\[f(x) = \alpha e^{-\alpha(x-\beta)} \exp(-e^{-\alpha(x-\beta)})\]</div>
 </li>
 </ol>
-<p>For each random variable, the user must enter a name and select from the pull down menu the distribution associated with the random variable. For the distribution selected, the user must then provide the input arguments, which are as described above. <a class="reference internal" href="#figrv"><span class="std std-numref">Fig. 3.3.1.1.1</span></a> shows the panel for a problem with four Random Variables with all random input following Gaussian distributions.</p>
+<p>For each random variable, the user must enter a name and select from the drop-down menu the distribution associated with the random variable. For the distribution selected, the user must then provide the input arguments, which are as described above. <a class="reference internal" href="#figrv"><span class="std std-numref">Fig. 3.3.1.1.1</span></a> shows the panel for a problem with four Random Variables with all random input following Gaussian distributions.</p>
 <div class="align-center figure" id="id2">
 <span id="figrv"></span><img alt="../../../../_images/rv.png" src="../../../../_images/rv.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3.1.1.1 </span><span class="caption-text">Random variable specification.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -296,7 +297,7 @@
 </div>
 <div class="align-center figure" id="id3">
 <a class="reference internal image-reference" href="../../../../_images/rvplot.png"><img alt="../../../../_images/rvplot.png" src="../../../../_images/rvplot.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.3.1.1.2 </span><span class="caption-text">Various distributions offered by the quoFEM app .</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.1.1.2 </span><span class="caption-text">Distributions offered by the quoFEM app.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -315,15 +316,15 @@
 <p>Five additional distributions are supported in the SimCenter UQ engine. The users can define distributions either by <strong>Parameters</strong>, <strong>Moments</strong> or <strong>Dataset</strong>. (<strong>Note</strong>: Nataf transform module developed by <a class="reference internal" href="#era19" id="id1"><span>[ERA19]</span></a> is adopted)</p>
 <ol class="arabic">
 <li><p>Exponential</p>
-<p>User provides the parameter (<span class="math notranslate nohighlight">\(\lambda\)</span>) of the exponential distribution. The density function of the exponential distribution, as a function of <span class="math notranslate nohighlight">\(\lambda\)</span> is:</p>
+<p>The user provides the parameter (<span class="math notranslate nohighlight">\(\lambda\)</span>) of the exponential distribution. The density function of the exponential distribution, as a function of <span class="math notranslate nohighlight">\(\lambda\)</span>, is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-6">
 <span class="eqno">(3.3.1.2.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-6" title="Permalink to this equation">¶</a></span>\[f(x) = \lambda \exp(-\lambda x)\]</div>
-<p>where <span class="math notranslate nohighlight">\(x&gt;0\)</span> and <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>. User can alternatively provide the <strong>mean</strong> (<span class="math notranslate nohighlight">\(m\)</span>) of the exponential distribution.</p>
+<p>where <span class="math notranslate nohighlight">\(x&gt;0\)</span> and <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>. The user can alternatively provide the <strong>mean</strong> (<span class="math notranslate nohighlight">\(m\)</span>) of the exponential distribution.</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-7">
 <span class="eqno">(3.3.1.2.2)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-7" title="Permalink to this equation">¶</a></span>\[m = \frac{1}{\lambda}\]</div>
 </li>
 <li><p>Discrete</p>
-<p>User provides the <span class="math notranslate nohighlight">\(N\)</span> discrete values (<span class="math notranslate nohighlight">\(x_i\)</span>) and their weights (probability <span class="math notranslate nohighlight">\(p_i\)</span>) for a multinomial distribution. The probability mass function of the discrete distribution is:</p>
+<p>The user provides the <span class="math notranslate nohighlight">\(N\)</span> discrete values (<span class="math notranslate nohighlight">\(x_i\)</span>) and their weights (probability <span class="math notranslate nohighlight">\(p_i\)</span>) for a multinomial distribution. The probability mass function of the discrete distribution is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-8">
 <span class="eqno">(3.3.1.2.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-8" title="Permalink to this equation">¶</a></span>\[\begin{split}p(x)=\begin{cases}
         p_i, &amp; \text{if $x=x_i$}\\
@@ -332,30 +333,30 @@
 <p>where <span class="math notranslate nohighlight">\(p_i&gt;0\)</span>. The weights (<span class="math notranslate nohighlight">\(p_i\)</span>) will be automatically normalized if they do not sum up to one. The option to define by moments is not supported for the discrete distribution.</p>
 </li>
 <li><p>Gamma</p>
-<p>User provides the shape parameter (<span class="math notranslate nohighlight">\(k\)</span>) and scale parameter (<span class="math notranslate nohighlight">\(\lambda\)</span>) of the Gamma distribution. The density function of the Gamma distribution, as a function of <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> is:</p>
+<p>The user provides the shape parameter (<span class="math notranslate nohighlight">\(k\)</span>) and scale parameter (<span class="math notranslate nohighlight">\(\lambda\)</span>) of the Gamma distribution. The density function of the Gamma distribution, as a function of <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span>, is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-9">
 <span class="eqno">(3.3.1.2.4)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-9" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{\lambda^kx^{k-1}\exp(-\lambda x)}{\Gamma(k)}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> and <span class="math notranslate nohighlight">\(k&gt;0\)</span>. User can alternatively provide the <strong>mean</strong> (<span class="math notranslate nohighlight">\(m\)</span>) and <strong>standard deviation</strong> (<span class="math notranslate nohighlight">\(\sigma\)</span>) .</p>
+<p>where <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> and <span class="math notranslate nohighlight">\(k&gt;0\)</span>. Users can alternatively provide the <strong>mean</strong> (<span class="math notranslate nohighlight">\(m\)</span>) and <strong>standard deviation</strong> (<span class="math notranslate nohighlight">\(\sigma\)</span>).</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-10">
 <span class="eqno">(3.3.1.2.5)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-10" title="Permalink to this equation">¶</a></span>\[\begin{split}m &amp;= \frac{k}{\lambda} \\
 \sigma &amp;= \sqrt{\frac{k}{\lambda^2}}\end{split}\]</div>
 </li>
 <li><p>Chi-squared</p>
-<p>User provides the parameter <span class="math notranslate nohighlight">\(k\)</span> of the Chi-squared distribution. The density function of the Chi-squared distribution, as a function of <span class="math notranslate nohighlight">\(k\)</span> is</p>
+<p>The user provides the parameter <span class="math notranslate nohighlight">\(k\)</span> of the Chi-squared distribution. The density function of the Chi-squared distribution, as a function of <span class="math notranslate nohighlight">\(k\)</span>, is</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-11">
 <span class="eqno">(3.3.1.2.6)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-11" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{1}{2^{\frac{k}{2}}\Gamma\left(\frac{k}{2}\right)}x^{\left(\frac{k}{2}-1\right)} \exp\left(-\frac{x}{2}\right)\]</div>
-<p>where <span class="math notranslate nohighlight">\(x&gt;0\)</span> and <span class="math notranslate nohighlight">\(k\)</span> is a natural number. User can alternatively select the moment option where the <strong>mean</strong> (<span class="math notranslate nohighlight">\(m\)</span>) is</p>
+<p>where <span class="math notranslate nohighlight">\(x&gt;0\)</span> and <span class="math notranslate nohighlight">\(k\)</span> is a natural number. Users can alternatively select the moment option where the <strong>mean</strong> (<span class="math notranslate nohighlight">\(m\)</span>) is</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-12">
 <span class="eqno">(3.3.1.2.7)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-12" title="Permalink to this equation">¶</a></span>\[m = k\]</div>
 </li>
 <li><p>Truncated exponential</p>
-<p>User provides the parameter <span class="math notranslate nohighlight">\(k\)</span> and bounds <span class="math notranslate nohighlight">\(L_B\)</span> and <span class="math notranslate nohighlight">\(U_B\)</span> for the truncated exponential distribution. The density function of the truncated exponential distribution, as a function is</p>
+<p>The user provides the parameter <span class="math notranslate nohighlight">\(k\)</span> and bounds <span class="math notranslate nohighlight">\(L_B\)</span> and <span class="math notranslate nohighlight">\(U_B\)</span> for the truncated exponential distribution. The density function of the truncated exponential distribution is</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-13">
 <span class="eqno">(3.3.1.2.8)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-13" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{\lambda}{c} \exp(-\lambda x), \text{  where $L_B&lt;x&lt;U_B$}\]</div>
 <p>where <span class="math notranslate nohighlight">\(c\)</span> is a normalization constant, i.e.</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-14">
 <span class="eqno">(3.3.1.2.9)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-14" title="Permalink to this equation">¶</a></span>\[c = \int_{L_B}^{U_B} \lambda\exp(-\lambda x) dx\]</div>
-<p>where <span class="math notranslate nohighlight">\(x&gt;0\)</span> and <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>. User can alternatively provide the <strong>mean</strong> of the distribution along with the <strong>truncated bounds</strong>.</p>
+<p>where <span class="math notranslate nohighlight">\(x&gt;0\)</span> and <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>. Users can alternatively provide the <strong>mean</strong> of the distribution along with the <strong>truncated bounds</strong>.</p>
 <div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../_images/rv5.png"><img alt="../../../../_images/rv5.png" src="../../../../_images/rv5.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.3.1.2.1 </span><span class="caption-text">Extended random variable specification</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
@@ -363,15 +364,15 @@
 </li>
 </ol>
 <p><strong>Input Type - Dataset</strong></p>
-<p>User can also define the random variables by providing sample realization data set as shown in the below figure, by selecting <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> input type. The data will be fitted to the specified probability distribution model. Note that for some of the bounded distributions, such as beta and truncated exponential, the bounds should additionally be provided through the user interface.</p>
+<p>Users can also define the random variables by providing a sample realization data set as shown in the below figure, by selecting the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> input type. The data will be fitted to the specified probability distribution model. Note that for some bounded distributions, such as beta and truncated exponential, the bounds should additionally be provided through the user interface.</p>
 <div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../_images/rv3.png"><img alt="../../../../_images/rv3.png" src="../../../../_images/rv3.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.3.1.2.2 </span><span class="caption-text">Example of input dataset file</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.1.2.2 </span><span class="caption-text">Example of the input dataset file</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>Clicking the <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">PDF</span></code> or <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">PMF</span></code> button will display probability distribution (or mass) function of each random variable with the specified parameters/moments. If the PDF or PMF is not displayed, we recommend the users to double-check the parameters/moments if they are in a valid range. The plotting button is not activated for the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> input type.</p></li>
+<li><p>Clicking the <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">PDF</span></code> or <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">PMF</span></code> button will display the probability distribution (or mass) function of each random variable with the specified parameters/moments. If the PDF or PMF is not displayed, we recommend the users double-check if the parameters/moments are in a valid range. The plotting button is not activated for the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> input type.</p></li>
 </ul>
 </div>
 <dl class="citation">
@@ -391,23 +392,23 @@
 <p>When the <strong>User defined vector</strong> option is chosen, in addition to the path to the script file, the user must also enter the number of components in the random vector.</p>
 <div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../_images/userDefinedDists.png"><img alt="../../../../_images/userDefinedDists.png" src="../../../../_images/userDefinedDists.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.3.1.4.1 </span><span class="caption-text">Specifying user-defined distributions under CustomUQ engine</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.1.4.1 </span><span class="caption-text">Specifying user-defined distributions under the CustomUQ engine</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="correlation-matrix">
 <h2><span class="section-number">3.3.2. </span>Correlation matrix<a class="headerlink" href="#correlation-matrix" title="Permalink to this heading">¶</a></h2>
-<p>Correlation coefficients between each variable can be defined by clicking the <code class="docutils literal notranslate"><span class="pre">Correlation</span> <span class="pre">Matrix</span></code> button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified.</p>
+<p>Correlation coefficients between each variable can be defined by clicking the <code class="docutils literal notranslate"><span class="pre">Correlation</span> <span class="pre">Matrix</span></code> button. Default correlations between variables are set to zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified.</p>
 <div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../_images/rv4.png"><img alt="../../../../_images/rv4.png" src="../../../../_images/rv4.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.3.2.1 </span><span class="caption-text">Example of a valid correlation matrix</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
-<p>Once the <code class="docutils literal notranslate"><span class="pre">OK</span></code> button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not <strong>positive definite</strong>, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.</p>
+<p>Once the <code class="docutils literal notranslate"><span class="pre">OK</span></code> button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not <strong>positive definite</strong>, an error message will be displayed and the window will not be closed. In such a case, the user should adjust the correlation coefficients to be positive definite.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>When <code class="docutils literal notranslate"><span class="pre">constant</span></code> variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored.</p></li>
-<li><p>When more than one random variable is provided as <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>, correlations between the data pairs will not be incorporated automatically. If correlations exist, user can define them manually at the correlation matrix window.</p></li>
+<li><p>When a <code class="docutils literal notranslate"><span class="pre">constant</span></code> variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored.</p></li>
+<li><p>When more than one random variable is provided as <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>, correlations between the data pairs will not be incorporated automatically. If correlations exist, the user can define them manually at the correlation matrix window.</p></li>
 </ul>
 </div>
 <div class="admonition warning">

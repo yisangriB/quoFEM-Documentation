@@ -138,8 +138,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -209,7 +210,7 @@
             
   <div class="section" id="mcmc-verification-example-2">
 <span id="lblmcmcverification"></span><h1>MCMC verification example 2<a class="headerlink" href="#mcmc-verification-example-2" title="Permalink to this heading">¶</a></h1>
-<p>This is an example taken from <a class="reference internal" href="#angelikopoulos2015" id="id1"><span>[Angelikopoulos2015]</span></a> , and tests the sampling algorithm’s ability to identify the globally important regions of the parameter space to draw samples from. In the example presented, the target posterior probability distribution is a two-dimensional multimodal distribution, which is formed as described next.</p>
+<p>This is an example taken from <a class="reference internal" href="#angelikopoulos2015" id="id1"><span>[Angelikopoulos2015]</span></a>, and tests the sampling algorithm’s ability to identify the globally important regions of the parameter space to draw samples from. In the example presented, the target posterior probability distribution is a two-dimensional multimodal distribution, which is formed as described next.</p>
 <p>Let <span class="math notranslate nohighlight">\(J(x_1, x_2)\)</span> be the multimodal Himmelblau function which is given by:</p>
 <div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-desktop-quofem-multimodal-multimodal-0">
 <span class="eqno">()<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-quofem-multimodal-multimodal-0" title="Permalink to this equation">¶</a></span>\[J(x_1, x_2) = (x_1^2 + x_2 - 11)^2 + (x_1 + x_2^2 - 7)^2\]</div>
@@ -223,7 +224,7 @@
 <p>The function has four global minima, denoted here as <span class="math notranslate nohighlight">\(\hat{x}_i, i = 1 \ldots 4\)</span>, located at the points <span class="math notranslate nohighlight">\(\hat{x}_1 = (3.0, 2.0)\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_2 = (-2.81, 3.13)\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_3 = (-3.78, -3.28)\)</span>, and <span class="math notranslate nohighlight">\(\hat{x}_4 = (3.58, -1.85)\)</span>. The mean of the multimodal posterior distribution is evaluated to be <span class="math notranslate nohighlight">\(\bar{x} = (0.95, 0.31)\)</span>.</p>
 <div class="section" id="files-required">
 <h2>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h2>
-<p>The exercise requires two script files - an OpenSees script file which writes the samples values to a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code>, and a Python script file which post-processes the samples and computes the log-likelihood. The user should download these file and place it in a <em>new</em> folder. The post-processing script calculates the log-likelihood that the input values of the story stiffness produced the set of measurement data.</p>
+<p>The exercise requires two script files - an OpenSees script file which writes the samples values to a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code>, and a Python script file which post-processes the samples and computes the log-likelihood. The user should download these files and place them in a <em>new</em> folder. The post-processing script calculates the log-likelihood that the input values of the story stiffness produced the set of measurement data.</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">multimodalModel.tcl</span></code></p></li>
 </ol>
@@ -262,7 +263,7 @@
 <h2>Solving the problem using the TMCMC algorithm in quoFEM<a class="headerlink" href="#solving-the-problem-using-the-tmcmc-algorithm-in-quofem" title="Permalink to this heading">¶</a></h2>
 <p>The steps involved are as follows:</p>
 <ol class="arabic simple">
-<li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Engine</strong> drop down menu, select the <strong>UCSD_UQ</strong> engine. In the <strong>Method</strong> category drop down menu the <strong>Transitional Markov chain Monte Carlo</strong> option will be highlighted. In the <strong>Log Likelihood Script</strong> field, enter the path to the script which computes the log-likelihood (i.e., the file called <code class="docutils literal notranslate"><span class="pre">logLike.py</span></code> in this example), or select <strong>Choose</strong> and navigate to the file. Enter the number of samples desired to be drawn from the posterior distribution in the <strong># Samples</strong> field.</p></li>
+<li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Engine</strong> drop-down menu, select the <strong>UCSD_UQ</strong> engine. In the <strong>Method</strong> category drop-down menu the <strong>Transitional Markov chain Monte Carlo</strong> option will be highlighted. In the <strong>Log Likelihood Script</strong> field, enter the path to the script that computes the log-likelihood (i.e., the file called <code class="docutils literal notranslate"><span class="pre">logLike.py</span></code> in this example), or select <strong>Choose</strong> and navigate to the file. Enter the number of samples desired to be drawn from the posterior distribution in the <strong># Samples</strong> field.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../../_images/MCMCExample-UQ1.png" src="../../../../../../_images/MCMCExample-UQ1.png" />
@@ -274,9 +275,9 @@
 <img alt="../../../../../../_images/MCMCExample-FEM1.png" src="../../../../../../_images/MCMCExample-FEM1.png" />
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Next select the <strong>RV</strong> tab from the input panel. This panel should be pre-populated with two random variables named <code class="docutils literal notranslate"><span class="pre">p1</span></code> snd <code class="docutils literal notranslate"><span class="pre">p2</span></code>. If not, press the <strong>Add</strong> button twice to create two fields to define the input random variables. Enter the same variable names (<code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code>), as required in the <code class="docutils literal notranslate"><span class="pre">model.tcl</span></code> script.</p></li>
+<li><p>Next select the <strong>RV</strong> tab from the input panel. This panel should be pre-populated with two random variables named <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code>. If not, press the <strong>Add</strong> button twice to create two fields to define the input random variables. Enter the same variable names (<code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code>), as required in the <code class="docutils literal notranslate"><span class="pre">model.tcl</span></code> script.</p></li>
 </ol>
-<p>For each variable, specify the prior probability distribution - from the <strong>Distribution</strong> drop down menu, select <strong>Uniform</strong> and then provide the lower bounds and upper bounds shown in the figure below.</p>
+<p>For each variable, specify the prior probability distribution - from the <strong>Distribution</strong> drop-down menu, select <strong>Uniform</strong> and then provide the lower bounds and upper bounds shown in the figure below.</p>
 <div class="align-center figure">
 <img alt="../../../../../../_images/MCMCExample-RV1.png" src="../../../../../../_images/MCMCExample-RV1.png" />
 </div>
@@ -288,12 +289,12 @@
 <img alt="../../../../../../_images/MCMCExample-RES-Summary1.png" src="../../../../../../_images/MCMCExample-RES-Summary1.png" />
 </div>
 <p>If the user selects the <strong>Data Values</strong> tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data.</p>
-<p>Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data.</p>
+<p>Various views of the graphical display can be obtained by left- and right-clicking in the columns of the tabular data.</p>
 <div class="align-center figure">
 <img alt="../../../../../../_images/MCMCExample-RES-DataValues21.png" src="../../../../../../_images/MCMCExample-RES-DataValues21.png" />
 </div>
 <p>Pressing the <strong>Save Data</strong> button will allow the user to export the data shown in the spreadsheet as a <strong>csv</strong> file. This data is then used to obtain the following two plots which show a kernel density estimate of the posterior probability distribution obtained from the samples using the TMCMC algorithm, superposed on a contour plot of the target posterior probability distribution.</p>
-<p>In this plot, a uniform prior probability distribution is used, with bounds from 0 to 50 for both the parameters.</p>
+<p>In this plot, a uniform prior probability distribution is used, with bounds from 0 to 50 for both parameters.</p>
 <div class="align-center figure">
 <img alt="../../../../../../_images/posteriorSamplesMultimodal.png" src="../../../../../../_images/posteriorSamplesMultimodal.png" />
 </div>

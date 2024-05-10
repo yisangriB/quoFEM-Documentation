@@ -51,7 +51,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.1.4.2. Calibration of Hierarchical Model" href="UCSD_UQ_Hierarchical.html" />
-    <link rel="prev" title="3.1.3.4. Probabilistic Learning on Manifolds (PLoM)" href="SimCenterUQPLoM.html" />
+    <link rel="prev" title="3.1.3.5. Multi-fidelity Monte Carlo" href="SimCenterUQMF.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -159,8 +159,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -329,7 +330,7 @@ The <code class="docutils literal notranslate"><span class="pre">log_likelihood<
 <p>By default, quoFEM assumes a block-diagonal error covariance structure. An example of the block-diagonal covariance structure is shown in <a class="reference internal" href="#figdefaultcovariancestructure"><span class="std std-numref">Fig. 3.1.4.1.2</span></a>. In this figure, the number of experiments is denoted as <span class="math notranslate nohighlight">\(N_{exp}\)</span>. The number of response quantities of interest is denoted as <span class="math notranslate nohighlight">\(N_{q}\)</span>, and <span class="math notranslate nohighlight">\(q_1, q_2, ..., q5\)</span> are the names of the quantities of interest in this example (these will be defined in the <strong>QoI</strong> panel when using quoFEM). Of these, <span class="math notranslate nohighlight">\(q_1\)</span> and <span class="math notranslate nohighlight">\(q_2\)</span> are scalar response quantities (i.e., they have a length of 1), while <span class="math notranslate nohighlight">\(q_3\)</span> ,:math:<cite>q_4</cite>, and <span class="math notranslate nohighlight">\(q_5\)</span> are response quantities whose length &gt; 1 (referred to as vector/field quantities). The length of each of the <span class="math notranslate nohighlight">\(N_q\)</span> quantities of interest is denoted by <span class="math notranslate nohighlight">\(l_i\)</span>. So, <span class="math notranslate nohighlight">\(N\)</span>, the total number of calibration data terms, which is the same as the total number of terms in the <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file output from the model, and is also equal to the total number of error/residual terms, is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqncalibrationterms">
 <span class="eqno">(3.1.4.1.1)<a class="headerlink" href="#equation-eqncalibrationterms" title="Permalink to this equation">¶</a></span>\[N = N_{exp} \times \sum_{i=1}^{N_q} l_i\]</div>
-<p>Note that quoFEM requires that the calibration data be provided in a text file separate from the script where the model is defined. In this text file, the number of rows corresponds to the number of experiment <span class="math notranslate nohighlight">\(N_{exp}\)</span>, and the number of terms in each row (i.e., the number of columns) is equal to <span class="math notranslate nohighlight">\(\sum_{i=1}^{N_q} l_i\)</span>. Hence, the total number of calibration terms <span class="math notranslate nohighlight">\(N\)</span> is equal to the product of the number of rows and number of columns in the calibration data file.</p>
+<p>Note that quoFEM requires that the calibration data be provided in a text file separate from the script where the model is defined. In this text file, the number of rows corresponds to the number of experiments <span class="math notranslate nohighlight">\(N_{exp}\)</span>, and the number of terms in each row (i.e., the number of columns) is equal to <span class="math notranslate nohighlight">\(\sum_{i=1}^{N_q} l_i\)</span>. Hence, the total number of calibration terms <span class="math notranslate nohighlight">\(N\)</span> is equal to the product of the number of rows and number of columns in the calibration data file.</p>
 <p>The error-covariance matrix is a block-diagonal square matrix of size <span class="math notranslate nohighlight">\(N \times N\)</span>. There are <span class="math notranslate nohighlight">\(N_{exp} \times N_q\)</span> blocks on the diagonal. For each of these blocks, if it corresponds to a scalar response quantity, then a scalar variance value is used by default else, a scalar matrix (i.e., an identity matrix of size <span class="math notranslate nohighlight">\(l_i \times l_i\)</span> multiplied by a scalar value) is used by default.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

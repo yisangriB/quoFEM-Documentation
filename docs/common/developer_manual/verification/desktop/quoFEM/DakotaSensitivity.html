@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.2. Global Sensitivity Analysis (Dakota) &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>4.2. Global Sensitivity Analysis (Dakota) &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4. Coding Style" href="../../../coding_style/desktop/coding_style.html" />
-    <link rel="prev" title="3.1. Interpoint Distances" href="InterpointDistances.html" />
+    <link rel="next" title="5. Coding Style" href="../../../coding_style/desktop/coding_style.html" />
+    <link rel="prev" title="4.1. Interpoint Distances" href="InterpointDistances.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -140,12 +140,13 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">3. Verification</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="InterpointDistances.html">3.1. Interpoint Distances</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Global Sensitivity Analysis (Dakota)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">4. Verification</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="InterpointDistances.html">4.1. Interpoint Distances</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Global Sensitivity Analysis (Dakota)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -194,9 +195,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../verification.html"><span class="section-number">3. </span>Verification</a> &raquo;</li>
+          <li><a href="../verification.html"><span class="section-number">4. </span>Verification</a> &raquo;</li>
         
-      <li><span class="section-number">3.2. </span>Global Sensitivity Analysis (Dakota)</li>
+      <li><span class="section-number">4.2. </span>Global Sensitivity Analysis (Dakota)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -216,15 +217,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="global-sensitivity-analysis-dakota">
-<span id="lbldakotasensitivityveri"></span><h1><span class="section-number">3.2. </span>Global Sensitivity Analysis (Dakota)<a class="headerlink" href="#global-sensitivity-analysis-dakota" title="Permalink to this heading">¶</a></h1>
+<span id="lbldakotasensitivityveri"></span><h1><span class="section-number">4.2. </span>Global Sensitivity Analysis (Dakota)<a class="headerlink" href="#global-sensitivity-analysis-dakota" title="Permalink to this heading">¶</a></h1>
 <p>Global Sensitivity Analysis in Dakota Engine is based on Eqs. (8) and (9) of <a class="reference internal" href="../../../../user_manual/usage/desktop/DakotaSensitivity.html#weirs12" id="id1"><span>[Weirs12]</span></a>. Using the raw analysis samples shown in “RES” tab - “Data Values” tab after running a sensitivity analysis, one can reproduce the sensitivity indices as follows.</p>
-<p>According to <a class="reference internal" href="../../../../user_manual/usage/desktop/DakotaSensitivity.html#weirs12" id="id2"><span>[Weirs12]</span></a>, the main and total Sobol indices of  <span class="math notranslate nohighlight">\(i\)</span>-th random variable for a quantity of interest (QoI) are computed by</p>
+<p>According to <a class="reference internal" href="../../../../user_manual/usage/desktop/DakotaSensitivity.html#weirs12" id="id2"><span>[Weirs12]</span></a>, the main and total Sobol indices of <span class="math notranslate nohighlight">\(i\)</span>-th random variable for a quantity of interest (QoI) are computed by</p>
 <div class="math notranslate nohighlight" id="equation-si">
-<span class="eqno">(3.2.1)<a class="headerlink" href="#equation-si" title="Permalink to this equation">¶</a></span>\[S_i=\frac{\frac{1}{n}\sum^n_{j=1} f(\boldsymbol{A})_j (  f(\boldsymbol{B_A}^{(i)})_j - f(\boldsymbol{B})_j ) }{ \frac{1}{2n}\sum^{2n}_{j=1} f(\boldsymbol{C})_j f(\boldsymbol{C})_j  - &lt;f(\boldsymbol{C})&gt;^2}\]</div>
+<span class="eqno">(4.2.1)<a class="headerlink" href="#equation-si" title="Permalink to this equation">¶</a></span>\[S_i=\frac{\frac{1}{n}\sum^n_{j=1} f(\boldsymbol{A})_j (  f(\boldsymbol{B_A}^{(i)})_j - f(\boldsymbol{B})_j ) }{ \frac{1}{2n}\sum^{2n}_{j=1} f(\boldsymbol{C})_j f(\boldsymbol{C})_j  - &lt;f(\boldsymbol{C})&gt;^2}\]</div>
 <div class="math notranslate nohighlight" id="equation-sti">
-<span class="eqno">(3.2.2)<a class="headerlink" href="#equation-sti" title="Permalink to this equation">¶</a></span>\[S^T_i=\frac{\frac{1}{2n}\sum^n_{j=1} (  f(\boldsymbol{B})_j - f(\boldsymbol{B_A}^{(i)})_j )^2 }{ \frac{1}{2n}\sum^{2n}_{j=1} f(\boldsymbol{C})_j f(\boldsymbol{C})_j  - &lt;f(\boldsymbol{C})&gt;^2}\]</div>
-<p>See <a class="reference internal" href="../../../../user_manual/usage/desktop/DakotaSensitivity.html#weirs12" id="id3"><span>[Weirs12]</span></a> for notation details. Note that, the second formulation looks slightly different from Eq. (9) of the original paper, becuase <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> is switched with <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span>. This is to reuse <span class="math notranslate nohighlight">\(f(\boldsymbol{B_A}^{(i)})\)</span> in main index for computing the total index.</p>
-<p>To reproduce the main and totol sensitivity indices of <span class="math notranslate nohighlight">\(i\)</span>-th random variable, one can substitute <span class="math notranslate nohighlight">\(n\)</span> with the simulation number specified in the user interface, <span class="math notranslate nohighlight">\(f(\boldsymbol{A})\)</span> with the vector of first <span class="math notranslate nohighlight">\(n\)</span> QoI sample values (sample id from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n\)</span>), <span class="math notranslate nohighlight">\(f(\boldsymbol{B})\)</span> with that of subsequent <span class="math notranslate nohighlight">\(n\)</span> QoI samples (sample id from <span class="math notranslate nohighlight">\(n+1\)</span> to <span class="math notranslate nohighlight">\(2n\)</span>), and <span class="math notranslate nohighlight">\(f(\boldsymbol{B_A}^{(i)})\)</span> with that of sample id from <span class="math notranslate nohighlight">\((i+1)n+1\)</span> to <span class="math notranslate nohighlight">\((i+2)n\)</span>.</p>
+<span class="eqno">(4.2.2)<a class="headerlink" href="#equation-sti" title="Permalink to this equation">¶</a></span>\[S^T_i=\frac{\frac{1}{2n}\sum^n_{j=1} (  f(\boldsymbol{B})_j - f(\boldsymbol{B_A}^{(i)})_j )^2 }{ \frac{1}{2n}\sum^{2n}_{j=1} f(\boldsymbol{C})_j f(\boldsymbol{C})_j  - &lt;f(\boldsymbol{C})&gt;^2}\]</div>
+<p>See <a class="reference internal" href="../../../../user_manual/usage/desktop/DakotaSensitivity.html#weirs12" id="id3"><span>[Weirs12]</span></a> for notation details. Note that, the second formulation looks slightly different from Eq. (9) of the original paper, becuase <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> is switched with <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span>. This is to reuse <span class="math notranslate nohighlight">\(f(\boldsymbol{B_A}^{(i)})\)</span> in the main index for computing the total index.</p>
+<p>To reproduce the main and total sensitivity indices of <span class="math notranslate nohighlight">\(i\)</span>-th random variable, one can substitute <span class="math notranslate nohighlight">\(n\)</span> with the simulation number specified in the user interface, <span class="math notranslate nohighlight">\(f(\boldsymbol{A})\)</span> with the vector of first <span class="math notranslate nohighlight">\(n\)</span> QoI sample values (sample id from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n\)</span>), <span class="math notranslate nohighlight">\(f(\boldsymbol{B})\)</span> with that of subsequent <span class="math notranslate nohighlight">\(n\)</span> QoI samples (sample id from <span class="math notranslate nohighlight">\(n+1\)</span> to <span class="math notranslate nohighlight">\(2n\)</span>), and <span class="math notranslate nohighlight">\(f(\boldsymbol{B_A}^{(i)})\)</span> with that of sample id from <span class="math notranslate nohighlight">\((i+1)n+1\)</span> to <span class="math notranslate nohighlight">\((i+2)n\)</span>.</p>
 <dl class="citation">
 <dt class="label" id="weirs12"><span class="brackets">Weirs12</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>
 <dd><ol class="upperalpha simple" start="22">

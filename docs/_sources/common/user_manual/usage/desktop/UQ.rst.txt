@@ -3,7 +3,7 @@
 UQ: Uncertainty Quantification
 ==============================
 
-The first selection panel the user must select from and enter data into is the **UQ** tab. It is in this panel that the user selects the **UQ Engine** to use for performing the uncertainty quantification calculations. The **UQ Engine** provides algorithms for solving various types of uncertainty analysis and optimization problems. 
+The **UQ** tab is the panel where users select the **UQ Engine** for uncertainty quantification calculations. The **UQ Engine** encompasses algorithms for various uncertainty analysis and optimization problems.
 
 .. role:: uqblue
 
@@ -147,9 +147,8 @@ The first selection panel the user must select from and enter data into is the *
 
 
 .. only:: notQuoFEM
-     
-   The **UQ Engine** options currently available are Dakota and SimCenterUQ
 
+   The **UQ Engine** options currently available are Dakota and SimCenterUQ.
 
 Dakota UQ Engine
 ----------------
@@ -175,42 +174,45 @@ The following categories are available:
    :maxdepth: 1
 
    DakotaSampling
-   :EEUQ:DakotaSensitivity
-   :EEUQ:DakotaReliability
-   :Hydro:DakotaSensitivity
-   :Hydro:DakotaReliability    
-   :quoFEM:DakotaSensitivity
-   :quoFEM:DakotaReliability
+   DakotaSensitivity
+   DakotaReliability
    :quoFEM:DakotaDeterministicCalibration
    :quoFEM:DakotaBayesianCalibration
    :quoFEM:DakotaGradientFreeOptimization
 
-.. only:: quoFEM_app or EEUQ_app
+SimCenter UQ Engine
+-------------------
 
-   SimCenter UQ Engine
-   -------------------
+The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:
 
-   The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:
+.. _figSimCenterUQ:
 
-   .. _figSimCenterUQ:
+.. figure:: figures/SimCenterUQ.png
+   :align: center
+   :figclass: align-center
+   :width: 1200
 
-   .. figure:: figures/SimCenterUQ.png
-      :align: center
-      :figclass: align-center
-      :width: 1200
+   SimCenterUQ engine and category selection.
 
-      SimCenterUQ engine and category selection.
+The following category options are available:
 
-   The following category options are available:
+.. toctree-filt::
+   :maxdepth: 1
 
-   .. toctree-filt::
-      :maxdepth: 1
-
-      SimCenterUQSampling
-      SimCenterUQSensitivity
-      SimCenterUQSurrogate
-      SimCenterUQPLoM
-
+   SimCenterUQSampling
+   :quoFEM:SimCenterUQSensitivity
+   :quoFEM:SimCenterUQSurrogate
+   :quoFEM:SimCenterUQPLoM
+   :quoFEM:SimCenterUQMF
+   :EEUQ:SimCenterUQSensitivity
+   :EEUQ:SimCenterUQSurrogate
+   :EEUQ:SimCenterUQPLoM
+   :EEUQ:SimCenterUQMF
+   :WEUQ:SimCenterUQSensitivity
+   :WEUQ:SimCenterUQMF
+   :Hydro:SimCenterUQSensitivity
+   :Hydro:SimCenterUQMF
+   
 .. only:: quoFEM_app
 
    UCSD UQ Engine
