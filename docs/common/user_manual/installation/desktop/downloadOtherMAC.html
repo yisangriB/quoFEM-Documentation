@@ -131,7 +131,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html">2. Methods in SimCenterUQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/UCSDUQTechnical.html">3. Methods in UCSD UQ Engine</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -243,21 +245,15 @@ dated version 2.7. We recommend installing Python 3.7 from <a class="reference e
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><p>To start a terminal window you can use the spotlight app (magnifying glass at the top right corner of the desktop). Start the spotlight app and type in the terminal. The terminal application should appear as the top hit. Click on it to start it.</p></li>
 <li><p>When the quoFEM app is running, open the File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>. If you used older versions of SimCenter tools this was not the default.</p></li>
 <li><p>If you forget to invoke the <strong>UpdateShellProfile.command.sh” script at the end of the installation, you can always edit the correct shell file later to add the **PATH</strong> variable.</p></li>
-</ol>
-</div></blockquote>
-<ol class="arabic simple">
 <li><p>As an alternative, you can install the SimCenter’s pelicun module, which will include all three of the above</p></li>
 </ol>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pelicun</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pelicun</span>
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 </div>
 <div class="section" id="id2">
@@ -268,13 +264,13 @@ area you should now only have a single option, click on the link to download <st
 <div class="section" id="id3">
 <h2>OpenSees<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://opensees.berkeley.edu">OpenSees</a> is the default FEM engine used by the quoFEM app that is publicly available from the <a class="reference external" href="https://opensees.berkeley.edu/OpenSees/user/download.php">OpenSees Download</a> page. To download the <strong>OpenSees</strong> you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by the time you read this). At the bottom of the page under the section <strong>Mac Version</strong> is a table with two links: one for the <strong>OpenSees</strong> and also a link to <strong>Tcl</strong>, whose libraries OpenSees needs on your computer to run. You will need to follow both links to download both applications.</p>
-<dl class="simple">
-<dt>Steps to Install OpenSees on a Mac:</dt><dd><ol class="arabic simple">
+<p>Steps to Install OpenSees on a Mac:</p>
+<blockquote>
+<div><ol class="arabic simple">
 <li><p>Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an <strong>OpenSees-3.2.2</strong> folder. Move that folder to the <strong>bin/OpenSees</strong> folder.</p></li>
 <li><p>Download and run the Tcl installer.</p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The additional requirement of installing <strong>Tcl</strong> was removed from the <strong>OpenSees</strong> installation process with version <strong>3.2.2</strong>.</p>
@@ -301,8 +297,9 @@ export PYTHONPATH=$HOME/bin/dakota-6.10.0/share/dakota/Python
 </div>
 <div class="section" id="test-the-install-of-python-opensees-dakota">
 <h2>Test the Install of Python, OpenSees &amp; Dakota<a class="headerlink" href="#test-the-install-of-python-opensees-dakota" title="Permalink to this heading">¶</a></h2>
-<dl>
-<dt>Steps to Test the Installation of the Applications:</dt><dd><ol class="arabic simple">
+<p>Steps to Test the Installation of the Applications:</p>
+<blockquote>
+<div><ol class="arabic simple">
 <li><p>Open a terminal window (type <code class="docutils literal notranslate"><span class="pre">terminal</span></code> in spotlight search)</p></li>
 <li><p>Type <code class="docutils literal notranslate"><span class="pre">python3</span></code> (this should bring up the Python interpreter)</p></li>
 <li><p>Enter the following to test the installation of the modules and quit the application:</p></li>
@@ -323,8 +320,7 @@ export PYTHONPATH=$HOME/bin/dakota-6.10.0/share/dakota/Python
 <ol class="arabic simple" start="6">
 <li><p>Type <code class="docutils literal notranslate"><span class="pre">dakota</span></code> (this should start the Dakota application which should give some error messages).</p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Apple, in the latest release of their operating system, MacOS 10.16 Catalina, has changed the default working of Gatekeeper. Gatekeeper, first introduced in OS X Mountain Lion, is a Mac security feature that helps protect your Mac from Malware and other malicious software. Gatekeeper checks to make sure the application is safe to run by checking it against the list of apps that Apple has vetted and approved for the Apple Mac Store and/or approved by Apple even if not offered through the app store. In previous versions of MacOS, Gatekeeper had three security level options: App Store, App Store and Identified Developers, and Anywhere. Anywhere has been removed and this will cause problems with Dakota.</p>

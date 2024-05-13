@@ -152,7 +152,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html">2. Methods in SimCenterUQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/UCSDUQTechnical.html">3. Methods in UCSD UQ Engine</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -252,12 +254,8 @@
 <p>The user provides the mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) of the lognormal distribution. The density function of the lognormal distribution, as a function of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-1">
 <span class="eqno">(3.3.1.1.2)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-rv-1" title="Permalink to this equation">¶</a></span>\[f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} \exp \left( -{\frac{1}{2} \left( \frac{\ln x - \lambda}{\zeta} \right)^2} \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)\)</span> and <span class="math notranslate nohighlight">\(\lambda = \ln(\mu) - \frac{\zeta^2}{2}\)</span></p>
 </li>
-</ol>
-<blockquote>
-<div><p>where <span class="math notranslate nohighlight">\(\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)\)</span> and <span class="math notranslate nohighlight">\(\lambda = \ln(\mu) - \frac{\zeta^2}{2}\)</span></p>
-</div></blockquote>
-<ol class="arabic" start="3">
 <li><p><a class="reference external" href="https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-beta_uncertain.html">Beta</a></p>
 <p>The user provides <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, lower bound (<span class="math notranslate nohighlight">\(L_B\)</span>), and an upper bound (<span class="math notranslate nohighlight">\(U_B\)</span>) for the beta distribution. The density function of the normal distribution, as a function of these quantities, is:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-rv-2">

@@ -156,7 +156,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html">2. Methods in SimCenterUQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/UCSDUQTechnical.html">3. Methods in UCSD UQ Engine</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -328,7 +330,7 @@
 <p>The group-wise Sobol indices are useful when the user wants to obtain a sensitivity measure corresponding to a categorical group of input variables, for example, to compare the relative sensitivity between structural parameters and excitation parameters. In particular, when there are non-causal correlations between some random variables or when the user expects interactive contributions of the random variables that are in nature inseparable, one can introduce the group index. The group-wise Sobol index for joint variables <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span> is defined as</p>
 <div class="math notranslate nohighlight" id="equation-groupsij">
 <span class="eqno">(3.1.3.2.1)<a class="headerlink" href="#equation-groupsij" title="Permalink to this equation">¶</a></span>\[S_{ij}^G=\frac{\text{Var}_{x_i,x_j}[\text{E}_{\boldsymbol{x}\sim ij}[y|x_i,x_j]]}{\text{Var}[y]},  \qquad  i,j=1, \cdots ,d\]</div>
-<p>In order to associate more input variables, the set {<span class="math notranslate nohighlight">\(x_i,x_j\)</span>} can be simply replaced by a larger set, e.g. {<span class="math notranslate nohighlight">\(x_i,x_j,x_k\)</span>}. Results of Eq. <a class="reference internal" href="#equation-groupsij">(3.1.3.2.1)</a> can be post-processed to obtain higher-order Sobol indices presented in Eq. <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#equation-sij">(1.2.3)</a>, i.e. it is obtained by subtracting the lower-order interaction terms from the group index.</p>
+<p>In order to associate more input variables, the set {<span class="math notranslate nohighlight">\(x_i,x_j\)</span>} can be simply replaced by a larger set, e.g. {<span class="math notranslate nohighlight">\(x_i,x_j,x_k\)</span>}. Results of Eq. <a class="reference internal" href="#equation-groupsij">(3.1.3.2.1)</a> can be post-processed to obtain higher-order Sobol indices presented in Eq. <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#equation-sij">(2.2.3)</a>, i.e. it is obtained by subtracting the lower-order interaction terms from the group index.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">

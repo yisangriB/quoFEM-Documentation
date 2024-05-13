@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>1. Technical Manual &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>&lt;no title&gt; &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -49,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="1.1. Dakota Methods" href="uqTechnical.html" />
+    <link rel="next" title="1. Dakota Methods" href="uqTechnical.html" />
     <link rel="prev" title="9. Video Overview" href="../../user_manual/usage/desktop/quoFEM/usage_video.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -132,13 +132,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Technical Manual</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="uqTechnical.html">1.1. Dakota Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SimCenterUQTechnical.html">1.2. Methods in SimCenterUQ Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="UCSDUQTechnical.html">1.3. Methods in UCSD UQ Engine</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQTechnical.html">2. Methods in SimCenterUQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UCSDUQTechnical.html">3. Methods in UCSD UQ Engine</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -195,7 +192,7 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>Technical Manual</li>
+      <li>&lt;no title&gt;</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -214,15 +211,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="technical-manual">
-<h1><span class="section-number">1. </span>Technical Manual<a class="headerlink" href="#technical-manual" title="Permalink to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="uqTechnical.html">1.1. Dakota Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SimCenterUQTechnical.html">1.2. Methods in SimCenterUQ Engine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UCSDUQTechnical.html">1.3. Methods in UCSD UQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQTechnical.html">2. Methods in SimCenterUQ Engine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterUQTechnical.html#nataf-transformation">2.1. Nataf transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterUQTechnical.html#global-sensitivity-analysis">2.2. Global sensitivity analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#video-resources">Video Resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#variance-based-global-sensitivity-indices">Variance-based global sensitivity indices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#estimation-of-sobol-indices-using-probabilistic-model-based-global-sensitivity-analysis-pm-gsa">Estimation of Sobol indices using Probabilistic model-based global sensitivity analysis (PM-GSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#dealing-with-high-dimensional-responses-with-pca-psa">Dealing with high-dimensional responses with PCA-PSA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#aggregated-sensitivity-index">Aggregated sensitivity index</a></li>
 </ul>
-</div>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterUQTechnical.html#global-surrogate-modeling">2.3. Global surrogate modeling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#introduction-to-gaussian-process-regression-kriging">Introduction to Gaussian process regression (Kriging)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#dealing-with-noisy-measurements">Dealing with noisy measurements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#construction-of-the-surrogate-model">Construction of the surrogate model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#adaptive-design-of-experiments-doe">Adaptive Design of Experiments (DoE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#verification-of-surrogate-model">Verification of surrogate model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SimCenterUQTechnical.html#multi-fidelity-monte-carlo-mfmc">2.4. Multi-fidelity Monte Carlo (MFMC)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#models-with-different-infidelities">Models with different infidelities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#pre-execution-checklist-for-mfmc">Pre-execution checklist for MFMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#algorithm-details">Algorithm details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimCenterUQTechnical.html#speed-up">Speed-up</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="UCSDUQTechnical.html">3. Methods in UCSD UQ Engine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="UCSDUQTechnical.html#transitional-markov-chain-monte-carlo">3.1. Transitional Markov chain Monte Carlo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UCSDUQTechnical.html#bayesian-inference-of-hierarchical-models">3.2. Bayesian Inference of Hierarchical Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="UCSDUQTechnical.html#special-case-normal-population-distribution">Special Case: Normal Population Distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UCSDUQTechnical.html#sampling-the-posterior-probability-distribution-of-the-parameters-of-the-hierarchical-model">Sampling the Posterior Probability Distribution of the Parameters of the Hierarchical Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
 
 
