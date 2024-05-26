@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.8. Building Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.2.4.8. Building Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.2.9. DL Applications" href="DLApps.html" />
-    <link rel="prev" title="2.2.7. UQ Applications" href="UQApps.html" />
+    <link rel="next" title="2.2.4.9. DL Applications" href="DLApps.html" />
+    <link rel="prev" title="2.2.4.7. UQ Applications" href="UQApps.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -140,10 +140,8 @@
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">3. Verification</a></li>
 </ul>
 
             
@@ -192,11 +190,13 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../backendApplications.html"><span class="section-number">2.2. </span>Backend Applications</a> &raquo;</li>
+          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.8. </span>Building Applications</li>
+          <li><a href="../backendApplications.html"><span class="section-number">2.2.4. </span>Backend Applications</a> &raquo;</li>
+        
+      <li><span class="section-number">2.2.4.8. </span>Building Applications</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -216,7 +216,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="building-applications">
-<span id="lblbuildingapp"></span><h1><span class="section-number">2.2.8. </span>Building Applications<a class="headerlink" href="#building-applications" title="Permalink to this heading">¶</a></h1>
+<span id="lblbuildingapp"></span><h1><span class="section-number">2.2.4.8. </span>Building Applications<a class="headerlink" href="#building-applications" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>building application</strong> creates <em>building information model</em> (BIM) files for each building. It takes as input the range of asset IDs selected for simulation (expressed as “min” and “max” ID, specified in the <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">configuration file</span></a>) and the building-specific parameters for each simulation (specified in the <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">building source file</span></a>).
 The inputs are parsed into <code class="docutils literal notranslate"><span class="pre">#-BIM.json</span></code> files in the <strong>results</strong> folder.</p>
 <div class="align-center figure">

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.4. Modeling Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.2.4.4. Modeling Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.2.5. EDP Applications" href="EDPApps.html" />
-    <link rel="prev" title="2.2.3. Event Applications" href="eventApps.html" />
+    <link rel="next" title="2.2.4.5. EDP Applications" href="EDPApps.html" />
+    <link rel="prev" title="2.2.4.3. Event Applications" href="eventApps.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -140,10 +140,8 @@
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">3. Verification</a></li>
 </ul>
 
             
@@ -192,11 +190,13 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../backendApplications.html"><span class="section-number">2.2. </span>Backend Applications</a> &raquo;</li>
+          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.4. </span>Modeling Applications</li>
+          <li><a href="../backendApplications.html"><span class="section-number">2.2.4. </span>Backend Applications</a> &raquo;</li>
+        
+      <li><span class="section-number">2.2.4.4. </span>Modeling Applications</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -216,7 +216,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="modeling-applications">
-<span id="lblmodelingapp"></span><h1><span class="section-number">2.2.4. </span>Modeling Applications<a class="headerlink" href="#modeling-applications" title="Permalink to this heading">¶</a></h1>
+<span id="lblmodelingapp"></span><h1><span class="section-number">2.2.4.4. </span>Modeling Applications<a class="headerlink" href="#modeling-applications" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>modeling application</strong> consolidates information on the <em>structural analysis model</em> (SAM) used to represent the building on each site.
 It takes as input the <a class="reference internal" href="buildingApps.html#lblbuildingapp"><span class="std std-ref">BIM file</span></a>, the <a class="reference internal" href="eventApps.html#lbleventapp"><span class="std std-ref">EVENT file</span></a>, and information on the structural model used for response simulation, specified in the <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">configuration file</span></a>.
 The input structural model information is parsed into a <code class="docutils literal notranslate"><span class="pre">SAM.json</span></code> file, located in its corresponding <strong>simulation working directory</strong>.</p>

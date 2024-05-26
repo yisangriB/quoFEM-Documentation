@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.6. Simulation Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.2.4.6. Simulation Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.2.7. UQ Applications" href="UQApps.html" />
-    <link rel="prev" title="2.2.5. EDP Applications" href="EDPApps.html" />
+    <link rel="next" title="2.2.4.7. UQ Applications" href="UQApps.html" />
+    <link rel="prev" title="2.2.4.5. EDP Applications" href="EDPApps.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -140,10 +140,8 @@
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">3. Verification</a></li>
 </ul>
 
             
@@ -192,11 +190,13 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../backendApplications.html"><span class="section-number">2.2. </span>Backend Applications</a> &raquo;</li>
+          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.6. </span>Simulation Applications</li>
+          <li><a href="../backendApplications.html"><span class="section-number">2.2.4. </span>Backend Applications</a> &raquo;</li>
+        
+      <li><span class="section-number">2.2.4.6. </span>Simulation Applications</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -216,7 +216,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="simulation-applications">
-<span id="lblsimulationapp"></span><h1><span class="section-number">2.2.6. </span>Simulation Applications<a class="headerlink" href="#simulation-applications" title="Permalink to this heading">¶</a></h1>
+<span id="lblsimulationapp"></span><h1><span class="section-number">2.2.4.6. </span>Simulation Applications<a class="headerlink" href="#simulation-applications" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>simulation application</strong> specifies parameters and executes the script for the response simulation. These parameters may include the integrator scheme, convergence tolerance, step size, etc. of the numerical analysis.
 It takes as input the <a class="reference internal" href="buildingApps.html#lblbuildingapp"><span class="std std-ref">BIM file</span></a>, the <a class="reference internal" href="eventApps.html#lbleventapp"><span class="std std-ref">EVENT file</span></a>, the <a class="reference internal" href="modelingApps.html#lblmodelingapp"><span class="std std-ref">SAM file</span></a>, and the <a class="reference internal" href="EDPApps.html#lbledpapp"><span class="std std-ref">EDP file</span></a>.
 After response simulation is completed, the <code class="docutils literal notranslate"><span class="pre">EDP.json</span></code> file is populated with the resulting EDPs and saved in the <strong>simulation working directory</strong>. Note that the <code class="docutils literal notranslate"><span class="pre">SIM.json</span></code> file is not saved in the directory.</p>
