@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -221,7 +221,7 @@
 <ol class="arabic simple">
 <li><p>A temporary directory, <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, is created in the working directory, followed by a <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> within it.</p></li>
 <li><p>The UI processes all input panels, and workflow applications transfer necessary files to the <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>.</p></li>
-<li><p>A Python script, specific to the simulation type (rWHALE.py for regional simulations, sWHALE.py for individual assessments), is executed from <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>. rWHALE serves as a wrapper, invoking sWHALE for each asset in regional assessments.</p></li>
+<li><p>A Python script, specific to the simulation type (rWHALE.py for regional simulations, sWHALE.py for individual assessments), is executed from the <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>. rWHALE serves as a wrapper, invoking sWHALE for each asset in regional assessments.</p></li>
 <li><p>For structural response simulations, uncertainty quantification is managed by the chosen UQ Engine (e.g., Dakota), which generates an input file (e.g., <code class="docutils literal notranslate"><span class="pre">dakota.in</span></code>) placed in <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>.</p></li>
 <li><p>The UQ engine runs the response simulation using the earlier created input file.</p></li>
 <li><p>For each structural response realization, the UQ engine creates a separate workdir folder within <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>.</p></li>
@@ -237,13 +237,13 @@
 <li><p><strong>No dakota.err file and no dakota.in file</strong>: the Python script in <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> failed to create the files required to start the UQ Engine. Take a look at the workflow log file in the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder to see if it shows any errors. These errors typically point to an incorrect setting in your input file. If no workflow log file exists, the Python script managing the workflow failed to start. This is typically caused by an issue with your Python installation. Make sure you’ve followed the instructions in the Installation guide and set up your Python environment properly.</p></li>
 <li><p><strong>No dakota.err but dakota.in exists</strong>: Even though the required files are available, the UQ Engine failed to start. If Dakota was selected as the UQ Engine, check the Dakota installation. Also, make sure you’ve followed the instructions in the Installation guide and set up your Python environment properly.</p></li>
 <li><p><strong>dakota.err file exists but it is empty</strong>: This means that the UQ Engine started successfully, but there was a problem during the simulation. Go to one of the <code class="docutils literal notranslate"><span class="pre">workdir</span></code> folders that contain individual realizations. You can run that simulation using the workflow driver file. Run the driver file from the command line to see what errors are generated during the simulation. These errors are typically related to the event or structural model description.</p></li>
-<li><p><strong>dakota.err file exists</strong>: Open the file and see what the error is.  For example, if it says <strong>Error: at least one variable must be specified.</strong> This means no random variables have been specified. You have only one deterministic event, or you have not specified any random variables for the analysis. Do not hesitate to reach out to the developers through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0">Message Board</a> if you do not understand the error messages in this file.</p></li>
+<li><p><strong>dakota.err file exists</strong>: Open the file and see what the error is.  For example, if it says <strong>Error: at least one variable must be specified.</strong> This means no random variables have been specified. You have only one deterministic event, or you have not specified any random variables for the analysis. Do not hesitate to reach out to the developers through the <a class="reference external" href="https://github.com/orgs/NHERI-SimCenter/discussions/categories/quofem">github discussion page</a> if you do not understand the error messages in this file.</p></li>
 </ol>
 </li>
 <li><p><strong>You ran remotely at DesignSafe and no dakota.out files came back</strong>: Go to your data depot folder at DesignSafe using your browser. Go to archive/jobs and use the job number from the table that pops up when you ask to get the job results from DesignSafe. Study both the <code class="docutils literal notranslate"><span class="pre">.err</span></code> and <code class="docutils literal notranslate"><span class="pre">.out</span></code> files in that directory for information on what went wrong.</p></li>
 <li><p><strong>No results and you used the Site Response to create the event</strong>. You must run a simulated event in the Site Response Widget before you can submit a job to run.</p></li>
 </ol>
-<p>For unresolved issues, please seek assistance on the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0">Message Board</a>.</p>
+<p>For unresolved issues, please seek assistance on the <a class="reference external" href="https://github.com/orgs/NHERI-SimCenter/discussions/categories/quofem">github discussion page</a>.</p>
 </div>
 
 

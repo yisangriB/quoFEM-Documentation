@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -208,7 +208,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="regional-earthquake-hazard-use-cases">
-<h1>Regional Earthquake Hazard Use Cases<a class="headerlink" href="#regional-earthquake-hazard-use-cases" title="Permalink to this heading">¶</a></h1>
+<span id="lbleqsimulationusecases"></span><h1>Regional Earthquake Hazard Use Cases<a class="headerlink" href="#regional-earthquake-hazard-use-cases" title="Permalink to this heading">¶</a></h1>
 <p>The major use cases of Regional Earthquake Hazard in R2D can be divided
 into Scenario-specific or Probabilistic Seismic Hazard Analysis.</p>
 <div class="align-center figure" id="id4">
@@ -217,32 +217,32 @@ into Scenario-specific or Probabilistic Seismic Hazard Analysis.</p>
 </div>
 <div class="section" id="scenario-specific-earthquake">
 <h2>Scenario-specific Earthquake<a class="headerlink" href="#scenario-specific-earthquake" title="Permalink to this heading">¶</a></h2>
-<p>This option is to analyze an earthquake scenario that consists of one or more ruptures
-based on an earthquake description of a past or hypothetical event. Some use cases
-for which this option are:</p>
+<p>This option is for analyzing an earthquake scenario that consists of one or more ruptures
+based on the description of a past or hypothetical event. Some use cases
+for this option are:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Analysis of a single rupture. For example, running the “Hayward-Rodgers Creek; HN+HS” segment, which is a specific rupture location, length, characteristics, etc.</p></li>
-<li><p>Broader analysis of a scenario. For example, running “an M7 earthquake on the San Andreas Fault.” This would include realizations with different ruptures, that all describe an M7 on the San Andreas.</p></li>
-<li><p>Multiple specified ruptures. This would be used in the case in which a user already has a defined set of ruptures they are interested in studying. This option does not fully capture the probabilistic seismic hazard of a region.</p></li>
+<li><p>Broader analysis of a scenario. For example, running “an M7 earthquake on the San Andreas Fault.” This would include realizations with different ruptures, all describing an M7 on the San Andreas.</p></li>
+<li><p>Multiple specified ruptures. This would be used when a user already has a defined set of ruptures they are interested in studying. This option does not fully capture the probabilistic seismic hazard of a region.</p></li>
 <li><p>A past earthquake. For example, recreating the Loma Prieta earthquake.</p></li>
 </ol>
 </div></blockquote>
 <p><code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DScenarioSpecificUseCases</span></code> shows typical scenario-specific use cases in R2D.
 All the use cases in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DScenarioSpecificUseCases</span></code> can be achieved with R2D. The first two options are loading predefined
-ground motion records or intensity measures in the region, and are described in
+ground motion records or intensity measures in the region and are described in
 <span class="xref std std-ref">User-specified Ground Motions</span>. The functionality to
 interface with some physics-based earthquake simulation databases is also under development in R2D.
-The third to fifty use cases in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DScenarioSpecificUseCases</span></code> requires
+The third to fifth use cases in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DScenarioSpecificUseCases</span></code> require
 the <span class="xref std std-ref">earthquake hazard simulation tool</span>, and the last option
-can be achieved as described in <span class="xref std std-ref">ShakeMap Earthquake Scenarios</span>).</p>
+can be achieved as described in <span class="xref std std-ref">ShakeMap Earthquake Scenarios</span>.</p>
 <p>The functions in the earthquake hazard simulation tool required for
 scenario-specific use cases are Site Definition,
 Earthquake Rupture Forecasting, Intensity Measure Definition, Ground Motion Prediction
 Equations, Spatial Correlations, and Ground Motion Record Selection (optional).
 The “Scenario-specific” option should be selected in the “Scenario Selection” tool tab.
 More details of the use cases, required inputs, and some benefits/limitations are
-summarised in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab-R2DScenarioSpecificUseCases</span></code>.</p>
+summarized in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab-R2DScenarioSpecificUseCases</span></code>.</p>
 <div class="align-center figure" id="id5">
 <span id="fig-r2dscenariospecificusecases"></span><img alt="../../../_images/R2DScenarioSpecificUseCases.png" src="../../../_images/R2DScenarioSpecificUseCases.png" />
 <p class="caption"><span class="caption-text">Scenario-specific earthquake hazard use cases.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
@@ -276,7 +276,7 @@ summarised in <code class="xref std std-numref docutils literal notranslate"><sp
 <tr class="row-even"><td><p>OpenSHA/UCERF</p></td>
 <td><p>Recommended where UCERF ruptures are available (maybe we can show a map). Recommended because it requires no additional inputs other than selections using the R2D interface (source models are openly available).</p></td>
 <td><p>No external files are required, and all selections can be done in R2D.</p></td>
-<td><p>Users can select out of several choices of GMM and correlation models to use through the R2D interface. Limited in that it only has information available about ruptures in certain locations.</p></td>
+<td><p>Users can select from several choices of GMM and correlation models through the R2D interface. Limited in that it only has information about ruptures in certain locations.</p></td>
 </tr>
 <tr class="row-odd"><td><p>OpenQuake</p></td>
 <td><p>Recommended to describe distributed and background seismicity. Also recommended for use where rupture information is unavailable through UCERF.</p></td>
@@ -290,8 +290,8 @@ summarised in <code class="xref std std-numref docutils literal notranslate"><sp
 </tr>
 <tr class="row-odd"><td><p>ShakeMap</p></td>
 <td><p>Re-creation of a past earthquake event by obtaining seismic intensity measures sufficiently representative of the event.</p></td>
-<td><p>Inputs are USGS ShakeMap files for a given earthquake scenario. These files must be located in a folder in which at least must be a grid.xml file. The files contain ShakeMaps that include the intensity measures for a given earthquake event as spectral ordinate values (Those can be given as PGA, PGV, PGD, and spectral ordinates at different periods). These files can be obtained from <a class="reference external" href="https://earthquake.usgs.gov/earthquakes/search/">USGS’s ShakeMap archives</a> for real past earthquake events.</p></td>
-<td><p>ShakeMap intensity measures (as spectral ordinates) for past earthquakes might not be an accurate representation of this event in locations far from the grid control points (usually recording stations where GMM predictions are adjusted to match real recorded ground motion spectra). Moreover, the set of scenarios is limited.</p></td>
+<td><p>Inputs are USGS ShakeMap files for a given earthquake scenario. These files must be located in a folder with at least a grid.xml file. The files contain ShakeMaps that include the intensity measures for a given earthquake event as spectral ordinate values (These can be given as PGA, PGV, PGD, and spectral ordinates at different periods). These files can be obtained from <a class="reference external" href="https://earthquake.usgs.gov/earthquakes/search/">USGS’s ShakeMap archives</a> for real past earthquake events.</p></td>
+<td><p>ShakeMap intensity measures (as spectral ordinates) for past earthquakes might not be an accurate representation of the event in locations far from the grid control points (usually recording stations where GMM predictions are adjusted to match real recorded ground motion spectra). Moreover, the set of scenarios is limited.</p></td>
 </tr>
 </tbody>
 </table>
@@ -301,7 +301,7 @@ summarised in <code class="xref std std-numref docutils literal notranslate"><sp
 <p>The regional probabilistic seismic hazard analysis (PSHA) characterizes the probability
 that certain levels of intensity are exceeded in a region considering all nearby
 earthquake sources.
-<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DScenarioSpecificUseCases</span></code> shows two typical use cases in regional PSHA.
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DRegionalPSHAUseCases</span></code> shows two typical use cases in regional PSHA.
 Both use cases can be achieved in R2D with the <span class="xref std std-ref">earthquake hazard simulation tool</span>.
 The functions in the earthquake hazard simulation tool required for
 regional PSHA are Site Definition,
@@ -309,7 +309,7 @@ Earthquake Rupture Forecasting, Intensity Measure Definition, Ground Motion Pred
 Equations, Spatial Correlations, Ground Motion Record Selection (optional), and hazard consistent
 downsampling (optional). The “Conventional Monte Carlo” or “Hazard consistent downsampling” option
 should be selected in the “Scenario Selection” tool tab. More details of the use cases,
-required inputs, and some benefits/limitations are summarised in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab-R2DRegionalPSHAUseCases</span></code>.</p>
+required inputs, and some benefits/limitations are summarized in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab-R2DRegionalPSHAUseCases</span></code>.</p>
 <div class="align-center figure" id="id7">
 <span id="fig-r2dregionalpshausecases"></span><img alt="../../../_images/R2DRegionalPSHAUseCases.png" src="../../../_images/R2DRegionalPSHAUseCases.png" />
 <p class="caption"><span class="caption-text">Regional probabilistic seismic hazard analysis use cases.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
@@ -337,14 +337,14 @@ required inputs, and some benefits/limitations are summarised in <code class="xr
 </tr>
 <tr class="row-odd"><td><p>OpenQuake</p></td>
 <td><p>Recommended for use where UCERF ruptures are unavailable.</p></td>
-<td><p>External files required.  The format of source models can be found <span class="xref std std-ref">here</span>, and a database of global earthquake sources can be found at the <a class="reference external" href="https://github.com/GEMScienceTools/gem-global-active-faults">GEM’s Global Active Faults Database</a> <a class="reference internal" href="#styron2020" id="id3"><span>[Styron2020]</span></a></p></td>
+<td><p>External files required. The format of source models can be found <span class="xref std std-ref">here</span>, and a database of global earthquake sources can be found at the <a class="reference external" href="https://github.com/GEMScienceTools/gem-global-active-faults">GEM’s Global Active Faults Database</a> <a class="reference internal" href="#styron2020" id="id3"><span>[Styron2020]</span></a></p></td>
 <td><p>Users need to prepare their earthquake source model.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="citation">
 <dt class="label" id="styron2020"><span class="brackets">Styron2020</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
-<dd><p>Styron, Richard, and Marco Pagani. “The GEM Global Active Faults Database.” Earthquake Spectra, vol. 36, no. 1_suppl, Oct. 2020, pp. 160–180, doi:10.1177/8755293020944182.</p>
+<dd><p>Styron, R., &amp; Pagani, M. (2020). The GEM global active faults database. Earthquake Spectra, 36(1_suppl), 160-180.</p>
 </dd>
 </dl>
 </div>

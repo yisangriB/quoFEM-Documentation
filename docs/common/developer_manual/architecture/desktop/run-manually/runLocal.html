@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -209,37 +209,43 @@
             
   <div class="section" id="run-locally-on-your-desktop">
 <span id="lblrunlocal"></span><h1>Run Locally on Your Desktop<a class="headerlink" href="#run-locally-on-your-desktop" title="Permalink to this heading">¶</a></h1>
-<p>Running applications locally on a personal desktop is convenient for running small-scale jobs and debugging. For larger jobs, the applications are available on DesignSafe for utilizing high-performance computing resources.</p>
+<p>Running applications locally on a personal desktop is convenient for small-scale jobs and debugging. For larger jobs, the applications are available on DesignSafe to utilize high-performance computing resources.</p>
 <ol class="arabic">
-<li><p>Follow the directions in <a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html#lblhowtobuild"><span class="std std-ref">How to Build</span></a> to install the backend applications on your local desktop. Move the applications folder to a separate directory (such as <code class="docutils literal notranslate"><span class="pre">C:/rWHALE/</span></code>).</p></li>
-<li><p>Prepare the input files in a folder called <code class="docutils literal notranslate"><span class="pre">input_data</span></code>, then zip the folder. You may use this example input file set (<code class="xref download docutils literal notranslate"><span class="pre">input_data_eq.zip</span></code>) as a template.</p></li>
-<li><p>Prepare workflow settings in the configuration file. You may use the example configuration file (<code class="xref download docutils literal notranslate"><span class="pre">rWHALE_config_eq.json</span></code>) as a template.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">'runDir'</span></code> to the path containing the <code class="docutils literal notranslate"><span class="pre">input_data</span></code> folder. If the configuration file is in the same directory, set <code class="docutils literal notranslate"><span class="pre">'remoteDir'='...'</span></code>.</p></li>
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">'localAppDir'</span></code> to the path containing the applications folder (such as <code class="docutils literal notranslate"><span class="pre">C:/rWHALE/</span></code>).</p></li>
-<li><p>Specify applications for each workflow step and their inputs. For more details on the format of the configuration file, see <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">Inputs</span></a>.</p></li>
+<li><p>Follow the directions in <a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html#lblhowtobuild"><span class="std std-ref">How to Build</span></a> to install the backend applications on your local desktop. The applications needed to run the backend are in the <strong>applications</strong> folder after you have built the backend. You can leave the folder where you have built it (which is useful if you plan to keep updating the backend applications as we make changes to the github repository, or you can move the applications folder to a seperate directory (such as <code class="docutils literal notranslate"><span class="pre">C:/rWHALE/</span></code>) if you don’t plan to update these applications.</p></li>
+<li><p>To run a workflow you first need to create a folder on your filesystem in which you will place the necessary inputs. In this folder you will need an input file that describes the workflow to run, say <strong>input.json</strong>, and a directory <strong>input_data</strong>.</p></li>
+<li><p>Create the input file, <code class="docutils literal notranslate"><span class="pre">input.json</span></code> that outlines the workflow to run. You may use the example configuration file (<a class="reference download internal" download="" href="../../../../../_downloads/ac5e6a61b4bfd5ce4b463518868b4749/input.json"><code class="xref download docutils literal notranslate"><span class="pre">input.json</span></code></a>) as a template. There are 3 lines in this file that need changing to run the default workflow (Example1 in the R2DTool):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;remoteAppDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/Users/fmckenna/NHERI/SimCenterBackendApplications&quot;</span><span class="p">,</span>
+<span class="s2">&quot;localAppDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/Users/fmckenna/NHERI/SimCenterBackendApplications&quot;</span><span class="p">,</span>
+<span class="s2">&quot;runDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/Users/fmckenna/Documents/R2D/LocalWorkDir/tmp.SimCenter&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">'runDir'</span></code> to the path containing the <code class="docutils literal notranslate"><span class="pre">input_data</span></code> folder.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">'localAppDir'</span></code> and <code class="docutils literal notranslate"><span class="pre">''remoteAppDir'</span></code> to the path containing the applications folder (such as <code class="docutils literal notranslate"><span class="pre">C:/rWHALE/</span></code>).</p></li>
+<li><p>If you wish to change thw workflow that is run, you need to specify applications for each workflow step and their inputs. For more details on the format of the configuration file, see <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">Inputs</span></a>.</p></li>
 </ul>
-</div></blockquote>
 </li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">input_data</span></code> folder, you need to place the files needed by the applications which will run in the workflow. You may use this example input file set (<a class="reference download internal" download="" href="../../../../../_downloads/b185f33f0f91b8d5d870c2add615082f/input_data.zip"><code class="xref download docutils literal notranslate"><span class="pre">input_data.zip</span></code></a>) as a template. Again, the downloaded default is for Example1 in R2D.</p></li>
+<li><p>Now you are ready to run the Workflow. The workflow is run through the command window by calling on Python and specifying paths to the application files, input files, and desired location for the results folder. The following is the command to issue on the command line:</p></li>
 </ol>
-<ol class="arabic simple" start="3">
-<li><p>The workflow is run through the command window by calling on Python and specifying paths to the application files, input files, and desired location for the results folder. The following is an example of the <strong>initialization command</strong>:</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">R2D_workflow</span><span class="o">.</span><span class="n">py</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">rWHALE_config</span><span class="o">.</span><span class="n">json</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">registry</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">WorkflowApplications</span><span class="o">.</span><span class="n">json</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">referenceDir</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">input_data</span> <span class="n">folder</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">w</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">output</span> <span class="n">results</span> <span class="n">folder</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">rWhale</span><span class="o">.</span><span class="n">py</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">wfInput</span><span class="o">.</span><span class="n">json</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">registry</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">WorkflowApplications</span><span class="o">.</span><span class="n">json</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">referenceDir</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">input_data</span> <span class="n">folder</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">w</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">output</span> <span class="n">results</span> <span class="n">folder</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <dl class="simple">
 <dt>where:</dt><dd><ul class="simple">
-<li><p><strong>&lt;path to R2D_workflow.py&gt;</strong> is the full path to the file “R2D_workflow.py” in the applications folder</p></li>
-<li><p><strong>&lt;path to rWHALE_config.json&gt;</strong> is the full path to the provided file <code class="docutils literal notranslate"><span class="pre">rWHALE_config.json</span></code></p></li>
-<li><p><strong>&lt;path to WorkflowApplications.json&gt;</strong> is the full path to the file <code class="docutils literal notranslate"><span class="pre">WorkflowApplications.json</span></code> in the applications folder</p></li>
+<li><p><strong>&lt;path to R2D_workflow.py&gt;</strong> is the full path to the file “rWhale.py” in the <strong>/applications/Workflow</strong> folder</p></li>
+<li><p><strong>&lt;path to rWHALE_config.json&gt;</strong> is the full path to the workflow input file, <code class="docutils literal notranslate"><span class="pre">input.json</span></code></p></li>
+<li><p><strong>&lt;path to WorkflowApplications.json&gt;</strong> is the full path to the file <code class="docutils literal notranslate"><span class="pre">WorkflowApplications.json</span></code> in the <strong>applications/Workflow</strong> folder</p></li>
 <li><p><strong>&lt;path to input_data folder&gt;</strong> is the full path to the folder with all input files</p></li>
 <li><p><strong>&lt;path to output results folder&gt;</strong> is the full path to where a “results” folder will be created to contain the output files</p></li>
 </ul>
 </dd>
 </dl>
-<ol class="arabic simple" start="4">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are on a Mac, python in the above needs to be replaced by <strong>python3</strong>.</p>
+</div>
+<ol class="arabic simple" start="6">
 <li><p>A results folder is produced, which contains both the aggregated output files (EDP_{min id}_{max id}.csv, DM_{min id}_{max id}.csv, DV_{min id}_{max id}.csv), as well as the individual output files (EDP.csv, DM.csv, DV.csv) for each built asset in their respective folders.</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>results

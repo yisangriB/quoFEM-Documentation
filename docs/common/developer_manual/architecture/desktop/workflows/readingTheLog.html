@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -209,28 +209,28 @@
             
   <div class="section" id="reading-the-log-file">
 <span id="lblreadinglog"></span><h1>Reading the Log File<a class="headerlink" href="#reading-the-log-file" title="Permalink to this heading">¶</a></h1>
-<p>The sequence of tasks carried out by the backend applications is outlined in the <strong>log file</strong> produced by the workflow. For <a class="reference internal" href="../run-manually/runLocal.html#lblrunlocal"><span class="std std-ref">local runs</span></a>, this log is displayed in the command terminal and is reproduced in a file named <code class="docutils literal notranslate"><span class="pre">log.txt</span></code> in the <code class="docutils literal notranslate"><span class="pre">results/</span></code> directory. For <a class="reference internal" href="../run-manually/runRemote.html#lblrunremote"><span class="std std-ref">remote runs</span></a> through Tapis, this log file is called <code class="docutils literal notranslate"><span class="pre">launcher.out</span></code> in the job archive folder on DesignSafe. This guide will explain how to understand the statements printed in the log file.</p>
+<p>The sequence of tasks carried out by the backend applications is outlined in the <strong>log file</strong> produced by the workflow. For <a class="reference internal" href="../run-manually/runLocal.html#lblrunlocal"><span class="std std-ref">local runs</span></a>, this log is displayed in the command terminal and is reproduced in a file named <code class="docutils literal notranslate"><span class="pre">log.txt</span></code> in the <code class="docutils literal notranslate"><span class="pre">results/</span></code> directory. For <a class="reference internal" href="../run-manually/runRemote.html#lblrunremote"><span class="std std-ref">remote runs</span></a> through Tapis, this log file is named <code class="docutils literal notranslate"><span class="pre">launcher.out</span></code> and is located in the job archive folder on DesignSafe. This guide will explain how to understand the statements printed in the log file.</p>
 <p>The following is an example log file for a successful workflow run. The workflow can be broken down into the following sections:</p>
 <ol class="upperroman">
-<li><p><strong>Read the configuration file:</strong></p>
+<li><p><strong>Reading the configuration file:</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><p><strong>lines 12-13</strong>: Identifies the path to the <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">configuration file</span></a>, which specifies the job details, and the <em>application registry file</em>, which specifies all available applications.</p></li>
-<li><p><strong>line 16-62</strong>: Reads the application registry file and displays all available applications.</p></li>
-<li><p><strong>line 64-85</strong>: Reads the configuration file and displays the units, local application directory, remote application directory, reference directory, and the applications chosen for each workflow step. Any workflow steps that are skipped (excluded from the configuration file) are also listed here.</p></li>
+<li><p><strong>lines 12-13</strong>: Identifies the path to the <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">configuration file</span></a>, which specifies the job details, and the <em>application registry file</em>, which lists all available applications.</p></li>
+<li><p><strong>lines 16-62</strong>: Reads the application registry file and displays all available applications.</p></li>
+<li><p><strong>lines 64-85</strong>: Reads the configuration file and displays the units, local application directory, remote application directory, reference directory, and the applications chosen for each workflow step. Any workflow steps that are skipped (excluded from the configuration file) are also listed here.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p><strong>Pre-process building and event data:</strong></p>
+<li><p><strong>Pre-processing building and event data:</strong></p>
 <ul>
-<li><p><strong>line 93</strong>: Python command for executing the <a class="reference internal" href="../applications/buildingApps.html#lblbuildingapp"><span class="std std-ref">Building</span></a> application, creating the BIM files for each building asset.</p>
+<li><p><strong>line 93</strong>: Python command for executing the <a class="reference internal" href="../applications/buildingApps.html#lblbuildingapp"><span class="std std-ref">Building</span></a> application, which creates the BIM files for each building asset.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py&quot;</span> <span class="s2">&quot;--buildingFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/results/buildings1-2.json&quot;</span> <span class="s2">&quot;--Min&quot;</span> <span class="s2">&quot;1&quot;</span> <span class="s2">&quot;--Max&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--buildingSourceFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/input_params.csv&quot;</span> <span class="s2">&quot;--getRV&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>line 103</strong>: Python command for executing the <a class="reference internal" href="../applications/regionalMapApps.html#lblregionalmapapp"><span class="std std-ref">RegionalMapping</span></a> application, assigning events to each of the building assets.</p>
+<li><p><strong>line 103</strong>: Python command for executing the <a class="reference internal" href="../applications/regionalMapApps.html#lblregionalmapapp"><span class="std std-ref">RegionalMapping</span></a> application, which assigns events to each of the building assets.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performRegionalMapping/NearestNeighborEvents/NNE.py&quot;</span> <span class="s2">&quot;--buildingFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/results/buildings1-2.json&quot;</span> <span class="s2">&quot;--filenameEVENTgrid&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/records/EventGrid.csv&quot;</span> <span class="s2">&quot;--samples&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--neighbors&quot;</span> <span class="s2">&quot;1&quot;</span>
 </pre></div>
@@ -239,40 +239,40 @@
 </li>
 </ul>
 </li>
-<li><p><strong>Set up and run simulations for each building asset:</strong></p></li>
+<li><p><strong>Setting up and running simulations for each building asset:</strong></p></li>
 </ol>
 <blockquote>
 <div><ul>
 <li><p><strong>line 111</strong>: Starts with the first building asset. In this first pass, the EVENT, SAM, EDP, SIM files corresponding to “1-BIM.json” are created.</p></li>
-<li><p><strong>line 118</strong>: Python command for executing the <a class="reference internal" href="../applications/eventApps.html#lbleventapp"><span class="std std-ref">Event</span></a> application, creating the EVENT file for the building asset.</p>
+<li><p><strong>line 118</strong>: Python command for executing the <a class="reference internal" href="../applications/eventApps.html#lbleventapp"><span class="std std-ref">Event</span></a> application, which creates the EVENT file for the building asset.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--pathEventData&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/records/&quot;</span> <span class="s2">&quot;--getRV&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>line 126</strong>: Python command for executing the <a class="reference internal" href="../applications/modelingApps.html#lblmodelingapp"><span class="std std-ref">Modeling</span></a> application, creating the SAM file for the built asset.</p>
+<li><p><strong>line 126</strong>: Python command for executing the <a class="reference internal" href="../applications/modelingApps.html#lblmodelingapp"><span class="std std-ref">Modeling</span></a> application, which creates the SAM file for the building asset.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--mainScript&quot;</span> <span class="s2">&quot;cantilever.py&quot;</span> <span class="s2">&quot;--modelPath&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/model/&quot;</span> <span class="s2">&quot;--ndm&quot;</span> <span class="s2">&quot;3&quot;</span> <span class="s2">&quot;--dofMap&quot;</span> <span class="s2">&quot;1,2,3&quot;</span> <span class="s2">&quot;--getRV&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>line 134</strong>: Python command for executing the <a class="reference internal" href="../applications/EDPApps.html#lbledpapp"><span class="std std-ref">EDP</span></a> application, creating the EDP file for the building asset.</p>
+<li><p><strong>line 134</strong>: Python command for executing the <a class="reference internal" href="../applications/EDPApps.html#lbledpapp"><span class="std std-ref">EDP</span></a> application, which creates the EDP file for the building asset.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--EDPspecs&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/EDP_specs.json&quot;</span> <span class="s2">&quot;--getRV&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>line 142</strong>: Python command for executing the <a class="reference internal" href="../applications/simulationApps.html#lblsimulationapp"><span class="std std-ref">Simulation</span></a> application, creating the SIM file for the building asset.</p>
+<li><p><strong>line 142</strong>: Python command for executing the <a class="reference internal" href="../applications/simulationApps.html#lblsimulationapp"><span class="std std-ref">Simulation</span></a> application, which creates the SIM file for the building asset.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameSAM&quot;</span> <span class="s2">&quot;SAM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--filenameEDP&quot;</span> <span class="s2">&quot;EDP.json&quot;</span> <span class="s2">&quot;--filenameSIM&quot;</span> <span class="s2">&quot;SIM.json&quot;</span> <span class="s2">&quot;--getRV&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>lines 153-157</strong>: Commands which are written to the <em>workflow driver file</em>. In a “second pass” through the workflow, these commands are executed by running the workflow driver file.</p>
+<li><p><strong>lines 153-157</strong>: Commands that are written to the <em>workflow driver file</em>. In a “second pass” through the workflow, these commands are executed by running the workflow driver file.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py&quot;</span> <span class="s2">&quot;--buildingFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/results/buildings1-2.json&quot;</span> <span class="s2">&quot;--Min&quot;</span> <span class="s2">&quot;1&quot;</span> <span class="s2">&quot;--Max&quot;</span> <span class="s2">&quot;2&quot;</span> <span class="s2">&quot;--buildingSourceFile&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/input_params.csv&quot;</span>
 <span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py&quot;</span> <span class="s2">&quot;--filenameBIM&quot;</span> <span class="s2">&quot;1-BIM.json&quot;</span> <span class="s2">&quot;--filenameEVENT&quot;</span> <span class="s2">&quot;EVENT.json&quot;</span> <span class="s2">&quot;--pathEventData&quot;</span> <span class="s2">&quot;C:/rWHALE/earthquake_example/input_data/records/&quot;</span>
@@ -304,7 +304,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>line 213</strong>: Continues to the second building asset (“2-BIM.json”) and repeats the same workflow steps.</p></li>
+<li><p><strong>line 213</strong>: Continues with the second building asset (“2-BIM.json”) and repeats the same workflow steps.</p></li>
 </ul>
 </div></blockquote>
 <ol class="upperroman" start="4">

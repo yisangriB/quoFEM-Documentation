@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -209,7 +209,7 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-weuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h1>
-<p><strong>Version 3.2.0</strong> of quoFEM app was released <strong>March 2024</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p><strong>Version 3.3.0</strong> of quoFEM app was released <strong>April 2024</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="structural-information-model">
 <h2>Structural Information Model<a class="headerlink" href="#structural-information-model" title="Permalink to this heading">¶</a></h2>
 <p>Applications are used to specify/select the structural model to be used in the analysis.</p>
@@ -224,11 +224,18 @@
 <h2>Wind Loading Event<a class="headerlink" href="#wind-loading-event" title="Permalink to this heading">¶</a></h2>
 <p>Applications used to specify/select wind loading for the structure.</p>
 <ol class="arabic simple">
-<li><p>Stochastic Wind: simulating stochastic wind speed using spectral method</p></li>
+<li><p>Stochastic Wind: Simulating stochastic wind speed using spectral methods. Includes the Wittig and Sinha 1975 model.</p></li>
 <li><p>CFD - Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel</p></li>
 <li><p>CFD - Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry</p></li>
-<li><p>DEDM_HRP: database-enabled design framework based on wind-tunnel data for high-rise buildings</p></li>
-<li><p>LowRiseTPU: extracting aerodynamics loads based on the TPU database for low-rise buildings</p></li>
+<li><p><span class="blue">CFD - Wind Load on Surrounded Buildings:</span>
+CFD-based wind load simulation for buildings surrounded by other buildings</p></li>
+<li><p>Experimental Wind Forces: As seen in “Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads”. User specified force file input.</p></li>
+<li><p>Experimental Wind Forces: As seen in “Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads”. User specified pressure file input. Includes CPSD group size.</p></li>
+<li><p>Experimental Wind Pressures: As seen in “Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads”.</p></li>
+<li><p>Wind Force Spectrum (CPSD) - As seen in “Optimization of uncertain structures subject to stochastic wind loads under system-level first excursion constraints: A data-driven approach. Provided by Prof. Seymour Spence’s lab .</p></li>
+<li><p>DEDM_HRP: Database-enabled design framework based on wind-tunnel data for high-rise buildings</p></li>
+<li><p>LowRiseTPU: Extracting aerodynamics loads based on the TPU database for low-rise buildings</p></li>
+<li><p>HighRiseTPU: Extracting aerodynamics loads based on the TPU database for high-rise buildings</p></li>
 <li><p>Wind Tunnel Experiment: uses pressure tap measurements from building in wind tunnel experiment</p></li>
 <li><p>Existing: User-supplied time-varying floor loads</p></li>
 </ol>
@@ -294,16 +301,18 @@ a. Resample from an existing correlated dataset of samples</p></li>
 </ol>
 </div></blockquote>
 </li>
-<li><p>Surrogate Modeling</p>
+<li><p>Reliability Analysis</p>
+<ol class="upperalpha">
+<li><p>Dakota Reliability Options</p>
 <blockquote>
-<div><ol class="upperalpha simple">
-<li><p>SimCenterUQ Engine Surrogate Options:</p>
-<ol class="arabic simple">
-<li><p>Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</p></li>
-</ol>
-</li>
+<div><ol class="arabic simple">
+<li><p>Local Reliability Analysis</p></li>
+<li><p>Global Reliability Analysis</p></li>
+<li><p>Importance Sampling</p></li>
 </ol>
 </div></blockquote>
+</li>
+</ol>
 </li>
 </ol>
 </div>

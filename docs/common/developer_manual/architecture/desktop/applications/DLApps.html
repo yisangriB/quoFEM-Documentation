@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.4.9. DL Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.2.9. DL Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.2.4.10. Regional Mapping Applications" href="regionalMapApps.html" />
-    <link rel="prev" title="2.2.4.8. Building Applications" href="buildingApps.html" />
+    <link rel="next" title="2.2.10. Regional Mapping Applications" href="regionalMapApps.html" />
+    <link rel="prev" title="2.2.8. Building Applications" href="buildingApps.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -192,11 +192,11 @@
         
           <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../architecture.html">&lt;no title&gt;</a> &raquo;</li>
         
-          <li><a href="../backendApplications.html"><span class="section-number">2.2.4. </span>Backend Applications</a> &raquo;</li>
+          <li><a href="../backendApplications.html"><span class="section-number">2.2. </span>Backend Applications</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.4.9. </span>DL Applications</li>
+      <li><span class="section-number">2.2.9. </span>DL Applications</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -216,17 +216,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="dl-applications">
-<span id="lbldlapp"></span><h1><span class="section-number">2.2.4.9. </span>DL Applications<a class="headerlink" href="#dl-applications" title="Permalink to this heading">¶</a></h1>
-<p>The <strong>DL application</strong> performs the damage and loss assessment for the buildings subject to the regional event(s).
-It takes as input the building properties used for determining damages and losses (e. g. building occupancy, structure type, replacement cost, number of stories),
-specified in the <a class="reference internal" href="buildingApps.html#lblbuildingapp"><span class="std std-ref">BIM file</span></a>, as well as the response simulation output recorded in the <a class="reference internal" href="EDPApps.html#lbledpapp"><span class="std std-ref">EDP file</span></a>.
-It returns damage probabilities in a “DM.csv” file and decision variable estimates in a “DV.csv” for each simulation, saved in its corresponding
-<strong>simulation working directory</strong>.</p>
+<span id="lbldlapp"></span><h1><span class="section-number">2.2.9. </span>DL Applications<a class="headerlink" href="#dl-applications" title="Permalink to this heading">¶</a></h1>
+<p>The <strong>DL application</strong> assesses the damage and loss for buildings subjected to regional events.It uses building properties, such as building occupancy, structure type, replacement cost, and number of stories, to determine damages and losses. These properties are specified in the <a class="reference internal" href="buildingApps.html#lblbuildingapp"><span class="std std-ref">BIM file</span></a>. The application also uses the response simulation output recorded in the <a class="reference internal" href="EDPApps.html#lbledpapp"><span class="std std-ref">EDP file</span></a>.</p>
+<p>The application returns damage probabilities in a “DM.csv” file and decision variable estimates in a “DV.csv” file for each simulation. These files are saved in their respective <strong>simulation working directories</strong>.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/backendapps_DL.png" src="../../../../../_images/backendapps_DL.png" />
 </div>
-<p>The following options for DL applications vary in the software package used to perform the damage and loss assessment.</p>
-main.html</div>
+</div>
 
 
            </div>

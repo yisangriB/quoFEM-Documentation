@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.4.7. UQ Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.2.7. UQ Applications &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.2.4.8. Building Applications" href="buildingApps.html" />
-    <link rel="prev" title="2.2.4.6. Simulation Applications" href="simulationApps.html" />
+    <link rel="next" title="2.2.8. Building Applications" href="buildingApps.html" />
+    <link rel="prev" title="2.2.6. Simulation Applications" href="simulationApps.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -192,11 +192,11 @@
         
           <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../architecture.html">&lt;no title&gt;</a> &raquo;</li>
         
-          <li><a href="../backendApplications.html"><span class="section-number">2.2.4. </span>Backend Applications</a> &raquo;</li>
+          <li><a href="../backendApplications.html"><span class="section-number">2.2. </span>Backend Applications</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.4.7. </span>UQ Applications</li>
+      <li><span class="section-number">2.2.7. </span>UQ Applications</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -216,15 +216,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="uq-applications">
-<span id="lbluqapp"></span><h1><span class="section-number">2.2.4.7. </span>UQ Applications<a class="headerlink" href="#uq-applications" title="Permalink to this heading">¶</a></h1>
-<p>The <strong>UQ application</strong> is used to sample <em>random variables</em> (RV) specified in any of the workflow steps (Event, Modeling, EDP, Simulation) for uncertainty quantification, then to run commands written in the <strong>driver file</strong> which call on the backend applications to execute the R2D Workflow.
-It first populates values for the RVs, sampled from specified probability distributions, in the corresponding files (EVENT.json, SAM.json, EDP.json, SIM.json) for each simulation before executing the workflow.
-If no RVs are specified, then the UQ application directly runs commands in the driver file without random sampling.</p>
+<span id="lbluqapp"></span><h1><span class="section-number">2.2.7. </span>UQ Applications<a class="headerlink" href="#uq-applications" title="Permalink to this heading">¶</a></h1>
+<p>The <strong>UQ application</strong> is used to sample <em>random variables</em> (RVs) specified in any of the workflow steps (Event, Modeling, EDP, Simulation) for uncertainty quantification. It then runs commands written in the <strong>driver file</strong>, which call on the backend applications to execute the R2D Workflow.
+First, it populates values for the RVs, sampled from specified probability distributions, in the corresponding files (EVENT.json, SAM.json, EDP.json, SIM.json) for each simulation before executing the workflow.
+If no RVs are specified, the UQ application directly runs commands in the driver file without performing random sampling.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/backendapps_UQ.png" src="../../../../../_images/backendapps_UQ.png" />
 </div>
-<p>The following options for UQ applications vary in the software package used to perform uncertainty quantification.</p>
-main.html</div>
+</div>
 
 
            </div>

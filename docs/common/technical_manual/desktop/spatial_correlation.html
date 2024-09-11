@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -210,7 +210,7 @@
             
   <div class="section" id="ground-motion-intensity-spatial-correlation-model-options">
 <span id="lblcorrelation"></span><h1>Ground Motion Intensity Spatial Correlation Model Options<a class="headerlink" href="#ground-motion-intensity-spatial-correlation-model-options" title="Permalink to this heading">¶</a></h1>
-<p>The regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models predicting intensities at an individual site <span class="math notranslate nohighlight">\(i\)</span> due to an earthquake <span class="math notranslate nohighlight">\(j\)</span> have the following form:</p>
+<p>Regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models predicting intensities at an individual site <span class="math notranslate nohighlight">\(i\)</span> due to an earthquake <span class="math notranslate nohighlight">\(j\)</span> have the following form:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-0">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-0" title="Permalink to this equation">¶</a></span>\[ln(Y_{ij}) = ln(\bar{Y}_{ij}) + \epsilon_{ij} + \eta_j\]</div>
 <p>where <span class="math notranslate nohighlight">\(Y_{ij}\)</span> is the intensity measure (e.g., <span class="math notranslate nohighlight">\(Sa(T)\)</span>), <span class="math notranslate nohighlight">\(\bar{Y}_{ij}\)</span> is the predicted median intensity (given magnitude, distance, period, and site conditions), <span class="math notranslate nohighlight">\(\epsilon_{ij}\)</span> is the intra-event residual, and <span class="math notranslate nohighlight">\(\eta_j\)</span> is the inter-event residual. It is assumed that <span class="math notranslate nohighlight">\(\epsilon_{ij}\)</span> and <span class="math notranslate nohighlight">\(\eta_j\)</span> are random variables with zero means and standard deviations <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span> and <span class="math notranslate nohighlight">\(\tau_j\)</span>.</p>
@@ -229,27 +229,27 @@
 <p>where <span class="math notranslate nohighlight">\(Z_u\)</span> and <span class="math notranslate nohighlight">\(Z_{u+h}\)</span> are the random variable realizations at sites with a distance of <span class="math notranslate nohighlight">\(h\)</span>.  The covariance between <span class="math notranslate nohighlight">\(Z_u\)</span> and <span class="math notranslate nohighlight">\(Z_{u+h}\)</span> are:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-2">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-2" title="Permalink to this equation">¶</a></span>\[C(h) = E[(Z_u - \mu_Z)(Z_{u+h} - \mu_Z)]\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mu_Z\)</span> is the mean (which is zero under the stationarity assumption). Note this spatial covariance can also be related to the semivariogram with:</p>
+<p>where <span class="math notranslate nohighlight">\(\mu_Z\)</span> is the mean (which is assumed as zero in <a class="reference internal" href="#jayaram08" id="id2"><span>[Jayaram08]</span></a>). Note this spatial covariance can also be related to the semivariogram with:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-3">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-3" title="Permalink to this equation">¶</a></span>\[C(h) = C(0) - \gamma(h)\]</div>
 <p>Similarly, the correlation coefficient is defined as:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-4">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-4" title="Permalink to this equation">¶</a></span>\[\rho(h) = \frac{C(h)}{C(0)} = 1 - \frac{\gamma(h)}{C(0)}\]</div>
-<p>Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried out to find the semivariogram models to derive the correlation <span class="math notranslate nohighlight">\(rho(h)\)</span> of ground motion intensities. The available models in the current quoFEM app are briefly summarized in the following sections.</p>
+<p>Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried out to find the semivariogram models to derive the correlation <span class="math notranslate nohighlight">\(\rho(h)\)</span> of ground motion intensities. The available models in the current quoFEM app are briefly summarized in the following sections.</p>
 <div class="section" id="jayaram-and-baker-2009">
 <h3>Jayaram and Baker (2009)<a class="headerlink" href="#jayaram-and-baker-2009" title="Permalink to this heading">¶</a></h3>
-<p><a class="reference internal" href="#jayaram09" id="id2"><span>[Jayaram09]</span></a> adopted an exponential model for the semivariogram function with an isotropic hypothesis (i.e., the distance <span class="math notranslate nohighlight">\(h\)</span> is the separation length):</p>
+<p><a class="reference internal" href="#jayaram09" id="id3"><span>[Jayaram09]</span></a> adopted an exponential model for the semivariogram function with an isotropic hypothesis (i.e., the distance <span class="math notranslate nohighlight">\(h\)</span> is the separation length):</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-5">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-5" title="Permalink to this equation">¶</a></span>\[\gamma(h) = a[1 - exp(-3h / b)]\]</div>
-<p>where a and b are two modeling coefficients, namely sill and the range of the semivariogram function, respectively. When <span class="math notranslate nohighlight">\(h = 0\)</span>, <span class="math notranslate nohighlight">\(\gamma(h=0) = 0\)</span> which leads to <span class="math notranslate nohighlight">\(\rho(h = 0) = 1\)</span>. As the distance between two sites increases, i.e., <span class="math notranslate nohighlight">\(h\)</span> increases, <span class="math notranslate nohighlight">\(\gamma(h)\)</span> increases and <span class="math notranslate nohighlight">\(\rho(h)\)</span> decreases, which is consistent with the decaying trend of correlation between the two sites. After calibrating the model to past earthquake recordings, the following model was proposed for predicting the spatial correlation <span class="math notranslate nohighlight">\(\rho(h)\)</span>:</p>
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-5" title="Permalink to this equation">¶</a></span>\[\gamma(h) = a[1 - \exp(-3h / b)]\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are two modeling coefficients, namely sill and the range of the semivariogram function, respectively. When <span class="math notranslate nohighlight">\(h = 0\)</span>, <span class="math notranslate nohighlight">\(\gamma(h=0) = 0\)</span> which leads to <span class="math notranslate nohighlight">\(\rho(h = 0) = 1\)</span>. As the distance between two sites increases, i.e., <span class="math notranslate nohighlight">\(h\)</span> increases, <span class="math notranslate nohighlight">\(\gamma(h)\)</span> increases and <span class="math notranslate nohighlight">\(\rho(h)\)</span> decreases, which is consistent with the decaying trend of correlation between the two sites. After calibrating the model to past earthquake recordings, the following model was proposed for predicting the spatial correlation <span class="math notranslate nohighlight">\(\rho(h)\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-6">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-6" title="Permalink to this equation">¶</a></span>\[\rho(h) = exp(-3h / b)\]</div>
-<p>The range of the semivariogram function <span class="math notranslate nohighlight">\(b\)</span> was found to depend on the similarity of <span class="math notranslate nohighlight">\(V_{S30}\)</span> values in the given region. If the <span class="math notranslate nohighlight">\(V_{S30}\)</span> values do not show clustering, the <span class="math notranslate nohighlight">\(b\)</span> is computed by:</p>
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-6" title="Permalink to this equation">¶</a></span>\[\rho(h) = \exp(-3h / b)\]</div>
+<p>The range of the semivariogram function <span class="math notranslate nohighlight">\(b\)</span> was found to depend on the similarity of <span class="math notranslate nohighlight">\(V_{S30}\)</span> values in the given region. If the <span class="math notranslate nohighlight">\(V_{S30}\)</span> values do not show clustering, <span class="math notranslate nohighlight">\(b\)</span> is computed by:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-7">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-7" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}b = 8.5 + 17.2T, T &lt; 1s\\b = 22.0 + 3.7T, T \leq 1s\end{aligned}\end{align} \]</div>
-<p>where T is the period. If the <span class="math notranslate nohighlight">\(V_{S30}\)</span> values are very close in the given region, the <span class="math notranslate nohighlight">\(b\)</span> can be computed by:</p>
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-7" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}b = 8.5 + 17.2T, T &lt; 1s\\b = 22.0 + 3.7T, T \geq 1s\end{aligned}\end{align} \]</div>
+<p>If the <span class="math notranslate nohighlight">\(V_{S30}\)</span> values are very close in the given region, <span class="math notranslate nohighlight">\(b\)</span> can be computed by:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-8">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-8" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}b = 40.7 - 15.0T, T &lt; 1s\\b = 22.0 + 3.7T, T \leq 1s\end{aligned}\end{align} \]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-8" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}b = 40.7 - 15.0T, T &lt; 1s\\b = 22.0 + 3.7T, T \geq 1s\end{aligned}\end{align} \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Earthquakes that were considered in the development: Anza earthquake, Alum Rock earthquake, Parkfield earthquake, Chi-Chi earthquake, Northridge earthquake, Big Bear City earthquake, and Chino Hills earthquake.</p>
@@ -257,16 +257,16 @@
 </div>
 <div class="section" id="loth-and-baker-2013">
 <h3>Loth and Baker (2013)<a class="headerlink" href="#loth-and-baker-2013" title="Permalink to this heading">¶</a></h3>
-<p>Note that the cross-semivariograms between different pairs of intensity measures can be different, for instance, <span class="math notranslate nohighlight">\(\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)\)</span> might be greater than <span class="math notranslate nohighlight">\(\rho_{Sa(T=0.1s), Sa(T=1s)}(h)\)</span>. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, <a class="reference internal" href="#loth13" id="id3"><span>[Loth13]</span></a> proposed a predictive model for spatial covariance of spectral accelerations at different periods:</p>
+<p>Note that the cross-semivariograms between different pairs of intensity measures can be different; for instance, <span class="math notranslate nohighlight">\(\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)\)</span> might be greater than <span class="math notranslate nohighlight">\(\rho_{Sa(T=0.1s),Sa(T=1s)}(h)\)</span>. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, <a class="reference internal" href="#loth13" id="id4"><span>[Loth13]</span></a> proposed a predictive model for spatial covariance of spectral accelerations at different periods:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-9">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-9" title="Permalink to this equation">¶</a></span>\[\textbf{C}(h) = \textbf{B}^1 exp(-3h/20) + \textbf{B}^2 exp(-3h/70) + \textbf{B}^3 I_{h=0}\]</div>
-<p>where <span class="math notranslate nohighlight">\(I_{h=0}\)</span> is the indicator function equal to 1 at <span class="math notranslate nohighlight">\(h = 0\)</span> and 0 otherwise. And the three coefficient matrices <span class="math notranslate nohighlight">\(\textbf{B}^1\)</span>, <span class="math notranslate nohighlight">\(\textbf{B}^2\)</span>, and <span class="math notranslate nohighlight">\(\textbf{B}^3\)</span> were calibrated by 2080 recordings from 8 earthquakes.</p>
-<div class="align-center figure" id="id11">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-9" title="Permalink to this equation">¶</a></span>\[\textbf{C}(h) = \textbf{B}^1 \exp(-3h/20) + \textbf{B}^2 \exp(-3h/70) + \textbf{B}^3 I_{h=0}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_{h=0}\)</span> is the indicator function equal to 1 at <span class="math notranslate nohighlight">\(h = 0\)</span> and 0 otherwise. The three coefficient matrices <span class="math notranslate nohighlight">\(\textbf{B}^1\)</span>, <span class="math notranslate nohighlight">\(\textbf{B}^2\)</span>, and <span class="math notranslate nohighlight">\(\textbf{B}^3\)</span> were calibrated by 2080 recordings from 8 earthquakes.</p>
+<div class="align-center figure" id="id12">
 <img alt="../../../_images/spatial_correlation_1.png" src="../../../_images/spatial_correlation_1.png" />
-<p class="caption"><span class="caption-text">Location of recordings from the 8 earthquakes considered by <a class="reference internal" href="#loth13" id="id4"><span>[Loth13]</span></a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Location of recordings from the 8 earthquakes considered by <a class="reference internal" href="#loth13" id="id5"><span>[Loth13]</span></a></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
-<table class="docutils align-default" id="id12">
-<caption><span class="caption-text">Short-range coregionalization matrix, <span class="math notranslate nohighlight">\(\textbf{B}^1\)</span></span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Short-range coregionalization matrix, <span class="math notranslate nohighlight">\(\textbf{B}^1\)</span></span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 9%" />
@@ -392,8 +392,8 @@
 </tr>
 </tbody>
 </table>
-<table class="docutils align-default" id="id13">
-<caption><span class="caption-text">Short-range coregionalization matrix, <span class="math notranslate nohighlight">\(\textbf{B}^2\)</span></span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Short-range coregionalization matrix, <span class="math notranslate nohighlight">\(\textbf{B}^2\)</span></span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 9%" />
@@ -519,8 +519,8 @@
 </tr>
 </tbody>
 </table>
-<table class="docutils align-default" id="id14">
-<caption><span class="caption-text">Short-range coregionalization matrix, <span class="math notranslate nohighlight">\(\textbf{B}^3\)</span></span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">Short-range coregionalization matrix, <span class="math notranslate nohighlight">\(\textbf{B}^3\)</span></span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 9%" />
@@ -649,7 +649,7 @@
 </div>
 <div class="section" id="markhvida-et-al-2017">
 <h3>Markhvida et al. (2017)<a class="headerlink" href="#markhvida-et-al-2017" title="Permalink to this heading">¶</a></h3>
-<p><a class="reference internal" href="#markhvida17" id="id5"><span>[Markhvida17]</span></a> proposed to use Principal Component Analysis (PCA) to develop the predictive model for cross-correlograms. In theory, PCA performs a linear transformation of the variables of interest to an orthogonal basis, where the resulting projections onto the new basis are uncorrelated:</p>
+<p><a class="reference internal" href="#markhvida17" id="id6"><span>[Markhvida17]</span></a> proposed to use Principal Component Analysis (PCA) to develop the predictive model for cross-correlograms. In theory, PCA performs a linear transformation of the variables of interest to an orthogonal basis, where the resulting projections onto the new basis are uncorrelated:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-10">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-10" title="Permalink to this equation">¶</a></span>\[\textbf{P} \textbf{Z} = \textbf{Y}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\textbf{P}\)</span> is an orthogonal linear transformation matrix, <span class="math notranslate nohighlight">\(\textbf{Z}\)</span> is the original data matrix, and <span class="math notranslate nohighlight">\(\textbf{Y}\)</span> is the transformed variable matrix which contains uncorrelated principal components <span class="math notranslate nohighlight">\(\textbf{Y}_i\)</span>. Since <span class="math notranslate nohighlight">\(\textbf{P}\)</span> is orthogonal, the inversion is easy to compute:</p>
@@ -659,8 +659,8 @@
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-spatial-correlation-12">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-spatial-correlation-12" title="Permalink to this equation">¶</a></span>\[C_i(h) = c_{0i}I_{h=0} + c_{1i} exp(-3h/a_{1i}) + c_{2i} exp(-3h/a_{2i})\]</div>
 <p>where <span class="math notranslate nohighlight">\(c_{0i}\)</span>, <span class="math notranslate nohighlight">\(c_{1i}\)</span>, <span class="math notranslate nohighlight">\(c_{2i}\)</span>, <span class="math notranslate nohighlight">\(a_{1i}\)</span>, and <span class="math notranslate nohighlight">\(a_{2i}\)</span> are modeling coefficients for <span class="math notranslate nohighlight">\(i^{th}\)</span> principal component. Instead of directly simulating the desired intensity measures, this PCA-based method would first simulate uncorrelated variables using <span class="math notranslate nohighlight">\(C_i(h)\)</span> and then transform them back to intensity measures.</p>
-<table class="docutils align-default" id="id15">
-<caption><span class="caption-text">Principal component transformation coefficients</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-text">Principal component transformation coefficients</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 5%" />
@@ -1106,22 +1106,22 @@
 </tr>
 </tbody>
 </table>
-<p>The general idea is to include more degrees of freedom in the predictive model if compared to linear models (e.g., <a class="reference internal" href="#loth13" id="id6"><span>[Loth13]</span></a>). The figure below contrasts the correlation coefficient functions by PCA and the linear model by <a class="reference internal" href="#loth13" id="id7"><span>[Loth13]</span></a>.</p>
-<div class="align-center figure" id="id16">
+<p>The general idea is to include more degrees of freedom in the predictive model compared to linear models (e.g., <a class="reference internal" href="#loth13" id="id7"><span>[Loth13]</span></a>). The figure below contrasts the correlation coefficient functions of PCA and the linear model by <a class="reference internal" href="#loth13" id="id8"><span>[Loth13]</span></a>.</p>
+<div class="align-center figure" id="id17">
 <img alt="../../../_images/spatial_correlation_2.png" src="../../../_images/spatial_correlation_2.png" />
-<p class="caption"><span class="caption-text">Comparison of principal component analysis (PCA) model and linear model of coregionalization (LMC) correlograms and cross-correlograms (<a class="reference internal" href="#loth13" id="id8"><span>[Loth13]</span></a>) for different periods</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Comparison of principal component analysis (PCA) model and linear model of coregionalization (LMC) correlograms and cross-correlograms (<a class="reference internal" href="#loth13" id="id9"><span>[Loth13]</span></a>) for different periods</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
-<dt class="label" id="jayaram08"><span class="brackets"><a class="fn-backref" href="#id1">Jayaram08</a></span></dt>
-<dd><p>Jayaram N, Baker JW. Statistical tests of the joint distribution of spectral acceleration values. Bulletin of the Seismological Society of America 2008; 98(5):2231–2243.</p>
+<dt class="label" id="jayaram08"><span class="brackets">Jayaram08</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Jayaram, N., &amp; Baker, J. W. (2008). Statistical tests of the joint distribution of spectral acceleration values. Bulletin of the Seismological Society of America, 98(5), 2231-2243.</p>
 </dd>
-<dt class="label" id="jayaram09"><span class="brackets"><a class="fn-backref" href="#id2">Jayaram09</a></span></dt>
+<dt class="label" id="jayaram09"><span class="brackets"><a class="fn-backref" href="#id3">Jayaram09</a></span></dt>
 <dd><p>Jayaram, N., &amp; Baker, J. W. (2009). Correlation model for spatially distributed ground‐motion intensities. Earthquake Engineering &amp; Structural Dynamics, 38(15), 1687-1708.</p>
 </dd>
-<dt class="label" id="loth13"><span class="brackets">Loth13</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>,<a href="#id6">3</a>,<a href="#id7">4</a>,<a href="#id8">5</a>)</span></dt>
+<dt class="label" id="loth13"><span class="brackets">Loth13</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id5">2</a>,<a href="#id7">3</a>,<a href="#id8">4</a>,<a href="#id9">5</a>)</span></dt>
 <dd><p>Loth, C., &amp; Baker, J. W. (2013). A spatial cross‐correlation model of spectral accelerations at multiple periods. Earthquake Engineering &amp; Structural Dynamics, 42(3), 397-417.</p>
 </dd>
-<dt class="label" id="markhvida17"><span class="brackets"><a class="fn-backref" href="#id5">Markhvida17</a></span></dt>
+<dt class="label" id="markhvida17"><span class="brackets"><a class="fn-backref" href="#id6">Markhvida17</a></span></dt>
 <dd><p>Markhvida, M., Ceferino, L., &amp; Baker, J. W. (2018). Modeling spatially correlated spectral accelerations at multiple periods using principal component analysis and geostatistics. Earthquake Engineering &amp; Structural Dynamics, 47(5), 1107-1123.</p>
 </dd>
 </dl>
@@ -1129,7 +1129,7 @@
 </div>
 <div class="section" id="inter-event-correlation-model-options">
 <h2>Inter-event Correlation Model Options<a class="headerlink" href="#inter-event-correlation-model-options" title="Permalink to this heading">¶</a></h2>
-<p><a class="reference internal" href="#baker08" id="id9"><span>[Baker08]</span></a> presented equations to predict the inter-event residual correlations of spectral acceleration values,
+<p><a class="reference internal" href="#baker08" id="id10"><span>[Baker08]</span></a> presented equations to predict the inter-event residual correlations of spectral acceleration values,
 using the Next Generation Attenuation (NGA) ground motion library and the new NGA
 ground motion models (GMMs).  A predictive equation was presented that provides
 correlations between logarithmic spectral accelerations at two periods. This equation was observed to be valid for
@@ -1145,10 +1145,10 @@ The similarity of correlations from the various GMMs occurs because the correlat
 are dominated by the large record-to-record variability in observed spectral values from
 similar events. While slight differences in mean predicted values from the GMMs may
 be important for some applications, they do not affect computed values to a large
-enough extent that correlations change noticeably. The predictive equations (Eq. 5 and Eq. 6 in <a class="reference internal" href="#baker08" id="id10"><span>[Baker08]</span></a>)
+enough extent that correlations change noticeably. The predictive equations (Eq. 5 and Eq. 6 in <a class="reference internal" href="#baker08" id="id11"><span>[Baker08]</span></a>)
 are implemented in R2D.</p>
 <dl class="citation">
-<dt class="label" id="baker08"><span class="brackets">Baker08</span><span class="fn-backref">(<a href="#id9">1</a>,<a href="#id10">2</a>)</span></dt>
+<dt class="label" id="baker08"><span class="brackets">Baker08</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id11">2</a>)</span></dt>
 <dd><p>Baker, J. W., &amp; Jayaram, N. (2008). Correlation of spectral acceleration values from NGA ground motion models. Earthquake Spectra, 24(1), 299-317.</p>
 </dd>
 </dl>

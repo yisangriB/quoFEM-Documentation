@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.3.2. Outputs &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>2.3.2. Outputs &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.2.4. Backend Applications" href="../backendApplications.html" />
-    <link rel="prev" title="2.2.3.1. Inputs" href="Inputs.html" />
+    <link rel="next" title="2.4. Coding Style" href="../../../coding_style/desktop/coding_style.html" />
+    <link rel="prev" title="2.3.1. Inputs" href="Inputs.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -141,17 +141,19 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">2.1. Coding Style</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../architecture.html">2.2. Software Architecture</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../overview.html">2.2.1. Overview</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../file-types.html">2.2.3. File Types and Schemas</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="Inputs.html">2.2.3.1. Inputs</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.2.3.2. Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">2.1. Software Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backendApplications.html">2.2. Backend Applications</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../file-types.html">2.3. File Types and Schemas</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Inputs.html">2.3.1. Inputs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3.2. Outputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#edp-output-file">2.3.2.1. EDP Output File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dm-output-file">2.3.2.2. DM Output File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dv-output-file">2.3.2.3. DV Output File</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../backendApplications.html">2.2.4. Backend Applications</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">2.4. Coding Style</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">3. Verification</a></li>
@@ -205,11 +207,11 @@
         
           <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../architecture.html">&lt;no title&gt;</a> &raquo;</li>
         
-          <li><a href="../file-types.html"><span class="section-number">2.2.3. </span>File Types and Schemas</a> &raquo;</li>
+          <li><a href="../file-types.html"><span class="section-number">2.3. </span>File Types and Schemas</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.3.2. </span>Outputs</li>
+      <li><span class="section-number">2.3.2. </span>Outputs</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -229,10 +231,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="outputs">
-<span id="lbloutputs"></span><h1><span class="section-number">2.2.3.2. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h1>
-<p>After DL assessment is complete, the workflow collects the EDP.csv, DM.csv, and DV.csv files produced for each building asset and aggregates the results into single output files. When run locally, the workflow returns the output in a CSV format which is located in the <em>results</em> folder. When run remotely, the workflow returns the output in an HDF format which is located in the job archive. The HDF files may be converted into CSV format as a post-processing step.</p>
+<span id="lbloutputs"></span><h1><span class="section-number">2.3.2. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h1>
+<p>After the DL assessment is complete, the workflow collects the EDP.csv, DM.csv, and DV.csv files produced for each building asset and aggregates the results into single output files. When run locally, the workflow returns the output in CSV format, which is located in the <em>results</em> folder. When run remotely, the workflow returns the output in HDF format, which is located in the job archive. The HDF files can be converted into CSV format as a post-processing step.</p>
 <div class="section" id="edp-output-file">
-<h2>EDP Output File<a class="headerlink" href="#edp-output-file" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.3.2.1. </span>EDP Output File<a class="headerlink" href="#edp-output-file" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -285,7 +287,7 @@
 </div>
 <p>The header schema, followed by an example output, is provided:</p>
 <table class="docutils align-center" id="id1">
-<caption><span class="caption-number">Table 2.2.3.2.1 </span><span class="caption-text">OutputEDPSchema.csv</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.3.2.1 </span><span class="caption-text">OutputEDPSchema.csv</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 8%" />
@@ -307,10 +309,10 @@
 <th class="head"><p>PFA</p></th>
 <th class="head"><p>PFA</p></th>
 <th class="head"><p>PFA</p></th>
-<th class="head"><p>PFA</p></th>
-<th class="head"><p>PFA</p></th>
-<th class="head"><p>PFA</p></th>
-<th class="head"><p>PFA</p></th>
+<th class="head"><p>PFD</p></th>
+<th class="head"><p>PFD</p></th>
+<th class="head"><p>PFD</p></th>
+<th class="head"><p>PFD</p></th>
 <th class="head"><p>PID</p></th>
 <th class="head"><p>PID</p></th>
 <th class="head"><p>PID</p></th>
@@ -377,7 +379,7 @@
 </tbody>
 </table>
 <div class="section" id="dm-output-file">
-<h2>DM Output File<a class="headerlink" href="#dm-output-file" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.3.2.2. </span>DM Output File<a class="headerlink" href="#dm-output-file" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -412,7 +414,7 @@
 </div>
 <p>The header schema, followed by an example output, is provided:</p>
 <table class="docutils align-center" id="id2">
-<caption><span class="caption-number">Table 2.2.3.2.2 </span><span class="caption-text">OutputDMSchema.csv</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.3.2.2 </span><span class="caption-text">OutputDMSchema.csv</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 4%" />
 <col style="width: 4%" />
@@ -540,7 +542,7 @@
 </tbody>
 </table>
 <div class="section" id="dv-output-file">
-<h2>DV Output File<a class="headerlink" href="#dv-output-file" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.3.2.3. </span>DV Output File<a class="headerlink" href="#dv-output-file" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -602,7 +604,7 @@
 </div>
 <p>The header schema, followed by an example output, is provided:</p>
 <table class="docutils align-center" id="id3">
-<caption><span class="caption-number">Table 2.2.3.2.3 </span><span class="caption-text">OutputDVSchema.csv</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.3.2.3 </span><span class="caption-text">OutputDVSchema.csv</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 2%" />
 <col style="width: 2%" />

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -209,15 +209,15 @@
             
   <div class="section" id="troubleshooting-errors">
 <span id="lbltroubleshooting"></span><h1>Troubleshooting Errors<a class="headerlink" href="#troubleshooting-errors" title="Permalink to this heading">¶</a></h1>
-<p>If the workflow does not run successfully, the first and best method for troubleshooting is by reading error messages output in the <strong>log file</strong>. For an example log file, refer to page <a class="reference internal" href="../backendApplications.html#lblbackendapps"><span class="std std-ref">Backend Applications</span></a>.</p>
+<p>If the workflow does not run successfully, the first and best method for troubleshooting is to read the error messages output in the <strong>log file</strong>. For an example of a log file, refer to the page <a class="reference internal" href="../backendApplications.html#lblbackendapps"><span class="std std-ref">Backend Applications</span></a>.</p>
 <dl>
 <dt>For troubleshooting with the log file, the following steps are recommended:</dt><dd><ul>
-<li><p><strong>Identify which application failed in the workflow</strong>. Read through the log file until an ERROR message appears after one of the Python commands.</p></li>
-<li><p><strong>Verify that the paths to all workflow files are correct.</strong> These paths are specified in the <a class="reference internal" href="runLocal.html#lblrunlocal"><span class="std std-ref">initialization command</span></a> when run locally, or in the <a class="reference internal" href="runRemote.html#lblrunremote"><span class="std std-ref">job script</span></a> when run remotely.</p></li>
-<li><p><strong>Check that the “ApplicationData” for each application in the configuration file is correct.</strong> The workflow will fail if an application does not have all of its required application-specific inputs, or if inputs are provided with an incorrect data type. See the individual pages for the <a class="reference internal" href="../architecture.html#lblarchitecture"><span class="std std-ref">Backend Applications</span></a> for more details on application-specific inputs.</p></li>
-<li><p><strong>Check that there are no JSON serialization errors in the configuration file.</strong> Mistakes in unclosed brackets or incorrect indentation in the JSON file will cause errors.</p></li>
-<li><p><strong>Check that the user-defined input files are in the correct format.</strong> Mistakes in the header labels or formatting of CSV and JSON input files will cause errors.</p></li>
-<li><p><strong>To view print messages in the model script during response simulation, rerun Dakota.</strong> By default, any print messages in input files are suppressed in the log file. In order to view the messages and debug issues with the model script, navigate to the results folder for one of the building assets in the command window (i.e. “results/1”). You should find three files: dakota.in, dakota.err, and dakota.out. Running the following command will re-execute the UQ application for that particular building asset:</p>
+<li><p><strong>Identify the application that failed in the workflow</strong>. Read through the log file until an ERROR message appears after one of the Python commands.</p></li>
+<li><p><strong>Verify that the paths to all workflow files are correct</strong>. These paths are specified in the <a class="reference internal" href="runLocal.html#lblrunlocal"><span class="std std-ref">initialization command</span></a> when run locally, or in the <a class="reference internal" href="runRemote.html#lblrunremote"><span class="std std-ref">job script</span></a> when run remotely.</p></li>
+<li><p><strong>Check that the “ApplicationData” for each application in the configuration file is correct</strong>. The workflow will fail if an application does not have all of its required application-specific inputs, or if inputs are provided with an incorrect data type. See the individual pages for the <a class="reference internal" href="../overview.html#lblarchitecture"><span class="std std-ref">Backend Applications</span></a> for more details on application-specific inputs.</p></li>
+<li><p><strong>Check for any JSON serialization errors in the configuration file</strong>. Mistakes in unclosed brackets or incorrect indentation in the JSON file will cause errors.</p></li>
+<li><p><strong>Check that the user-defined input files are in the correct format</strong>. Mistakes in the header labels or formatting of CSV and JSON input files will cause errors.</p></li>
+<li><p><strong>To view print messages in the model script during response simulation, rerun Dakota</strong>. By default, any print messages in input files are suppressed in the log file. To view the messages and debug issues with the model script, navigate to the results folder for one of the building assets in the command window (i.e., “results/1”). You should find three files: dakota.in, dakota.err, and dakota.out. Running the following command will re-execute the UQ application for that particular building asset:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">dakota</span> <span class="pre">-input</span> <span class="pre">dakota.in</span> <span class="pre">-output</span> <span class="pre">dakota.out</span> <span class="pre">-error</span> <span class="pre">dakota.err</span></code></p>
 </div></blockquote>
@@ -225,7 +225,7 @@
 </ul>
 </dd>
 </dl>
-<p>If problems still persist, you are encouraged to read previously posted questions or post your own at <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php">SimCenter Forum</a>. A member of the SimCenter developer team will respond to your question on the platform.</p>
+<p>If problems still persist, you are encouraged to read previously posted questions or post your own at the <a class="reference external" href="https://github.com/orgs/NHERI-SimCenter/discussions/categories/quofem">github discussion page</a>. A member of the SimCenter developer team will respond to your question on the platform.</p>
 </div>
 
 

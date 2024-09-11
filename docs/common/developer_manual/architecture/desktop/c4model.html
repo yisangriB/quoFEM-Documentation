@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>C4 Model of Software Architecture &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>C4 Model of the SimCenter Ecosystem &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -188,7 +188,7 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>C4 Model of Software Architecture</li>
+      <li>C4 Model of the SimCenter Ecosystem</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,22 +207,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="c4-model-of-software-architecture">
-<span id="lblc4model"></span><h1>C4 Model of Software Architecture<a class="headerlink" href="#c4-model-of-software-architecture" title="Permalink to this heading">¶</a></h1>
-<p>The SimCenter workflow systems are aimed at facilitating the use, reuse and extension of common workflows encountered in NHE by a broad range of natural hazards engineering researchers with varying levels of software skills. In order to encourage this use and adoption, this chapter presents the software architecture for the SimCenter framework and quoFEM app using the <a class="reference external" href="https://c4model.com">C4 model</a>. The C4 model is a graphical approach for documenting software architecture through diagrams that describe and communicate the software architecture at different levels of abstraction. It is a top-down approach that starts at a high level (level 1) showing how a user would interact with the software and drills down through three more levels, with level 4 containing the typical UML diagrams. The choice of the <strong>C4</strong> model was made to provide NHE researchers with a diverse range of software architecture knowledge and an understanding of the software architecture behind SimCenter applications that fit their skill level. The four levels:</p>
+  <div class="section" id="c4-model-of-the-simcenter-ecosystem">
+<span id="lblc4model"></span><h1>C4 Model of the SimCenter Ecosystem<a class="headerlink" href="#c4-model-of-the-simcenter-ecosystem" title="Permalink to this heading">¶</a></h1>
+<p>The SimCenter workflow systems are aimed at facilitating the use, reuse and extension of common workflows encountered in NHE by a broad range of natural hazards engineering researchers with varying levels of software skills. In order to encourage this use and adoption, this chapter presents the software architecture for the SimCenter framework and quoFEM app using the <a class="reference external" href="https://c4model.com">C4 model</a>. The C4 model is a graphical approach for documenting software architecture through diagrams that describe and communicate the software architecture at different levels of abstraction. It is a top-down approach that starts at a high level (level 1) showing how a user would interact with the software and drills down through three more levels, with level 4 containing the typical UML diagrams. The choice of the <strong>C4</strong> model was made to provide NHE researchers with a diverse range of software architecture knowledge and an understanding of the software architecture behind SimCenter applications that fit their skill level. These four levels are as follows:</p>
+<p>The SimCenter scientific workflow systems aim to facilitate the use, reuse, and extension of common workflows encountered in NHE by a broad range of natural hazards engineering researchers with varying software skills. This chapter presents the software architecture for the SimCenter framework and quoFEM app using the <a class="reference external" href="https://c4model.com">C4 model</a> to encourage this use and adoption. The <strong>C4</strong> model is a graphical approach for documenting software architecture through diagrams describing and communicating the software architecture at various levels of abstraction. It is a top-down approach that starts at a high level (level 1), showing how a user would interact with the software, and drills down through three more levels, with level 4 containing comprehensive UML diagrams. The <strong>C4</strong> model was chosen to provide NHE researchers with a diverse range of software architecture knowledge to understand the software architecture behind SimCenter applications that fit their skill level. The four levels are as follows:</p>
+<ul class="simple">
+<li><p>Level 1: The level one diagram is a system diagram that shows how the software system fits in the real world in terms of people who use it and other software systems it interacts with.</p></li>
+<li><p>Level 2: Level 2 is a container diagram showing the containers (applications, databases, etc.) that make up the software system.</p></li>
+<li><p>Level 3: Level three diagrams are component diagrams, showing how the components of the individual containers.</p></li>
+<li><p>Level 4: The level four diagrams show how the individual components are implemented. They are typically UML class diagrams.</p></li>
+</ul>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#level-1-context-diagram" id="id11">Level 1: Context Diagram</a></p></li>
+<li><p><a class="reference internal" href="#level-2-container-diagram" id="id12">Level 2: Container Diagram</a></p></li>
+<li><p><a class="reference internal" href="#level-3-component-diagram" id="id13">Level 3: Component Diagram</a></p></li>
+<li><p><a class="reference internal" href="#level-4-code-diagram" id="id14">Level 4: Code Diagram</a></p></li>
+<li><p><a class="reference internal" href="#uml-ee-uq" id="id15">UML EE-UQ</a></p></li>
+<li><p><a class="reference internal" href="#uml-we-uq" id="id16">UML WE-UQ</a></p></li>
+<li><p><a class="reference internal" href="#uml-hydrouq" id="id17">UML HydroUQ</a></p></li>
+<li><p><a class="reference internal" href="#uml-pbe" id="id18">UML PBE</a></p></li>
+<li><p><a class="reference internal" href="#uml-earthquakeevents" id="id19">UML EarthquakeEvents</a></p></li>
+<li><p><a class="reference internal" href="#uml-windevents" id="id20">UML WindEvents</a></p></li>
+<li><p><a class="reference internal" href="#uml-hydroevents" id="id21">UML HydroEvents</a></p></li>
+<li><p><a class="reference internal" href="#uml-simcentercommon" id="id22">UML SimCenterCommon</a></p></li>
+<li><p><a class="reference internal" href="#uml-simcenterbackendapplications" id="id23">UML SimCenterBackendApplications</a></p></li>
+</ul>
+</div>
 <div class="section" id="level-1-context-diagram">
-<h2>Level 1: Context Diagram<a class="headerlink" href="#level-1-context-diagram" title="Permalink to this heading">¶</a></h2>
-<p>A Level 1 diagram in <code class="xref std std-numref docutils literal notranslate"><span class="pre">c4model_figContext</span></code> shows the system context for the SimCenter applications, i.e. how it fits in the world. In the diagram:
-- the SimCenter computational applications (EE-UQ, WE-UQ, PBE, R2D) are shown in the center surrounded by the user and the systems it interacts with.
-- input data for the SimCenter applications can be obtained either from NHERI datasets accessible on the DesignSafe <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/">Data Depot</a>, shown to the right, or from web-based databases, shown to the left.
-- the SimCenter applications can then be run in conjunction with open-source software applications (such as Dakota, FEAP, OpenSees, Python, OpenFOAM, etc.) either on a local desktop, shown below, or using HPC resources on <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>, shown to the right.</p>
+<span id="lblc4model1"></span><h2>Level 1: Context Diagram<a class="headerlink" href="#level-1-context-diagram" title="Permalink to this heading">¶</a></h2>
+<p>A Level 1 diagram in <code class="xref std std-numref docutils literal notranslate"><span class="pre">c4model_figContext</span></code> shows the system context for the SimCenter applications, i.e. how it fits in the world. In the diagram:</p>
+<ul class="simple">
+<li><p>the SimCenter computational applications (EE-UQ, WE-UQ, PBE, R2D) are shown in the center surrounded by the user and the systems it interacts with.</p></li>
+<li><p>input data for the SimCenter applications can be obtained either from NHERI datasets accessible on the DesignSafe <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/">Data Depot</a>, shown to the right, or from web-based databases, shown to the left.</p></li>
+<li><p>the SimCenter applications can then be run in conjunction with open-source software applications (such as Dakota, FEAP, OpenSees, Python, OpenFOAM, etc.) either on a local desktop, shown below, or using HPC resources on <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>, shown to the right.</p></li>
+</ul>
 <div class="align-center figure" id="c4model-figcontext">
 <a class="reference internal image-reference" href="../../../../_images/context.png"><img alt="../../../../_images/context.png" src="../../../../_images/context.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-text">System context diagram for SimCenter applications.</span><a class="headerlink" href="#c4model-figcontext" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="level-2-container-diagram">
-<h2>Level 2: Container Diagram<a class="headerlink" href="#level-2-container-diagram" title="Permalink to this heading">¶</a></h2>
+<span id="lblc4model2"></span><h2>Level 2: Container Diagram<a class="headerlink" href="#level-2-container-diagram" title="Permalink to this heading">¶</a></h2>
 <p>A Level 2 diagram in <code class="xref std std-numref docutils literal notranslate"><span class="pre">c4model_figContainer</span></code> demonstrates how the SimCenter applications are broken into high-level containers (applications, databases, etc.). Each of the SimCenter applications is broken into two components: A front-end UI and a back-end application that runs the workflow. The front-end is a desktop application written using the cross-platform <a class="reference external" href="https://www.qt.io/product/framework">Qt framework</a>. The back-end is an application that processes the input from the front-end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications where possible and run on either the local desktop machine or on an HPC utilizing resources made available to NHE community through DesignSafe.</p>
 <div class="align-center figure" id="c4model-figcontainer">
 <a class="reference internal image-reference" href="../../../../_images/container.png"><img alt="../../../../_images/container.png" src="../../../../_images/container.png" style="width: 800px;" /></a>
@@ -230,7 +257,7 @@
 </div>
 </div>
 <div class="section" id="level-3-component-diagram">
-<h2>Level 3: Component Diagram<a class="headerlink" href="#level-3-component-diagram" title="Permalink to this heading">¶</a></h2>
+<span id="lblc4model3"></span><h2>Level 3: Component Diagram<a class="headerlink" href="#level-3-component-diagram" title="Permalink to this heading">¶</a></h2>
 <p>Two level 3 diagrams are now presented which break up the two containers into the major building blocks or
 components in C4 terminology. In <code class="xref std std-numref docutils literal notranslate"><span class="pre">c4model_figComponentFront</span></code> the component diagram for the front-end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequently interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.</p>
 <div class="align-center figure" id="c4model-figcomponentfront">
@@ -244,7 +271,7 @@ components in C4 terminology. In <code class="xref std std-numref docutils liter
 </div>
 </div>
 <div class="section" id="level-4-code-diagram">
-<h2>Level 4: Code Diagram<a class="headerlink" href="#level-4-code-diagram" title="Permalink to this heading">¶</a></h2>
+<span id="lblc4model4"></span><h2>Level 4: Code Diagram<a class="headerlink" href="#level-4-code-diagram" title="Permalink to this heading">¶</a></h2>
 <p>To facilitate the development of the different SimCenter applications and to encourage their reuse and extension by other NHE researchers, the SimCenter is providing the NHE community with a software framework for building such applications. From this framework, the SimCenter is building the applications, of which quoFEM app is but one, that it releases. These individual applications are built from the components of the framework. The components of the SimCenter are grouped, as shown in the figure below, into the following components:</p>
 <ol class="arabic simple">
 <li><p><strong>Cloud</strong>: applications/libraries for communicating with remote web services to launch and monitor applications on HPC resources and to upload and download files from the filesystems of such resources.</p></li>
@@ -254,6 +281,8 @@ components in C4 terminology. In <code class="xref std std-numref docutils liter
 <li><p><strong>FEM</strong>: application for determining the response parameter of the building asset given applied loads.</p></li>
 <li><p><strong>DL</strong>: application to determine the damage and loss to the building asset given the event.</p></li>
 <li><p><strong>EDP</strong>: application to determine the response parameter given the event, building asset, and damage and loss application.</p></li>
+<li><p><strong>BRAILS</strong>: a framework of applications for creating regional-level building inventories using machine learning.</p></li>
+<li><p><strong>Databases</strong>; contain information on building inventories for regional simulations, consequence functions for the DL applications, and experimental and corresponding simulation models for future machine learning-based AI algorithms.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -290,6 +319,130 @@ Compress the temporary folder. (12) Send the compressed folder to the remote HPC
 <div class="align-center figure" id="c4model-figsequenceremote">
 <a class="reference internal image-reference" href="../../../../_images/sequenceRemote.png"><img alt="../../../../_images/sequenceRemote.png" src="../../../../_images/sequenceRemote.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-text">Sequence diagram showing what happens when a workflow runs remotely.</span><a class="headerlink" href="#c4model-figsequenceremote" title="Permalink to this image">¶</a></p>
+</div>
+<p>Below we visualize aspects of SimCenter software via schematics. These are mostly UML diagrams showing how the applications are built. The SimCenter releases a number of front-end applications: EE-UQ shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlEE</span></code>, WE-UQ shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlWE</span></code>, and PBE shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlPBE</span></code>. These applications share code with each other and other SimCenter applications. As a consequence, the common code is bundled into a number of shared packages: EarthquakeEvents shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlEarthquakeEvents</span></code>, WindEvents shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlWindEvents</span></code>, and SimCenterCommon shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlCommon</span></code>. A number of packages were chosen over placing all common code inside a single package to simplify development efforts for outside programmers (whom it is envisioned will mostly be adding new event components) and to reduce the overhead of package management and compile time for SimCenter programmers. UML diagrams are presented for these front-end applications and shared packages. THE UML diagrams that are presented are not exhaustive, in that they do not show all classes used, for it was decided not to for example show the myriad of Line edits, labels, spin boxes, etc. that make up the widgets. What is shown is sufficient to present the SimCenter architecture.</p>
+<p>While there are a number of different types of UML diagrams, those shown below are limited to class diagrams and sequence diagrams. SimCenter applications are object-oriented in nature. An object-oriented program consists of objects interacting with one another,  with each object being of a certain type or class. A class diagram shows the classes, their attributes and methods, and the relationships between the classes. A sequence diagram or event diagram shows the order in which objects interact. To understand the SimCenter framework it is useful to first present the main() function for a SImCenter application, in this case, EE-UQ, shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">codeMainCode</span></code>. The code presented is a stripped-down version of the actual code, code for dealing with style sheets, analytics, etc. is not shown as it is not pertinent to understanding the software architecture.</p>
+<div class="highlight-default notranslate" id="codemaincode"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="nb">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+
+  <span class="n">QApplication</span> <span class="n">app</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+
+ <span class="o">//</span>
+ <span class="o">//</span> <span class="n">create</span> <span class="n">a</span> <span class="n">remote</span> <span class="n">interface</span>
+ <span class="o">//</span>
+
+ <span class="n">QString</span> <span class="n">tenant</span><span class="p">(</span><span class="s2">&quot;designsafe&quot;</span><span class="p">);</span>
+ <span class="n">QString</span> <span class="n">storage</span><span class="p">(</span><span class="s2">&quot;agave://designsafe.storage.default/&quot;</span><span class="p">);</span>
+ <span class="n">QString</span> <span class="n">dirName</span><span class="p">(</span><span class="s2">&quot;EE-UQ&quot;</span><span class="p">);</span>
+
+ <span class="o">//</span>
+ <span class="o">//</span> <span class="n">create</span> <span class="n">the</span> <span class="n">main</span> <span class="n">window</span>
+ <span class="o">//</span>
+
+ <span class="n">WorkflowAppWidget</span> <span class="o">*</span><span class="n">theInputApp</span> <span class="o">=</span> <span class="n">new</span> <span class="n">WorkflowAppEE_UQ</span><span class="p">(</span><span class="n">theRemoteService</span><span class="p">);</span>
+ <span class="n">MainWindowWorkflowApp</span> <span class="n">window</span><span class="p">(</span><span class="n">QString</span><span class="p">(</span><span class="s2">&quot;EE-UQ: Response of Building to Earthquake&quot;</span><span class="p">),</span> <span class="n">theInputApp</span><span class="p">,</span> <span class="n">theRemoteService</span><span class="p">);</span>
+
+ <span class="n">windows</span><span class="o">.</span><span class="n">setVersion</span><span class="p">(</span><span class="s2">&quot;Version 1.0.0&quot;</span><span class="p">);</span>
+
+
+ <span class="o">//</span>
+ <span class="o">//</span> <span class="n">move</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">interface</span> <span class="n">to</span> <span class="n">a</span> <span class="n">thread</span>
+ <span class="o">//</span>
+
+ <span class="n">QThread</span> <span class="o">*</span><span class="n">thread</span> <span class="o">=</span> <span class="n">new</span> <span class="n">QThread</span><span class="p">();</span>
+ <span class="n">theRemoteService</span><span class="o">-&gt;</span><span class="n">moveToThread</span><span class="p">(</span><span class="n">thread</span><span class="p">);</span>
+ <span class="n">thread</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+
+ <span class="o">//</span>
+ <span class="o">//</span> <span class="n">show</span> <span class="n">the</span> <span class="n">main</span> <span class="n">window</span><span class="p">,</span> <span class="nb">set</span> <span class="n">styles</span> <span class="o">&amp;</span> <span class="n">start</span> <span class="n">the</span> <span class="n">event</span> <span class="n">loop</span>
+ <span class="o">//</span>
+
+ <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+ <span class="nb">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">();</span>
+
+ <span class="o">//</span>
+ <span class="o">//</span> <span class="n">on</span> <span class="n">done</span> <span class="k">with</span> <span class="n">the</span> <span class="n">event</span> <span class="n">loop</span><span class="p">,</span> <span class="n">logout</span> <span class="o">&amp;</span> <span class="n">stop</span> <span class="n">the</span> <span class="n">thread</span>
+ <span class="o">//</span>
+
+ <span class="n">theRemoteService</span><span class="o">-&gt;</span><span class="n">logout</span><span class="p">();</span>
+ <span class="n">thread</span><span class="o">-&gt;</span><span class="n">quit</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As was mentioned the Front end UI applications are built using Qt. In a Qt application, the programmer creates a QApplication object, in <code class="xref std std-numref docutils literal notranslate"><span class="pre">codeMainCode</span></code> the object named <cite>app</cite> and a QMainWindow, in the example named <cite>window</cite>. As will be shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlCommon</span></code>, MainWindowWorkflowApp is a type of QMainWindow that is used in all SimCenter research applications as it deals with all the application menu items, e.g. File open and close, Help cites, etc. The QMainWindowWorkflowApp is a SImCenter class that contains a single QWidget of type WorkflowAppWidget. The WorkflowAppWidget object is passed a RemoteService, the remote cloud service that the application will interact with. This RemoteService is placed in its own QThread object, so that the UI can respond to user requests while communication with the cloud service is underway. Once the window object is shown, control is passed to the QApplication until the user is done.</p>
+</div>
+<div class="section" id="uml-ee-uq">
+<span id="lblumlee"></span><h2>UML EE-UQ<a class="headerlink" href="#uml-ee-uq" title="Permalink to this heading">¶</a></h2>
+<p>EE-UQ is an application to determine the response of a building subjected to an earthquake event. As shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figumlEE</span></code> it comprises a component selection that presents the user with a number of components, jigsaw pieces, which include: earthquake event (EarthquakeEventSelection), UQ engine (UQ Selection), demand parameters of interns (EDP Selection), building information model (BIM Selection),  structural analysis model generator (SAM Selection), finite element application (FEM Selection), and RandomVariableContainer.  RandomVariableContainer is a widget allowing user to specify distributions associated with the random variables created by a user. As will be seen in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlEarthquakeEvents</span></code> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlCommon</span></code> each component offers the user a number of applications to choose from for that component. Other classes corresponding to widgets presented in the Front end UI include: UQ Result for displaying the results, Local and Remote Services for running the job locally or remotely, Remote job Manager for monitoring job status and retrieving old jobs, and Login for obtaining credentials from DesignSafe to access and run jobs on the HPC resources. All communication between the applications and DesignSafe-ci is through the Application Service. This is done to allow the applications to switch to other cloud service providers, possibly allowing applications to run at DesignSafe, on Amazon EC-2, IBM’s Azure or elsewhere.</p>
+<div class="align-center figure" id="id2">
+<span id="figumlee"></span><img alt="../../../../_images/umlEE.png" src="../../../../_images/umlEE.png" />
+<p class="caption"><span class="caption-text">UML Diagram for EU-UQ</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uml-we-uq">
+<span id="lblumlwe"></span><h2>UML WE-UQ<a class="headerlink" href="#uml-we-uq" title="Permalink to this heading">¶</a></h2>
+<p>Similar in construction to EE-UQ is WE-UQ, as shown in figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlWE</span></code>.  In fact, the only difference is that Wind Event Selection is present in the component selection, instead of Earthquake Events. The wind event applications, as will be shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlWindEvents</span></code> include stochastic wind models, wind loading from online services such as Vortex-Winds, applications that take online wind tunnel experimental datasets such as those from Tokyo Polytechnic.</p>
+<div class="align-center figure" id="id3">
+<span id="figumlwe"></span><img alt="../../../../_images/umlWE.png" src="../../../../_images/umlWE.png" />
+<p class="caption"><span class="caption-text">UML diagram for WE-UQ.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uml-hydrouq">
+<h2>UML HydroUQ<a class="headerlink" href="#uml-hydrouq" title="Permalink to this heading">¶</a></h2>
+<p>Similar in construction to EE-UQ is HydroUQ, as shown in figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlHydroUQ</span></code>.  In fact, the only difference is that Hydro Event Selection is present in the component selection, instead of Earthquake Events. The hydrodynamic event applications, as will be shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlHydroEvents</span></code> include stochastic wave models, tsunami loading from online services, digital wave flumes, and more.</p>
+<div class="align-center figure" id="id4">
+<span id="figumlhydrouq"></span><img alt="../../../../_images/umlHydroUQ.png" src="../../../../_images/umlHydroUQ.png" />
+<p class="caption"><span class="caption-text">UML diagram for HydroUQ.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uml-pbe">
+<span id="lblumlpbe"></span><h2>UML PBE<a class="headerlink" href="#uml-pbe" title="Permalink to this heading">¶</a></h2>
+<p>PBE is a tool for performance-based engineering. Given a building and an event, it will calculate downtime and loss estimates. As can be seen in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figumlPBE</span></code>,  it adds a LossModelSelection to the component Selections available in EE-UQ.
+The Loss Model applications currently available for selection include a P58 Loss Model and a HAZUS Loss Model. Depending on selection, different widgets are presented for the user to input the different input arguments needed for the different loss model calculations. Presently the calculations for both loss models are performed by the same Python script, CalculateDL.py, in the collection of backend applications.</p>
+<div class="align-center figure" id="id5">
+<span id="figumlpbe"></span><img alt="../../../../_images/umlPBE.png" src="../../../../_images/umlPBE.png" />
+<p class="caption"><span class="caption-text">UML diagram for PBE.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uml-earthquakeevents">
+<span id="lblumlearthquakeevents"></span><h2>UML EarthquakeEvents<a class="headerlink" href="#uml-earthquakeevents" title="Permalink to this heading">¶</a></h2>
+<p>The Earthquake Events package, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlEarthquakeEvents</span></code>, contains an Earthquake Event selector with several Earthquake Event selections available. The selections include options that interface with the NGA west server directly and options that will collect inputs for stochastic input models of Vlachos et Al or Dabahi and DerKiuerghian, peer NGA records, site response and our SimCenterEvent format. Each of these widgets corresponds to one application in the backend, e.g. RockOutcrop corresponds to SiteResponse, and it is this application that will run when the workflow runs.</p>
+<div class="align-center figure" id="id6">
+<span id="figumlearthquakeevents"></span><img alt="../../../../_images/umlEarthquakeEvents.png" src="../../../../_images/umlEarthquakeEvents.png" />
+<p class="caption"><span class="caption-text">UML diagram for earthquake events.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uml-windevents">
+<span id="lblumlwindevents"></span><h2>UML WindEvents<a class="headerlink" href="#uml-windevents" title="Permalink to this heading">¶</a></h2>
+<p>Similar to the Earthquake Events package, the wind events package shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlWindEvents</span></code>, contains a Wind Event Selector with a number of Wind Event selections available. The selections include options for stochastically generated wind events, events that obtain wind loading from the vortex-winds server, and options to obtain forces from wind tunnel events, either from the Tokyo Polytechnic University database or a user-supplied file.</p>
+<div class="align-center figure" id="id7">
+<span id="figumlwindevents"></span><img alt="../../../../_images/umlWindEvents.png" src="../../../../_images/umlWindEvents.png" />
+<p class="caption"><span class="caption-text">UML diagram for wind events.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uml-hydroevents">
+<span id="lblumlhydroevents"></span><h2>UML HydroEvents<a class="headerlink" href="#uml-hydroevents" title="Permalink to this heading">¶</a></h2>
+<p>Similar to the Earthquake Events package, the hydrodynamic events package shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlHydroEvents</span></code>, contains a Hydrodynamic Event Selector with a number of Hydrodynamic Event selections available. The selections include options for stochastically generated wave events, 3D CFD events, and more.</p>
+<div class="align-center figure" id="id8">
+<span id="figumlhydroevents"></span><img alt="../../../../_images/umlHydroEvents.png" src="../../../../_images/umlHydroEvents.png" />
+<p class="caption"><span class="caption-text">UML diagram for hydrodynamic events.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uml-simcentercommon">
+<span id="lblsimcentercommon"></span><h2>UML SimCenterCommon<a class="headerlink" href="#uml-simcentercommon" title="Permalink to this heading">¶</a></h2>
+<p>SimCenter common shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUmlCommon</span></code> contains a number of component selections, BIM selection, EDP Selection, SAM Selection, FEM Selection and UQ Engine Selection. Each contains a number of options. The components and their options are all subclasses of the SImCenterAppWidget class, The SImCenterAppWidget has methods to output and input from a JSON object. SimCenterCommon also contains the RandomVariablesContainer class, each object being a container for several RandomVariables. Each RansomVariable has a name and a RandomVariable Distribution associated with it. Types of RandomVariableDistributions include for example Normal, Lognormal, Uniform, Beta, and Gumbel.</p>
+<div class="align-center figure" id="id9">
+<span id="figumlcommon"></span><img alt="../../../../_images/umlCommon.png" src="../../../../_images/umlCommon.png" />
+<p class="caption"><span class="caption-text">UML diagram for SimCenter common.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uml-simcenterbackendapplications">
+<span id="lblsimcenterbackendapplications"></span><h2>UML SimCenterBackendApplications<a class="headerlink" href="#uml-simcenterbackendapplications" title="Permalink to this heading">¶</a></h2>
+<p>The BackendApplications are currently all in a single package. These are the applications that perform the numerical computations when the workflow runs. Some of these applications rely on external applications, websites, and external packages.  The external applications, web services, and libraries are as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figAppDiagramBackend</span></code>.</p>
+<div class="align-center figure" id="id10">
+<span id="figappdiagrambackend"></span><img alt="../../../../_images/appDiagramBackend.png" src="../../../../_images/appDiagramBackend.png" />
+<p class="caption"><span class="caption-text">Applications for backend applications.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2. Software Architecture &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>&lt;no title&gt; &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.2.1. Overview" href="overview.html" />
-    <link rel="prev" title="2.1. Coding Style" href="../../coding_style/desktop/coding_style.html" />
+    <link rel="next" title="2.1. Software Architecture" href="overview.html" />
+    <link rel="prev" title="2. How to Extend" href="../../how_to_extend.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -138,18 +138,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/UCSDUQTechnical.html">3. Methods in UCSD UQ Engine</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../how_to_extend.html">2. How to Extend</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">2.1. Coding Style</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Software Architecture</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="overview.html">2.2.1. Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="file-types.html">2.2.3. File Types and Schemas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="backendApplications.html">2.2.4. Backend Applications</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_extend.html">2. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">3. Verification</a></li>
 </ul>
 
@@ -201,7 +192,7 @@
         
           <li><a href="../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-      <li><span class="section-number">2.2. </span>Software Architecture</li>
+      <li>&lt;no title&gt;</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -220,58 +211,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="software-architecture">
-<span id="lblarchitecture"></span><h1><span class="section-number">2.2. </span>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this heading">¶</a></h1>
-<p>The quoFEM app is one of the SimCenter’s computational applications, which are <a class="reference external" href="https://en.wikipedia.org/wiki/Scientific_workflow_system">scientific workflow systems</a> that executes a sequence of computational tasks specialized for natural hazard engineering (NHE) problems. In contrast to more general-purpose scientific workflow systems (such as <a class="reference external" href="https://taverna.incubator.apache.org/">Taverna</a>, <a class="reference external" href="https://kepler-project.org/">Kepler</a>, and <a class="reference external" href="https://pegasus.isi.edu/">Pegasus</a>), SimCenter workflow systems include the following features:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>access to high-performance computing resources, available on the cloud through <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>, to enable parallel workflows for non-trivial large-scale NHE problems;</p></li>
-<li><p>uncertainty quantification capabilities using <a class="reference external" href="https://dakota.sandia.gov/">Dakota</a>, which allows users to introduce input uncertainties that are propagated through the workflow with random variables;</p></li>
-<li><p>streamlined interfaces between existing software applications and datasets that are widely used by the NHE community, such as <a class="reference external" href="https://openfoam.org/">OpenFOAM</a>, <a class="reference external" href="https://opensees.berkeley.edu">OpenSees</a>, <a class="reference external" href="http://adcirc.org/">ADCIRC</a>, and <a class="reference external" href="https://peer.berkeley.edu/peer-strong-ground-motion-databases">PEER Strong Ground Motion Databases</a>. To do this, the SimCenter develops pre- and post-processors for these existing applications and utilizes web technologies for accessing online services;</p></li>
-<li><p>additional custom software applications produced by the SimCenter. Among these are applications that automate the acquisition of building inventory data (<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/">BRAILS</a>), applications that simulate hazard events and generate corresponding input files for passing through the workflow system (RegionalEvent Applications), applications for damage and loss assessment (<a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">pelicun</a>), and more.</p></li>
-<li><p>a modular framework that allows developers to incorporate their own software applications as components to the workflow system, so long as it meets the input-output structure at component interfaces.</p></li>
-</ul>
-</div></blockquote>
-<div class="align-center figure" id="id2">
-<span id="figframework"></span><a class="reference internal image-reference" href="../../../../_images/SimCenterFramework.png"><img alt="../../../../_images/SimCenterFramework.png" src="../../../../_images/SimCenterFramework.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.21 </span><span class="caption-text">SimCenter Software Framework</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
-<p>The SimCenter scientific workflow systems aim to facilitate the use, reuse, and extension of common workflows encountered in NHE by a broad range of natural hazards engineering researchers with varying software skills. This chapter presents the software architecture for the SimCenter framework and quoFEM app using the <a class="reference external" href="https://c4model.com">C4 model</a> to encourage this use and adoption. The <strong>C4</strong> model is a graphical approach for documenting software architecture through diagrams describing and communicating the software architecture at various levels of abstraction. It is a top-down approach that starts at a high level (level 1), showing how a user would interact with the software, and drills down through three more levels, with level 4 containing the typical UML diagrams. The <strong>C4</strong> model was chosen to provide NHE researchers with a diverse range of software architecture knowledge to understand the software architecture behind SimCenter applications that fit their skill level. The four levels:</p>
-<ul class="simple">
-<li><p>Level 1: The level one diagram is a system diagram that shows how the software system fits in the real world in terms of people who use it and other software systems it interacts with.</p></li>
-<li><p>Level 2: Level 2 is a container diagram showing the containers (applications, databases, etc.) that make up the software system.</p></li>
-<li><p>Level 3: Level three diagrams are component diagrams, showing how the components of the individual containers.</p></li>
-<li><p>Level 4: The level four diagrams show how the individual components are implemented. They are typically UML class diagrams.</p></li>
-</ul>
-<p>The following sections present the architecture of SimCenter the SimCenter to level 3:</p>
-<p>Documentation of the SimCenter software architecture is detailed in the following pages:</p>
-<div class="toctree-wrapper compound">
+  <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">2.2.1. Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file-types.html">2.2.3. File Types and Schemas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file-types/Inputs.html">2.2.3.1. Inputs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file-types/Outputs.html">2.2.3.2. Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">2.1. Software Architecture</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="backendApplications.html">2.2.4. Backend Applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="applications/preprocFEM.html">2.2.4.1. FEM Pre-processors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="applications/preprocUQ.html">2.2.4.2. UQ Pre-processors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backendApplications.html">2.2. Backend Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="applications/preprocFEM.html">2.2.1. FEM Pre-processors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications/preprocUQ.html">2.2.2. UQ Pre-processors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="file-types.html">2.3. File Types and Schemas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file-types/Inputs.html">2.3.1. Inputs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#configuration-file">2.3.1.1. Configuration File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#building-source-file">2.3.1.2. Building Source File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#transportation-network-source-file-option-1">2.3.1.3. Transportation Network Source File Option 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#model-file">2.3.1.4. Model File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#edp-specifications-file">2.3.1.5. EDP specifications file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#event-files">2.3.1.6. Event Files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file-types/Outputs.html">2.3.2. Outputs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Outputs.html#edp-output-file">2.3.2.1. EDP Output File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Outputs.html#dm-output-file">2.3.2.2. DM Output File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Outputs.html#dv-output-file">2.3.2.3. DV Output File</a></li>
 </ul>
 </li>
 </ul>
-</div>
-<p>Within the natural hazards engineering community, there exist several widely used open-source applications, e.g., OpenFOAM, and online datasets, e.g., PEER NGA, that researchers are currently using. Consequently, and to avoid duplication, SimCenter applications incorporate many widely used applications, e.g., OpenFOAM. To do this, SimCenter develops pre- and post-processors for these existing applications and utilizes web technologies for accessing online services.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Definitions</strong></p>
-<ol class="arabic simple">
-<li><p><strong>Workflow</strong>: “The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules.” [Workflow Management Coalition].</p></li>
-<li><p><strong>Application</strong>: A software application performs operations on data residing in a computer for a user or another program; it can be self-contained, typically termed a program or part of a group of programs.</p></li>
-<li><p><strong>Scientific Workflow</strong>: A sequence of steps propagating input data through various applications to produce output. It is a loosely coupled application performing workflows in which each coordinated task is performed using an individual application. Each of the individual applications takes some data inputs and produces data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever-increasing amounts of data using “scientific” applications.</p></li>
-<li><p><strong>Scientific Workflow System</strong>: One or more applications that aid a user in setting up, scheduling, running, and monitoring a user-defined scientific workflow.</p></li>
-<li><p><strong>Software Framework</strong>: A collection of software for building applications in a specific domain. The framework defines the interfaces between the software components, provides example applications that can be developed using the provided software, and represents a clear set of interfaces. The software can be extended to build other applications.</p></li>
-</ol>
-</div>
+</li>
+</ul>
 </div>
 
 

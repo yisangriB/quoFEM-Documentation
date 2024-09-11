@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -210,30 +210,30 @@
   <div class="section" id="build-the-backend">
 <h1>Build the Backend<a class="headerlink" href="#build-the-backend" title="Permalink to this heading">¶</a></h1>
 <blockquote>
-<div><p>SimCenterBackendApplications contains many applications written in C++, C, and Python that are needed by all SimCenter User Interfaces. To build the backend you will need to follow the following steps:</p>
+<div><p>SimCenterBackendApplications contains many applications written in C++, C, and Python that are needed by all SimCenter User Interfaces. To build the backend, you will need to follow these steps:</p>
 <ol class="arabic">
 <li><p>Clone the <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterBackendApplications">SimCenterBackendApplications repository</a>.</p></li>
 <li><p>Build SimCenterBackendApplications using the following steps:</p>
 <blockquote>
-<div><p>2.1. Create a build directory for the build output, this can be done in the terminal using the command <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build</span></code>.</p>
+<div><p>2.1. Create a build directory for the build output. This can be done in the terminal using the command <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build</span></code>.</p>
 <p>2.2. Install the backend dependencies using Conan. You can do this by going to the newly created build directory and running the command:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span> <span class="pre">..</span> <span class="pre">--build</span> <span class="pre">missing</span></code></p>
 <p>This will install all the dependencies and will build dependencies from their source code as needed.</p>
 </div></blockquote>
-<p>2.3. Run CMake configuration this can be done using the command <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span></code>. Depending on your build environment, especially if you have multiple compilers, you may need to select a specific CMake generator. For instance, on Windows using Visual Studio 2017, you can configure CMake as follows:</p>
+<p>2.3. Run CMake configuration. This can be done using the command <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span></code>. Depending on your build environment, especially if you have multiple compilers, you may need to select a specific CMake generator. For instance, on Windows using Visual Studio 2017, you can configure CMake as follows:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span> <span class="pre">-G</span> <span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">15</span> <span class="pre">2017</span> <span class="pre">Win64</span></code></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span> <span class="pre">-G</span> <span class="pre">&quot;Visual</span> <span class="pre">Studio</span> <span class="pre">15</span> <span class="pre">2017</span> <span class="pre">Win64&quot;</span></code></p>
 </div></blockquote>
-<p>2.4. Build the release version of the backend, this can be done using the generated build system. For instance, on Unix-based systems when using make files this can be achieved using the command <code class="docutils literal notranslate"><span class="pre">make</span></code> or <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">release</span></code>. When using an IDE like Visual Studio on Windows or XCode on Mac, the generated project can be opened in the IDE and used to build the code. In addition, this can also be done from the terminal using CMake the command:</p>
+<p>2.4. Build the release version of the backend. This can be done using the generated build system. For instance, on Unix-based systems when using make files, this can be achieved using the command <code class="docutils literal notranslate"><span class="pre">make</span></code> or <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">release</span></code>. When using an IDE like Visual Studio on Windows or XCode on Mac, the generated project can be opened in the IDE and used to build the code. Additionally, this can also be done from the terminal using the CMake command:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span> <span class="pre">--config</span> <span class="pre">Release</span></code></p>
 </div></blockquote>
 </div></blockquote>
 </li>
-<li><p>Install the backend applications to a local folder. This can be done by building the <code class="docutils literal notranslate"><span class="pre">install</span> <span class="pre">target</span></code> when using make on Unix-based systems. This can also be from IDE (e.g.) by selecting the install target or project and building it. In addition, this can be done from the terminal using the command:</p>
+<li><p>Install the backend applications to a local folder. This can be done by building the <code class="docutils literal notranslate"><span class="pre">install</span> <span class="pre">target</span></code> when using make on Unix-based systems. This can also be done from an IDE (e.g., by selecting the install target or project and building it). Additionally, this can be done from the terminal using the command:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span> <span class="pre">--target</span> <span class="pre">install</span></code> or <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--install</span></code> if you have CMake 3.15 or later. If building and installation were successful you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside it.</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span> <span class="pre">--target</span> <span class="pre">install</span></code> or <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--install</span></code> if you have CMake 3.15 or later. If the build and installation were successful, you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside it.</p>
 </div></blockquote>
 </li>
 </ol>

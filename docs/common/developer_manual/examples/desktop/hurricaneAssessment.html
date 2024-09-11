@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -209,17 +209,16 @@
             
   <div class="section" id="hurricane-assessment">
 <span id="lblhurricaneassessment-2"></span><h1>Hurricane Assessment<a class="headerlink" href="#hurricane-assessment" title="Permalink to this heading">¶</a></h1>
-<p>This example is a small-scale regional hurricane risk assessment which performs damage/loss estimation for a group of 20 wood buildings in Atlantic City under the Sandy Storm. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; rather, an <strong>IMasEDP</strong> application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage.
-The distribution of the buildings’ structural types and stories are illustrated below.</p>
+<p>This example is a small-scale regional hurricane risk assessment that performs damage/loss estimation for a group of 20 wooden buildings in Atlantic City during the Sandy Storm. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; instead, an <strong>IMasEDP</strong> application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage. The distributions of the buildings’ structural types and stories are illustrated below.</p>
 <div class="align-center figure" id="id1">
 <img alt="../../../../_images/SandyWindFlood.png" src="../../../../_images/SandyWindFlood.png" />
-<p class="caption"><span class="caption-text">Peak wind speed and floor water depth maps of the Sandy Storm</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Peak wind speed and flood water depth maps of the Sandy Storm</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="inputs">
 <h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
 <p>The example input files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/1186f68647c09afb8cc26b551a16a31e/example_hu.zip"><code class="xref download docutils literal notranslate"><span class="pre">example_hu.zip</span></code></a>. For more information about required input files, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">Inputs</span></a>.</p>
 <ol class="arabic simple">
-<li><p><strong>Configuration file</strong>: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.</p></li>
+<li><p><strong>Configuration file</strong>: The configuration file specifies all simulation settings, including the application types, input file names, units, and types of outputs.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
 <span class="linenos"> 2</span>  <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;rWHALE_&quot;</span><span class="p">,</span>
@@ -6044,7 +6043,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/R2D_workflow.py&quot;</span> <span class="s2">&quot;C:/rWHALE/hurricane_example/rWHALE_config_hu.json&quot;</span> <span class="o">--</span><span class="n">registry</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/WorkflowApplications.json&quot;</span> <span class="o">--</span><span class="n">referenceDir</span> <span class="s2">&quot;C:/rWHALE/hurricane_example/input_data/&quot;</span> <span class="o">-</span><span class="n">w</span> <span class="s2">&quot;C:/rWHALE/hurricane_example/results&quot;</span>
 </pre></div>
 </div>
-<p>This command locates the backend applications in the folder “applications”, and the input files in a directory “hurricane_example”. Please ensure that the paths in the command appropriately identify the locations of the files in your directory.</p>
+<p>This command locates the backend applications in the folder “applications” and the input files in the directory “hurricane_example”. Please ensure that the paths in the command accurately identify the locations of the files in your directory.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>applications
 hurricane_example
 ├── rWHALE_config_hu.json          # configuration file
@@ -6065,7 +6064,7 @@ hurricane_example
 <h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h2>
 <p>The example output files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/ba9ae435959aec743e510d2129ac3bf0/output_data_hu.zip"><code class="xref download docutils literal notranslate"><span class="pre">output_data_hu.zip</span></code></a>. For more information about the output files produced, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Outputs.html#lbloutputs"><span class="std std-ref">Outputs</span></a>.</p>
 <ol class="arabic simple">
-<li><p><strong>EDP_1-20.csv</strong>: reports statistics on EDP results, where the hazard IM is used as the EDP. As in HAZUS, the statistics reported are the median and lognormal standard deviation of peak wind speed (PWS) and flood water depth (FWD).</p></li>
+<li><p><strong>EDP_1-20.csv</strong>: This file reports statistics on EDP results, where the hazard IM is used as the EDP. As in HAZUS, the statistics reported are the median and lognormal standard deviation of peak wind speed (PWS) and flood water depth (FWD).</p></li>
 </ol>
 <table class="docutils align-center" id="id5">
 <caption><span class="caption-text">EDP_1-20.csv</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
@@ -6226,7 +6225,7 @@ hurricane_example
 </tbody>
 </table>
 <ol class="arabic simple" start="2">
-<li><p><strong>DM_1-20.csv</strong>: reports collapse probability and damage state probability for each building asset. In the table below the “DSG_DS” values 0, 1_1, 2_1, 3_1, and 4_1 are four wind-induced damage states (from minor to severe), while the rest are the flood-induced damage states.</p></li>
+<li><p><strong>DM_1-20.csv</strong>: This file reports the collapse probability and damage state probability for each building asset. In the table below, the “DSG_DS” values 0, 1_1, 2_1, 3_1, and 4_1 represent four wind-induced damage states (from minor to severe), while the rest are the flood-induced damage states.</p></li>
 </ol>
 <table class="docutils align-center" id="id6">
 <caption><span class="caption-text">DM_1-20.csv</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
@@ -6908,8 +6907,8 @@ hurricane_example
 </tr>
 </tbody>
 </table>
-<ol class="arabic simple" start="2">
-<li><p><strong>DV_1-20.csv</strong>: reports decision variable estimates (i.e., repair cost) for each building asset.</p></li>
+<ol class="arabic simple" start="3">
+<li><p><strong>DV_1-20.csv</strong>: This file reports decision variable estimates (i.e., repair cost) for each building asset.</p></li>
 </ol>
 <table class="docutils align-center" id="id7">
 <caption><span class="caption-text">DV_1-20.csv</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>

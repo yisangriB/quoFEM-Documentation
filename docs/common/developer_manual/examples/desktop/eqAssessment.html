@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -209,7 +209,7 @@
             
   <div class="section" id="earthquake-assessment">
 <span id="lbleqassessment"></span><h1>Earthquake Assessment<a class="headerlink" href="#earthquake-assessment" title="Permalink to this heading">¶</a></h1>
-<p>This example is a small-scale regional earthquake risk assessment which performs response simulation and damage/loss estimation for a group of 20 buildings. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>. The buildings are distributed in space in a 4x5 grid, within a 3x3 grid of event sites. At each event site, 5 ground motion records of similar intensity are assigned.</p>
+<p>This example is a small-scale regional earthquake risk assessment that performs response simulation and damage/loss estimation for a group of 20 buildings. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>. The buildings are distributed in space in a 4x5 grid, within a 3x3 grid of event sites. At each event site, 5 ground motion records of similar intensity are assigned.</p>
 <div class="align-center figure">
 <img alt="../../../../_images/regionalearthquakeexample.png" src="../../../../_images/regionalearthquakeexample.png" />
 </div>
@@ -217,7 +217,7 @@
 <h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
 <p>The example input files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/9d1170da0a9ec0e257f8cfcbae5c671f/example_eq.zip"><code class="xref download docutils literal notranslate"><span class="pre">example_eq.zip</span></code></a>. For more information about required input files, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">Inputs</span></a>.</p>
 <ol class="arabic simple">
-<li><p><strong>Configuration file</strong>: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.</p></li>
+<li><p><strong>Configuration file</strong>: The configuration file specifies all simulation settings, including the application types, input file names, units, and types of outputs.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
 <span class="linenos"> 2</span>  <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;rWHALE_&quot;</span><span class="p">,</span>
@@ -611,7 +611,7 @@
 <img alt="../../../../_images/regionalearthquakeexample_annot.png" src="../../../../_images/regionalearthquakeexample_annot.png" />
 </div>
 <ol class="arabic simple" start="4">
-<li><p><strong>Event Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/eventApps.html#lbleventapp"><span class="std std-ref">SimCenterEvents</span></a> event application. It takes as input the EventGrid.csv, event files with the ground motion intensity measures, and the site files which specify the five ground motions assigned to each event site.</p></li>
+<li><p><strong>Event Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/eventApps.html#lbleventapp"><span class="std std-ref">SimCenterEvents</span></a> event application. It takes as input the EventGrid.csv, event files with the ground motion intensity measures, and the site files that specify the five ground motions assigned to each event site.</p></li>
 </ol>
 <p><strong>Event grid file:</strong></p>
 <table class="docutils align-center" id="id2">
@@ -1051,7 +1051,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/R2D_workflow.py&quot;</span> <span class="s2">&quot;C:/rWHALE/cantilever_example/rWHALE_config_eq.json&quot;</span> <span class="o">--</span><span class="n">registry</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/WorkflowApplications.json&quot;</span> <span class="o">--</span><span class="n">referenceDir</span> <span class="s2">&quot;C:/rWHALE/cantilever_example/input_data/&quot;</span> <span class="o">-</span><span class="n">w</span> <span class="s2">&quot;C:/rWHALE/cantilever_example/results&quot;</span>
 </pre></div>
 </div>
-<p>This command locates the backend applications in the folder “applications”, and the input files in a directory “cantilever_example”. Please ensure that the paths in the command appropriately identify the locations of the files in your directory.</p>
+<p>This command locates the backend applications in the folder “applications” and the input files in a directory “cantilever_example”. Please ensure that the paths in the command appropriately identify the locations of the files in your directory.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>applications
 cantilever_example
 ├── rWHALE_config_eq.json              # configuration file
@@ -1989,7 +1989,7 @@ cantilever_example
 </tr>
 </tbody>
 </table>
-<ol class="arabic simple" start="2">
+<ol class="arabic simple" start="3">
 <li><p><strong>DV_1-19.csv</strong>: reports decision variable estimates (repair cost, repair time, injuries) for each building asset.</p></li>
 </ol>
 <table class="docutils align-center" id="id6">
