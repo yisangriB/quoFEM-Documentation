@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.2. Issues While Running &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  <title>6.2. Issues While Running &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="6. Requirements" href="../../../reqments/reqQUOFE.html" />
-    <link rel="prev" title="5.1. Startup Issues" href="troubleshootingStartup.html" />
+    <link rel="next" title="7. Requirements" href="../../../reqments/reqQUOFE.html" />
+    <link rel="prev" title="6.1. Startup Issues" href="troubleshootingStartup.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -121,19 +121,20 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">3. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="troubleshooting.html">5. Troubleshooting</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="troubleshootingStartup.html">5.1. Startup Issues</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.2. Issues While Running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/quoFEM/tools.html">4. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="troubleshooting.html">6. Troubleshooting</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="troubleshootingStartup.html">6.1. Startup Issues</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2. Issues While Running</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">9. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/quoFEM/usage_video.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -194,9 +195,9 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="troubleshooting.html"><span class="section-number">5. </span>Troubleshooting</a> &raquo;</li>
+          <li><a href="troubleshooting.html"><span class="section-number">6. </span>Troubleshooting</a> &raquo;</li>
         
-      <li><span class="section-number">5.2. </span>Issues While Running</li>
+      <li><span class="section-number">6.2. </span>Issues While Running</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -216,7 +217,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="issues-while-running">
-<span id="troubleshootingrunning"></span><h1><span class="section-number">5.2. </span>Issues While Running<a class="headerlink" href="#issues-while-running" title="Permalink to this heading">¶</a></h1>
+<span id="troubleshootingrunning"></span><h1><span class="section-number">6.2. </span>Issues While Running<a class="headerlink" href="#issues-while-running" title="Permalink to this heading">¶</a></h1>
 <p>When running simulations, failures can occur due to various reasons such as incorrect setup, malfunctioning websites, user errors, or software bugs. Understanding the sequence of actions initiated by the user interface (UI) and backend upon job submission can aid in diagnosing issues. Here’s what happens when the Submit button is clicked:</p>
 <ol class="arabic simple">
 <li><p>A temporary directory, <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, is created in the working directory, followed by a <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> within it.</p></li>
@@ -242,7 +243,18 @@
 </li>
 <li><p><strong>You ran remotely at DesignSafe and no dakota.out files came back</strong>: Go to your data depot folder at DesignSafe using your browser. Go to archive/jobs and use the job number from the table that pops up when you ask to get the job results from DesignSafe. Study both the <code class="docutils literal notranslate"><span class="pre">.err</span></code> and <code class="docutils literal notranslate"><span class="pre">.out</span></code> files in that directory for information on what went wrong.</p></li>
 <li><p><strong>No results and you used the Site Response to create the event</strong>. You must run a simulated event in the Site Response Widget before you can submit a job to run.</p></li>
+<li><p><strong>Don’t Like Default Screen Layout</strong>. There are configuarion you can do for startup. In the directory in which the executable exists you can place a <strong>config.json</strong> file. At present the options are limited: You can set screen size of the application to be full screen, and you can set and change the size of the <strong>output</strong> window. A sample config .json file:</p></li>
 </ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;screenSize&quot;</span><span class="p">:</span><span class="s2">&quot;fullScreen&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;outputLocation&quot;</span><span class="p">:{</span><span class="s2">&quot;position&quot;</span><span class="p">:</span><span class="s2">&quot;right&quot;</span><span class="p">,</span><span class="s2">&quot;numPixels&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also start the application from the terminal and pass config options. These options overwrite any existing.</p>
+</div>
 <p>For unresolved issues, please seek assistance on the <a class="reference external" href="https://github.com/orgs/NHERI-SimCenter/discussions/categories/quofem">github discussion page</a>.</p>
 </div>
 
@@ -256,7 +268,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2018-2025, The Regents of the University of California.
 
     </p>
   </div>

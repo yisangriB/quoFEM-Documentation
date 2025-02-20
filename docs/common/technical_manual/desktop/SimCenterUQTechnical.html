@@ -122,15 +122,16 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">3. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">6. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/quoFEM/tools.html">4. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/dcv/quoFEM/quoFEM.html">9. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/quoFEM/usage_video.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
@@ -529,10 +530,6 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 <li><p><strong>Count</strong>: the number of model evaluations exceeds a predefined count constraint</p></li>
 <li><p><strong>Accuracy</strong>: the accuracy measure of the model meets a predefined convergence level</p></li>
 </ul>
-<p>only:: EEUQ_app</p>
-<blockquote>
-<div><p>Currently not supported in EE-UQ.</p>
-</div></blockquote>
 </div>
 <div class="section" id="verification-of-surrogate-model">
 <h3>Verification of surrogate model<a class="headerlink" href="#verification-of-surrogate-model" title="Permalink to this heading">¶</a></h3>
@@ -674,7 +671,7 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 <p>Before running the MFMC simulation model, the users are advised to check the validity and effectiveness of MFMC for their problem. Only when the below conditions are satisfied, the users are expected to gain meaningful benefits by using MFMC compared to only HF simulations:</p>
 <ul class="simple">
 <li><p><strong>The models should take the same input random variables and produce the same output quantities of interest.</strong> For example, if the target system is a structure, if one model takes stiffness as a random variable and the other does not, the model violates the problem definition. Similarly, if <span class="math notranslate nohighlight">\(j\)</span>-th output of the HF model is the 1st-floor inter-story drift, <span class="math notranslate nohighlight">\(j\)</span>-th output of the LF model should also be the 1st-floor inter-story drift.</p></li>
-<li><p><strong>The models should have a clear hierarchy in terms of accuracy and time.</strong> When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if an LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.</p></li>
+<li><p><strong>The models should have a clear hierarchy in terms of accuracy and time.</strong> When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if an HF model runs faster than the LF model, it is optimal to always run only the HF model, and there is no reason to introduce MFMC.</p></li>
 <li><p><strong>The response of different models should have a high correlation</strong>. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations.</p></li>
 </ul>
 <p>The efficiency of MFMC can be evaluated using the speed-up ratio, defined as the reduction of computational effort you need to get the same Monte Carlo statistical accuracy by the MFMC and direct Monte Carlo method. <a class="reference internal" href="#fig-mf-sp"><span class="std std-numref">Fig. 2.4.2</span></a> shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant <a class="reference internal" href="../../user_manual/usage/desktop/SimCenterUQSurrogate.html#patsialis2021" id="id18"><span>[Patsialis2021]</span></a>. The formulation used to estimate the speed-up ratio can be found at the end of this section.</p>
@@ -783,7 +780,7 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2018-2025, The Regents of the University of California.
 
     </p>
   </div>

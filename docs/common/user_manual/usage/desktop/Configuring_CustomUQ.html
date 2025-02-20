@@ -121,7 +121,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Interface</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="UQ.html">3.1. UQ: Uncertainty Quantification</a><ul class="current">
@@ -142,12 +142,13 @@
 <li class="toctree-l2"><a class="reference internal" href="quoFEM/resQUO.html">3.5. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">6. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quoFEM/usage_video.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/tools.html">4. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/reqQUOFE.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dcv/quoFEM/quoFEM.html">9. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quoFEM/usage_video.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -301,13 +302,13 @@ a UQ runner class that inherits from the <em>UqRunner</em> class, which is shown
 
 <span class="c1"># DO NOT CHANGE THE FACTORY, JUST IMPORT IT INTO ADDITIONAL DERIVED CLASSES</span>
 <span class="c1"># Polymorhophic factory for running UQ apps</span>
-<span class="k">class</span> <span class="nc">UqRunnerFactory</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UqRunnerFactory</span><span class="p">:</span>
     <span class="n">factories</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">def</span> <span class="nf">addFactory</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">runnerFactory</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addFactory</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">runnerFactory</span><span class="p">):</span>
         <span class="n">UqRunnerFactory</span><span class="o">.</span><span class="n">factories</span><span class="o">.</span><span class="n">put</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">runnerFactory</span>
     <span class="n">addFactory</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">addFactory</span><span class="p">)</span>
     <span class="c1"># A Template Method:</span>
-    <span class="k">def</span> <span class="nf">createRunner</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">createRunner</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">UqRunnerFactory</span><span class="o">.</span><span class="n">factories</span><span class="p">:</span>
             <span class="n">UqRunnerFactory</span><span class="o">.</span><span class="n">factories</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> \
               <span class="nb">eval</span><span class="p">(</span><span class="nb">id</span> <span class="o">+</span> <span class="s1">&#39;.Factory()&#39;</span><span class="p">)</span>
@@ -316,8 +317,8 @@ a UQ runner class that inherits from the <em>UqRunner</em> class, which is shown
     <span class="n">createRunner</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">createRunner</span><span class="p">)</span>
 
 <span class="c1"># Abstract base class</span>
-<span class="k">class</span> <span class="nc">UqRunner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">runUQ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uqData</span><span class="p">,</span> <span class="n">simulationData</span><span class="p">,</span> <span class="n">randomVarsData</span><span class="p">,</span> <span class="n">demandParams</span><span class="p">,</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UqRunner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">runUQ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uqData</span><span class="p">,</span> <span class="n">simulationData</span><span class="p">,</span> <span class="n">randomVarsData</span><span class="p">,</span> <span class="n">demandParams</span><span class="p">,</span>
               <span class="n">workingDir</span><span class="p">,</span> <span class="n">runType</span><span class="p">,</span> <span class="n">localAppDir</span><span class="p">,</span> <span class="n">remoteAppDir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This function configures and runs a UQ simulation based on the </span>
@@ -339,8 +340,8 @@ a UQ runner class that inherits from the <em>UqRunner</em> class, which is shown
         <span class="k">pass</span>
 
     <span class="c1"># Factory for creating UQ runner</span>
-    <span class="k">class</span> <span class="nc">Factory</span><span class="p">:</span>
-        <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Factory</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">pass</span>
 </pre></div>
 </div>
@@ -380,7 +381,7 @@ by the customized user interface.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2018-2025, The Regents of the University of California.
 
     </p>
   </div>

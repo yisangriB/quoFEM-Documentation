@@ -119,15 +119,16 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">3. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">6. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dcv/quoFEM/quoFEM.html">8. Running in Your Browser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/quoFEM/usage_video.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/quoFEM/tools.html">4. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reqments/reqQUOFE.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dcv/quoFEM/quoFEM.html">9. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/quoFEM/usage_video.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -209,7 +210,7 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-weuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h1>
-<p><strong>Version 3.3.0</strong> of quoFEM app was released <strong>April 2024</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p><strong>Version 4.2.0</strong> of quoFEM app was released <strong>Feb 2025</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="structural-information-model">
 <h2>Structural Information Model<a class="headerlink" href="#structural-information-model" title="Permalink to this heading">¶</a></h2>
 <p>Applications are used to specify/select the structural model to be used in the analysis.</p>
@@ -227,8 +228,7 @@
 <li><p>Stochastic Wind: Simulating stochastic wind speed using spectral methods. Includes the Wittig and Sinha 1975 model.</p></li>
 <li><p>CFD - Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel</p></li>
 <li><p>CFD - Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry</p></li>
-<li><p><span class="blue">CFD - Wind Load on Surrounded Buildings:</span>
-CFD-based wind load simulation for buildings surrounded by other buildings</p></li>
+<li><p>CFD - Wind Load on Surrounded Buildings: CFD-based wind load simulation for buildings surrounded by other buildings</p></li>
 <li><p>Experimental Wind Forces: As seen in “Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads”. User specified force file input.</p></li>
 <li><p>Experimental Wind Forces: As seen in “Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads”. User specified pressure file input. Includes CPSD group size.</p></li>
 <li><p>Experimental Wind Pressures: As seen in “Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads”.</p></li>
@@ -246,6 +246,7 @@ CFD-based wind load simulation for buildings surrounded by other buildings</p></
 <ol class="arabic simple">
 <li><p>Standard Wind: (serviceability) inter-story drift ratio, peak floor acceleration</p></li>
 <li><p>User Defined: user-specified EDP</p></li>
+<li><p><span class="blue">Component and Cladding EDP: area averaged peak loads on a predefined region/zone</span></p></li>
 </ol>
 </div>
 <div class="section" id="finite-element-application">
@@ -319,8 +320,10 @@ a. Resample from an existing correlated dataset of samples</p></li>
 <div class="section" id="additional-tools">
 <h2>Additional Tools<a class="headerlink" href="#additional-tools" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
-<li><p><span class="blue">Empty Domain CFD Simulation</span>:
+<li><p><strong>Empty Domain CFD Simulation</strong>:
 Capability to perform empty domain simulation to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES). This feature uses the Turbulence Inflow Tool (TInF) tool for calibrating ABL flows for a subsequent wind load evaluation study.</p></li>
+<li><p><strong>Isolated Building CFD Simulation</strong>:
+Added a functionality to perform CFD-based wind load simulation on isolated building as a stand-alone workflow tool. This tool uses the user’s local machine for performing pre-processing and run the actual CFD simulation on DesignSafe.</p></li>
 </ol>
 </div>
 </div>
@@ -335,7 +338,7 @@ Capability to perform empty domain simulation to characterize Atmospheric Bounda
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2018-2025, The Regents of the University of California.
 
     </p>
   </div>
