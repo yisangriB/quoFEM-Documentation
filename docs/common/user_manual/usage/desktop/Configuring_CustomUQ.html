@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -41,8 +41,8 @@
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/design-tabs.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -302,13 +302,13 @@ a UQ runner class that inherits from the <em>UqRunner</em> class, which is shown
 
 <span class="c1"># DO NOT CHANGE THE FACTORY, JUST IMPORT IT INTO ADDITIONAL DERIVED CLASSES</span>
 <span class="c1"># Polymorhophic factory for running UQ apps</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">UqRunnerFactory</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">UqRunnerFactory</span><span class="p">:</span>
     <span class="n">factories</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">addFactory</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">runnerFactory</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">addFactory</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">runnerFactory</span><span class="p">):</span>
         <span class="n">UqRunnerFactory</span><span class="o">.</span><span class="n">factories</span><span class="o">.</span><span class="n">put</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">runnerFactory</span>
     <span class="n">addFactory</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">addFactory</span><span class="p">)</span>
     <span class="c1"># A Template Method:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">createRunner</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">createRunner</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">UqRunnerFactory</span><span class="o">.</span><span class="n">factories</span><span class="p">:</span>
             <span class="n">UqRunnerFactory</span><span class="o">.</span><span class="n">factories</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> \
               <span class="nb">eval</span><span class="p">(</span><span class="nb">id</span> <span class="o">+</span> <span class="s1">&#39;.Factory()&#39;</span><span class="p">)</span>
@@ -317,8 +317,8 @@ a UQ runner class that inherits from the <em>UqRunner</em> class, which is shown
     <span class="n">createRunner</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">createRunner</span><span class="p">)</span>
 
 <span class="c1"># Abstract base class</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">UqRunner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">runUQ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uqData</span><span class="p">,</span> <span class="n">simulationData</span><span class="p">,</span> <span class="n">randomVarsData</span><span class="p">,</span> <span class="n">demandParams</span><span class="p">,</span>
+<span class="k">class</span> <span class="nc">UqRunner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">runUQ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uqData</span><span class="p">,</span> <span class="n">simulationData</span><span class="p">,</span> <span class="n">randomVarsData</span><span class="p">,</span> <span class="n">demandParams</span><span class="p">,</span>
               <span class="n">workingDir</span><span class="p">,</span> <span class="n">runType</span><span class="p">,</span> <span class="n">localAppDir</span><span class="p">,</span> <span class="n">remoteAppDir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This function configures and runs a UQ simulation based on the </span>
@@ -340,8 +340,8 @@ a UQ runner class that inherits from the <em>UqRunner</em> class, which is shown
         <span class="k">pass</span>
 
     <span class="c1"># Factory for creating UQ runner</span>
-    <span class="k">class</span><span class="w"> </span><span class="nc">Factory</span><span class="p">:</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Factory</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">pass</span>
 </pre></div>
 </div>

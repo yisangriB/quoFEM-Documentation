@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -41,8 +41,8 @@
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/design-tabs.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -277,7 +277,7 @@
 <p>In the <strong>Log Likelihood Script</strong> field, users can provide the path to a Python script that contains a function called <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> that returns the log-likelihood value.</p>
 <p>By allowing users to define a <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> function in the <strong>Log Likelihood Script</strong>, the workflow provides users full control in defining the log-likelihood model they desire to use.
 The <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> function is called internally during the execution of the TMCMC algorithm, and this function must compute and return the log-likelihood value at a point in the parameter space. The function must take the arguments as shown below in the signature of the <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/blob/master/backend/modules/performUQ/UCSD_UQ/defaultLogLikeScript.py">default log-likelihood script</a>. Within this function, users can define their log-likelihood function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span><span class="w"> </span><span class="nf">log_likelihood</span><span class="p">(</span><span class="n">calibrationData</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">numExperiments</span><span class="p">,</span> <span class="n">covarianceMatrixList</span><span class="p">,</span> <span class="n">edpNamesList</span><span class="p">,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">log_likelihood</span><span class="p">(</span><span class="n">calibrationData</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">numExperiments</span><span class="p">,</span> <span class="n">covarianceMatrixList</span><span class="p">,</span> <span class="n">edpNamesList</span><span class="p">,</span>
 <span class="linenos"> 2</span>                   <span class="n">edpLengthsList</span><span class="p">,</span> <span class="n">covarianceMultiplierList</span><span class="p">,</span> <span class="n">scaleFactors</span><span class="p">,</span> <span class="n">shiftFactors</span><span class="p">):</span>
 <span class="linenos"> 3</span>    <span class="s2">&quot;&quot;&quot; Compute the log-likelihood</span>
 <span class="linenos"> 4</span>

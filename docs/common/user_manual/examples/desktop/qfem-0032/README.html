@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Forward Propagation using samples of random variables &mdash; Quantified Uncertainty with Optimization for the FEM  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/quoFEM-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/quoCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/quoReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/quoPlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/quoFEM/quoFEMtutorial.html">2. Getting Started Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">3. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/tools.html">4. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/reqQUOFE.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dcv/quoFEM/quoFEM.html">9. Running in Your Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/quoFEM/usage_video.html">10. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/SimCenterUQTechnical.html">2. Methods in SimCenterUQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/UCSDUQTechnical.html">3. Methods in UCSD UQ Engine</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Quantified Uncertainty with Optimization for the FEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Forward Propagation using samples of random variables</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/qfem-0032/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="forward-propagation-using-samples-of-random-variables">
+<span id="qfem-0032"></span><h1>Forward Propagation using samples of random variables<a class="headerlink" href="#forward-propagation-using-samples-of-random-variables" title="Permalink to this heading">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Problem files</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/qfem-0032/">Github</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="related-examples">
+<h2>Related Examples<a class="headerlink" href="#related-examples" title="Permalink to this heading">¶</a></h2>
+<p>This page is a part of the PM4Sand example series, focusing on Step 3 <strong>Forward Propagation</strong>. Steps 1 and 2 can be found below:</p>
+<ul class="simple">
+<li><p>General description and Step 1: <a class="reference internal" href="../qfem-0033/README.html#qfem-0033"><span class="std std-ref">Sensitivity Analysis of PM4Sand Model</span></a></p></li>
+<li><p>Step 2: <a class="reference internal" href="../qfem-0031/README.html#qfem-0031"><span class="std std-ref">Bayesian Calibration of PM4Sand Model using Cyclic Direct Simple Shear Test Data</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="problem-description">
+<h2>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
+<p>A forward propagation analysis is helpful to characterize how parametric uncertainty propagates to the simulation results. For this purpose, it is good practice to run such an analysis and characterize the effect of uncertainties on application-specific quantities of interest before practically applying these parameter values in a simulation for decision making. In this example, we will predict the uncertainty (arising from the uncertainty in the PM4Sand parameters) in the lateral spreading response of a site subjected to an earthquake (Loma Prieta Gilroy Array #2) with peak ground acceleration of 0.37 g. The soil column model shown in the image is introduced in which the liquefiable layer in the middle is modeled using PM4Sand and the other parts are assumed to remain elastic throughout the shaking.</p>
+<div class="align-center figure" id="fig2">
+<img alt="../../../../../_images/qfem0032-fig2.png" src="../../../../../_images/qfem0032-fig2.png" />
+<p class="caption"><span class="caption-text">Schematic of 1D soil layer with liquefiable soil used in the forward propagation analysis.</span><a class="headerlink" href="#fig2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="files-required">
+<h2>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>An opensees soil column model for simulating lateral spreading response of a site subjected to an earthquake: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0032/../qfem-0032/src/N10_T3_ModifiedCase1.tcl">N10_T3_ModifiedCase1.tcl</a></p></li>
+<li><p>In this example, instead of defining the random variables by the distribution type and corresponding hyper-parameters, we will directly import the samples of the random variables. In our case, the samples are obtained as the results of Bayesian calibration example (<a class="reference internal" href="../qfem-0031/README.html#qfem-0031"><span class="std std-ref">Bayesian Calibration of PM4Sand Model using Cyclic Direct Simple Shear Test Data</span></a>) in this PM4Sand example series: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0032/../qfem-0032/src/Dr.in">Dr.in</a> , <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0032/../qfem-0032/src/G0.in">G0.in</a> , <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0032/../qfem-0032/src/hpo.in">hpo.in</a>. An example visualization of posterior samples is shown below.</p></li>
+</ul>
+<div class="align-center figure" id="fig1">
+<a class="reference internal image-reference" href="../../../../../_images/qfem0032-fig1.png"><img alt="../../../../../_images/qfem0032-fig1.png" src="../../../../../_images/qfem0032-fig1.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">PM4Sand model parameters sampled from the joint posterior distribution</span><a class="headerlink" href="#fig1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uq-workflow">
+<h2>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
+<p>The steps involved are as follows:</p>
+<ol class="arabic simple">
+<li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. Select <strong>Forward Propagaion</strong> and then <strong>SimCenterUQ</strong>. Note that only SimCenterUQ engine allows the users to define RVs through the realization samples. Also in order to maintain the correlation between sample realizations across different RVs (Dr, G0, and, hpo) set <strong>RV datagroups</strong> to be {Dr, G0, hpo}.</p></li>
+</ol>
+<div class="align-center figure" id="id1">
+<img alt="../../../../../_images/qfem0032-UQ.png" src="../../../../../_images/qfem0032-UQ.png" />
+<p class="caption"><span class="caption-text">UQ tab</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Next select the <strong>FEM</strong> panel from the input panel selection. This will default to the <strong>OpenSees</strong> FEM engine. In the <strong>Input Script</strong> field, enter the path to the <code class="docutils literal notranslate"><span class="pre">N10_T3_ModifiedCase1.tcl</span></code> file or select <strong>Choose</strong> and navigate to the file.</p></li>
+</ol>
+<div class="align-center figure" id="id2">
+<img alt="../../../../../_images/qfem0032-FEM.png" src="../../../../../_images/qfem0032-FEM.png" />
+<p class="caption"><span class="caption-text">FEM tab</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Next select the <strong>RV</strong> tab from the input panel. For each RV, select input type to be <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and distribution to be <code class="docutils literal notranslate"><span class="pre">Discrete</span></code>. Then import the datafile obtained by Bayesian calibration in example: <a class="reference internal" href="../qfem-0031/README.html#qfem-0031"><span class="std std-ref">Bayesian Calibration of PM4Sand Model using Cyclic Direct Simple Shear Test Data</span></a>.</p></li>
+</ol>
+<div class="align-center figure" id="id3">
+<img alt="../../../../../_images/qfem0032-RV.png" src="../../../../../_images/qfem0032-RV.png" />
+<p class="caption"><span class="caption-text">RV tab</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>In the <strong>EDP</strong> panel create entries for the quantities of interest. The total length should match the length of the simulation outcome, that will be written in the <cite>results.out</cite> file.</p></li>
+</ol>
+<div class="align-center figure" id="id4">
+<a class="reference internal image-reference" href="../../../../../_images/qfem0032-QoI.png"><img alt="../../../../../_images/qfem0032-QoI.png" src="../../../../../_images/qfem0032-QoI.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">EDP tab</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Next click on the <strong>RUN at DesignSafe</strong> button, to run the job on cloud HPC computer. To do this, the user first need to request a job allocation by submitting a ticket at DesignSafe website. Navigate to <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe webpage</a>, click <code class="docutils literal notranslate"><span class="pre">Help</span></code> - <code class="docutils literal notranslate"><span class="pre">Submit</span> <span class="pre">a</span> <span class="pre">Ticket</span></code>, and request an allocation to run SimCenter tools. Once the allocation name is identified, the user can run the analysis by filling in the below entries.</p></li>
+</ol>
+<div class="align-center figure" id="id5">
+<a class="reference internal image-reference" href="../../../../../_images/qfem0032-DS1.png"><img alt="../../../../../_images/qfem0032-DS1.png" src="../../../../../_images/qfem0032-DS1.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">RUN at DesignSafe window</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>It is recommended to request more than 5 nodes (i.e. more than 200 processors) to obtain the results within a few minutes. Once the job is successfully submitted, you can check the job status by clicking <strong>GET from DesignSafe</strong> button. Once the job status appears <code class="docutils literal notranslate"><span class="pre">FINISHED</span></code>, left-click the corresponding row of the table and click <strong>Retrieve Data</strong></p>
+<div class="align-center figure" id="id6">
+<a class="reference internal image-reference" href="../../../../../_images/qfem0032-DS2.png"><img alt="../../../../../_images/qfem0032-DS2.png" src="../../../../../_images/qfem0032-DS2.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">GET from DesignSafe window</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>The forward propagation results should be loaded at RES tab. The below scatter can be viewed in <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Values</span></code> tab.</p></li>
+</ol>
+<div class="align-center figure" id="id7">
+<img alt="../../../../../_images/qfem0032-RES2.png" src="../../../../../_images/qfem0032-RES2.png" />
+<p class="caption"><span class="caption-text">RES tab</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="post-processing-script">
+<h2>Post-processing script<a class="headerlink" href="#post-processing-script" title="Permalink to this heading">¶</a></h2>
+<p>The detailed and intermediate analysis results can be retrieved from the remote working directory. The remote working directory can be found by looking at preference windows, by clicking <code class="docutils literal notranslate"><span class="pre">file</span></code>-<code class="docutils literal notranslate"><span class="pre">preference</span></code> in the quoFEM menu bar. For example, the file named ‘dakotaTab.out’ contains the sample values shown in the <strong>Data Values</strong> tab in the user interface RES tab. You can create your own visualization script using this file. Below is an example of such a python script, that plots the uncertainty across the depth of the soil column. Replace <code class="docutils literal notranslate"><span class="pre">{YOUR/PATH/TO/REMOTEWORKDIR}</span></code> in line 5 with your remote working directory, found in your preference window.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">Path_to_RemoteWorkDir</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;{YOUR/PATH/TO/REMOTEWORKDIR}&quot;</span>
+<span class="linenos"> 6</span><span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">Path_to_RemoteWorkDir</span> <span class="o">+</span> <span class="s2">&quot;/results/dakotaTab.out&quot;</span><span class="p">,</span> <span class="n">skip_header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="n">depth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">maxdisp_tmp</span> <span class="o">=</span> <span class="n">samples</span><span class="p">[:,</span><span class="mi">5</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+<span class="linenos">12</span><span class="n">maxdisp</span> <span class="o">=</span> <span class="n">maxdisp_tmp</span> <span class="o">-</span> <span class="n">maxdisp_tmp</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="c1"># Finding mean max disp curve</span>
+<span class="linenos">15</span><span class="n">maxdispmean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">maxdisp</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">16</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span> <span class="o">=</span> <span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="s1">&#39;0.25&#39;</span><span class="p">);</span>
+<span class="linenos">17</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span> <span class="o">=</span> <span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="s1">&#39;0.25&#39;</span><span class="p">);</span>
+<span class="linenos">18</span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="linenos">19</span><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="linenos">20</span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="linenos">21</span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="linenos">22</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Max Disp. (m)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
+<span class="linenos">23</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Depth (m)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
+<span class="linenos">24</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Vertical profile&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="linenos">25</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">samples</span><span class="p">)):</span>
+<span class="linenos">26</span>    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">maxdisp</span><span class="p">[</span><span class="n">x</span><span class="p">,:],</span> <span class="n">depth</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="linenos">27</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">maxdispmean</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Max. residual disp. </span><span class="se">\n</span><span class="s1">mean profile&#39;</span><span class="p">)</span>
+<span class="linenos">28</span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="align-center figure" id="fig3">
+<a class="reference internal image-reference" href="../../../../../_images/qfem0032-fig3.png"><img alt="../../../../../_images/qfem0032-fig3.png" src="../../../../../_images/qfem0032-fig3.png" style="width: 25%;" /></a>
+<p class="caption"><span class="caption-text">Predicted earthquake response of soil column</span><a class="headerlink" href="#fig3" title="Permalink to this image">¶</a></p>
+</div>
+<p>The results of 500 simulations are shown above. The mean and standard deviation of the residual displacement at the surface level (6 m) are 0.24 m and 0.02 m, respectively. Depending on the application, the uncertainty in these results can be considered reasonably low. The sample of the predictive distribution shown on the top of the vertical profile can further be utilized in
+reliability and risk assessment workflows</p>
+<dl class="simple">
+<dt>Please visit DesignSafe <a class="reference external" href="https://designsafe-ci.org/user-guide/usecases/arduino/usecase_quoFEM/">use case gallery</a>  to find more information on</dt><dd><ol class="lowerroman simple">
+<li><p>running quoFEM on DesignSafe through jupyter-notebook (without using graphical user interface)</p></li>
+<li><p>postprocess the results using jupyer-notebook</p></li>
+</ol>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018-2025, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-4', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

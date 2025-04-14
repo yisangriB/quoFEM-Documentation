@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -41,8 +41,8 @@
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/design-tabs.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -701,10 +701,10 @@
 <li><p><strong>Modeling Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/modelingApps.html#lblmodelingapp"><span class="std std-ref">OpenSeesPyInput</span></a> modeling application. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>. Functions are included which record the peak response as EDPs for each of the EDP types specified in the EDP_specs.json file.</p></li>
 </ol>
 <p><strong>Model file:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="linenos">  2</span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span>
-<span class="linenos">  3</span><span class="kn">from</span><span class="w"> </span><span class="nn">openseespy.opensees</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  2</span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span>
+<span class="linenos">  3</span><span class="kn">from</span> <span class="nn">openseespy.opensees</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">os</span>
 <span class="linenos">  5</span>
 <span class="linenos">  6</span>
 <span class="linenos">  7</span><span class="sd">&#39;&#39;&#39; FUNCTION: build_model ------------------------------------------------------</span>
@@ -718,7 +718,7 @@
 <span class="linenos"> 15</span>
 <span class="linenos"> 16</span><span class="sd">-----------------------------------------------------------------------------&#39;&#39;&#39;</span>
 <span class="linenos"> 17</span>
-<span class="linenos"> 18</span><span class="k">def</span><span class="w"> </span><span class="nf">build_model</span><span class="p">(</span><span class="n">model_params</span><span class="p">):</span>
+<span class="linenos"> 18</span><span class="k">def</span> <span class="nf">build_model</span><span class="p">(</span><span class="n">model_params</span><span class="p">):</span>
 <span class="linenos"> 19</span>
 <span class="linenos"> 20</span>	<span class="n">G</span> <span class="o">=</span> <span class="mf">386.1</span>
 <span class="linenos"> 21</span>	<span class="n">W</span> <span class="o">=</span> <span class="n">model_params</span><span class="p">[</span><span class="s2">&quot;W&quot;</span><span class="p">]</span>
@@ -796,7 +796,7 @@
 <span class="linenos"> 93</span><span class="c1"># saves envelope of interstory drift ratio for each story at one analysis step</span>
 <span class="linenos"> 94</span><span class="c1"># ------------------------------------------------------------------------------</span>
 <span class="linenos"> 95</span>
-<span class="linenos"> 96</span><span class="k">def</span><span class="w"> </span><span class="nf">PeakDriftRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">envDict</span><span class="p">):</span>
+<span class="linenos"> 96</span><span class="k">def</span> <span class="nf">PeakDriftRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">envDict</span><span class="p">):</span>
 <span class="linenos"> 97</span>    <span class="c1"># inputs:</span>
 <span class="linenos"> 98</span>    <span class="c1"># EDP_specs = dictionary of EDP type, location, direction</span>
 <span class="linenos"> 99</span>    <span class="c1"># envDict = dictionary of envelope values</span>
@@ -826,7 +826,7 @@
 <span class="linenos">123</span><span class="c1"># saves time history of relative floor acceleration for each story at one analysis step</span>
 <span class="linenos">124</span><span class="c1"># ------------------------------------------------------------------------------</span>
 <span class="linenos">125</span>
-<span class="linenos">126</span><span class="k">def</span><span class="w"> </span><span class="nf">AccelHistoryRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">histDict</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+<span class="linenos">126</span><span class="k">def</span> <span class="nf">AccelHistoryRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">histDict</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
 <span class="linenos">127</span>    <span class="c1"># inputs:</span>
 <span class="linenos">128</span>    <span class="c1"># histDict = dictionary of time histories</span>
 <span class="linenos">129</span>    <span class="c1"># recorderNodes = list of nodes where EDP is recorded</span>
@@ -848,7 +848,7 @@
 <span class="linenos">145</span><span class="c1"># performs dynamic analysis and records EDPs in dictionary</span>
 <span class="linenos">146</span><span class="c1"># ------------------------------------------------------------------------------</span>
 <span class="linenos">147</span>
-<span class="linenos">148</span><span class="k">def</span><span class="w"> </span><span class="nf">RunDynamicAnalysis</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="nb">iter</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">driftLimit</span><span class="p">,</span><span class="n">EDP_specs</span><span class="p">,</span><span class="n">subSteps</span><span class="p">,</span><span class="n">GMX</span><span class="p">,</span><span class="n">GMZ</span><span class="p">):</span>
+<span class="linenos">148</span><span class="k">def</span> <span class="nf">RunDynamicAnalysis</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="nb">iter</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">driftLimit</span><span class="p">,</span><span class="n">EDP_specs</span><span class="p">,</span><span class="n">subSteps</span><span class="p">,</span><span class="n">GMX</span><span class="p">,</span><span class="n">GMZ</span><span class="p">):</span>
 <span class="linenos">149</span>    <span class="c1"># inputs:</span>
 <span class="linenos">150</span>    <span class="c1"># tol = tolerance criteria to check for convergence</span>
 <span class="linenos">151</span>    <span class="c1"># iter = max number of iterations to check</span>
@@ -987,7 +987,7 @@
 <span class="linenos">284</span><span class="c1"># runs dynamic analysis for single event and returns dictionary of envelope EDPs</span>
 <span class="linenos">285</span><span class="c1"># ------------------------------------------------------------------------------</span>
 <span class="linenos">286</span>
-<span class="linenos">287</span><span class="k">def</span><span class="w"> </span><span class="nf">run_analysis</span><span class="p">(</span><span class="n">GM_dt</span><span class="p">,</span> <span class="n">GM_npts</span><span class="p">,</span> <span class="n">TS_List</span><span class="p">,</span> <span class="n">EDP_specs</span><span class="p">):</span>
+<span class="linenos">287</span><span class="k">def</span> <span class="nf">run_analysis</span><span class="p">(</span><span class="n">GM_dt</span><span class="p">,</span> <span class="n">GM_npts</span><span class="p">,</span> <span class="n">TS_List</span><span class="p">,</span> <span class="n">EDP_specs</span><span class="p">):</span>
 <span class="linenos">288</span>    <span class="c1"># inputs:</span>
 <span class="linenos">289</span>    <span class="c1"># GM_dt = time step of GM record</span>
 <span class="linenos">290</span>    <span class="c1"># GM_npts = number of steps in GM record</span>

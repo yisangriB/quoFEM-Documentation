@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -41,8 +41,8 @@
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/design-tabs.js"></script>
-        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -635,9 +635,9 @@ different shear wave velocity and it might vary dramatically, e.g., western U.S.
 <p class="caption"><span class="caption-text">Depth to bedrock (Cropped from SoilGrid250 to show continental U.S., 10 km resolution)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>Example python script to obtain the data is shown below:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">rioxarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rxr</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">pyproj</span><span class="w"> </span><span class="kn">import</span> <span class="n">Transformer</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rioxarray</span> <span class="k">as</span> <span class="nn">rxr</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pyproj</span> <span class="kn">import</span> <span class="n">Transformer</span>
 
 <span class="n">soil250</span> <span class="o">=</span> <span class="n">rxr</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="s1">&#39;BDTICM_M_250m_ll.tif&#39;</span><span class="p">)</span>
 <span class="n">inputs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;input_params_srt.csv&#39;</span><span class="p">)</span>
